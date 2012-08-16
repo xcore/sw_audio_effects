@@ -26,7 +26,7 @@ Example
 
 This function is designed to be called from the dsp function
 
-.. literalinclude:: module_biquad/src/delay_line.c
+.. literalinclude:: module_delay/src/delay_line.c
   :start-after: //::declaration
   :end-before: //::
 

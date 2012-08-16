@@ -1,0 +1,2 @@
+Utilities directory.
+src contains files common to multiple projects. e.g. header(include) files.
