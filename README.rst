@@ -1,22 +1,21 @@
-I2S Digital Audio Component
-...........................
+Digital Audio Effects Applications
+..................................
 
-:Latest release: 1.3.0rc2
-:Maintainer: davelxmos
-:Description: I2S Digital Audio Component
+:Latest release: 0v1
+:Maintainer: markbxmos
+:Description: Digital Audio Effects Applications
 
 
 Key Features
 ============
 
- * Master and Slave I2S component
- * Runs in a thread - multiple data interfaces supported (with same
-   clock domain)
+ * A number of simple audio effect modules, e.g. equalisation, delay, gain-control
+ * A number of complex audio effect applications which combine modules (e.g. reverb)
 
 Documentation
 =============
 
-Full documentation can be found at: http://xcore.github.com/sc_i2s/
+Full documentation can be found at: http://xcore.github.com/sw_audio_effects/
 
 Support
 =======
@@ -28,4 +27,3 @@ Required software (dependencies)
 
   * sc_i2c (ssh://git@github.com/xcore/sc_i2c)
   * xcommon (if using development tools earlier than 11.11.0)
-

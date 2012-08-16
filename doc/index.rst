@@ -1,8 +1,8 @@
-I2S Software Component
-----------------------
+Digital Audio Effects
+---------------------
 
 .. toctree::
 
-   summary.rst
-   master.rst
-   slave.rst
+   biquad_simple.rst
+   delay.rst
+   loudness.rst
