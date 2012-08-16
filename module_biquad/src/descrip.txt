@@ -1,0 +1,47 @@
+History of Simple BiQuad Application
+====================================
+See Read.Me for project overview
+
+2-AUG-2012
+----------
+Older versions of the XC compiler do not support floating-points.
+So 'C' code modules are required to build coefficient values.
+These are then scaled to Fixed point integer, 
+before being used by the XC code modules.
+
+This version uses 3 DSP function calls which require different prototypes for 'C' and 'XC'
+init_common_coefs: Initialise BiQuad Coeffs
+init_biquad_chan: Initialise internal BiQuad data
+biquad_filter_chan: Create filtered output sample for one channel
+
+This version uses standard biquad with 3 FIR and 3 IIR coefs. 
+Input samples are down-sized 5 bit positions.
+Arguments are held in 14-bit integers.
+
+3-AUG-2012
+----------
+Adapted to use flexible number of coefs.
+Re-organised code so that all BiQuad data structures are 'hidden' from XC code.
+The filter is now called from the XC 'dsp' function via a wrapper.
+Inside the wrapper, on the first call, all initialisation is performed.
+This requires a new over-arching data structure (BIQUAD_S) to be dynamically allocated via a static pointer.
+
+4-AUG-2012
+----------
+Adapted to use double precision floating point, for internal filter calculations
+Could not get this to work reliably, not meeting timing. Data being overwritten etc.
+Switched to using float, now can get reasonable performance but barely enough time to do 2 multiplies.
+Switch back to using fixed point version
+
+5-AUG-2012
+----------
+BiQuad Coefs can vary by many orders of magnitude.
+Therefore a new 'fixed point' method was created,
+where mantissa and exponent are held in separate 32-bit types.
+This method works, audio sounds clean. 2 Biquads can be used before timing breaks.
+
+16-AUG-2012
+-----------
+Created app_biquad application to call module_biquad function biquad_filter_wrapper()
+Curently have to edit biquad_simple.c to select filter-type from
+Lo-pass, Hi-pass, Band-pass, Notch(Band-stop), All-pass(Phase change), and Custom.

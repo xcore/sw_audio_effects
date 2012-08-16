@@ -1,0 +1,10 @@
+History of Delay-Line Module
+============================
+See Read.Me for project overview
+
+9-AUG-2012
+-----------
+Got rudimentary reverb working using delay-line.
+On USB Audio 2.0 Ref board only 58ms od delay available.
+Output is fed into delay-line to create multiple echo's.
+

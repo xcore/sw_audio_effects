@@ -1,0 +1,8 @@
+History of Delay-line Application
+====================================
+See Read.Me in module_delay for full description
+
+9-AUG-2012
+----------
+Created application by calling delay_line_wrapper function from 'dsp' function in dsp.xc
+Currently can be called with delay time in milli-seconds.
