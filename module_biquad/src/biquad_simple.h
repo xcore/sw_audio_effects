@@ -73,7 +73,7 @@ typedef S64_T FILT_T; // type used for internal filter calculations
 #define HEAD_FACT (1 << HEAD_BITS) // coefficient up-scaling factor
 #define HALF_HEAD (HEAD_FACT >> 1) // half up-scaling factor
 
-#define DELAY_SIZE 3 // Size of delay-line (in samples)
+#define NUM_TAPS 3 // Number of filter taps (for FIR or IIR, I.E. FIR+IIR = 2 * NUM_TAPS)
 
 typedef struct FIX_POINT_TAG // Structure containing coefficients expressed as fixed point
 {
@@ -85,15 +85,15 @@ typedef struct FIX_POINT_TAG // Structure containing coefficients expressed as f
 
 typedef struct BIQUAD_COEF_TAG // Structure containing BiQuad coefficients
 {
-	FIX_POINT_S b[DELAY_SIZE]; // Array of weighting for input samples (FIR taps)
-	FIX_POINT_S a[DELAY_SIZE]; // Array of weighting for output results (IIR taps)
+	FIX_POINT_S b[NUM_TAPS]; // Array of weighting for input samples (FIR taps)
+	FIX_POINT_S a[NUM_TAPS]; // Array of weighting for output results (IIR taps)
 } BIQUAD_COEF_S;
 
 typedef struct BIQUAD_CHAN_TAG // Structure containing intermediate data for one channel, updated every sample
 {
-	FILT_T iir[DELAY_SIZE]; // Array of previous IIR filter results
-	FILT_T inp[DELAY_SIZE]; // Array of previous input samples
-	FILT_T filt[DELAY_SIZE]; // Array of previous filterd output samples
+	FILT_T iir[NUM_TAPS]; // Array of previous IIR filter results
+	FILT_T inp[NUM_TAPS]; // Array of previous input samples
+	FILT_T filt[NUM_TAPS]; // Array of previous filterd output samples
 
 	FILT_T inp_err; // Rounding error due to down-sampling input
 	FILT_T iir_err; // Rounding error due to down-sampling IIR output

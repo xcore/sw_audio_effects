@@ -84,7 +84,7 @@ void init_lopass_coefs( // Initialise set of BiQuad coeffs for Low-Pass Filter
 	REAL_T alpha = sin_w0 / (2 * LPF_QUAL_FACT); // 0.06526
 
 
-	assert (3 == DELAY_SIZE); // Check correct array size for BiQuad
+	assert (3 == NUM_TAPS); // Check correct array size for BiQuad
 
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = (1 - cos_w0)/2; // 0.004278
@@ -110,7 +110,7 @@ void init_hipass_coefs( // Initialise set of BiQuad coeffs for Hi-Pass Filter
 	REAL_T alpha = sin_w0 / (2 * LPF_QUAL_FACT); // 0.06526
 
 
-	assert (3 == DELAY_SIZE); // Check correct array size for BiQuad
+	assert (3 == NUM_TAPS); // Check correct array size for BiQuad
 
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = (1 + cos_w0)/2; // 0.9957
@@ -136,7 +136,7 @@ void init_bandpass_coefs( // Initialise set of BiQuad coeffs for Band-Pass Filte
 	REAL_T alpha = sin_w0 / (2 * LPF_QUAL_FACT); // 0.06526
 
 
-	assert (3 == DELAY_SIZE); // Check correct array size for BiQuad
+	assert (3 == NUM_TAPS); // Check correct array size for BiQuad
 
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = alpha;	// 0.06526
@@ -162,7 +162,7 @@ void init_notch_coefs( // Initialise set of BiQuad coeffs for Notch Filter
 	REAL_T alpha = sin_w0 / (2 * LPF_QUAL_FACT); // 0.06526
 
 
-	assert (3 == DELAY_SIZE); // Check correct array size for BiQuad
+	assert (3 == NUM_TAPS); // Check correct array size for BiQuad
 
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = 1;							// 1.0
@@ -188,7 +188,7 @@ void init_allpass_coefs( // Initialise set of BiQuad coeffs for All-Pass Filter 
 	REAL_T alpha = sin_w0 / (2 * LPF_QUAL_FACT); // 0.06526
 
 
-	assert (3 == DELAY_SIZE); // Check correct array size for BiQuad
+	assert (3 == NUM_TAPS); // Check correct array size for BiQuad
 
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = (1 -alpha);	// 0.9347
@@ -207,22 +207,22 @@ void init_custom_coefs( // Initialise set of coeffs to customised values (NB Use
 	S32_T samp_freq // current sample frequency
 )
 {
-	S32_T delay_cnt; // delay-line counter
+	S32_T tap_cnt; // filter-tap counter
 
 
 	un_b[0] = 1;
-	for (delay_cnt=1; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=1; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		un_b[delay_cnt] = 1;
-		un_a[delay_cnt] = -1;
-	} // for delay_cnt
+		un_b[tap_cnt] = 1;
+		un_a[tap_cnt] = -1;
+	} // for tap_cnt
 
 	// Sum normalisation value
 	un_a[0] = un_b[0];
-	for (delay_cnt=1; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=1; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		un_a[0] += (un_b[delay_cnt] - un_a[delay_cnt]);
-	} // for delay_cnt
+		un_a[0] += (un_b[tap_cnt] - un_a[tap_cnt]);
+	} // for tap_cnt
 
 } // init_custom_coefs
 /******************************************************************************/
@@ -231,19 +231,19 @@ void init_common_coefs( // Initialise Common BiQuad Coeffs. Edit as to select re
 	S32_T samp_freq // current sample frequency
 )
 {
-	REAL_T un_b[DELAY_SIZE]; // Array of un-normalised FIR filter coefficients
-	REAL_T un_a[DELAY_SIZE]; // Array of un-normalised IIR filter coefficients
-	S32_T delay_cnt; // delay-line counter
+	REAL_T un_b[NUM_TAPS]; // Array of un-normalised FIR filter coefficients
+	REAL_T un_a[NUM_TAPS]; // Array of un-normalised IIR filter coefficients
+	S32_T tap_cnt; // filter-tap counter
 
 
 	// Clear coef arrays
-	for (delay_cnt=0; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		un_b[delay_cnt] = 0;
-		un_a[delay_cnt] = 0;
-		scale_coef( &(bq_coef_sp->b[delay_cnt]) ,(FILT_T)0.0 );
-		scale_coef( &(bq_coef_sp->a[delay_cnt]) ,(FILT_T)0.0 );
-	} // for delay_cnt
+		un_b[tap_cnt] = 0;
+		un_a[tap_cnt] = 0;
+		scale_coef( &(bq_coef_sp->b[tap_cnt]) ,(FILT_T)0.0 );
+		scale_coef( &(bq_coef_sp->a[tap_cnt]) ,(FILT_T)0.0 );
+	} // for tap_cnt
 
 	// Manually select filter type
 		init_lopass_coefs( un_b ,un_a ,samp_freq );
@@ -256,26 +256,26 @@ void init_common_coefs( // Initialise Common BiQuad Coeffs. Edit as to select re
 	assert( 0 != un_a[0] ); // Check for divide by zero
 
 	// Normalise and store Coefs
-	for (delay_cnt=0; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		scale_coef( &(bq_coef_sp->b[delay_cnt]) ,(REAL_T)( un_b[delay_cnt] / un_a[0] ) );
-		scale_coef( &(bq_coef_sp->a[delay_cnt]) ,(REAL_T)( un_a[delay_cnt] / un_a[0] ) );
-	} // for delay_cnt
+		scale_coef( &(bq_coef_sp->b[tap_cnt]) ,(REAL_T)( un_b[tap_cnt] / un_a[0] ) );
+		scale_coef( &(bq_coef_sp->a[tap_cnt]) ,(REAL_T)( un_a[tap_cnt] / un_a[0] ) );
+	} // for tap_cnt
 } // init_common_coefs
 /******************************************************************************/
 void init_biquad_chan( // Initialise BiQuad data for one channel
 	BIQUAD_CHAN_S * bq_chan_sp // Pointer to structure containing current BiQuad data
 )
 {
-	S32_T delay_cnt; // delay-line counter
+	S32_T tap_cnt; // filter-tap counter
 
 
-	for (delay_cnt=0; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		bq_chan_sp->iir[delay_cnt] = 0;
-		bq_chan_sp->inp[delay_cnt] = 0;
-		bq_chan_sp->filt[delay_cnt] = 0;
-	} // for delay_cnt
+		bq_chan_sp->iir[tap_cnt] = 0;
+		bq_chan_sp->inp[tap_cnt] = 0;
+		bq_chan_sp->filt[tap_cnt] = 0;
+	} // for tap_cnt
 
 	bq_chan_sp->iir_err = 0; // Clear IIR Error
 	bq_chan_sp->inp_err = 0; // Clear Input Error
@@ -286,7 +286,7 @@ void init_biquad( // Create structure for all biquad data, and initialise
 	BIQUAD_S * biquad_sp // Pointer to structure containing all biquad data
 ) // Return pointer to BiQuad structure
 {
-	S32_T chan_cnt; // delay-line counter
+	S32_T chan_cnt; // filter-tap counter
 
 
 	/*	Set-up BiQuad coefficients with default-frequency.
@@ -351,7 +351,7 @@ SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 	FILT_T inp_full_samp; // reduced precision input sample
 	S32_T inp_redu_samp; // reduced precision input sample
 	FILT_T out_full_samp; // full precision filtered output sample, returned to channel
-	S32_T delay_cnt; // delay-line counter
+	S32_T tap_cnt; // filter-tap counter
 
 
 	inp_full_samp = (FILT_T)inp_chan_samp + (FILT_T)bq_chan_sp->inp_err; // Add-in Input diffusion error
@@ -362,26 +362,26 @@ SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 	// Compute Intermediate IIR filter value
 	bq_chan_sp->iir[0] = fix_point_mult( &(bq_coef_sp->a[0]) ,(FILT_T)inp_redu_samp );
 
-	for (delay_cnt=1; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=1; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		bq_chan_sp->iir[0] -= fix_point_mult( &(bq_coef_sp->a[delay_cnt]) ,bq_chan_sp->iir[delay_cnt] );
-	} // for delay_cnt
+		bq_chan_sp->iir[0] -= fix_point_mult( &(bq_coef_sp->a[tap_cnt]) ,bq_chan_sp->iir[tap_cnt] );
+	} // for tap_cnt
 
 	// Compute BiQuad filtered output value from intermediate IIR values
 	bq_chan_sp->filt[0] = fix_point_mult( &(bq_coef_sp->b[0]) ,bq_chan_sp->iir[0] );
 
-	for (delay_cnt=1; delay_cnt<DELAY_SIZE; delay_cnt++)
+	for (tap_cnt=1; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
-		bq_chan_sp->filt[0] += fix_point_mult( &(bq_coef_sp->b[delay_cnt]) ,bq_chan_sp->iir[delay_cnt] );
-	} // for delay_cnt
+		bq_chan_sp->filt[0] += fix_point_mult( &(bq_coef_sp->b[tap_cnt]) ,bq_chan_sp->iir[tap_cnt] );
+	} // for tap_cnt
 
 	// Update previous stored results
-	for (delay_cnt=(DELAY_SIZE - 1); delay_cnt>0; delay_cnt--)
+	for (tap_cnt=(NUM_TAPS - 1); tap_cnt>0; tap_cnt--)
 	{
-		bq_chan_sp->inp[delay_cnt] =	bq_chan_sp->inp[delay_cnt-1]; 
-		bq_chan_sp->iir[delay_cnt] =	bq_chan_sp->iir[delay_cnt-1]; 
-		bq_chan_sp->filt[delay_cnt] =	bq_chan_sp->filt[delay_cnt-1]; 
-	} // for delay_cnt
+		bq_chan_sp->inp[tap_cnt] =	bq_chan_sp->inp[tap_cnt-1]; 
+		bq_chan_sp->iir[tap_cnt] =	bq_chan_sp->iir[tap_cnt-1]; 
+		bq_chan_sp->filt[tap_cnt] =	bq_chan_sp->filt[tap_cnt-1]; 
+	} // for tap_cnt
 
 	out_full_samp = (bq_chan_sp->filt[0] << HEAD_BITS); // Compute full precision filtered output sample
 
