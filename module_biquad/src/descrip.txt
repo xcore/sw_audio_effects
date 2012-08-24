@@ -45,3 +45,8 @@ This method works, audio sounds clean. 2 Biquads can be used before timing break
 Created app_biquad application to call module_biquad function biquad_filter_wrapper()
 Curently have to edit biquad_simple.c to select filter-type from
 Lo-pass, Hi-pass, Band-pass, Notch(Band-stop), All-pass(Phase change), and Custom.
+
+24-AUG-2012
+-----------
+Removed customdefines.h as board specific.
+Rewrote to remove 'board specific' definitions. (E.g. DEFAULT_FREQ)

@@ -5,3 +5,7 @@ See Read.Me for project overview
 15-AUG-2012
 -----------
 Got non-linear-gain transform working using piece-wise parabolic gain curve.
+
+23-AUG-2012
+-----------
+Renamed app_loudness to app_usb_loudness

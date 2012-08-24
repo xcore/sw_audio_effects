@@ -2,7 +2,7 @@
 <projectDescription>
 	<name>app_usb_aud_l1</name>
 	<comment></comment>
-	<projects> <project>module_utils</project>  <project>module_delay</project>  <project>module_usb_shared</project>  <project>module_xud</project>  <project>module_usb_aud_shared</project>  <project>module_spdif_tx</project>  <project>module_spdif_rx</project>  <project>module_usb_midi</project>  <project>module_dfu</project>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+	<projects> <project>module_biquad</project>  <project>module_utils</project>  <project>module_usb_shared</project>  <project>module_xud</project>  <project>module_usb_aud_shared</project>  <project>module_spdif_tx</project>  <project>module_spdif_rx</project>  <project>module_usb_midi</project>  <project>module_dfu</project>                                                                                                                                                                                                                                                                                                                                                                                                                       
 		
 		
 		

@@ -6,3 +6,7 @@ See Read.Me in module_delay for full description
 ----------
 Created application by calling delay_line_wrapper function from 'dsp' function in dsp.xc
 Currently can be called with delay time in milli-seconds.
+
+23-AUG-2012
+-----------
+Renamed app_delay to app_usb_delay

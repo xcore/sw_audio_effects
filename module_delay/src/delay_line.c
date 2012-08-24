@@ -26,12 +26,18 @@ static DELAY_S delay_s; // Structure containing all delay data (NB Make global t
 
 /******************************************************************************/
 S32_T get_sample_delay( // Calculate delay in samples
-	S32_T delay_ms, // current delay time (in milli-secs)
-	S32_T samp_freq // current sample frequency
+	S32_T samp_freq, // current sample frequency
+	S32_T delay_ms // current delay time (in milli-secs)
 	) // Return delay in samples
 {
 	S32_T sample_delay; // delay measured in samples
 
+
+	// Check for sensible sample frequency
+	if (samp_freq < MIN_AUDIO_FREQ)
+	{
+		samp_freq = MIN_AUDIO_FREQ;
+	} // if (samp_freq < MIN_AUDIO_FREQ)
 
 	// Calculate delay paremeters in samples. NB divide by 1000 as delay_ms in milli-secs
 	sample_delay = (S32_T)(( (S64_T)samp_freq * (S64_T)delay_ms + (S64_T)500 ) / (S64_T)1000 );
@@ -47,8 +53,8 @@ S32_T get_sample_delay( // Calculate delay in samples
 /******************************************************************************/
 void update_common_delays( // Update delays for each channel
 	DELAY_S * delay_sp, // Pointer to structure containing all delay data
-	S32_T delay_ms, // current delay time (in milli-secs)
-	S32_T samp_freq // current sample frequency
+	S32_T samp_freq, // current sample frequency
+	S32_T delay_ms // current delay time (in milli-secs)
 )
 {
 	DELAY_CHAN_S * chan_sp; // Pointer to structure containing delay data for one channel
@@ -57,7 +63,7 @@ void update_common_delays( // Update delays for each channel
 
 
 	// Get sample delay
-	sample_delay = get_sample_delay( delay_ms ,samp_freq );
+	sample_delay = get_sample_delay( samp_freq ,delay_ms );
 
 	// Loop through all channels
 	for (chan_cnt=0; chan_cnt<NUM_USB_CHAN_OUT; chan_cnt++)
@@ -90,7 +96,9 @@ void init_delay_chan( // Initialise delay data for one channel. WARNING chan_sp-
 } // init_delay_chan
 /******************************************************************************/
 void init_delay( // Create structure for all delay data, and initialise
-	DELAY_S * delay_sp // Pointer to structure containing all delay data
+	DELAY_S * delay_sp, // Pointer to structure containing all delay data
+	S32_T samp_freq, // current sample frequency
+	S32_T delay_ms // current delay time (in milli-secs)
 )
 {
 	S32_T chan_cnt; // delay-line counter
@@ -98,7 +106,7 @@ void init_delay( // Create structure for all delay data, and initialise
 
 
 	// Get sample delay
-	sample_delay = get_sample_delay( DEFAULT_DELAY ,DEFAULT_FREQ );
+	sample_delay = get_sample_delay( samp_freq ,delay_ms );
 
 	// Loop through all output channels
 	for (chan_cnt=0; chan_cnt<NUM_USB_CHAN_OUT; chan_cnt++)
@@ -144,7 +152,7 @@ S32_T delay_line_wrapper( // Wrapper for delay_line function
 	// Check if filter initialised
 	if (0 == init_flg)
 	{
-  	init_delay( &delay_s );	// Initialise delay data structure
+  	init_delay( &delay_s ,samp_freq ,delay_ms );	// Initialise delay data structure
 		init_flg = 1;	// Set initialisation-done flag
 	} // if (0 == init_flag)
 
@@ -152,7 +160,8 @@ S32_T delay_line_wrapper( // Wrapper for delay_line function
 
 	if (old_freq != samp_freq)
 	{
-		if (20 < samp_freq)
+		// Check for sensible frequency
+		if (MIN_AUDIO_FREQ < samp_freq)
 		{
 			valid_change = 1; // Signal valid parameter change
 		} // if (20 < samp_freq)
@@ -170,7 +179,7 @@ S32_T delay_line_wrapper( // Wrapper for delay_line function
 	if (1 == valid_change)
 	{
 		// recalculate sample delay
-	  update_common_delays( &(delay_s) ,delay_ms ,samp_freq );
+	  update_common_delays( &(delay_s) ,samp_freq ,delay_ms );
 	} // if (samp_freq != old_freq)
 
 

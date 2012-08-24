@@ -29,7 +29,6 @@
 #include <math.h>
 #include <assert.h>
 #include "types64bit.h"
-#include "customdefines.h"
 
 #ifndef NUM_USB_CHAN_OUT
 #define NUM_USB_CHAN_OUT (2) // For test purposes

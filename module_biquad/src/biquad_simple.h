@@ -29,7 +29,6 @@
 #include <math.h>
 #include <assert.h>
 #include "types64bit.h"
-#include "customdefines.h"
 
 #ifndef NUM_USB_CHAN_OUT
 #define NUM_USB_CHAN_OUT (2) // For test purposes
@@ -52,7 +51,8 @@ int biquad_filter_wrapper( // Call filter for one sample
 #define PI 3.14159265
 
 // Filter parameters 
-#define LPF_NOMINAL_FREQ 1000 // Nominal Frequency (In Hz)
+#define MIN_AUDIO_FREQ 20 // Minimum Audio Frequency (In Hz)
+#define LPF_NOMINAL_FREQ 1000 // Nominal Filter Frequency (In Hz)
 #define LPF_QUAL_FACT 1 // Quality Factor (Nominal_F / Delta_F)
 
 typedef R64_T REAL_T; // Real or floating-point type (NB not supported in earlier XC compilers)

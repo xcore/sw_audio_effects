@@ -29,12 +29,12 @@
 #include <math.h>
 #include <assert.h>
 #include "types64bit.h"
-#include "customdefines.h"
 
 #ifndef NUM_USB_CHAN_OUT
 #define NUM_USB_CHAN_OUT (2) // For test purposes
 #endif // NUM_USB_CHAN_OUT
 
+#define MIN_AUDIO_FREQ 20 // Minimum Audio Frequency (In Hz)
 #define DEFAULT_DELAY 0 // Default delay (in milli-seconds)
 
 /******************************************************************************/
@@ -52,7 +52,7 @@ int delay_line_wrapper( // Delay one input sample, return one (different) delaye
 #else //if __XC__
 // 'C' File
 
-#define DELAY_SIZE 2700 // Size of delay buffer in samples. Adjust to suit available memory
+#define DELAY_SIZE 4900 // Size of delay buffer in samples. Adjust to suit available memory
 #define MAX_DELAY (DELAY_SIZE - 1) // Max index into delay buffer
 
 typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)

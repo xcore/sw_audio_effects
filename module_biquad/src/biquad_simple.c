@@ -236,6 +236,12 @@ void init_common_coefs( // Initialise Common BiQuad Coeffs. Edit as to select re
 	S32_T tap_cnt; // filter-tap counter
 
 
+	// Check for sensible sample frequency
+	if (samp_freq < MIN_AUDIO_FREQ)
+	{
+		samp_freq = MIN_AUDIO_FREQ;
+	} // if (samp_freq < MIN_AUDIO_FREQ)
+
 	// Clear coef arrays
 	for (tap_cnt=0; tap_cnt<NUM_TAPS; tap_cnt++)
 	{
@@ -246,11 +252,11 @@ void init_common_coefs( // Initialise Common BiQuad Coeffs. Edit as to select re
 	} // for tap_cnt
 
 	// Manually select filter type
-		init_lopass_coefs( un_b ,un_a ,samp_freq );
+//	init_lopass_coefs( un_b ,un_a ,samp_freq );
 //	init_hipass_coefs( un_b ,un_a ,samp_freq );
 //	init_bandpass_coefs( un_b ,un_a ,samp_freq );
 //	init_notch_coefs( un_b ,un_a ,samp_freq );
-//	init_allpass_coefs( un_b ,un_a ,samp_freq );
+	init_allpass_coefs( un_b ,un_a ,samp_freq );
 //	init_custom_coefs( un_b ,un_a ,samp_freq );
 
 	assert( 0 != un_a[0] ); // Check for divide by zero
@@ -283,7 +289,8 @@ void init_biquad_chan( // Initialise BiQuad data for one channel
 } // init_biquad_chan
 /******************************************************************************/
 void init_biquad( // Create structure for all biquad data, and initialise
-	BIQUAD_S * biquad_sp // Pointer to structure containing all biquad data
+	BIQUAD_S * biquad_sp, // Pointer to structure containing all biquad data
+	S32_T samp_freq // current sample frequency
 ) // Return pointer to BiQuad structure
 {
 	S32_T chan_cnt; // filter-tap counter
@@ -294,7 +301,7 @@ void init_biquad( // Create structure for all biquad data, and initialise
 	 *	NB Currently using same coefs for each channel
 	 */
 
-  init_common_coefs( &(biquad_sp->common_coefs_s) ,DEFAULT_FREQ );
+  init_common_coefs( &(biquad_sp->common_coefs_s) ,samp_freq );
 
 	// Loop through all output channels
 	for (chan_cnt=0; chan_cnt<NUM_USB_CHAN_OUT; chan_cnt++)
@@ -325,19 +332,35 @@ FILT_T clip_sample( // Clip full precision sample into channel range
 ) // Return Clipped Output Sample
 
 #define MAX_SAMP (((FILT_T)1 << SAMP_BITS) - 1) // Maximum sample value allowed on channel (E.g 0x7fff_ffff)
+#define MAX_CLIP 1000 // Max. number of clips allowed before failure
 
 {
-	if (inp_full_samp > (FILT_T)MAX_SAMP)
-	{
-		assert( 0 == 1 );
-		return (FILT_T)MAX_SAMP; // Clip value to maximum 
-	} // if (inp_full_samp > (FILT_T)MAX_SAMP)
+	static S32_T pos_clip = 0; // Counts No. of +ve clipping events
+	static S32_T neg_clip = 0; // Counts No. of -ve clipping events
+	FILT_T out_full_samp; // preset Clipped output sample to input value
 
-	if (inp_full_samp < (FILT_T)(-MAX_SAMP))
+
+	if (inp_full_samp > (FILT_T)MAX_SAMP)
+	{ // +ve Clipping
+		out_full_samp = (FILT_T)MAX_SAMP; // Clip value to maximum 
+
+		pos_clip++;
+		if (pos_clip > MAX_CLIP) assert( 0 == 1 );
+	} // if (inp_full_samp > (FILT_T)MAX_SAMP)
+	else
 	{
-		assert( 0 == -1 );
-		return (FILT_T)(-MAX_SAMP); // Clip value to minimum
-	} // if (out_full_samp < (-(FILT_T)MAX_SAMP))
+		if (inp_full_samp < (FILT_T)(-MAX_SAMP))
+		{ // -ve Clipping
+			out_full_samp = (FILT_T)(-MAX_SAMP); // Clip value to minimum
+
+			neg_clip++;
+			if (neg_clip > MAX_CLIP) assert( 0 == -1 );
+		} // if (out_full_samp < (-(FILT_T)MAX_SAMP))
+		else
+		{ // No Clipping
+			out_full_samp = inp_full_samp; // set output sample to input value
+		} // else !(out_full_samp < (-(FILT_T)MAX_SAMP))
+	} // else !(inp_full_samp > (FILT_T)MAX_SAMP)
 
 	return inp_full_samp; // Return unclipped value
 } // clip_sample 
@@ -396,24 +419,23 @@ S32_T biquad_filter_wrapper( // Wrapper for biquad_filter_wrapper
 	S32_T samp_freq // current sample frequency
 ) // Return filtered Output Sample
 {
-	// We keep these 'global' variables as static, because they contain 'floating-point' types which are not supported in some older versions of XC
 	static S32_T init_flg = 0; // Flag indicating BiQuad is initialised
 	static S32_T old_freq = 0; // old sample frequency
-	static S32_T out_samp = 0; // Unfiltered full precision input sample from channel
+	S32_T out_samp = inp_samp; // Preset output sample to input sample (I.E. No Filtering)
 
 
 	// Check if filter initialised
 	if (0 == init_flg)
 	{
-  	init_biquad( &biquad_s );	// Initialise Bi-Quad data structure
+  	init_biquad( &biquad_s ,samp_freq );	// Initialise Bi-Quad data structure
 		init_flg = 1;	// Set initialisation-done flag
 	} // if (0 == init_flag)
 
-	// Check for sample frequency change
-	if (old_freq != samp_freq)
+	// Check Sample frequency is NOT a control code.
+	if (MIN_AUDIO_FREQ < samp_freq)
 	{
-		// Check NOT a control code. MB~ Revisit to implement via #define
-		if (20 < samp_freq)
+		// Check for sample frequency change
+		if (old_freq != samp_freq)
 		{
 			/* When coefficients are re-calculated mid-stream timing may be broken, but works so far!
   	   * Audio clicks can be heard, but I assume normally this would only occur at a program change,
@@ -422,20 +444,16 @@ S32_T biquad_filter_wrapper( // Wrapper for biquad_filter_wrapper
 
 			// recalculate filter coefficiants based on new sample frequency
 		  init_common_coefs( &(biquad_s.common_coefs_s) ,samp_freq );
+		} // if (samp_freq != old_freq)
+		else
+		{
+			// Call biquad on current sample
+			out_samp = (S32_T)biquad_filter_chan( (SAMP_CHAN_T)inp_samp ,&(biquad_s.bq_chan_s[cur_chan]) ,&(biquad_s.common_coefs_s) );
+//		out_samp = inp_samp; // Dbg
+		} // else !(samp_freq != old_freq)
+	} // if (MIN_AUDIO_FREQ < samp_freq)
 
-			old_freq = samp_freq; // Store updated sample frequency
-
-			// To save time we do a crude IIR filter
-			out_samp = (S32_T)((out_samp + (FILT_T)inp_samp) >> 1); 
-		} // if (20 < samp_freq)
-	} // if (samp_freq != old_freq)
-	else
-	{
-		// Call biquad on current sample
-		out_samp = (S32_T)biquad_filter_chan( (SAMP_CHAN_T)inp_samp ,&(biquad_s.bq_chan_s[cur_chan]) ,&(biquad_s.common_coefs_s) );
-	} // else !(samp_freq != old_freq)
-
-//	out_samp = inp_samp; // Dbg
+	old_freq = samp_freq; // Store updated sample frequency
 	return out_samp;
 } // biquad_filter_wrapper
 /******************************************************************************/

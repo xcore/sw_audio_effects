@@ -1,7 +1,12 @@
-History of Digital Audio Application
-====================================
+History of Loudness Module
+==========================
 See Read.Me for project overview
 
 15-AUG-2012
 -----------
 Got non-linear-gain transform working using piece-wise parabolic gain curve.
+
+24-AUG-2012
+-----------
+Removed customdefines.h as board specific.
+Rewrote to remove 'board specific' definitions. (E.g. DEFAULT_FREQ)

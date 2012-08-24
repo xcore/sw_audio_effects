@@ -38,4 +38,8 @@ Switch back to using fixed point version
 Created app_biquad application to call module_biquad function biquad_filter_wrapper()
 Curently have to edit biquad_simple.c to select filter-type from
 Lo-pass, Hi-pass, Band-pass, Notch(Band-stop), All-pass(Phase change), and Custom.
+
+23-AUG-2012
+-----------
+Renamed app_biquad to app_usb_biquad
  
