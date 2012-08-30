@@ -5,3 +5,7 @@ See README for overview
 16-AUG-2012
 -----------
 Created to hold types64bit.h
+
+22-AUG-2012
+-----------
+Added audio_sample_io module to hold common give/get functions for USB Audio apps

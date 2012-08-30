@@ -1,0 +1,22 @@
+History of Reverb Application
+====================================
+See Read.Me in module_delay for full description
+
+20-AUG-2012
+-----------
+Used previous app_delay to create app_reverb project.
+The app_reverb project uses all 8 threads.
+3 threads are used for reverb.
+1 for Equalisation, 1 for Gain-control (Loudness) and the remaining one for 
+control and delay functionality.
+
+22-AUG-2012
+-----------
+Got first draft working with 3 reverb threads.
+This is not a reverb as such, it just uses the existing modules in the following order:
+module_delay,
+module_biquad,
+module_loudness
+When is running on the USB Audio 2 Ref board, 
+so there is only enough memory to do a 16 millisecond delay.
+

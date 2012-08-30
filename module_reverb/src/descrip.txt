@@ -1,0 +1,8 @@
+History of Reverb Module
+==========================
+See Read.Me for project overview
+
+29-AUG-2012
+-----------
+Created draft version of reverb.
+

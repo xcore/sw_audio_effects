@@ -12,9 +12,9 @@ Description: Type definitions, to allow interworking between different processor
 #ifdef __XC__
 // XC File
 
-typedef char S8_T;
-typedef short S16_T;
-typedef int S32_T;
+typedef signed char S8_T;
+typedef signed short S16_T;
+typedef signed int S32_T;
 
 typedef unsigned char U8_T;
 typedef unsigned short U16_T;
@@ -25,10 +25,10 @@ typedef unsigned U32_T;
 #else //if __XC__
 // 'C' File
 
-typedef char S8_T;
-typedef short S16_T;
-typedef int S32_T;
-typedef long long S64_T;
+typedef signed char S8_T;
+typedef signed short S16_T;
+typedef signed int S32_T;
+typedef signed long long S64_T;
 
 typedef unsigned char U8_T;
 typedef unsigned short U16_T;

@@ -1,0 +1,332 @@
+
+***** Active Threads *****
+  8  stdcore[0] hwthread 7  deliver (c_out=6914, c_spd_out=<value optimized out>, divide=8, c_dig_rx=<value optimized out>) at .././../module_usb_aud_shared/audio.xc:128
+  7  stdcore[0] hwthread 6  dsp_loudness (c_dsp_gain=6402, c_gain_audio=6658) at .././src/dsp_loudness.xc:137
+  6  stdcore[0] hwthread 5  dsp_equalisation (c_dsp_eq=5890) at .././src/dsp_equalisation.xc:88
+  5  stdcore[0] hwthread 4  dsp_control (c_decouple_dsp=5378, c_dsp_eq=5634, c_dsp_gain=6146) at .././src/dsp_control.xc:191
+  4  stdcore[0] hwthread 3  __kret () at .././../module_usb_aud_shared/usb_buffer/decouple.xc:797
+  3  stdcore[0] hwthread 2  0x00012c18 in buffer (c_aud_out=1026, c_aud_in=3074, c_aud_fb=2562, c_midi_from_host=<value optimized out>, c_midi_to_host=<value optimized out>, c_int=4098, c_sof=258, c_aud_ctl=4866, p_off_mclk=67072) at .././../module_usb_aud_shared/usb_buffer/usb_buffer.xc:215
+  2  stdcore[0] hwthread 1  0x00011310 in AudioClassRequests_2 (ep0_out=<value optimized out>, ep0_in=100340, sp=<value optimized out>, c_audioControl=4610, c_mix_ctl=<value optimized out>, c_clk_ctl=<value optimized out>) at .././../module_usb_aud_shared/endpoint0/audiorequests.xc:356
+* 1  stdcore[0] hwthread 0  0x000141ca in XUD_TokenRx_Pid ()
+
+Thread 8 (stdcore[0] hwthread 7):
+
+***** Call Stack *****
+#0  deliver (c_out=6914, c_spd_out=<value optimized out>, divide=8, c_dig_rx=<value optimized out>) at .././../module_usb_aud_shared/audio.xc:128
+#1  0x00010da0 in audio (c_mix_out=6914, c_dig_rx=0, c_config=0) at .././../module_usb_aud_shared/audio.xc:665
+#2  0x00010464 in main () at .././src/main.xc:180
+
+***** Disassembly *****
+0x10ad4 <deliver+48>:	testct (2r)     r1, res[r0] *
+0x10ad6 <deliver+50>:	bt (lru6)       r1, 0xb5
+0x10ada <deliver+54>:	in (2r)         r1, res[r0] *
+0x10adc <deliver+56>:	ldw (2rus)      r1, r7[0x0]
+0x10ade <deliver+58>:	out (r2r)       res[r0], r1 *
+
+***** Registers *****
+r0             0x1b02	6914
+r1             0x0	0
+r2             0x1fd34	130356
+r3             0x2	2
+r4             0x1770000	24576000
+r5             0x12345678	305419896
+r6             0x2	2
+r7             0x1fd2c	130348
+r8             0x0	0
+r9             0x1b02	6914
+r10            0x8	8
+r11            0x200000	2097152
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fd04	130308
+lr             0x10da0	69024
+pc             0x10ad4	68308
+sr             0x40	64
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x0	0
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0
+
+Thread 7 (stdcore[0] hwthread 6):
+
+***** Call Stack *****
+#0  dsp_loudness (c_dsp_gain=6402, c_gain_audio=6658) at .././src/dsp_loudness.xc:137
+#1  0x0001047c in main () at .././src/main.xc:174
+
+***** Disassembly *****
+0x10260 <dsp_loudness+48>:	testct (2r)     r0, res[r10] *
+0x10262 <dsp_loudness+50>:	bt (ru6)        r0, 0x17
+0x10264 <dsp_loudness+52>:	in (2r)         r0, res[r10] *
+0x10266 <dsp_loudness+54>:	out (r2r)       res[r4], r7 *
+0x10268 <dsp_loudness+56>:	add (2rus)      r0, r4, 0x0
+
+***** Registers *****
+r0             0x0	0
+r1             0x0	0
+r2             0x0	0
+r3             0x1fcc4	130244
+r4             0x1a02	6658
+r5             0x1fcbc	130236
+r6             0x1fcc4	130244
+r7             0x0	0
+r8             0x1fcb4	130228
+r9             0x1fcb4	130228
+r10            0x1902	6402
+r11            0x0	0
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fcb0	130224
+lr             0x10250	66128
+pc             0x10260	66144
+sr             0x40	64
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x0	0
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0
+
+Thread 6 (stdcore[0] hwthread 5):
+
+***** Call Stack *****
+#0  dsp_equalisation (c_dsp_eq=5890) at .././src/dsp_equalisation.xc:88
+#1  0x00010492 in main () at .././src/main.xc:169
+
+***** Disassembly *****
+0x101dc <dsp_equalisation+24>:	in (2r)         r0, res[r4] *
+0x101de <dsp_equalisation+26>:	out (r2r)       res[r4], r7 *
+0x101e0 <dsp_equalisation+28>:	testct (2r)     r0, res[r4] *
+0x101e2 <dsp_equalisation+30>:	bt (ru6)        r0, 0xf
+0x101e4 <dsp_equalisation+32>:	in (2r)         r0, res[r4] *
+
+***** Registers *****
+r0             0x1fc9c	130204
+r1             0x0	0
+r2             0x0	0
+r3             0x1fca4	130212
+r4             0x1702	5890
+r5             0x1fc9c	130204
+r6             0x1fca4	130212
+r7             0x0	0
+r8             0x0	0
+r9             0x0	0
+r10            0x0	0
+r11            0x0	0
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fc98	130200
+lr             0x101d6	66006
+pc             0x101dc	66012
+sr             0x40	64
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x0	0
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0
+
+Thread 5 (stdcore[0] hwthread 4):
+
+***** Call Stack *****
+#0  dsp_control (c_decouple_dsp=5378, c_dsp_eq=5634, c_dsp_gain=6146) at .././src/dsp_control.xc:191
+#1  0x000104b4 in main () at .././src/main.xc:164
+
+***** Disassembly *****
+0x1014a <dsp_control+58>:	in (2r)         r0, res[r9] *
+0x1014c <dsp_control+60>:	ldc (ru6)       r0, 0x0
+0x1014e <dsp_control+62>:	out (r2r)       res[r10], r0 *
+0x10150 <dsp_control+64>:	testct (2r)     r0, res[r10] *
+0x10152 <dsp_control+66>:	bt (ru6)        r0, 0x26
+
+***** Registers *****
+r0             0x0	0
+r1             0x0	0
+r2             0x0	0
+r3             0x1fc84	130180
+r4             0x1fc8c	130188
+r5             0x1fc84	130180
+r6             0x1fc7c	130172
+r7             0x1fc74	130164
+r8             0x1802	6146
+r9             0x1602	5634
+r10            0x1502	5378
+r11            0x0	0
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fc68	130152
+lr             0x10140	65856
+pc             0x1014a	65866
+sr             0x40	64
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x0	0
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0
+
+Thread 4 (stdcore[0] hwthread 3):
+
+***** Call Stack *****
+#0  __kret () at .././../module_usb_aud_shared/usb_buffer/decouple.xc:797
+#1  0x000104ce in main () at .././src/main.xc:153
+
+***** Disassembly *****
+0x12930 <__kret+306>:	in (2r)         r0, res[r5] *
+0x12932 <__kret+308>:	outct (rus)     res[r5], 0x9 *
+0x12934 <__kret+310>:	out (r2r)       res[r5], r1 *
+0x12936 <__kret+312>:	stw (lru6)      r7, dp[0x4b8]
+0x1293a <__kret+316>:	stw (lru6)      r2, dp[0x2cc]
+
+***** Registers *****
+r0             0x4	4
+r1             0x2ee00	192000
+r2             0x1	1
+r3             0x3	3
+r4             0x0	0
+r5             0x1402	5122
+r6             0xfffffffc	-4
+r7             0x0	0
+r8             0x18824	100388
+r9             0x1661c	91676
+r10            0x0	0
+r11            0x30	48
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fc5c	130140
+lr             0x104ce	66766
+pc             0x12930	76080
+sr             0x40	64
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x0	0
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x15eb8	89784
+
+Thread 3 (stdcore[0] hwthread 2):
+
+***** Call Stack *****
+#0  0x00012c18 in buffer (c_aud_out=1026, c_aud_in=3074, c_aud_fb=2562, c_midi_from_host=<value optimized out>, c_midi_to_host=<value optimized out>, c_int=4098, c_sof=258, c_aud_ctl=4866, p_off_mclk=67072) at .././../module_usb_aud_shared/usb_buffer/usb_buffer.xc:215
+#1  0x00010500 in main () at .././src/main.xc:146
+
+***** Disassembly *****
+0x12c18 <buffer+276>:	waiteu (0r)      *
+0x12c1a <buffer+278>:	ldw (ru6)       r1, sp[0x9]
+0x12c1c <buffer+280>:	ldc (ru6)       r0, 0x8
+0x12c1e <buffer+282>:	mul (l3r)       r0, r1, r0
+0x12c22 <buffer+286>:	stw (ru6)       r0, sp[0x9]
+
+***** Registers *****
+r0             0x102	258
+r1             0x4	4
+r2             0xdda1	56737
+r3             0x1878c	100236
+r4             0x0	0
+r5             0x0	0
+r6             0x1880c	100364
+r7             0x1002	4098
+r8             0xa02	2562
+r9             0xc02	3074
+r10            0x402	1026
+r11            0x1	1
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fc00	130048
+lr             0x12b74	76660
+pc             0x12c18	76824
+sr             0xc1	193
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x102	258
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0
+
+Thread 2 (stdcore[0] hwthread 1):
+
+***** Call Stack *****
+#0  0x00011310 in AudioClassRequests_2 (ep0_out=<value optimized out>, ep0_in=100340, sp=<value optimized out>, c_audioControl=4610, c_mix_ctl=<value optimized out>, c_clk_ctl=<value optimized out>) at .././../module_usb_aud_shared/endpoint0/audiorequests.xc:356
+#1  0x0001209c in Endpoint0 (c_ep0_out=<value optimized out>, c_ep0_in=<value optimized out>, c_audioControl=0, c_mix_ctl=0, c_clk_ctl=0) at .././../module_usb_aud_shared/endpoint0/endpoint0.xc:772
+#2  0x00010524 in main () at .././src/main.xc:140
+
+***** Disassembly *****
+0x11310 <AudioClassRequests_2+388>:	chkct (rus)     res[r0], 0x1 *
+0x11312 <AudioClassRequests_2+390>:	getr (rus)      r2, 0x1
+0x11314 <AudioClassRequests_2+392>:	setc (ru6)      res[r2], 0x1 *
+0x11316 <AudioClassRequests_2+394>:	in (2r)         r0, res[r2] *
+0x11318 <AudioClassRequests_2+396>:	ldw (lru6)      r1, cp[0x14]
+
+***** Registers *****
+r0             0x1202	4610
+r1             0x2ee00	192000
+r2             0x4	4
+r3             0x1770000	24576000
+r4             0x29	41
+r5             0x1f56c	128364
+r6             0x1fbac	129964
+r7             0x187f4	100340
+r8             0x187ac	100268
+r9             0x0	0
+r10            0x0	0
+r11            0x0	0
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1f540	128320
+lr             0x11276	70262
+pc             0x11310	70416
+sr             0x40	64
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x0	0
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0
+
+Thread 1 (stdcore[0] hwthread 0):
+
+***** Call Stack *****
+#0  0x000141ca in XUD_TokenRx_Pid ()
+#1  0x00014046 in SBuffFull ()
+
+***** Disassembly *****
+0x141ca <XUD_TokenRx_Pid>:	inpw (l2rus)    r11, res[r0], 0x8 *
+0x141ce <XUD_TokenRx_Pid+4>:	shr (2rus)      r11, r11, 0x18
+0x141d0 <XUD_TokenRx_Pid+6>:	ldaw (lru6)     r10, dp[0x30a]
+0x141d4 <XUD_TokenRx_Pid+10>:	ldw (3r)        r10, r10[r11]
+0x141d6 <BranchOnTokenPid>:	bau (1r)        r10
+
+***** Registers *****
+r0             0x80100	524544
+r1             0x10d00	68864
+r2             0x80000	524288
+r3             0x0	0
+r4             0x3	3
+r5             0x18b2c	101164
+r6             0x8e9e	36510
+r7             0xf335	62261
+r8             0x493e0	300000
+r9             0xa001	40961
+r10            0x201	513
+r11            0xb43b205e	-1271193506
+cp             0x150f0	86256
+dp             0x152c0	86720
+sp             0x1fd60	130400
+lr             0x14046	81990
+pc             0x141ca	82378
+sr             0xc2	194
+spc            0x0	0
+ssr            0x0	0
+et             0x0	0
+ed             0x10e00	69120
+sed            0x0	0
+kep            0x10080	65664
+ksp            0x0	0

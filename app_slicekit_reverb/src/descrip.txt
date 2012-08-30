@@ -1,0 +1,10 @@
+History of Reverb Application
+=============================
+See Read.Me in module_reverb for full description
+
+30-AUG-2012
+-----------
+First draft using Slice-Kit without extra Memory Slice.
+Some issues with memory access exceptions in certain configurations.
+Max delay 6700 Samples.
+
