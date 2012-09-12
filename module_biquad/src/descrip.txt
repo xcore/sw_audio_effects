@@ -50,3 +50,8 @@ Lo-pass, Hi-pass, Band-pass, Notch(Band-stop), All-pass(Phase change), and Custo
 -----------
 Removed customdefines.h as board specific.
 Rewrote to remove 'board specific' definitions. (E.g. DEFAULT_FREQ)
+
+07-SEP-2012
+-----------
+Rewrote so interface receives 'BiQuad' parameters,
+Now uses separate config_biquad_filter function for changing parameters

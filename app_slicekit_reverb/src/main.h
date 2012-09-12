@@ -34,7 +34,7 @@
 #include "global.h"
 #include "codec.h"
 #include "dsp_control.h"
-#include "dsp_equalisation.h"
+#include "dsp_biquad.h"
 #include "dsp_loudness.h"
 #include "audio_io.h"
 

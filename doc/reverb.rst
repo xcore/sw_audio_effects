@@ -1,7 +1,7 @@
 Reverb Audio Effect 
 '''''''''''''''''''
 
-This module is a audio reverb called from within a single thread.
+This module is a audio reverb using 3 threads for DSP, and 1 for Audio I/O.
 
 API
 ===
@@ -24,7 +24,7 @@ Functions
 Example
 =======
 
-This function is designed to be called from the dsp function
+This function is designed to be called from a *.xc file
 
 .. literalinclude:: module_reverb/src/reverb.c
   :start-after: //::declaration

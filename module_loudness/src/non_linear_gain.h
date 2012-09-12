@@ -28,18 +28,44 @@
 #include <stdlib.h>
 #include <math.h>
 #include <assert.h>
+#include <print.h>
 #include "types64bit.h"
+#include "common_audio.h"
 
-#ifndef NUM_USB_CHAN_OUT
-#define NUM_USB_CHAN_OUT (2) // For test purposes
-#endif // NUM_USB_CHAN_OUT
+#ifndef NUM_GAIN_CHANS
+#define NUM_GAIN_CHANS (2) // For test purposes
+#endif // NUM_GAIN_CHANS
+
+#define DEF_GAIN (1 << 2) // Default Gain. NB Currently only power-of-2
+
+typedef struct GAIN_PARAM_TAG // Structure containing Gain parameters
+{
+	S32_T gain; // Maximum desired gain
+} GAIN_PARAM_S;
 
 /******************************************************************************/
-int non_linear_gain_wrapper( // Call non-linear-gain for one sample
+S32_T use_loudness( // Call non-linear-gain for one sample
 	S32_T inp_samp, // Input Sample
-	S32_T cur_chan, // current channel
-	S32_T num_iters // number of applications of non-linear-gain transform
+	S32_T cur_chan  // current channel
 ); // Return Filtered Output Sample
+/******************************************************************************/
+
+#ifdef __XC__
+// XC File
+
+/******************************************************************************/
+void config_loudness( // Configure gain parameters. NB Must be called before use_loudness
+	GAIN_PARAM_S &cur_param_s // Reference to structure containing gain parameters
+);
+/******************************************************************************/
+
+#else //if __XC__
+// 'C' File
+
+/******************************************************************************/
+void config_loudness( // Configure gain parameters. NB Must be called before use_loudness
+	GAIN_PARAM_S * cur_param_ps // Pointer to structure containing gain parameters
+);
 /******************************************************************************/
 
 #define MAX_ITERS 15 // Maximum allowed number of non-linear-gain iterations before timing breaks 
@@ -65,25 +91,19 @@ int non_linear_gain_wrapper( // Call non-linear-gain for one sample
 #define MAX_FRAC ((S64_T)1 << FRAC_BITS) // Max value of fractional bits
 #define HALF_FRAC (MAX_FRAC >> 1) // Half of Max fractional value
  
-#ifdef __XC__
-// XC File
-
-#else //if __XC__
-// 'C' File
-
-// Coefficients for Low-Pass filter.
-typedef S32_T SAMP_CHAN_T; // sample type on channel (e.g. 32-bit)
-
 typedef struct GAIN_CHAN_TAG // Structure containing gain data for one channel, updated every sample
 {
-	U32_T coef_g; // coefficient for gain shaping
 	S64_T err_s[MAX_ITERS]; // array of diffusion errors for sample
 	S64_T err_g[MAX_ITERS]; // array of diffusion errors for gain
 } GAIN_CHAN_S;
 
 typedef struct GAIN_TAG // Structure containing gain data for all channels
 {
-	GAIN_CHAN_S chan_s[NUM_USB_CHAN_OUT]; // Array of structures containing gain data for each channel
+	GAIN_CHAN_S chan_s[NUM_GAIN_CHANS]; // Array of structures containing gain data for each channel
+	S32_T num_iters; // number of applications of non-linear-gain transform
+	U32_T coef_g; // coefficient for gain shaping
+	S32_T init_done;	// Flag indicating gain-shaping is initialised
+	S32_T params_set; // Flag indicating Parameters are set
 } GAIN_S;
 
 #endif // else __XC__

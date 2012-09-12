@@ -24,9 +24,12 @@
 #ifndef _DSP_LOUDNESS_H_
 #define _DSP_LOUDNESS_H_
 
+#include <xs1.h>
 #include <print.h>
 #include "types64bit.h"
 #include "global.h"
+#include "common_utils.h"
+#include "reverb.h"
 #include "non_linear_gain.h"
 
 /******************************************************************************/

@@ -8,3 +8,9 @@ First draft using Slice-Kit without extra Memory Slice.
 Some issues with memory access exceptions in certain configurations.
 Max delay 6700 Samples.
 
+11-SEP-2010
+-----------
+Updated to allow configuration of reverb parameters. e.g. Dry/Effect mix levels, room-size, etc
+Streams are now inspected for control tokens, to determine Audio or Configuration data.
+Max delay now 5000 samples. (room size =31)
+

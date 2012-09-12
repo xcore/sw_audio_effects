@@ -1,4 +1,4 @@
-/******************************************************************************\
+/*****************************************************************************\
  * Header:  dsp_control
  * File:    dsp_control.h
  * Author: Mark Beaumont
@@ -19,24 +19,26 @@
  * below. The modifications to the code are still covered by the
  * copyright notice above.
  *
-\******************************************************************************/
+\*****************************************************************************/
 
 #ifndef _DSP_CONTROL_H_
 #define _DSP_CONTROL_H_
 
+#include <xs1.h>
 #include <print.h>
 #include "types64bit.h"
 #include "global.h"
+#include "common_utils.h"
 #include "reverb.h"
 
-/******************************************************************************/
+/*****************************************************************************/
 void dsp_control( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O thread (bi-directional)
 	streaming chanend c_dsp_eq, // Channel connecting to Equalisation thread (bi-directional)
 	streaming chanend c_dsp_gain // Channel connecting to Loudness thread (bi-directional)
 );
-/******************************************************************************/
+/*****************************************************************************/
 
 #endif // _DSP_CONTROL_H_
-/******************************************************************************/
+/*****************************************************************************/
 // dsp_control.h

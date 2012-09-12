@@ -50,7 +50,7 @@ int main (void)
 
 		on stdcore[0]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control thread
 
-		on stdcore[AUDIO_IO_CORE]: dsp_equalisation( c_dsp_eq ); // Equalisation thread
+		on stdcore[AUDIO_IO_CORE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation thread
 
 		on stdcore[AUDIO_IO_CORE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) thread
 	}

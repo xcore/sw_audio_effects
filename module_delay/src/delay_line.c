@@ -22,48 +22,36 @@
 
 #include "delay_line.h"
 
-static DELAY_S delay_s; // Structure containing all delay data (NB Make global to avoid using malloc)
+// Structure containing all delay data (NB Make global to avoid using malloc)
+static DELAY_S delay_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
 
 /******************************************************************************/
 void get_sample_delays( // Calculate delay taps in samples
-	DELAY_S * delay_sp, // Pointer to structure containing all delay data
 	U32_T samp_delays[], // delays measured in samples
-	S32_T samp_freq, // current sample frequency
-	S32_T delay_ms // current delay time (in milli-secs)
-	) // Return delay in samples
+	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
+) // Return delay in samples
 {
-	U32_T chk_delay; // current delay measured in samples
-	U64_T samps_1000; // No of samples (in 1000 seconds)
+	S32_T num_taps = cur_param_ps->num; // Get Number of taps to calculate 
 	S32_T tap_cnt; // delay measured in samples
+	U32_T chk_delay; // current delay measured in samples
 
-
-	// Check for sensible sample frequency
-	if (samp_freq < MIN_AUDIO_FREQ)
-	{
-		samp_freq = MIN_AUDIO_FREQ;
-	} // if (samp_freq < MIN_AUDIO_FREQ)
-
-	// Check Max delay in samples. NB divide by 1000 as delay_ms in milli-secs
-	samps_1000 = (S64_T)samp_freq * (S64_T)delay_ms; // Handy intermediate value
-	chk_delay = (S32_T)((samps_1000 + (S64_T)500) / (S64_T)1000);
-  
-	// Check buffer is large enough
-	if (chk_delay > MAX_DELAY )
-	{ // Down-size requested max delay to fit in memory
-		delay_ms = (S32_T)(((S64_T)delay_ms * (S64_T)MAX_DELAY) / (S64_T)chk_delay); // Reduce to max allowed delay
-	} // if (sample_delay >= DELAY_SIZE )
 
 	// Loop through all delay taps.
-	for (tap_cnt = 0; tap_cnt < NUM_TAPS; tap_cnt++)
+	for (tap_cnt = 0; tap_cnt < num_taps; tap_cnt++)
 	{
-		// Calculate delay paremeters in samples. NB divide by 1000 as delay_ms in milli-secs
-		samp_delays[tap_cnt] = (S32_T)((samps_1000 * (S64_T)delay_sp->tap_ratios[tap_cnt] + ((S64_T)500 << TAP_BITS) ) / ((S64_T)1000 << TAP_BITS) );
+		// Calculate current delay in samples
+		chk_delay = ((S64_T)cur_param_ps->freq * (S64_T)cur_param_ps->us_delays[tap_cnt] + (S64_T)500000) / (S64_T)1000000;
+
+		assert(DELAY_SIZE > chk_delay); // Check buffer is large enough
+
+		samp_delays[tap_cnt] = chk_delay; // Assign delay in samples
 	} // for tap_cnt
 
 } // get_sample_delays
 /******************************************************************************/
 void update_delay_chan( // Update delays for one channel
-	DELAY_CHAN_S * chan_sp, // Pointer to structure containing current Delay data
+	DELAY_CHAN_S * chan_ps, // Pointer to structure containing current Delay data
+	DELAY_PARAM_S * cur_param_ps, // Pointer to structure containing delay-line parameters
 	U32_T samp_delays[]  // delays measured in samples
 )
 {
@@ -71,169 +59,124 @@ void update_delay_chan( // Update delays for one channel
 	U32_T cur_delay; // current delay in samples
 
 
+	chan_ps->tap_num = cur_param_ps->num; // Update number of delay taps in use on this channel
+
 	// Loop through all delay taps.
-	for (tap_cnt = 0; tap_cnt < NUM_TAPS; tap_cnt++)
+	for (tap_cnt = 0; tap_cnt < chan_ps->tap_num; tap_cnt++)
 	{
-		cur_delay = samp_delays[tap_cnt]; // Get current sample delay
-		chan_sp->delays[tap_cnt] = cur_delay; // Update sample delay
-		chan_sp->outs[tap_cnt] = (chan_sp->inp + DELAY_SIZE - cur_delay) % DELAY_SIZE; // Update output offset
+		cur_delay = samp_delays[tap_cnt]; // Get current common sample delay
+		chan_ps->delays[tap_cnt] = cur_delay; // Update channel sample delay
+		chan_ps->outs[tap_cnt] = (chan_ps->inp + DELAY_SIZE - cur_delay) % DELAY_SIZE; // Update output offset
 	} // for tap_cnt
 
 } // update_delay_chan
 /******************************************************************************/
 void update_common_delays( // Update delays for each channel
-	DELAY_S * delay_sp, // Pointer to structure containing all delay data
-	S32_T samp_freq, // current sample frequency
-	S32_T delay_ms // current delay time (in milli-secs)
+	DELAY_S * delay_ps, // Pointer to structure containing all delay data
+	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
 )
 {
-	U32_T samp_delays[NUM_TAPS]; // delays measured in samples
+	U32_T samp_delays[MAX_TAPS]; // delays measured in samples
 	S32_T chan_cnt; // channel counter
 
 
-	// Get sample delay
-	get_sample_delays( delay_sp ,samp_delays ,samp_freq ,delay_ms );
+	// Calculate delays in samples
+	get_sample_delays( samp_delays ,cur_param_ps );
+
+// printstr("DL= "); printintln( (int)samp_delays[0] ); // MB~
 
 	// Loop through all output channels
-	for (chan_cnt=0; chan_cnt<NUM_USB_CHAN_OUT; chan_cnt++)
+	for (chan_cnt=0; chan_cnt<NUM_DELAY_CHANS; chan_cnt++)
 	{
-		update_delay_chan( &(delay_sp->chan_s[chan_cnt]) ,samp_delays );
+		update_delay_chan( &(delay_ps->chan_s[chan_cnt]) ,cur_param_ps ,samp_delays );
 	} // for chan_cnt
 
 } // update_common_delays
 /******************************************************************************/
-void init_delay_chan( // Initialise delay data for one channel. WARNING chan_sp->delay must have been previously initialised 
-	DELAY_CHAN_S * chan_sp, // Pointer to structure containing current Delay data
-	U32_T samp_delays[]  // delays measured in samples
+void init_delay_chan( // Initialise delay data for one channel.
+	DELAY_CHAN_S * chan_ps // Pointer to structure containing current Delay data
 )
 {
 	S32_T delay_cnt; // delay-line counter
-	S32_T tap_cnt; // delay measured in samples
-	U32_T cur_delay; // current delay in samples
-	U32_T max_delay; // maximum delay in samples
 
 
 	// Loop through delay slots
 	for (delay_cnt=0; delay_cnt<DELAY_SIZE; delay_cnt++)
 	{
-		chan_sp->buf[delay_cnt] = 0; // Clear delay slot
+		chan_ps->buf[delay_cnt] = 0; // Clear delay slot
 	} // for delay_cnt
 
-	max_delay = samp_delays[NUM_TAPS - 1]; // Get maximum delay (in samples)
-	chan_sp->inp = max_delay; // Set offset for input sample to maximum delay
-
-	// Loop through all delay taps.
-	for (tap_cnt = 0; tap_cnt < NUM_TAPS; tap_cnt++)
-	{
-		cur_delay = samp_delays[tap_cnt]; // Get current sample delay
-		chan_sp->delays[tap_cnt] = cur_delay; // Update sample delay
-		chan_sp->outs[tap_cnt] = max_delay - cur_delay; // Set offset for current output sample
-	} // for tap_cnt
-
+	chan_ps->inp = MAX_DELAY; // Set offset for input sample to last slot in delay-line
 } // init_delay_chan
 /******************************************************************************/
-void init_delay( // Create structure for all delay data, and initialise
-	DELAY_S * delay_sp, // Pointer to structure containing all delay data
-	S32_T samp_freq, // current sample frequency
-	S32_T delay_ms // current delay time (in milli-secs)
+void config_delay_line( // Configure delay_line parameters. NB Must be called before use_delay_line
+	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
 )
 {
 	S32_T chan_cnt; // delay-line counter
-	U32_T samp_delays[NUM_TAPS]; // delays measured in samples
 
 
-	assert(4 ==  NUM_TAPS); // If fails, update below for different No of taps
-	delay_sp->tap_ratios[0] = TAP_0;
-	delay_sp->tap_ratios[1] = TAP_1;
-	delay_sp->tap_ratios[2] = TAP_2;
-	delay_sp->tap_ratios[3] = TAP_3;
+	// Check if Delay-Line initialised
+	if (0 == delay_gs.init_done)
+	{ // Initialse Delay-line
+		for (chan_cnt=0; chan_cnt<NUM_DELAY_CHANS; chan_cnt++)
+		{
+			init_delay_chan( &(delay_gs.chan_s[chan_cnt]) );
+		} // for chan_cnt
 
-	assert(MAX_TAP == delay_sp->tap_ratios[NUM_TAPS - 1]); // Calculations depend on Max tap value of MAX_TAP
+		delay_gs.init_done = 1; // Signal Delay-line initialised
+	} // if (0 == delay_gs->init_done)
 
-	// Get sample delay
-	get_sample_delays( delay_sp ,samp_delays ,samp_freq ,delay_ms );
-
-	// Loop through all output channels
-	for (chan_cnt=0; chan_cnt<NUM_USB_CHAN_OUT; chan_cnt++)
+	// Check for sensible frequency
+	if (MIN_AUDIO_FREQ < cur_param_ps->freq)
 	{
-		init_delay_chan( &(delay_sp->chan_s[chan_cnt]) ,samp_delays );
-	} // for chan_cnt
+		// recalculate sample delay
+	  update_common_delays( &(delay_gs) ,cur_param_ps );
 
-} // init_delay
+		delay_gs.params_set = 1; // Signal Delay-line parameters configured
+	} // if (MIN_AUDIO_FREQ < cur_param_ps->freq)
+
+} // config_delay_line
 /******************************************************************************/
 void delay_line_chan( // Retrieve output sample from buffer, and store input sample
 	SAMP_CHAN_T out_samps[], // array of delayed output samples at channel precision
 	SAMP_CHAN_T inp_samp, // input sample at channel precision
-	DELAY_CHAN_S * chan_sp // Pointer to structure containing current Delay data
+	DELAY_CHAN_S * chan_ps // Pointer to structure containing current Delay data
 ) // Return Filtered Output Sample
 {
 	S32_T tap_cnt; // delay measured in samples
 
 
-	chan_sp->buf[ chan_sp->inp ] = inp_samp ; // Store input sample in buffer 
-	chan_sp->inp = (chan_sp->inp + 1) % DELAY_SIZE; // increment input offset and wrap
+	chan_ps->buf[ chan_ps->inp ] = inp_samp ; // Store input sample in buffer 
+	chan_ps->inp = (chan_ps->inp + 1) % DELAY_SIZE; // increment input offset and wrap
 
 	// Loop through all delay taps.
-	for (tap_cnt = 0; tap_cnt < NUM_TAPS; tap_cnt++)
+	for (tap_cnt = 0; tap_cnt < chan_ps->tap_num; tap_cnt++)
 	{
-		out_samps[tap_cnt] = chan_sp->buf[ chan_sp->outs[tap_cnt] ]; // Retrieve output sample from buffer 
-		chan_sp->outs[tap_cnt] = (chan_sp->outs[tap_cnt] + 1) % DELAY_SIZE; // increment output offset and wrap
+		out_samps[tap_cnt] = chan_ps->buf[ chan_ps->outs[tap_cnt] ]; // Retrieve output sample from buffer 
+		chan_ps->outs[tap_cnt] = (chan_ps->outs[tap_cnt] + 1) % DELAY_SIZE; // increment output offset and wrap
 	} // for tap_cnt
 
 } // delay_line_chan
 /******************************************************************************/
-void delay_line_wrapper( // Wrapper for delay_line function
+void use_delay_line( // exercise delay_line for one input sample. NB Must have previously called config_delay_line
 	SAMP_CHAN_T out_samps[], // array of delayed output samples at channel precision
 	SAMP_CHAN_T inp_samp, // input sample from channel
-	S32_T cur_chan, // current channel
-	S32_T samp_freq, // current sample frequency
-	S32_T delay_ms  // sample delay in milli-secs
-) // Return filtered Output Sample
+	S32_T cur_chan // current channel
+)
 {
-	static S32_T init_flg = 0; // Flag indicating Delay is initialised
-	static S32_T old_delay = 0; // old sample delay
-	static S32_T old_freq = 0; // old sample frequency
-	S32_T valid_change = 0; // Preset flag to `parameters unchanged`
-
-
-	// Check if filter initialised
-	if (0 == init_flg)
+	// Check if delay-line parameters have been initialised
+	if (0 == delay_gs.params_set)
 	{
-  	init_delay( &delay_s ,samp_freq ,delay_ms );	// Initialise delay data structure
-		init_flg = 1;	// Set initialisation-done flag
+		assert(0 == 1); // Please call config_delay_line() function before use_delay_line() 
 	} // if (0 == init_flag)
-
-	// Check for valid parameter change ...
-
-	if (old_freq != samp_freq)
+	else
 	{
-		// Check for sensible frequency
-		if (MIN_AUDIO_FREQ < samp_freq)
-		{
-			valid_change = 1; // Signal valid parameter change
-		} // if (20 < samp_freq)
-
-		old_freq = samp_freq; // Store updated sample frequency
-	} // if (samp_freq != old_freq)
-
-	if (old_delay != delay_ms)
-	{
-		valid_change = 1; // Signal valid parameter change
-		old_delay = delay_ms;
-	} // if (old_delay != delay_ms)
-
-	// Check if delay-times need updating
-	if (1 == valid_change)
-	{
-		// recalculate sample delay
-	  update_common_delays( &(delay_s) ,samp_freq ,delay_ms );
-	} // if (samp_freq != old_freq)
-
-	// Insert new sample into delay-line, and retrieve a set of delayed samples
-	delay_line_chan( out_samps ,inp_samp ,&(delay_s.chan_s[cur_chan]) );
-
+		// Insert new sample into delay-line, and retrieve a set of delayed samples
+		delay_line_chan( out_samps ,inp_samp ,&(delay_gs.chan_s[cur_chan]) );
 //	out_samp[0] = inp_samp; //MB~ DBG
+	} // else !(0 == init_flag)
 
-} // delay_line_wrapper
+} // use_delay_line
 /******************************************************************************/
-// delay_line.xc
+// delay_line.c

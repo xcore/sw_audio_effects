@@ -28,62 +28,70 @@
 #include <stdlib.h>
 #include <math.h>
 #include <assert.h>
+#include <print.h>
 #include "types64bit.h"
+#include "common_audio.h"
 
-#ifndef NUM_USB_CHAN_OUT
-#define NUM_USB_CHAN_OUT (2) // For test purposes
-#endif // NUM_USB_CHAN_OUT
+#ifndef NUM_DELAY_CHANS 
+#define NUM_DELAY_CHANS (2) // For test purposes
+#endif // NUM_DELAY_CHANS
 
-#define MIN_AUDIO_FREQ 20 // Minimum Audio Frequency (In Hz)
-#define DEFAULT_DELAY 0 // Default delay (in milli-seconds)
-#define NUM_TAPS 4 // Number of different taps into delay line
+#define MAX_TAPS 8 // Max. No. of different taps supported
+#define DEF_TAPS 4 // Default number of taps
+#define DEF_SAMP_FREQ 48000 // Default Sample Frequency (In Hz)
+
+typedef struct DELAY_PARAM_TAG // Structure containing BiQuad parameters
+{
+	S32_T us_delays[MAX_TAPS]; // Set of delays in micro-seconds
+	S32_T num; // No. of delay taps in use
+	S32_T freq; // Sample frequency
+} DELAY_PARAM_S;
 
 /******************************************************************************/
-void delay_line_wrapper( // Wrapper for delay_line function
+void use_delay_line( // Exercise delay-line for one input sample. NB Must have previously called config_delay_line
 	S32_T out_samps[], // array of delayed output samples at channel precision
 	S32_T inp_samp, // Input Sample
-	S32_T cur_chan, // current channel
-	S32_T samp_freq, // current sample frequency
-	S32_T delay_ms // sample delay in milli-secs
+	S32_T cur_chan // current channel
 ); // Return delayed output sample
 /******************************************************************************/
 
 #ifdef __XC__
 // XC File
 
+/******************************************************************************/
+void config_delay_line( // Configure delay_line parameters. NB Must be called before use_delay_line
+	DELAY_PARAM_S &cur_param_s // Reference to structure containing delay-line parameters
+);
+/******************************************************************************/
+
 #else //if __XC__
 // 'C' File
 
-#define DELAY_SIZE 6700 // Size of delay buffer in samples. Adjust to suit available memory
+/******************************************************************************/
+void config_delay_line( // Configure delay_line parameters. NB Must be called before use_delay_line
+	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
+);
+/******************************************************************************/
+
+#define DELAY_SIZE 5000 // Size of delay buffer in samples. Adjust to suit available memory
 #define MAX_DELAY (DELAY_SIZE - 1) // Max index into delay buffer
 
-/* These filter taps are based on a room 619x1000. i.e. (~GoldenRatio) * DELAY_SCALE, 
- * WARNING: If DELAY_BITS is altered, the filter taps need re-calculating
- */
-
-#define TAP_BITS 10 // Bit-shift used to scale delay tap values
-#define MAX_TAP (1 << TAP_BITS) // Max delay tap ratio (scaling value for other delay taps)
-#define HALF_TAP (MAX_TAP >> 1) // Half scaling value (for rounding) delay tap values
-
-#define TAP_0 263
-#define TAP_1 431
-#define TAP_2 631
-#define TAP_3 MAX_TAP // NB Maximum tap value must be 'Power of 2' (see above)
-
-typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
+#define MIN_AUDIO_FREQ 20 // Minimum Audio Frequency (In Hz)
 
 typedef struct DELAY_CHAN_TAG // Structure containing delayed data for one channel, updated every sample
 {
-	SAMP_CHAN_T buf[DELAY_SIZE]; // Buffer to hold delayed samples
-	SAMP_CHAN_T outs[NUM_TAPS]; // offset into buffer for output samples
-	SAMP_CHAN_T inp; // offset into buffer for input sample
-	U32_T delays[NUM_TAPS]; // delays for this channel (in samples)
+	SAMP_CHAN_T buf[DELAY_SIZE]; // Delay-line Buffer
+	SAMP_CHAN_T outs[MAX_TAPS]; // Buffer to hold set of delayed output samples
+	U32_T delays[MAX_TAPS]; // offset into Delay-line for delayed output samples
+	SAMP_CHAN_T inp; // offset into Delay-line for input sample
+	S32_T tap_num;		// Number of delay taps in use on this channel
 } DELAY_CHAN_S;
 
 typedef struct DELAY_TAG // Structure containing all delay data
 {
-	DELAY_CHAN_S chan_s[NUM_USB_CHAN_OUT]; // Array of structure containing data for each channel
-	U32_T tap_ratios[NUM_TAPS]; // delay tap ratios (NB Actual values scaled by room size)
+	DELAY_CHAN_S chan_s[NUM_DELAY_CHANS]; // Array of structure containing data for each channel
+	S32_T init_done;	// Flag indicating Delay is initialised
+	S32_T params_set; // Flag indicating Parameters are set
 } DELAY_S;
 
 #endif // else __XC__

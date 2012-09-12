@@ -1,0 +1,8 @@
+History of Delay-line Application
+=================================
+See Read.Me in module_delay for full description
+
+06-SEP-2012
+-----------
+First draft using Slice-Kit without extra Memory Slice.
+Used 4 delay tap, and feedback to create long train of echos

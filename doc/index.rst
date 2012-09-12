@@ -6,4 +6,5 @@ Digital Audio Effects
    biquad_simple.rst
    delay.rst
    loudness.rst
+   reverb.rst
    utils.rst

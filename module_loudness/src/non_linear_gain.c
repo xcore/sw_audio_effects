@@ -58,29 +58,55 @@
 
 #include "non_linear_gain.h"
 
-static GAIN_S gain_s; // Structure containing all non-linear-gain data (NB Make global to avoid using malloc)
+// Structure containing all non-linear-gain data (NB Made global to avoid using malloc)
+static GAIN_S gain_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
 
 /******************************************************************************/
+void update_parameters( // Initialise parameters to generate required gain value (Approximately See below)
+	GAIN_S * gain_ps, // Pointer to structure containing all gain data
+	GAIN_PARAM_S * cur_param_ps // Pointer to structure containing gain parameters
+)
+// NB Current algorithm only supports gains that are a power-of-2, so requested gain is rounded to nearest power-of-2
+
+{
+	S32_T cur_gain = cur_param_ps->gain; // Get requested gain value
+	S32_T cur_iters = 1; // Initialise to minimum number of iterations
+
+	// Loop through LS bits of current gain	
+	while (3 < cur_gain)
+	{
+		cur_iters++; // Increment No. of iterations
+		cur_gain >>= 1; // divide gain by 2
+	} // while (3 < cur_gain)
+
+	// Check 2 most significant bits for rounding
+	if (3 == cur_gain)
+	{
+		cur_iters++; // Round-up No. of iterations
+	} // if (3 == cur_gain)
+
+	assert( MAX_ITERS >= cur_iters ); // If fails, need more diffusion error arrays
+
+	gain_gs.num_iters = cur_iters; // Store new iteration number
+} // update_parameters
+/******************************************************************************/
 void init_chan( // Initialise structure for one channel of gain data
-	GAIN_CHAN_S * gain_chan_sp, // Pointer to structure containing gain data for one channel
-	U32_T inp_coef // Coefficient value in FIXED POINT format.
+	GAIN_CHAN_S * gain_chan_ps // Pointer to structure containing gain data for one channel
 )
 {
 	S32_T iter_cnt; // iteration counter
 
 
-	gain_chan_sp->coef_g = inp_coef; // Initialise coefficient
-
 	// Loop through all iteration slots
 	for (iter_cnt=0; iter_cnt<MAX_ITERS; iter_cnt++)
 	{
-		gain_chan_sp->err_s[iter_cnt] = 0; // Clear diffusion error for sample
-		gain_chan_sp->err_g[iter_cnt] = 0; // Clear diffusion error for gain
+		gain_chan_ps->err_s[iter_cnt] = 0; // Clear diffusion error for sample
+		gain_chan_ps->err_g[iter_cnt] = 0; // Clear diffusion error for gain
 	} // for iter_cnt
 } // init_chan
 /******************************************************************************/
 void init_gain( // Initialise structure for all gain data
-	GAIN_S * gain_sp // Pointer to structure containing all gain data
+	GAIN_S * gain_ps // Pointer to structure containing all gain data
 )
 {
 	S32_T chan_cnt; // channel counter
@@ -106,15 +132,39 @@ void init_gain( // Initialise structure for all gain data
 	// Check for rounding
 	if (-1 == bit_shift) coef_val++;
 
+	gain_ps->coef_g = coef_val; // Initialise coefficient
+
 	// Loop through all output channels
-	for (chan_cnt=0; chan_cnt<NUM_USB_CHAN_OUT; chan_cnt++)
+	for (chan_cnt=0; chan_cnt<NUM_GAIN_CHANS; chan_cnt++)
 	{
-		init_chan( &(gain_sp->chan_s[chan_cnt]) ,coef_val );
+		init_chan( &(gain_ps->chan_s[chan_cnt]) );
 	} // for chan_cnt
 } // init_gain
 /******************************************************************************/
+void config_loudness( // Configure loudness parameters
+	GAIN_PARAM_S * cur_param_ps // Pointer to structure containing gain parameters
+)
+{
+	// Check if Gain-shaping initialised
+	if (0 == gain_gs.init_done)
+	{ // Initialse Gain shaping
+  	init_gain( &gain_gs );	// Initialise gain data structure
+
+		gain_gs.init_done = 1; // Signal Gain-shaping initialised
+	} // if (0 == gain_gs->init_done)
+
+// printstr("GN= "); printintln( (int)cur_param_ps->gain ); // MB~
+
+	// Calculate gain-shaping parameters
+	update_parameters( &gain_gs ,cur_param_ps );
+
+	gain_gs.params_set = 1; // Signal Gain-shaping parameters configured
+
+} // config_loudness 
+/******************************************************************************/
 SAMP_CHAN_T boost_gain( // Applies non-linear gain to input sample to generate output sample
-	GAIN_CHAN_S * gain_chan_sp, // Pointer to structure containing gain data for current channel
+	GAIN_S * gain_ps, // Pointer to structure containing all gain data
+	GAIN_CHAN_S * gain_chan_ps, // Pointer to structure containing gain data for current channel
 	SAMP_CHAN_T inp_samp, // input sample at channel precision
 	S32_T cur_iter // current value of iteration counter
 ) // Return Amplified Output Sample
@@ -137,76 +187,72 @@ SAMP_CHAN_T boost_gain( // Applies non-linear gain to input sample to generate o
 	if (THRESHOLD < inp_samp)
 	{ // Signal above low-level threshold
 		inp_room = MAX_MAGN - inp_samp; // Calculate input head-room
-		full_val = (U64_T)gain_chan_sp->coef_g * (U64_T)inp_room; // Calculate gain
+		full_val = (U64_T)gain_ps->coef_g * (U64_T)inp_room; // Calculate gain
 
-		full_val += gain_chan_sp->err_g[cur_iter]; // Add gain diffusion error for this iteration
+		full_val += gain_chan_ps->err_g[cur_iter]; // Add gain diffusion error for this iteration
 		redu_val = ((full_val + HALF_FRAC) >> FRAC_BITS); // Down-scale gain
-		gain_chan_sp->err_g[cur_iter] = full_val - (redu_val << FRAC_BITS); // Update gain diffusion error
+		gain_chan_ps->err_g[cur_iter] = full_val - (redu_val << FRAC_BITS); // Update gain diffusion error
 
 		full_val = redu_val * (S64_T)inp_room; // Multiply head_room by gain
 
-		full_val += gain_chan_sp->err_s[cur_iter]; // Add sample diffusion error for this iteration
+		full_val += gain_chan_ps->err_s[cur_iter]; // Add sample diffusion error for this iteration
 		redu_val = (full_val + MAX_MAGN) >> (MAGN_BITS + 1); // Down-scale to output precision (output headroom)
-		gain_chan_sp->err_s[cur_iter] = full_val - (redu_val << (MAGN_BITS + 1)); // Update sample diffusion error
+		gain_chan_ps->err_s[cur_iter] = full_val - (redu_val << (MAGN_BITS + 1)); // Update sample diffusion error
 
 		redu_val = MAX_MAGN - redu_val; // NB Calculates new output from output head-room
 	} // if (THRESHOLD <= inp_samp)
 	else
-
 	{ // Signal below low-level threshold
 		full_val = ((S64_T)MAX_HI * (S64_T)inp_samp) + unity; // Calculate gain
 		full_val = full_val * (S64_T)inp_samp; // Multiply input by gain
 
-		full_val += gain_chan_sp->err_s[cur_iter]; // Add sample diffusion error for this iteration
+		full_val += gain_chan_ps->err_s[cur_iter]; // Add sample diffusion error for this iteration
 		redu_val = (full_val + MAX_MAGN) >> (MAGN_BITS + 1); // Down-scale to output precision (output headroom)
-		gain_chan_sp->err_s[cur_iter] = full_val - (redu_val << (MAGN_BITS + 1)); // Update sample diffusion error
+		gain_chan_ps->err_s[cur_iter] = full_val - (redu_val << (MAGN_BITS + 1)); // Update sample diffusion error
 	} // else !(THRESHOLD <= inp_samp )
 
 //	redu_val = inp_samp; // Dbg
 	return (SAMP_CHAN_T)(sgn_samp * redu_val); // Re-create signed value
 } // boost_gain
 /******************************************************************************/
-S32_T non_linear_gain_wrapper( // Wrapper for non_linear_gain_wrapper
+S32_T use_loudness( // Wrapper for non_linear_gain_wrapper
 	S32_T inp_chan_samp, // input sample from channel
-	S32_T cur_chan, // current channel
-	S32_T num_iters // number of applications of non-linear-gain transform
+	S32_T cur_chan // current channel
 ) // Return Amplified Output Sample
 {
-	static S32_T init_flg = 0; // Flag indicating initialisation complete
 	static S32_T err = 0; // Diffusion Error
 	S64_T full_samp; // full precision sample
 	S32_T redu_samp; // reduced precision sample
 	S32_T out_samp; // amplified output sample at channel precision
-	S32_T iter_cnt; // Iteration count
+	S32_T iter_cnt; // Iteration counter
 
 
-	// Check if initialisation required
-	if (0 == init_flg)
+	// Check if delay-line parameters have been initialised
+	if (0 == gain_gs.params_set)
 	{
-		assert( MAX_ITERS >= num_iters ); // If fails, need more diffusion error arrays
-
-  	init_gain( &gain_s );	// Initialise gain data structure
-		init_flg = 1;	// Set initialisation-done flag
+		assert(0 == 1); // Please call config_loudness() function before use_loudness() 
 	} // if (0 == init_flag)
-
-	// Scale-down 32-bit sample to 24-bit
-	full_samp = (S64_T)inp_chan_samp + (S64_T)err; // Add diffusion error
-	redu_samp = (S32_T)((full_samp + HALF_SCALE) >> SCALE_BITS);
-	err = full_samp - ((S64_T)redu_samp << SCALE_BITS);
-
-	// Loop through iterations
-	for (iter_cnt = 0; iter_cnt < num_iters; iter_cnt++)
-	{
-		out_samp = boost_gain( &(gain_s.chan_s[cur_chan]) ,redu_samp ,iter_cnt ); // Apply non-linear gain
-
-		redu_samp = out_samp; // Update amplifier input ready for next iteration
-	} // for (iter_cnt = 0; iter_cnt < num_iters; iter_cnt++)
-
-	// Scale-up 24-bit sample to 32-bit
-	out_samp = redu_samp << SCALE_BITS;
+	else
+	{ // process input sample
+		// Scale-down 32-bit sample to 24-bit
+		full_samp = (S64_T)inp_chan_samp + (S64_T)err; // Add diffusion error
+		redu_samp = (S32_T)((full_samp + HALF_SCALE) >> SCALE_BITS);
+		err = full_samp - ((S64_T)redu_samp << SCALE_BITS);
+	
+		// Loop through iterations
+		for (iter_cnt = 0; iter_cnt < gain_gs.num_iters; iter_cnt++)
+		{
+			out_samp = boost_gain( &gain_gs ,&(gain_gs.chan_s[cur_chan]) ,redu_samp ,iter_cnt ); // Apply non-linear gain
+	
+			redu_samp = out_samp; // Update amplifier input ready for next iteration
+		} // for (iter_cnt = 0; iter_cnt < gain_gs.num_iters; iter_cnt++)
+	
+		// Scale-up 24-bit sample to 32-bit
+		out_samp = redu_samp << SCALE_BITS;
 //	out_samp = inp_chan_samp; // Dbg
+	} // else !(0 == init_flag)
 
 	return out_samp;
-} // non_linear_gain_wrapper
+} // use_loudness 
 /******************************************************************************/
 // non_linear_gain.xc
