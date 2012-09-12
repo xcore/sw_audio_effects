@@ -26,18 +26,17 @@
 
 /******************************************************************************/
 void process_all_chans( // Do DSP effect processing
-	S32_T out_samps[I2S_CHANS_DAC],	// Output Processed audio sample buffer
-	S32_T inp_samps[I2S_CHANS_ADC],	// Input unprocessed audio sample buffer
+	S32_T out_samps[I2S_MASTER_NUM_CHANS_DAC],	// Output Processed audio sample buffer
+	S32_T inp_samps[I2S_MASTER_NUM_CHANS_ADC],	// Input unprocessed audio sample buffer
 	S32_T min_chans	// Minimum of input/output channels
 )
 {
 	S32_T chan_cnt; // Channel counter
-	
 
 	for(chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
 	{ // Apply non-linear gain shaping (Loudness)
 		out_samps[chan_cnt] = use_loudness( inp_samps[chan_cnt] ,chan_cnt );
-//			out_samps[chan_cnt] = inp_samps[chan_cnt]; // DBG
+		// out_samps[chan_cnt] = inp_samps[chan_cnt]; // DBG
 	} // for chan_cnt
 
 } // process_all_chans
@@ -46,12 +45,12 @@ void dsp_loudness( // Thread that applies non-linear gain control to stream of a
 	streaming chanend c_dsp_gain // Channel connecting to Audio_IO thread (bi-directional)
 )
 {
-	S32_T inp_samps[I2S_CHANS_ADC];	// Unamplified input audio sample buffer
-	S32_T amp_samps[I2S_CHANS_DAC];	// Amplified audio sample buffer
-	S32_T out_samps[I2S_CHANS_DAC];	// Output audio sample buffer
+	S32_T inp_samps[I2S_MASTER_NUM_CHANS_ADC];	// Unamplified input audio sample buffer
+	S32_T amp_samps[I2S_MASTER_NUM_CHANS_DAC];	// Amplified audio sample buffer
+	S32_T out_samps[I2S_MASTER_NUM_CHANS_DAC];	// Output audio sample buffer
 
 	S32_T samp_cnt = 0;	// Sample counter
-	S32_T min_chans = I2S_CHANS_ADC;	// Preset minimum of input/output channels to No. of Input channels
+	S32_T min_chans = 2;	// Preset minimum of input/output channels to No. of Input channels
 	S32_T chan_cnt; // Channel counter
 	
 	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
@@ -59,10 +58,10 @@ void dsp_loudness( // Thread that applies non-linear gain control to stream of a
 
 
 	// if necessary, update minimum number of channels
-	if (min_chans > I2S_CHANS_DAC)
+	if (min_chans > I2S_MASTER_NUM_CHANS_DAC)
 	{
-		min_chans = I2S_CHANS_DAC;
-	} // if (min_chans > I2S_CHANS_DAC)
+		min_chans = I2S_MASTER_NUM_CHANS_DAC;
+	} // if (min_chans > I2S_MASTER_NUM_CHANS_DAC)
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
@@ -79,11 +78,17 @@ void dsp_loudness( // Thread that applies non-linear gain control to stream of a
 	{ 
 		// Send/Receive samples over Audio thread channel
 #pragma loop unroll
-		for (chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
+		for (chan_cnt = 0; chan_cnt < I2S_MASTER_NUM_CHANS_ADC; chan_cnt++)
 		{
 			c_dsp_gain :> inp_samps[chan_cnt]; 
+		}
+
+#pragma loop unroll
+		for (chan_cnt = 0; chan_cnt < I2S_MASTER_NUM_CHANS_DAC; chan_cnt++)
+		{
 			c_dsp_gain <: out_samps[chan_cnt]; 
 		}
+
 
 		samp_cnt++; // Update sample counter
 

@@ -29,6 +29,7 @@
 #include "global.h"
 #include "common_utils.h"
 #include "non_linear_gain.h"
+#include "i2s_master.h"
 
 /******************************************************************************/
 void dsp_loudness( // Thread that applies non-linear gain control to stream of audio samples
