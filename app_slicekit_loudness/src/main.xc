@@ -45,7 +45,6 @@ int main (void)
 {
 	streaming chan c_aud_dsp; // Channel between I/O and DSP Loudness thread
 
-
 	par
 	{
 		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp, r_i2s ); // Audio I/O thread
