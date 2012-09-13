@@ -33,8 +33,11 @@
 #include "common_audio.h"
 
 #ifndef NUM_DELAY_CHANS 
-#define NUM_DELAY_CHANS (2) // For test purposes
+#error Please define NUM_DELAY_CHANS in Makefile
 #endif // NUM_DELAY_CHANS
+
+#define MEM_SAMPS 13000 // Memory available to configure delay buffers (in samples). Adjust to suit platform
+#define DELAY_SIZE (MEM_SAMPS / NUM_DELAY_CHANS)// Size of channel delay buffer (in samples).
 
 #define MAX_TAPS 8 // Max. No. of different taps supported
 #define DEF_TAPS 4 // Default number of taps
@@ -73,7 +76,6 @@ void config_delay_line( // Configure delay_line parameters. NB Must be called be
 );
 /******************************************************************************/
 
-#define DELAY_SIZE 5000 // Size of delay buffer in samples. Adjust to suit available memory
 #define MAX_DELAY (DELAY_SIZE - 1) // Max index into delay buffer
 
 #define MIN_AUDIO_FREQ 20 // Minimum Audio Frequency (In Hz)

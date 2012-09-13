@@ -89,7 +89,7 @@ void dsp_biquad( // Thread that applies Equalisation (Tone control) to stream of
 )
 {
  // Default biquad filter parameters
-	BIQUAD_PARAM_S def_param_s = { DEF_FILT_MODE ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };
+	BIQUAD_PARAM_S biquad_param_s = { DEF_FILT_MODE ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };
 
 	S32_T uneq_samps[NUM_REVERB_CHANS];	// UnEqualised audio sample buffer
 	S32_T equal_samps[NUM_REVERB_CHANS];	// Equalised audio sample buffer
@@ -103,7 +103,9 @@ void dsp_biquad( // Thread that applies Equalisation (Tone control) to stream of
 		equal_samps[chan_cnt] = 0;
 	}
 
-	config_biquad_filter( def_param_s ); // Initial configuration with Default BiQuad filter parameters ...
+	biquad_param_s.sig_freq = 4000; // Fine-tune Filter cut-off
+	biquad_param_s.qual = 1; // Fine-tune Quality factor
+	config_biquad_filter( biquad_param_s ); // Initial configuration with Default BiQuad filter parameters ...
 
 	// Loop forever
 	while(1)

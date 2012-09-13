@@ -30,7 +30,7 @@
 #include "non_linear_gain.h"
 
 #ifndef NUM_REVERB_CHANS
-#define NUM_REVERB_CHANS (2) // For test purposes
+#error Please define NUM_REVERB_CHANS in Makefile
 #endif // NUM_REVERB_CHANS
 
 #define NUM_REV_TAPS 4

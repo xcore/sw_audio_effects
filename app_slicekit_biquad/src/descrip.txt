@@ -6,3 +6,11 @@ See Read.Me in module_loudness for full description
 -----------
 First draft using Slice-Kit without extra Memory Slice.
 
+06-SEP-2012
+-----------
+Updated to use separate config_biquad function for changing parameters
+
+12-SEP-2012
+-----------
+Updated to use module_i2s_master, 
+Now need to define NUM_BIQUAD_CHANS in Makefile.

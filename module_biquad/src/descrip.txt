@@ -55,3 +55,7 @@ Rewrote to remove 'board specific' definitions. (E.g. DEFAULT_FREQ)
 -----------
 Rewrote so interface receives 'BiQuad' parameters,
 Now uses separate config_biquad_filter function for changing parameters
+
+13-SEP-2010
+-----------
+Updated to pull in NUM_BIQUAD_CHANS, etc from Makefile

@@ -33,7 +33,7 @@
 #include "common_audio.h"
 
 #ifndef NUM_GAIN_CHANS
-#define NUM_GAIN_CHANS (2) // For test purposes
+#error Please define NUM_GAIN_CHANS in Makefile
 #endif // NUM_GAIN_CHANS
 
 #define DEF_GAIN (1 << 2) // Default Gain. NB Currently only power-of-2

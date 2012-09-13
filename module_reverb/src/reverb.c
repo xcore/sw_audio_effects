@@ -59,8 +59,6 @@ void init_reverb( // Initialise reverb parameters
 	REVERB_S * reverb_ps // Pointer to structure containing reverb data
 )
 {
-	assert(2 == NUM_REVERB_CHANS); // ERROR: Only Stereo supported
-
 	assert(4 == NUM_REV_TAPS); // ERROR: Only NUM_REV_TAPS=4 supported
 
 	reverb_ps->tap_ratios[0] = TAP_0;
@@ -93,7 +91,7 @@ void config_reverb( // Configure reverb parameters
 
 	// Assign requested mix setting ...
 
-	reverb_ps->mix_lvls_ps = &(reverb_param_ps->mix_lvls);
+	reverb_gs.mix_lvls_ps = &(reverb_param_ps->mix_lvls);
 
 	reverb_gs.params_set = 1; // Signal Reverb parameters configured
 
@@ -115,6 +113,7 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 	S64_T samp_sum;	// Intermediate sample sum
 	S64_T samp_diff;	// Intermediate sample difference
 	S32_T chan_cnt; // Channel counter
+	S32_T other_chan; // Other channel of stereo pair
 	
 
 	// Check if reverb parameters have been initialised
@@ -154,10 +153,12 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 		// Loop through set of channel samples and produce Left/Right output mixes
 		for(chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
+			other_chan = chan_cnt ^ 1; // Get Id for other channel (Assumes 0 <--> 1, 2 <--> 3, etc)
+
 			// Mix Left and Right channels 
-			samp_diff = (S64_T)mix_lvls_ps->cross_mix * (swap_samps[1 - chan_cnt] - same_samps[chan_cnt]);
+			samp_diff = (S64_T)mix_lvls_ps->cross_mix * (swap_samps[other_chan] - same_samps[chan_cnt]);
 			rev_o_samps[chan_cnt] = (S32_T)(same_samps[chan_cnt] + ((samp_diff + (S64_T)MIX_DIV2) >> MIX_BITS));
-// rev_o_samps[chan_cnt] = equal_i_samps[1 - chan_cnt]; //MB~ Dbg
+// rev_o_samps[chan_cnt] = equal_i_samps[other_chan]; //MB~ Dbg
 
 			// NB Non-linear-gain thread converts rev_o_samps to amp_i_samps
 // amp_i_samps[chan_cnt] = rev_o_samps[chan_cnt]; // MB~ Dbg

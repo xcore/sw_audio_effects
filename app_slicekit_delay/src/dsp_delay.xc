@@ -26,9 +26,9 @@
 
 /******************************************************************************/
 void process_all_chans( // Do DSP effect processing
-	S32_T out_samps[I2S_CHANS_DAC],	// Output Processed audio sample buffer
+	S32_T out_samps[],	// Output Processed audio sample buffer
 	DELAY_PARAM_S &cur_param_s, // Reference to structure containing delay-line parameters
-	S32_T inp_samps[I2S_CHANS_ADC],	// Input unprocessed audio sample buffer
+	S32_T inp_samps[],	// Input unprocessed audio sample buffer
 	S32_T min_chans	// Minimum of input/output channels
 )
 {
@@ -66,28 +66,21 @@ void dsp_delay( // Thread that delays a stream of audio samples
 	streaming chanend c_dsp_gain // Channel connecting to Audio_IO thread (bi-directional)
 )
 {
-	S32_T inp_samps[I2S_CHANS_ADC];	// Unamplified input audio sample buffer
+	S32_T inp_samps[NUM_DELAY_CHANS];	// Unamplified input audio sample buffer
 	S32_T delay_samps[NUM_DELAY_CHANS];	// Delayed audio sample buffer
 	S32_T out_samps[NUM_DELAY_CHANS];	// Output audio sample buffer
-	S32_T delay_us = 13000; // Smallest delay in micro-secs
-	S32_T tap_cnt; // tap counter
 
+	S32_T tap_cnt; // tap counter
 	S32_T samp_cnt = 0;	// Sample counter
-	S32_T min_chans = I2S_CHANS_ADC;	// Preset minimum of input/output channels to No. of Input channels
 	S32_T chan_cnt; // Channel counter
 	
+	S32_T delay_us; // Delay in micro-secs
 	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 	DELAY_PARAM_S delay_param_s; // Default Delay-line Configuration
 
 
-	// if necessary, update minimum number of channels
-	if (min_chans > NUM_DELAY_CHANS)
-	{
-		min_chans = NUM_DELAY_CHANS;
-	} // if (min_chans > NUM_DELAY_CHANS)
-
 	// initialise samples buffers
-	for (chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
+	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 	{
 		inp_samps[chan_cnt] = 0;
 		delay_samps[chan_cnt] = 0;
@@ -98,13 +91,13 @@ void dsp_delay( // Thread that delays a stream of audio samples
 
 	delay_param_s.num = DEF_TAPS;
 	delay_param_s.freq = DEF_SAMP_FREQ;
+	delay_us = DELAY_SIZE * (1000000 / delay_param_s.freq); // Approx largest delay in micro-secs
 
 	// Initialise Configuration parameter structure
-	for (tap_cnt = 0; tap_cnt<DEF_TAPS; tap_cnt++)
+	for (tap_cnt = (DEF_TAPS - 1); tap_cnt>=0; tap_cnt--)
 	{
 		delay_param_s.us_delays[tap_cnt] = delay_us;
-		delay_us <<= 1; // Double delay
-
+		delay_us >>= 1; // Double delay
 	} //for tap_cnt
 
 	config_delay_line( delay_param_s );
@@ -114,7 +107,7 @@ void dsp_delay( // Thread that delays a stream of audio samples
 	{ 
 		// Send/Receive samples over Audio thread channel
 #pragma loop unroll
-		for (chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
+		for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 		{
 			c_dsp_gain :> inp_samps[chan_cnt]; 
 			c_dsp_gain <: out_samps[chan_cnt]; 
@@ -128,7 +121,7 @@ void dsp_delay( // Thread that delays a stream of audio samples
 		switch(cur_proc_state)
 		{
 			case EFFECT: // Do DSP effect processing
-				process_all_chans( out_samps ,delay_param_s ,inp_samps ,min_chans );
+				process_all_chans( out_samps ,delay_param_s ,inp_samps ,NUM_DELAY_CHANS );
 
 				if (SWAP_NUM < samp_cnt)
 	 			{
@@ -138,9 +131,9 @@ void dsp_delay( // Thread that delays a stream of audio samples
 			break; // case EFFECT:
 
 			case FX2DRY: // Fade-Out Effect
-				process_all_chans( delay_samps ,delay_param_s ,inp_samps ,min_chans );
+				process_all_chans( delay_samps ,delay_param_s ,inp_samps ,NUM_DELAY_CHANS );
 
-				cross_fade_sample( out_samps ,delay_samps ,inp_samps ,min_chans ,samp_cnt );
+				cross_fade_sample( out_samps ,delay_samps ,inp_samps ,NUM_DELAY_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{
@@ -150,7 +143,7 @@ void dsp_delay( // Thread that delays a stream of audio samples
 			break; // case FX2DRY:
 
 			case DRY_ONLY: // No Effect (Dry signal only)
-				for (chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
+				for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 				{ // NB Add a bit of filtering to prevent clicks on transitions
 					out_samps[chan_cnt] = inp_samps[chan_cnt];
 				} // for chan_cnt
@@ -163,9 +156,9 @@ void dsp_delay( // Thread that delays a stream of audio samples
 			break; // case DRY_ONLY:
 
 			case DRY2FX: // Fade-in Effect
-				process_all_chans( delay_samps ,delay_param_s ,inp_samps ,min_chans );
+				process_all_chans( delay_samps ,delay_param_s ,inp_samps ,NUM_DELAY_CHANS );
 
-				cross_fade_sample( out_samps ,inp_samps ,delay_samps ,min_chans ,samp_cnt );
+				cross_fade_sample( out_samps ,inp_samps ,delay_samps ,NUM_DELAY_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{

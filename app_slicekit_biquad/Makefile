@@ -5,13 +5,17 @@
 TARGET = xp-skc-l2-single-xscope.xn
 APP_NAME =
 
+
+# Define number of channels used in application
+NUM_APP_CHANS = 4
+
 # The flags passed to xcc when building the application
-BUILD_FLAGS     = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1
+BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1 -DNUM_BIQUAD_CHANS=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_ADC=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_DAC=$(NUM_APP_CHANS) 
 
 # The USED_MODULES variable lists other module used by the application. These
 # modules will extend the SOURCE_DIRS, INCLUDE_DIRS and LIB_DIRS variables. 
 # Modules are expected to be in the directory above the BASE_DIR directory.
-USED_MODULES = module_i2c_single_port module_utils module_biquad
+USED_MODULES = module_biquad module_utils module_i2s_master module_i2c_single_port
 
 XCC_FLAGS = $(BUILD_FLAGS)
 

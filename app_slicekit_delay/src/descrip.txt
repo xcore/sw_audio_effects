@@ -6,3 +6,12 @@ See Read.Me in module_delay for full description
 -----------
 First draft using Slice-Kit without extra Memory Slice.
 Used 4 delay tap, and feedback to create long train of echos
+
+06-SEP-2012
+-----------
+Updated to use separate config_delay function for changing parameters
+
+12-SEP-2012
+-----------
+Updated to use module_i2s_master, 
+Now need to define NUM_DELAY_CHANS in Makefile.

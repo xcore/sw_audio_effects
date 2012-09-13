@@ -153,7 +153,7 @@ void config_loudness( // Configure loudness parameters
 		gain_gs.init_done = 1; // Signal Gain-shaping initialised
 	} // if (0 == gain_gs->init_done)
 
-// printstr("GN= "); printintln( (int)cur_param_ps->gain ); // MB~
+//printstr("GN= "); printintln( (int)cur_param_ps->gain ); // MB~
 
 	// Calculate gain-shaping parameters
 	update_parameters( &gain_gs ,cur_param_ps );
@@ -227,7 +227,7 @@ S32_T use_loudness( // Wrapper for non_linear_gain_wrapper
 	S32_T iter_cnt; // Iteration counter
 
 
-	// Check if delay-line parameters have been initialised
+	// Check if loudness parameters have been initialised
 	if (0 == gain_gs.params_set)
 	{
 		assert(0 == 1); // Please call config_loudness() function before use_loudness() 

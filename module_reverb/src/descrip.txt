@@ -10,3 +10,7 @@ Created draft version of reverb.
 -----------
 Updated to allow configuration of reverb parameters. e.g. Dry/Effect mix levels, room-size, etc
 Two functions config_reverb and use_reverb, are called from dsp_reverb XC code.
+
+13-SEP-2010
+-----------
+Updated to pull in NUM_REVERB_CHANS, etc from Makefile

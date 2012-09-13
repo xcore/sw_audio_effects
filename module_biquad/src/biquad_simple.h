@@ -34,7 +34,7 @@
 #include "common_audio.h"
 
 #ifndef NUM_BIQUAD_CHANS
-#define NUM_BIQUAD_CHANS (2) // For test purposes
+#error Please define NUM_BIQUAD_CHANS in Makefile
 #endif // NUM_BIQUAD_CHANS
 
 typedef enum FILT_MODE_TAG // Different Processing States

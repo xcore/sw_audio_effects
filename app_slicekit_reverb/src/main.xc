@@ -24,17 +24,29 @@
 
 #include "main.h"
 
+// Structure for I2S master (sc_i2s/module_i2s_master)
+on stdcore[AUDIO_IO_CORE] : struct r_i2s r_i2s = 
+{
+	XS1_CLKBLK_1,
+	XS1_CLKBLK_2,
+	PORT_MCLK_IN,
+	PORT_I2S_BCLK,
+	PORT_I2S_LRCLK,
+#if NUM_GAIN_CHANS == 4
+	{PORT_I2S_ADC0, PORT_I2S_ADC1},
+	{PORT_I2S_DAC0, PORT_I2S_DAC1}
+#elif NUM_GAIN_CHANS == 2
+	{PORT_I2S_ADC0 },
+	{PORT_I2S_DAC0 }
+#else
+#error Unsupported No Of Channels
+#endif
+};
+
 // Global variables
 
-on stdcore[AUDIO_IO_CORE] : buffered out port:32 p_lrclk	= PORT_I2S_LRCLK;
-on stdcore[AUDIO_IO_CORE] : buffered out port:32 p_bclk		= PORT_I2S_BCLK;
-on stdcore[AUDIO_IO_CORE] : port p_mclk										= PORT_MCLK_IN;
-
-on stdcore[AUDIO_IO_CORE] : out port p_gpio	= PORT_GPIO;
-on stdcore[AUDIO_IO_CORE] : port p_i2c			= PORT_I2C;
-
-on stdcore[AUDIO_IO_CORE] : clock	clk_audio_mclk	= XS1_CLKBLK_2;	 /* Master clock */
-on stdcore[AUDIO_IO_CORE] : clock	clk_audio_bclk	= XS1_CLKBLK_3;	 /* Bit clock */
+on stdcore[AUDIO_IO_CORE] : out port p_gpio = PORT_GPIO;
+on stdcore[AUDIO_IO_CORE] : port p_i2c = PORT_I2C;
 
 /*****************************************************************************/
 int main (void)
@@ -46,7 +58,7 @@ int main (void)
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O thread
+		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp, r_i2s ); // Audio I/O thread
 
 		on stdcore[0]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control thread
 

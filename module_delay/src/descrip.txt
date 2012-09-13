@@ -18,3 +18,8 @@ Rewrote to remove 'board specific' definitions. (E.g. DEFAULT_FREQ)
 Updated to allow parameters to be passed in from calling function (in dsp_delay.c)
 Removed calculation of reverb tap ratios.
 Introduced new configuration function to be called from .XC code, when parameters are changed
+
+13-SEP-2010
+-----------
+Updated to pull in NUM_DELAY_CHANS, etc from Makefile
+DELAY_SIZE now calculated based on NUM_DELAY_CHANS

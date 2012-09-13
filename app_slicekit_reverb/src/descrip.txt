@@ -12,5 +12,9 @@ Max delay 6700 Samples.
 -----------
 Updated to allow configuration of reverb parameters. e.g. Dry/Effect mix levels, room-size, etc
 Streams are now inspected for control tokens, to determine Audio or Configuration data.
-Max delay now 5000 samples. (room size =31)
+For 1 stereo channel, Max delay is now 6500 samples. (room size =40)
 
+13-SEP-2010
+-----------
+Updated to use module_i2s_master, 
+Updated to pull in NUM_REVERB_CHANS, etc from Makefile
