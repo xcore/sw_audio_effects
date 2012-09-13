@@ -115,12 +115,10 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 	// Loop forever
 	while(1)
 	{
-// printcharln('1'); //MB~ Dbg
 		// Send/Receive audio samples over sample thread channels
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
-
 			// Service channels in chronological order
 			c_aud_dsp :> inp_samps[chan_cnt]; // Receive input samples from Audio I/O thread 
 
@@ -149,7 +147,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 			break; // case EFFECT:
 
 			case FX2DRY: // Fade-Out Effect
-				use_reverb( uneq_samps ,unamp_samps ,out_samps ,inp_samps ,equal_samps ,ampli_samps );
+				use_reverb( uneq_samps ,unamp_samps ,fade_samps ,inp_samps ,equal_samps ,ampli_samps );
 
 				cross_fade_sample( out_samps ,fade_samps ,inp_samps ,NUM_REVERB_CHANS ,samp_cnt );
 
@@ -176,7 +174,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 			break; // case DRY_ONLY:
 
 			case DRY2FX: // Fade-in Effect
-				use_reverb( uneq_samps ,unamp_samps ,out_samps ,inp_samps ,equal_samps ,ampli_samps );
+				use_reverb( uneq_samps ,unamp_samps ,fade_samps ,inp_samps ,equal_samps ,ampli_samps );
 
 				cross_fade_sample( out_samps ,inp_samps ,fade_samps ,NUM_REVERB_CHANS ,samp_cnt );
 
