@@ -121,14 +121,24 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 		{
 			// Service channels in chronological order
 			c_aud_dsp :> inp_samps[chan_cnt]; // Receive input samples from Audio I/O thread 
+			c_aud_dsp <: out_samps[chan_cnt];  // Send Output samples back to Audio I/O thread 
+		} // for chan_cnt
 
+#pragma loop unroll
+		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
+		{
+			// Service channels in chronological order
 			c_dsp_eq <: uneq_samps[chan_cnt]; // Send Unequalised samples to Eq thread  
 			c_dsp_eq :> equal_samps[chan_cnt]; // Receive Equalised samples back from Eq thread  
+		} // for chan_cnt
 
+#pragma loop unroll
+		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
+		{
+			// Service channels in chronological order
 			c_dsp_gain <: unamp_samps[chan_cnt]; // Send Unamplified samples to Loudness thread   
 			c_dsp_gain :> ampli_samps[chan_cnt]; // Receive Amplified samples back from Loudness thread  
 
-			c_aud_dsp <: out_samps[chan_cnt];  // Send Output samples back to Audio I/O thread 
 		} // for chan_cnt
 
 		samp_cnt++; // Update sample counter
@@ -169,7 +179,6 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY2FX; // Switch to Fade-In Effect
 
-//					sync_reverb_config( c_dsp_eq ,c_dsp_gain ,def_param_s );
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case DRY_ONLY:
 
