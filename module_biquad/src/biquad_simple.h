@@ -54,7 +54,7 @@ typedef enum FILT_MODE_TAG // Different Processing States
 #define DEF_SIG_FREQ 1000 // Default Significant Filter Frequency (In Hz)
 
 #define QUAL_BITS 8 // No. Of bits used to scale Quality-factor
-#define DEF_QUAL_FACT (1 << 8) // Default Quality-factor of 1, scaled by QUAL_BITS
+#define DEF_QUAL_FACT (1 << QUAL_BITS) // Default Quality-factor of 1, scaled by QUAL_BITS
 
 typedef struct BIQUAD_PARAM_TAG // Structure containing BiQuad parameters
 {

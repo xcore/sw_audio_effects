@@ -148,13 +148,13 @@ void delay_line_chan( // Retrieve output sample from buffer, and store input sam
 
 
 	chan_ps->buf[ chan_ps->inp ] = inp_samp ; // Store input sample in buffer 
-	chan_ps->inp = (chan_ps->inp + 1) % DELAY_SIZE; // increment input offset and wrap
+	chan_ps->inp = increment_circular_offset( (chan_ps->inp + 1) ,DELAY_SIZE ); // increment input offset and wrap
 
 	// Loop through all delay taps.
 	for (tap_cnt = 0; tap_cnt < chan_ps->tap_num; tap_cnt++)
 	{
 		out_samps[tap_cnt] = chan_ps->buf[ chan_ps->outs[tap_cnt] ]; // Retrieve output sample from buffer 
-		chan_ps->outs[tap_cnt] = (chan_ps->outs[tap_cnt] + 1) % DELAY_SIZE; // increment output offset and wrap
+		chan_ps->outs[tap_cnt] = increment_circular_offset( (chan_ps->outs[tap_cnt] + 1) ,DELAY_SIZE ); // increment output offset and wrap
 	} // for tap_cnt
 
 } // delay_line_chan

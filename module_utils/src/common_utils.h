@@ -48,6 +48,11 @@ typedef enum CNTRL_TOK_TAG // Control Token Codes
   NUM_CNTRL_TOKS	// Handy Value!-)
 } CNTRL_TOK_TYP;
 
+/******************************************************************************/
+S32_T increment_circular_offset( // Increment a circular buffer offset. I.e. wraps if at end of buffer
+	S32_T new_off, // required new offset (without wrapping)
+	S32_T buf_siz // circular buffer size
+	); // Return wrapped offset
 /*****************************************************************************/
 void cross_fade_sample( // Returns Cross-faded sample
 	S32_T out_samps[],	// Buffer for cross-faded Output samples

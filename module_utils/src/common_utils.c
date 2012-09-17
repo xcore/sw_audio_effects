@@ -22,6 +22,20 @@
 
 #include "common_utils.h"
 
+/******************************************************************************/
+S32_T increment_circular_offset( // Increment a circular buffer offset. I.e. wraps if at end of buffer
+	S32_T new_off, // required new offset (without wrapping)
+	S32_T buf_siz // circular buffer size
+) // Return wrapped offset
+{
+	// Check if at and of buffer
+	if (buf_siz <= new_off)
+	{
+		return 0; // Move to start of buffer
+	}
+
+	return new_off; // Normal Increment
+} // increment_circular_offset
 /*****************************************************************************/
 void cross_fade_sample( // Returns Cross-faded sample
 	S32_T out_samps[],	// Buffer for cross-faded Output samples
