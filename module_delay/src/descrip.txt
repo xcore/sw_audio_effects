@@ -19,7 +19,11 @@ Updated to allow parameters to be passed in from calling function (in dsp_delay.
 Removed calculation of reverb tap ratios.
 Introduced new configuration function to be called from .XC code, when parameters are changed
 
-13-SEP-2010
+13-SEP-2012
 -----------
 Updated to pull in NUM_DELAY_CHANS, etc from Makefile
 DELAY_SIZE now calculated based on NUM_DELAY_CHANS
+
+17-SEP_2012
+-----------
+Updated to use common utility function increment_circular_offset()
