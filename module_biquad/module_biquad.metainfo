@@ -1,0 +1,109 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "Biquad Filter"
+componentFullName = "Configurable biQuad Filter Function Library"
+alternativeNames = { }
+componentDescription = ""
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  SampleFreq = {
+    short   = "Sample FRequency",
+    help    = "Note that frequency options are given to nearest KHz (e.g. 44 option is actually 44.1KHz)",
+    long    = "",
+    units   = "KHz",
+    define  = "SYSTEM_CLOCK",
+    type    = "int",
+    options = { 32,44,48,88,96,176,192},
+    resourceUsageFlags = {"noeffect"},
+    default = 48
+  },
+  NumChannels = {
+    short   = "Biquad Channels",
+    help    = "Number of audio channels processedin parallel",
+    long    = "192khZ CAN ONLY ACCOMODATE ONE CHANNEL, 44 OR 48khZ COULD ACCOMODATE 4",
+    units   = "",
+    define  = "NUM_BIQUAD_CHANS",
+    type    = "int",
+    options = {1,2,4},
+    resourceUsageFlags = {"linear"},
+    default = 48
+  },
+  FilterType =
+  {
+    short   = "Filter Type",
+    help    = "Custom filters can be defined. To get started with custome definition, select the type closest to your requirements",
+    long    = "",
+    units   = "",
+    define  = "DEF_FILT_MODE",
+    type    = "string",
+    options = {"LO_PASS","HI_PASS","BAND_PASS","BAND_STOP","ALL_PASS"}, 
+    resourceUsageFlags = {"noeffect"},
+    default = "LO_PASS"
+  },
+  SignificantFreq = {
+    short   = "Significant Frequency",
+    help    = "The significant frequency relevant to the selected filter type. NOte that this is specified in Hz, not KHz",
+    long    = "",
+    units   = "Hz",
+    define  = "SYSTEM_CLOCK",
+    type    = "int",
+    min     = 20,
+    max     = 20000,
+    resourceUsageFlags = {"noeffect"},
+    default = 1000
+  },
+  QualityFactor = {
+    short   = "Quality Factor",
+    help    = "Filter sharpness, with 1 being widest peak, 255 the sharpest",
+    long    = "",
+    units   = "Hz",
+    define  = "SYSTEM_CLOCK",
+    type    = "int",
+    min     = 1,
+    max     = 255,
+    resourceUsageFlags = {"noeffect"},
+    default = 1
+  },
+}
+
+derivedValues = {}
+
+ports = {
+}
+
+channels = {
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  if swblock.params.SampleFreq > 96 and swblock.params.NumChans > 1 then
+    status = "Invalid Configuration" 
+    table.insert(issues, { issues = "176.4 or 192 Khz can only support one channel", suggestion = ""}) 
+  elseif swblock.params.SampleFreq > 48 and swblock.params.NumChans > 2 then
+    status = "Invalid Configuration" 
+    table.insert(issues, { issues = "88.2 or 96 Khz can only support one or two channels", suggestion = ""}) 
+  end
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = {},
+  globals = {},
+  body = {}
+}
+
+api = {'use_biquad_filter','config_biquad_filter'}
+
