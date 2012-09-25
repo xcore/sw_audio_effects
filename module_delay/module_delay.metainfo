@@ -1,0 +1,90 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "Delay-line"
+componentFullName = "Configurable Delay-line Function Library"
+alternativeNames = { }
+componentDescription = ""
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  SampleFreq = {
+    short   = "Sample FRequency",
+    help    = "",
+    long    = "",
+    units   = "Hz",
+    define  = "DEF_SAMP_FREQ",
+    type    = "int",
+    options = {32000,44100,48000,88200,96000,176400,192000},
+    resourceUsageFlags = {"noeffect"},
+    default = 48000
+  },
+  NumChannels = {
+    short   = "BiQuad Channels",
+    help    = "Number of audio channels processed in parallel, Currently set in application Makefile",
+    long    = "192kHz can only accommodate 8 delay-taps",
+    units   = "",
+    define  = "NUM_DELAY_CHANS",
+    type    = "int",
+    options = {1,2,4},
+    resourceUsageFlags = {"linear"},
+    default = 4 
+  },
+  NumTaps= {
+    short   = "Delay Taps",
+    help    = "Number of delay-taps for delay-line. By default each delay is double the previous one",
+    long    = "",
+    units   = "",
+    define  = "DEF_TAPS",
+    type    = "int",
+    min     = 1,
+    max     = 2^31,
+    resourceUsageFlags = {"noeffect"},
+    default = 4
+  },
+  DelayTimes= {
+    short   = "Array of delay times",
+    help    = "The delay-times are specified in micro-seconds, in the calling application",
+    long    = "",
+    units   = "",
+    define  = "us_delays[MAX_TAPS]",
+    type    = "int",
+    min     = 1,
+    max     = 2^31,
+    resourceUsageFlags = {"noeffect"},
+    default = {}
+  },
+}
+
+derivedValues = {}
+
+ports = {
+}
+
+channels = {
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = {},
+  globals = {},
+  body = {}
+}
+
+api = {'use_delay_line','config_delay_line'}
+

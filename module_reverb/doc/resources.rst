@@ -24,4 +24,4 @@ The Reverb echos are produced using a 4 tap delay-line.
 The reverb has configurable mixing parametere. 
 There are currently 4, each one requires a multiply. That is 4 multiples/sample/channel.
 For a 48 kHz sample rate, on a 500 MHz processor, the composite Reverb_control/Delay-line requires
-1250 cycles per channel.
+1250 cycles/sample per channel.

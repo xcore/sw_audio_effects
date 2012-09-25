@@ -1,0 +1,247 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "SDRAm Controller"
+componentFullName = ""
+alternativeNames = { }
+componentDescription = "Offers an SDRAM memory controller component using only 20 pins and runnnig in excess of 70 MBytes/sec"
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  refresh_interval =
+  {
+    short   = "Refresh Interval",
+    long    = ""
+    help    = "These specify that SDRAM_REFRESH_MS milliseconds may elapse during which SDRAM_REFRESH_CYCLES refresh instructions must have been issued"
+    units   = "milliseconds",
+    define  = "SDRAM_REFRESH_MS",
+    type    = "int",
+    min     = FIXME,
+    max     = FIXME,
+    resourceUsageFlags = {"noeffect"},
+    default = 50
+  },
+  refresh_cycles_per_interval =
+  {
+    short   = "Refresh Cycles Per Interval",
+    long    = "",
+    help    = "Refresh cycles which must be issued per interval",
+    units   = "",
+    define  = "SDRAM_REFRESH_CYCLES"
+    type    = "int",
+    min     = FIXME,
+    max     = FIXME,
+    resourceUsageFlags = {"noeffect"},
+    default = FIXME
+  },
+  max_refresh_gap =   {
+    short   = "Refresh Gap",
+    long    = "",
+    help    = [[Define the amount of time that the SDRAM is allowed to go before the server refreshes. The unit is given in refresh periods. For example, the value N
+	        would mean that the SDRAM is allowed to go SDRAM_REFRESH_MS/SDRAM_REFRESH_CYCLES*N milliseconds before refreshing. The larger the number (up to SDRAM_REFRESH_CYCLES) the smaller the constant time impact but the larger the overall impact. If set above SDRAM_REFRESH_CYCLES then the SDRAM will fail. The default is (SDRAM_REFRESH_CYCLES/8).
+",
+    units   = "refresh periods",
+    define  = "SDRAM_ACCEPTABLE_REFRESH_GAP"
+    type    = "int",
+    min     = FIXME,
+    max     = FIXME,
+    resourceUsageFlags = {"noeffect"},
+    default = FIXME
+  },
+  cmds_per_refresh =   {
+    short   = "Cmds per refresh",
+    long    = "",
+    help    = "Define the minimum time between refreshes in SDRAM Clk cycles.",
+    units   = "clocks",
+    define  = "SDRAM_CMDS_PER_REFRESH"
+    type    = "int",
+    min     = 2,
+    max     = 4,
+    resourceUsageFlags = {"noeffect"},
+    default = FIXME
+  },
+  clock_divider =   {
+    short   = "SDRAM Clock Divider",
+    long    = "",
+    help    = "Set SDRAM_CLOCK_DIVIDER to divide down the reference clock to get the desired SDRAM Clock. The reference clock is divided by 2^SDRAM_CLOCK_DIVIDER.",
+    units   = "",
+    define  = "SDRAM_CLOCK_DIVIDER",
+    type    = "int",
+    min     = 1,
+    max     = 4,
+    resourceUsageFlags = {"noeffect"},
+    default = FIXME
+  },
+  clock_divider =   {
+    short   = "Mode Register",
+    long    = "",
+    help    = "Define the configuration of the SDRAM. This is the value to be loaded into the mode register.",
+    units   = "FIXME",
+    define  = "SDRAM_MODE_REGISTER",
+    type    = "int",
+    resourceUsageFlags = {"FIXME"},
+    default = FIXME
+  },
+  row_address_bits =   {
+    short   = "Row Address Size",
+    long    = "",
+    help    = "Defines the number of row address bits",
+    define = "SDRAM_ROW_ADDRESS_BITS",
+    units = "bits",
+    type    = "int",
+    resourceUsageFlags = {"FIXME"},
+    default = FIXME
+  },
+  col_address_bits =   {
+    short   = "Column Address Size",
+    long    = "",
+    help    = "Defines the number of column address bits",
+    define = "SDRAM_COL_ADDRESS_BITS",
+    units = "bits",
+    type    = "int",
+    resourceUsageFlags = {"FIXME"},
+    default = FIXME
+  },
+  bank_address_bits =   {
+    short   = "Bank Address Bits",
+    long    = "",
+    help    = "Defines the number of bank address (BA) bits",
+    define  = "SDRAM_BANK_ADDRESS_BITS",
+    units   = "bits",
+    type    = "int",
+    resourceUsageFlags = {"FIXME"},
+    default = FIXME
+  },
+  data_width =   {
+    short   = "Data Bus Width",
+    long    = "",
+    help    = "Defines bit per column, i.e. teh data width. 8 or 16 is supported.",
+    define  = "SDRAM_COL_BITS",
+    units   = "bits",
+    type    = "int",
+    resourceUsageFlags = {"FIXME"},
+    default = FIXME
+  },
+  enable_wait_until_idle = {
+    short   = "Enable Wait-Until-Idle Client API",
+    long    = "",
+    help    = "Disable this if this client API function is not needed"
+    define  = "SDRAM_ENABLE_CMD_WAIT_UNTIL_IDLE",
+    units   = "bits",
+    type    = "bool",
+    resourceUsageFlags = {"orthogonal"},
+    default = "true"
+  },
+  enable_cmd_buffer_read = {
+    short   = "Enable Buffer Read Client API",
+    long    = "",
+    help    = "Disable this if this client API function is not needed"
+    define  = "SDRAM_ENABLE_CMD_BUFFER_READ",
+    units   = "bits",
+    type    = "bool",
+    resourceUsageFlags = {"orthogonal"},
+    default = "true"
+  },
+  enable_cmd_buffer_write = {
+    short   = "Enable Buffer Write Client API",
+    long    = "",
+    help    = "Disable this if this client API function is not needed"
+    define  = "SDRAM_ENABLE_CMD_BUFFER_WRITE",
+    units   = "bits",
+    type    = "bool",
+    resourceUsageFlags = {"orthogonal"},
+    default = "true"
+  },
+  enable_cmd_full_row_read = {
+    short   = "Enable Full Row Read Client API",
+    long    = "",
+    help    = "Disable this if this client API function is not needed"
+    define  = "SDRAM_ENABLE_CMD_FULL_ROW_READ",
+    units   = "bits",
+    type    = "bool",
+    resourceUsageFlags = {"orthogonal"},
+    default = "true"
+  },
+  enable_cmd_full_row_write = {
+    short   = "Enable Full Row Write Client API",
+    long    = "",
+    help    = "Disable this if this client API function is not needed"
+    define  = "SDRAM_ENABLE_CMD_FULL_ROW_WRITE",
+    units   = "bits",
+    type    = "bool",
+    resourceUsageFlags = {"orthogonal"},
+    default = "true"
+  }
+}
+
+derivedValues = {}
+
+ports = {
+  p_sdram_adq = {
+    short   = "sdram_adq",
+    long    = "Combined SDRAM Address/Data Bus",
+    help    = "",
+    width   = 16
+  },
+  p_sdram_cas = {
+    short   = "sdram_cas",
+    long    = "Column Address Strobe",
+    help    = "",
+    width   = 1
+  },
+  p_sdram_ras = {
+    short   = "sdram_ras",
+    long    = "Row Address Strobe",
+    help    = "",
+    width   = 1
+  },
+  p_sdram_cas = {
+    short   = "sdram_we",
+    long    = "Sdram Write Enable",
+    help    = "",
+    width   = 1
+  },
+  p_sdram_clk = {
+    short   = "sdram_clk",
+    long    = "Sdram Clock",
+    help    = "",
+    width   = 1
+  },
+}
+
+channels = {
+  c_sdram_client = {
+    short = "SDRAM Client channel",
+    long  = "Channel for the client to exchange commands and data with the SDRAM Controller,
+    help  = "",
+  },
+}    
+
+function getConfigStatus()
+  local status = "Trusted Configuration"
+  local issues = {}
+  if swblock.params.clock_divider == 1 or swblock.params.enable_cmd_full_row_read == 2 then
+    status = "FIXME"  
+  end
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = { 
+  },
+  globals = [[
+  ]],
+  body = [[
+  ]]
+}
+

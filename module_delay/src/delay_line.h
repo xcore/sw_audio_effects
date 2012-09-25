@@ -31,12 +31,13 @@
 #include <print.h>
 #include "types64bit.h"
 #include "common_audio.h"
+#include "common_utils.h"
 
 #ifndef NUM_DELAY_CHANS 
 #error Please define NUM_DELAY_CHANS in Makefile
 #endif // NUM_DELAY_CHANS
 
-#define MEM_SAMPS 13000 // Memory available to configure delay buffers (in samples). Adjust to suit platform
+#define MEM_SAMPS 12000 // Memory available to configure delay buffers (in samples). Adjust to suit platform
 #define DELAY_SIZE (MEM_SAMPS / NUM_DELAY_CHANS)// Size of channel delay buffer (in samples).
 
 #define MAX_TAPS 8 // Max. No. of different taps supported

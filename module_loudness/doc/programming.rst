@@ -16,7 +16,7 @@ use_loudness() Called to apply gain to one audio-sample, designed to be called f
 NB After initialisation, config_loudness() can be called again as required to re-configure the gain.
 
 To set the gain value, edit DEF_GAIN in the include file module_loudness/src/non_linear_gain.h e.g.
-#define DEF_GAIN (1 << 2) // Default Gain. NB Currently only power-of-2
+#define DEF_GAIN 4 // Default Gain.
 
 Demo Applications
 =================

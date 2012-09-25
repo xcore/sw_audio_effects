@@ -14,3 +14,7 @@ Updated to use separate config_loudness function for changing parameters
 -----------
 Updated to use module_i2s_master, 
 Now need to define NUM_GAIN_CHANS in Makefile.
+
+24-SEP-2012
+-----------
+Remove channel_id from use_loudness() function interface.

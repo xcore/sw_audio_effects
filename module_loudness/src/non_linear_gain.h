@@ -28,7 +28,6 @@
 #include <stdlib.h>
 #include <math.h>
 #include <assert.h>
-#include <print.h>
 #include "types64bit.h"
 #include "common_audio.h"
 
@@ -36,7 +35,7 @@
 #error Please define NUM_GAIN_CHANS in Makefile
 #endif // NUM_GAIN_CHANS
 
-#define DEF_GAIN (1 << 2) // Default Gain. NB Currently only power-of-2
+#define DEF_GAIN 4 // Default Gain.
 
 typedef struct GAIN_PARAM_TAG // Structure containing Gain parameters
 {
@@ -45,13 +44,13 @@ typedef struct GAIN_PARAM_TAG // Structure containing Gain parameters
 
 /******************************************************************************/
 S32_T use_loudness( // Call non-linear-gain for one sample
-	S32_T inp_samp, // Input Sample
-	S32_T cur_chan  // current channel
+	S32_T inp_samp // Input Sample
 ); // Return Filtered Output Sample
 /******************************************************************************/
 
 #ifdef __XC__
 // XC File
+#include <print.h>
 
 /******************************************************************************/
 void config_loudness( // Configure gain parameters. NB Must be called before use_loudness
@@ -68,40 +67,87 @@ void config_loudness( // Configure gain parameters. NB Must be called before use
 );
 /******************************************************************************/
 
-#define MAX_ITERS 15 // Maximum allowed number of non-linear-gain iterations before timing breaks 
+#define NUM_SECTS 5 // Number of parabolic sections for gain-shaping curve
+#define NUM_PNTS (NUM_SECTS + 1) // number of boundary points for gain-shaping curve
 
-#define SAMP_BITS ((sizeof(SAMP_CHAN_T) << 3) - 1) // Bits used to hold magnitude of channel sample (e.g. 31)
-#define MAX_SAMP (((S64_T)1 << SAMP_BITS) - 1) // Maximum sample value
+#define RANGE_BITS 2 // Determines input sample-size, ( 2:32-bit  1:16-bit)
 
-#define MAGN_BITS 23 // Active magnitude bits (e.g. 23)
-#define MAX_MAGN (((S32_T)1 << MAGN_BITS) - 1) // Maximum sample value
- 
-#define SCALE_BITS (SAMP_BITS - MAGN_BITS) // Bit-shift required to Scale samples from 32 to 24 bits
-#define MAX_SCALE ((S32_T)1 << SCALE_BITS) // Maximum value of scale bits
-#define HALF_SCALE (MAX_SCALE >> 1) // Half max. scale value (used for rounding)
+#define BD3_RATIO 3 // Bit-size Ratio for boundary 1
+#define BD4_RATIO 4 // Bit-size Ratio for boundary 2
+#define BD7_RATIO 7 // Bit-size Ratio for boundary 4
+#define BD8_RATIO 8 // Bit-size Ratio for boundary 5
 
-#define NOISE_BITS 4 // Log2 of low-level Noise threshold
-#define LO_BITS (NOISE_BITS << 1) // Log2 of low-level threshold
-#define THRESHOLD (1 << LO_BITS) // Low-level Threshold
+// Table of sample-size boundaries. Expressed as No. Of Bits
+#define BD1_BITS (BD3_RATIO << RANGE_BITS) // e.g. 12
+#define BD2_BITS (BD4_RATIO << RANGE_BITS) // e.g. 16
+#define BD4_BITS ((BD7_RATIO << RANGE_BITS) - 1) // e.g. 27
+#define BD5_BITS ((BD8_RATIO << RANGE_BITS) - 1) // e.g. 31
 
-#define HI_BITS (MAGN_BITS - LO_BITS) // Number of sample bits above threshold 
-#define MAX_HI (((S64_T)1 << HI_BITS) - 1) // Maximum value of hi-bits
+#define GRAD5_BITS 5 // Gradient magnitude. Expressed as No of Bits represent
 
-#define FRAC_BITS 30 // Number of bits used to represent fractional part of coef_g
-#define MAX_FRAC ((S64_T)1 << FRAC_BITS) // Max value of fractional bits
-#define HALF_FRAC (MAX_FRAC >> 1) // Half of Max fractional value
- 
-typedef struct GAIN_CHAN_TAG // Structure containing gain data for one channel, updated every sample
+/* For 'S' Parabolic sections, there are 3S free parameters.
+ * Each Boundary can specify an X co-ord, Y co-ord and Gradient.
+ * This is 3(S+1) contraints. Therefore not all constraints can be satisfied.
+ * That is why there are gaps in the tables below. These need to be calculated from the other
+ * constraints.
+ * 	Boundary_0 is always at (0 ,0) and of Gradient 1
+ * 	Boundary_1 always has Gradient 1
+ * 	Boundary_3 always has Inverse of gradient at Boundary_2 
+ * 	Boundary_4 always has Gradient of Boundary_3
+ * 	Boundary_5 is always at (MAX_SAMP ,MAX_SAMP) and of Gradient 1
+ *
+ * That 10 constraints. The remaining 5 can be configured in the tables below
+ */
+
+// table of unity-gain boundary points (NB  X=Y )
+#define BD0_YX 0
+#define BD1_YX ((S64_T)1 << BD1_BITS)
+#define BD5_YX ((S64_T)1 << BD5_BITS)
+
+// table of configurable boundary X-Coordinates (NB X<>Y)
+#define BD2_X ((S64_T)1 << BD2_BITS)
+#define BD4_X ((S64_T)1 << BD4_BITS)
+
+// table of configurable boundary Gradients
+#define BD3_G ((S64_T)1 << GRAD5_BITS)
+
+
+typedef S32_T COEF_T; // Coefficients are represented as Fixed-point values. The Mantissa & Exponent are both of type COEF_T
+
+typedef struct FIX_POINT_TAG // Structure containing coefficients expressed as fixed point
 {
-	S64_T err_s[MAX_ITERS]; // array of diffusion errors for sample
-	S64_T err_g[MAX_ITERS]; // array of diffusion errors for gain
-} GAIN_CHAN_S;
+	COEF_T mant; // Mantissa
+	COEF_T exp; // Exponent expressed as power of 2 (Log2 of scaling factor)
+} FIX_POINT_S;
+
+typedef struct BOUND_TAG // Structure containing boundary condition data (between 2 Parabolic sections)
+{
+	S64_T x; // X co-ordinate
+	S64_T y; // Y co-ordinate
+	R64_T m; // Gradient
+} BOUND_S;
+
+typedef struct PARAB_TAG // Structure containing Parabolic section data (between 2 boundary points)
+{
+	FIX_POINT_S fix_a; // Coef_A for X^2 in fixed point format
+	FIX_POINT_S fix_b; // Coef_B for X in fixed point format
+	S64_T x_off; // X Offset (to place origin at boundary point)
+	S64_T y_off; // Y Offset (to place origin at boundary point)
+	S64_T max_x; // Maximum sample value for this parabolic sectiom
+	S32_T big_a; // Flag set if Coef_A is larger than Coef_B (Used for fast compute)
+	S32_T scale_e; // Exponent used in final scaling (Used for fast compute)
+	S32_T scale_h; // Half scaling factor (Used for rounding)
+	S32_T diff_e; // Absolute difference of Coefficient exponent (Used for fast compute)
+	S32_T diff_h; // Half of difference factor (used in rounding)
+	S32_T origin; // 0/1 selects respectively Lower/Upper boundary point as origin for parabola
+	S32_T err; // rounding error Used for error-diffusion
+	S32_T dbg; // 0/1 selects respectively Lower/Upper boundary point as origin for parabola
+} PARAB_S;
 
 typedef struct GAIN_TAG // Structure containing gain data for all channels
 {
-	GAIN_CHAN_S chan_s[NUM_GAIN_CHANS]; // Array of structures containing gain data for each channel
-	S32_T num_iters; // number of applications of non-linear-gain transform
-	U32_T coef_g; // coefficient for gain shaping
+	BOUND_S bounds[NUM_PNTS]; // Array of structures containing boundary point data
+	PARAB_S parabs[NUM_SECTS]; // Array of structures containing parabolic section data
 	S32_T init_done;	// Flag indicating gain-shaping is initialised
 	S32_T params_set; // Flag indicating Parameters are set
 } GAIN_S;

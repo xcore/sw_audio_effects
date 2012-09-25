@@ -21,38 +21,68 @@
  * DESCRIPTION
  * -----------
  * This algorithm uses a piece-wise parabolic curve, to limit the number of multiplies required per sample.
- * Currently 2 parabola's are used, one for low-level signals (e.g. noise) and one for high-levele signals.
+ * Currently 5 parabola's are used, as follows:-
+ * 1) Unity-gain section (Straight line) for low-level signals (e.g. noise)
+ * 2) Transition to maximum gradient (user-configurable). 
+ * 3) Transition from max. gradient to 'max-gain' section.
+ * 4) 'max-gain' section, (Straight line) with minimum gradient (reciprocal of max-gradient)
+ * 5) Transition from min. gradient back to 'unity-gain' to finish.
  *
- * The 'Lo' parabola must NOT significantly increase the gain of low-level signals. 
- * Therefore when Input=0, the parabola approximates to: Output = Input (or L = X)
- * This forces the Lo parabola to be of the form L = X(A.X + 1), 
- * Where A will be determined by boundary conditions.
+ * These 5 sections are shown below in the rough schematic (as asterisks). 
+ * For reference: the Unity-gain (Output = Input) line is also shown (as dots)
+ * 'M' represents the maximum +ve sample value.
+ * NB There is an equivalent curve for -ve sample values.
  *
- * The 'Hi' parabola must not allow signal over-shoot, and acts like a 'limiter'.
- * Therefore when Input=Max, the parabola approximates to: Output = Max (or H = M)
- * This forces the Hi parabola to be of the form H = M - G(M - X)^2
- * Where G will be determined by boundary conditions.
- * 
- * At the boundary point (input = B). The Lo and Hi parabolas must meet with equal gradient.
- * Therefore for the Gradient:	2G(M - B) = 2AB + 1		--(1)
- * and for the Output:	B(AB + 1) = M - G(M - B)^2		--(2)
- *
- * Solving (1) and (2) yields the following formulea:
- *
- * A = (M - B)/(2BM)               G = (2M - B)/[2B(M - B)]
- *
- * M = 2^32 = 2^s, by forcing B to be a power of 2 (2^n) the parabolas can be evaluated with
- * just multiply, addition, and shift operators: as follows
- *
- * L = X{[ 2^(s+1) + X{ 2^(s-n) - 1} + 2^s] >> (s+1)}
- * H = 2^s - {[ Z{[gZ + 2^29] >> 30} + 2^s] >> (s+1)}				where Z = (M - X), and
- *
- * g = 2^30.[2^(h+1) - 1]/[2^h - 1]				where h = (s - n) = (number of hi-bits)
- *
- * g is (2 + fraction), and is represented in Fixed point as 2:30, so the MS-bit is 1.
- *
- * The fractional bits are mainly zero, and every 'h'th fractional bit is non-zero.
- *  E.g. for h=12,   g = 0x8004_0040
+ * Output
+ * ^
+ * |
+ * M.............................................*
+ * |                                            *.
+ * 5                                        **5. .
+ * +                                ********  .  .
+ * 4                         ***4***         .   .
+ * |                  *******               .    .
+ * +                **                     .     .
+ * 3              3*                      .      .
+ * |             *                       .       .
+ * |            *                       .        .
+ * |            *                      .         .
+ * |            *                     .          .
+ * |           *                     .           .
+ * |           *                    .            .
+ * |           *                   .             .
+ * +           *                  .              .
+ * |           *                 .               .
+ * |           *                .                .
+ * |           *               .                 .
+ * |          *               .                  .
+ * |          *              .                   .
+ * |          *             .                    .
+ * |          *            .                     .
+ * |          *           .                      .
+ * |          *          .                       .
+ * |         *          .                        .
+ * |         *         .                         .
+ * |         *        .                          .
+ * |         *       .                           .
+ * |         *      .                            .
+ * |        *      .                             .
+ * 2        2     .                              .
+ * |        *    .                               .
+ * |        *   .                                .
+ * |       *   .                                 .
+ * |       *  .                                  .
+ * |       * .                                   .
+ * |      * .                                    .
+ * |      *.                                     .
+ * +     *.                                      .
+ * |     *                                       .
+ * |    *                                        .
+ * |   *                                         .
+ * 1  1                                          .
+ * | *                                           .
+ * |*                                            .
+ * 0--1--+--2--+--3--+----------4----------+--5--M->Input
  *
 \******************************************************************************/
 
@@ -62,84 +92,169 @@
 static GAIN_S gain_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
 
 /******************************************************************************/
-void update_parameters( // Initialise parameters to generate required gain value (Approximately See below)
-	GAIN_S * gain_ps, // Pointer to structure containing all gain data
-	GAIN_PARAM_S * cur_param_ps // Pointer to structure containing gain parameters
+void scale_coef( // Scale and round floating point coeffiecient
+	FIX_POINT_S * fix_coef_ps, // pointer to structure for fixed point format
+	R64_T un_coef // input unscaled floating point coef.
 )
-// NB Current algorithm only supports gains that are a power-of-2, so requested gain is rounded to nearest power-of-2
-
 {
-	S32_T cur_gain = cur_param_ps->gain; // Get requested gain value
-	S32_T cur_iters = 1; // Initialise to minimum number of iterations
+	S32_T sign_coef = 1; // sign of coef. preset to postive. NB S8_T has bug
 
-	// Loop through LS bits of current gain	
-	while (3 < cur_gain)
+
+	fix_coef_ps->exp = 0;
+
+	// Check for special case of zero coef.
+	if (0 == un_coef )
 	{
-		cur_iters++; // Increment No. of iterations
-		cur_gain >>= 1; // divide gain by 2
-	} // while (3 < cur_gain)
+		fix_coef_ps->mant = 0;
+		fix_coef_ps->exp = 123456789; // NB Arbitary very large number. Required for A/B coef comparison
+	} // if (0 == un_coef )
+	else
+	{	// Non-zero coef.
 
-	// Check 2 most significant bits for rounding
-	if (3 == cur_gain)
-	{
-		cur_iters++; // Round-up No. of iterations
-	} // if (3 == cur_gain)
+		// Create absolute and sign components
+		if (un_coef < 0)
+		{
+			sign_coef = -1; // Update sign
+			un_coef = -un_coef; // NB un_coef is now absolute value
+		} // if (un_coef < 0)
 
-	assert( MAX_ITERS >= cur_iters ); // If fails, need more diffusion error arrays
+		// Loop while mantissa NOT at full accuracy
+		while (un_coef < (S64_T)0x40000000)
+		{
+			fix_coef_ps->exp++; // Increment exponent
+			un_coef *= 2; // Double input
+		} // while (scale_coef < 0x40000000)
 
-	gain_gs.num_iters = cur_iters; // Store new iteration number
-} // update_parameters
+		// Coef should now be in range 0x4000_0000 .. 0x7fff_ffff
+		fix_coef_ps->mant = sign_coef * (COEF_T)floor( (R64_T)0.5 + un_coef ); // calculate signed mantissa
+	} // else !(0 == un_coef )
+
+} // scale_coef
 /******************************************************************************/
-void init_chan( // Initialise structure for one channel of gain data
-	GAIN_CHAN_S * gain_chan_ps // Pointer to structure containing gain data for one channel
-)
+void gen_parabola_side_info( // generate side information to allow fast compute for parabola
+	PARAB_S * parab_ps // Pointer to structure containing parabola data
+) // return scaled integer coef
 {
-	S32_T iter_cnt; // iteration counter
+	S32_T exp_diff = (parab_ps->fix_b.exp - parab_ps->fix_a.exp); // Difference of exponents
 
 
-	// Loop through all iteration slots
-	for (iter_cnt=0; iter_cnt<MAX_ITERS; iter_cnt++)
-	{
-		gain_chan_ps->err_s[iter_cnt] = 0; // Clear diffusion error for sample
-		gain_chan_ps->err_g[iter_cnt] = 0; // Clear diffusion error for gain
-	} // for iter_cnt
-} // init_chan
+	// Check which Coef is largest. NB Largest exponent means smallest coef
+	if (0 < exp_diff)
+	{ // Coef_A is largest
+		parab_ps->big_a = 1;
+		parab_ps->diff_e = exp_diff;
+		parab_ps->scale_e = parab_ps->fix_a.exp; // Scale by smallest exponent
+	} // if (0 < exp_diff)
+	else
+	{ // Coef_B is largest
+		parab_ps->big_a = 0; 
+		parab_ps->diff_e = -exp_diff; // NB Store positive difference
+		parab_ps->scale_e = parab_ps->fix_b.exp; // Scale by smallest exponent
+	} // else !(0 < exp_diff)
+
+	// Initialise data to control rounding error ...
+
+	parab_ps->err = 0;
+
+	// Check for scaling factor larger than unity
+	if (0 < parab_ps->scale_e)
+	{ // Evaluate rounding value
+		parab_ps->scale_h = (1 <<  (parab_ps->scale_e - 1)); // Half scaling factor
+	} // if (0 < parab_ps->exp)
+
+	// Check for difference factor larger than unity
+	if (0 < parab_ps->diff_e)
+	{ // Evaluate rounding value
+		parab_ps->diff_h = (1 <<  (parab_ps->diff_e - 1)); // Half scaling factor
+	} // if (0 < parab_ps->exp)
+} // gen_side_info
 /******************************************************************************/
 void init_gain( // Initialise structure for all gain data
 	GAIN_S * gain_ps // Pointer to structure containing all gain data
 )
 {
-	S32_T chan_cnt; // channel counter
-	U32_T coef_val; // Coefficient value in FIXED POINT format. E.G. 2:30
-	S32_T bit_shift; // Preset bit_shift
-	S32_T hi_bits = HI_BITS; // No of bits above low-level threshold
+	// Initialise which end of parabola is origin (0 is low-value end, 1 is high value-end)
+	gain_ps->parabs[0].origin = 0;
+	gain_ps->parabs[1].origin = 0;
+	gain_ps->parabs[2].origin = 0;
+	gain_ps->parabs[3].origin = 1;
+	gain_ps->parabs[4].origin = 1;
 
-
-	assert (0 < hi_bits); // Check we have some hi-bits!
-
-	coef_val = ((U32_T)2 << FRAC_BITS); // Preset coef_g to 2.0 in 2:30 fixed point format)
-	bit_shift = FRAC_BITS - hi_bits; // Preset bit_shift to position of 1st fractional bit
-
-	// Add in fractional coefficient bits. E.g. for hi_bits=12 coef_val = 0x8004_0040 ...
-
-	// Loop through fractional bits		
-	while (0 <= bit_shift)
-	{
-		coef_val += ((U32_T)1 << bit_shift);
-		bit_shift -= hi_bits; // Update bit_shift to position of next fractional bit
-	} // while (hi_bits < bit_shift)
-
-	// Check for rounding
-	if (-1 == bit_shift) coef_val++;
-
-	gain_ps->coef_g = coef_val; // Initialise coefficient
-
-	// Loop through all output channels
-	for (chan_cnt=0; chan_cnt<NUM_GAIN_CHANS; chan_cnt++)
-	{
-		init_chan( &(gain_ps->chan_s[chan_cnt]) );
-	} // for chan_cnt
 } // init_gain
+/*****************************************************************************/
+void update_parameters( // Calculate parabolic section data from requested gain parameters
+	GAIN_S * gain_ps, // Pointer to structure containing all gain data
+	GAIN_PARAM_S * cur_param_ps // Pointer to structure containing gain parameters
+)
+{
+	BOUND_S * bds_p = &(gain_ps->bounds[0]); // Handy pointer to boundary-point data
+	PARAB_S * parab_ps; // Handy pointer to structure containing current parabola data
+	int sect_cnt; // parabolic Section counter
+	int orig_off; // flag indicating whether low or high end of parabola is at origin { 0:Low  1:High }
+	R64_T a_coef; // Coef_A for X^2
+	R64_T b_coef; // Coef_B for X
+	R64_T real_x; // Intermediate X co-ord
+	R64_T real_y; // Intermediate Y co-ord
+
+
+	// Assign Gradients
+	bds_p[0].m = (R64_T)1;
+	bds_p[1].m = (R64_T)1;
+	bds_p[2].m = (R64_T)cur_param_ps->gain; // NB Currently, this is the only configurable parameter
+	bds_p[3].m = 1/bds_p[2].m;
+	bds_p[4].m = bds_p[3].m;
+	bds_p[5].m = (R64_T)1;
+
+	// Assign X Co-ords for Boundaries
+	bds_p[0].x = (S64_T)BD0_YX;
+	bds_p[1].x = (S64_T)BD1_YX;
+	bds_p[2].x = (S64_T)BD2_X;
+	bds_p[4].x = (S64_T)BD4_X;
+	bds_p[5].x = (S64_T)BD5_YX;
+
+	// Assign Y Co-ords for Boundaries
+	bds_p[0].y = bds_p[0].x;
+	bds_p[1].y = bds_p[1].x;
+	bds_p[5].y = bds_p[5].x;
+
+
+	// Calculate Y co-ords where X co-ords are available
+	bds_p[2].y = (S64_T)floor(( (R64_T)bds_p[1].y + ((R64_T)(bds_p[2].x - bds_p[1].x) * (bds_p[2].m + bds_p[1].m) + (R64_T)1) / (R64_T)2) + (R64_T)0.5);
+	bds_p[4].y = (S64_T)floor(( (R64_T)bds_p[5].y - (R64_T)(bds_p[5].x - bds_p[4].x) * (bds_p[5].m + bds_p[4].m) / (R64_T)2) + (R64_T)0.5);
+
+	// Calculate Final X coord
+	real_x = (R64_T)(2 * (bds_p[4].y - bds_p[2].y));
+	real_x += (R64_T)bds_p[2].x * (bds_p[3].m + bds_p[2].m);
+	real_x -= (R64_T)bds_p[4].x * (bds_p[4].m + bds_p[3].m);
+	real_x /= (bds_p[2].m - bds_p[4].m);
+	bds_p[3].x = (S64_T)floor(real_x + (R64_T)0.5);
+
+	// Calculate Final Y coord ...
+	real_y = (R64_T)bds_p[2].y + (real_x - (R64_T)bds_p[2].x) * (bds_p[3].m + bds_p[2].m) / (R64_T)2;
+	bds_p[3].y = (S64_T)floor( real_y + (R64_T)0.5 );
+
+	// Fill out rest of Parabola data
+	for (sect_cnt=0; sect_cnt<NUM_SECTS; sect_cnt++)
+	{
+		parab_ps = &(gain_ps->parabs[sect_cnt]); // Point to current parabola data
+		orig_off = parab_ps->origin; // Determine which end of parabola is origin
+		parab_ps->x_off = bds_p[sect_cnt + orig_off].x; // Get X coord of origin
+		parab_ps->y_off = bds_p[sect_cnt + orig_off].y; // Get Y coord of origin
+		parab_ps->max_x = bds_p[sect_cnt + 1].x; // Store upper boundary limit
+		b_coef = bds_p[sect_cnt + orig_off].m; // Assign origin gradient to B coef
+
+		// Compute A coef
+		a_coef = (bds_p[sect_cnt+1].m - bds_p[sect_cnt].m) / (R64_T)(bds_p[sect_cnt+1].x - bds_p[sect_cnt].x) / (R64_T)2;
+
+		// Convert coefficients to fixed-point format
+		scale_coef( &(parab_ps->fix_a) ,a_coef );
+		scale_coef( &(parab_ps->fix_b) ,b_coef );
+
+		// Generate side information for fast compute
+		gen_parabola_side_info( parab_ps );
+	} // for sect_cnt
+
+} // update_parameters
 /******************************************************************************/
 void config_loudness( // Configure loudness parameters
 	GAIN_PARAM_S * cur_param_ps // Pointer to structure containing gain parameters
@@ -162,18 +277,56 @@ void config_loudness( // Configure loudness parameters
 
 } // config_loudness 
 /******************************************************************************/
+S64_T draw_parabola( // Computes Y co-ord for current parabola, given X co-ord
+	GAIN_S * gain_ps, // Pointer to structure containing gain data
+	PARAB_S * parab_ps, // Pointer to structure containing current parabola data
+	S64_T inp_x  // input X co-ordinate
+) // Return Y co-ordinate
+{
+	S64_T tmp_val; // Intermediate value
+	S64_T out_y; // Output Y co-ordinate
+
+
+	// Determine compute mode
+	if (parab_ps->big_a)
+	{
+		tmp_val = inp_x * (S64_T)parab_ps->fix_a.mant;
+
+		// Check fo non-zero Coef_B
+		if (0 != parab_ps->fix_b.mant)
+		{
+			tmp_val += ((S64_T)parab_ps->fix_b.mant + parab_ps->diff_h) >>  parab_ps->diff_e;
+		} // if (0 != parab_ps->fix_b.mant)
+	} // if (parab_ps->big_a)
+	else
+	{
+		tmp_val = (S64_T)parab_ps->fix_b.mant;
+
+		// Check fo non-zero Coef_A
+		if (0 != parab_ps->fix_a.mant)
+		{
+			tmp_val += (((S64_T)parab_ps->fix_a.mant * inp_x) + parab_ps->diff_h) >>  parab_ps->diff_e;
+		} // if (0 != parab_ps->fix_a.mant)
+	} // else !(parab_ps->big_a)
+
+	tmp_val = (tmp_val * inp_x) + parab_ps->err; // value before down-scaling, add in previous diffusion error
+	out_y = (tmp_val + (S64_T)parab_ps->scale_h ) >> parab_ps->scale_e; // Output (down-scaled) Y co-ord
+	parab_ps->err = tmp_val - (out_y << parab_ps->scale_e); // compute new diffusion error
+	
+	return out_y;
+} // draw_parabola
+/******************************************************************************/
 SAMP_CHAN_T boost_gain( // Applies non-linear gain to input sample to generate output sample
 	GAIN_S * gain_ps, // Pointer to structure containing all gain data
-	GAIN_CHAN_S * gain_chan_ps, // Pointer to structure containing gain data for current channel
-	SAMP_CHAN_T inp_samp, // input sample at channel precision
-	S32_T cur_iter // current value of iteration counter
+	SAMP_CHAN_T inp_samp // input sample at channel precision
 ) // Return Amplified Output Sample
 {
+	PARAB_S * parab_ps; // Pointer to structure containing current parabola data
+	SAMP_CHAN_T out_abs; // Absolute value of Output sample
+	S32_T sect_cnt; // Parabolic section counter
+	S32_T x_coord; // X co-ordinate if parabola
+	S32_T y_coord; // Y co-ordinate if parabola
 	S32_T sgn_samp = 1; // Preset polarity of sample to positive. NB S8_T is broken in 11.11.0
-	S32_T unity = ((S32_T)1 << (MAGN_BITS + 1)); // Scaled-up unity value
-	S64_T full_val; // intermediate value at full precision
-	S64_T redu_val; // intermediate value at reduced precision
-	S32_T inp_room; // Headroom between input value and max value
 
 
 	// Force positive sample value
@@ -183,73 +336,48 @@ SAMP_CHAN_T boost_gain( // Applies non-linear gain to input sample to generate o
 		sgn_samp = -1; // store negative polarity 
 	} // if (0 > inp_samp)
 
-	// Check if signal above low-level threshold
-	if (THRESHOLD < inp_samp)
-	{ // Signal above low-level threshold
-		inp_room = MAX_MAGN - inp_samp; // Calculate input head-room
-		full_val = (U64_T)gain_ps->coef_g * (U64_T)inp_room; // Calculate gain
+	/* Find correct parabolic section for input sample ...
+	 * NB currently this is a simple algorithm, but could be made quicker (but more complex)
+	 */
 
-		full_val += gain_chan_ps->err_g[cur_iter]; // Add gain diffusion error for this iteration
-		redu_val = ((full_val + HALF_FRAC) >> FRAC_BITS); // Down-scale gain
-		gain_chan_ps->err_g[cur_iter] = full_val - (redu_val << FRAC_BITS); // Update gain diffusion error
+	// Loop through parabolic sections until correct match
+	for (sect_cnt=0; sect_cnt<NUM_SECTS; sect_cnt++)
+	{
+		parab_ps = &(gain_ps->parabs[sect_cnt]); // Point to data for current parabolic section
 
-		full_val = redu_val * (S64_T)inp_room; // Multiply head_room by gain
+		// Skip if input-sample is greater than max allowed value for current parabola 
+		if (inp_samp <= parab_ps->max_x)
+		{
+			x_coord = (S64_T)inp_samp - (S64_T)parab_ps->x_off;
 
-		full_val += gain_chan_ps->err_s[cur_iter]; // Add sample diffusion error for this iteration
-		redu_val = (full_val + MAX_MAGN) >> (MAGN_BITS + 1); // Down-scale to output precision (output headroom)
-		gain_chan_ps->err_s[cur_iter] = full_val - (redu_val << (MAGN_BITS + 1)); // Update sample diffusion error
+			y_coord = draw_parabola( gain_ps ,parab_ps ,x_coord ); // Compute Y co-ord of parabola given  X co-ord
+			out_abs = y_coord + parab_ps->y_off;
 
-		redu_val = MAX_MAGN - redu_val; // NB Calculates new output from output head-room
-	} // if (THRESHOLD <= inp_samp)
-	else
-	{ // Signal below low-level threshold
-		full_val = ((S64_T)MAX_HI * (S64_T)inp_samp) + unity; // Calculate gain
-		full_val = full_val * (S64_T)inp_samp; // Multiply input by gain
+			break; // Stop searching
+		} // if (inp_samp < parab_ps->max_x)
+	} // for sect_cnt
 
-		full_val += gain_chan_ps->err_s[cur_iter]; // Add sample diffusion error for this iteration
-		redu_val = (full_val + MAX_MAGN) >> (MAGN_BITS + 1); // Down-scale to output precision (output headroom)
-		gain_chan_ps->err_s[cur_iter] = full_val - (redu_val << (MAGN_BITS + 1)); // Update sample diffusion error
-	} // else !(THRESHOLD <= inp_samp )
-
-//	redu_val = inp_samp; // Dbg
-	return (SAMP_CHAN_T)(sgn_samp * redu_val); // Re-create signed value
+	return (SAMP_CHAN_T)(sgn_samp * out_abs); // Re-create signed value
 } // boost_gain
 /******************************************************************************/
 S32_T use_loudness( // Wrapper for non_linear_gain_wrapper
-	S32_T inp_chan_samp, // input sample from channel
-	S32_T cur_chan // current channel
+	S32_T inp_samp // input sample from channel
 ) // Return Amplified Output Sample
 {
-	static S32_T err = 0; // Diffusion Error
-	S64_T full_samp; // full precision sample
-	S32_T redu_samp; // reduced precision sample
 	S32_T out_samp; // amplified output sample at channel precision
-	S32_T iter_cnt; // Iteration counter
 
 
 	// Check if loudness parameters have been initialised
 	if (0 == gain_gs.params_set)
 	{
 		assert(0 == 1); // Please call config_loudness() function before use_loudness() 
+
+		return out_samp;
 	} // if (0 == init_flag)
 	else
 	{ // process input sample
-		// Scale-down 32-bit sample to 24-bit
-		full_samp = (S64_T)inp_chan_samp + (S64_T)err; // Add diffusion error
-		redu_samp = (S32_T)((full_samp + HALF_SCALE) >> SCALE_BITS);
-		err = full_samp - ((S64_T)redu_samp << SCALE_BITS);
-	
-		// Loop through iterations
-		for (iter_cnt = 0; iter_cnt < gain_gs.num_iters; iter_cnt++)
-		{
-			out_samp = boost_gain( &gain_gs ,&(gain_gs.chan_s[cur_chan]) ,redu_samp ,iter_cnt ); // Apply non-linear gain
-	
-			redu_samp = out_samp; // Update amplifier input ready for next iteration
-		} // for (iter_cnt = 0; iter_cnt < gain_gs.num_iters; iter_cnt++)
-	
-		// Scale-up 24-bit sample to 32-bit
-		out_samp = redu_samp << SCALE_BITS;
-//	out_samp = inp_chan_samp; // Dbg
+		out_samp = boost_gain( &gain_gs ,inp_samp ); // Apply non-linear gain
+//	out_samp = inp_samp; // Dbg
 	} // else !(0 == init_flag)
 
 	return out_samp;

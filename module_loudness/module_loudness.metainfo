@@ -1,0 +1,74 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "No-linear Gain-Shaping"
+componentFullName = "Configurable Loudness Function Library"
+alternativeNames = { }
+componentDescription = ""
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  NumChannels = {
+    short   = "Loudness Channels",
+    help    = "Number of audio channels processed in parallel, Currently set in application Makefile",
+    long    = "192kHz Can only accommodate 2 channels, 44 OR 48kHz could accommodate 12",
+    units   = "",
+    define  = "NUM_GAIN_CHANS",
+    type    = "int",
+    options = {1,2,4,6,8,10,12},
+    resourceUsageFlags = {"linear"},
+    default = 4 
+  },
+  Gain = {
+    short   = "Gain",
+    help    = "Mid-volume signals are amplified, low and high signal levels are unaffected",
+    long    = "",
+    units   = "Hz",
+    define  = "DEF_GAIN",
+    type    = "int",
+    min     = 1,
+    max     = 2^31,
+    resourceUsageFlags = {"noeffect"},
+    default = 4
+  },
+}
+
+derivedValues = {}
+
+ports = {
+}
+
+channels = {
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  if swblock.params.SampleFreq > 96000 and swblock.params.NumChans > 2 then
+    status = "Invalid Configuration" 
+    table.insert(issues, { issues = "176400 or 192000 kHz can only support 2 channels", suggestion = "Reduce Sample Rate"}) 
+  elseif swblock.params.SampleFreq > 48000 and swblock.params.NumChans > 6 then
+    status = "Invalid Configuration" 
+    table.insert(issues, { issues = "88200 or 96000 kHz can only support 6 channels", suggestion = "Reduce Sample Rate"}) 
+  end
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+  includes = {},
+  globals = {},
+  body = {}
+}
+
+api = {'use_loudness','config_loudness'}
+

@@ -35,7 +35,7 @@ void process_all_chans( // Do DSP effect processing
 
 	for(chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
 	{ // Apply non-linear gain shaping (Loudness)
-		out_samps[chan_cnt] = use_loudness( inp_samps[chan_cnt] ,chan_cnt );
+		out_samps[chan_cnt] = use_loudness( inp_samps[chan_cnt] );
 		// out_samps[chan_cnt] = inp_samps[chan_cnt]; // DBG
 	} // for chan_cnt
 
