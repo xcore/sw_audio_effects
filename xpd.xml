@@ -1,14 +1,100 @@
 <?xml version="1.0" ?>
 <xpd>
+    <components>
+        <component description = "Software Block: app_usb_reverb" scope = "Experimental" path = "app_usb_reverb" type = "demoCode" id = "app_usb_reverb" name = "app_usb_reverb">
+            <componentDependency>module_utils.0v1</componentDependency>
+            <componentDependency>module_delay.0v1</componentDependency>
+            <componentDependency>module_loudness.0v1</componentDependency>
+            <componentDependency>module_biquad.0v1</componentDependency>
+            <componentDependency>module_usb_shared.1v3</componentDependency>
+            <componentDependency>module_xud.0v60</componentDependency>
+            <componentDependency>module_usb_aud_shared.2v4</componentDependency>
+            <componentDependency>module_spdif_tx.1v37</componentDependency>
+            <componentDependency>module_spdif_rx.1v25</componentDependency>
+            <componentDependency>module_usb_midi.1v42</componentDependency>
+            <componentDependency>module_dfu.1v5</componentDependency>
+        </component>
+        <component description = "Software Block: module_loudness" scope = "Experimental" path = "module_loudness" type = "demoCode" id = "module_loudness" name = "module_loudness"></component>
+        <component description = "Software Block: app_slicekit_biquad" scope = "Experimental" path = "app_slicekit_biquad" type = "demoCode" id = "app_slicekit_biquad" name = "app_slicekit_biquad">
+            <componentDependency>module_biquad</componentDependency>
+            <componentDependency>module_utils</componentDependency>
+            <componentDependency>module_i2s_master</componentDependency>
+            <componentDependency>module_i2c_single_port</componentDependency>
+        </component>
+        <component description = "Software Block: app_usb_loudness" scope = "Experimental" path = "app_usb_loudness" type = "demoCode" id = "app_usb_loudness" name = "app_usb_loudness">
+            <componentDependency>module_utils.0v1</componentDependency>
+            <componentDependency>module_loudness.0v1</componentDependency>
+            <componentDependency>module_usb_shared.1v3</componentDependency>
+            <componentDependency>module_xud.0v60</componentDependency>
+            <componentDependency>module_usb_aud_shared.2v4</componentDependency>
+            <componentDependency>module_spdif_tx.1v37</componentDependency>
+            <componentDependency>module_spdif_rx.1v25</componentDependency>
+            <componentDependency>module_usb_midi.1v42</componentDependency>
+            <componentDependency>module_dfu.1v5</componentDependency>
+        </component>
+        <component description = "Software Block: app_slicekit_loudness" scope = "Experimental" path = "app_slicekit_loudness" type = "demoCode" id = "app_slicekit_loudness" name = "app_slicekit_loudness">
+            <componentDependency>module_loudness</componentDependency>
+            <componentDependency>module_utils</componentDependency>
+            <componentDependency>module_i2s_master</componentDependency>
+            <componentDependency>module_i2c_single_port</componentDependency>
+        </component>
+        <component description = "Software Block: app_slicekit_delay" scope = "Experimental" path = "app_slicekit_delay" type = "demoCode" id = "app_slicekit_delay" name = "app_slicekit_delay">
+            <componentDependency>module_delay</componentDependency>
+            <componentDependency>module_utils</componentDependency>
+            <componentDependency>module_i2s_master</componentDependency>
+            <componentDependency>module_i2c_single_port</componentDependency>
+        </component>
+        <component description = "Software Block: module_reverb" scope = "Experimental" path = "module_reverb" type = "demoCode" id = "module_reverb" name = "module_reverb"></component>
+        <component description = "Software Block: module_delay" scope = "Experimental" path = "module_delay" type = "demoCode" id = "module_delay" name = "module_delay"></component>
+        <component description = "Software Block: app_usb_delay" scope = "Experimental" path = "app_usb_delay" type = "demoCode" id = "app_usb_delay" name = "app_usb_delay">
+            <componentDependency>module_utils.0v1</componentDependency>
+            <componentDependency>module_delay.0v1</componentDependency>
+            <componentDependency>module_usb_shared.1v3</componentDependency>
+            <componentDependency>module_xud.0v60</componentDependency>
+            <componentDependency>module_usb_aud_shared.2v4</componentDependency>
+            <componentDependency>module_spdif_tx.1v37</componentDependency>
+            <componentDependency>module_spdif_rx.1v25</componentDependency>
+            <componentDependency>module_usb_midi.1v42</componentDependency>
+            <componentDependency>module_dfu.1v5</componentDependency>
+        </component>
+        <component name = "BiQuad Function Library" type = "component" buildresults_path = "module_biquad/.module_biquad.buildinfo" scope = "Early Development" path = "module_biquad" metainfo_path = "module_biquad/module_biquad.metainfo" local = "false" id = "module_biquad" description = "A BiQuad library using 6 multplies per sample capable of processing around 4 channels of 48 KHz audio in parallel.">
+            <board>XA-SK-AUDIO</board>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+        </component>
+        <component description = "Software Block: app_slicekit_reverb" scope = "Experimental" path = "app_slicekit_reverb" type = "demoCode" id = "app_slicekit_reverb" name = "app_slicekit_reverb">
+            <componentDependency>module_reverb</componentDependency>
+            <componentDependency>module_loudness</componentDependency>
+            <componentDependency>module_biquad</componentDependency>
+            <componentDependency>module_delay</componentDependency>
+            <componentDependency>module_utils</componentDependency>
+            <componentDependency>module_i2s_master</componentDependency>
+            <componentDependency>module_i2c_single_port</componentDependency>
+        </component>
+        <component description = "Software Block: module_utils" scope = "Experimental" path = "module_utils" type = "demoCode" id = "module_utils" name = "module_utils"></component>
+        <component description = "Software Block: app_usb_biquad" scope = "Experimental" path = "app_usb_biquad" type = "demoCode" id = "app_usb_biquad" name = "app_usb_biquad">
+            <componentDependency>module_biquad.0v1</componentDependency>
+            <componentDependency>module_utils.0v1</componentDependency>
+            <componentDependency>module_usb_shared.1v3</componentDependency>
+            <componentDependency>module_xud.0v60</componentDependency>
+            <componentDependency>module_usb_aud_shared.2v4</componentDependency>
+            <componentDependency>module_spdif_tx.1v37</componentDependency>
+            <componentDependency>module_spdif_rx.1v25</componentDependency>
+            <componentDependency>module_usb_midi.1v42</componentDependency>
+            <componentDependency>module_dfu.1v5</componentDependency>
+        </component>
+    </components>
     <dependency repo = "sc_i2c">
-        <githash>86cb497a5ee519fbc0c4bb597adeeb135d3e97e1</githash>
+        <githash>69533c451e47767a270d61241f0286a1bfd7c730</githash>
         <uri>ssh://git@github.com/xcore/sc_i2c</uri>
-        <version>2.0.0rc3</version>
     </dependency>
     <dependency repo = "xcommon">
-        <githash>b7b5be59795a0a4b3fee4aeaff3c8e398bf76d27</githash>
+        <githash>cdcfc87c8c6047bf8d21f13222cbe9e84c6c5e01</githash>
         <uri>ssh://git@github.com/xcore/xcommon</uri>
-        <version>1.0.0rc2</version>
+    </dependency>
+    <dependency repo = "sc_i2s">
+        <githash>baee3f2eb8a0da07e3a0c3edae8350691a78c1de</githash>
+        <uri>git://github.com/xcore/sc_i2s.git</uri>
     </dependency>
     <description>I2S Digital Audio Component</description>
     <docdir>doc</docdir>
@@ -20,9 +106,10 @@
     <release parenthash = "8add6ae72ee457b25ca8deaf6a02570706032e0c" version = "1.2.0rc0" githash = "237bf74edbe99636ee822c41b1fe7ddee1f141a7"></release>
     <release parenthash = "622160ca644b474415218a5050cdc135890ee1f5" version = "1.3.0rc0" githash = "a76a3cd3457181b92701239471918b1606a885a5"></release>
     <release parenthash = "08e0db677ffb3aee4b315d6b6468abd81465f6bf" version = "1.3.0rc1" githash = "f7b6a604107c4cac048a0f6d0a4bfa8cb0882020"></release>
-    <release parenthash = "dd8775d44ab9e7dc9c4662ae5b92119b5d036dcb" version = "1.3.0rc2"></release>
-    <scope>example</scope>
+    <release parenthash = "dd8775d44ab9e7dc9c4662ae5b92119b5d036dcb" version = "1.3.0rc2" githash = "f3e56c9cd28cbe3c92214806e4dca8d2db9b9880"></release>
     <subpartnumber>XM-000076-SW</subpartnumber>
     <vendor>XMOS</vendor>
+    <xcore_repo>sc_i2s</xcore_repo>
     <xpd_version>1.0</xpd_version>
+    <scope>example</scope>
 </xpd>
