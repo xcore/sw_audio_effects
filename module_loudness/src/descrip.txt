@@ -27,3 +27,7 @@ Updated to pull in NUM_GAIN_CHANS from Makefile
 25-SEP-2012
 -----------
 Updated to use 5 parabolic sections.
+
+26-SEP-2010
+-----------
+Upgrade to 12.6.0 toolset. Had to move common fixed-point code to module_utils/common_utils.[ch]

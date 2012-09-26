@@ -105,8 +105,12 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-  includes = { "non_linear_gain.h" },
-  globals = {},
+	includes = 
+	{ 
+		"dsp_biquad.h"
+	},
+
+  globals = "",
   body = {}
 }
 

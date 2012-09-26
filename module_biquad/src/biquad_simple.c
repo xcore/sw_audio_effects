@@ -26,51 +26,33 @@
 static BIQUAD_S biquad_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
 
 /******************************************************************************/
-void scale_coef( // Scale and round floating point coeffiecient
-	FIX_POINT_S * fix_coef_ps, // pointer to structure containing coef in fixed point format
+void init_fix_const( // Initialise structure of data for multiply by fixed-point constant
+	FIX_CONST_S * fix_const_ps, // pointer to structure containing data for multiply by fixed point constant
 	REAL_T un_coef // input unscaled floating point coef.
 ) // return scaled integer coef
 {
-	S32_T sign_coef = 1; // sign of coef. preset to postive. NB S8_T has bug
+	FIX_POINT_S * fix_coef_ps = &(fix_const_ps->coef); // Pointer to coefficient in fixed point format
 
 
-	fix_coef_ps->err = 0;
-	fix_coef_ps->exp = 0;
+	scale_coef( fix_coef_ps ,un_coef );
+
+	fix_const_ps->err = 0;
 
 	// Check for special case of zero coef.
 	if (0 == un_coef )
 	{
-		fix_coef_ps->mant = 0;
-		fix_coef_ps->half = 0;
+		fix_const_ps->half = 0;
 	} // if (0 == un_coef )
 	else
 	{	// Non-zero coef.
-
-		// Create absolute and sign components
-		if (un_coef < 0)
-		{
-			sign_coef = -1; // Update sign
-			un_coef = -un_coef; // NB un_coef is now absolute value
-		} // if (un_coef < 0)
-
-		// Loop while mantissa NOT at full accuracy
-		while (un_coef < (FILT_T)0x40000000)
-		{
-			fix_coef_ps->exp++; // Increment exponent
-			un_coef *= 2; // Double input
-		} // while (scale_coef < 0x40000000)
-
-		// Coef should now be in range 0x4000_0000 .. 0x7fff_ffff
-		fix_coef_ps->mant = sign_coef * (COEF_T)floor( (REAL_T)0.5 + un_coef ); // calculate signed mantissa
-
 		// Check for scaling factor larger than unity
 		if (0 < fix_coef_ps->exp)
 		{ // Evaluate rounding value
-			fix_coef_ps->half = (1 <<  (fix_coef_ps->exp - 1)); // Half scaling factor
+			fix_const_ps->half = (1 <<  (fix_coef_ps->exp - 1)); // Half scaling factor
 		} // if (0 < fix_coef_ps->exp)
 	} // else !(0 == un_coef )
   
-} // scale_coef
+} // init_fix_const
 /******************************************************************************/
 void init_lopass_coefs( // Initialise set of BiQuad coeffs for Low-Pass Filter
 	BIQUAD_PARAM_S * cur_param_ps, // Pointer to structure containing current biquad filter parameters
@@ -248,8 +230,8 @@ void init_common_coefs( // Initialise Common BiQuad Coeffs. Edit as to select re
 	{
 		un_b[tap_cnt] = 0;
 		un_a[tap_cnt] = 0;
-		scale_coef( &(bq_coef_ps->b[tap_cnt]) ,(FILT_T)0.0 );
-		scale_coef( &(bq_coef_ps->a[tap_cnt]) ,(FILT_T)0.0 );
+		init_fix_const( &(bq_coef_ps->b[tap_cnt]) ,(FILT_T)0.0 );
+		init_fix_const( &(bq_coef_ps->a[tap_cnt]) ,(FILT_T)0.0 );
 	} // for tap_cnt
 
 	// Check current Filter-Mode
@@ -289,8 +271,8 @@ void init_common_coefs( // Initialise Common BiQuad Coeffs. Edit as to select re
 	// Normalise and store Coefs
 	for (tap_cnt=0; tap_cnt<NUM_FILT_TAPS; tap_cnt++)
 	{
-		scale_coef( &(bq_coef_ps->b[tap_cnt]) ,(REAL_T)( un_b[tap_cnt] / un_a[0] ) );
-		scale_coef( &(bq_coef_ps->a[tap_cnt]) ,(REAL_T)( un_a[tap_cnt] / un_a[0] ) );
+		init_fix_const( &(bq_coef_ps->b[tap_cnt]) ,(REAL_T)( un_b[tap_cnt] / un_a[0] ) );
+		init_fix_const( &(bq_coef_ps->a[tap_cnt]) ,(REAL_T)( un_a[tap_cnt] / un_a[0] ) );
 	} // for tap_cnt
 } // init_common_coefs
 /******************************************************************************/
@@ -354,17 +336,18 @@ void config_biquad_filter( // Configure BiQuad filter
 } // config_biquad_filter
 /******************************************************************************/
 FILT_T fix_point_mult( // Multiply a sample by a fixed point coefficient
-	FIX_POINT_S * fix_coef_ps, // pointer to structure containing coef in fixed point format
+	FIX_CONST_S * fix_const_ps, // pointer to structure containing data for multiply by fixed point constant
 	FILT_T inp_samp  // input sample to multiply
 ) // Return scaled result of multiply
 {
+	FIX_POINT_S * fix_coef_ps = &(fix_const_ps->coef); // Pointer to coefficient in fixed point format
 	FILT_T full_res; // Full precision result of multiply
 	FILT_T redu_res; // output result of multiply scaled back to sample range
 
 
-	full_res = ((FILT_T)fix_coef_ps->mant * inp_samp + (FILT_T)fix_coef_ps->err); // Full precison result
-	redu_res = (full_res + (FILT_T)fix_coef_ps->half) >> fix_coef_ps->exp; // Compute reduced precision result
-	fix_coef_ps->err = (COEF_T)(full_res - (redu_res << fix_coef_ps->exp)); // Update diffusion error
+	full_res = ((FILT_T)fix_coef_ps->mant * inp_samp + (FILT_T)fix_const_ps->err); // Full precison result
+	redu_res = (full_res + (FILT_T)fix_const_ps->half) >> fix_coef_ps->exp; // Compute reduced precision result
+	fix_const_ps->err = (COEF_T)(full_res - (redu_res << fix_coef_ps->exp)); // Update diffusion error
 
 	return redu_res;
 } // fix_point_mult

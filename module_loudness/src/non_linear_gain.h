@@ -29,7 +29,7 @@
 #include <math.h>
 #include <assert.h>
 #include "types64bit.h"
-#include "common_audio.h"
+#include "common_utils.h"
 
 #ifndef NUM_GAIN_CHANS
 #error Please define NUM_GAIN_CHANS in Makefile
@@ -111,14 +111,6 @@ void config_loudness( // Configure gain parameters. NB Must be called before use
 // table of configurable boundary Gradients
 #define BD3_G ((S64_T)1 << GRAD5_BITS)
 
-
-typedef S32_T COEF_T; // Coefficients are represented as Fixed-point values. The Mantissa & Exponent are both of type COEF_T
-
-typedef struct FIX_POINT_TAG // Structure containing coefficients expressed as fixed point
-{
-	COEF_T mant; // Mantissa
-	COEF_T exp; // Exponent expressed as power of 2 (Log2 of scaling factor)
-} FIX_POINT_S;
 
 typedef struct BOUND_TAG // Structure containing boundary condition data (between 2 Parabolic sections)
 {

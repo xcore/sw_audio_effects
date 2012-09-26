@@ -59,3 +59,9 @@ Now uses separate config_biquad_filter function for changing parameters
 13-SEP-2010
 -----------
 Updated to pull in NUM_BIQUAD_CHANS, etc from Makefile
+
+26-SEP-2010
+-----------
+Upgrade to 12.6.0 toolset. Had to move common fixed-point code to module_utils/common_utils.[ch]
+Created new FIX_CONST_S structure to hold data for fixed-point multiply by constant coefficient
+

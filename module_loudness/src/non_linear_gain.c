@@ -92,45 +92,6 @@
 static GAIN_S gain_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
 
 /******************************************************************************/
-void scale_coef( // Scale and round floating point coeffiecient
-	FIX_POINT_S * fix_coef_ps, // pointer to structure for fixed point format
-	R64_T un_coef // input unscaled floating point coef.
-)
-{
-	S32_T sign_coef = 1; // sign of coef. preset to postive. NB S8_T has bug
-
-
-	fix_coef_ps->exp = 0;
-
-	// Check for special case of zero coef.
-	if (0 == un_coef )
-	{
-		fix_coef_ps->mant = 0;
-		fix_coef_ps->exp = 123456789; // NB Arbitary very large number. Required for A/B coef comparison
-	} // if (0 == un_coef )
-	else
-	{	// Non-zero coef.
-
-		// Create absolute and sign components
-		if (un_coef < 0)
-		{
-			sign_coef = -1; // Update sign
-			un_coef = -un_coef; // NB un_coef is now absolute value
-		} // if (un_coef < 0)
-
-		// Loop while mantissa NOT at full accuracy
-		while (un_coef < (S64_T)0x40000000)
-		{
-			fix_coef_ps->exp++; // Increment exponent
-			un_coef *= 2; // Double input
-		} // while (scale_coef < 0x40000000)
-
-		// Coef should now be in range 0x4000_0000 .. 0x7fff_ffff
-		fix_coef_ps->mant = sign_coef * (COEF_T)floor( (R64_T)0.5 + un_coef ); // calculate signed mantissa
-	} // else !(0 == un_coef )
-
-} // scale_coef
-/******************************************************************************/
 void gen_parabola_side_info( // generate side information to allow fast compute for parabola
 	PARAB_S * parab_ps // Pointer to structure containing parabola data
 ) // return scaled integer coef

@@ -31,7 +31,7 @@
 #include <assert.h>
 #include <print.h>
 #include "types64bit.h"
-#include "common_audio.h"
+#include "common_utils.h"
 
 #ifndef NUM_BIQUAD_CHANS
 #error Please define NUM_BIQUAD_CHANS in Makefile
@@ -95,7 +95,6 @@ void config_biquad_filter( // Configure BiQuad filter
 #define MIN_SAMP_FREQ 20 // Minimum Sample Frequency (In Hz)
 
 typedef R64_T REAL_T; // Real or floating-point type (NB not supported in earlier XC compilers)
-typedef S32_T COEF_T; // Coefficients are represented as Fixed-point values. The Mantissa & Exponent are both of type COEF_T
 typedef S64_T FILT_T; // type used for internal filter calculations
 
 /* Scaling Data
@@ -113,18 +112,17 @@ typedef S64_T FILT_T; // type used for internal filter calculations
 
 #define NUM_FILT_TAPS 3 // Number of filter taps (for FIR or IIR, I.E. FIR+IIR = 2 * NUM_FILT_TAPS)
 
-typedef struct FIX_POINT_TAG // Structure containing coefficients expressed as fixed point
+typedef struct FIX_CONST_TAG // Structure containing data for multiply by fixed-point constant
 {
-	COEF_T mant; // Mantissa
-	COEF_T exp; // Exponent expressed as power of 2 (Log2 of scaling factor)
+	FIX_POINT_S coef; // Constant coefficient in fixed-point format
 	COEF_T half; // Half of scaling factor (used in rounding)
 	COEF_T err; // rounding error
-} FIX_POINT_S;
+} FIX_CONST_S;
 
 typedef struct BIQUAD_COEF_TAG // Structure containing BiQuad coefficients
 {
-	FIX_POINT_S b[NUM_FILT_TAPS]; // Array of weighting for input samples (FIR taps)
-	FIX_POINT_S a[NUM_FILT_TAPS]; // Array of weighting for output results (IIR taps)
+	FIX_CONST_S b[NUM_FILT_TAPS]; // Array of weighting for input samples (FIR taps)
+	FIX_CONST_S a[NUM_FILT_TAPS]; // Array of weighting for output results (IIR taps)
 } BIQUAD_COEF_S;
 
 typedef struct BIQUAD_CHAN_TAG // Structure containing intermediate data for one channel, updated every sample
