@@ -11,6 +11,11 @@ componentVersion = "1v0"
 -------------------------------------------------------------------------------
 -- Parameter descriptions.
 -------------------------------------------------------------------------------
+LO_PASS=0
+HI_PASS=1
+BAND_PASS=2
+BAND_STOP=3
+ALL_PASS=4
 
 configPoints =
 {
@@ -22,7 +27,7 @@ configPoints =
     define  = "DEF_SAMP_FREQ",
     type    = "int",
     options = {32000,44100,48000,88200,96000,176400,192000},
-    resourceUsageFlags = {"noeffect"},
+    resourceUsageFlags = {"linear"},
     default = 48000
   },
   NumChannels = {
@@ -43,19 +48,19 @@ configPoints =
     long    = "",
     units   = "",
     define  = "DEF_FILT_MODE",
-    type    = "int (enumerated type)",
+    type    = "int",
     options = {LO_PASS,HI_PASS,BAND_PASS,BAND_STOP,ALL_PASS}, 
     resourceUsageFlags = {"noeffect"},
     default = LO_PASS
   },
   SignificantFreq = {
     short   = "Significant Frequency",
-    help    = "The significant frequency for the filter type. E.g Cut-off Freq. for Low-Pass. NOte that this is specified in Hz, not KHz",
+    help    = "The significant frequency for the filter type. E.g Cut-off Freq. for Low-Pass. Note that this is specified in Hz, not KHz",
     long    = "",
     units   = "Hz",
-    define  = "DEF_SIG_FREQ"
+    define  = "DEF_SIG_FREQ",
     type    = "int",
-    min     = 20,
+     min     = 20,
     max     = 20000,
     resourceUsageFlags = {"noeffect"},
     default = 1000
@@ -100,7 +105,7 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-  includes = {},
+  includes = { "non_linear_gain.h" },
   globals = {},
   body = {}
 }

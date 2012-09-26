@@ -8,5 +8,6 @@ Non-linear-gain Function Library
 
 Features
 --------
+
    * Offers user-configurable increased gain, without clipping
    * From 12 channels at 48 KHz to 2 channel at 192 KHz

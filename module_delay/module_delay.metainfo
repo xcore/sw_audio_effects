@@ -22,7 +22,7 @@ configPoints =
     define  = "DEF_SAMP_FREQ",
     type    = "int",
     options = {32000,44100,48000,88200,96000,176400,192000},
-    resourceUsageFlags = {"noeffect"},
+    resourceUsageFlags = {"linear"},
     default = 48000
   },
   NumChannels = {
@@ -36,7 +36,7 @@ configPoints =
     resourceUsageFlags = {"linear"},
     default = 4 
   },
-  NumTaps= {
+  NumTaps = {
     short   = "Delay Taps",
     help    = "Number of delay-taps for delay-line. By default each delay is double the previous one",
     long    = "",
@@ -44,8 +44,8 @@ configPoints =
     define  = "DEF_TAPS",
     type    = "int",
     min     = 1,
-    max     = 2^31,
-    resourceUsageFlags = {"noeffect"},
+    max     = (2^31 - 1),
+    resourceUsageFlags = {"linear"},
     default = 4
   },
   DelayTimes= {
@@ -56,7 +56,7 @@ configPoints =
     define  = "us_delays[MAX_TAPS]",
     type    = "int",
     min     = 1,
-    max     = 2^31,
+    max     = 2^31 - 1,
     resourceUsageFlags = {"noeffect"},
     default = {}
   },

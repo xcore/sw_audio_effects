@@ -8,5 +8,6 @@ Delay-line Function Library
 
 Features
 --------
+
    * Offers programmable delay taps:
    * 8 taps for 4 channels at 192 KHz
