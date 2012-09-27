@@ -53,6 +53,7 @@
     </components>
     <exclude_dir>app_slicekit_reverb</exclude_dir>
     <exclude_dir>module_sdram_delay</exclude_dir>
+    <exclude_dir>module_sdram</exclude_dir>
     <dependency repo = "sc_i2c">
         <githash>a6eda163c7d3e33cfb30a3ee031c2605381195f2</githash>
         <uri>ssh://git@github.com/xcore/sc_i2c</uri>
