@@ -33,8 +33,11 @@
 #include "types64bit.h"
 #include "common_utils.h"
 
-#ifndef NUM_BIQUAD_CHANS
-#error Please define NUM_BIQUAD_CHANS in Makefile
+#ifndef NUM_BIQUAD_CHANS 
+#define NUM_BIQUAD_CHANS 2 // XPD tool expect a definition in the header, but please define in Makefile
+#define NO_CHANS 1 // Flag no channel definitions
+#else // ifndef NUM_BIQUAD_CHANS 
+#define NO_CHANS 0
 #endif // NUM_BIQUAD_CHANS
 
 typedef enum FILT_MODE_TAG // Different Processing States

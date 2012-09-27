@@ -1,9 +1,16 @@
-<Add title here>
-================
+Reverb Application
+==================
 
-:scope: <Put one of Roadmap, Example, Early Development or General Use>
-:description: <Add one line here>
-:keywords: <Add comma separated list of keywords>
-:boards: <Add comma separated list of supported boards>
+:scope: Example
+:description: A reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain.
+:keywords: reverb, delay, echo, audio, dsp, slicekit
+:boards: XA-SK-AUDIO
 
-<Add description of software block>
+Toggles between Dry and Effect signals. 
+
+Applies reverb to audio stream.
+The Audio_IO uses 1 thread.
+This DSP function uses 3 threads, 
+	one for Equalisation, 
+	one for Gain-control (Loudness), 
+	the remaining thread handles control and delay functions.

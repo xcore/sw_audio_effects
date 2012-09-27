@@ -21,7 +21,7 @@
  *
 \******************************************************************************/
 
-#include "dsp_control.h"
+#include "dsp_reverb.h"
 
 // DSP-control thread.
 
@@ -109,7 +109,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 
 	// Synchronise a reverb configuration (with other threads) using default parameters
 	def_param_s.gain = 8; // Fine-tune Gain
-	def_param_s.room_size = (80 / NUM_REVERB_CHANS); // Fine-tune Room-size
+	def_param_s.room_size = (74 / NUM_REVERB_CHANS); // Fine-tune Room-size
 	sync_reverb_config( c_dsp_eq ,c_dsp_gain ,def_param_s );
 
 	// Loop forever

@@ -81,9 +81,12 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-  includes = {},
-  globals = {},
-  body = {}
+includes = 
+	{ 
+		"dsp_example_delay.h"
+	},
+  globals = "",
+  body = ""
 }
 
 api = {'use_delay_line','config_delay_line'}

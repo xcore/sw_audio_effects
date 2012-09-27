@@ -168,9 +168,12 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-  includes = {},
-  globals = {},
-  body = {}
+includes = 
+	{ 
+		"dsp_example_reverb.h"
+	},
+  globals = "",
+  body = ""
 }
 
 api = {'use_reverb','config_reverb'}

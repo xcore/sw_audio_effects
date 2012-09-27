@@ -31,8 +31,11 @@
 #include "types64bit.h"
 #include "common_utils.h"
 
-#ifndef NUM_GAIN_CHANS
-#error Please define NUM_GAIN_CHANS in Makefile
+#ifndef NUM_GAIN_CHANS 
+#define NUM_GAIN_CHANS 2 // XPD tool expect a definition in the header, but please define in Makefile
+#define NO_CHANS 1 // Flag no channel definitions
+#else // ifndef NUM_GAIN_CHANS 
+#define NO_CHANS 0
 #endif // NUM_GAIN_CHANS
 
 #define DEF_GAIN 4 // Default Gain.

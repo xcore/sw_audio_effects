@@ -24,13 +24,23 @@
 #ifndef _COMMON_UTILS_H_
 #define _COMMON_UTILS_H_
 
+#include <math.h>
 #include "types64bit.h"
+#include "common_audio.h"
 
 #define SWAP_NUM (1 << 19)	// Swap effect after this many samples
 
 #define FADE_BITS 14 // Log2[FADE_LEN] (in Samples)
 #define FADE_LEN (1 << FADE_BITS) // Length of cross-fade in samples
 #define HALF_FADE (FADE_LEN >> 1) // Half cross-fade length
+
+typedef S32_T COEF_T; // Coefficients are represented as Fixed-point values. The Mantissa & Exponent are both of type COEF_T
+
+typedef struct FIX_POINT_TAG // Structure containing coefficients expressed as fixed point
+{
+	COEF_T mant; // Mantissa
+	COEF_T exp; // Exponent expressed as power of 2 (Log2 of scaling factor)
+} FIX_POINT_S;
 
 typedef enum PROC_STATE_TAG // Different Processing States
 {
@@ -62,6 +72,21 @@ void cross_fade_sample( // Returns Cross-faded sample
 	S32_T weight	// Weighting for fade-in sample
 ); // Return cross-faded sample
 /******************************************************************************/
+
+#ifdef __XC__
+// XC File
+
+#else //if __XC__
+// 'C' File
+
+/******************************************************************************/
+void scale_coef( // Scale and round floating point coeffiecient
+	FIX_POINT_S * fix_coef_ps, // pointer to structure for fixed point format
+	R64_T un_coef // input unscaled floating point coef.
+);
+/******************************************************************************/
+
+#endif // else __XC__
 
 #endif // _COMMON_UTILS_H_
 // common_utils.h

@@ -61,8 +61,7 @@ void process_biquad_token( // Receives Control Token from channel, and acts acco
 void process_biquad_audio( // apply biquad to audio stream
 	streaming chanend c_dsp_eq, // Channel connecting to DSP-control thread (bi-directional)
 	S32_T uneq_samps[],	// UnEqualised audio sample buffer
-	S32_T equal_samps[],	// Equalised audio sample buffer
-	S32_T num_chans				// Number of audio channels
+	S32_T equal_samps[]	// Equalised audio sample buffer
 )
 {
 	S32_T chan_cnt; // Channel counter
@@ -70,14 +69,14 @@ void process_biquad_audio( // apply biquad to audio stream
 
 #pragma loop unroll
 	// Loop through set of channels and process audio I/O
-	for (chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
+	for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 	{
 		c_dsp_eq :> uneq_samps[chan_cnt]; // Receive audio input sample
 		c_dsp_eq <: equal_samps[chan_cnt]; // Send audio output sample
 	} // for chan_cnt
 
 	// Loop through set of channel samples and process audio
-	for(chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
+	for(chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 	{ // Apply BiQuad filter
 		equal_samps[chan_cnt] = use_biquad_filter( uneq_samps[chan_cnt] ,chan_cnt );
 //	equal_samps[chan_cnt] = uneq_samps[chan_cnt]; // DBG
@@ -117,7 +116,7 @@ void dsp_biquad( // Thread that applies Equalisation (Tone control) to stream of
 		} // if (stestct(c_dsp_eq))
 		else
 		{	// Audio Data
-			process_biquad_audio( c_dsp_eq ,uneq_samps ,equal_samps ,NUM_REVERB_CHANS );
+			process_biquad_audio( c_dsp_eq ,uneq_samps ,equal_samps );
 		} // else !(stestct(c_dsp_eq))
 	} // while (1)
 

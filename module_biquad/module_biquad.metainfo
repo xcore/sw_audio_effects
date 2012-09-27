@@ -105,13 +105,12 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-	includes = 
+includes = 
 	{ 
-		"dsp_biquad.h"
+		"dsp_example_biquad.h"
 	},
-
   globals = "",
-  body = {}
+  body = ""
 }
 
 api = {'use_biquad_filter','config_biquad_filter'}

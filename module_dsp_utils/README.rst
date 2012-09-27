@@ -7,3 +7,5 @@
 :boards: <Add comma separated list of supported boards>
 
 <Add description of software block>
+Utilities directory.
+src contains files common to multiple projects. e.g. header(include) files.

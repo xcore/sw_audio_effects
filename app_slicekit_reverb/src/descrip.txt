@@ -18,3 +18,7 @@ For 1 stereo channel, Max delay is now 6500 samples. (room size =40)
 -----------
 Updated to use module_i2s_master, 
 Updated to pull in NUM_REVERB_CHANS, etc from Makefile
+
+26-SEP-2010
+-----------
+Upgrade to 12.6.0 toolset.
