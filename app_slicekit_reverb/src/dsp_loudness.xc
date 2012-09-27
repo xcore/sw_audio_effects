@@ -61,8 +61,7 @@ void process_loudness_token( // Receives Control Token from channel, and acts ac
 void process_loudness_audio( // apply loudness to audio stream
 	streaming chanend c_dsp_gain, // Channel connecting to DSP-control thread (bi-directional)
 	S32_T unamp_samps[],	// Unamplified audio sample buffer
-	S32_T ampli_samps[], 	// Amplified audio sample buffer
-	S32_T num_chans				// Number of audio channels
+	S32_T ampli_samps[] 	// Amplified audio sample buffer
 )
 {
 	S32_T chan_cnt; // Channel counter
@@ -70,18 +69,19 @@ void process_loudness_audio( // apply loudness to audio stream
 
 #pragma loop unroll
 	// Loop through set of channels and process audio I/O
-	for (chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
+	for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 	{
 		c_dsp_gain :> unamp_samps[chan_cnt]; // Receive audio input sample
 		c_dsp_gain <: ampli_samps[chan_cnt]; // Send audio output sample
 	} // for chan_cnt
 
 	// Loop through set of channel samples and process sudio
-	for(chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
+	for(chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 	{ // Apply non-linear gain shaping (Loudness)
-		ampli_samps[chan_cnt] = use_loudness( unamp_samps[chan_cnt] ,chan_cnt );
-//			ampli_samps[chan_cnt] = unamp_samps[chan_cnt]; // DBG
+		ampli_samps[chan_cnt] = use_loudness( unamp_samps[chan_cnt] );
+//	ampli_samps[chan_cnt] = unamp_samps[chan_cnt]; // DBG
 	} // for chan_cnt
+
 } // process_loudness_audio
 /******************************************************************************/
 void dsp_loudness( // Thread that applies non-linear gain control to stream of audio samples
@@ -115,7 +115,7 @@ void dsp_loudness( // Thread that applies non-linear gain control to stream of a
 		} // if (stestct(c_dsp_gain))
 		else
 		{	// Audio Data
-			process_loudness_audio( c_dsp_gain ,unamp_samps ,ampli_samps ,NUM_REVERB_CHANS );
+			process_loudness_audio( c_dsp_gain ,unamp_samps ,ampli_samps );
 		} // else !(stestct(c_dsp_gain))
 	} // while (1)
 

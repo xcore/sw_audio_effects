@@ -34,7 +34,10 @@
 #include "common_utils.h"
 
 #ifndef NUM_DELAY_CHANS 
-#error Please define NUM_DELAY_CHANS in Makefile
+#define NUM_DELAY_CHANS 2 // XPD tool expect a definition in the header, but please define in Makefile
+#define NO_CHANS 1 // Flag no channel definitions
+#else // ifndef NUM_DELAY_CHANS 
+#define NO_CHANS 0
 #endif // NUM_DELAY_CHANS
 
 #define MEM_SAMPS 12000 // Memory available to configure delay buffers (in samples). Adjust to suit platform

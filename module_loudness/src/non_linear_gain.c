@@ -134,6 +134,8 @@ void init_gain( // Initialise structure for all gain data
 	GAIN_S * gain_ps // Pointer to structure containing all gain data
 )
 {
+	assert(1 > NO_CHANS); // Define NUM_GAIN_CHANS in Makefile
+
 	// Initialise which end of parabola is origin (0 is low-value end, 1 is high value-end)
 	gain_ps->parabs[0].origin = 0;
 	gain_ps->parabs[1].origin = 0;

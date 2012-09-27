@@ -1,9 +1,13 @@
-<Add title here>
-================
+Delay-line Application
+======================
 
-:scope: <Put one of Roadmap, Example, Early Development or General Use>
-:description: <Add one line here>
-:keywords: <Add comma separated list of keywords>
-:boards: <Add comma separated list of supported boards>
+:scope: Example
+:description: Delays an a number of audio channels paasing through the SliceKit board creating an echo effect
+:keywords: delay, echo, audio, dsp, slicekit
+:boards: XA-SK-AUDIO
 
-<Add description of software block>
+Toggles between Dry and Effect signals. 
+A 4-tap delay-line is used to create 4 echos which are mixed with the original signal.
+
+The Audio_IO uses 1 thread.
+The DSP Delay-line function uses 1 thread.

@@ -32,7 +32,6 @@ void get_samples_from_input( // Get samples from Input channel
 {
 	int chan_cnt; // channel counter
 
-#pragma loop unroll
 	for (chan_cnt=0; chan_cnt<num_chans; chan_cnt++)
 	{
 		int sample;
@@ -51,7 +50,6 @@ void give_samples_to_output( // Give samples to Output channel
 {
 	int chan_cnt; // channel counter
 
-#pragma loop unroll
 	for (chan_cnt=0; chan_cnt<num_chans; chan_cnt++)
 	{
 		int sample;

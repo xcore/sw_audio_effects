@@ -55,11 +55,6 @@
         <githash>a6eda163c7d3e33cfb30a3ee031c2605381195f2</githash>
         <uri>ssh://git@github.com/xcore/sc_i2c</uri>
     </dependency>
-    <dependency repo = "xcommon">
-        <githash>86cb497a5ee519fbc0c4bb597adeeb135d3e97e1</githash>
-        <uri>ssh://git@github.com/xcore/xcommon</uri>
-        <version>2.0.0rc3</version>
-    </dependency>
     <dependency repo = "sc_i2s">
         <githash>815d1424c922d956cc061eb3edd81d708478b141</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>

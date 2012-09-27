@@ -35,7 +35,6 @@ void process_all_chans( // Do DSP effect processing
 	static delay_samps[MAX_TAPS]; // Set of delayed output samples
 	S32_T chan_cnt; // Channel counter
 	S32_T tap_cnt; // Channel counter
-	
 
 	// Loop through all channels
 	for(chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)

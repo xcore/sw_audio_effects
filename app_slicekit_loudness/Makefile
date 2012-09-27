@@ -14,7 +14,7 @@ BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1 -DNUM_GAIN
 # The USED_MODULES variable lists other module used by the application. These
 # modules will extend the SOURCE_DIRS, INCLUDE_DIRS and LIB_DIRS variables. 
 # Modules are expected to be in the directory above the BASE_DIR directory.
-USED_MODULES = module_loudness module_utils module_i2s_master module_i2c_single_port
+USED_MODULES = module_loudness module_dsp_utils module_i2s_master module_i2c_single_port
 
 XCC_FLAGS = $(BUILD_FLAGS)
 

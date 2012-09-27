@@ -29,8 +29,11 @@
 #include "delay_line.h"
 #include "non_linear_gain.h"
 
-#ifndef NUM_REVERB_CHANS
-#error Please define NUM_REVERB_CHANS in Makefile
+#ifndef NUM_REVERB_CHANS 
+#define NUM_REVERB_CHANS 2 // XPD tool expect a definition in the header, but please define in Makefile
+#define NO_CHANS 1 // Flag no channel definitions
+#else // ifndef NUM_REVERB_CHANS 
+#define NO_CHANS 0
 #endif // NUM_REVERB_CHANS
 
 #define NUM_REV_TAPS 4

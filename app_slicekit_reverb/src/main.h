@@ -38,7 +38,7 @@
 
 #include "dsp_loudness.h"
 #include "dsp_biquad.h"
-#include "dsp_control.h"
+#include "dsp_reverb.h"
 
 #endif // _MAIN_H_
 /******************************************************************************/

@@ -119,6 +119,8 @@ void config_delay_line( // Configure delay_line parameters. NB Must be called be
 	// Check if Delay-Line initialised
 	if (0 == delay_gs.init_done)
 	{ // Initialse Delay-line
+		assert(1 > NO_CHANS); // Define NUM_DELAY_CHANS in Makefile
+
 		for (chan_cnt=0; chan_cnt<NUM_DELAY_CHANS; chan_cnt++)
 		{
 			init_delay_chan( &(delay_gs.chan_s[chan_cnt]) );

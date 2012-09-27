@@ -65,9 +65,12 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-  includes = {},
-  globals = {},
-  body = {}
+includes = 
+	{ 
+		"dsp_example_loudness.h"
+	},
+  globals = "",
+  body = ""
 }
 
 api = {'use_loudness','config_loudness'}
