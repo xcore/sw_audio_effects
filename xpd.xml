@@ -1,96 +1,21 @@
 <?xml version="1.0" ?>
 <xpd>
-    <components>
-        <component name = "Non-linear-gain Function Library" type = "component" buildresults_path = "module_loudness/.module_loudness.buildinfo" scope = "Early Development" path = "module_loudness" metainfo_path = "module_loudness/module_loudness.metainfo" local = "false" id = "module_loudness" description = "A Non-linear-gain library using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-        </component>
-        <component description = "Applies a BiQuad filter to an number of audio channels on the SliceKit board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_biquad</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>biquad</keyword>
-            <keyword>filter</keyword>
-            <keyword>equalisation</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-        </component>
-        <component description = "Mid-range volume levels are increased without increasing low-level or high-level signals." type = "demoCode" scope = "Example" path = "app_slicekit_loudness" local = "false" id = "app_slicekit_loudness" name = "Loudness Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_loudness</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>gain</keyword>
-            <keyword>loudness</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-        </component>
-        <component description = "Delays an a number of audio channels paasing through the SliceKit board creating an echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_delay" local = "false" id = "app_slicekit_delay" name = "Delay-line Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_delay</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>delay</keyword>
-            <keyword>echo</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-        </component>
-        <component name = "Reverb Function Library" type = "component" buildresults_path = "module_reverb/.module_reverb.buildinfo" scope = "Early Development" path = "module_reverb" metainfo_path = "module_reverb/module_reverb.metainfo" local = "false" id = "module_reverb" description = "A Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_delay</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_biquad</componentDependency>
-            <componentDependency>module_loudness</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-        </component>
-        <component name = "Delay-line Function Library" type = "component" buildresults_path = "module_delay/.module_delay.buildinfo" scope = "Early Development" path = "module_delay" metainfo_path = "module_delay/module_delay.metainfo" local = "false" id = "module_delay" description = "A Delay-line library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-        </component>
-        <component name = "BiQuad Function Library" type = "component" buildresults_path = "module_biquad/.module_biquad.buildinfo" scope = "Early Development" path = "module_biquad" metainfo_path = "module_biquad/module_biquad.metainfo" local = "false" id = "module_biquad" description = "A BiQuad library using 6 multplies per sample capable of processing around 4 channels of 48 KHz audio in parallel.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-        </component>
-    </components>
+    <components></components>
     <dependency repo = "sc_i2c">
         <githash>69533c451e47767a270d61241f0286a1bfd7c730</githash>
-        <uri>ssh://git@github.com/xcore/sc_i2c</uri>
+        <uri>git@github.com:xcore/sc_i2c.git</uri>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>3658e25a3b7aae346ebc0880eb687ef5dd0662a6</githash>
+        <githash>b9d4acd8867a8c648cb16206c9c59cfc6fe46410</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
     </dependency>
-    <description>I2S Digital Audio Component</description>
-    <docdir>doc</docdir>
-    <exclude_dir>app_slicekit_reverb</exclude_dir>
-    <exclude_dir>module_sdram_delay</exclude_dir>
-    <exclude_dir>module_sdram</exclude_dir>
-    <location>git@github.com:xcore/sc_i2s</location>
-    <name>sc_i2s</name>
-    <maintainer>davelxmos</maintainer>
-    <partnumber>XM-001654-DH</partnumber>
-    <release parenthash = "7e3418fcb3ba55e96181913f28b412775cfa5937" version = "1.2.0beta0" githash = "1ef3ad83d50f361b49de59963192f7ef89af038f"></release>
-    <release parenthash = "8add6ae72ee457b25ca8deaf6a02570706032e0c" version = "1.2.0rc0" githash = "237bf74edbe99636ee822c41b1fe7ddee1f141a7"></release>
-    <release parenthash = "622160ca644b474415218a5050cdc135890ee1f5" version = "1.3.0rc0" githash = "a76a3cd3457181b92701239471918b1606a885a5"></release>
-    <release parenthash = "08e0db677ffb3aee4b315d6b6468abd81465f6bf" version = "1.3.0rc1" githash = "f7b6a604107c4cac048a0f6d0a4bfa8cb0882020"></release>
-    <release parenthash = "dd8775d44ab9e7dc9c4662ae5b92119b5d036dcb" version = "1.3.0rc2" githash = "f3e56c9cd28cbe3c92214806e4dca8d2db9b9880"></release>
-    <subpartnumber>XM-000076-SW</subpartnumber>
+    <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
+    <location>git@github.com:xcore/sw_audio_effects.git</location>
+    <name>sw_audio_effects</name>
+    <maintainer>beaumontm</maintainer>
+    <partnumber>XM-001968-DH</partnumber>
+    <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
-    <xcore_repo>sc_i2s</xcore_repo>
+    <xcore_repo>sw_audio_effects.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
-    <scope>example</scope>
 </xpd>
