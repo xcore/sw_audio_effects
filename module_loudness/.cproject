@@ -163,12 +163,16 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.2600948" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.16225352" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                             </tool>
@@ -176,11 +180,15 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 <option id = "gnu.c.compiler.option.include.paths.61155396" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.34208734" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                             </tool>
@@ -188,11 +196,15 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 <option id = "gnu.c.compiler.option.include.paths.77998536" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.34170253" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                             </tool>
@@ -200,11 +212,15 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 <option id = "gnu.c.compiler.option.include.paths.12854981" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.86273543" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                             </tool>
@@ -212,11 +228,15 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 <option id = "gnu.c.compiler.option.include.paths.62187742" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.95727181" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
 
                                 </option>
                             </tool>
