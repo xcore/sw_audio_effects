@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  main
- * File:    main.h
+ * Header:  app_conf
+ * File:    app_conf.h
  * Author: Mark Beaumont
- * Description: Definitions, types, and prototypes for main.xc
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,22 +22,15 @@
  *
 \******************************************************************************/
 
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _APP_CONF_H_
+#define _APP_CONF_H_
 
-#include <xs1.h>
-#include <platform.h>
-#include <stdio.h>
-#include <xscope.h>
-#include <print.h>
-#include <xclib.h>
+#define NUM_APP_CHANS 4
 
-#include "app_global.h"
-#include "i2s_master.h"
-#include "codec.h"
-#include "audio_io.h"
-#include "dsp_biquad.h"
+#define NUM_BIQUAD_CHANS NUM_APP_CHANS
+//MB~ #define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS // Awaiting Ross fix
+//MB~ #define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS // Awaiting Ross fix 
 
-#endif // _MAIN_H_
+#endif // _APP_CONF_H_
 /******************************************************************************/
-// main.h
+// app_conf.h

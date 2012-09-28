@@ -10,7 +10,7 @@ APP_NAME =
 NUM_APP_CHANS = 4
 
 # The flags passed to xcc when building the application
-BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1 -DNUM_BIQUAD_CHANS=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_ADC=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_DAC=$(NUM_APP_CHANS) 
+BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1 -DI2S_MASTER_NUM_CHANS_ADC=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_DAC=$(NUM_APP_CHANS) 
 
 # The USED_MODULES variable lists other module used by the application. These
 # modules will extend the SOURCE_DIRS, INCLUDE_DIRS and LIB_DIRS variables. 

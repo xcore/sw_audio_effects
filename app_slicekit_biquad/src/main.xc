@@ -22,6 +22,7 @@
  *
 \******************************************************************************/
 
+#include "app_conf.h"
 #include "main.h"
 
 // Structure for I2S master (sc_i2s/module_i2s_master)
@@ -32,10 +33,10 @@ on stdcore[AUDIO_IO_CORE] : struct r_i2s r_i2s =
 	PORT_MCLK_IN,
 	PORT_I2S_BCLK,
 	PORT_I2S_LRCLK,
-#if NUM_BIQUAD_CHANS == 4
+#if NUM_APP_CHANS == 4
 	{PORT_I2S_ADC0, PORT_I2S_ADC1},
 	{PORT_I2S_DAC0, PORT_I2S_DAC1}
-#elif NUM_BIQUAD_CHANS == 2
+#elif NUM_APP_CHANS == 2
 	{PORT_I2S_ADC0 },
 	{PORT_I2S_DAC0 }
 #else

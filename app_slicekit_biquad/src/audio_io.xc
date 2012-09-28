@@ -2,7 +2,7 @@
 #include <xs1.h>
 #include <print.h>
 
-#include "global.h"
+#include "app_global.h"
 #include "codec.h"
 
 #include "i2s_master.h"
