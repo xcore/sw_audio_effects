@@ -16,7 +16,8 @@ Description
 -----------
 
 This algorithm uses a piece-wise parabolic curve, to limit the number of multiplies required per sample.
-Currently 5 parabola's are used, as follows:-
+Currently 5 parabola's are used, as follows:
+
    #. Unity-gain section (Straight line) for low-level signals (e.g. noise)
    #. Transition to maximum gradient (user-configurable). 
    #. Transition from max. gradient to 'max-gain' section.
