@@ -302,8 +302,6 @@ void init_biquad( // Create structure for all biquad data, and initialise
 	S32_T chan_cnt; // filter-tap counter
 
 
-	assert(1 > NO_CHANS ); // Define NUM_BIQUAD_CHANS in Makefile
-
 	// Loop through all output channels
 	for (chan_cnt=0; chan_cnt<NUM_BIQUAD_CHANS; chan_cnt++)
 	{
