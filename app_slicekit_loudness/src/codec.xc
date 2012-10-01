@@ -1,34 +1,32 @@
+/******************************************************************************\
+ * File:	codec.xc
+ * Author: Mark Beaumont reworked Ross Owens code
+ * Description: Codec Configuration
+ *
+ * Version: 0v1
+ * Build:
+ *
+ * The copyrights, all other intellectual and industrial
+ * property rights are retained by XMOS and/or its licensors.
+ * Terms and conditions covering the use of this code can
+ * be found in the Xmos End User License Agreement.
+ *
+ * Copyright XMOS Ltd 2012
+ *
+ * In the case where this code is a modification of existing code
+ * under a separate license, the separate license terms are shown
+ * below. The modifications to the code are still covered by the
+ * copyright notice above.
+ *
+\******************************************************************************/
 
-#include <xs1.h>
-#include <print.h>
-#include "i2c.h"
-#include "p_gpio_defines.h"
+#include "codec.h"
 
-extern port p_i2c;
-extern out port p_gpio;
-
-void CodecInit() 
-{
-    i2c_master_init(p_i2c);
-    return;
-}
-
-#define CODEC1_I2C_DEVICE_ADDR       (0x90)
-#define CODEC2_I2C_DEVICE_ADDR       (0x92)
-
-#define CODEC_DEV_ID_ADDR           0x01
-#define CODEC_PWR_CTRL_ADDR         0x02
-#define CODEC_MODE_CTRL_ADDR        0x03
-#define CODEC_ADC_DAC_CTRL_ADDR     0x04
-#define CODEC_TRAN_CTRL_ADDR        0x05
-#define CODEC_MUTE_CTRL_ADDR        0x06
-#define CODEC_DACA_VOL_ADDR         0x07
-#define CODEC_DACB_VOL_ADDR         0x08
-
-#define IIC_REGWRITE(reg, val) {data[0] = val; i2c_master_write_reg(CODEC1_I2C_DEVICE_ADDR, reg, data, 1, p_i2c);data[0] = val; i2c_master_write_reg(CODEC2_I2C_DEVICE_ADDR, reg, data, 1, p_i2c);} 
-#define IIC_REGREAD(reg, val)  {i2c_master_read_reg(CODEC1_I2C_DEVICE_ADDR, reg, val, 1, p_i2c);}
-
-void CodecConfig(unsigned samFreq, unsigned mClk)
+/*****************************************************************************/
+void codec_config( // Configure Codec
+	unsigned samFreq, // Sample Frequency
+	unsigned mClk // Master Clock
+)
 {
     timer t;
     unsigned time;
@@ -109,5 +107,7 @@ void CodecConfig(unsigned samFreq, unsigned mClk)
 
     /* Clear power down bit in the CODEC over I2C */
     IIC_REGWRITE(CODEC_PWR_CTRL_ADDR, 0x00);
-}
-//:
+
+} // codec_config
+/*****************************************************************************/
+// codec.xc

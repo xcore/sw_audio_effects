@@ -15,3 +15,8 @@ Updated to use separate config_delay function for changing parameters
 -----------
 Updated to use module_i2s_master, 
 Now need to define NUM_DELAY_CHANS in Makefile.
+
+28-SEP-2012
+-----------
+Reorganised code to remove Makefile definitions, to conform to xSoftIPTools requirements.
+and to work with Ross Owen's new sc_i2s/sc_i2c modules.

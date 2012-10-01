@@ -24,6 +24,7 @@
 #ifndef _DSP_BIQUAD_H_
 #define _DSP_BIQUAD_H_
 
+#include <xs1.h>
 #include <print.h>
 #include "types64bit.h"
 #include "app_global.h"

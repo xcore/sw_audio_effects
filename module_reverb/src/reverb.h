@@ -25,15 +25,13 @@
 #define _REVERB_H_
 
 #include <print.h>
+#include "app_conf.h"
 #include "biquad_simple.h"
 #include "delay_line.h"
 #include "non_linear_gain.h"
 
 #ifndef NUM_REVERB_CHANS 
-#define NUM_REVERB_CHANS 2 // XPD tool expect a definition in the header, but please define in Makefile
-#define NO_CHANS 1 // Flag no channel definitions
-#else // ifndef NUM_REVERB_CHANS 
-#define NO_CHANS 0
+	#error Define. NUM_REVERB_CHANS in app_conf.h
 #endif // NUM_REVERB_CHANS
 
 #define NUM_REV_TAPS 4

@@ -25,11 +25,11 @@
 #ifndef _APP_CONF_H_
 #define _APP_CONF_H_
 
-#define NUM_APP_CHANS 4
+#define NUM_APP_CHANS 2
 
-#define NUM_BIQUAD_CHANS NUM_APP_CHANS
-#define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS // Awaiting Ross fix
-#define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS // Awaiting Ross fix 
+#define NUM_DELAY_CHANS NUM_APP_CHANS
+#define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS
+#define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS
 
 #endif // _APP_CONF_H_
 /******************************************************************************/

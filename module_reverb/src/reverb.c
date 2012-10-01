@@ -59,7 +59,6 @@ void init_reverb( // Initialise reverb parameters
 	REVERB_S * reverb_ps // Pointer to structure containing reverb data
 )
 {
-	assert(1 > NO_CHANS); // Define NUM_REVERB_CHANS in Makefile
 	assert(4 == NUM_REV_TAPS); // ERROR: Only NUM_REV_TAPS=4 supported
 
 	reverb_ps->tap_ratios[0] = TAP_0;

@@ -2,14 +2,11 @@
 # compiled for. It either refers to an XN file in the source directories
 # or a valid argument for the --target option when compiling.
 
-# Define number of channels used in application
-NUM_APP_CHANS = 2
-
 TARGET = xp-skc-l2-single-xscope.xn
 APP_NAME =
 
 # The flags passed to xcc when building the application
-BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1 -DNUM_REVERB_CHANS=$(NUM_APP_CHANS) -DNUM_GAIN_CHANS=$(NUM_APP_CHANS) -DNUM_DELAY_CHANS=$(NUM_APP_CHANS) -DNUM_BIQUAD_CHANS=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_ADC=$(NUM_APP_CHANS) -DI2S_MASTER_NUM_CHANS_DAC=$(NUM_APP_CHANS) 
+BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1
 
 # The USED_MODULES variable lists other module used by the application. These
 # modules will extend the SOURCE_DIRS, INCLUDE_DIRS and LIB_DIRS variables. 

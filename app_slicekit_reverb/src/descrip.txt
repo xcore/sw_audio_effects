@@ -22,3 +22,8 @@ Updated to pull in NUM_REVERB_CHANS, etc from Makefile
 26-SEP-2010
 -----------
 Upgrade to 12.6.0 toolset.
+
+28-SEP-2012
+-----------
+Reorganised code to remove Makefile definitions, to conform to xSoftIPTools requirements.
+and to work with Ross Owen's new sc_i2s/sc_i2c modules.

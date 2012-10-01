@@ -24,16 +24,6 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-#include <xs1.h>
-#include <platform.h>
-#include <stdio.h>
-#include <xscope.h>
-#include <print.h>
-#include <xclib.h>
-
-#include "global.h"
-#include "i2s_master.h"
-#include "codec.h"
 #include "audio_io.h"
 #include "dsp_delay.h"
 

@@ -42,8 +42,8 @@ void process_all_chans( // Do DSP effect processing
 
 } // process_all_chans
 /******************************************************************************/
-void dsp_biquad( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to Audio_IO thread (bi-directional)
+void dsp_biquad( // Thread that applies a BiQuad filters to a set of of audio sample streams
+	streaming chanend c_dsp // DSP end of channel connecting to Audio_IO and DSP threads (bi-directional)
 )
 {
 	// NB Setup correct number of channels in Makefile
@@ -75,8 +75,8 @@ void dsp_biquad( // Thread that applies non-linear gain control to stream of aud
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_BIQUAD_CHANS; chan_cnt++)
 		{
-			c_dsp_gain :> inp_samps[chan_cnt]; 
-			c_dsp_gain <: out_samps[chan_cnt]; 
+			c_dsp :> inp_samps[chan_cnt]; 
+			c_dsp <: out_samps[chan_cnt]; 
 		}
 
 		samp_cnt++; // Update sample counter

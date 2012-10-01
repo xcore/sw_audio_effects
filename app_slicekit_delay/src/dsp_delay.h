@@ -24,9 +24,10 @@
 #ifndef _DSP_DELAY_H_
 #define _DSP_DELAY_H_
 
+#include <xs1.h>
 #include <print.h>
 #include "types64bit.h"
-#include "global.h"
+#include "app_global.h"
 #include "common_utils.h"
 #include "delay_line.h"
 

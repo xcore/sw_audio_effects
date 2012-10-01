@@ -1,8 +1,8 @@
 /******************************************************************************\
- * Header:  global
- * File:    global.h
- * Author: Mark Beaumont
- * Description: Global Definitions, types, and prototypes for reverb app
+ * Header:  app_global
+ * File:    app_global.h
+ * Author: Ross Owen
+ * Description: Global Definitions, types, and prototypes for application
  *
  * Version: 0v1
  * Build:
@@ -21,8 +21,10 @@
  *
 \******************************************************************************/
 
-#ifndef _GLOBAL_H_
-#define _GLOBAL_H_
+
+
+#ifndef _APP_GLOBAL_H_
+#define _APP_GLOBAL_H_
 
 // Core that Audio Slice is connected to 
 #define AUDIO_IO_CORE 		1
@@ -66,6 +68,6 @@
 #error currently not un-supported slice hw version
 #endif
 
-#endif // ifndef _GLOBAL_H_ 
+#endif // ifndef _APP_GLOBAL_H_ 
 /*****************************************************************************/
-// global.h
+// app_global.h

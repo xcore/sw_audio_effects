@@ -41,7 +41,7 @@ void send_biquad_config( // Send BiQuad filter configuration data
 	soutct( c_dsp_eq ,CFG_BIQUAD ); // Signal BiQuad configuration data transmission
 
 	c_dsp_eq <: biquad_param_s; // Send BiQuad filter configuration data
-} // config_build_biquad
+} // send_biquad_config
 /*****************************************************************************/
 void send_loudness_config( // Send Loudness configuration data
 	streaming chanend c_dsp_gain, // Channel connecting to Loudness thread (bi-directional)

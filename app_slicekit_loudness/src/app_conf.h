@@ -27,7 +27,7 @@
 
 #define NUM_APP_CHANS 4
 
-#define NUM_BIQUAD_CHANS NUM_APP_CHANS
+#define NUM_GAIN_CHANS NUM_APP_CHANS
 #define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS // Awaiting Ross fix
 #define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS // Awaiting Ross fix 
 

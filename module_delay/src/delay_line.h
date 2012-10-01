@@ -30,14 +30,12 @@
 #include <assert.h>
 #include <print.h>
 #include "types64bit.h"
+#include "app_conf.h"
 #include "common_audio.h"
 #include "common_utils.h"
 
 #ifndef NUM_DELAY_CHANS 
-#define NUM_DELAY_CHANS 2 // XPD tool expect a definition in the header, but please define in Makefile
-#define NO_CHANS 1 // Flag no channel definitions
-#else // ifndef NUM_DELAY_CHANS 
-#define NO_CHANS 0
+	#error Define. NUM_DELAY_CHANS in app_conf.h
 #endif // NUM_DELAY_CHANS
 
 #define MEM_SAMPS 12000 // Memory available to configure delay buffers (in samples). Adjust to suit platform
