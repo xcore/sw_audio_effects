@@ -161,62 +161,142 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.28327717" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.13130176" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.45309093" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.69249007" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.38551555" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.92747132" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.36926778" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.72099943" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.26523475" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.75875505" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.56822269" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.12682879" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.62118252" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.83219389" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
 
                                 </option>
                             </tool>
