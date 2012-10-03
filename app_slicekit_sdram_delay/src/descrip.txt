@@ -1,0 +1,22 @@
+History of SDRAM-Delay Application
+==================================
+See Read.Me in module_delay for full description
+
+20-SEP-2012
+-----------
+Copied app_slicekit_delay to app_slicekit_sdram_delay and edited to include
+modules module_sdram_delay and module_sdram_memory_mapper
+
+01-OCT-2012
+-----------
+Reorganised code to remove Makefile definitions, to conform to xSoftIPTools requirements.
+and to work with Ross Owen's new sc_i2s/sc_i2c modules.
+
+03-OCT-2012
+-----------
+Got SDRAM Memory-Slice to work.
+Created new sdram_io.xc file, to hold low-level sdram I/O functions.
+Fixed addressing problem in sdram_memory_mapper.xc
+Added init_sdram function to fill SDRAM with saw-tooth wave to check for correct initialisation.
+Added read_active flag to sdram_delay.c to prevent reading of uninitialised memory.
+

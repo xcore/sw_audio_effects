@@ -1,0 +1,13 @@
+History of SDRAM Delay-Line Module
+==================================
+See Read.Me for project overview
+
+18-SEP_2012
+-----------
+Copied from module_delay, and updated to use double-buffering.
+The input and output samples are stored in local (512 byte) buffers.
+When these buffers are full/empty, they are written/read to main memory. 
+
+02-OCT-2012
+-----------
+Added read-active flag to prevent reading of uninitialised SDRAM

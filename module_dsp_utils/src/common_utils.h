@@ -59,6 +59,10 @@ typedef enum CNTRL_TOK_TAG // Control Token Codes
 } CNTRL_TOK_TYP;
 
 /******************************************************************************/
+U32_T get_word_address( // Converts word reference to address
+	S32_T inp_arr[] // input array of words
+); // Return address
+/******************************************************************************/
 S32_T increment_circular_offset( // Increment a circular buffer offset. I.e. wraps if at end of buffer
 	S32_T new_off, // required new offset (without wrapping)
 	S32_T buf_siz // circular buffer size

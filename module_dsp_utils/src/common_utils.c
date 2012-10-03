@@ -23,6 +23,13 @@
 #include "common_utils.h"
 
 /******************************************************************************/
+U32_T get_word_address( // Converts word reference to address
+	S32_T inp_arr[] // input array 
+) // Return wrapped offset
+{
+	return (U32_T)&(inp_arr[0]); // Return Address
+} // get_wrod_address
+/******************************************************************************/
 S32_T increment_circular_offset( // Increment a circular buffer offset. I.e. wraps if at end of buffer
 	S32_T new_off, // required new offset (without wrapping)
 	S32_T buf_siz // circular buffer size
