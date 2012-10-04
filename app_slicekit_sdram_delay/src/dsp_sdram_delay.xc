@@ -25,7 +25,7 @@
 // DSP-control thread.
 
 /******************************************************************************/
-void init_sdram( // Initialise SDRAM Memory-Slice. Used for debug
+void initialise_sdram( // Initialise SDRAM Memory-Slice. Used for debug
   chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
 )
 #define MAX_WORD 0x7fffffff // Maximum Word value
@@ -53,18 +53,15 @@ void init_sdram( // Initialise SDRAM Memory-Slice. Used for debug
 
 		mem_adr += SD_ROW_BYTS; // Increment memory address
 	} //for row_cnt
-} // init_sdram
+} // initialise_sdram
 /******************************************************************************/
-void init_dsp( // Initialisation for DSP control of SDRAM-delay
-	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
-	DELAY_PARAM_S &delay_param_s // Reference to structure containing SDRAM-Delay configuration data
+void init_sdram_buffers( // Initialisation buffers for SDRAM access
+	CNTRL_SDRAM_S &cntrl_gs // Reference to structure containing data to control SDRAM buffering
 )
 {
-	S32_T delay_us; // Delay in micro-secs
 	S32_T tap_cnt; // tap counter
 	S32_T chan_cnt; // Channel counter
 	
-
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
@@ -84,6 +81,15 @@ void init_dsp( // Initialisation for DSP control of SDRAM-delay
 	{
 		cntrl_gs.reads[tap_cnt].do_buf = 0;
 	} //for tap_cnt
+} // init_sdram_buffers
+/******************************************************************************/
+void init_parameters( // Initialise delay parameters
+	DELAY_PARAM_S &delay_param_s // Reference to structure containing SDRAM-Delay configuration data
+)
+{
+	S32_T delay_us; // Delay in micro-secs
+	S32_T tap_cnt; // tap counter
+	
 
 	// Initialsie Delay-line configuration parameters ...
 
@@ -100,7 +106,7 @@ void init_dsp( // Initialisation for DSP control of SDRAM-delay
 		delay_param_s.us_delays[tap_cnt] = (delay_param_s.us_delays[tap_cnt-1] << 1) + delay_us;
 	} //for tap_cnt
 
-} // init_dsp
+} // init_parameters
 /******************************************************************************/
 void buffer_check( // Check if any buffer I/O required
 	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
@@ -133,17 +139,18 @@ void buffer_check( // Check if any buffer I/O required
 /******************************************************************************/
 void process_all_chans( // Do DSP effect processing
 	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
-  chanend c_dsp_sdram, // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
 	DELAY_PARAM_S &cur_param_s, // Reference to structure containing delay-line parameters
 	CHAN_SET_S &mix_set_s,	// Structure containing mixed output sample-set
 	S32_T num_chans	// Number of channels in set
 )
 {
+//MB~	mix_set_s = cntrl_gs.inp_set; // Initialse output sample-set with input
+//MB~	return; //MB~
+
 	S32_T mux; // multiply for mix
 	S32_T shift; // bit-shift for mix
 	S32_T chan_cnt; // Channel counter
 	S32_T tap_cnt; // Channel counter
-
 
 	// Get next array of delayed output sets, and delay current input set
 	use_sdram_delay( cntrl_gs );
@@ -167,9 +174,9 @@ void process_all_chans( // Do DSP effect processing
 		} // for tap_cnt
 	} // for chan_cnt
 
-	buffer_check( cntrl_gs ,c_dsp_sdram ); // Check if any buffer I/O required
-
-//	mix_set_s = cntrl_gs.inp_set; // DBG
+// mix_set_s = cntrl_gs.inp_set; // DBG
+#ifdef MB
+#endif //MB~
 } // process_all_chans
 /******************************************************************************/
 void dsp_sdram_delay( // Thread that delays a stream of audio samples
@@ -183,16 +190,18 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 	CHAN_SET_S out_set_s;	// Structure containing intermediate audio sample-set, used for cross-fade
 
 	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
-	S32_T fx_len = (SWAP_NUM << 2);	// time spent in effect state (to ~32 secs)
+	S32_T fx_len = SWAP_NUM; //MB~ (SWAP_NUM << 2);	// time spent in effect state (to ~32 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 	
 	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 
 
-	// init_sdram( c_dsp_sdram ); // Initialise Memory-Slice. Used for debug
+	// initialise_sdram( c_dsp_sdram ); // Initialise Memory-Slice. Used for debug
 
-	init_dsp( cntrl_gs ,delay_param_s ); // Initialise DSP control data
+	init_sdram_buffers( cntrl_gs ); // Initialise buffers for SDRAM access
+
+	init_parameters( delay_param_s ); // Initialise delay parameters
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
@@ -218,7 +227,10 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 		samp_cnt++; // Update sample counter
 
 		// Do DSP Processing ...
-		process_all_chans( cntrl_gs ,c_dsp_sdram ,delay_param_s ,mix_set_s ,NUM_DELAY_CHANS );
+		process_all_chans( cntrl_gs ,delay_param_s ,mix_set_s ,NUM_DELAY_CHANS );
+		//MB~ mix_set_s = cntrl_gs.inp_set; // MB~
+
+		buffer_check( cntrl_gs ,c_dsp_sdram ); // Check if any buffer I/O required
 
 		// Check current processing State
 		switch(cur_proc_state)
@@ -241,6 +253,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
+printcharln('D');
 				} // if (FADE_LEN < samp_cnt)
 			break; // case FX2DRY:
 
@@ -262,6 +275,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = EFFECT; // Switch to Effect-Only Processing
+printcharln('E');
 				} // if (FADE_LEN < samp_cnt)
 			break; // case DRY2FX:
 

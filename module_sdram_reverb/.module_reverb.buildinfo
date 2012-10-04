@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<allbuildresults>
+<buildresults component="module_reverb" packagename="xm-local-sw_audio_effects(225f2b71).zip" packageversion="225f2b71" toolsversion="latest">
+<buildresult>
+<configuration>
+<parameter id="SampleFreq" value="32000"/>
+<parameter id="NumChannels" value="2"/>
+<parameter id="RoomSize" value="1"/>
+<parameter id="SignificantFreq" value="0"/>
+<parameter id="Gain" value="0"/>
+<parameter id="NumTaps" value="4"/>
+<parameter id="DelayTimes" value="0"/>
+<parameter id="DryLevel" value="192"/>
+<parameter id="EffectLevel" value="192"/>
+<parameter id="AttnLevel" value="32"/>
+<parameter id="CrossTalk" value="64"/>
+</configuration>
+<resourceusage>
+<resourceusageitem id="cores" value="0"/>
+<resourceusageitem id="memory" value="0"/>
+<resourceusageitem id="codememory" value="5226"/>
+<resourceusageitem id="datamemory" value="49034"/>
+<resourceusageitem id="ports1bit" value="0"/>
+<resourceusageitem id="ports4bit" value="0"/>
+<resourceusageitem id="ports8bit" value="0"/>
+<resourceusageitem id="ports16bit" value="0"/>
+<resourceusageitem id="ports32bit" value="0"/>
+<resourceusageitem id="clocks" value="0"/>
+<resourceusageitem id="chanends" value="0"/>
+<resourceusageitem id="timers" value="0"/>
+</resourceusage>
+</buildresult>
+<buildresult>
+<configuration>
+<parameter id="SampleFreq" value="32000"/>
+<parameter id="NumChannels" value="4"/>
+<parameter id="RoomSize" value="1"/>
+<parameter id="SignificantFreq" value="0"/>
+<parameter id="Gain" value="0"/>
+<parameter id="NumTaps" value="4"/>
+<parameter id="DelayTimes" value="0"/>
+<parameter id="DryLevel" value="192"/>
+<parameter id="EffectLevel" value="192"/>
+<parameter id="AttnLevel" value="32"/>
+<parameter id="CrossTalk" value="64"/>
+</configuration>
+<resourceusage>
+<resourceusageitem id="cores" value="0"/>
+<resourceusageitem id="memory" value="0"/>
+<resourceusageitem id="codememory" value="5226"/>
+<resourceusageitem id="datamemory" value="49034"/>
+<resourceusageitem id="ports1bit" value="0"/>
+<resourceusageitem id="ports4bit" value="0"/>
+<resourceusageitem id="ports8bit" value="0"/>
+<resourceusageitem id="ports16bit" value="0"/>
+<resourceusageitem id="ports32bit" value="0"/>
+<resourceusageitem id="clocks" value="0"/>
+<resourceusageitem id="chanends" value="0"/>
+<resourceusageitem id="timers" value="0"/>
+</resourceusage>
+</buildresult>
+<buildresult>
+<configuration>
+<parameter id="SampleFreq" value="192000"/>
+<parameter id="NumChannels" value="2"/>
+<parameter id="RoomSize" value="1"/>
+<parameter id="SignificantFreq" value="0"/>
+<parameter id="Gain" value="0"/>
+<parameter id="NumTaps" value="4"/>
+<parameter id="DelayTimes" value="0"/>
+<parameter id="DryLevel" value="192"/>
+<parameter id="EffectLevel" value="192"/>
+<parameter id="AttnLevel" value="32"/>
+<parameter id="CrossTalk" value="64"/>
+</configuration>
+<resourceusage>
+<resourceusageitem id="cores" value="0"/>
+<resourceusageitem id="memory" value="0"/>
+<resourceusageitem id="codememory" value="5226"/>
+<resourceusageitem id="datamemory" value="49034"/>
+<resourceusageitem id="ports1bit" value="0"/>
+<resourceusageitem id="ports4bit" value="0"/>
+<resourceusageitem id="ports8bit" value="0"/>
+<resourceusageitem id="ports16bit" value="0"/>
+<resourceusageitem id="ports32bit" value="0"/>
+<resourceusageitem id="clocks" value="0"/>
+<resourceusageitem id="chanends" value="0"/>
+<resourceusageitem id="timers" value="0"/>
+</resourceusage>
+</buildresult>
+<buildresult>
+<configuration>
+<parameter id="SampleFreq" value="192000"/>
+<parameter id="NumChannels" value="4"/>
+<parameter id="RoomSize" value="1"/>
+<parameter id="SignificantFreq" value="0"/>
+<parameter id="Gain" value="0"/>
+<parameter id="NumTaps" value="4"/>
+<parameter id="DelayTimes" value="0"/>
+<parameter id="DryLevel" value="192"/>
+<parameter id="EffectLevel" value="192"/>
+<parameter id="AttnLevel" value="32"/>
+<parameter id="CrossTalk" value="64"/>
+</configuration>
+<resourceusage>
+<resourceusageitem id="cores" value="0"/>
+<resourceusageitem id="memory" value="0"/>
+<resourceusageitem id="codememory" value="5226"/>
+<resourceusageitem id="datamemory" value="49034"/>
+<resourceusageitem id="ports1bit" value="0"/>
+<resourceusageitem id="ports4bit" value="0"/>
+<resourceusageitem id="ports8bit" value="0"/>
+<resourceusageitem id="ports16bit" value="0"/>
+<resourceusageitem id="ports32bit" value="0"/>
+<resourceusageitem id="clocks" value="0"/>
+<resourceusageitem id="chanends" value="0"/>
+<resourceusageitem id="timers" value="0"/>
+</resourceusage>
+</buildresult>
+</buildresults>
+</allbuildresults>
