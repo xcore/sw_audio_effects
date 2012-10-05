@@ -48,6 +48,7 @@ typedef enum PROC_STATE_TAG // Different Processing States
   FX2DRY,					// Fade Effect to Dry
   DRY_ONLY,				// No Effect
   DRY2FX,					// Fade Dry to Effect
+  START,					// Start-up mode
   NUM_PROC_STATES	// Handy Value!-)
 } PROC_STATE_TYP;
 
@@ -75,6 +76,20 @@ void cross_fade_sample( // Returns Cross-faded sample
 	S32_T num_chans,	// Number of channels
 	S32_T weight	// Weighting for fade-in sample
 ); // Return cross-faded sample
+/*****************************************************************************/
+void fade_in_sample( // Returns faded-in sample
+	S32_T out_samps[],	// Buffer for cross-faded Output samples
+	S32_T fade_in_samps[],	// Buffer for Input samples being faded-in
+	S32_T num_chans,	// Number of channels
+	S32_T weight	// Weighting for fade-in sample
+); // Return faded-in sample
+/*****************************************************************************/
+void fade_out_sample( // Returns faded-out sample
+	S32_T out_samps[],	// Buffer for cross-faded Output samples
+	S32_T fade_out_samps[],	// Buffer for Input samples being faded-out
+	S32_T num_chans,	// Number of channels
+	S32_T weight	// Weighting for fade-in sample (NB This will be reversed for fade-out sample)
+); // Return faded-out sample
 /******************************************************************************/
 
 #ifdef __XC__

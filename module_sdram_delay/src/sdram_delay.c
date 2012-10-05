@@ -247,7 +247,7 @@ void do_sdram_delay( // Do buffer I/O for input and output sample-sets
 	S32_T tap_cnt; // tap counter
 
 
-	write_sample_set( delay_ps ,&(delay_ps->cntrl_p->write) ,&(delay_ps->inp_bufs) ,&(delay_ps->cntrl_p->inp_set) );
+	write_sample_set( delay_ps ,&(delay_ps->cntrl_p->write) ,&(delay_ps->inp_bufs) ,&(delay_ps->cntrl_p->src_set) );
 
 	// Loop through all delay taps.
 	for (tap_cnt = 0; tap_cnt < delay_ps->tap_num; tap_cnt++)

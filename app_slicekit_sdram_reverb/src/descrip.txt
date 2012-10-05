@@ -33,3 +33,7 @@ and to work with Ross Owen's new sc_i2s/sc_i2c modules.
 Merged app_slicekit_sdram_delay and app_slicekit_reverb to create app_slicekit_sdram_reverb.
 DSP_CORE and MEM_CORE have to be the same. Now works with 4 channels
 
+05-OCT-2012
+-----------
+Fixed 'wiring' bug.
+Fine-tune parameter settings

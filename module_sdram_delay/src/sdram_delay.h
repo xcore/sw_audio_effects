@@ -89,7 +89,7 @@ typedef struct CNTRL_BUF_TAG // Structure containing data to control double-buff
 typedef struct CNTRL_SDRAM_TAG // Structure containing data to control sdram buffering
 {
 	CHAN_SET_S delay_sets[MAX_TAPS]; // Array of structures containing delayed output sample-sets
-	CHAN_SET_S inp_set;	// Structure containing input audio sample-set (one sample for each channel)
+	CHAN_SET_S src_set;	// Structure containing source audio sample-set (one sample for each channel)
 	CNTRL_BUF_S reads[MAX_TAPS];	// Array of control data for read buffers
 	CNTRL_BUF_S write; 						// Control data for write buffer
 } CNTRL_SDRAM_S;

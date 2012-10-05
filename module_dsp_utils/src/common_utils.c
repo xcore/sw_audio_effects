@@ -63,6 +63,39 @@ void cross_fade_sample( // Returns Cross-faded sample
 		out_samps[chan_cnt] = (S32_T)(tmp_samp + fade_out_samps[chan_cnt]);
 	} // for chan_cnt
 } // cross_fade_sample
+/*****************************************************************************/
+void fade_in_sample( // Returns faded-in sample
+	S32_T out_samps[],	// Buffer for cross-faded Output samples
+	S32_T fade_in_samps[],	// Buffer for Input samples being faded-in
+	S32_T num_chans,	// Number of channels
+	S32_T in_weight	// Weighting for fade-in sample
+) // Return faded-in sample
+{
+	S32_T chan_cnt; // Channel counter
+
+
+	for(chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
+	{
+		out_samps[chan_cnt] = (S32_T)((((S64_T)fade_in_samps[chan_cnt] * in_weight) + (S64_T)HALF_FADE) >> FADE_BITS);
+	} // for chan_cnt
+} // fade_in_sample
+/*****************************************************************************/
+void fade_out_sample( // Returns faded-out sample
+	S32_T out_samps[],	// Buffer for cross-faded Output samples
+	S32_T fade_out_samps[],	// Buffer for Input samples being faded-out
+	S32_T num_chans,	// Number of channels
+	S32_T in_weight	// Weighting for fade-in sample
+) // Return faded-out sample
+{
+	S32_T chan_cnt; // Channel counter
+	S64_T out_weight = (FADE_LEN - in_weight); // Compute weighting for fade-out sample
+
+
+	for(chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
+	{
+		out_samps[chan_cnt] = (S32_T)((((S64_T)fade_out_samps[chan_cnt] * out_weight) + (S64_T)HALF_FADE) >> FADE_BITS);
+	} // for chan_cnt
+} // fade_out_sample
 /******************************************************************************/
 void scale_coef( // Scale and round floating point coeffiecient
 	FIX_POINT_S * fix_coef_ps, // Pointer to structure for fixed point format

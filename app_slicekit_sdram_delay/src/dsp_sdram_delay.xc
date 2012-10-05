@@ -66,7 +66,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 	{
-		cntrl_gs.inp_set.samps[chan_cnt] = 0;
+		cntrl_gs.src_set.samps[chan_cnt] = 0;
 
 		for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
 		{
@@ -144,7 +144,7 @@ void process_all_chans( // Do DSP effect processing
 	S32_T num_chans	// Number of channels in set
 )
 {
-//MB~	mix_set_s = cntrl_gs.inp_set; // Initialse output sample-set with input
+//MB~	mix_set_s = cntrl_gs.src_set; // Initialse output sample-set with input
 //MB~	return; //MB~
 
 	S32_T mux; // multiply for mix
@@ -157,7 +157,7 @@ void process_all_chans( // Do DSP effect processing
 
 	// Mix all delayed samples to produce one output sample ...
 
-	mix_set_s = cntrl_gs.inp_set; // Initialse output sample-set with input
+	mix_set_s = cntrl_gs.src_set; // Initialse output sample-set with input
 
 	// Loop through all output channels
 	for(chan_cnt = 0; chan_cnt < num_chans; chan_cnt++)
@@ -174,7 +174,7 @@ void process_all_chans( // Do DSP effect processing
 		} // for tap_cnt
 	} // for chan_cnt
 
-// mix_set_s = cntrl_gs.inp_set; // DBG
+// mix_set_s = cntrl_gs.src_set; // DBG
 #ifdef MB
 #endif //MB~
 } // process_all_chans
@@ -220,7 +220,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 		{
-			c_dsp_aud :> cntrl_gs.inp_set.samps[chan_cnt]; 
+			c_dsp_aud :> cntrl_gs.src_set.samps[chan_cnt]; 
 			c_dsp_aud <: out_set_s.samps[chan_cnt]; 
 		}
 
@@ -228,7 +228,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 
 		// Do DSP Processing ...
 		process_all_chans( cntrl_gs ,delay_param_s ,mix_set_s ,NUM_DELAY_CHANS );
-		//MB~ mix_set_s = cntrl_gs.inp_set; // MB~
+		//MB~ mix_set_s = cntrl_gs.src_set; // MB~
 
 		buffer_check( cntrl_gs ,c_dsp_sdram ); // Check if any buffer I/O required
 
@@ -247,7 +247,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 
 			case FX2DRY: // Fade-Out Effect
 				// Create output sample-set by cross-fadeing from delayed sample-set to input sample-set 
-				cross_fade_sample( out_set_s.samps ,mix_set_s.samps ,cntrl_gs.inp_set.samps ,NUM_DELAY_CHANS ,samp_cnt );
+				cross_fade_sample( out_set_s.samps ,mix_set_s.samps ,cntrl_gs.src_set.samps ,NUM_DELAY_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{
@@ -258,7 +258,7 @@ printcharln('D');
 			break; // case FX2DRY:
 
 			case DRY_ONLY: // No Effect (Dry signal only)
-				out_set_s = cntrl_gs.inp_set; // Copy input to output
+				out_set_s = cntrl_gs.src_set; // Copy input to output
 
 				if (dry_len < samp_cnt)
 	 			{
@@ -269,7 +269,7 @@ printcharln('D');
 
 			case DRY2FX: // Fade-in Effect
 				// Create output sample-set by cross-fadeing from input sample-set to delayed sample-set 
-				cross_fade_sample( out_set_s.samps ,cntrl_gs.inp_set.samps ,mix_set_s.samps ,NUM_DELAY_CHANS ,samp_cnt );
+				cross_fade_sample( out_set_s.samps ,cntrl_gs.src_set.samps ,mix_set_s.samps ,NUM_DELAY_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{

@@ -13,3 +13,7 @@ Added audio_sample_io module to hold common give/get functions for USB Audio app
 05-SEP-2012
 -----------
 Added common_utils module to hold common cross_fade_sample function for DSP Audio effect apps
+
+05-OCT-2012
+-----------
+Added fade_in and fade_out functions to common_utils

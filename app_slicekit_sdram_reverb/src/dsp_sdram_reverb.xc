@@ -37,7 +37,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 	{
-		cntrl_gs.inp_set.samps[chan_cnt] = 0;
+		cntrl_gs.src_set.samps[chan_cnt] = 0;
 
 		for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
 		{
@@ -53,35 +53,6 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 		cntrl_gs.reads[tap_cnt].do_buf = 0;
 	} //for tap_cnt
 } // init_sdram_buffers
-/******************************************************************************/
-void buffer_check( // Check if any buffer I/O required
-	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
-  chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
-)
-{
-	S32_T tap_cnt; // tap counter
-
-
-	// Check if write-buffer is full
-	if (cntrl_gs.write.do_buf)
-	{
-		write_buffer_to_sdram( c_dsp_sdram ,cntrl_gs.write.mem_adr ,cntrl_gs.write.buf_adr ,cntrl_gs.write.wrd_siz );
-
-		cntrl_gs.write.do_buf = 0; // Clear write flag
-	} // if (cntrl_gs.do_write)
-
-	// Check if any read-buffers are empty
-	for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
-	{
-		if (cntrl_gs.reads[tap_cnt].do_buf)
-		{
-			read_buffer_from_sdram( c_dsp_sdram ,cntrl_gs.reads[tap_cnt].mem_adr ,cntrl_gs.reads[tap_cnt].buf_adr ,cntrl_gs.reads[tap_cnt].wrd_siz );
-
-			cntrl_gs.reads[tap_cnt].do_buf = 0; // Clear read flag
-		} // if (cntrl_gs.do_read)
-	} //for tap_cnt
-
-} // buffer_check
 /*****************************************************************************/
 void send_biquad_config( // Send BiQuad filter configuration data
 	streaming chanend c_dsp_eq, // Channel connecting to Equalisation thread (bi-directional)
@@ -128,6 +99,35 @@ void sync_reverb_config( // Synchronise a reverb configuration (with other threa
 	config_sdram_reverb( reverb_param_s ); // Configure remaining reverb parameters in this thread (Delay-line)
 
 } // sync_reverb_config
+/******************************************************************************/
+void buffer_check( // Check if any buffer I/O required
+	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
+  chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
+)
+{
+	S32_T tap_cnt; // tap counter
+
+
+	// Check if write-buffer is full
+	if (cntrl_gs.write.do_buf)
+	{
+		write_buffer_to_sdram( c_dsp_sdram ,cntrl_gs.write.mem_adr ,cntrl_gs.write.buf_adr ,cntrl_gs.write.wrd_siz );
+
+		cntrl_gs.write.do_buf = 0; // Clear write flag
+	} // if (cntrl_gs.do_write)
+
+	// Check if any read-buffers are empty
+	for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+	{
+		if (cntrl_gs.reads[tap_cnt].do_buf)
+		{
+			read_buffer_from_sdram( c_dsp_sdram ,cntrl_gs.reads[tap_cnt].mem_adr ,cntrl_gs.reads[tap_cnt].buf_adr ,cntrl_gs.reads[tap_cnt].wrd_siz );
+
+			cntrl_gs.reads[tap_cnt].do_buf = 0; // Clear read flag
+		} // if (cntrl_gs.do_read)
+	} //for tap_cnt
+
+} // buffer_check
 /*****************************************************************************/
 void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O thread (bi-directional)
@@ -137,17 +137,19 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 )
 {
 	CNTRL_SDRAM_S cntrl_gs; // Structure containing data to control SDRAM buffering
+	CHAN_SET_S inp_set_s;	// Structure containing Input audio sample-set
 	CHAN_SET_S uneq_set_s;	// Structure containing Unequalised audio sample-set
-	CHAN_SET_S equal_set_s;	// Structure containing Equalised audio sample-set
 	CHAN_SET_S unamp_set_s;	// Structure containing Unamplified audio sample-set
 	CHAN_SET_S ampli_set_s;	// Structure containing Amplified audio sample-set
 	CHAN_SET_S out_set_s;	// Structure containing output audio sample-set
 	CHAN_SET_S fade_set_s;	// Structure containing Cross-fade audio sample-set
 
+	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
+	S32_T fx_len = SWAP_NUM; //	(SWAP_NUM << 2); // time spent in effect state (to ~32 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 
-	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to REVERB On.
+	PROC_STATE_TYP cur_proc_state	= START; // Initialise processing state
 	// Default Reverb parameters
 	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_ATTN_MIX ,DEF_CROSS_MIX } 
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
@@ -158,17 +160,18 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 	{
-		uneq_set_s.samps[chan_cnt] = 0;
-		equal_set_s.samps[chan_cnt] = 0;
-		unamp_set_s.samps[chan_cnt] = 0;
-		ampli_set_s.samps[chan_cnt] = 0;
-		out_set_s.samps[chan_cnt] = 0;
-		fade_set_s.samps[chan_cnt] = 0;
+		inp_set_s.samps[chan_cnt] = 0;
 	}	// for chan_cnt
+	uneq_set_s = inp_set_s;
+	unamp_set_s = inp_set_s;
+	ampli_set_s = inp_set_s;
+	fade_set_s = inp_set_s;
+	out_set_s = inp_set_s;
 
 	// Synchronise a reverb configuration (with other threads) using default parameters
-	def_param_s.gain = 4; // Fine-tune Gain
+	def_param_s.gain = 8; // Fine-tune Gain
 	def_param_s.room_size = 200; // Fine-tune Room-size
+
 	sync_reverb_config( c_dsp_eq ,c_dsp_gain ,def_param_s );
 
 	// Loop forever
@@ -179,7 +182,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_aud_dsp :> cntrl_gs.inp_set.samps[chan_cnt]; // Receive input samples from Audio I/O thread 
+			c_aud_dsp :> inp_set_s.samps[chan_cnt];  // Receive input samples from Audio I/O thread 
 			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O thread 
 		} // for chan_cnt
 
@@ -188,7 +191,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		{
 			// Service channels in chronological order
 			c_dsp_eq <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to Eq thread  
-			c_dsp_eq :> equal_set_s.samps[chan_cnt]; // Receive Equalised samples back from Eq thread  
+			c_dsp_eq :> cntrl_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from Eq thread  
 		} // for chan_cnt
 
 #pragma loop unroll
@@ -203,7 +206,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		samp_cnt++; // Update sample counter
 
 		// Do DSP Processing ...
-		use_sdram_reverb( cntrl_gs ,uneq_set_s ,unamp_set_s ,fade_set_s ,equal_set_s ,ampli_set_s );
+		use_sdram_reverb( cntrl_gs ,inp_set_s ,uneq_set_s ,unamp_set_s ,fade_set_s ,ampli_set_s );
 
 		buffer_check( cntrl_gs ,c_dsp_sdram ); // Check if any buffer I/O required
 
@@ -213,15 +216,15 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 			case EFFECT: // Do Effect processing
 				out_set_s = fade_set_s; // No fade to copy to output
 
-				if (SWAP_NUM < samp_cnt)
+				if (fx_len < samp_cnt)
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = FX2DRY; // Switch to Fade-out Effect
-				} // if (SWAP_NUM < samp_cnt)
+				} // if (fx_len < samp_cnt)
 			break; // case EFFECT:
 
 			case FX2DRY: // Fade-Out Effect
-				cross_fade_sample( out_set_s.samps ,fade_set_s.samps ,cntrl_gs.inp_set.samps ,NUM_REVERB_CHANS ,samp_cnt );
+				cross_fade_sample( out_set_s.samps ,fade_set_s.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{
@@ -231,18 +234,28 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 			break; // case FX2DRY:
 
 			case DRY_ONLY: // No Effect (Dry signal only)
-				out_set_s = cntrl_gs.inp_set;
+				out_set_s = inp_set_s;
 
-				if (SWAP_NUM < samp_cnt)
+				if (dry_len < samp_cnt)
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY2FX; // Switch to Fade-In Effect
 
-				} // if (SWAP_NUM < samp_cnt)
+				} // if (dry_len < samp_cnt)
 			break; // case DRY_ONLY:
 
 			case DRY2FX: // Fade-in Effect
-				cross_fade_sample( out_set_s.samps ,cntrl_gs.inp_set.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
+				cross_fade_sample( out_set_s.samps ,inp_set_s.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
+
+				if (FADE_LEN <= samp_cnt)
+	 			{
+					samp_cnt = 0; // Reset sample counter
+					cur_proc_state = EFFECT; // Switch to Effect Processing
+				} // if (SWAP_NUM < samp_cnt)
+			break; // case DRY2FX:
+
+			case START: // Fade-in Effect
+				fade_in_sample( out_set_s.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{

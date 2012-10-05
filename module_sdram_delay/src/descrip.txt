@@ -11,3 +11,7 @@ When these buffers are full/empty, they are written/read to main memory.
 02-OCT-2012
 -----------
 Added read-active flag to prevent reading of uninitialised SDRAM
+
+05-OCT-2012
+-----------
+Renamed CNTRL_SDRAM_S inp_set to src_set.

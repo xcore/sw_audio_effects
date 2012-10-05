@@ -74,7 +74,7 @@ void config_sdram_reverb( // Configure reverb parameters
 	REVERB_PARAM_S * reverb_param_ps // Pointer to structure containing reverb parameters
 )
 {
-	// Check if Delay-Line initialised
+	// Check if reverb initialised
 	if (0 == reverb_gs.init_done)
 	{ // Initialse Reverb
 		init_reverb( &(reverb_gs) );
@@ -85,7 +85,7 @@ void config_sdram_reverb( // Configure reverb parameters
 	assert(MIN_AUDIO_FREQ <= reverb_param_ps->samp_freq); // Check for sensible frequency
 
 	/* Configure Delay-line which is in this thread. 
-		NB BiQuad and Loudness are in different threads and therefore configuration is synchronised via dsp_control.xc */
+		NB BiQuad and Loudness are in different threads and therefore configuration is synchronised via dsp_sdram_reverb.xc */
 
 	config_build_delay( &(reverb_gs) ,reverb_param_ps );  
 
@@ -99,14 +99,14 @@ void config_sdram_reverb( // Configure reverb parameters
 /*****************************************************************************/
 void use_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
 	CNTRL_SDRAM_S * cntrl_ps, // Pointer to structure containing data to control SDRAM buffering
+	CHAN_SET_S * inp_set_ps,	// Pointer to structure containing Input audio sample-set
 	CHAN_SET_S * uneq_o_set_ps,	// Pointer to structure containing Unequalised audio sample-set
 	CHAN_SET_S * rev_o_set_ps,	// Pointer to structure containing output audio sample-set
 	CHAN_SET_S * out_set_ps,	// Pointer to structure containing output audio sample-set
-	CHAN_SET_S * equal_i_set_ps,	// Pointer to structure containing Equalised audio sample-set
 	CHAN_SET_S * ampli_i_set_ps	// Pointer to structure containing Amplified audio sample-set
 )
 {
-	CHAN_SET_S * inp_set_ps = &(cntrl_ps->inp_set);	// Local pointer to structure containing ipput audio sample-set
+	CHAN_SET_S * equal_set_ps = &(cntrl_ps->src_set);	// Local pointer to structure containing Equalised audio sample-set
 	CHAN_SET_S * delay_set_ps = &(cntrl_ps->delay_sets[0]);	// Local ptr to array of structs containing delayed audio sample-sets
 	MIX_PARAM_S * mix_lvls_ps = reverb_gs.mix_lvls_ps; // Local Pointer to structure containing mix-levels
 	S64_T same_samps[NUM_REVERB_CHANS];	// Same-channel buffer for Channel-Mix (E.g. left->left)
