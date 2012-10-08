@@ -106,7 +106,7 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	CHAN_SET_S * ampli_i_set_ps	// Pointer to structure containing Amplified audio sample-set
 )
 {
-	CHAN_SET_S * equal_set_ps = &(cntrl_ps->src_set);	// Local pointer to structure containing Equalised audio sample-set
+//	CHAN_SET_S * equal_i_set_ps = &(cntrl_ps->src_set);	// Local pointer to structure containing Equalised audio sample-set
 	CHAN_SET_S * delay_set_ps = &(cntrl_ps->delay_sets[0]);	// Local ptr to array of structs containing delayed audio sample-sets
 	MIX_PARAM_S * mix_lvls_ps = reverb_gs.mix_lvls_ps; // Local Pointer to structure containing mix-levels
 	S64_T same_samps[NUM_REVERB_CHANS];	// Same-channel buffer for Channel-Mix (E.g. left->left)

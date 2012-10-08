@@ -23,3 +23,7 @@ Remove channel_id from use_loudness() function interface.
 -----------
 Reorganised code to remove Makefile definitions, to conform to xSoftIPTools requirements.
 and to work with Ross Owen's new sc_i2s/sc_i2c modules.
+
+08-OCT-2012
+-----------
+Rebuilt for xTimeComposer on New SliceKit board (*)

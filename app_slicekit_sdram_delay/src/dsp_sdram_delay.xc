@@ -253,7 +253,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
-printcharln('D');
+// printcharln('D'); //MB~
 				} // if (FADE_LEN < samp_cnt)
 			break; // case FX2DRY:
 
@@ -275,7 +275,7 @@ printcharln('D');
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = EFFECT; // Switch to Effect-Only Processing
-printcharln('E');
+// printcharln('E'); //MB~
 				} // if (FADE_LEN < samp_cnt)
 			break; // case DRY2FX:
 

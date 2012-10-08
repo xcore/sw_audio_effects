@@ -20,3 +20,7 @@ Fixed addressing problem in sdram_memory_mapper.xc
 Added init_sdram function to fill SDRAM with saw-tooth wave to check for correct initialisation.
 Added read_active flag to sdram_delay.c to prevent reading of uninitialised memory.
 
+08-OCT-2012
+-----------
+Rebuilt for xTimeComposer on New SliceKit board (*)
+

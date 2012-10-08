@@ -25,7 +25,7 @@
 #include "sdram_io.h"
 
 // Global data structure for sdram memory manager (sc_sdram_burst/module_sdram_memory_manager)
-on stdcore[MEM_CORE] : struct sdram_ports sdram_ports = 
+sdram_ports cur_ports = 
 { 
 	PORT_SEL, 
 	PORT_CAS, 
@@ -78,7 +78,7 @@ int sdram_io( // SDRAM I/O Thread
 	chanend c_sdram // SDRAM end of channel between SDRAM and DSP threads
 )
 {
-  sdram_server( c_sdram, sdram_ports ); // Call SDRAM master loop
+  sdram_server( c_sdram, cur_ports ); // Call SDRAM master loop
 
 	return 0;
 } // sdram_io
