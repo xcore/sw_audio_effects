@@ -129,12 +129,8 @@ typedef struct BIQUAD_COEF_TAG // Structure containing BiQuad coefficients
 typedef struct BIQUAD_CHAN_TAG // Structure containing intermediate data for one channel, updated every sample
 {
 	FILT_T iir[NUM_FILT_TAPS]; // Array of previous IIR filter results
-	FILT_T inp[NUM_FILT_TAPS]; // Array of previous input samples
 	FILT_T filt[NUM_FILT_TAPS]; // Array of previous filterd output samples
-
 	FILT_T inp_err; // Rounding error due to down-sampling input
-	FILT_T iir_err; // Rounding error due to down-sampling IIR output
-	FILT_T filt_err; // Rounding error due to down-sampling filtered output
 } BIQUAD_CHAN_S;
 
 typedef struct BIQUAD_TAG // Structure containing all biquad data

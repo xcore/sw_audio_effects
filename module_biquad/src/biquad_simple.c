@@ -286,13 +286,10 @@ void init_biquad_chan( // Initialise BiQuad data for one channel
 	for (tap_cnt=0; tap_cnt<NUM_FILT_TAPS; tap_cnt++)
 	{
 		bq_chan_ps->iir[tap_cnt] = 0;
-		bq_chan_ps->inp[tap_cnt] = 0;
 		bq_chan_ps->filt[tap_cnt] = 0;
 	} // for tap_cnt
 
-	bq_chan_ps->iir_err = 0; // Clear IIR Error
 	bq_chan_ps->inp_err = 0; // Clear Input Error
-	bq_chan_ps->filt_err = 0; // Clear Output Error
 } // init_biquad_chan
 /******************************************************************************/
 void init_biquad( // Create structure for all biquad data, and initialise
@@ -343,7 +340,6 @@ FILT_T fix_point_mult( // Multiply a sample by a fixed point coefficient
 	FIX_POINT_S * fix_coef_ps = &(fix_const_ps->coef); // Pointer to coefficient in fixed point format
 	FILT_T full_res; // Full precision result of multiply
 	FILT_T redu_res; // output result of multiply scaled back to sample range
-
 
 	full_res = ((FILT_T)fix_coef_ps->mant * inp_samp + (FILT_T)fix_const_ps->err); // Full precison result
 	redu_res = (full_res + (FILT_T)fix_const_ps->half) >> fix_coef_ps->exp; // Compute reduced precision result
@@ -404,7 +400,6 @@ SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 
 
 	inp_full_samp = (FILT_T)inp_chan_samp + (FILT_T)bq_chan_ps->inp_err; // Add-in Input diffusion error
-
 	inp_redu_samp = (inp_full_samp + (FILT_T)HALF_HEAD) >> HEAD_BITS; // Compute reduced precision input sample
 	bq_chan_ps->inp_err = (COEF_T)(inp_full_samp - ((FILT_T)inp_redu_samp << HEAD_BITS)); // Update diffusion error
 
@@ -427,7 +422,6 @@ SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 	// Update previous stored results
 	for (tap_cnt=(NUM_FILT_TAPS - 1); tap_cnt>0; tap_cnt--)
 	{
-		bq_chan_ps->inp[tap_cnt] =	bq_chan_ps->inp[tap_cnt-1]; 
 		bq_chan_ps->iir[tap_cnt] =	bq_chan_ps->iir[tap_cnt-1]; 
 		bq_chan_ps->filt[tap_cnt] =	bq_chan_ps->filt[tap_cnt-1]; 
 	} // for tap_cnt
@@ -456,7 +450,7 @@ S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
 	{
 		// Call biquad on current sample
 		out_samp = (S32_T)biquad_filter_chan( (SAMP_CHAN_T)inp_samp ,&(biquad_gs.bq_chan_s[cur_chan]) ,&(biquad_gs.common_coefs_s) );
-//		out_samp = inp_samp; // Dbg
+//MB~		out_samp = inp_samp; // MB~ Dbg
 	} // else !(0 == biquad_gs.params_set)
 
 	return out_samp;
