@@ -161,141 +161,271 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.37751107" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.63163240" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.58895795" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.40478137" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.75197906" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.50908883" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.96677294" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.18596380" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.92522609" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.38543322" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.21475265" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.20950672" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.38534735" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.35907975" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_biquad/.build/m_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>

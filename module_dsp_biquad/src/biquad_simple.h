@@ -38,7 +38,8 @@
 	#error Define. NUM_BIQUAD_CHANS in app_conf.h
 #endif // NUM_BIQUAD_CHANS
 
-typedef enum FILT_MODE_TAG // Different Processing States
+/** Different Processing States  */
+typedef enum FILT_MODE_TAG
 {
   LO_PASS = 0,	// Low Pass Filter
   HI_PASS,			// High Pass Filter
@@ -49,15 +50,25 @@ typedef enum FILT_MODE_TAG // Different Processing States
   NUM_FILT_MODES	// Handy Value!-)
 } FILT_MODE_TYP;
 
-// Filter parameters 
-#define DEF_FILT_MODE LO_PASS // Default Filter Mode
+/** Filter parameters */
+
+/**  Default Filter Mode  */
+#define DEF_FILT_MODE LO_PASS
+
+/** Default Sample Frequency (In Hz)  */
 #define DEF_SAMP_FREQ 48000 // Default Sample Frequency (In Hz)
+
+/** Default Significant Filter Frequency (In Hz)  */
 #define DEF_SIG_FREQ 1000 // Default Significant Filter Frequency (In Hz)
 
-#define QUAL_BITS 8 // No. Of bits used to scale Quality-factor
-#define DEF_QUAL_FACT (1 << QUAL_BITS) // Default Quality-factor of 1, scaled by QUAL_BITS
+/** No. Of bits used to scale Quality-factor */
+#define QUAL_BITS 8 // 
 
-typedef struct BIQUAD_PARAM_TAG // Structure containing BiQuad parameters
+/** Default Quality-factor of 1, scaled by QUAL_BITS */
+#define DEF_QUAL_FACT (1 << QUAL_BITS) // 
+
+/** Structure containing BiQuad parameters */
+typedef struct BIQUAD_PARAM_TAG // 
 {
 	FILT_MODE_TYP filt_mode; // BiQuad filter type (e.g. Low-pass)
 	S32_T samp_freq; // Sample frequency
@@ -65,7 +76,15 @@ typedef struct BIQUAD_PARAM_TAG // Structure containing BiQuad parameters
 	S32_T qual; // Quality-factor
 } BIQUAD_PARAM_S;
 
+
 /******************************************************************************/
+/** Use BiQuad filter on one sample from one channel
+ * Samples are left-aligned signed values.
+ * e.g. 24-bit audio will look like 0x12345600 (positive) or 0xFF123400 (negative)
+ * 	inp_samp, // Unfiltered input sample from channel
+ *	cur_chan // current channel
+ *	Return filtered Output Sample
+ */
 S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
 	S32_T inp_samp, // Unfiltered input sample from channel
 	S32_T cur_chan // current channel

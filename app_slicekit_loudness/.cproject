@@ -161,141 +161,271 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.47576369" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.19141793" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.26528196" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.61269059" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.89394276" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.52139971" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.63819317" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.4880669" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.28151778" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.27445684" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.65202322" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.19736416" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.71353920" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.57290289" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_loudness/.build_L1_AUDIO}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
