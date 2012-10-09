@@ -1,5 +1,5 @@
-SPI Programming Guide
-=====================
+Programming Guide
+=================
 
 Key Files
 ---------
