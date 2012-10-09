@@ -20,7 +20,7 @@ ALL_PASS=4
 configPoints =
 {
   SampleFreq = {
-    short   = "Sample FRequency",
+    short   = "Sample Frequency",
     help    = "",
     long    = "",
     units   = "Hz",
@@ -32,7 +32,7 @@ configPoints =
   },
   NumChannels = {
     short   = "BiQuad Channels",
-    help    = "Number of audio channels processed in parallel, Currently set in application Makefile",
+    help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
     long    = "192kHz CAN ONLY ACCOMODATE ONE CHANNEL, 44 OR 48kHz COULD ACCOMODATE 4",
     units   = "",
     define  = "NUM_BIQUAD_CHANS",
@@ -44,7 +44,7 @@ configPoints =
   FilterType =
   {
     short   = "Filter Type",
-    help    = "Custom filters can be defined. To get started with custome definition, select the type closest to your requirements. NB ALL_PASS changes phase",
+    help    = "Custom filters can be defined. To get started with custom definition, select the type closest to your requirements. NB ALL_PASS changes phase",
     long    = "",
     units   = "",
     define  = "DEF_FILT_MODE",

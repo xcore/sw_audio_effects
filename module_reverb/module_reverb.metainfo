@@ -29,7 +29,7 @@ configPoints =
   },
   NumChannels = {
     short   = "Reverb Channels",
-    help    = "Number of audio channels processed in parallel, Currently set in application Makefile",
+    help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
     long    = "192kHz CAN ONLY ACCOMODATE ONE CHANNEL, 44 OR 48kHz COULD ACCOMODATE 4",
     units   = "",
     define  = "NUM_REVERB_CHANS",
@@ -118,7 +118,7 @@ configPoints =
   },
   AttnLevel= {
     short   = "Attenuation for reverb feedback",
-    help    = "Low values creates longer reverb decay. Range of 0..256, 256 being max. attenuation (No feedback - no reverb tail)",
+    help    = "Low values creates longer reverb decay. Range of 0..256. 256 cuases max. attenuation (No feedback - no reverb tail)",
     long    = "WARNING: Values below 32 may cause uncontrolled feedback",
     units   = "",
     define  = "DEF_ATTN_MIX",

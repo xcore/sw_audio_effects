@@ -2,8 +2,8 @@
 -- Descriptive metadata
 -------------------------------------------------------------------------------
 
-componentName = "Delay-line"
-componentFullName = "Configurable Delay-line Function Library"
+componentName = "SDRAM_Delay"
+componentFullName = "Configurable SDRAM_Delay Function Library"
 alternativeNames = { }
 componentDescription = ""
 componentVersion = "1v0"
@@ -28,7 +28,7 @@ configPoints =
   NumChannels = {
     short   = "Delay Channels",
     help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
-    long    = "192kHz can only accommodate 8 delay-taps",
+    long    = " ",
     units   = "",
     define  = "NUM_DELAY_CHANS",
     type    = "int",

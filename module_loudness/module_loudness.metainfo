@@ -16,7 +16,7 @@ configPoints =
 {
   NumChannels = {
     short   = "Loudness Channels",
-    help    = "Number of audio channels processed in parallel, Currently set in application Makefile",
+    help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
     long    = "192kHz Can only accommodate 2 channels, 44 OR 48kHz could accommodate 12",
     units   = "",
     define  = "NUM_GAIN_CHANS",

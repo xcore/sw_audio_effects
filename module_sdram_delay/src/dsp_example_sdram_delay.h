@@ -1,8 +1,8 @@
 /******************************************************************************\
- * Header:  dsp_delay
- * File:    dsp_delay.h
+ * Header:  dsp_sdram_delay
+ * File:    dsp_sdram_delay.h
  * Author: Mark Beaumont
- * Description: Definitions, types, and prototypes for dsp_delay.xc
+ * Description: Definitions, types, and prototypes for dsp_sdram_delay.xc
  *
  * Version: 0v1
  * Build:
@@ -21,19 +21,20 @@
  *
 \******************************************************************************/
 
-#ifndef _DSP_DELAY_H_
-#define _DSP_DELAY_H_
+#ifndef _DSP_SDRAM_DELAY_H_
+#define _DSP_SDRAM_DELAY_H_
 
 #include "types64bit.h"
 #include "common_utils.h"
 #include "delay_line.h"
 
 /******************************************************************************/
-void dsp_delay( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+void dsp_sdram_delay( // Thread that delays a stream of audio samples
+	streaming chanend c_aud_dsp, // Channel between Audio_IO thread and DSP thread (bi-directional)
+  chanend c_dsp_sdram // Channel between DSP thread and SDRAM thread (bi-directional)
 );
 /******************************************************************************/
 
-#endif // _DSP_DELAY_H_
+#endif // _DSP_SDRAM_DELAY_H_
 /******************************************************************************/
-// dsp_delay.h
+// dsp_sdram_delay.h

@@ -2,8 +2,8 @@
 -- Descriptive metadata
 -------------------------------------------------------------------------------
 
-componentName = "Reverb"
-componentFullName = "Configurable Reverb Function Library"
+componentName = "SDRAM_Reverb"
+componentFullName = "Configurable SDRAM_Reverb Function Library"
 alternativeNames = { }
 componentDescription = ""
 componentVersion = "1v0"
@@ -29,7 +29,7 @@ configPoints =
   },
   NumChannels = {
     short   = "Reverb Channels",
-    help    = "Number of audio channels processed in parallel, Currently set in application Makefile",
+    help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
     long    = "192kHz CAN ONLY ACCOMODATE ONE CHANNEL, 44 OR 48kHz COULD ACCOMODATE 4",
     units   = "",
     define  = "NUM_REVERB_CHANS",
@@ -72,7 +72,7 @@ configPoints =
   },
   NumTaps= {
     short   = "Delay Taps",
-    help    = "Currently 'hard-wired' to 4 delay-taps. Parameterised for passing to module_delay",
+    help    = "Currently 'hard-wired' to 4 delay-taps. Parameterised for passing to module_sdram_delay",
     long    = "",
     units   = "",
     define  = "NUM_REV_TAPS",
@@ -118,7 +118,7 @@ configPoints =
   },
   AttnLevel= {
     short   = "Attenuation for reverb feedback",
-    help    = "Low values creates longer reverb decay. Range of 0..256, 256 being max. attenuation (No feedback - no reverb tail)",
+    help    = "Low values create longer reverb decay. Range of 0..256. 256 causes max. attenuation (No feedback - no reverb tail)",
     long    = "WARNING: Values below 32 may cause uncontrolled feedback",
     units   = "",
     define  = "DEF_ATTN_MIX",
@@ -170,10 +170,10 @@ end
 generatedCode = {
 includes = 
 	{ 
-		"dsp_example_reverb.h"
+		"dsp_example_sdram_reverb.h"
 	},
   globals = "",
   body = ""
 }
 
-api = {'use_reverb','config_reverb'}
+api = {'use_sdram_reverb','config_sdram_reverb'}
