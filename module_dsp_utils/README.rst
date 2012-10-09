@@ -1,11 +1,25 @@
-<Add title here>
-================
+DSP Audio Utilities Function Library
+====================================
 
-:scope: <Put one of Roadmap, Example, Early Development or General Use>
-:description: <Add one line here>
-:keywords: <Add comma separated list of keywords>
-:boards: <Add comma separated list of supported boards>
+:scope: Early Development
+:description: A Non-linear-gain library using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.
+:keywords: audio, dsp
+:boards: XA-SK-AUDIO
 
-<Add description of software block>
-Utilities directory.
-src contains files common to multiple projects. e.g. header(include) files.
+Features
+--------
+
+   * Offers user-configurable increased gain, without clipping
+   * From 12 channels at 48 KHz to 2 channel at 192 KHz
+
+Description
+-----------
+
+This algorithm uses a piece-wise parabolic curve, to limit the number of multiplies required per sample.
+Currently 5 parabola's are used, as follows:
+
+   #. Unity-gain section (Straight line) for low-level signals (e.g. noise)
+   #. Transition to maximum gradient (user-configurable). 
+   #. Transition from max. gradient to 'max-gain' section.
+   #. 'max-gain' section, (Straight line) with minimum gradient (reciprocal of max-gradient)
+   #. Transition from min. gradient back to 'unity-gain' to finish.

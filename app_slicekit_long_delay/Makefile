@@ -7,12 +7,13 @@ TARGET = xp-skc-l2-single-xscope.xn
 APP_NAME =
 
 # The flags passed to xcc when building the application
+# BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1
 BUILD_FLAGS = -Wall -O3 -report -g -DSDA_HIGH=2 -DSCL_HIGH=1
 
 # The USED_MODULES variable lists other module used by the application. These
 # modules will extend the SOURCE_DIRS, INCLUDE_DIRS and LIB_DIRS variables. 
 # Modules are expected to be in the directory above the BASE_DIR directory.
-USED_MODULES = module_dsp_biquad module_dsp_utils module_i2s_master module_i2c_single_port
+USED_MODULES = module_dsp_long_delay module_dsp_utils module_sdram_memory_mapper module_sdram module_i2s_master module_i2c_single_port
 
 XCC_FLAGS = $(BUILD_FLAGS)
 
