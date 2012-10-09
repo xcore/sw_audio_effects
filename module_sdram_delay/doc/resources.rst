@@ -3,13 +3,14 @@ Resource Requirements
 
 Available Memory
 ----------------
-This application uses variable amounts of memory depending on the size of the delay-line,
+This application stores the delayed samples in the SDRAM Memory-Slice,
+it memory useage is  variable depending on the size of the maximum delay requested,
 and the number of channels being processed. 
 A #define MEM_SAMPS is used to indicate the amount of memory available for the delay-line.
-Currently this is set at 13000 samples, which uses almost all the available memory on Core_0
-After loading application remaining memory(Bytes) is about:
-Core0: 0x0e00 
-Core1: 0xd700
+Currently this is set at 2 Mega-samples, which is the size for a 8 MByte SDRAM Memory-slice
+Used local memory(Bytes) is about:
+Core0: 27652 
+Core1:  9408
 
 Computation
 -----------

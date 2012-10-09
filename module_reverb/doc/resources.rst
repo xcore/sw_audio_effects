@@ -8,9 +8,9 @@ This application uses variable amounts of memory depending on the size of the de
 In module_delay/src/delay_line.h, a #define MEM_SAMPS is used
 to indicate the amount of memory available for the delay-line.
 Currently this is set at 13000 samples, which uses almost all the available memory on Core_0
-After loading application remaining memory(Bytes) is about:
-Core0: 0x0750 
-Core1: 0x8e80
+Used memory(Bytes) is about:
+Core0: 58040
+Core1: 25660
 
 Computation
 -----------

@@ -1,5 +1,5 @@
-XMOS xSOFTip Audio Reverb Function Library
-==============================================
+XMOS xSOFTip Audio SDRAM_Reverb Function Library
+================================================
 
 .. toctree::
 

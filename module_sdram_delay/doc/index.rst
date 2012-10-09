@@ -1,4 +1,4 @@
-XMOS xSOFTip Audio Delay-line Function Library
+XMOS xSOFTip Audio SDRAM-Delay Function Library
 ==============================================
 
 .. toctree::

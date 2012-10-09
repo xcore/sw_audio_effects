@@ -20,7 +20,7 @@ These can be overwritten before calling config_reverb.
 Currently the room_size is scaled to suit the number of channels required.
 e.g def_param_s.room_size = (80 / NUM_REVERB_CHANS);
 
-NB The maximu room-size is limited by the amount of memory used for the enough delay-line.
+NB The maximum room-size is limited by the amount of memory used for the delay-line.
 
 Demo Applications
 =================
@@ -28,7 +28,7 @@ Demo Applications
 app_slicekit_reverb Demo
 --------------------------
 
-This application uses module_reverb to a reverb-like effect on an audio-stream, 
+This application uses module_reverb to create a reverb-like effect on an audio-stream, 
 passing through the SliceKit Core board.
 The audio is connected to the board using the following Analogue ports:
 Input 0/1 (Microphone mini-jack)

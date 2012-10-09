@@ -190,7 +190,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 	CHAN_SET_S out_set_s;	// Structure containing intermediate audio sample-set, used for cross-fade
 
 	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
-	S32_T fx_len = SWAP_NUM; //MB~ (SWAP_NUM << 2);	// time spent in effect state (to ~32 secs)
+	S32_T fx_len = (SWAP_NUM << 1);	// time spent in effect state (to ~16 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 	

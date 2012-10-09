@@ -18,7 +18,7 @@ Data Structures
 
 Configuration Functions
 +++++++++++++++++++++++
-.. doxygenfunction:: config_delay
+.. doxygenfunction:: config_sdram_delay
 
 Receive Functions
 +++++++++++++++++
@@ -28,4 +28,4 @@ Transmit Functions
 
 DSP Processing Functions
 ++++++++++++++++++++++++
-.. doxygenfunction:: use_delay
+.. doxygenfunction:: use_sdram_delay

@@ -19,7 +19,7 @@ Data Structures
 
 Configuration Functions
 +++++++++++++++++++++++
-.. doxygenfunction:: config_reverb
+.. doxygenfunction:: config_sdram_reverb
 
 Receive Functions
 +++++++++++++++++
@@ -29,4 +29,4 @@ Transmit Functions
 
 DSP Processing Functions
 ++++++++++++++++++++++++
-.. doxygenfunction:: use_reverb
+.. doxygenfunction:: use_sdram_reverb

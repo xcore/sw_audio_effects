@@ -3,9 +3,9 @@ Resource Requirements
 
 Available Memory
 ----------------
-After loading application remaining memory(Bytes) is about:
-Core0: 0xb500 
-Core1: 0xd800
+Used memory(Bytes) is about:
+Core0: 13504
+Core1:  5716
 
 Computation
 -----------
