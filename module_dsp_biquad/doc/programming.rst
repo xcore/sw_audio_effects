@@ -1,5 +1,5 @@
-SPI Programming Guide
-=====================
+Programming Guide
+=================
 
 Key Files
 ---------
@@ -13,7 +13,7 @@ config_biquad() Called to do initial configuration of biquad parameters (e.g. Lo
 	WARNING: This must be called before ...
 use_biquad() Called to apply filter to one audio-sample, designed to be called from an *.xc file.
 
-NB After initialisation, config_biquad() can be called again as required to re-configure the filter.
+NB After initialisation, ``config_biquad()`` can be called again as required to re-configure the filter.
 
 To set the filter parameters, edit the following defines in the include file module_dsp_biquad/src/biquad_simple.h
 	DEF_FILT_MODE // Default Filter Mode
