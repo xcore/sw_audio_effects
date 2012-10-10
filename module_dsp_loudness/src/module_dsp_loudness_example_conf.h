@@ -1,13 +1,13 @@
 /******************************************************************************\
- * Header:  dsp_biquad
- * File:    dsp_biquad.h
+ * Header:  module_dsp_loudness_example_conf
+ * File:    module_dsp_loudness_example_conf.h
  * Author: Mark Beaumont
- * Description: Definitions, types, and prototypes for dsp_biquad.xc
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
  *
-
  * The copyrights, all other intellectual and industrial
  * property rights are retained by XMOS and/or its licensors.
  * Terms and conditions covering the use of this code can
@@ -22,21 +22,12 @@
  *
 \******************************************************************************/
 
-#ifndef _DSP_BIQUAD_H_
-#define _DSP_BIQUAD_H_
+#ifndef _MODULE_DSP_LOUDNESS_EXAMPLE_CONF_H_
+#define _MODULE_DSP_LOUDNESS_EXAMPLE_CONF_H_
 
-#define NUM_BIQUAD_CHANS 4
+/** Default value */
+#define NUM_GAIN_CHANS 2
 
-#include "types64bit.h"
-#include "common_utils.h"
-#include "biquad_simple.h"
-
+#endif // _MODULE_DSP_LOUDNESS_EXAMPLE_CONF_H_
 /******************************************************************************/
-void dsp_biquad( // Thread that applies BiQuad filter to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
-);
-/******************************************************************************/
-
-#endif // _DSP_BIQUAD_H_
-/******************************************************************************/
-// dsp_biquad.h
+// module_dsp_loudness_example_conf.h

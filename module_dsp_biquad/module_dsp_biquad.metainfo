@@ -105,9 +105,9 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-includes = 
+	includes = 
 	{ 
-		"dsp_example_biquad.h"
+		"module_dsp_biquad_example_conf.h"
 	},
   globals = "",
   body = ""
@@ -115,3 +115,4 @@ includes =
 
 api = {'use_biquad_filter','config_biquad_filter'}
 
+files = {["module_dsp_biquad/src/module_dsp_biquad_example_conf.h"] = "src/module_dsp_biquad_conf.h"}

@@ -30,7 +30,7 @@
 #include <math.h>
 #include <assert.h>
 #include <print.h>
-#include "app_conf.h"
+#include "module_dsp_biquad_conf.h"
 #include "types64bit.h"
 #include "common_utils.h"
 

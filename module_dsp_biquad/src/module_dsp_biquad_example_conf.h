@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  dsp_delay
- * File:    dsp_delay.h
+ * Header:  module_dsp_biquad_example_conf
+ * File:    module_dsp_biquad_example_conf.h
  * Author: Mark Beaumont
- * Description: Definitions, types, and prototypes for dsp_delay.xc
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,19 +22,12 @@
  *
 \******************************************************************************/
 
-#ifndef _DSP_DELAY_H_
-#define _DSP_DELAY_H_
+#ifndef _MODULE_DSP_BIQUAD_EXAMPLE_CONF_H_
+#define _MODULE_DSP_BIQUAD_EXAMPLE_CONF_H_
 
-#include "types64bit.h"
-#include "common_utils.h"
-#include "delay_line.h"
+/** Default value */
+#define NUM_BIQUAD_CHANS 2
 
+#endif // _MODULE_DSP_BIQUAD_EXAMPLE_CONF_H_
 /******************************************************************************/
-void dsp_delay( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
-);
-/******************************************************************************/
-
-#endif // _DSP_DELAY_H_
-/******************************************************************************/
-// dsp_delay.h
+// module_dsp_biquad_example_conf.h

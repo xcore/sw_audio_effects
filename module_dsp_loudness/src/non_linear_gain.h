@@ -29,7 +29,7 @@
 #include <math.h>
 #include <assert.h>
 #include "types64bit.h"
-#include "app_conf.h"
+#include "module_dsp_loudness_conf.h"
 #include "common_utils.h"
 
 #ifndef NUM_GAIN_CHANS 

@@ -25,7 +25,7 @@
 #define _SDRAM_REVERB_H_
 
 #include <print.h>
-#include "app_conf.h"
+#include "module_dsp_long_reverb_conf.h"
 #include "biquad_simple.h"
 #include "sdram_delay.h"
 #include "non_linear_gain.h"

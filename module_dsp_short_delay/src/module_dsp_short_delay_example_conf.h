@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  dsp_sdram_delay
- * File:    dsp_sdram_delay.h
+ * Header:  module_dsp_short_delay_example_conf
+ * File:    module_dsp_short_delay_example_conf.h
  * Author: Mark Beaumont
- * Description: Definitions, types, and prototypes for dsp_sdram_delay.xc
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,20 +22,12 @@
  *
 \******************************************************************************/
 
-#ifndef _DSP_SDRAM_DELAY_H_
-#define _DSP_SDRAM_DELAY_H_
+#ifndef _MODULE_DSP_SHORT_DELAY_EXAMPLE_CONF_H_
+#define _MODULE_DSP_SHORT_DELAY_EXAMPLE_CONF_H_
 
-#include "types64bit.h"
-#include "common_utils.h"
-#include "delay_line.h"
+/** Default value */
+#define NUM_DELAY_CHANS 2
 
+#endif // _MODULE_DSP_SHORT_DELAY_EXAMPLE_CONF_H_
 /******************************************************************************/
-void dsp_sdram_delay( // Thread that delays a stream of audio samples
-	streaming chanend c_aud_dsp, // Channel between Audio_IO thread and DSP thread (bi-directional)
-  chanend c_dsp_sdram // Channel between DSP thread and SDRAM thread (bi-directional)
-);
-/******************************************************************************/
-
-#endif // _DSP_SDRAM_DELAY_H_
-/******************************************************************************/
-// dsp_sdram_delay.h
+// module_dsp_short_delay_example_conf.h

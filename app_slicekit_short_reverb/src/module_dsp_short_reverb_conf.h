@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  dsp_loudness
- * File:    dsp_loudness.h
+ * Header:  module_dsp_short_reverb_conf
+ * File:    module_dsp_short_reverb_conf.h
  * Author: Mark Beaumont
- * Description: Definitions, types, and prototypes for dsp_loudness.xc
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,19 +22,13 @@
  *
 \******************************************************************************/
 
-#ifndef _DSP_LOUDNESS_H_
-#define _DSP_LOUDNESS_H_
+#ifndef _MODULE_DSP_SHORT_REVERB_CONF_H_
+#define _MODULE_DSP_SHORT_REVERB_CONF_H_
 
-#include "types64bit.h"
-#include "common_utils.h"
-#include "non_linear_gain.h"
+#include "app_conf.h"
 
-/******************************************************************************/
-void dsp_loudness( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
-);
-/******************************************************************************/
+#define NUM_REVERB_CHANS NUM_APP_CHANS
 
-#endif // _DSP_LOUDNESS_H_
+#endif // _MODULE_DSP_SHORT_REVERB_CONF_H_
 /******************************************************************************/
-// dsp_loudness.h
+// module_dsp_short_reverb_conf.h

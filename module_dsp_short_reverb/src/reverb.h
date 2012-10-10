@@ -25,7 +25,7 @@
 #define _REVERB_H_
 
 #include <print.h>
-#include "app_conf.h"
+#include "module_dsp_short_reverb_conf.h"
 #include "biquad_simple.h"
 #include "delay_line.h"
 #include "non_linear_gain.h"

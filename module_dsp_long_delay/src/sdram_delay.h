@@ -30,7 +30,7 @@
 #include <math.h>
 #include <assert.h>
 #include "types64bit.h"
-#include "app_conf.h"
+#include "module_dsp_long_delay_conf.h"
 #include "common_audio.h"
 #include "common_utils.h"
 
