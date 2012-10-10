@@ -30,12 +30,12 @@
 #include <math.h>
 #include <assert.h>
 #include <print.h>
-#include "app_conf.h"
+#include "dsp_biquad_conf.h"
 #include "types64bit.h"
 #include "common_utils.h"
 
 #ifndef NUM_BIQUAD_CHANS 
-	#error Define. NUM_BIQUAD_CHANS in app_conf.h
+	#error Define NUM_BIQUAD_CHANS in dsp_biquad_conf.h in your application.
 #endif // NUM_BIQUAD_CHANS
 
 /** Different Processing States  */
