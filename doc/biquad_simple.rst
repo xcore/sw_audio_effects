@@ -26,7 +26,7 @@ Example
 
 This function is designed to be called from a *.xc file
 
-.. literalinclude:: module_biquad/src/biquad_simple.c
+.. literalinclude:: module_dsp_biquad/src/biquad_simple.c
   :start-after: //::declaration
   :end-before: //::
 

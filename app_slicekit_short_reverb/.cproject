@@ -3,8 +3,8 @@
 <cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
     <storageModule moduleId="org.eclipse.cdt.core.settings">
               
-        <cconfiguration id="com.xmos.cdt.toolchain.98221599">
-            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.98221599" moduleId="org.eclipse.cdt.core.settings" name="Default">
+        <cconfiguration id="com.xmos.cdt.toolchain.87389870">
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.xmos.cdt.toolchain.87389870" moduleId="org.eclipse.cdt.core.settings" name="Default">
                 <externalSettings />
                 <extensions>
                     <extension id="com.xmos.cdt.core.XEBinaryParser" point="org.eclipse.cdt.core.BinaryParser" />
@@ -35,17 +35,17 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                 </buildTargets>
             </storageModule>
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-                <configuration buildProperties="" description="" id="com.xmos.cdt.toolchain.98221599" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
-                    <folderInfo id="com.xmos.cdt.toolchain.98221599.1127281840" name="/" resourcePath="">
-                        <toolChain id = "com.xmos.cdt.toolchain.13859701" name="com.xmos.cdt.toolchain" superClass="com.xmos.cdt.toolchain">
-                            <targetPlatform archList="all" binaryParser="com.xmos.cdt.core.XEBinaryParser" id = "com.xmos.cdt.core.platform.16902772" isAbstract="false" osList="linux,win32,macosx" superClass="com.xmos.cdt.core.platform" />
-                            <builder arguments="" id = "com.xmos.cdt.builder.base.98806056" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.xmos.cdt.builder.base">
+                <configuration buildProperties="" description="" id="com.xmos.cdt.toolchain.87389870" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+                    <folderInfo id="com.xmos.cdt.toolchain.87389870.1127281840" name="/" resourcePath="">
+                        <toolChain id = "com.xmos.cdt.toolchain.71391097" name="com.xmos.cdt.toolchain" superClass="com.xmos.cdt.toolchain">
+                            <targetPlatform archList="all" binaryParser="com.xmos.cdt.core.XEBinaryParser" id = "com.xmos.cdt.core.platform.73971438" isAbstract="false" osList="linux,win32,macosx" superClass="com.xmos.cdt.core.platform" />
+                            <builder arguments="" id = "com.xmos.cdt.builder.base.18243115" keepEnvironmentInBuildfile="false" managedBuildOn="false" superClass="com.xmos.cdt.builder.base">
                                 <outputEntries>
                                     <entry flags="VALUE_WORKSPACE_PATH" kind="outputPath" name="bin" />
                                 </outputEntries>
                             </builder>
-                            <tool id = "com.xmos.cdt.xc.compiler.68867217" name="com.xmos.cdt.xc.compiler" superClass="com.xmos.cdt.xc.compiler">
-	<option id = "com.xmos.c.compiler.option.defined.symbols.56922988" name="com.xmos.c.compiler.option.defined.symbols" superClass="com.xmos.c.compiler.option.defined.symbols" valueType="definedSymbols">
+                            <tool id = "com.xmos.cdt.xc.compiler.70644696" name="com.xmos.cdt.xc.compiler" superClass="com.xmos.cdt.xc.compiler">
+	<option id = "com.xmos.c.compiler.option.defined.symbols.34823787" name="com.xmos.c.compiler.option.defined.symbols" superClass="com.xmos.c.compiler.option.defined.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SHRT_MAX__=32767"/>
 									<listOptionValue builtIn="false" value="__SCHAR_MAX__=127"/>
 									<listOptionValue builtIn="false" value="__SIZE_TYPE__=unsigned"/>
@@ -156,206 +156,216 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 									<listOptionValue builtIn="false" value="__WCHAR_UNSIGNED__=1"/>
 								</option>
 
-                                <option id = "com.xmos.c.compiler.option.include.paths.50280524" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
+                                <option id = "com.xmos.c.compiler.option.include.paths.51436402" name="com.xmos.c.compiler.option.include.paths" superClass="com.xmos.c.compiler.option.include.paths" valueType="includePath">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
-                                <inputType id = "com.xmos.cdt.xc.compiler.input.59780177" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
-                                <option id = "gnu.c.compiler.option.include.paths.47602726" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+                                <inputType id = "com.xmos.cdt.xc.compiler.input.89975104" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
+                                <option id = "gnu.c.compiler.option.include.paths.16825332" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
-
-                                </option>
-                            </tool>
-                            <tool id = "com.xmos.cdt.xc.compiler.base.63703420" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.17621304" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
-
-                                </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.8075136" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
-                            <tool id = "com.xmos.cdt.c.compiler.base.80454577" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.31377940" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+                            <tool id = "com.xmos.cdt.xc.compiler.base.84510442" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
+                                <option id = "gnu.c.compiler.option.include.paths.74164348" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.41218783" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+                                <option id = "com.xmos.c.compiler.option.include.paths.86160203" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
-
-                                </option>
-                            </tool>
-                            <tool id = "com.xmos.cdt.cpp.compiler.base.70436839" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.89504304" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
-
-                                </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.86108775" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
-                            <tool id = "com.xmos.cdt.core.assembler.base.42924727" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
-                                <option id = "gnu.c.compiler.option.include.paths.73342295" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+                            <tool id = "com.xmos.cdt.c.compiler.base.9364859" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
+                                <option id = "gnu.c.compiler.option.include.paths.29752073" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
-                                <option id = "com.xmos.c.compiler.option.include.paths.20700518" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_reverb}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness}&quot;' />
+                                <option id = "com.xmos.c.compiler.option.include.paths.3304083" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_biquad/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+
+                                </option>
+                            </tool>
+                            <tool id = "com.xmos.cdt.cpp.compiler.base.58549492" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
+                                <option id = "gnu.c.compiler.option.include.paths.76936399" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+
+                                </option>
+                                <option id = "com.xmos.c.compiler.option.include.paths.92703622" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+
+                                </option>
+                            </tool>
+                            <tool id = "com.xmos.cdt.core.assembler.base.74538980" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
+                                <option id = "gnu.c.compiler.option.include.paths.11971684" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+
+                                </option>
+                                <option id = "com.xmos.c.compiler.option.include.paths.65854661" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_reverb}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
@@ -459,6 +469,6 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 
     </storageModule>
     <storageModule moduleId="cdtBuildSystem" version="4.0.0">
-        <project id = "app_slicekit_reverb.null.363936" name="app_slicekit_reverb" />
+        <project id = "app_slicekit_short_reverb.null.93867858" name="app_slicekit_short_reverb" />
     </storageModule>
 </cproject>

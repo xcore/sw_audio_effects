@@ -25,6 +25,8 @@
 #ifndef _DSP_BIQUAD_H_
 #define _DSP_BIQUAD_H_
 
+#define NUM_BIQUAD_CHANS 4
+
 #include "types64bit.h"
 #include "common_utils.h"
 #include "biquad_simple.h"

@@ -6,7 +6,7 @@ Available Memory
 This application stores the delayed samples in the SDRAM Memory-Slice,
 it memory useage is  variable depending on the size of the maximum delay requested
 (used to produce the echos), and the number of channels being processed. 
-In module_sdram_delay/src/sdram_delay.h, a #define MEM_SAMPS is used
+In module_dsp_long_delay/src/sdram_delay.h, a #define MEM_SAMPS is used
 to indicate the amount of memory available for the delay-line.
 Currently this is set at 2 Mega-samples, which is the size for a 8 MByte SDRAM Memory-slice
 Used memory(Bytes) is about:
@@ -15,7 +15,7 @@ Core1: 30224
 
 Computation
 -----------
-module_biquad, and module_loudness, run in their own threads.
+module_dsp_biquad, and module_dsp_loudness, run in their own threads.
 Therefore, refer to the documention in those modules for computation details on those functions.
 
 The Reverb-Control thread is timing critical, 

@@ -26,7 +26,7 @@ Example
 
 This function is designed to be called from a *.xc file
 
-.. literalinclude:: module_reverb/src/reverb.c
+.. literalinclude:: module_dsp_short_reverb/src/reverb.c
   :start-after: //::declaration
   :end-before: //::
 

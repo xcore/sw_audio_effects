@@ -52,7 +52,7 @@ configPoints =
   },
   SignificantFreq = {
     short   = "Significant Frequency",
-    help    = "Currently Low-pass cut-off Frequency. Configured in application, and passed to module_biquad",
+    help    = "Currently Low-pass cut-off Frequency. Configured in application, and passed to module_dsp_biquad",
     long    = "",
     units   = "Hz",
     define  = "DEF_SIG_FREQ",
@@ -62,7 +62,7 @@ configPoints =
   },
   Gain = {
     short   = "Bring-up gain",
-    help    = "Reverb amplification to recover lost signal levels due to processing. Configured in application, and passed to module_loudness",
+    help    = "Reverb amplification to recover lost signal levels due to processing. Configured in application, and passed to module_dsp_loudness",
     long    = "",
     units   = "Hz",
     define  = "DEF_GAIN",
@@ -72,7 +72,7 @@ configPoints =
   },
   NumTaps= {
     short   = "Delay Taps",
-    help    = "Currently 'hard-wired' to 4 delay-taps. Parameterised for passing to module_sdram_delay",
+    help    = "Currently 'hard-wired' to 4 delay-taps. Parameterised for passing to module_dsp_long_delay",
     long    = "",
     units   = "",
     define  = "NUM_REV_TAPS",

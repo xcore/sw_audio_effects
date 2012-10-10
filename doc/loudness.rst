@@ -26,7 +26,7 @@ Example
 
 This function is designed to be called from a *.xc file
 
-.. literalinclude:: module_loudness/src/no_linear_gain.c
+.. literalinclude:: module_dsp_loudness/src/no_linear_gain.c
   :start-after: //::declaration
   :end-before: //::
 

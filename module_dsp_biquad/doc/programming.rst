@@ -9,11 +9,12 @@ biquad_simple.h: Header file for 'C' function library
 Usage
 -----
 There are 2 functions in the 'C' library, designed to be called from an *.xc file.
-config_biquad() Called to do initial configuration of biquad parameters (e.g. Low-pass). 
-	WARNING: This must be called before ...
-use_biquad() Called to apply filter to one audio-sample, designed to be called from an *.xc file.
+``config_biquad_filter()`` Called to do initial configuration of biquad parameters (e.g. Low-pass). 
+WARNING: This must be called before ...
 
-NB After initialisation, ``config_biquad()`` can be called again as required to re-configure the filter.
+``use_biquad_filter()``, which is called to apply the filter to one audio-sample, designed to be called from an *.xc file.
+
+Note well: After initialisation, ``config_biquad_filter()`` can be called again as required to re-configure the filter.
 
 To set the filter parameters, edit the following defines in the include file module_dsp_biquad/src/biquad_simple.h
 	DEF_FILT_MODE // Default Filter Mode

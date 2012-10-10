@@ -7,18 +7,22 @@ API
 
 Configuration Defines
 ---------------------
-Defaults used.
+.. doxygendefine:: DEF_FILT_MODE
+.. doxygendefine:: DEF_SAMP_FREQ 
+.. doxygendefine:: DEF_SIG_FREQ 
+.. doxygendefine:: QUAL_BITS 
+.. doxygendefine:: DEF_QUAL_FACT 
 
 Functions
 ---------
 
 Data Structures
 +++++++++++++++
-.. doxygenstruct:: BIQUAD_PARAM_S
+.. doxygenstruct:: BIQUAD_PARAM_TAG
 
 Configuration Functions
 +++++++++++++++++++++++
-.. doxygenfunction:: config_biquad
+.. doxygenfunction:: config_biquad_filter
 
 Receive Functions
 +++++++++++++++++
@@ -28,4 +32,4 @@ Transmit Functions
 
 DSP Processing Functions
 ++++++++++++++++++++++++
-.. doxygenfunction:: use_biquad
+.. doxygenfunction:: use_biquad_filter
