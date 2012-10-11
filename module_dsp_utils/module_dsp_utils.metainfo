@@ -12,51 +12,17 @@ componentVersion = "1v0"
 -- Parameter descriptions.
 -------------------------------------------------------------------------------
 
-configPoints =
-{
-  NumChannels = {
-    short   = "",
-    help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
-    long    = "192kHz Can only accommodate 2 channels, 44 OR 48kHz could accommodate 12",
-    units   = "",
-    define  = "NUM_GAIN_CHANS",
-    type    = "int",
-    options = {1,2,4,6,8,10,12},
-    resourceUsageFlags = {"linear"},
-    default = 4 
-  },
-  Gain = {
-    short   = "Gain",
-    help    = "Mid-volume signals are amplified, low and high signal levels are unaffected",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_GAIN",
-    type    = "int",
-    min     = 1,
-    max     = 2^31 - 1,
-    resourceUsageFlags = {"noeffect"},
-    default = 4
-  },
-}
+configPoints = {}
 
 derivedValues = {}
 
-ports = {
-}
+ports = {}
 
-channels = {
-}        
+channels = {}        
 
 function getConfigStatus()
   local status = "Valid Configuration"
   local issues = {}
-  if swblock.params.SampleFreq > 96000 and swblock.params.NumChans > 2 then
-    status = "Invalid Configuration" 
-    table.insert(issues, { issues = "176400 or 192000 kHz can only support 2 channels", suggestion = "Reduce Sample Rate"}) 
-  elseif swblock.params.SampleFreq > 48000 and swblock.params.NumChans > 6 then
-    status = "Invalid Configuration" 
-    table.insert(issues, { issues = "88200 or 96000 kHz can only support 6 channels", suggestion = "Reduce Sample Rate"}) 
-  end
   return status, issues
 end
             
@@ -65,13 +31,17 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-includes = 
-	{ 
-		"dsp_example_loudness.h"
-	},
+includes = {},
   globals = "",
   body = ""
 }
 
-api = {'use_loudness','config_loudness'}
+api = {
+  'cross_fade_sample',
+  'fade_in_sample',
+  'fade_out_sample',
+  'get_word_address',
+  'increment_circular_offset',
+  'scale_coef'
+}
 

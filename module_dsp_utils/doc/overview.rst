@@ -1,13 +1,7 @@
-DSP Audio Utilities Function Library
-====================================
+Overview
+========
 
-:scope: Early Development
-:description: This is a collection of utilities commonly used by the dsp audio modules
-:keywords: audio, dsp, util, fade, scale, address, wrap
-:boards: XA-SK-AUDIO
-
-Features
---------
+This is a collection of utilities commonly used by the dsp audio modules:
 
    * get_word_address() Converts word reference to address
    * increment_circular_offset() Increment a circular buffer offset. I.e. wraps if at end of buffer
