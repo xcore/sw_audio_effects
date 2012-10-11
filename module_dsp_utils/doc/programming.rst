@@ -9,6 +9,28 @@ BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app
 
 XMOS_MAKE_PATH ?= ..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
+
+# This variable should contain a space separated list of all
+# the directories containing buildable applications (usually
+# prefixed with the app_ prefix)
+#
+# If the variable is set to "all" then all directories that start with app_
+# are built.
+BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app_slicekit_reverb 
+
+XMOS_MAKE_PATH ?= ..
+include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
+
+# This variable should contain a space separated list of all
+# the directories containing buildable applications (usually
+# prefixed with the app_ prefix)
+#
+# If the variable is set to "all" then all directories that start with app_
+# are built.
+BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app_slicekit_reverb 
+
+XMOS_MAKE_PATH ?= ..
+include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
 Programming Guide
 =================
 
@@ -47,7 +69,7 @@ The Makefile is found in the top level directory of the application (e.g. app_sl
 The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g
 TARGET = xp-skc-l2-single-xscope.xn
 
-The number of channels supported in currently 2 or 4, this is set in the Makefile: e.g.
+The number of channels supported in currently 2 or 4, this is set in auto_conf.h: e.g.
 NUM_GAIN_CHANS = 2
 
 Running the application with the Command Line Tools

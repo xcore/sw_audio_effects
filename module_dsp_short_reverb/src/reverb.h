@@ -34,11 +34,15 @@
 	#error Define. NUM_REVERB_CHANS in app_conf.h
 #endif // NUM_REVERB_CHANS
 
+/** Number of delay taps used to create reverb effect: 4 */
 #define NUM_REV_TAPS 4
 
-#define DEF_ROOM_SIZE 1 // Default room-size for reverb
+/**  Default room-size for reverb (in meters): 1 */
+#define DEF_ROOM_SIZE 1 //
 
-#define MIX_BITS 8 // Bit-Shift used in Mixing
+/** Bit-Shift used in Mixing: 8 */
+#define MIX_BITS 8 //
+
 #define MAX_MIX (1 << MIX_BITS) // Maximum Mix Value
 
 #define MIX_DIV2 (MAX_MIX >> 1) // 1/2 Maximum Mix Value
@@ -52,12 +56,20 @@
 
 #define MIX_3DIV4 (MIX_DIV2 + MIX_DIV4) // 3/4 Maximum Mix Value
 
-#define DEF_DRY_LVL MIX_3DIV4 // Default Volume Level Of Dry Signal
-#define DEF_FX_LVL MIX_3DIV4 // Default Volume Level Of Effect Signal
-#define DEF_ATTN_MIX MIX_DIV8 // Default Attenuation. NB Below 1/8 can cause uncontrolled feedback
-#define DEF_CROSS_MIX MIX_DIV4 // Default CrossTalk Mix
+/** Default Volume Level Of Dry Signal: 192/256 */
+#define DEF_DRY_LVL MIX_3DIV4 // 
 
-typedef struct MIX_PARAM_TAG // Structure containing BiQuad parameters
+/**  Default Volume Level Of Effect Signal: 192/256 */
+#define DEF_FX_LVL MIX_3DIV4 //
+
+/** Default Attenuation. NB Below 1/8 can cause uncontrolled feedback: 32/256 */
+#define DEF_ATTN_MIX MIX_DIV8 // 
+
+/**  Default CrossTalk Mix: 64/256 */
+#define DEF_CROSS_MIX MIX_DIV4 //
+
+/** Structure containing Reverb parameters*/
+typedef struct MIX_PARAM_TAG // 
 {
 	S32_T dry_lvl; // 0:Off <--> MAX_MIX:Full
 	S32_T fx_lvl; // 0:Off<--> MAX_MIX:Full
@@ -65,7 +77,8 @@ typedef struct MIX_PARAM_TAG // Structure containing BiQuad parameters
 	S32_T cross_mix; // 0:No Reverb Crosstalk <--> MAX_MIX:Swap Reverb channels
 } MIX_PARAM_S;
 
-typedef struct REVERB_PARAM_TAG // Structure containing BiQuad parameters
+/** Structure containing BiQuad parameters */
+typedef struct REVERB_PARAM_TAG // 
 {
 	MIX_PARAM_S mix_lvls; // Structure containing mix-levels
 	S32_T room_size; // Room-size (in metres)
@@ -75,6 +88,14 @@ typedef struct REVERB_PARAM_TAG // Structure containing BiQuad parameters
 } REVERB_PARAM_S;
 
 /******************************************************************************/
+/** Performs reverb processing.
+ * \param uneq_o_samps[] // Buffer for Unequalised output samples
+ * \param rev_o_samps[]	// Buffer for output samples with Reverb added
+ * \param out_samps[]	// Buffer for final Output samples 
+ * \param inp_samps[]	// Buffer containing Dry input samples
+ * \param equal_i_samps[] // Buffer containing Equalised input samples
+ * \param amp_i_samps[]	// Buffer containing Amplified input samples
+ */
 void use_reverb( // Performs reverb processing
 	S32_T uneq_o_samps[],	// Buffer for Unequalised output samples
 	S32_T rev_o_samps[],	// Buffer for output samples with Reverb added
@@ -89,6 +110,9 @@ void use_reverb( // Performs reverb processing
 // XC File
 
 /******************************************************************************/
+/** Configure reverb parameters. NB Must be called before use_reverb.
+ * \param cur_param_s // Reference to structure containing reverb parameters
+ */
 void config_reverb( // Configure reverb parameters. NB Must be called before use_reverd
 	REVERB_PARAM_S &cur_param_s // Reference to structure containing reverb parameters
 );
