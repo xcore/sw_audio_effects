@@ -162,12 +162,12 @@
         <githash>c0b94f0173df5a6b44fc0809ed0e4e744821a995</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
     </dependency>
-    <docdir>module_dsp_short_delay/doc/index.rst</docdir>
-    <docdir>module_dsp_long_reverb/doc/index.rst</docdir>
-    <docdir>module_dsp_biquad/doc/index.rst</docdir>
-    <docdir>module_dsp_long_delay/doc/index.rst</docdir>
-    <docdir>module_dsp_loudness/doc/index.rst</docdir>
-    <docdir>module_dsp_short_reverb/doc/index.rst</docdir>
+    <docdir>module_dsp_short_delay/doc</docdir>
+    <docdir>module_dsp_long_reverb/doc</docdir>
+    <docdir>module_dsp_biquad/doc</docdir>
+    <docdir>module_dsp_long_delay/doc</docdir>
+    <docdir>module_dsp_loudness/doc</docdir>
+    <docdir>module_dsp_short_reverb/doc</docdir>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <location>git@github.com:xcore/sw_audio_effects.git</location>
     <name>sw_audio_effects</name>
