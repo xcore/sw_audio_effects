@@ -50,7 +50,7 @@ typedef struct GAIN_PARAM_TAG //
  * Samples are left-aligned signed values.
  * e.g. 24-bit audio will look like 0x12345600 (positive) or 0xFF123400 (negative)
  * \param inp_samp Input Sample
- * \return The Filtered Output Sample
+ * \return The amplified output sample
  */
 S32_T use_loudness(
 	S32_T inp_samp // Input Sample

@@ -38,14 +38,23 @@
 	#error Define. NUM_DELAY_CHANS in app_conf.h
 #endif // NUM_DELAY_CHANS
 
-#define MEM_SAMPS 12000 // Memory available to configure delay buffers (in samples). Adjust to suit platform
-#define DELAY_SIZE (MEM_SAMPS / NUM_DELAY_CHANS)// Size of channel delay buffer (in samples).
+/** Memory available to configure delay buffers (in samples). Adjust to suit platform: 12000 */
+#define MEM_SAMPS 12000
 
-#define MAX_TAPS 8 // Max. No. of different taps supported
-#define DEF_TAPS 4 // Default number of taps
-#define DEF_SAMP_FREQ 48000 // Default Sample Frequency (In Hz)
+/**  Size of channel delay buffer (in samples): (MEM_SAMPS / NUM_DELAY_CHANS) */
+#define DELAY_SIZE (MEM_SAMPS / NUM_DELAY_CHANS)
 
-typedef struct DELAY_PARAM_TAG // Structure containing BiQuad parameters
+/** Maximum number of different taps supported: 8 */
+#define MAX_TAPS 8
+
+/** Default number of taps: 4*/
+#define DEF_TAPS 4
+
+/** Default Sample Frequency (In Hz): 48000 */
+#define DEF_SAMP_FREQ 48000
+
+/** Structure containing Delay-line parameters */
+typedef struct DELAY_PARAM_TAG // 
 {
 	S32_T us_delays[MAX_TAPS]; // Set of delays in micro-seconds
 	S32_T num; // No. of delay taps in use
@@ -53,10 +62,18 @@ typedef struct DELAY_PARAM_TAG // Structure containing BiQuad parameters
 } DELAY_PARAM_S;
 
 /******************************************************************************/
+/** Exercise delay-line for one input sample. NB Must have previously called config_delay_line.
+ * Samples are left-aligned signed values.
+ * e.g. 24-bit audio will look like 0x12345600 (positive) or 0xFF123400 (negative)
+ * \param out_samps[] // array of delayed output samples at channel precision
+ * \param inp_samp // Input Sample
+ * \param cur_chan // current channel
+ * \return The delayed output sample
+ */
 void use_delay_line( // Exercise delay-line for one input sample. NB Must have previously called config_delay_line
-	S32_T out_samps[], // array of delayed output samples at channel precision
+	S32_T out_samps[], // Array of delayed output samples
 	S32_T inp_samp, // Input Sample
-	S32_T cur_chan // current channel
+	S32_T cur_chan // Current channel
 ); // Return delayed output sample
 /******************************************************************************/
 
@@ -64,6 +81,9 @@ void use_delay_line( // Exercise delay-line for one input sample. NB Must have p
 // XC File
 
 /******************************************************************************/
+/** Configure delay_line parameters. NB Must be called before use_delay_line.
+ * \param cur_param_s // Reference to structure containing delay-line parameters
+ */
 void config_delay_line( // Configure delay_line parameters. NB Must be called before use_delay_line
 	DELAY_PARAM_S &cur_param_s // Reference to structure containing delay-line parameters
 );

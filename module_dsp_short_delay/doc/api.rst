@@ -7,18 +7,22 @@ API
 
 Configuration Defines
 ---------------------
-Defaults used.
+.. doxygendefine:: DEF_SAMP_FREQ 
+.. doxygendefine:: MEM_SAMPS 
+.. doxygendefine:: DELAY_SIZE 
+.. doxygendefine:: MAX_TAPS 
+.. doxygendefine:: DEF_TAPS 
 
 Functions
 ---------
 
 Data Structures
 +++++++++++++++
-.. doxygenstruct:: DELAY_PARAM_S
+.. doxygenstruct:: DELAY_PARAM_TAG
 
 Configuration Functions
 +++++++++++++++++++++++
-.. doxygenfunction:: config_delay
+.. doxygenfunction:: config_delay_line
 
 Receive Functions
 +++++++++++++++++
@@ -28,4 +32,4 @@ Transmit Functions
 
 DSP Processing Functions
 ++++++++++++++++++++++++
-.. doxygenfunction:: use_delay
+.. doxygenfunction:: use_delay_line
