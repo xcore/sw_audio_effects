@@ -33,4 +33,3 @@ DSP Processing Functions
 .. doxygenfunction:: fade_out_sample
 .. doxygenfunction:: get_word_address
 .. doxygenfunction:: increment_circular_offset
-.. doxygenfunction:: scale_coef

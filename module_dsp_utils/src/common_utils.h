@@ -132,17 +132,6 @@ void fade_out_sample( // Returns faded-out sample
 #ifdef __XC__
 // XC File
 
-/******************************************************************************/
-/** Scale and round floating point coeffiecient.
- * \param fix_coef_s // Reference to structure for fixed point format
- * \param un_coef // input unscaled floating point coef.
- */
-void scale_coef( // Scale and round floating point coeffiecient
-	FIX_POINT_S &fix_coef_s, // Reference to structure for fixed point format
-	R64_T un_coef // input unscaled floating point coef.
-);
-/******************************************************************************/
-
 #else //if __XC__
 // 'C' File
 

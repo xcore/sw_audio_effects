@@ -8,4 +8,3 @@ This is a collection of utilities commonly used by the dsp audio modules:
    * cross_fade_sample() Returns cross-faded sample
    * fade_in_sample() Returns faded-in sample
    * fade_out_sample() Returns faded-out sample
-   * scale_coef() // Scale and round floating point coeffiecient
