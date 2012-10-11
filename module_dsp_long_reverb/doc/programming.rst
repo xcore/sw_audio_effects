@@ -20,16 +20,19 @@ BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app
 
 XMOS_MAKE_PATH ?= ..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
+
 The Programming Guide
 =====================
 
 Key Files
 ---------
+
 sdram_reverb.c: Contains 'C' function library
 sdram_reverb.h: Header file for 'C' function library
 
 Usage
 -----
+
 There are 2 functions in the 'C' library, designed to be called from an *.xc file.
 config_sdram_reverb() Called to do initial configuration of reverb parameters (e.g. room size). 
 	WARNING: This must be called before ...
@@ -68,6 +71,7 @@ The following parameters are configurable:
 
 Makefile
 ........
+
 The Makefile is found in the top level directory of the application (e.g. app_slicekit_sdram_reverb)
 
 The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g
@@ -78,6 +82,7 @@ The number of channels supported in currently 2 or 4, this is set in app_conf.h 
 
 Running the application with the Command Line Tools
 ...................................................
+
 In the top level directory of the application (e.g. app_slicekit_sdram_reverb) type
 xmake clean
 xmake all
@@ -95,6 +100,7 @@ This cycle will repeat indefinitely.
 
 Trouble-shooting
 ................
+
 During initialisation, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
@@ -103,6 +109,6 @@ So the effects of the reverb application may not always be apparent.
 Best to choose some dialogue or sparse percusive sound.
 
 app_slicekit_sdram_reverb Demo
--------------------------
+------------------------------
 
 See app_slicekit_sdram_reverb/doc/programming.rst

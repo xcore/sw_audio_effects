@@ -1,9 +1,9 @@
-.. _sec_api:
+.. _sec_audio_long_delay_api:
 
 API
 ===
 
-.. _sec_conf_defines:
+.. _sec_audio_long_delay_conf_defines:
 
 Configuration Defines
 ---------------------
@@ -19,12 +19,6 @@ Data Structures
 Configuration Functions
 +++++++++++++++++++++++
 .. doxygenfunction:: config_sdram_delay
-
-Receive Functions
-+++++++++++++++++
-
-Transmit Functions
-++++++++++++++++++
 
 DSP Processing Functions
 ++++++++++++++++++++++++

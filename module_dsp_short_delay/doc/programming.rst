@@ -20,16 +20,19 @@ BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app
 
 XMOS_MAKE_PATH ?= ..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
+
 Programming Guide
-=====================
+=================
 
 Key Files
 ---------
+
    * ``delay_line.c``: Contains 'C' function library
    * ``delay_line.h``: Header file for 'C' function library
 
 Usage
 -----
+
 There are 2 functions in the 'C' library, designed to be called from an *.xc file.
    * ``config_delay()`` Called to do initial configuration of delay parameters (e.g. delay offsets). WARNING: This must be called before ...
    * ``use_delay()`` Called to apply set of delays to one audio-sample, designed to be called from an *.xc file.
@@ -58,6 +61,7 @@ In fact the mixing is arranged so that the echos decay exponentially in amplitud
 
 Makefile
 ........
+
 The Makefile is found in the top level directory of the application (e.g. ``app_slicekit_delay``)
 
 The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g
@@ -70,6 +74,7 @@ NUM_DELAY_CHANS = 2
 
 Running the application with the Command Line Tools
 ...................................................
+
 In the top level directory of the application (e.g. ``app_slicekit_delay``) type
    * xmake clean
    * xmake all
@@ -87,10 +92,7 @@ This cycle will repeat indefinitely.
 
 Trouble-shooting
 ................
+
 During initialisation, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
-app_slicekit_reverb Demo
--------------------------
-
-See app_slicekit_reverb/doc/programming.rst

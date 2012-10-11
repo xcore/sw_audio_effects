@@ -1,9 +1,9 @@
-.. _sec_api:
+.. _sec_module_dsp_long_reverb_api:
 
 API
 ===
 
-.. _sec_conf_defines:
+.. _sec_module_dsp_long_reverb_conf_defines:
 
 Configuration Defines
 ---------------------
@@ -14,19 +14,16 @@ Functions
 
 Data Structures
 +++++++++++++++
+
 .. doxygenstruct:: MIX_PARAM_S
 .. doxygenstruct:: REVERB_PARAM_S
 
 Configuration Functions
 +++++++++++++++++++++++
+
 .. doxygenfunction:: config_sdram_reverb
-
-Receive Functions
-+++++++++++++++++
-
-Transmit Functions
-++++++++++++++++++
 
 DSP Processing Functions
 ++++++++++++++++++++++++
+
 .. doxygenfunction:: use_sdram_reverb

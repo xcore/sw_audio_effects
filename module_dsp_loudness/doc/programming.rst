@@ -20,6 +20,7 @@ BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app
 
 XMOS_MAKE_PATH ?= ..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
+
 Programming Guide
 =================
 
@@ -44,7 +45,7 @@ Demo Applications
 =================
 
 Loudness Application For SliceKit Board (``app_slicekit_loudness``)
----------------------------------------
+-------------------------------------------------------------------
 
 This application uses module_dsp_loudness to apply non-linear gain to an audio-stream, 
 passing through the SliceKit Core board.
@@ -54,6 +55,7 @@ The audio is connected to the board using the following Analogue ports:
 
 Makefile
 ........
+
 The Makefile is found in the top level directory of the application (e.g. ``app_slicekit_loudness``)
 
 The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g.
@@ -66,6 +68,7 @@ NUM_GAIN_CHANS = 2
 
 Running the application with the Command Line Tools
 ...................................................
+
 In the top level directory of the application (e.g. ``app_slicekit_loudness``)  type
    * xmake clean
    * xmake all
@@ -83,6 +86,7 @@ This cycle will repeat indefinitely.
 
 Trouble-shooting
 ................
+
 During initialisation, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
@@ -98,7 +102,3 @@ maximum positive signal levels. The resulting wave will have 'square wave' like
 properties, sharp edges near the maximum(minimum) values that contain plenty of
 high frequencies that manifest themselves as distortion.
 
-app_slicekit_reverb Demo
--------------------------
-
-See app_slicekit_reverb/doc/programming.rst
