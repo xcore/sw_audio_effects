@@ -20,6 +20,7 @@ BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app
 
 XMOS_MAKE_PATH ?= ..
 include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
+
 Programming Guide
 =================
 
@@ -46,7 +47,7 @@ Demo Applications
 =================
 
 BiQuad Application For SliceKit Board (app_slicekit_biquad)
--------------------------------------
+-----------------------------------------------------------
 
 This application uses module_dsp_biquad to apply a filter to an audio-stream passing through the SliceKit Core board.
 The audio is connected to the board using the following Analogue ports:
@@ -65,6 +66,7 @@ NUM_BIQUAD_CHANS = 2
 
 Running the application with the Command Line Tools
 ...................................................
+
 In the top level directory of the application (e.g. app_slicekit_biquad) type
    * xmake clean
    * xmake all
@@ -91,6 +93,7 @@ This cycle will repeat indefinitely.
 
 Trouble-shooting
 ................
+
 During initialisation, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
@@ -101,7 +104,5 @@ If this occurs, try one of the following:
    * Turning down the volume of the audio source (i.e. the volume level input to the application), 
    * Reduce the value of DEF_QUAL_FACT
 
-app_slicekit_reverb Demo
--------------------------
 
-See app_slicekit_reverb/doc/programming.rst
+

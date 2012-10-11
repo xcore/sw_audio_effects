@@ -24,12 +24,6 @@ Configuration Functions
 +++++++++++++++++++++++
 .. doxygenfunction:: config_delay_line
 
-Receive Functions
-+++++++++++++++++
-
-Transmit Functions
-++++++++++++++++++
-
 DSP Processing Functions
 ++++++++++++++++++++++++
 .. doxygenfunction:: use_delay_line

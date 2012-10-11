@@ -1,5 +1,5 @@
-Delay-line Function Library
-===========================
+Audio Short Delay-line Function Library
+=======================================
 
 :scope: Early Development
 :description: A Delay-line library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.
