@@ -65,13 +65,15 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-includes = 
+	includes = 
 	{ 
-		"dsp_example_loudness.h"
+		"module_dsp_loudness_example_conf.h"
 	},
   globals = "",
   body = ""
 }
 
 api = {'use_loudness','config_loudness'}
+
+files = {["module_dsp_loudness/src/module_dsp_loudness_example_conf.h"] = "src/module_dsp_loudness_conf.h"}
 

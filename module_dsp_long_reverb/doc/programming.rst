@@ -1,4 +1,4 @@
-SPI Programming Guide
+The Programming Guide
 =====================
 
 Key Files
@@ -13,7 +13,7 @@ config_sdram_reverb() Called to do initial configuration of reverb parameters (e
 	WARNING: This must be called before ...
 use_sdram_reverb() Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an *.xc file.
 
-NB After initialisation, config_sdram_reverb() can be called again as required to re-configure the reverb parameters.
+Note After initialisation, config_sdram_reverb() can be called again as required to re-configure the reverb parameters.
 
 The default reverb parameters are set in the dsp_sdram_reverb() function in file dsp_sdram_reverb.xc.
 These can be overwritten before calling config_sdram_reverb.

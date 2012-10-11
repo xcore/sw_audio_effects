@@ -81,13 +81,15 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-includes = 
+	includes = 
 	{ 
-		"dsp_example_delay.h"
+		"module_dsp_long_delay_example_conf.h"
 	},
   globals = "",
   body = ""
 }
 
-api = {'use_delay_line','config_delay_line'}
+api = {'use_sdram_delay','config_sdram_delay'}
+
+files = {["module_dsp_long_delay/src/module_dsp_long_delay_example_conf.h"] = "src/module_dsp_long_delay_conf.h"}
 

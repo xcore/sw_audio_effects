@@ -161,222 +161,402 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.9997752" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.32357214" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.11159694" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.70311245" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.87103333" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.74511474" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.84436454" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.59924616" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.16611008" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.78040427" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.19563496" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.25041199" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.26716478" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.32789151" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/fake_inc}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16400F}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V1_IS42S16160D}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_dsp_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram_memory_mapper}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram_memory_mapper/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_sdram/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_sdram/src/PINOUT_V0}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_long_delay/.build/m_i2s_master}&quot;' />
 
                                 </option>
                             </tool>

@@ -53,7 +53,7 @@
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
         </component>
-        <component description = "Applies a BiQuad filter to an number of audio channels on the SliceKit board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Application">
+        <component description = "Applies a BiQuad filter to an number of audio channels on the SliceKit board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Application For SliceKit Board">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_biquad</componentDependency>
             <componentDependency>module_dsp_utils</componentDependency>

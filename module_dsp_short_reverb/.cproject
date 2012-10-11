@@ -161,142 +161,432 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.87940266" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.37493532" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.87159544" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.73476750" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.12550000" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.34818490" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.70590389" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.71859703" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.34990952" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.79585606" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.5873816" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.17642003" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.92704397" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.89371463" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/objects/pack}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/xdehtml/.doctrees/doc/_build/.sources/sw_audio_effects/app_slicekit_long_reverb}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_biquad/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_reverb/src}&quot;' />
 
                                 </option>
                             </tool>

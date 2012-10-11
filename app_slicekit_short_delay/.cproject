@@ -161,151 +161,261 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.25449588" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.44897040" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.41864708" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.40209073" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.49708061" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.45996353" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.97067172" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.14216893" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.649221" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.19812190" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.98169414" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.55883261" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.56116854" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.46086863" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay/src}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/bin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/fake_inc}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/app_slicekit_short_delay/.build/m_i2c_single_port}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2s_master}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_i2c_single_port/src}&quot;' />
 
                                 </option>

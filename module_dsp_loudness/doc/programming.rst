@@ -1,59 +1,61 @@
-SPI Programming Guide
-=====================
+Programming Guide
+=================
 
 Key Files
 ---------
-non_linear_gain.c: Contains 'C' function library
-non_linear_gain.h: Header file for 'C' function library
+   * ``non_linear_gain.c``: Contains 'C' function library
+   * ``non_linear_gain.h``: Header file for 'C' function library
 
 Usage
 -----
 There are 2 functions in the 'C' library, designed to be called from an *.xc file.
-config_loudness() Called to do initial configuration of loudness parameters (e.g. max gain). 
-	WARNING: This must be called before ...
-use_loudness() Called to apply gain to one audio-sample, designed to be called from an *.xc file.
+   * ``config_loudness()`` Called to do initial configuration of loudness parameters (e.g. max gain). WARNING: This must be called before ...
+   * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an *.xc file.
 
-NB After initialisation, config_loudness() can be called again as required to re-configure the gain.
+Note well, after initialisation, ``config_loudness()`` can be called again as required to re-configure the gain.
 
-To set the gain value, edit DEF_GAIN in the include file module_dsp_loudness/src/non_linear_gain.h e.g.
+To set the gain value, edit DEF_GAIN in the include file ``module_dsp_loudness/src/non_linear_gain.h`` e.g.
+
 #define DEF_GAIN 4 // Default Gain.
 
 Demo Applications
 =================
 
-app_slicekit_loudness Demo
---------------------------
+Loudness Application For SliceKit Board (``app_slicekit_loudness``)
+---------------------------------------
 
 This application uses module_dsp_loudness to apply non-linear gain to an audio-stream, 
 passing through the SliceKit Core board.
 The audio is connected to the board using the following Analogue ports:
-Input 0/1 (Microphone mini-jack)
-Output 0/1 (Headphone mini-jack)
+   * Input 0/1 (Microphone mini-jack)
+   * Output 0/1 (Headphone mini-jack)
 
 Makefile
 ........
-The Makefile is found in the top level directory of the application (e.g. app_slicekit_loudness)
+The Makefile is found in the top level directory of the application (e.g. ``app_slicekit_loudness``)
 
-The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g
+The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g.
+
 TARGET = xp-skc-l2-single-xscope.xn
 
 The number of channels supported in currently 2 or 4, this is set in the Makefile: e.g.
+
 NUM_GAIN_CHANS = 2
 
 Running the application with the Command Line Tools
 ...................................................
-In the top level directory of the application (e.g. app_slicekit_loudness) type
-xmake clean
-xmake all
+In the top level directory of the application (e.g. ``app_slicekit_loudness``)  type
+   * xmake clean
+   * xmake all
 
 Connect the board to your PC using an XTAG-2
 
 To start the demo type
-xrun --io bin/app_slicekit_loudness.xe to start the demo
+   * xrun --io bin/app_slicekit_loudness.xe to start the demo
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
-About 8 seconds of the effect (i.e. louder audio), followed by
-About 8 seconds of the dry (un-effected) signal (i.e. quieter audio)
+   * About 8 seconds of the effect (i.e. louder audio), followed by
+   * About 8 seconds of the dry (un-effected) signal (i.e. quieter audio)
 
 This cycle will repeat indefinitely.
 

@@ -1,4 +1,4 @@
-SPI Programming Guide
+The Programming Guide
 =====================
 
 Key Files
@@ -13,14 +13,14 @@ config_reverb() Called to do initial configuration of reverb parameters (e.g. ro
 	WARNING: This must be called before ...
 use_reverb() Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an *.xc file.
 
-NB After initialisation, config_reverb() can be called again as required to re-configure the reverb parameters.
+Note After initialisation, config_reverb() can be called again as required to re-configure the reverb parameters.
 
 The default reverb parameters are set in the dsp_control() function in file dsp_control.xc.
 These can be overwritten before calling config_reverb.
 Currently the room_size is scaled to suit the number of channels required.
 e.g def_param_s.room_size = (80 / NUM_REVERB_CHANS);
 
-NB The maximum room-size is limited by the amount of memory used for the delay-line.
+Note The maximum room-size is limited by the amount of memory used for the delay-line.
 
 Demo Applications
 =================

@@ -79,9 +79,9 @@ typedef struct BIQUAD_PARAM_TAG //
 /** Use BiQuad filter on one sample from one channel.
  * Samples are left-aligned signed values.
  * e.g. 24-bit audio will look like 0x12345600 (positive) or 0xFF123400 (negative)
- * 	inp_samp, // Unfiltered input sample from channel
- *	cur_chan // current channel
- *	Return filtered Output Sample
+ * \param inp_samp, // Unfiltered input sample from channel
+ * \param cur_chan // current channel
+ * \return The Filtered Output Sample
  */
 S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
 	S32_T inp_samp, // Unfiltered input sample from channel
@@ -94,7 +94,7 @@ S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
 
 /******************************************************************************/
 /** Configure BiQuad filter.
- * BIQUAD_PARAM_S &cur_param_ps // Reference to structure containing current biquad filter parameters
+ * \param cur_param_ps // Reference to structure containing current biquad filter parameters
  */
 void config_biquad_filter( // Configure BiQuad filter 
 	BIQUAD_PARAM_S &cur_param_ps // Reference to structure containing current biquad filter parameters

@@ -1,4 +1,4 @@
-SPI Programming Guide
+The Programming Guide
 =====================
 
 Key Files
@@ -13,7 +13,7 @@ config_sdram_delay() Called to do initial configuration of delay parameters (e.g
 	WARNING: This must be called before ...
 use_sdram_delay() Called to apply set of delays to one audio-sample, designed to be called from an *.xc file.
 
-NB After initialisation, config_sdram_delay() can be called again as required to re-configure the delay offsets.
+Note After initialisation, config_sdram_delay() can be called again as required to re-configure the delay offsets.
 
 Delays are set in microseconds in the us_delays field of the DELAY_PARAM_S structure.
 

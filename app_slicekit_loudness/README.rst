@@ -1,5 +1,5 @@
-Loudness Application
-====================
+Loudness Application For SliceKit Board
+=======================================
 
 :scope: Example
 :description: Mid-range volume levels are increased without increasing low-level or high-level signals.

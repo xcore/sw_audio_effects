@@ -168,12 +168,14 @@ end
 -------------------------------------------------------------------------------
 
 generatedCode = {
-includes = 
+	includes = 
 	{ 
-		"dsp_example_sdram_reverb.h"
+		"module_dsp_long_reverb_example_conf.h"
 	},
   globals = "",
   body = ""
 }
 
 api = {'use_sdram_reverb','config_sdram_reverb'}
+
+files = {["module_dsp_long_reverb/src/module_dsp_long_reverb_example_conf.h"] = "src/module_dsp_long_reverb_conf.h"}

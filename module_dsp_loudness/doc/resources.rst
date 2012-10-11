@@ -4,8 +4,8 @@ Resource Requirements
 Available Memory
 ----------------
 Used memory(Bytes) is about:
-Core0: 13504
-Core1:  5716
+   * codememory: 9K
+   * datamemory: 2K
 
 Computation
 -----------

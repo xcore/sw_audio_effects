@@ -36,17 +36,25 @@
 	#error Define. NUM_GAIN_CHANS in app_conf.h
 #endif // NUM_GAIN_CHANS
 
-#define DEF_GAIN 4 // Default Gain.
+/** Default Gain 4 */
+#define DEF_GAIN 4 // 
 
-typedef struct GAIN_PARAM_TAG // Structure containing Gain parameters
+/** Structure containing Gain parameters */
+typedef struct GAIN_PARAM_TAG // 
 {
 	S32_T gain; // Maximum desired gain
 } GAIN_PARAM_S;
 
 /******************************************************************************/
-S32_T use_loudness( // Call non-linear-gain for one sample
+/** Call non-linear-gain for one sample.
+ * Samples are left-aligned signed values.
+ * e.g. 24-bit audio will look like 0x12345600 (positive) or 0xFF123400 (negative)
+ * \param inp_samp Input Sample
+ * \return The Filtered Output Sample
+ */
+S32_T use_loudness(
 	S32_T inp_samp // Input Sample
-); // Return Filtered Output Sample
+); 
 /******************************************************************************/
 
 #ifdef __XC__
@@ -54,7 +62,10 @@ S32_T use_loudness( // Call non-linear-gain for one sample
 #include <print.h>
 
 /******************************************************************************/
-void config_loudness( // Configure gain parameters. NB Must be called before use_loudness
+/** Configure gain parameters. NB Must be called before use_loudness.
+ * \param cur_param_s // Reference to structure containing gain parameters.
+ */
+void config_loudness(
 	GAIN_PARAM_S &cur_param_s // Reference to structure containing gain parameters
 );
 /******************************************************************************/

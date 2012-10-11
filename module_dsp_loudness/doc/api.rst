@@ -7,14 +7,14 @@ API
 
 Configuration Defines
 ---------------------
-Defaults used.
+.. doxygendefine:: DEF_GAIN
 
 Functions
 ---------
 
 Data Structures
 +++++++++++++++
-.. doxygenstruct:: GAIN_PARAM_S
+.. doxygenstruct:: GAIN_PARAM_TAG
 
 Configuration Functions
 +++++++++++++++++++++++
