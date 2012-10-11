@@ -14,7 +14,7 @@ This module may be evaluated using the Slicekit Modular Development Platform, av
 Minimum Required board SKUs are:
 
    * XP-SKC-L2 (Slicekit L2 Core Board) plus XA-SK-AUDIO plus XA-SK-XTAG2 (Slicekit XTAG adaptor) 
-   * XA-SK-SDRAM (Memory-Slice Board) plugged into same Core as running main.xc
+   * XA-SK-SDRAM (Memory-Slice Board). This will need to be plugged into the same xCore Tile as the Audio card. 
 
 Demonstration Applications
 --------------------------
