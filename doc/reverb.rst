@@ -1,7 +1,7 @@
 Reverb Audio Effect 
 '''''''''''''''''''
 
-This module is a audio reverb using 3 threads for DSP, and 1 for Audio I/O.
+This module is a audio reverb using 3 logical cores for DSP, and 1 for Audio I/O.
 
 API
 ===

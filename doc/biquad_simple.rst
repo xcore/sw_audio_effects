@@ -1,7 +1,7 @@
 BiQuad Audio Effect 
 '''''''''''''''''''
 
-This module is a audio filter called from within a single thread.
+This module is a audio filter called from within a single logical core (aka thread).
 
 API
 ===
