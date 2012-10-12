@@ -38,7 +38,7 @@
 #error Please define NUM_DELAY_CHANS in app_conf.h
 #endif // NUM_DELAY_CHANS
 
-/**  NB 8 MByte Memory available to configure delay buffers (in samples). Adjust to suit platform: (2 << 20) */
+/** 8 MByte Memory available to configure delay buffers (in samples), adjust to suit platform: (2 << 20) */
 #define MEM_SAMPS (2 << 20) //
 
 /** Size of channel delay buffer (in samples): (MEM_SAMPS / NUM_DELAY_CHANS) */
