@@ -48,7 +48,7 @@
         <version>2.1.0alpha4</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>90eb2014a3e1d41bae25d5354c57335ddad0b1b7</githash>
+        <githash>9dc226745c993d6398dcc468d53a7e8559274553</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
     </dependency>
     <dependency repo = "sc_sdram_burst">
@@ -67,7 +67,8 @@
     <name>sw_audio_effects</name>
     <maintainer>beaumontm</maintainer>
     <partnumber>XM-001968-DH</partnumber>
-    <release parenthash = "5ce985ffd90e30904609abba07cf406b19e12ac0" version = "1.0.0alpha0"></release>
+    <release parenthash = "5ce985ffd90e30904609abba07cf406b19e12ac0" version = "1.0.0alpha0" githash = "f9d1ffd417d2dddbceaa6d865d881885af5f8a30"></release>
+    <release parenthash = "f9d1ffd417d2dddbceaa6d865d881885af5f8a30" version = "1.0.0alpha1"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
