@@ -1,8 +1,8 @@
 /******************************************************************************\
  * File:	dsp_control.xc
  *  
- * Description: Control thread for Reverb, also handles delay functionality, 
- *	calls Loudness and Equalisation threads
+ * Description: Control coar for Reverb, also handles delay functionality, 
+ *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
  * Build:
@@ -23,11 +23,11 @@
 
 #include "dsp_reverb.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /*****************************************************************************/
 void send_biquad_config( // Send BiQuad filter configuration data
-	streaming chanend c_dsp_eq, // Channel connecting to Equalisation thread (bi-directional)
+	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
 	REVERB_PARAM_S &reverb_param_s // Reference to structure containing reverb parameters
 )
 {
@@ -44,7 +44,7 @@ void send_biquad_config( // Send BiQuad filter configuration data
 } // send_biquad_config
 /*****************************************************************************/
 void send_loudness_config( // Send Loudness configuration data
-	streaming chanend c_dsp_gain, // Channel connecting to Loudness thread (bi-directional)
+	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
 	REVERB_PARAM_S &reverb_param_s // Reference to structure containing reverb parameters
 )
 {
@@ -58,24 +58,24 @@ void send_loudness_config( // Send Loudness configuration data
 	c_dsp_gain <: gain_param_s; // Send Loudness configuration data
 } // send_loudness_config
 /*****************************************************************************/
-void sync_reverb_config( // Synchronise a reverb configuration (with other threads)
-	streaming chanend c_dsp_eq, // Channel connecting to Equalisation thread (bi-directional)
-	streaming chanend c_dsp_gain, // Channel connecting to Loudness thread (bi-directional)
+void sync_reverb_config( // Synchronise a reverb configuration (with other coars)
+	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
 	REVERB_PARAM_S &reverb_param_s // Structure containing Reverb configuration parameters
 )
 {
-	// Send data to other threads ...
+	// Send data to other coars ...
 	send_biquad_config( c_dsp_eq ,reverb_param_s );		// Send BiQuad filter configuration data
 	send_loudness_config( c_dsp_gain ,reverb_param_s );	// Send Gain-shaping configuration data
 
-	config_reverb( reverb_param_s ); // Configure remaining reverb parameters in this thread (Delay-line)
+	config_reverb( reverb_param_s ); // Configure remaining reverb parameters in this coar (Delay-line)
 
 } // sync_reverb_config
 /*****************************************************************************/
 void dsp_control( // Controls audio stream processing for reverb application using dsp functions
-	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O thread (bi-directional)
-	streaming chanend c_dsp_eq, // Channel connecting to Equalisation thread (bi-directional)
-	streaming chanend c_dsp_gain // Channel connecting to Loudness thread (bi-directional)
+	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
+	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_gain // Channel connecting to Loudness coar (bi-directional)
 )
 {
 	S32_T inp_samps[NUM_REVERB_CHANS];	// Input audio sample buffer
@@ -107,7 +107,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 		fade_samps[chan_cnt] = 0;
 	}	// for chan_cnt
 
-	// Synchronise a reverb configuration (with other threads) using default parameters
+	// Synchronise a reverb configuration (with other coars) using default parameters
 	def_param_s.gain = 8; // Fine-tune Gain
 	def_param_s.room_size = (74 / NUM_REVERB_CHANS); // Fine-tune Room-size
 	sync_reverb_config( c_dsp_eq ,c_dsp_gain ,def_param_s );
@@ -115,29 +115,29 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 	// Loop forever
 	while(1)
 	{
-		// Send/Receive audio samples over sample thread channels
+		// Send/Receive audio samples over sample coar channels
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_aud_dsp :> inp_samps[chan_cnt]; // Receive input samples from Audio I/O thread 
-			c_aud_dsp <: out_samps[chan_cnt];  // Send Output samples back to Audio I/O thread 
+			c_aud_dsp :> inp_samps[chan_cnt]; // Receive input samples from Audio I/O coar 
+			c_aud_dsp <: out_samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq <: uneq_samps[chan_cnt]; // Send Unequalised samples to Eq thread  
-			c_dsp_eq :> equal_samps[chan_cnt]; // Receive Equalised samples back from Eq thread  
+			c_dsp_eq <: uneq_samps[chan_cnt]; // Send Unequalised samples to Eq coar  
+			c_dsp_eq :> equal_samps[chan_cnt]; // Receive Equalised samples back from Eq coar  
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_gain <: unamp_samps[chan_cnt]; // Send Unamplified samples to Loudness thread   
-			c_dsp_gain :> ampli_samps[chan_cnt]; // Receive Amplified samples back from Loudness thread  
+			c_dsp_gain <: unamp_samps[chan_cnt]; // Send Unamplified samples to Loudness coar   
+			c_dsp_gain :> ampli_samps[chan_cnt]; // Receive Amplified samples back from Loudness coar  
 
 		} // for chan_cnt
 

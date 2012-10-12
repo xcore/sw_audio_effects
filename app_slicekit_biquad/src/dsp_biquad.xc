@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_biquad.xc
  *  
- * Description: Thread that applies BiQuad filter to stream of audio samples
+ * Description: Coar that applies BiQuad filter to stream of audio samples
  *
  * Version: 0v1
  * Build:
@@ -22,7 +22,7 @@
 
 #include "dsp_biquad.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /******************************************************************************/
 void process_all_chans( // Do DSP effect processing
@@ -42,8 +42,8 @@ void process_all_chans( // Do DSP effect processing
 
 } // process_all_chans
 /******************************************************************************/
-void dsp_biquad( // Thread that applies a BiQuad filters to a set of of audio sample streams
-	streaming chanend c_dsp // DSP end of channel connecting to Audio_IO and DSP threads (bi-directional)
+void dsp_biquad( // Coar that applies a BiQuad filters to a set of of audio sample streams
+	streaming chanend c_dsp // DSP end of channel connecting to Audio_IO and DSP coars (bi-directional)
 )
 {
 	// NB Setup correct number of channels in Makefile
@@ -71,7 +71,7 @@ void dsp_biquad( // Thread that applies a BiQuad filters to a set of of audio sa
 	// Loop forever
 	while(1)
 	{ 
-		// Send/Receive samples over Audio thread channel
+		// Send/Receive samples over Audio coar channel
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_BIQUAD_CHANS; chan_cnt++)
 		{

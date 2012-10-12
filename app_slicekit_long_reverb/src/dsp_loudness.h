@@ -33,8 +33,8 @@
 #include "non_linear_gain.h"
 
 /******************************************************************************/
-void dsp_loudness( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+void dsp_loudness( // Coar that applies non-linear gain control to stream of audio samples
+	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
 );
 /******************************************************************************/
 

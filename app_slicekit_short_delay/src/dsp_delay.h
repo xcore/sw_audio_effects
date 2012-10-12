@@ -32,8 +32,8 @@
 #include "delay_line.h"
 
 /******************************************************************************/
-void dsp_delay( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+void dsp_delay( // Coar that applies non-linear gain control to stream of audio samples
+	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
 );
 /******************************************************************************/
 

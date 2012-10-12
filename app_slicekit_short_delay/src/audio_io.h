@@ -32,7 +32,7 @@
 
 /******************************************************************************/
 void audio_io(
-	streaming chanend c_aud // Audio end of channel between I/O and DSP thread
+	streaming chanend c_aud // Audio end of channel between I/O and DSP coar
 );
 /******************************************************************************/
 

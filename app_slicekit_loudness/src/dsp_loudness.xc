@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_loudness.xc
  *  
- * Description: Thread that applies non-linear gain to stream of audio samples
+ * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
  * Build:
@@ -22,7 +22,7 @@
 
 #include "dsp_loudness.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /******************************************************************************/
 void process_all_chans( // Do DSP effect processing
@@ -41,8 +41,8 @@ void process_all_chans( // Do DSP effect processing
 
 } // process_all_chans
 /******************************************************************************/
-void dsp_loudness( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to Audio_IO thread (bi-directional)
+void dsp_loudness( // Coar that applies non-linear gain control to stream of audio samples
+	streaming chanend c_dsp_gain // Channel connecting to Audio_IO coar (bi-directional)
 )
 {
 	// NB Setup correct number of channels in Makefile
@@ -71,7 +71,7 @@ void dsp_loudness( // Thread that applies non-linear gain control to stream of a
 	// Loop forever
 	while(1)
 	{ 
-		// Send/Receive samples over Audio thread channel
+		// Send/Receive samples over Audio coar channel
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_GAIN_CHANS; chan_cnt++)
 		{

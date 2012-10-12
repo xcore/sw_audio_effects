@@ -24,7 +24,7 @@
 #ifndef _GLOBAL_H_
 #define _GLOBAL_H_
 
-// Assign Processing Threads to cores
+// Assign Processing Coars to cores
 #define	AUDIO_IO_CORE 1	// Tile connected to Audio Slice baord
 #define	MEM_CORE 0	// Tile connected to Memory Slice baord
 #define	BIQUAD_CORE 1	// Tile used by BiQuad filter functions

@@ -1,8 +1,8 @@
 /******************************************************************************\
  * File:	sdram_reverb.c
  *  
- * Description: Control thread for Reverb, also handles delay functionality, 
- *	calls Loudness and Equalisation threads
+ * Description: Control coar for Reverb, also handles delay functionality, 
+ *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
  * Build:
@@ -84,8 +84,8 @@ void config_sdram_reverb( // Configure reverb parameters
 
 	assert(MIN_AUDIO_FREQ <= reverb_param_ps->samp_freq); // Check for sensible frequency
 
-	/* Configure Delay-line which is in this thread. 
-		NB BiQuad and Loudness are in different threads and therefore configuration is synchronised via dsp_sdram_reverb.xc */
+	/* Configure Delay-line which is in this coar. 
+		NB BiQuad and Loudness are in different coars and therefore configuration is synchronised via dsp_sdram_reverb.xc */
 
 	config_build_delay( &(reverb_gs) ,reverb_param_ps );  
 
@@ -160,7 +160,7 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 			rev_o_set_ps->samps[chan_cnt] = (S32_T)(same_samps[chan_cnt] + ((samp_diff + (S64_T)MIX_DIV2) >> MIX_BITS));
 // rev_o_set_ps->samps[chan_cnt] = equal_i_set_ps->samps[other_chan]; //MB~ Dbg
 
-			// NB Non-linear-gain thread converts rev_o_set_s to amp_i_set_s
+			// NB Non-linear-gain coar converts rev_o_set_s to amp_i_set_s
 // amp_i_set_ps->samps[chan_cnt] = rev_o_set_ps->samps[chan_cnt]; // MB~ Dbg
 
 			// Mix Dry and Reverb Signals (User Controlable)

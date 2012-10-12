@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	sdram_io.xc
  *  
- * Description: SDRAM I/O Thread
+ * Description: SDRAM I/O Coar
  * for L2 Slice Kit Tile Board with Audio Slice 1v0 
  * Note: This application expects a memory Slice (1v0) to be connected to a Socket on core MEM_CORE
  *
@@ -39,7 +39,7 @@ static intptr_t buf_p = 0; // Pointer to active buffer
 
 /******************************************************************************/
 void read_buffer_from_sdram( // Reads a buffer of data from SDRAM
-  chanend c_sdram, // SDRAM end of channel between DSP thread and SDRAM thread (bi-directional)
+  chanend c_sdram, // SDRAM end of channel between DSP coar and SDRAM coar (bi-directional)
 	unsigned mem_adr, // Virtual Memory Address
 	unsigned buf_adr, // Buffer Address
 	unsigned wrd_siz // No. Of words to read
@@ -57,7 +57,7 @@ void read_buffer_from_sdram( // Reads a buffer of data from SDRAM
 } // read_buffer_from_sdram
 /******************************************************************************/
 void write_buffer_to_sdram( // Writes a buffer of data to SDRAM
-  chanend c_sdram, // SDRAM end of channel between DSP thread and SDRAM thread (bi-directional)
+  chanend c_sdram, // SDRAM end of channel between DSP coar and SDRAM coar (bi-directional)
 	unsigned mem_adr, // Virtual Memory Address
 	unsigned buf_adr, // Buffer Address
 	unsigned wrd_siz // No. Of words to write
@@ -74,8 +74,8 @@ void write_buffer_to_sdram( // Writes a buffer of data to SDRAM
 
 } // write_buffer_to_sdram
 /*****************************************************************************/
-int sdram_io( // SDRAM I/O Thread
-	chanend c_sdram // SDRAM end of channel between SDRAM and DSP threads
+int sdram_io( // SDRAM I/O Coar
+	chanend c_sdram // SDRAM end of channel between SDRAM and DSP coars
 )
 {
   sdram_server( c_sdram, cur_ports ); // Call SDRAM master loop

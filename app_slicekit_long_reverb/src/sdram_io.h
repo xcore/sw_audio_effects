@@ -31,21 +31,21 @@
 
 /******************************************************************************/
 void read_buffer_from_sdram( // Reads a buffer of data from SDRAM
-  chanend c_sdram, // SDRAM end of channel between DSP thread and SDRAM thread (bi-directional)
+  chanend c_sdram, // SDRAM end of channel between DSP coar and SDRAM coar (bi-directional)
 	unsigned mem_adr, // Virtual Memory Address
 	unsigned buf_adr, // Buffer Address
 	unsigned wrd_siz // No. Of words to read
 );
 /******************************************************************************/
 void write_buffer_to_sdram( // Writes a buffer of data to SDRAM
-  chanend c_sdram, // SDRAM end of channel between DSP thread and SDRAM thread (bi-directional)
+  chanend c_sdram, // SDRAM end of channel between DSP coar and SDRAM coar (bi-directional)
 	unsigned mem_adr, // Virtual Memory Address
 	unsigned buf_adr, // Buffer Address
 	unsigned wrd_siz // No. Of words to write
 );
 /*****************************************************************************/
-int sdram_io( // SDRAM I/O Thread
-	chanend c_sdram // SDRAM end of channel between SDRAM and DSP threads
+int sdram_io( // SDRAM I/O Coar
+	chanend c_sdram // SDRAM end of channel between SDRAM and DSP coars
 );
 /******************************************************************************/
 

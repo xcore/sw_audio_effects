@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	audio_io.xc
  *  
- * Description: Audio I/O Thread
+ * Description: Audio I/O Coar
  *
  * Version: 0v1
  * Build:
@@ -67,8 +67,8 @@ void audio_hw_config( // Setup the CODEC for use.
 	codec_config( samFreq ,MCLK_FREQ );
 }
 /*****************************************************************************/
-void audio_io( // Audio I/O thread
-	streaming chanend c_aud // Audio end of channel between I/O and DSP threads
+void audio_io( // Audio I/O coar
+	streaming chanend c_aud // Audio end of channel between I/O and DSP coars
 )
 {
 	unsigned mclk_bclk_div = MCLK_FREQ/(SAMP_FREQ * 64); // Calculate Bit-clock frequency

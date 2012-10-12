@@ -33,8 +33,8 @@
 #include "biquad_simple.h"
 
 /******************************************************************************/
-void dsp_biquad( // Thread that applies Equalisation (Tone control) to stream of audio samples
-	streaming chanend c_dsp_eq // Channel connecting to DSP-control thread (bi-directional)
+void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of audio samples
+	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
 );
 /******************************************************************************/
 

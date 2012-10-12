@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	main.xc
  *  
- * Description: Top level module for SDRAM/Delay-line application, launches all threads
+ * Description: Top level module for SDRAM/Delay-line application, launches all coars
  * for L2 Slice Kit Tile Board with Audio Slice 1v0 
  * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
  *
@@ -27,16 +27,16 @@
 /*****************************************************************************/
 int main (void)
 {
-	streaming chan c_aud_dsp; // Streaming Channel between I/O and DSP thread
-  chan c_dsp_sdram; // Channel between DSP thread and SDRAM thread 
+	streaming chan c_aud_dsp; // Streaming Channel between I/O and DSP coar
+  chan c_dsp_sdram; // Channel between DSP coar and SDRAM coar 
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O thread
+		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on stdcore[DSP_CORE]: dsp_sdram_delay( c_aud_dsp ,c_dsp_sdram ); // DSP-Delay thread
+		on stdcore[DSP_CORE]: dsp_sdram_delay( c_aud_dsp ,c_dsp_sdram ); // DSP-Delay coar
 
-    on stdcore[MEM_CORE]:sdram_io( c_dsp_sdram ); // SDRAM thread
+    on stdcore[MEM_CORE]:sdram_io( c_dsp_sdram ); // SDRAM coar
 	}
 
 	return 0;

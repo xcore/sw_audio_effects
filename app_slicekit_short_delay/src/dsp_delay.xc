@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_delay.xc
  *  
- * Description: Thread that applies non-linear gain to stream of audio samples
+ * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
  * Build:
@@ -22,7 +22,7 @@
 
 #include "dsp_delay.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /******************************************************************************/
 void process_all_chans( // Do DSP effect processing
@@ -61,8 +61,8 @@ void process_all_chans( // Do DSP effect processing
 	
 } // process_all_chans
 /******************************************************************************/
-void dsp_delay( // Thread that delays a stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to Audio_IO thread (bi-directional)
+void dsp_delay( // Coar that delays a stream of audio samples
+	streaming chanend c_dsp_gain // Channel connecting to Audio_IO coar (bi-directional)
 )
 {
 	S32_T inp_samps[NUM_DELAY_CHANS];	// Unamplified input audio sample buffer
@@ -104,7 +104,7 @@ void dsp_delay( // Thread that delays a stream of audio samples
 	// Loop forever
 	while(1)
 	{ 
-		// Send/Receive samples over Audio thread channel
+		// Send/Receive samples over Audio coar channel
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 		{
