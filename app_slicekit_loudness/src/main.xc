@@ -2,7 +2,7 @@
  * File:	main.xc
  *  
  * Description: Top level module for Loudness application, launches all threads
- * for L2 Slice Kit Core Board with Audio Slice 1v0 
+ * for L2 Slice Kit Tile Board with Audio Slice 1v0 
  * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
  *
  * Version: 0v1

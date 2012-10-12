@@ -24,9 +24,9 @@
 #ifndef _GLOBAL_H_
 #define _GLOBAL_H_
 
-#define	AUDIO_IO_CORE 1	// Core connected to Audio Slice baord
-#define	MEM_CORE 0	// Core connected to Memory Slice baord
-#define	DSP_CORE MEM_CORE	// Core used by DSP functions
+#define	AUDIO_IO_CORE 1	// Tile connected to Audio Slice baord
+#define	MEM_CORE 0	// Tile connected to Memory Slice baord
+#define	DSP_CORE MEM_CORE	// Tile used by DSP functions
 
 #define	AUDIO_IO_TYPE 1	// Port-Type connected to Audio Slice baord
 #define	MEM_TYPE 1	// Port-Type connected to Memory Slice baord
