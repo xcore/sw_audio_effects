@@ -21,8 +21,8 @@ Delays are set in microseconds in the us_delays field of the DELAY_PARAM_S struc
 Demo Applications
 =================
 
-Delay-line Application For SliceKit Board (``app_slicekit_short_delay``)
------------------------------------------
+Short-Delay Application For SliceKit Board (``app_slicekit_short_delay``)
+------------------------------------------
 
 This application uses module_dsp_short_delay to create a set of delays (or echos) for an audio-stream, 
 passing through the SliceKit Core board.

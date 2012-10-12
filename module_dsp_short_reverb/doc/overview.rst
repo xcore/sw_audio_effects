@@ -7,8 +7,8 @@ The dsp_function returns an output stream that is a mix of the input and effect 
 The following characteristics of the reverb are currently configurable:
 
    * Room-size (in metres)
-   * Frequency absorbtion (Low-pass filter cut-off frequency)
-   * Volume absorbtion ('bring-up' gain)
+   * Frequency absorption (Low-pass filter cut-off frequency)
+   * Volume absorption ('bring-up' gain)
 
 The following signal-mix levels are currently configurable:
 

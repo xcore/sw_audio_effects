@@ -1,5 +1,5 @@
-SDRAM Delay Application
-=======================
+Long-Delay Application For SliceKit Board
+=========================================
 
 :scope: Example
 :description: Delays a No. of audio channels passing through the SliceKit board creating an long echo effect

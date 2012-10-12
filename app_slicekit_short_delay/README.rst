@@ -1,5 +1,5 @@
-Delay-line Application For SliceKit Board
-=========================================
+Short-Delay Application For SliceKit Board
+==========================================
 
 :scope: Example
 :description: Delays an a number of audio channels paasing through the SliceKit board creating an echo effect

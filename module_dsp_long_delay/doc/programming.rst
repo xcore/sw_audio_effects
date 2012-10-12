@@ -21,7 +21,7 @@ Delays are set in microseconds in the us_delays field of the DELAY_PARAM_S struc
 Demo Applications
 =================
 
-Delay-line Application For SliceKit Board (``app_slicekit_long_delay``)
+Long-Delay Application For SliceKit Board (``app_slicekit_long_delay``)
 -----------------------------------------
 
 This application uses module_dsp_long_delay to create a set of delays (or echos) for an audio-stream, 

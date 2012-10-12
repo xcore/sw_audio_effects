@@ -44,6 +44,22 @@
             <keyword>SDRAM</keyword>
             <keyword>Memory-slice</keyword>
         </component>
+        <component name = "SDRAM_Reverb Function Library" type = "component" buildresults_path = "module_dsp_long_reverb/.module_dsp_long_reverb.buildinfo" scope = "Early Development" path = "module_dsp_long_reverb" metainfo_path = "module_dsp_long_reverb/module_dsp_long_reverb.metainfo" local = "false" id = "module_dsp_long_reverb" description = "A long Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
+            <board>XA-SK-AUDIO</board>
+            <board>XA-SK-SDRAM</board>
+            <componentDependency>module_dsp_biquad</componentDependency>
+            <componentDependency>module_dsp_utils</componentDependency>
+            <componentDependency>module_sdram</componentDependency>
+            <componentDependency>module_sdram_memory_mapper</componentDependency>
+            <componentDependency>module_dsp_long_delay</componentDependency>
+            <componentDependency>module_dsp_loudness</componentDependency>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+            <keyword>reverb</keyword>
+            <keyword>echo</keyword>
+            <keyword>SDRAM</keyword>
+            <keyword>Memory-slice</keyword>
+        </component>
         <component name = "DSP Audio Utilities Function Library" type = "component" buildresults_path = "module_dsp_utils/.module_dsp_utils.buildinfo" scope = "Early Development" path = "module_dsp_utils" metainfo_path = "module_dsp_utils/module_dsp_utils.metainfo" local = "false" id = "module_dsp_utils" description = "This is a collection of utilities commonly used by the dsp audio modules">
             <board>XA-SK-AUDIO</board>
             <keyword>audio</keyword>
@@ -65,7 +81,7 @@
         <uri>git://github.com/xcore/sc_i2s.git</uri>
     </dependency>
     <dependency repo = "sc_sdram_burst">
-        <githash>c0b94f0173df5a6b44fc0809ed0e4e744821a995</githash>
+        <githash>64d35c95f84aba1aee40069ce989be96f7c11bef</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
@@ -89,5 +105,4 @@
     <xsoftip_exclude>app_slicekit_loudness</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_short_delay</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_short_reverb</xsoftip_exclude>
-    <xsoftip_exclude>module_dsp_long_reverb</xsoftip_exclude>
 </xpd>

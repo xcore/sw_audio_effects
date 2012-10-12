@@ -6,12 +6,13 @@ Available Memory
 This application stores the delayed samples in the SDRAM Memory-Slice,
 it memory useage is  variable depending on the size of the maximum delay requested
 (used to produce the echos), and the number of channels being processed. 
-In module_dsp_long_delay/src/sdram_delay.h, a #define MEM_SAMPS is used
-to indicate the amount of memory available for the delay-line.
+In module_dsp_short_delay/src/delay_line.h. 
+A #define MEM_SAMPS is used to indicate the amount of memory available for the delay-line.
 Currently this is set at 2 Mega-samples, which is the size for a 8 MByte SDRAM Memory-slice
+
 Used memory(Bytes) is about:
-Core0: 29364
-Core1: 30224
+   * codememory: 12K
+   * datamemory: 10K
 
 Computation
 -----------

@@ -34,11 +34,15 @@
 	#error Define. NUM_REVERB_CHANS in app_conf.h
 #endif // NUM_REVERB_CHANS
 
+/** Number of delay taps used to create reverb effect: 4 */
 #define NUM_REV_TAPS 4
 
-#define DEF_ROOM_SIZE 1 // Default room-size for reverb
+/**  Default room-size for reverb (in meters): 1 */
+#define DEF_ROOM_SIZE 1 //
 
-#define MIX_BITS 8 // Bit-Shift used in Mixing
+/** Bit-Shift used in Mixing: 8 */
+#define MIX_BITS 8 //
+
 #define MAX_MIX (1 << MIX_BITS) // Maximum Mix Value
 
 #define MIX_DIV2 (MAX_MIX >> 1) // 1/2 Maximum Mix Value
@@ -52,12 +56,20 @@
 
 #define MIX_3DIV4 (MIX_DIV2 + MIX_DIV4) // 3/4 Maximum Mix Value
 
-#define DEF_DRY_LVL MIX_3DIV4 // Default Volume Level Of Dry Signal
-#define DEF_FX_LVL MIX_3DIV4 // Default Volume Level Of Effect Signal
-#define DEF_ATTN_MIX MIX_DIV8 // Default Attenuation. NB Below 1/8 can cause uncontrolled feedback
-#define DEF_CROSS_MIX MIX_DIV4 // Default CrossTalk Mix
+/** Default Volume Level Of Dry Signal: 192/256 */
+#define DEF_DRY_LVL MIX_3DIV4 // 
 
-typedef struct MIX_PARAM_TAG // Structure containing BiQuad parameters
+/**  Default Volume Level Of Effect Signal: 192/256 */
+#define DEF_FX_LVL MIX_3DIV4 //
+
+/** Default Attenuation. Note well, Below 1/8 can cause uncontrolled feedback: 32/256 */
+#define DEF_ATTN_MIX MIX_DIV8 // 
+
+/**  Default CrossTalk Mix: 64/256 */
+#define DEF_CROSS_MIX MIX_DIV4 //
+
+/** Structure containing Reverb parameters*/
+typedef struct MIX_PARAM_TAG // 
 {
 	S32_T dry_lvl; // 0:Off <--> MAX_MIX:Full
 	S32_T fx_lvl; // 0:Off<--> MAX_MIX:Full
@@ -65,7 +77,8 @@ typedef struct MIX_PARAM_TAG // Structure containing BiQuad parameters
 	S32_T cross_mix; // 0:No Reverb Crosstalk <--> MAX_MIX:Swap Reverb channels
 } MIX_PARAM_S;
 
-typedef struct REVERB_PARAM_TAG // Structure containing BiQuad parameters
+/** Structure containing BiQuad parameters */
+typedef struct REVERB_PARAM_TAG // 
 {
 	MIX_PARAM_S mix_lvls; // Structure containing mix-levels
 	S32_T room_size; // Room-size (in metres)
@@ -78,12 +91,23 @@ typedef struct REVERB_PARAM_TAG // Structure containing BiQuad parameters
 // XC File
 
 /******************************************************************************/
-void config_sdram_reverb( // Configure reverb parameters. NB Must be called before use_reverd
+/** Configure reverb parameters. Note well, Must be called before use_reverb.
+ * \param cur_param_s // Reference to structure containing reverb parameters
+ */
+void config_sdram_reverb( // Configure reverb parameters. Note well, Must be called before use_reverd
 	REVERB_PARAM_S &cur_param_s // Reference to structure containing reverb parameters
 );
 /******************************************************************************/
 
 /******************************************************************************/
+/** Performs reverb processing.
+ * \param &cntrl_gs // Reference to structure containing data to control SDRAM buffering
+ * \param uneq_o_set_s // Buffer for Unequalised output samples
+ * \param rev_o_set_s	// Buffer for output samples with Reverb added
+ * \param out_set_s	// Buffer for final Output samples 
+ * \param equal_i_set_s // Buffer containing Equalised input samples
+ * \param ampli_i_set_s	// Buffer containing Amplified input samples
+ */
 void use_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
 	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
 	CHAN_SET_S &uneq_o_set_s,	// Reference to structure containing Unequalised audio sample-set
@@ -98,7 +122,7 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 // 'C' File
 
 /******************************************************************************/
-void config_sdram_reverb( // Configure reverb parameters. NB Must be called before use_reverb
+void config_sdram_reverb( // Configure reverb parameters. Note well, Must be called before use_reverb
 	REVERB_PARAM_S * cur_param_ps // Pointer to structure containing reverb parameters
 );
 /******************************************************************************/
@@ -128,11 +152,11 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 #define TAP_0 263
 #define TAP_1 431
 #define TAP_2 631
-#define TAP_3 MAX_TAP // NB Maximum tap value must be 'Power of 2' (see above)
+#define TAP_3 MAX_TAP // Note well, Maximum tap value must be 'Power of 2' (see above)
 
 typedef struct REVERB_TAG // Structure containing all reverb data
 {
-	U32_T tap_ratios[NUM_REV_TAPS]; // delay tap ratios (NB These values are scaled by room size)
+	U32_T tap_ratios[NUM_REV_TAPS]; // delay tap ratios (Note well, These values are scaled by room size)
 	MIX_PARAM_S * mix_lvls_ps; // Pointer to structure containing mix-levels
 	S32_T init_done;	// Flag indicating Reverb is initialised
 	S32_T params_set; // Flag indicating Parameters are set
