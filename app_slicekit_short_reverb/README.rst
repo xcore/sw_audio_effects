@@ -9,9 +9,9 @@ Short-Reverb Application For SliceKit Board
 Toggles between Dry and Effect signals. 
 
 Applies reverb to audio stream.
-The Audio_IO uses 1 thread.
-This DSP function uses 3 threads,
+The Audio_IO uses 1 logical core (aka thread).
+This DSP function uses 3 logical cores,
 
    * one for Equalisation, 
    * one for Gain-control (Loudness), 
-   * the remaining thread handles control and delay functions.
+   * the remaining logical core handles control and delay functions.
