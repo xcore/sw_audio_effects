@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  audio_sample_io
  * File:    audio_sample_io.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for audio_sample_io.xc
  *
  * Version: 0v1

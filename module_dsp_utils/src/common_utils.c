@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	common_utils.c
- * Author: Mark Beaumont
+ *  
  * Description: Contains common routines used by DSP audio effects
  *
  * Version: 0v1

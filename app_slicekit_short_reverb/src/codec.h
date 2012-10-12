@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  config
  * File:    config.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for config.xc
  *
  * Version: 0v1

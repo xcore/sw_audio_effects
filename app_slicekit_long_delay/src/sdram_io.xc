@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	sdram_io.xc
- * Author: Mark Beaumont
+ *  
  * Description: SDRAM I/O Thread
  * for L2 Slice Kit Core Board with Audio Slice 1v0 
  * Note: This application expects a memory Slice (1v0) to be connected to a Socket on core MEM_CORE

@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	sdram_reverb.c
- * Author: Mark Beaumont
+ *  
  * Description: Control thread for Reverb, also handles delay functionality, 
  *	calls Loudness and Equalisation threads
  *

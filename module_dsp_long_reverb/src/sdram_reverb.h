@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  sdram_reverb
  * File:    sdram_reverb.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for sdram_reverb.xc
  *
  * Version: 0v1

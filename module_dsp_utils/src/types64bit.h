@@ -1,6 +1,6 @@
 /*****************************************************************************\
 Include File: types64bit.h
-  Author(s): Mark Beaumont
+      
 
 Description: Type definitions, to allow interworking between different processors (E.G. gcc running on DELL Optiplex 780)
 

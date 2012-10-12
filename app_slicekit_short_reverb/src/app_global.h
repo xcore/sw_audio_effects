@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  app_global
  * File:    app_global.h
- * Author: Ross Owen
+ *  
  * Description: Global Definitions, types, and prototypes for application
  *
  * Version: 0v1

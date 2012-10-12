@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  sdram_io
  * File:    sdram_io.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for sdram_io.xc
  *
  * Version: 0v1

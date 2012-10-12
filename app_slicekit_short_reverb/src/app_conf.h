@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  app_conf
  * File:    app_conf.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions for configuration of application.
  *							NB These definitions will be passed to all modules used in application
  *
@@ -26,14 +26,6 @@
 #define _APP_CONF_H_
 
 #define NUM_APP_CHANS 2
-
-#define NUM_REVERB_CHANS NUM_APP_CHANS
-#define NUM_BIQUAD_CHANS NUM_APP_CHANS
-#define NUM_DELAY_CHANS NUM_APP_CHANS
-#define NUM_GAIN_CHANS NUM_APP_CHANS
-
-#define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS
-#define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS
 
 #endif // _APP_CONF_H_
 /******************************************************************************/

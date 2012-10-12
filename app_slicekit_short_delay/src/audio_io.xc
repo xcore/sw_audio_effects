@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	audio_io.xc
- * Author: Mark Beaumont
+ *  
  * Description: Audio I/O Thread
  *
  * Version: 0v1

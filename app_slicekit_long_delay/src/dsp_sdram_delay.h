@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  dsp_sdram_delay
  * File:    dsp_sdram_delay.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for dsp_sdram_delay.xc
  *
  * Version: 0v1

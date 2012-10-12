@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  module_dsp_biquad_conf
  * File:    module_dsp_biquad_conf.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions for configuration of application.
  *							NB These definitions will be passed to all modules used in application
  *

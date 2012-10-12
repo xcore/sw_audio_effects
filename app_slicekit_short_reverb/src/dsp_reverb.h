@@ -1,7 +1,7 @@
 /*****************************************************************************\
  * Header:  dsp_control
  * File:    dsp_control.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for dsp_control.xc
  *
  * Version: 0v1

@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  global
  * File:    global.h
- * Author: Mark Beaumont
+ *  
  * Description: Global Definitions, types, and prototypes for reverb app
  *
  * Version: 0v1

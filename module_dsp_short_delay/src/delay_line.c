@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	delay_line.c
- * Author: Mark Beaumont
+ *  
  * Description: Functions for Delay-Line(echo)
  *
  * Version: 

@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	dsp_biquad.xc
- * Author: Mark Beaumont
+ *  
  * Description: Thread that applies BiQuad filter to stream of audio samples
  *
  * Version: 0v1

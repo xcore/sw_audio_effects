@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	dsp_loudness.xc
- * Author: Mark Beaumont
+ *  
  * Description: Thread that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1

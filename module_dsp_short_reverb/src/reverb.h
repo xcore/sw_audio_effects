@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  reverb
  * File:    reverb.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for reverb.xc
  *
  * Version: 0v1

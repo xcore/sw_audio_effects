@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	audio_sample_io.xc
- * Author: Mark Beaumont
+ *  
  * Description: Contains routines for buffering samples on audio channels
  *
  * Version: 0v1

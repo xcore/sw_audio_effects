@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  dsp_delay
  * File:    dsp_delay.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for dsp_delay.xc
  *
  * Version: 0v1

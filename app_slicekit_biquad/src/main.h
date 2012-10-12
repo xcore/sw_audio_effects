@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  main
  * File:    main.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for main.xc
  *
  * Version: 0v1
