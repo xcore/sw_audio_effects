@@ -162,12 +162,22 @@
         <githash>c0b94f0173df5a6b44fc0809ed0e4e744821a995</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
     </dependency>
+    <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <docdir>module_dsp_short_delay/doc</docdir>
     <docdir>module_dsp_long_reverb/doc</docdir>
     <docdir>module_dsp_biquad/doc</docdir>
     <docdir>module_dsp_long_delay/doc</docdir>
     <docdir>module_dsp_loudness/doc</docdir>
     <docdir>module_dsp_short_reverb/doc</docdir>
+    <location>git@github.com:xcore/sw_audio_effects.git</location>
+    <name>sw_audio_effects</name>
+    <maintainer>beaumontm</maintainer>
+    <partnumber>XM-001968-DH</partnumber>
+    <release parenthash = "5ce985ffd90e30904609abba07cf406b19e12ac0" version = "1.0.0alpha0"></release>
+    <subpartnumber>XM-001969-SM</subpartnumber>
+    <vendor>XMOS</vendor>
+    <xcore_repo>sw_audio_effects.git</xcore_repo>
+    <xpd_version>1.0</xpd_version>
     <xsoftip_exclude>app_slicekit_biquad</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_long_delay</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_long_reverb</xsoftip_exclude>
@@ -175,15 +185,5 @@
     <xsoftip_exclude>app_slicekit_short_delay</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_short_reverb</xsoftip_exclude>
     <xsoftip_exclude>module_dsp_long_delay</xsoftip_exclude>
-    <xsoftip_exclude>module_dsp_long_reverb</xsoftip_exclude> 
-    <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
-    <location>git@github.com:xcore/sw_audio_effects.git</location>
-    <name>sw_audio_effects</name>
-    <maintainer>beaumontm</maintainer>
-    <partnumber>XM-001968-DH</partnumber>
-    <subpartnumber>XM-001969-SM</subpartnumber>
-    <vendor>XMOS</vendor>
-    <xcore_repo>sw_audio_effects.git</xcore_repo>
-    <xpd_version>1.0</xpd_version>
+    <xsoftip_exclude>module_dsp_long_reverb</xsoftip_exclude>
 </xpd>
-
