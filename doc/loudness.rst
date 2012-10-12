@@ -1,7 +1,7 @@
 Loudness Audio Effect 
 '''''''''''''''''''''
 
-This module is a audio delay called from within a single thread.
+This module is a audio delay called from within a single logical core (aka thread).
 
 API
 ===
