@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component name = "Non-linear-gain Function Library" type = "component" buildresults_path = "module_dsp_loudness/.module_dsp_loudness.buildinfo" scope = "Early Development" path = "module_dsp_loudness" metainfo_path = "module_dsp_loudness/module_dsp_loudness.metainfo" local = "false" id = "module_dsp_loudness" description = "A Non-linear-gain library using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.">
+        <component name = "Audio Short Delay-line Function Library" type = "component" buildresults_path = "module_dsp_short_delay/.module_dsp_short_delay.buildinfo" scope = "Early Development" path = "module_dsp_short_delay" metainfo_path = "module_dsp_short_delay/module_dsp_short_delay.metainfo" local = "false" id = "module_dsp_short_delay" description = "A Delay-line library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
@@ -46,8 +46,6 @@
         </component>
         <component name = "SDRAM_Reverb Function Library" type = "component" buildresults_path = "module_dsp_long_reverb/.module_dsp_long_reverb.buildinfo" scope = "Early Development" path = "module_dsp_long_reverb" metainfo_path = "module_dsp_long_reverb/module_dsp_long_reverb.metainfo" local = "false" id = "module_dsp_long_reverb" description = "A long Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
-            <board>XA-SK-SDRAM</board>
-            <componentDependency>module_dsp_biquad</componentDependency>
             <componentDependency>module_dsp_utils</componentDependency>
             <componentDependency>module_sdram</componentDependency>
             <componentDependency>module_sdram_memory_mapper</componentDependency>
@@ -83,6 +81,7 @@
     <dependency repo = "sc_sdram_burst">
         <githash>64d35c95f84aba1aee40069ce989be96f7c11bef</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
+        <version>1.0.0alpha3</version>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <docdir>module_dsp_short_delay/doc</docdir>
