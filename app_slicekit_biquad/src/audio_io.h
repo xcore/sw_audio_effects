@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  audio_io
  * File:    audio_io.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for audio_io.xc
  *
  * Version: 0v1
@@ -32,7 +32,7 @@
 
 /******************************************************************************/
 void audio_io(
-	streaming chanend c_aud // Audio end of channel between I/O and DSP thread
+	streaming chanend c_aud // Audio end of channel between I/O and DSP coar
 );
 /******************************************************************************/
 

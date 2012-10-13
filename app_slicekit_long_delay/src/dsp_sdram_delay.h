@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  dsp_sdram_delay
  * File:    dsp_sdram_delay.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for dsp_sdram_delay.xc
  *
  * Version: 0v1
@@ -34,9 +34,9 @@
 #include "sdram_delay.h"
 
 /******************************************************************************/
-void dsp_sdram_delay( // Thread that delays a stream of audio samples
-	streaming chanend c_aud_dsp, // Channel between Audio_IO thread and DSP thread (bi-directional)
-  chanend c_dsp_sdram // Channel between DSP thread and SDRAM thread (bi-directional)
+void dsp_sdram_delay( // Coar that delays a stream of audio samples
+	streaming chanend c_aud_dsp, // Channel between Audio_IO coar and DSP coar (bi-directional)
+  chanend c_dsp_sdram // Channel between DSP coar and SDRAM coar (bi-directional)
 );
 /******************************************************************************/
 

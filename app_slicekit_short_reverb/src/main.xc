@@ -1,8 +1,8 @@
 /******************************************************************************\
  * File:	main.xc
- * Author: Mark Beaumont
- * Description: Top level module for Reverb application, launches all threads
- * for L2 Slice Kit Core Board with Audio Slice 1v0 
+ *  
+ * Description: Top level module for Reverb application, launches all coars
+ * for L2 Slice Kit Tile Board with Audio Slice 1v0 
  * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
  *
  * Version: 0v1
@@ -27,20 +27,20 @@
 /*****************************************************************************/
 int main (void)
 {
-	streaming chan c_aud_dsp; // Channel between I/O and Processing threads
-	streaming chan c_dsp_eq; // Channel between DSP-control and Equalisation threads
-	streaming chan c_dsp_gain; // Channel between DSP-control and Loudness threads
+	streaming chan c_aud_dsp; // Channel between I/O and Processing coars
+	streaming chan c_dsp_eq; // Channel between DSP-control and Equalisation coars
+	streaming chan c_dsp_gain; // Channel between DSP-control and Loudness coars
 
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O thread
+		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on stdcore[0]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control thread
+		on stdcore[0]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control coar
 
-		on stdcore[AUDIO_IO_CORE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation thread
+		on stdcore[AUDIO_IO_CORE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
 
-		on stdcore[AUDIO_IO_CORE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) thread
+		on stdcore[AUDIO_IO_CORE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
 	}
 
 	return 0;

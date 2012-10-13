@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_sdram_delay.xc
- * Author: Mark Beaumont
- * Description: Thread that applies non-linear gain to stream of audio samples
+ *  
+ * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
  * Build:
@@ -22,11 +22,11 @@
 
 #include "dsp_sdram_delay.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /******************************************************************************/
 void initialise_sdram( // Initialise SDRAM Memory-Slice. Used for debug
-  chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
+  chanend c_dsp_sdram // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 )
 #define MAX_WORD 0x7fffffff // Maximum Word value
 #define DECREMENT (MAX_WORD / AUD_BUF_SAMPS) // Ramp decrement per sample (NB finish on extreme -ve value)
@@ -110,7 +110,7 @@ void init_parameters( // Initialise delay parameters
 /******************************************************************************/
 void buffer_check( // Check if any buffer I/O required
 	CNTRL_SDRAM_S &cntrl_gs, // Reference to structure containing data to control SDRAM buffering
-  chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
+  chanend c_dsp_sdram // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 )
 {
 	S32_T tap_cnt; // tap counter
@@ -179,9 +179,9 @@ void process_all_chans( // Do DSP effect processing
 #endif //MB~
 } // process_all_chans
 /******************************************************************************/
-void dsp_sdram_delay( // Thread that delays a stream of audio samples
-	streaming chanend c_dsp_aud, // DSP end of channel between Audio_IO thread and DSP thread (bi-directional)
-  chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
+void dsp_sdram_delay( // Coar that delays a stream of audio samples
+	streaming chanend c_dsp_aud, // DSP end of channel between Audio_IO coar and DSP coar (bi-directional)
+  chanend c_dsp_sdram // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 )
 {
 	CNTRL_SDRAM_S cntrl_gs; // Structure containing data to control SDRAM buffering
@@ -216,7 +216,7 @@ void dsp_sdram_delay( // Thread that delays a stream of audio samples
 	// Loop forever
 	while(1)
 	{ 
-		// Send/Receive samples over Audio thread channel
+		// Send/Receive samples over Audio coar channel
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 		{

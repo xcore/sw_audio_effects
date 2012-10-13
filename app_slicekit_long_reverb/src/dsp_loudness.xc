@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_loudness.xc
- * Author: Mark Beaumont
- * Description: Thread that applies non-linear gain to stream of audio samples
+ *  
+ * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
  * Build:
@@ -22,11 +22,11 @@
 
 #include "dsp_loudness.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /******************************************************************************/
 void receive_loudness_config( // Receives Loudness configuration data
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
 )
 {
 	GAIN_PARAM_S gain_param_s; // Structure to contain Loudness Configuration data
@@ -38,7 +38,7 @@ void receive_loudness_config( // Receives Loudness configuration data
 } // receive_loudness_config
 /******************************************************************************/
 void process_loudness_token( // Receives Control Token from channel, and acts accordingly
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
 )
 {
 	U8_T inp_tok = sinct( c_dsp_gain ); // Receive Control Token from streaming channel
@@ -59,7 +59,7 @@ void process_loudness_token( // Receives Control Token from channel, and acts ac
 } // process_loudness_token
 /******************************************************************************/
 void process_loudness_audio( // apply loudness to audio stream
-	streaming chanend c_dsp_gain, // Channel connecting to DSP-control thread (bi-directional)
+	streaming chanend c_dsp_gain, // Channel connecting to DSP-control coar (bi-directional)
 	S32_T unamp_samps[],	// Unamplified audio sample buffer
 	S32_T ampli_samps[] 	// Amplified audio sample buffer
 )
@@ -84,8 +84,8 @@ void process_loudness_audio( // apply loudness to audio stream
 
 } // process_loudness_audio
 /******************************************************************************/
-void dsp_loudness( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+void dsp_loudness( // Coar that applies non-linear gain control to stream of audio samples
+	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
 )
 {
 	GAIN_PARAM_S def_param_s = { DEF_GAIN }; // Structure containing default gain parameters

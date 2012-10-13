@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  dsp_delay
  * File:    dsp_delay.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for dsp_delay.xc
  *
  * Version: 0v1
@@ -32,8 +32,8 @@
 #include "delay_line.h"
 
 /******************************************************************************/
-void dsp_delay( // Thread that applies non-linear gain control to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control thread (bi-directional)
+void dsp_delay( // Coar that applies non-linear gain control to stream of audio samples
+	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
 );
 /******************************************************************************/
 

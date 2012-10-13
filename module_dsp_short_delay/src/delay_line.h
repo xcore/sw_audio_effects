@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	delay_line.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for module delay_line
  *
  * Version: 3v3rc1

@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	biquad_simple.c
- * Author: Mark Beaumont
+ *  
  * Description: Functions for Bi-Quad filter
  *
  * Version: 

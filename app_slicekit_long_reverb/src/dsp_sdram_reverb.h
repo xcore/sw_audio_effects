@@ -1,7 +1,7 @@
 /*****************************************************************************\
  * Header:  dsp_sdram_reverb
  * File:    dsp_sdram_reverb.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for dsp_sdram_reverb.xc
  *
  * Version: 0v1
@@ -34,10 +34,10 @@
 
 /*****************************************************************************/
 void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
-	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O thread (bi-directional)
-	streaming chanend c_dsp_eq, // Channel connecting to Equalisation thread (bi-directional)
-	streaming chanend c_dsp_gain, // Channel connecting to Loudness thread (bi-directional)
-  chanend c_dsp_sdram // DSP end of channel between DSP thread and SDRAM thread (bi-directional)
+	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
+	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
+  chanend c_dsp_sdram // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 );
 /*****************************************************************************/
 

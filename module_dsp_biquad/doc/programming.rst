@@ -1,26 +1,3 @@
-
-# This variable should contain a space separated list of all
-# the directories containing buildable applications (usually
-# prefixed with the app_ prefix)
-#
-# If the variable is set to "all" then all directories that start with app_
-# are built.
-BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app_slicekit_reverb 
-
-XMOS_MAKE_PATH ?= ..
-include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
-
-# This variable should contain a space separated list of all
-# the directories containing buildable applications (usually
-# prefixed with the app_ prefix)
-#
-# If the variable is set to "all" then all directories that start with app_
-# are built.
-BUILD_SUBDIRS = app_slicekit_biquad app_slicekit_delay app_slicekit_loudness app_slicekit_reverb 
-
-XMOS_MAKE_PATH ?= ..
-include $(XMOS_MAKE_PATH)/xcommon/module_xcommon/build/Makefile.toplevel
-
 Programming Guide
 =================
 
@@ -74,7 +51,7 @@ In the top level directory of the application (e.g. app_slicekit_biquad) type
 Connect the board to your PC using an XTAG-2
 
 To start the demo type
-   * xrun --io bin/app_slicekit_biquad.xe to start the demo
+   * xrun --io bin/app_slicekit_biquad.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
    * About 8 seconds of the effect (i.e. low-pass audio), followed by

@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	non_linear_gain.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for module non_linear_gain
  *
  * Version: 3v3rc1

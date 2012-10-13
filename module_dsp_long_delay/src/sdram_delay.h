@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	sdram_delay.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for module sdram_delay
  *
  * Version: 3v3rc1
@@ -38,9 +38,11 @@
 #error Please define NUM_DELAY_CHANS in app_conf.h
 #endif // NUM_DELAY_CHANS
 
-#define MEM_SAMPS (2 << 20) // NB 8 MByte Memory available to configure delay buffers (in samples). Adjust to suit platform
+/** 8 MByte Memory available to configure delay buffers (in samples), adjust to suit platform: (2 << 20) */
+#define MEM_SAMPS (2 << 20) //
 
-#define DELAY_SAMPS (MEM_SAMPS / NUM_DELAY_CHANS)// Size of channel delay buffer (in samples).
+/** Size of channel delay buffer (in samples): (MEM_SAMPS / NUM_DELAY_CHANS) */
+#define DELAY_SAMPS (MEM_SAMPS / NUM_DELAY_CHANS)// 
 
 // SDRAM parameters
 #define SD_CELL_BITS 1 // number of bits used to represent cell-size
@@ -61,11 +63,19 @@
 #define AUD_BUF_SAMPS (SD_ROW_WRDS / NUM_DELAY_CHANS)	// Match burst-length of SDRAM.
 
 // Delay-line parameters
-#define MAX_TAPS 8 // Max. No. of different taps supported
-#define DEF_TAPS 4 // Default number of taps
-#define DEF_SAMP_FREQ 48000 // Default Sample Frequency (In Hz)
 
-typedef struct DELAY_PARAM_TAG // Structure containing BiQuad parameters
+/** Maximum number of different taps supported: 8 */
+#define MAX_TAPS 8 // 
+
+/** Default number of taps: 4 */
+#define DEF_TAPS 4 // 
+
+/** Default Sample Frequency (In Hz) 48000 */
+#define DEF_SAMP_FREQ 48000 // 
+
+
+/** Structure containing delay parameters */
+typedef struct DELAY_PARAM_TAG // 
 {
 	S32_T us_delays[MAX_TAPS]; // Set of delays in micro-seconds
 	S32_T num; // No. of delay taps in use

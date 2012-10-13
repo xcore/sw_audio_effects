@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  global
  * File:    global.h
- * Author: Mark Beaumont
+ *  
  * Description: Global Definitions, types, and prototypes for reverb app
  *
  * Version: 0v1
@@ -24,12 +24,12 @@
 #ifndef _GLOBAL_H_
 #define _GLOBAL_H_
 
-// Assign Processing Threads to cores
-#define	AUDIO_IO_CORE 1	// Core connected to Audio Slice baord
-#define	MEM_CORE 0	// Core connected to Memory Slice baord
-#define	BIQUAD_CORE 1	// Core used by BiQuad filter functions
-#define	GAIN_CORE 1	// Core used by gain-shaping functions
-#define	DSP_CORE 0	// Core used by remaining DSP functions
+// Assign Processing Coars to cores
+#define	AUDIO_IO_CORE 1	// Tile connected to Audio Slice baord
+#define	MEM_CORE 0	// Tile connected to Memory Slice baord
+#define	BIQUAD_CORE 1	// Tile used by BiQuad filter functions
+#define	GAIN_CORE 1	// Tile used by gain-shaping functions
+#define	DSP_CORE 0	// Tile used by remaining DSP functions
 
 #define	AUDIO_IO_TYPE 1	// Port-Type connected to Audio Slice baord
 #define	MEM_TYPE 1	// Port-Type connected to Memory Slice baord

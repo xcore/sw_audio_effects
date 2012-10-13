@@ -68,7 +68,7 @@ In the top level directory of the application (e.g. ``app_slicekit_short_reverb`
 Connect the board to your PC using an XTAG-2
 
 To start the demo type
-   * xrun --io bin/app_slicekit_short_reverb.xe to start the demo
+   * xrun --io bin/app_slicekit_short_reverb.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
    * About 8 seconds of the reverb effect, followed by

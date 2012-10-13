@@ -1,8 +1,8 @@
 /******************************************************************************\
  * File:	main.xc
- * Author: Mark Beaumont
- * Description: Top level module for Delay-line application, launches all threads
- * for L2 Slice Kit Core Board with Audio Slice 1v0 
+ *  
+ * Description: Top level module for Delay-line application, launches all coars
+ * for L2 Slice Kit Tile Board with Audio Slice 1v0 
  * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
  *
  * Version: 0v1
@@ -27,14 +27,14 @@
 /*****************************************************************************/
 int main (void)
 {
-	streaming chan c_aud_dsp; // Channel between I/O and DSP thread
+	streaming chan c_aud_dsp; // Channel between I/O and DSP coar
 
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O thread
+		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on stdcore[0]: dsp_delay( c_aud_dsp ); // Delay-line thread
+		on stdcore[0]: dsp_delay( c_aud_dsp ); // Delay-line coar
 	}
 
 	return 0;

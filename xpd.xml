@@ -6,6 +6,9 @@
             <componentDependency>module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
+            <keyword>loudness</keyword>
+            <keyword>gain</keyword>
+            <keyword>volume</keyword>
         </component>
         <component name = "BiQuad Function Library" type = "component" buildresults_path = "module_dsp_biquad/.module_dsp_biquad.buildinfo" scope = "Early Development" path = "module_dsp_biquad" metainfo_path = "module_dsp_biquad/module_dsp_biquad.metainfo" local = "false" id = "module_dsp_biquad" description = "A BiQuad library using 6 multplies per sample capable of processing around 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
@@ -13,58 +16,11 @@
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
         </component>
-        <component description = "Delays a No. of audio channels passing through the SliceKit board creating an long echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_long_delay" local = "false" id = "app_slicekit_long_delay" name = "SDRAM Delay Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_long_delay</componentDependency>
-            <componentDependency>module_sdram_memory_mapper</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_sdram</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>delay</keyword>
-            <keyword>echo</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-            <keyword>memory-slice</keyword>
-            <keyword>sdram</keyword>
-        </component>
-        <component description = "A long reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_long_reverb" local = "false" id = "app_slicekit_long_reverb" name = "SDRAM-Reverb Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_biquad</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_sdram_memory_mapper</componentDependency>
-            <componentDependency>module_dsp_long_delay</componentDependency>
-            <componentDependency>module_sdram</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <componentDependency>module_dsp_loudness</componentDependency>
-            <componentDependency>module_dsp_long_reverb</componentDependency>
-            <keyword>reverb</keyword>
-            <keyword>delay</keyword>
-            <keyword>echo</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-        </component>
-        <component name = "Delay-line Function Library" type = "component" buildresults_path = "module_dsp_short_delay/.module_dsp_short_delay.buildinfo" scope = "Early Development" path = "module_dsp_short_delay" metainfo_path = "module_dsp_short_delay/module_dsp_short_delay.metainfo" local = "false" id = "module_dsp_short_delay" description = "A Delay-line library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
+        <component name = "Audio Short Delay-line Function Library" type = "component" buildresults_path = "module_dsp_short_delay/.module_dsp_short_delay.buildinfo" scope = "Early Development" path = "module_dsp_short_delay" metainfo_path = "module_dsp_short_delay/module_dsp_short_delay.metainfo" local = "false" id = "module_dsp_short_delay" description = "A Delay-line library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
-        </component>
-        <component description = "Applies a BiQuad filter to an number of audio channels on the SliceKit board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Application For SliceKit Board">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_biquad</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>biquad</keyword>
-            <keyword>filter</keyword>
-            <keyword>equalisation</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
         </component>
         <component name = "Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
@@ -75,35 +31,7 @@
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
         </component>
-        <component description = "Delays an a number of audio channels paasing through the SliceKit board creating an echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_short_delay" local = "false" id = "app_slicekit_short_delay" name = "Delay-line Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_dsp_short_delay</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>delay</keyword>
-            <keyword>echo</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-        </component>
-        <component description = "A reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_short_reverb" local = "false" id = "app_slicekit_short_reverb" name = "Reverb Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_biquad</componentDependency>
-            <componentDependency>module_dsp_short_delay</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <componentDependency>module_dsp_short_reverb</componentDependency>
-            <componentDependency>module_dsp_loudness</componentDependency>
-            <keyword>reverb</keyword>
-            <keyword>delay</keyword>
-            <keyword>echo</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
-        </component>
-        <component name = "SDRAM-Delay Function Library" type = "component" buildresults_path = "module_dsp_long_delay/.module_dsp_long_delay.buildinfo" scope = "Early Development" path = "module_dsp_long_delay" metainfo_path = "module_dsp_long_delay/module_dsp_long_delay.metainfo" local = "false" id = "module_dsp_long_delay" description = "A SDRAM_Delay library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
+        <component name = "Audio Long Delay-line Function Library" type = "component" buildresults_path = "module_dsp_long_delay/.module_dsp_long_delay.buildinfo" scope = "Early Development" path = "module_dsp_long_delay" metainfo_path = "module_dsp_long_delay/module_dsp_long_delay.metainfo" local = "false" id = "module_dsp_long_delay" description = "A SDRAM_Delay library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
             <board>XA-SK-AUDIO</board>
             <board>XA-SK-SDRAM</board>
             <componentDependency>module_dsp_utils</componentDependency>
@@ -132,34 +60,28 @@
             <keyword>SDRAM</keyword>
             <keyword>Memory-slice</keyword>
         </component>
-        <component name = "DSP Audio Utilities Function Library" type = "component" buildresults_path = "module_dsp_utils/.module_dsp_utils.buildinfo" scope = "Early Development" path = "module_dsp_utils" metainfo_path = "module_dsp_utils/module_dsp_utils.metainfo" local = "false" id = "module_dsp_utils" description = "A Non-linear-gain library using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.">
+        <component name = "DSP Audio Utilities Function Library" type = "component" buildresults_path = "module_dsp_utils/.module_dsp_utils.buildinfo" scope = "Early Development" path = "module_dsp_utils" metainfo_path = "module_dsp_utils/module_dsp_utils.metainfo" local = "false" id = "module_dsp_utils" description = "This is a collection of utilities commonly used by the dsp audio modules">
             <board>XA-SK-AUDIO</board>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
-        </component>
-        <component description = "Mid-range volume levels are increased without increasing low-level or high-level signals." type = "demoCode" scope = "Example" path = "app_slicekit_loudness" local = "false" id = "app_slicekit_loudness" name = "Loudness Application">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_i2c_single_port</componentDependency>
-            <componentDependency>module_dsp_loudness</componentDependency>
-            <componentDependency>module_i2s_master</componentDependency>
-            <keyword>gain</keyword>
-            <keyword>loudness</keyword>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>slicekit</keyword>
+            <keyword>util</keyword>
+            <keyword>fade</keyword>
+            <keyword>scale</keyword>
+            <keyword>address</keyword>
+            <keyword>wrap</keyword>
         </component>
     </components>
     <dependency repo = "sc_i2c">
-        <githash>69533c451e47767a270d61241f0286a1bfd7c730</githash>
+        <githash>407932265db62de56c8454c91235e7fc13366d9d</githash>
         <uri>git@github.com:xcore/sc_i2c.git</uri>
+        <version>2.1.0alpha3</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>d0f0e7f7d39f78dbeda254b2abfe1116650f4c16</githash>
+        <githash>d53fc984f6f593ce4cf66132c3a5ff33108d5f05</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
     </dependency>
     <dependency repo = "sc_sdram_burst">
-        <githash>c0b94f0173df5a6b44fc0809ed0e4e744821a995</githash>
+        <githash>64d35c95f84aba1aee40069ce989be96f7c11bef</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
@@ -186,6 +108,4 @@
     <xsoftip_exclude>app_slicekit_loudness</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_short_delay</xsoftip_exclude>
     <xsoftip_exclude>app_slicekit_short_reverb</xsoftip_exclude>
-    <xsoftip_exclude>module_dsp_long_delay</xsoftip_exclude>
-    <xsoftip_exclude>module_dsp_long_reverb</xsoftip_exclude>
 </xpd>

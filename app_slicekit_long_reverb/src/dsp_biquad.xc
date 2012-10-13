@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_biquad.xc
- * Author: Mark Beaumont
- * Description: Thread that applies non-linear gain to stream of audio samples
+ *  
+ * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
  * Build:
@@ -22,11 +22,11 @@
 
 #include "dsp_biquad.h"
 
-// DSP-control thread.
+// DSP-control coar.
 
 /******************************************************************************/
 void receive_biquad_config( // Receives BiQuad filter configuration data
-	streaming chanend c_dsp_eq // Channel connecting to DSP-control thread (bi-directional)
+	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
 )
 {
 	BIQUAD_PARAM_S biquad_param_s; // Structure to contain BiQuad filter Configuration data
@@ -38,7 +38,7 @@ void receive_biquad_config( // Receives BiQuad filter configuration data
 } // receive_biquad_config
 /******************************************************************************/
 void process_biquad_token( // Receives Control Token from channel, and acts accordingly
-	streaming chanend c_dsp_eq // Channel connecting to DSP-control thread (bi-directional)
+	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
 )
 {
 	U8_T inp_tok = sinct( c_dsp_eq ); // Receive Control Token from streaming channel
@@ -59,7 +59,7 @@ void process_biquad_token( // Receives Control Token from channel, and acts acco
 } // process_biquad_token
 /******************************************************************************/
 void process_biquad_audio( // apply biquad to audio stream
-	streaming chanend c_dsp_eq, // Channel connecting to DSP-control thread (bi-directional)
+	streaming chanend c_dsp_eq, // Channel connecting to DSP-control coar (bi-directional)
 	S32_T uneq_samps[],	// UnEqualised audio sample buffer
 	S32_T equal_samps[]	// Equalised audio sample buffer
 )
@@ -83,8 +83,8 @@ void process_biquad_audio( // apply biquad to audio stream
 	} // for chan_cnt
 } // process_biquad_audio
 /******************************************************************************/
-void dsp_biquad( // Thread that applies Equalisation (Tone control) to stream of audio samples
-	streaming chanend c_dsp_eq // Channel connecting to DSP-control thread (bi-directional)
+void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of audio samples
+	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
 )
 {
  // Default biquad filter parameters

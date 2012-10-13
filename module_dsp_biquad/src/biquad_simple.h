@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	biquad_simple.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for module biquad_simple
  *
  * Version: 0v1

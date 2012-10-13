@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	codec.xc
- * Author: Mark Beaumont reworked Ross Owens code
+ *    
  * Description: Codec Configuration
  *
  * Version: 0v1

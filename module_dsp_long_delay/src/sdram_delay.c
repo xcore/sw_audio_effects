@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	sdram_delay.c
- * Author: Mark Beaumont
+ *  
  * Description: Functions for Delay-Line(echo)
  *
  * Version: 

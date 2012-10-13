@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	non_linear_gain.c
- * Author: Mark Beaumont
+ *  
  * Description: Functions for Bi-Quad filter
  *
  * Version: 

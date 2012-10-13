@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  common_utils
  * File:    common_utils.h
- * Author: Mark Beaumont
+ *  
  * Description: Definitions, types, and prototypes for common_utils.xc
  *
  * Version: 0v1

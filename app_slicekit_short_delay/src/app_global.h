@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  app_global
  * File:    app_global.h
- * Author: Ross Owen
+ *  
  * Description: Global Definitions, types, and prototypes for application
  *
  * Version: 0v1
@@ -26,7 +26,7 @@
 #ifndef _APP_GLOBAL_H_
 #define _APP_GLOBAL_H_
 
-// Core that Audio Slice is connected to 
+// Tile that Audio Slice is connected to 
 #define AUDIO_IO_CORE 		1
 
 // Audio sample frequency (Hz) 
