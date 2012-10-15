@@ -1,11 +1,5 @@
-<Insert Repo name> Change Log
-=============================
-
-1.1.0
------
-  * Bullet points of features
-  * Another point
-  * ...
+sw_audio_effects Change Log
+===========================
 
 1.0.0
 -----
