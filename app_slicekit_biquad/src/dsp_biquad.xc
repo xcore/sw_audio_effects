@@ -42,7 +42,7 @@ void process_all_chans( // Do DSP effect processing
 
 } // process_all_chans
 /******************************************************************************/
-void dsp_biquad( // Coar that applies a BiQuad filters to a set of of audio sample streams
+void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sample streams
 	streaming chanend c_dsp // DSP end of channel connecting to Audio_IO and DSP coars (bi-directional)
 )
 {
