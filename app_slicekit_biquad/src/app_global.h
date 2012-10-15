@@ -27,7 +27,7 @@
 #define _APP_GLOBAL_H_
 
 // Tile that Audio Slice is connected to 
-#define AUDIO_IO_CORE 		1
+#define AUDIO_IO_TILE 		1
 
 // Audio sample frequency (Hz) 
 #define SAMP_FREQ			48000

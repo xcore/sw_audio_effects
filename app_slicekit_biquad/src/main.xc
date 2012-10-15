@@ -3,7 +3,7 @@
  *  
  * Description: Top level module for BiQuad filter application, launches all coars
  * for L2 Slice Kit Tile Board with Audio Slice 1v0 
- * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
+ * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_TILE
  *
  * Version: 0v1
  * Build:
@@ -32,7 +32,7 @@ int main (void)
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O coar
+		on stdcore[AUDIO_IO_TILE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
 		on stdcore[0]: dsp_biquad( c_aud_dsp ); // BiQuad filter coar
 	}

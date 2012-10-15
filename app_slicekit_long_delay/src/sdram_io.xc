@@ -3,7 +3,7 @@
  *  
  * Description: SDRAM I/O Coar
  * for L2 Slice Kit Tile Board with Audio Slice 1v0 
- * Note: This application expects a memory Slice (1v0) to be connected to a Socket on core MEM_CORE
+ * Note: This application expects a memory Slice (1v0) to be connected to a Socket on core MEM_TILE
  *
  * Version: 0v1
  * Build:

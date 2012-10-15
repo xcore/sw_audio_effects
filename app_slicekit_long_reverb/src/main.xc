@@ -3,7 +3,7 @@
  *  
  * Description: Top level module for Reverb application, launches all coars
  * for L2 Slice Kit Tile Board with Audio Slice 1v0 
- * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
+ * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_TILE
  *
  * Version: 0v1
  * Build:
@@ -36,15 +36,15 @@ int main (void)
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O coar
+		on stdcore[AUDIO_IO_TILE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on stdcore[DSP_CORE]: dsp_sdram_reverb( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ,c_dsp_sdram ); // DSP control coar for reverb
+		on stdcore[DSP_TILE]: dsp_sdram_reverb( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ,c_dsp_sdram ); // DSP control coar for reverb
 
-		on stdcore[BIQUAD_CORE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
+		on stdcore[BIQUAD_TILE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
 
-		on stdcore[GAIN_CORE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
+		on stdcore[GAIN_TILE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
 
-    on stdcore[MEM_CORE]: sdram_io( c_dsp_sdram ); // SDRAM coar
+    on stdcore[MEM_TILE]: sdram_io( c_dsp_sdram ); // SDRAM coar
 	}
 
 	return 0;
