@@ -1,48 +1,11 @@
 <?xml version="1.0" ?>
 <xpd>
     <components>
-        <component name = "Non-linear-gain Function Library" type = "component" buildresults_path = "module_dsp_loudness/.module_dsp_loudness.buildinfo" scope = "Early Development" path = "module_dsp_loudness" metainfo_path = "module_dsp_loudness/module_dsp_loudness.metainfo" local = "false" id = "module_dsp_loudness" description = "A Non-linear-gain library using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>loudness</keyword>
-            <keyword>gain</keyword>
-            <keyword>volume</keyword>
-        </component>
-        <component name = "BiQuad Function Library" type = "component" buildresults_path = "module_dsp_biquad/.module_dsp_biquad.buildinfo" scope = "Early Development" path = "module_dsp_biquad" metainfo_path = "module_dsp_biquad/module_dsp_biquad.metainfo" local = "false" id = "module_dsp_biquad" description = "A BiQuad library using 6 multplies per sample capable of processing around 4 channels of 48 KHz audio in parallel.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-        </component>
         <component name = "Audio Short Delay-line Function Library" type = "component" buildresults_path = "module_dsp_short_delay/.module_dsp_short_delay.buildinfo" scope = "Early Development" path = "module_dsp_short_delay" metainfo_path = "module_dsp_short_delay/module_dsp_short_delay.metainfo" local = "false" id = "module_dsp_short_delay" description = "A Delay-line library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
-        </component>
-        <component name = "Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
-            <board>XA-SK-AUDIO</board>
-            <componentDependency>module_dsp_biquad</componentDependency>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_dsp_short_delay</componentDependency>
-            <componentDependency>module_dsp_loudness</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-        </component>
-        <component name = "Audio Long Delay-line Function Library" type = "component" buildresults_path = "module_dsp_long_delay/.module_dsp_long_delay.buildinfo" scope = "Early Development" path = "module_dsp_long_delay" metainfo_path = "module_dsp_long_delay/module_dsp_long_delay.metainfo" local = "false" id = "module_dsp_long_delay" description = "A SDRAM_Delay library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
-            <board>XA-SK-AUDIO</board>
-            <board>XA-SK-SDRAM</board>
-            <componentDependency>module_dsp_utils</componentDependency>
-            <componentDependency>module_sdram_memory_mapper</componentDependency>
-            <componentDependency>module_sdram</componentDependency>
-            <keyword>audio</keyword>
-            <keyword>dsp</keyword>
-            <keyword>delay</keyword>
-            <keyword>echo</keyword>
-            <keyword>SDRAM</keyword>
-            <keyword>Memory-slice</keyword>
         </component>
         <component name = "SDRAM_Reverb Function Library" type = "component" buildresults_path = "module_dsp_long_reverb/.module_dsp_long_reverb.buildinfo" scope = "Early Development" path = "module_dsp_long_reverb" metainfo_path = "module_dsp_long_reverb/module_dsp_long_reverb.metainfo" local = "false" id = "module_dsp_long_reverb" description = "A long Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
@@ -60,6 +23,34 @@
             <keyword>SDRAM</keyword>
             <keyword>Memory-slice</keyword>
         </component>
+        <component name = "BiQuad Function Library" type = "component" buildresults_path = "module_dsp_biquad/.module_dsp_biquad.buildinfo" scope = "Early Development" path = "module_dsp_biquad" metainfo_path = "module_dsp_biquad/module_dsp_biquad.metainfo" local = "false" id = "module_dsp_biquad" description = "A BiQuad library using 6 multplies per sample capable of processing around 4 channels of 48 KHz audio in parallel.">
+            <board>XA-SK-AUDIO</board>
+            <componentDependency>module_dsp_utils</componentDependency>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+        </component>
+        <component name = "Audio Long Delay-line Function Library" type = "component" buildresults_path = "module_dsp_long_delay/.module_dsp_long_delay.buildinfo" scope = "Early Development" path = "module_dsp_long_delay" metainfo_path = "module_dsp_long_delay/module_dsp_long_delay.metainfo" local = "false" id = "module_dsp_long_delay" description = "A SDRAM_Delay library using a user-configurable number of delay-taps, max 32_taps x 4_channels at 48 KHz audio.">
+            <board>XA-SK-AUDIO</board>
+            <board>XA-SK-SDRAM</board>
+            <componentDependency>module_dsp_utils</componentDependency>
+            <componentDependency>module_sdram_memory_mapper</componentDependency>
+            <componentDependency>module_sdram</componentDependency>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+            <keyword>delay</keyword>
+            <keyword>echo</keyword>
+            <keyword>SDRAM</keyword>
+            <keyword>Memory-slice</keyword>
+        </component>
+        <component name = "Non-linear-gain Function Library" type = "component" buildresults_path = "module_dsp_loudness/.module_dsp_loudness.buildinfo" scope = "Early Development" path = "module_dsp_loudness" metainfo_path = "module_dsp_loudness/module_dsp_loudness.metainfo" local = "false" id = "module_dsp_loudness" description = "A Non-linear-gain library using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.">
+            <board>XA-SK-AUDIO</board>
+            <componentDependency>module_dsp_utils</componentDependency>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+            <keyword>loudness</keyword>
+            <keyword>gain</keyword>
+            <keyword>volume</keyword>
+        </component>
         <component name = "DSP Audio Utilities Function Library" type = "component" buildresults_path = "module_dsp_utils/.module_dsp_utils.buildinfo" scope = "Early Development" path = "module_dsp_utils" metainfo_path = "module_dsp_utils/module_dsp_utils.metainfo" local = "false" id = "module_dsp_utils" description = "This is a collection of utilities commonly used by the dsp audio modules">
             <board>XA-SK-AUDIO</board>
             <keyword>audio</keyword>
@@ -70,19 +61,30 @@
             <keyword>address</keyword>
             <keyword>wrap</keyword>
         </component>
+        <component name = "Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A Reverb-like effect is created using a combination of delays, filtering and gain-shaping, capable of processing upto 4 channels of 48 KHz audio in parallel.">
+            <board>XA-SK-AUDIO</board>
+            <componentDependency>module_dsp_biquad</componentDependency>
+            <componentDependency>module_dsp_utils</componentDependency>
+            <componentDependency>module_dsp_short_delay</componentDependency>
+            <componentDependency>module_dsp_loudness</componentDependency>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+        </component>
     </components>
     <dependency repo = "sc_i2c">
-        <githash>407932265db62de56c8454c91235e7fc13366d9d</githash>
+        <githash>fbf184228ad30c7f8d8395000eff504dd4c7a2ec</githash>
         <uri>git@github.com:xcore/sc_i2c.git</uri>
-        <version>2.1.0alpha3</version>
+        <version>2.1.0alpha4</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>d53fc984f6f593ce4cf66132c3a5ff33108d5f05</githash>
+        <githash>a0c27338e24be06413370263021c56834d55dcf8</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
+        <version>1.4.0alpha5</version>
     </dependency>
     <dependency repo = "sc_sdram_burst">
-        <githash>64d35c95f84aba1aee40069ce989be96f7c11bef</githash>
+        <githash>db60dc718878efd8f9cdb0328e6f92daafdf0d7c</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
+        <version>1.0.0alpha6</version>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <docdir>module_dsp_short_delay/doc</docdir>
@@ -95,6 +97,10 @@
     <name>sw_audio_effects</name>
     <maintainer>beaumontm</maintainer>
     <partnumber>XM-001968-DH</partnumber>
+    <release parenthash = "5ce985ffd90e30904609abba07cf406b19e12ac0" version = "1.0.0alpha0" githash = "f9d1ffd417d2dddbceaa6d865d881885af5f8a30"></release>
+    <release parenthash = "f9d1ffd417d2dddbceaa6d865d881885af5f8a30" version = "1.0.0alpha1" githash = "6a363d7b8c9e527e2a057e560d2e4147bdb9289d"></release>
+    <release parenthash = "6a363d7b8c9e527e2a057e560d2e4147bdb9289d" version = "1.0.0alpha2" githash = "e4c4c8acb1e4b006a4e093c8533fc826a74adfbb"></release>
+    <release parenthash = "0000a0c42449e60d27690579d2d48603b5292cbd" version = "1.0.0alpha3"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>

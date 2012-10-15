@@ -1,9 +1,9 @@
 Digital Audio Effects Applications
 ..................................
 
-:Latest release: 0v1
-:Maintainer: markbxmos
-:Description: Digital Audio Effects Applications
+:Latest release: 1.0.0alpha3
+:Maintainer: beaumontm
+:Description: Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain
 
 
 Key Features
@@ -25,5 +25,7 @@ Issues may be submitted via the Issues tab in this github repo. Response to any 
 Required software (dependencies)
 ================================
 
-  * sc_i2c (ssh://git@github.com/xcore/sc_i2c)
-  * xcommon (if using development tools earlier than 11.11.0)
+  * sc_i2c (git@github.com:xcore/sc_i2c.git)
+  * sc_i2s (git://github.com/xcore/sc_i2s.git)
+  * sc_sdram_burst (https://github.com/xcore/sc_sdram_burst)
+
