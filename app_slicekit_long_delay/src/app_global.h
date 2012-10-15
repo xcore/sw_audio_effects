@@ -24,12 +24,12 @@
 #ifndef _GLOBAL_H_
 #define _GLOBAL_H_
 
-#define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice baord
-#define	MEM_TILE 0	// Tile connected to Memory Slice baord
+#define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
+#define	MEM_TILE 0	// Tile connected to Memory Slice board
 #define	DSP_TILE MEM_TILE	// Tile used by DSP functions
 
-#define	AUDIO_IO_TYPE 1	// Port-Type connected to Audio Slice baord
-#define	MEM_TYPE 1	// Port-Type connected to Memory Slice baord
+#define	AUDIO_IO_TYPE 1	// Port-Type connected to Audio Slice board
+#define	MEM_TYPE 1	// Port-Type connected to Memory Slice board
 
 // Audio sample frequency (Hz) 
 #define SAMP_FREQ			48000
