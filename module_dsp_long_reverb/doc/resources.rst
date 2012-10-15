@@ -21,7 +21,7 @@ Therefore, refer to the documention in those modules for computation details on 
 
 The Reverb-Control code is timing critical, 
 The channel I/O had to be hand-crafted to get the application working on 4 channels.
-The Memory-Slice board has to be on the same core that is running dsp_sdram_reverb.xc
+The Memory-Slice board has to be on the same Tile that is running dsp_sdram_reverb.xc
 
 The Reverb echos are produced using a 4 tap delay-line.
 The reverb has configurable mixing parameters.
