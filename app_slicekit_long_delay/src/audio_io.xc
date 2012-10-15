@@ -49,8 +49,8 @@ on stdcore[1] : r_i2s i2s_resource_s =
 
 }; // r_i2s
 
-on stdcore[AUDIO_IO_CORE] : port p_i2c = PORT_I2C;
-on stdcore[AUDIO_IO_CORE] : out port p_gpio = PORT_GPIO;
+on stdcore[AUDIO_IO_TILE] : port p_i2c = PORT_I2C;
+on stdcore[AUDIO_IO_TILE] : out port p_gpio = PORT_GPIO;
 
 /*****************************************************************************/
 void audio_hw_init() // Initialise HardWare

@@ -3,7 +3,7 @@
  *  
  * Description: Top level module for Reverb application, launches all coars
  * for L2 Slice Kit Tile Board with Audio Slice 1v0 
- * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_CORE
+ * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_TILE
  *
  * Version: 0v1
  * Build:
@@ -34,13 +34,13 @@ int main (void)
 
 	par
 	{
-		on stdcore[AUDIO_IO_CORE]: audio_io( c_aud_dsp ); // Audio I/O coar
+		on stdcore[AUDIO_IO_TILE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
 		on stdcore[0]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control coar
 
-		on stdcore[AUDIO_IO_CORE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
+		on stdcore[AUDIO_IO_TILE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
 
-		on stdcore[AUDIO_IO_CORE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
+		on stdcore[AUDIO_IO_TILE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
 	}
 
 	return 0;
