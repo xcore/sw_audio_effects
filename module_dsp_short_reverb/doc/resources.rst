@@ -15,8 +15,7 @@ Used memory(Bytes) is about:
 
 Computation
 -----------
-``module_dsp_biquad``, and ``module_dsp_loudness``, run in their own logical cores (aka threads).
-Therefore, refer to the documention in those modules for computation details on those functions.
+``module_dsp_biquad``, and ``module_dsp_loudness``, run in their own logical cores. Therefore, refer to the documention in those modules for computation details on those functions.
 
 The Reverb-Control logical core is timing critical, 
 The channel I/O had to be hand-crafted to get the application working on 4 channels.
