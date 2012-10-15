@@ -9,6 +9,6 @@ BiQuad Function Library
 Features
 --------
 
-   * Offers pre-defined filter types: Low Pass, High Pass, Band Pass, Band Stop, All Pass
+   * Offers pre-defined filter types: low-pass, high-pass, band-pass, band-stop, all-pass
    * Build custom filters
    * From 4 channels at 48 KHz to 1 channel at 192 KHz

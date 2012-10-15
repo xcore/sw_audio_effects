@@ -9,5 +9,5 @@ Audio Short Delay-line Function Library
 Features
 --------
 
-   * Offers programmable delay taps:
-   * 8 taps for 4 channels at 192 KHz
+   * Offers programmable delay taps
+   * Capable of 8 taps for 4 channels at 192 KHz
