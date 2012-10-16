@@ -38,9 +38,9 @@ int main (void)
 
 		on stdcore[DSP_TILE]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control coar
 
-		on stdcore[AUDIO_IO_TILE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
+		on stdcore[BIQUAD_TILE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
 
-		on stdcore[AUDIO_IO_TILE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
+		on stdcore[GAIN_TILE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
 	}
 
 	return 0;

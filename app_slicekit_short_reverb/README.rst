@@ -12,6 +12,6 @@ Applies reverb to audio stream.
 The Audio_IO uses 1 logical core (aka thread).
 This DSP function uses 3 logical cores,
 
-   * one for Equalisation, 
-   * one for Gain-control (Loudness), 
-   * the remaining logical core handles control and delay functions.
+* one for Equalisation, 
+* one for Gain-control (Loudness), 
+* the remaining logical core handles control and delay functions.
