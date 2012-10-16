@@ -25,7 +25,7 @@
 #include "sdram_io.h"
 
 // Global data structure for sdram memory manager (sc_sdram_burst/module_sdram_memory_manager)
-sdram_ports cur_ports = 
+on stdcore[MEM_TILE]: sdram_ports cur_ports = 
 { 
 	PORT_SEL, 
 	PORT_CAS, 
