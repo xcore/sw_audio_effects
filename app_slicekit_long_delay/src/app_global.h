@@ -25,11 +25,11 @@
 #define _GLOBAL_H_
 
 #define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
-#define	MEM_TILE 0	// Tile connected to Memory Slice board
+#define	MEM_TILE 1	// Tile connected to Memory Slice board
 #define	DSP_TILE MEM_TILE	// Tile used by DSP functions
 
 #define	AUDIO_IO_TYPE 1	// Port-Type connected to Audio Slice board
-#define	MEM_TYPE 1	// Port-Type connected to Memory Slice board
+#define	MEM_TYPE 0	// Port-Type connected to Memory Slice board
 
 // Audio sample frequency (Hz) 
 #define SAMP_FREQ			48000
@@ -53,10 +53,10 @@
 // Ports 
 #if (AUDIO_IO_TYPE == 1)
 #define PORT_I2S_DAC0		XS1_PORT_1D
-#define PORT_I2S_DAC1  		XS1_PORT_1M
-#define PORT_I2S_ADC0  		XS1_PORT_1I
+#define PORT_I2S_DAC1  		XS1_PORT_1H
+#define PORT_I2S_ADC0  		XS1_PORT_1K
 #define PORT_I2S_ADC1		XS1_PORT_1L
-#define PORT_I2S_LRCLK		XS1_PORT_1H
+#define PORT_I2S_LRCLK		XS1_PORT_1I
 #define PORT_I2S_BCLK		XS1_PORT_1A
 #define PORT_MCLK_IN		XS1_PORT_1E
 

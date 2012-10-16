@@ -25,7 +25,7 @@
 #ifndef _APP_CONF_H_
 #define _APP_CONF_H_
 
-#define NUM_APP_CHANS 2
+#define NUM_APP_CHANS 4
 
 #endif // _APP_CONF_H_
 /******************************************************************************/

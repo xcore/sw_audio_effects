@@ -32,7 +32,7 @@ sdram_ports cur_ports =
 	PORT_RAS, 
 	PORT_WE, 
 	PORT_CLK, 
-	XS1_CLKBLK_1
+	XS1_CLKBLK_3
 };
 
 static intptr_t buf_p = 0; // Pointer to active buffer
