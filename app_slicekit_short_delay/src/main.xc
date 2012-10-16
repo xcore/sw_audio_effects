@@ -34,7 +34,7 @@ int main (void)
 	{
 		on stdcore[AUDIO_IO_TILE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on stdcore[0]: dsp_delay( c_aud_dsp ); // Delay-line coar
+		on stdcore[DSP_TILE]: dsp_delay( c_aud_dsp ); // Delay-line coar
 	}
 
 	return 0;

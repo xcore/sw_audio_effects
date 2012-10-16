@@ -36,7 +36,7 @@ int main (void)
 	{
 		on stdcore[AUDIO_IO_TILE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on stdcore[0]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control coar
+		on stdcore[DSP_TILE]: dsp_control( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ); // DSP-control coar
 
 		on stdcore[AUDIO_IO_TILE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
 

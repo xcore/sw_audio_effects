@@ -23,7 +23,7 @@
 #include "audio_io.h"
 
 // Global Structure for  I2S resources		
-on stdcore[1] : r_i2s i2s_resource_s =
+on stdcore[AUDIO_IO_TILE] : r_i2s i2s_resource_s =
 {
     XS1_CLKBLK_1,
     XS1_CLKBLK_2,
