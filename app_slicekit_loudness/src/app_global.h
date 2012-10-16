@@ -28,7 +28,7 @@
 
 // Tile that Audio Slice is connected to 
 #define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
-#define	DSP_TILE 0 // Tile used by DSP functions
+#define	DSP_TILE 1 // Tile used by DSP functions
 
 // Audio sample frequency (Hz) 
 #define SAMP_FREQ			48000
