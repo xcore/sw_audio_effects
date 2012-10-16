@@ -14,6 +14,7 @@ The following hardware components are required:
 * XP-SKC-L2 (Slicekit L2 Core Board)
 * XA-SK-AUDIO (Audio board)
 * XA-SK-XTAG2 (Slicekit XTAG adaptor)
+* XTAG-2 (XTAG Connector board)
 
 XP-SKC-L2 Slicekit Core board has four slots with edge conectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``, 
 and one chain connector marked with a ``CROSS``.
