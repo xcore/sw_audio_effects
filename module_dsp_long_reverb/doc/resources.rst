@@ -16,12 +16,12 @@ Used memory(Bytes) is about:
 
 Computation
 -----------
-module_dsp_biquad, and module_dsp_loudness, run in their own logical cores (aka threads).
+module_dsp_biquad, and module_dsp_loudness, run in their own logical cores.
 Therefore, refer to the documention in those modules for computation details on those functions.
 
 The Reverb-Control code is timing critical, 
 The channel I/O had to be hand-crafted to get the application working on 4 channels.
-The Memory-Slice board has to be on the same core that is running dsp_sdram_reverb.xc
+The Memory-Slice board has to be on the same Tile that is running dsp_sdram_reverb.xc
 
 The Reverb echos are produced using a 4 tap delay-line.
 The reverb has configurable mixing parameters.
