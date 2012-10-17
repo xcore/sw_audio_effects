@@ -79,3 +79,17 @@ maximum positive signal levels. The resulting wave will have 'square wave' like
 properties, sharp edges near the maximum(minimum) values that contain plenty of
 high frequencies that manifest themselves as distortion.
 
+Try Other Audio Applications
+----------------------------
+
+Some of the other audio applications are ``app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
+
+* The biquad application uses a configurable BiQuad filter to achieve a number of different filter types,
+  including low-pass, high-pass, band-pass, band-stop, and all-pass.
+	See app_slicekit_biquad/doc_quickstart/quickstart.rst.
+* The short delay application creates multiple delays up to 125 milli-seconds (for a stereo channel at 48kHz).
+	See module_dsp_short_delay/doc/programming.rst
+* The short reverb application is an example of a more complex application running 4 cores, 
+  and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).
+	See app_slicekit_short_reverb/doc_quickstart/quickstart.rst
+
