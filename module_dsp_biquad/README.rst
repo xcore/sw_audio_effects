@@ -1,9 +1,9 @@
-BiQuad Function Library
-=======================
+BiQuad Filter Function Library
+==============================
 
 :scope: Early Development
-:description: A BiQuad library using 6 multplies per sample capable of processing around 4 channels of 48 KHz audio in parallel.
-:keywords: audio, dsp
+:description: A BiQuad filter library using 6 multplies per sample, capable of processing around 4 channels of 48 KHz audio in parallel.
+:keywords: audio, dsp, biquad, filter
 :boards: XA-SK-AUDIO
 
 Features

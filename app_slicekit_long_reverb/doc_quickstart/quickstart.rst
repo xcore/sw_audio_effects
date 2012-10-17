@@ -3,8 +3,8 @@
 Long-Reverb SliceKit Application : Quick Start Guide
 ----------------------------------------------------
 
-This is a demonstration of a complex application that uses a number of software modules combined with a number of hardware cards, 
-to produce a long 'reverb-like' effect on an audio stream.
+This is a demonstration of a complex audio application that uses the SDRAM Memory slice, a number of software modules, 
+and additional slices, to produce a long 'reverb-like' effect on an audio stream.
 
 Hardware Setup
 ++++++++++++++
@@ -55,7 +55,7 @@ Import and Build the Application
    There will be quite a number of warnings that ``bidirectional buffered port not supported in hardware``. 
    These can be safely ignored for this component.
 
-For help in using xTIMEcomposer, try the xTIMEcomposer tutorial. FIXME add link.
+For help in using xTIMEcomposer, try the xTIMEcomposer tutorial, that can be found by selecting Help->Tutorials from the xTIMEcomposer menu.
 
 Note that the Developer Column in the xTIMEcomposer on the right hand side of your screen 
 provides information on the xSOFTip components you are using. 
@@ -86,7 +86,7 @@ Look at the Code
 
 #. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_slicekit_long_reverb 
    and double click on the ``main.xc`` file within it. The file will open in the central editor window.
-#. Find the main.xc file and note that main() runs 5 cores (processes) in parallel. 
+#. Find the ``main.xc`` file and note that main() runs 5 cores (processes) in parallel. 
    These are distributed over the tiles available on the SliceKit Core board.
 #. Find the app_global.h header. At the top are the tile definitions.
    Note that on the SliceKit Core Board there are only 2 physical tiles 0 and 1.
@@ -103,7 +103,7 @@ Try Other Audio Applications which use the delay effect
 
 Other significant applications are ``app_slicekit_short_reverb`` and ``app_slicekit_long_delay``. 
 
-* The ``Short-Reverb Application For SliceKit Board`` does NOT use the XA-SK-SDRAM (Memory-Slice board).
+* The short reverb application does NOT use the XA-SK-SDRAM (Memory-Slice board).
   Instead it uses only local memory, this limits the room-size that can be achieved to below 36 metres.
-* The ``Long-Delay Application For SliceKit Board`` combines the XA-SK-SDRAM (Memory-Slice board) with the XA-SK-AUDIO Audio board,
+* The long delay application combines the XA-SK-SDRAM (Memory-Slice board) with the XA-SK-AUDIO Audio board,
   to create delays of upto 20 seconds (for a stereo channel at 48 kHz).

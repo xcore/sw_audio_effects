@@ -2,7 +2,8 @@ Non-linear-gain Function Library
 ================================
 
 :scope: Early Development
-:description: The non-linear-gain function using 2 multplies/sample/channel, capable of processing around 12 channels of 48 KHz audio in parallel.
+:description: The non-linear-gain function increases perceived loudness, without increasing the maximum volume.
+ It uses 2 multplies/sample/channel, and is capable of processing around 12 channels of 48 KHz audio in parallel.
 :keywords: audio, dsp, loudness, gain, volume
 :boards: XA-SK-AUDIO
 
@@ -22,4 +23,4 @@ Currently 5 parabola's are used, as follows:
    * Transition to maximum gradient (user-configurable). 
    * Transition from max. gradient to 'max-gain' section.
    * 'max-gain' section, (Straight line) with minimum gradient (reciprocal of max-gradient)
-   * Transition from min. gradient back to 'unity-gain' to finish.
+   * Transition from min. gradient back to 'unity-gain' at maximum signal level.
