@@ -123,7 +123,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 					cur_proc_state = DRY2FX; // Switch to Fade-In Effect
 
 					// Change filter mode ready for fade-in
-					cur_param_s.filt_mode = increment_circular_offset( (cur_param_s.filt_mode + 1) ,NUM_FILT_MODES );
+					cur_param_s.filt_mode = increment_circular_offset( (cur_param_s.filt_mode + 1) ,ALL_PASS );
 
 					config_biquad_filter( cur_param_s );	// Update BiQuad Configuration
 				} // if (SWAP_NUM < samp_cnt)

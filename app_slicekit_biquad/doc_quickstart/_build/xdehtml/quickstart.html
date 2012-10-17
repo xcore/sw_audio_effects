@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BiQuad Filter SliceKit Application : Quick Start Guide &mdash; BiQuad Filter SliceKit Application : Quick Start Guide v documentation</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/framework.css"  type="text/css" />
+    <link rel="stylesheet" href="_static/xde.css"
+    type="text/css" /><script type="text/javascript" src="_static/scripts.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="BiQuad Filter SliceKit Application : Quick Start Guide v documentation" href="index.html" /> 
+  </head>
+  <body class="indented-content" onload="prepareContents();">
+    <div id="menubar">
+    <div id="breadcrumbs">
+      <ul>
+        
+
+<!--        <li><a href="#">BiQuad Filter SliceKit Application : Quick Start Guide</a></li>-->
+          <li>BiQuad Filter SliceKit Application : Quick Start Guide</li> 
+      </ul>
+    </div>
+    </div>  
+          <div id="body">
+             <div id="content">
+             <h1>BiQuad Filter SliceKit Application : Quick Start Guide</h1>
+
+             <div class='content'>
+            
+  <p>This is a demonstration of a simple audio application that uses a small number of software modules and slice cards,
+to produce an audio equalisation effect.</p>
+<h2 class="topic" id="hardware-setup">Hardware Setup</h2>
+<div><p>The following hardware components are required:</p>
+<ul>
+<li>XP-SKC-L2 (Slicekit L2 Core Board)</li>
+<li>XA-SK-AUDIO (Audio board)</li>
+<li>XA-SK-XTAG2 (Slicekit XTAG adaptor)</li>
+<li>XTAG-2 (XTAG Connector board)</li>
+</ul>
+<p>XP-SKC-L2 Slicekit Core board has four slots with edge conectors: <tt class="docutils literal"><span class="pre">SQUARE</span></tt>, <tt class="docutils literal"><span class="pre">CIRCLE</span></tt>, <tt class="docutils literal"><span class="pre">TRIANGLE</span></tt> and <tt class="docutils literal"><span class="pre">STAR</span></tt>,
+and one chain connector marked with a <tt class="docutils literal"><span class="pre">CROSS</span></tt>.</p>
+<p>To setup up the system:</p>
+<ol class="arabic simple">
+<li>Connect the XA-SK-AUDIO Audio board to Slicekit Core board using the connector marked with the <tt class="docutils literal"><span class="pre">CIRCLE</span></tt>.</li>
+<li>Connect the XTAG Adapter board to Slicekit Core board, using the chain connector marked with a <tt class="docutils literal"><span class="pre">CROSS</span></tt>.</li>
+<li>Connect XTAG-2 board to the XTAG adapter.</li>
+<li>Set the <tt class="docutils literal"><span class="pre">XMOS</span> <span class="pre">LINK</span></tt> to <tt class="docutils literal"><span class="pre">OFF</span></tt> on the XTAG Adapter.</li>
+<li>Connect the XTAG-2 to host PC with a USB cable (not provided with the Slicekit starter kit).</li>
+<li>Connect analogue audio source (e.g. microphone) to minijack In_1/2</li>
+<li>Connect analogue audio monitor (e.g. headphones) to minijack Out_1/2</li>
+<li>Connect D/C barrel jack of XMOS power supply to Slicekit Core board.</li>
+<li>Switch on the power supply to the Slicekit Core board.</li>
+</ol>
+<div align="center" class="figure">
+<div class="caption"><span>Fig_1: Hardware Setup for BiQuad Filter SliceKit Application</span></div>
+<img alt="_images/hardware_setup.jpg" src="_images/hardware_setup.jpg" style="width: 500px;" />
+</div>
+</div><h2 class="topic" id="import-and-build-the-application">Import and Build the Application</h2>
+<div><ol class="arabic simple">
+<li>Open xTIMEcomposer and check that it is operating in online mode.
+Open the edit perspective (Window-&gt;Open Perspective-&gt;XMOS Edit).</li>
+<li>Locate the <tt class="docutils literal"><span class="pre">'BiQuad</span> <span class="pre">Filter</span> <span class="pre">SliceKit</span> <span class="pre">Application'</span></tt> item in the xSOFTip pane on the bottom left of the window,
+and drag it into the Project Explorer window in the xTIMEcomposer.
+This will also cause the modules on which this application depends to be imported as well.
+These modules are: module_dsp_biquad, module_dsp_utils, module_i2s_master and module_i2c_single_port.</li>
+<li>Click on the app_slicekit_biquad item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer.
+Check the console window to verify that the application has built successfully.</li>
+</ol>
+<p>For help in using xTIMEcomposer, try the xTIMEcomposer tutorial, that can be found by selecting Help-&gt;Tutorials from the xTIMEcomposer menu.</p>
+<p>Note that the Developer Column in the xTIMEcomposer on the right hand side of your screen
+provides information on the xSOFTip components you are using.
+Select the module_dsp_biquad component in the Project Explorer, and you will see its description together with API documentation.
+Having done this, click the <cite>back</cite> icon until you return to this quickstart guide within the Developer Column.</p>
+</div><h2 class="topic" id="run-the-application">Run the Application</h2>
+<div><p>Now that the application has been compiled, the next step is to run it on the Slicekit Core Board using the tools
+to load the application over JTAG (via the XTAG2 and Xtag Adaptor card) into the xCORE multicore microcontroller.</p>
+<ol class="arabic simple">
+<li>Supply some analogue audio to the audio board (via mini jack In_1/2).
+E.g. by connecting the output of an MP3 player, or speaking into a microphone.</li>
+<li>Monitor the analogue audio from the audio board (via mini jack Out_1/2).
+E.g. by connecting some headphones, or sending the audio to an active speaker.</li>
+<li>Click on the <tt class="docutils literal"><span class="pre">Run</span></tt> icon (the white arrow in the green circle). After a 1 or 2 seconds filtered audio should be heard.
+The output switches between effect and dry signals about every 8 seconds, so the listener can compare the 2 modes.
+The effect itself cycles through the following 4 filter types: [ LO_PASS, HI_PASS, BAND_PASS, BAND_STOP ].</li>
+</ol>
+</div><h2 class="topic" id="next-steps">Next Steps</h2>
+<div><p>Now that the application has been run with the default settings, you could try and adjust the filter configuration parameters.
+Such as the &#8216;significant frequency&#8217; (e.g. cut-off frequency) and &#8216;quality factor&#8217; (e.g. resonance).
+Note well, some combinations may produce overload (clipping distortion), in which case turn down the input volume.</p>
+<h3 id="look-at-the-code">Look at the Code</h3>
+<div><ol class="arabic simple">
+<li>Examine the application code. In xTIMEcomposer, navigate to the <tt class="docutils literal"><span class="pre">src</span></tt> directory under app_slicekit_biquad
+and double click on the <tt class="docutils literal"><span class="pre">main.xc</span></tt> file within it. The file will open in the central editor window.</li>
+<li>Find the <tt class="docutils literal"><span class="pre">main.xc</span></tt> file and note that main() runs 2 cores (processes) in parallel.
+These are distributed over the tiles available on the SliceKit Core board.</li>
+<li>Find the app_global.h header. At the top are the tile definitions.
+Note that on the SliceKit Core Board there are only 2 physical tiles 0 and 1.
+All cores are placed on the same tile (1).</li>
+<li>Find the dsp_biquad.xc file. The function <tt class="docutils literal"><span class="pre">dsp_biquad()</span></tt> handles the DSP processing for the biquad filter.
+It communicates with the other parallel core via channel c_dsp.
+Data from these channels is buffered, and the buffers are passed to the <tt class="docutils literal"><span class="pre">use_biquad_filter()</span></tt> function for processing.
+<tt class="docutils literal"><span class="pre">use_biquad_filter()</span></tt> and <tt class="docutils literal"><span class="pre">config_biquad_filter()</span></tt> can be found in directory <tt class="docutils literal"><span class="pre">module_dsp_biquad\src</span></tt>.
+Finally, there is a finite-state-machine which switches the output between the dry and effect signals.</li>
+</ol>
+</div><h3 id="try-other-audio-applications">Try Other Audio Applications</h3>
+<div><p>Some of the other audio applications are <tt class="docutils literal"><span class="pre">app_slicekit_loudness</span></tt>, <tt class="docutils literal"><span class="pre">app_slicekit_short_delay</span></tt>, <tt class="docutils literal"><span class="pre">app_slicekit_short_reverb</span></tt>.</p>
+<ul>
+<li>The loudness application uses gain-shaping to increase perceived loudness without increasing the maximum signal level.</li>
+<li>The short delay application creates multiple delays up to 125 milli-seconds (for a stereo channel at 48kHz).</li>
+<li>The short reverb application is an example of a more complex application running 4 cores,
+and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).</li>
+</ul>
+</div></div>
+
+             </div>
+             </div>
+
+
+          </div>
+
+          <div>
+             <!--seealsos-->
+          </div>
+    <div class="footer">
+    </div>
+  </body>
+</html>
