@@ -64,7 +64,8 @@ Now that the application has been compiled, the next step is to run it on the Sl
 to load the application over JTAG (via the XTAG2 and Xtag Adaptor card) into the xCORE multicore microcontroller.
 
 #. Supply some analogue audio to the audio board (via mini jack In_1/2). 
-   E.g. by connecting the output of an MP3 player, or speaking into a microphone.
+   E.g. by connecting the PC audio output and playing the video `here <http://www.xmos.com>`_.
+   or the output of an MP3 player, or speaking into a microphone.
 #. Monitor the analogue audio from the audio board (via mini jack Out_1/2). 
    E.g. by connecting some headphones, or sending the audio to an active speaker.
 #. Click on the ``Run`` icon (the white arrow in the green circle). After a 1 or 2 seconds filtered audio should be heard.
