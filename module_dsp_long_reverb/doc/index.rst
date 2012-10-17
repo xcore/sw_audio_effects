@@ -5,6 +5,6 @@ XMOS xSOFTip Audio SDRAM_Reverb Function Library
 
    Overview <overview>
    Resource Requirements <resources>
-   Hardware Platforms <hw>
+   Evaluation Platforms <hw>
    API <api>
    Programming Guide <programming>

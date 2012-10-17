@@ -3,6 +3,7 @@ Resource Requirements
 
 Available Memory
 ----------------
+
 This application stores the delayed samples in the SDRAM Memory-Slice,
 it memory useage is  variable depending on the size of the maximum delay requested
 (used to produce the echos), and the number of channels being processed. 
@@ -17,6 +18,7 @@ This approximate memory usage for this module is (figures shown in Bytes):
 
 Computation
 -----------
+
 module_dsp_biquad, and module_dsp_loudness, run in their own logical cores.
 Therefore, refer to the documention in those modules for computation details on those functions.
 
