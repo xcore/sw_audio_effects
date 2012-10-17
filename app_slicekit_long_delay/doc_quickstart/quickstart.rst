@@ -4,7 +4,7 @@ Long-Delay SliceKit Application : Quick Start Guide
 ---------------------------------------------------
 
 This is a demonstration of an simple audio application that uses the SDRAM Memory slice, a number of software modules, 
-and additional slices, to produce delays of upto 20 seconds (for a stereo channel at 48 kHz).
+and additional slices, to produce delays of up to 20 seconds (for a stereo channel at 48 kHz).
 
 Hardware Setup
 ++++++++++++++

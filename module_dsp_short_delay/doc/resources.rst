@@ -9,10 +9,10 @@ and the number of channels being processed.
 A #define MEM_SAMPS is used to indicate the amount of memory available for the delay-line.
 Currently this is set at 12000 samples, which uses almost all the available memory on Tile_0.
 
-Used memory(Bytes) is about:
+This approximate memory usage for this module is (figures shown in Bytes):
 
-   * codememory:  5K
-   * datamemory: 49K
+* codememory:  5K
+* datamemory: 49K
 
 Computation
 -----------

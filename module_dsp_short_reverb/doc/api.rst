@@ -18,6 +18,10 @@ Configuration Defines
 Functions
 ---------
 
+Data Types
+++++++++++
+.. doxygentypedef:: S32_T
+
 Data Structures
 +++++++++++++++
 .. doxygenstruct:: MIX_PARAM_TAG

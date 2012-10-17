@@ -3,9 +3,11 @@ Resource Requirements
 
 Available Memory
 ----------------
-Used memory(Bytes) is about:
-   * codememory: 9K
-   * datamemory: 2K
+
+This approximate memory usage for this module is (figures shown in Bytes):
+
+* codememory: 9K
+* datamemory: 2K
 
 Computation
 -----------

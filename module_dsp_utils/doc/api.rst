@@ -13,6 +13,10 @@ Configuration Defines
 Functions
 ---------
 
+Data Types
+++++++++++
+.. doxygentypedef:: S32_T
+
 Data Structures
 +++++++++++++++
 .. doxygenstruct:: FIX_POINT_TAG

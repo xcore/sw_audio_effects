@@ -100,6 +100,6 @@ Try Other Audio Applications which use the delay effect
 Other significant applications are ``app_slicekit_long_reverb`` and ``app_slicekit_short_delay``. 
 
 * The long reverb application combines the XA-SK-SDRAM (Memory-Slice board) with the XA-SK-AUDIO Audio board,
-  to create larger room-sizes (for a stereo channel at 48 kHz, upto 6 kilometres!).
+  to create larger room-sizes (for a stereo channel at 48 kHz, up to 6 kilometres!).
 * The short delay application does NOT use the XA-SK-SDRAM (Memory-Slice board).
   Instead it uses only local memory, this limits the maximum delay to 125 milli-seconds.

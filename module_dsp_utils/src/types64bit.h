@@ -14,6 +14,8 @@ Description: Type definitions, to allow interworking between different processor
 
 typedef signed char S8_T;
 typedef signed short S16_T;
+
+/** Signed 32-bit type */
 typedef signed int S32_T;
 
 typedef unsigned char U8_T;

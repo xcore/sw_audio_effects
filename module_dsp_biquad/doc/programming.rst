@@ -8,9 +8,9 @@ Key Files
 
 Usage
 -----
-There are 2 functions in the 'C' library, designed to be called from an *.xc file.
+There are 2 functions in the 'C' library, designed to be called from an XC file.
    * ``config_biquad_filter()`` Called to do initial configuration of biquad parameters (e.g. Low-pass). WARNING: This must be called before ...
-   * ``use_biquad_filter()``, which is called to apply the filter to one audio-sample, designed to be called from an *.xc file.
+   * ``use_biquad_filter()``, which is called to apply the filter to one audio-sample, designed to be called from an XC file.
 
 Note well: After initialisation, ``config_biquad_filter()`` can be called again as required to re-configure the filter.
 
@@ -27,7 +27,7 @@ BiQuad Application For SliceKit Board (app_slicekit_biquad)
 -----------------------------------------------------------
 
 This application uses module_dsp_biquad to apply a filter to an audio-stream passing through the SliceKit Core board.
-The audio is connected to the board using the following Analogue ports:
+The audio is connected to the Audio Slice board using the following Analogue ports:
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 

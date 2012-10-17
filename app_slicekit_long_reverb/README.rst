@@ -17,4 +17,4 @@ This DSP function uses 3 logical cores,
 * one for Gain-control (Loudness), 
 * the remaining logical core handles control and delay functions.
 
-The audio is written to the SDRAM Memory-Slice to create upto 20 seconds of delay.
+The audio is written to the SDRAM Memory-Slice to create up to 20 seconds of delay.

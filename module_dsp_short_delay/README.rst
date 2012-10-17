@@ -1,4 +1,4 @@
-Audio Short-Delay Function Library
+Short-Delay Function Library
 ==================================
 
 :scope: Early Development

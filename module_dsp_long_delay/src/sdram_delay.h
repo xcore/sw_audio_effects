@@ -109,10 +109,16 @@ typedef struct CNTRL_SDRAM_TAG // Structure containing data to control sdram buf
 #include <print.h>
 
 /******************************************************************************/
+/** Configure sdram_delay parameters. Must be called before use_sdram_delay
+ * \param cur_param_s // Reference to structure containing delay-line parameters
+ */
 void config_sdram_delay( // Configure sdram_delay parameters. NB Must be called before use_sdram_delay
 	DELAY_PARAM_S &cur_param_s // Reference to structure containing delay-line parameters
 );
 /******************************************************************************/
+/** Exercise sdram_delay for one input sample. Must have previously called config_sdram_delay
+ * \param sdram_gs // Reference to structure containing data to control SDRAM buffering
+ */
 void use_sdram_delay( // exercise sdram_delay for one input sample. NB Must have previously called config_sdram_delay
 	CNTRL_SDRAM_S &sdram_gs // Reference to structure containing data to control SDRAM buffering
 );

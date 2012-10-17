@@ -3,7 +3,7 @@ Reverb Function Library
 
 :scope: Early Development
 :description: A short 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping, 
- capable of processing upto 4 channels of 48 KHz audio in parallel.
+ capable of processing up to 4 channels of 48 KHz audio in parallel.
 :keywords: audio, dsp
 :boards: XA-SK-AUDIO
 

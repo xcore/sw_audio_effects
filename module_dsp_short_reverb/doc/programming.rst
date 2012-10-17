@@ -3,16 +3,18 @@ Programming Guide
 
 Key Files
 ---------
+
    * ``reverb.c``: Contains 'C' function library
    * ``reverb.h``: Header file for 'C' function library
 
 Usage
 -----
-There are 2 functions in the 'C' library, designed to be called from an *.xc file.
-   * ``config_reverb()`` Called to do initial configuration of reverb parameters (e.g. room size). WARNING: This must be called before ...
-   * ``use_reverb()`` Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an *.xc file.
 
-Note After initialisation, ``config_reverb()`` can be called again as required to re-configure the reverb parameters.
+There are 2 functions in the 'C' library, designed to be called from an XC file.
+   * ``config_reverb()`` Called to do initial configuration of reverb parameters (e.g. room size). WARNING: This must be called before ...
+   * ``use_reverb()`` Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an XC file.
+
+Note, after initialisation, ``config_reverb()`` can be called again as required to re-configure the reverb parameters.
 
 The default reverb parameters are set in the dsp_control() function in file dsp_control.xc.
 These can be overwritten before calling config_reverb.
@@ -30,7 +32,7 @@ Short-Reverb Application For SliceKit Board (``app_slicekit_short_reverb``)
 
 This application uses ``module_dsp_short_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the SliceKit Core board.
-The audio is connected to the board using the following Analogue ports:
+The audio is connected to the Audio Slice board using the following Analogue ports:
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 
@@ -49,6 +51,7 @@ The following parameters are configurable:
 
 Makefile
 ........
+
 The Makefile is found in the top level directory of the application (e.g. ``app_slicekit_short_reverb``)
 
 The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g.
@@ -61,7 +64,9 @@ NUM_REVERB_CHANS = 2
 
 Running the application with the Command Line Tools
 ...................................................
+
 In the top level directory of the application (e.g. ``app_slicekit_short_reverb``) type
+
    * xmake clean
    * xmake all
 
@@ -78,6 +83,7 @@ This cycle will repeat indefinitely.
 
 Trouble-shooting
 ................
+
 During initialisation, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 

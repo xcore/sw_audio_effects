@@ -16,6 +16,10 @@ Configuration Defines
 Functions
 ---------
 
+Data Types
+++++++++++
+.. doxygentypedef:: S32_T
+
 Data Structures
 +++++++++++++++
 .. doxygenstruct:: BIQUAD_PARAM_TAG

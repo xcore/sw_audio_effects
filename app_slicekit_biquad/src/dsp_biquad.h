@@ -31,6 +31,19 @@
 #include "common_utils.h"
 #include "biquad_simple.h"
 
+#define FX_STR_LEN 10 // Holds Filter names
+
+typedef struct FX_STR_TAG // Structure to hold one filter name
+{
+	char nam[FX_STR_LEN]; // name string
+} FX_STR_S;
+
+typedef struct FX_NAMES_TAG // Structure to hold all filter names
+{
+	FX_STR_S names[NUM_FILT_MODES]; // array of structures containing a filter name
+} FX_NAMES_S;
+
+
 /******************************************************************************/
 void dsp_biquad( // Coar that applies BiQuad filter to stream of audio samples
 	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)

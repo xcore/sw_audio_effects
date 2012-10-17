@@ -8,11 +8,11 @@ Key Files
 
 Usage
 -----
-There are 2 functions in the 'C' library, designed to be called from an *.xc file.
+There are 2 functions in the 'C' library, designed to be called from an XC file.
    * ``config_sdram_reverb()`` Called to do initial configuration of reverb parameters (e.g. room size). WARNING: This must be called before ...
-   * ``use_sdram_reverb()`` Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an *.xc file.
+   * ``use_sdram_reverb()`` Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an XC file.
 
-Note After initialisation, ``config_sdram_reverb()`` can be called again as required to re-configure the reverb parameters.
+Note, after initialisation, ``config_sdram_reverb()`` can be called again as required to re-configure the reverb parameters.
 
 The default reverb parameters are set in the dsp_sdram_reverb() function in file dsp_sdram_reverb.xc.
 These can be overwritten before calling config_sdram_reverb.
@@ -30,7 +30,7 @@ Long-Reverb Application For SliceKit Board (``app_slicekit_long_reverb``)
 
 This application uses ``module_dsp_long_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the SliceKit Core board.
-The audio is connected to the board using the following Analogue ports:
+The audio is connected to the Audio Slice board using the following Analogue ports:
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 

@@ -8,9 +8,9 @@ Key Files
 
 Usage
 -----
-There are 2 functions in the 'C' library, designed to be called from an *.xc file.
+There are 2 functions in the 'C' library, designed to be called from an XC file.
    * ``config_loudness()`` Called to do initial configuration of loudness parameters (e.g. max gain). WARNING: This must be called before ...
-   * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an *.xc file.
+   * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an XC file.
 
 Note well, after initialisation, ``config_loudness()`` can be called again as required to re-configure the gain.
 
@@ -26,7 +26,7 @@ Loudness Application For SliceKit Board (``app_slicekit_loudness``)
 
 This application uses module_dsp_loudness to apply non-linear gain to an audio-stream, 
 passing through the SliceKit Core board.
-The audio is connected to the board using the following Analogue ports:
+The audio is connected to the Audio Slice board using the following Analogue ports:
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 

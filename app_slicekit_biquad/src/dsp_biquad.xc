@@ -53,7 +53,9 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
-	
+
+	FX_NAMES_S filt_names = { {{"Low_Pass"}, {"High_Pass"}, {"Band_Pass"}, {"Band_Stop"}, {"Custom"}} };
+
 	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 	BIQUAD_PARAM_S cur_param_s = { LO_PASS ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };	// Default BiQuad parameters
 
@@ -67,6 +69,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 	}
 
 	config_biquad_filter( cur_param_s );	// Initial BiQuad Configuration
+	printstrln( filt_names.names[cur_param_s.filt_mode].nam );
 
 	// Loop forever
 	while(1)
@@ -107,7 +110,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
-// printcharln('D'); //MB~ Dbg
+					printstrln("Dry");
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case FX2DRY:
 
@@ -136,7 +139,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = EFFECT; // Switch to Effect-Only Processing
-// printintln( cur_param_s.filt_mode ); //MB~ Dbg
+					printstrln( filt_names.names[cur_param_s.filt_mode].nam );
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case DRY2FX:
 

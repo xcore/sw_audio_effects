@@ -106,4 +106,4 @@ Other significant applications are ``app_slicekit_short_reverb`` and ``app_slice
 * The short reverb application does NOT use the XA-SK-SDRAM (Memory-Slice board).
   Instead it uses only local memory, this limits the room-size that can be achieved to below 36 metres.
 * The long delay application combines the XA-SK-SDRAM (Memory-Slice board) with the XA-SK-AUDIO Audio board,
-  to create delays of upto 20 seconds (for a stereo channel at 48 kHz).
+  to create delays of up to 20 seconds (for a stereo channel at 48 kHz).
