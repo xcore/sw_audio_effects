@@ -33,7 +33,7 @@
 #include "common_utils.h"
 
 #ifndef NUM_GAIN_CHANS 
-	#error Define. NUM_GAIN_CHANS in app_conf.h
+	#error Define. NUM_GAIN_CHANS in module_dsp_loudness_conf.h
 #endif // NUM_GAIN_CHANS
 
 /** Default Gain 4 */

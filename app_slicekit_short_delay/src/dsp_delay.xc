@@ -32,7 +32,7 @@ void process_all_chans( // Do DSP effect processing
 	S32_T min_chans	// Minimum of input/output channels
 )
 {
-	static delay_samps[MAX_TAPS]; // Set of delayed output samples
+	static delay_samps[NUM_DELAY_TAPS]; // Set of delayed output samples
 	S32_T chan_cnt; // Channel counter
 	S32_T tap_cnt; // Channel counter
 
@@ -88,12 +88,12 @@ void dsp_delay( // Coar that delays a stream of audio samples
 
 	// Configure Delay-line parameters ...
 
-	delay_param_s.num = DEF_TAPS;
+	delay_param_s.num = NUM_DELAY_TAPS;
 	delay_param_s.freq = DEF_SAMP_FREQ;
 	delay_us = DELAY_SIZE * (1000000 / delay_param_s.freq); // Approx largest delay in micro-secs
 
 	// Initialise Configuration parameter structure
-	for (tap_cnt = (DEF_TAPS - 1); tap_cnt>=0; tap_cnt--)
+	for (tap_cnt = (NUM_DELAY_TAPS - 1); tap_cnt>=0; tap_cnt--)
 	{
 		delay_param_s.us_delays[tap_cnt] = delay_us;
 		delay_us >>= 1; // Double delay

@@ -31,11 +31,12 @@
 #include "non_linear_gain.h"
 
 #ifndef NUM_REVERB_CHANS 
-	#error Define. NUM_REVERB_CHANS in app_conf.h
+#error Please define NUM_REVERB_CHANS in module_dsp_long_reverb_conf.h
 #endif // NUM_REVERB_CHANS
 
-/** Number of delay taps used to create reverb effect: 4 */
-#define NUM_REV_TAPS 4
+#ifndef NUM_REVERB_TAPS 
+#error Please define NUM_REVERB_TAPS in module_dsp_long_reverb_conf.h
+#endif // NUM_REVERB_TAPS
 
 /**  Default room-size for reverb (in meters): 1 */
 #define DEF_ROOM_SIZE 1 //
@@ -156,7 +157,7 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 
 typedef struct REVERB_TAG // Structure containing all reverb data
 {
-	U32_T tap_ratios[NUM_REV_TAPS]; // delay tap ratios (Note well, These values are scaled by room size)
+	U32_T tap_ratios[NUM_REVERB_TAPS]; // delay tap ratios (Note well, These values are scaled by room size)
 	MIX_PARAM_S * mix_lvls_ps; // Pointer to structure containing mix-levels
 	S32_T init_done;	// Flag indicating Reverb is initialised
 	S32_T params_set; // Flag indicating Parameters are set

@@ -98,7 +98,7 @@ void init_sdram_delay( // Initialise delay data
 	init_buffers( &(delay_ps->inp_bufs) ); // Clear input buffers
 
 	// Loop thorugh output buffers
-	for (tap_cnt=0; tap_cnt<MAX_TAPS; tap_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_DELAY_TAPS; tap_cnt++)
 	{
 		init_buffers( &(delay_ps->out_bufs[tap_cnt]) ); // Clear current Output buffer
 	} // for tap_cnt

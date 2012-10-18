@@ -35,8 +35,12 @@
 #include "common_utils.h"
 
 #ifndef NUM_DELAY_CHANS 
-#error Please define NUM_DELAY_CHANS in app_conf.h
+#error Please define NUM_DELAY_CHANS in module_dsp_long_delay_conf.h
 #endif // NUM_DELAY_CHANS
+
+#ifndef NUM_DELAY_TAPS 
+#error Please define NUM_DELAY_TAPS in module_dsp_long_delay_conf.h
+#endif // NUM_DELAY_TAPS
 
 /** 8 MByte Memory available to configure delay buffers (in samples), adjust to suit platform: (2 << 20) */
 #define MEM_SAMPS (2 << 20) //
@@ -64,12 +68,6 @@
 
 // Delay-line parameters
 
-/** Maximum number of different taps supported: 8 */
-#define MAX_TAPS 8 // 
-
-/** Default number of taps: 4 */
-#define DEF_TAPS 4 // 
-
 /** Default Sample Frequency (In Hz) 48000 */
 #define DEF_SAMP_FREQ 48000 // 
 
@@ -77,7 +75,7 @@
 /** Structure containing delay parameters */
 typedef struct DELAY_PARAM_TAG // 
 {
-	S32_T us_delays[MAX_TAPS]; // Set of delays in micro-seconds
+	S32_T us_delays[NUM_DELAY_TAPS]; // Set of delays in micro-seconds
 	S32_T num; // No. of delay taps in use
 	S32_T freq; // Sample frequency
 	S32_T dbg; // Debug flag
@@ -98,9 +96,9 @@ typedef struct CNTRL_BUF_TAG // Structure containing data to control double-buff
 
 typedef struct CNTRL_SDRAM_TAG // Structure containing data to control sdram buffering
 {
-	CHAN_SET_S delay_sets[MAX_TAPS]; // Array of structures containing delayed output sample-sets
+	CHAN_SET_S delay_sets[NUM_DELAY_TAPS]; // Array of structures containing delayed output sample-sets
 	CHAN_SET_S src_set;	// Structure containing source audio sample-set (one sample for each channel)
-	CNTRL_BUF_S reads[MAX_TAPS];	// Array of control data for read buffers
+	CNTRL_BUF_S reads[NUM_DELAY_TAPS];	// Array of control data for read buffers
 	CNTRL_BUF_S write; 						// Control data for write buffer
 } CNTRL_SDRAM_S;
 
@@ -160,7 +158,7 @@ typedef struct TWIN_BUF_TAG // Structure for double-buffering of audio samples
 
 typedef struct DELAY_TAG // Structure containing all delay data
 {
-	TWIN_BUF_S out_bufs[MAX_TAPS]; // Array of structures containing Output Buffer data
+	TWIN_BUF_S out_bufs[NUM_DELAY_TAPS]; // Array of structures containing Output Buffer data
 	TWIN_BUF_S inp_bufs; // Structure containing Input Buffer data
 	CNTRL_SDRAM_S * cntrl_p; // Pointer to structure containing data to control SDRAM buffering
 	S32_T tap_num;		// Number of delay taps in use

@@ -27,7 +27,11 @@
 
 #include "app_conf.h"
 
+/** Number of audio channels used in long-reverb module */
 #define NUM_REVERB_CHANS NUM_APP_CHANS
+
+/** Number of delay-taps used in long-reverb module */
+#define NUM_REVERB_TAPS NUM_APP_TAPS
 
 #endif // _MODULE_DSP_LONG_REVERB_CONF_H_
 /******************************************************************************/

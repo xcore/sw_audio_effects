@@ -76,7 +76,7 @@ void update_common_delays( // Update delays for each channel
 	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
 )
 {
-	U32_T samp_delays[MAX_TAPS]; // delays measured in samples
+	U32_T samp_delays[NUM_DELAY_TAPS]; // delays measured in samples
 	S32_T chan_cnt; // channel counter
 
 

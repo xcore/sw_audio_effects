@@ -25,7 +25,11 @@
 #ifndef _APP_CONF_H_
 #define _APP_CONF_H_
 
-#define NUM_APP_CHANS 4
+/** Number of audio channels used in this application */
+#define NUM_APP_CHANS 4 
+
+/** Number of delay-taps used in this application */
+#define NUM_APP_TAPS 4
 
 #endif // _APP_CONF_H_
 /******************************************************************************/

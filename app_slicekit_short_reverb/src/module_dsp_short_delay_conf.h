@@ -27,7 +27,11 @@
 
 #include "app_conf.h"
 
+/** Number of audio channels used in long-delay module */
 #define NUM_DELAY_CHANS NUM_APP_CHANS
+
+/** Number of delay-taps used in long-delay module */
+#define NUM_DELAY_TAPS NUM_APP_TAPS
 
 #endif // _MODULE_DSP_SHORT_DELAY_CONF_H_
 /******************************************************************************/

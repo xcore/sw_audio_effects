@@ -28,6 +28,9 @@
 /** Default value */
 #define NUM_DELAY_CHANS 2
 
+/** Default value */
+#define NUM_DELAY_TAPS 4
+
 #endif // _MODULE_DSP_SHORT_DELAY_EXAMPLE_CONF_H_
 /******************************************************************************/
 // module_dsp_short_delay_example_conf.h

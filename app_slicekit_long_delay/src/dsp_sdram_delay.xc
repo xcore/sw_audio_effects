@@ -68,7 +68,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	{
 		cntrl_gs.src_set.samps[chan_cnt] = 0;
 
-		for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+		for (tap_cnt=0; tap_cnt<NUM_DELAY_TAPS; tap_cnt++)
 		{
 			cntrl_gs.delay_sets[tap_cnt].samps[chan_cnt] = 0;
 		} //for tap_cnt
@@ -77,7 +77,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	// Initialise SDRAM control structure ...
 
 	cntrl_gs.write.do_buf = 0;
-	for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_DELAY_TAPS; tap_cnt++)
 	{
 		cntrl_gs.reads[tap_cnt].do_buf = 0;
 	} //for tap_cnt
@@ -93,15 +93,15 @@ void init_parameters( // Initialise delay parameters
 
 	// Initialsie Delay-line configuration parameters ...
 
-	delay_param_s.num = DEF_TAPS;
+	delay_param_s.num = NUM_DELAY_TAPS;
 	delay_param_s.freq = DEF_SAMP_FREQ;
 	delay_us = DELAY_SAMPS * (1000000 / delay_param_s.freq); // Approx smallest delay in micro-secs
-	delay_us = (DELAY_SAMPS / ((1 << DEF_TAPS) - 1)) * (1000000 / delay_param_s.freq); // Approx smallest delay in micro-secs
+	delay_us = (DELAY_SAMPS / ((1 << NUM_DELAY_TAPS) - 1)) * (1000000 / delay_param_s.freq); // Approx smallest delay in micro-secs
 	delay_param_s.dbg = 0;
 
 	// Initialise Configuration parameter structure
 	delay_param_s.us_delays[0] = delay_us;
-	for (tap_cnt = 1; tap_cnt<DEF_TAPS; tap_cnt++)
+	for (tap_cnt = 1; tap_cnt<NUM_DELAY_TAPS; tap_cnt++)
 	{
 		delay_param_s.us_delays[tap_cnt] = (delay_param_s.us_delays[tap_cnt-1] << 1) + delay_us;
 	} //for tap_cnt
@@ -125,7 +125,7 @@ void buffer_check( // Check if any buffer I/O required
 	} // if (cntrl_gs.do_write)
 
 	// Check if any read-buffers are empty
-	for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_DELAY_TAPS; tap_cnt++)
 	{
 		if (cntrl_gs.reads[tap_cnt].do_buf)
 		{

@@ -28,6 +28,9 @@
 /** Default value */
 #define NUM_REVERB_CHANS 2
 
+/** Default value */
+#define NUM_REVERB_TAPS 4
+
 #endif // _MODULE_DSP_SHORT_REVERB_EXAMPLE_CONF_H_
 /******************************************************************************/
 // module_dsp_short_reverb_example_conf.h

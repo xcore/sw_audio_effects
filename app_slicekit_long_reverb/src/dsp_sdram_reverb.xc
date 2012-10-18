@@ -39,7 +39,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	{
 		cntrl_gs.src_set.samps[chan_cnt] = 0;
 
-		for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+		for (tap_cnt=0; tap_cnt<NUM_REVERB_TAPS; tap_cnt++)
 		{
 			cntrl_gs.delay_sets[tap_cnt].samps[chan_cnt] = 0;
 		} //for tap_cnt
@@ -48,7 +48,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	// Initialise SDRAM control structure ...
 
 	cntrl_gs.write.do_buf = 0;
-	for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_REVERB_TAPS; tap_cnt++)
 	{
 		cntrl_gs.reads[tap_cnt].do_buf = 0;
 	} //for tap_cnt
@@ -117,7 +117,7 @@ void buffer_check( // Check if any buffer I/O required
 	} // if (cntrl_gs.do_write)
 
 	// Check if any read-buffers are empty
-	for (tap_cnt=0; tap_cnt<DEF_TAPS; tap_cnt++)
+	for (tap_cnt=0; tap_cnt<NUM_REVERB_TAPS; tap_cnt++)
 	{
 		if (cntrl_gs.reads[tap_cnt].do_buf)
 		{

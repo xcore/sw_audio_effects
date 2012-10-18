@@ -35,8 +35,12 @@
 #include "common_utils.h"
 
 #ifndef NUM_DELAY_CHANS 
-	#error Define. NUM_DELAY_CHANS in app_conf.h
+#error Please define NUM_DELAY_CHANS in module_dsp_short_delay_conf.h
 #endif // NUM_DELAY_CHANS
+
+#ifndef NUM_DELAY_TAPS 
+#error Please define NUM_DELAY_TAPS in module_dsp_short_delay_conf.h
+#endif // NUM_DELAY_TAPS
 
 /** Memory available to configure delay buffers (in samples). Adjust to suit platform: 12000 */
 #define MEM_SAMPS 12000
@@ -44,19 +48,13 @@
 /**  Size of channel delay buffer (in samples): (MEM_SAMPS / NUM_DELAY_CHANS) */
 #define DELAY_SIZE (MEM_SAMPS / NUM_DELAY_CHANS)
 
-/** Maximum number of different taps supported: 8 */
-#define MAX_TAPS 8
-
-/** Default number of taps: 4*/
-#define DEF_TAPS 4
-
 /** Default Sample Frequency (In Hz): 48000 */
 #define DEF_SAMP_FREQ 48000
 
 /** Structure containing Delay-line parameters */
 typedef struct DELAY_PARAM_TAG // 
 {
-	S32_T us_delays[MAX_TAPS]; // Set of delays in micro-seconds
+	S32_T us_delays[NUM_DELAY_TAPS]; // Set of delays in micro-seconds
 	S32_T num; // No. of delay taps in use
 	S32_T freq; // Sample frequency
 } DELAY_PARAM_S;
@@ -105,8 +103,8 @@ void config_delay_line( // Configure delay_line parameters. NB Must be called be
 typedef struct DELAY_CHAN_TAG // Structure containing delayed data for one channel, updated every sample
 {
 	SAMP_CHAN_T buf[DELAY_SIZE]; // Delay-line Buffer
-	SAMP_CHAN_T outs[MAX_TAPS]; // Buffer to hold set of delayed output samples
-	U32_T delays[MAX_TAPS]; // offset into Delay-line for delayed output samples
+	SAMP_CHAN_T outs[NUM_DELAY_TAPS]; // Buffer to hold set of delayed output samples
+	U32_T delays[NUM_DELAY_TAPS]; // offset into Delay-line for delayed output samples
 	SAMP_CHAN_T inp; // offset into Delay-line for input sample
 	S32_T tap_num;		// Number of delay taps in use on this channel
 } DELAY_CHAN_S;

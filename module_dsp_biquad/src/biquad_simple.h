@@ -35,7 +35,7 @@
 #include "common_utils.h"
 
 #ifndef NUM_BIQUAD_CHANS 
-	#error Define. NUM_BIQUAD_CHANS in app_conf.h
+	#error Define. NUM_BIQUAD_CHANS in module_dsp_biquad_conf.h
 #endif // NUM_BIQUAD_CHANS
 
 /** Different Processing States  */

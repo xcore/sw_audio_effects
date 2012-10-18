@@ -32,7 +32,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 	REVERB_PARAM_S * reverb_param_ps // Pointer to structure containing reverb parameters
 )
 {
-	DELAY_PARAM_S delay_param_s =  { .num = NUM_REV_TAPS }; // Default Delay-line Configuration
+	DELAY_PARAM_S delay_param_s =  { .num = NUM_REVERB_TAPS }; // Default Delay-line Configuration
 	U64_T factor; // scaling factor for delay taps
 	S32_T tap_cnt; // delay measured in samples
 
@@ -44,7 +44,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 	factor = (S64_T)1000000 * (S64_T)INV_SOS * (S64_T)reverb_param_ps->room_size; // common factor to convert delay to milli-seconds
 
 	// Loop through all delay taps.
-	for (tap_cnt = 0; tap_cnt < NUM_REV_TAPS; tap_cnt++)
+	for (tap_cnt = 0; tap_cnt < NUM_REVERB_TAPS; tap_cnt++)
 	{
 		// Calculate delay taps in samples.
 		delay_param_s.us_delays[tap_cnt] 
@@ -59,14 +59,14 @@ void init_reverb( // Initialise reverb parameters
 	REVERB_S * reverb_ps // Pointer to structure containing reverb data
 )
 {
-	assert(4 == NUM_REV_TAPS); // ERROR: Only NUM_REV_TAPS=4 supported
+	assert(4 == NUM_REVERB_TAPS); // ERROR: Only NUM_REVERB_TAPS=4 supported
 
 	reverb_ps->tap_ratios[0] = TAP_0;
 	reverb_ps->tap_ratios[1] = TAP_1;
 	reverb_ps->tap_ratios[2] = TAP_2;
 	reverb_ps->tap_ratios[3] = TAP_3;
 
-	assert(MAX_TAP == reverb_ps->tap_ratios[NUM_REV_TAPS - 1]); // Calculations depend on Max tap value of MAX_TAP
+	assert(MAX_TAP == reverb_ps->tap_ratios[NUM_REVERB_TAPS - 1]); // Calculations depend on Max tap value of MAX_TAP
 
 } // init_reverb
 /*****************************************************************************/
@@ -106,7 +106,7 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 	SAMP_CHAN_T amp_i_samps[]	// Buffer containing Amplified input samples
 )
 {
-	static SAMP_CHAN_T delay_samps[NUM_REV_TAPS]= {0,0,0,0};	// Set of delayed samples for one channel
+	static SAMP_CHAN_T delay_samps[NUM_REVERB_TAPS]= {0,0,0,0};	// Set of delayed samples for one channel
 	MIX_PARAM_S * mix_lvls_ps = reverb_gs.mix_lvls_ps; // Local Pointer to structure containing mix-levels
 	S64_T same_samps[NUM_REVERB_CHANS];	// Same-channel buffer for Channel-Mix (E.g. left->left)
 	S64_T swap_samps[NUM_REVERB_CHANS];	// Swap-channel buffer for Channel-Mix (E.g. left->right)
