@@ -188,6 +188,10 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <docdir>module_dsp_long_delay/doc</docdir>
     <docdir>module_dsp_loudness/doc</docdir>
     <docdir>module_dsp_short_reverb/doc</docdir>
+    <docdir>app_slicekit_long_delay/doc_quickstart</docdir>
+    <docdir>app_slicekit_biquad/doc_quickstart</docdir>
+    <docdir>app_slicekit_long_reverb/doc_quickstart</docdir>
+    <docdir>app_slicekit_short_reverb/doc_quickstart</docdir>
     <location>git@github.com:xcore/sw_audio_effects.git</location>
     <name>sw_audio_effects</name>
     <maintainer>beaumontm</maintainer>
