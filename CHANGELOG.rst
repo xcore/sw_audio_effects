@@ -1,6 +1,11 @@
 sw_audio_effects Change Log
 ===========================
 
+1.0.2
+-----
+
+  * Added Demo apps to release
+
 1.0.1
 -----
   * General code tidying and documentation udpates
