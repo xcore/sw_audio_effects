@@ -38,6 +38,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 
 
 	delay_param_s.freq = reverb_param_ps->samp_freq; // Assign requested sample frequency
+	delay_param_s.num = NUM_REV_TAPS; // Assign requested number of delay taps
 	
 	// Calculate Delay-line taps (in milli-seconds) for requested room-size ...
 

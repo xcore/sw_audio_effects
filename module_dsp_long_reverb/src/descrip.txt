@@ -5,3 +5,7 @@ See Read.Me for project overview
 03-OCT-2012
 -----------
 Copied from module_reverb and updated to call SDRAM functions from module_sdram_delay
+
+18-OCT-2012
+-----------
+Bug-fix: Copied NUM_REV_TAPS to number of delay taps (in DELAY_PARAM_S)
