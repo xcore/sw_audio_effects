@@ -6,7 +6,6 @@ TARGET = SLICEKIT-L2.xn
 APP_NAME =
 
 # The flags passed to xcc when building the application
-# BUILD_FLAGS = -Wall -O3 -report -g -lxscope -DSDA_HIGH=2 -DSCL_HIGH=1
 BUILD_FLAGS = -Wall -O3 -report -g -DSDA_HIGH=2 -DSCL_HIGH=1
 
 # The USED_MODULES variable lists other module used by the application. These
