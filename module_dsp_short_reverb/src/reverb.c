@@ -24,7 +24,7 @@
 #include "reverb.h"
 
 // Structure containing all reverb data (NB Make global to avoid using malloc)
-static REVERB_S reverb_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
+static REVERB_S reverb_gs = { .ratios = {{ TAP_0, TAP_1, TAP_2, TAP_3 }}, .init_done = 0, .params_set = 0 };
 
 /*****************************************************************************/
 void config_build_delay( // Calculate delay parameters and call delay configuration
@@ -48,7 +48,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 	{
 		// Calculate delay taps in samples.
 		delay_param_s.us_delays[tap_cnt] 
-			= (S32_T)((factor * (S64_T)reverb_ps->tap_ratios[tap_cnt] + HALF_REV_SCALE ) >> SCALE_REV_BITS);
+			= (S32_T)((factor * (S64_T)reverb_ps->ratios.taps[tap_cnt] + HALF_REV_SCALE ) >> SCALE_REV_BITS);
 	} // for tap_cnt
 
 	config_delay_line( &(delay_param_s) );
@@ -60,13 +60,7 @@ void init_reverb( // Initialise reverb parameters
 )
 {
 	assert(4 == NUM_REVERB_TAPS); // ERROR: Only NUM_REVERB_TAPS=4 supported
-
-	reverb_ps->tap_ratios[0] = TAP_0;
-	reverb_ps->tap_ratios[1] = TAP_1;
-	reverb_ps->tap_ratios[2] = TAP_2;
-	reverb_ps->tap_ratios[3] = TAP_3;
-
-	assert(MAX_TAP == reverb_ps->tap_ratios[NUM_REVERB_TAPS - 1]); // Calculations depend on Max tap value of MAX_TAP
+	assert(MAX_TAP == reverb_ps->ratios.taps[NUM_REVERB_TAPS - 1]); // Calculations depend on Max tap value of MAX_TAP
 
 } // init_reverb
 /*****************************************************************************/

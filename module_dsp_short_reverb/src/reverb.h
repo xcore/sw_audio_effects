@@ -144,9 +144,14 @@ void config_reverb( // Configure reverb parameters. NB Must be called before use
 #define TAP_2 631
 #define TAP_3 MAX_TAP // NB Maximum tap value must be 'Power of 2' (see above)
 
+typedef struct TAP_RATIOS_TAG // Structure containing delay tap ratios
+{
+	U32_T taps[NUM_REVERB_TAPS]; // array of delay tap ratios (NB These values are scaled by room size)
+} TAP_RATIOS_S;
+
 typedef struct REVERB_TAG // Structure containing all reverb data
 {
-	U32_T tap_ratios[NUM_REVERB_TAPS]; // delay tap ratios (NB These values are scaled by room size)
+	TAP_RATIOS_S ratios; // Structure containing delay tap ratios (NB These values are scaled by room size)
 	MIX_PARAM_S * mix_lvls_ps; // Pointer to structure containing mix-levels
 	S32_T init_done;	// Flag indicating Reverb is initialised
 	S32_T params_set; // Flag indicating Parameters are set
