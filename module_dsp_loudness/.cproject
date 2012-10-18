@@ -161,82 +161,562 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/gcc&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.13193005" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.68308828" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.xc.compiler.base.15942753" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.16522767" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.69499288" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.c.compiler.base.9460880" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.94455059" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.39397967" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.cpp.compiler.base.54009292" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.76094179" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.52328591" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                             </tool>
                             <tool id = "com.xmos.cdt.core.assembler.base.28538634" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.19871962" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.68192659" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
-                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+                                    <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/info}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/info}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/src}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/branches}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/tags}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects/pack}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/hooks}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/_static}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/logs}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git/objects}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/.support/docs_xref/.git}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml/.doctrees}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/heads}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/xdehtml}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_loudness/_build/xdehtml/_static/images}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/logs/refs/heads}&quot;' />
 
                                 </option>
                             </tool>
