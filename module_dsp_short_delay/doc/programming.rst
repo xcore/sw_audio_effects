@@ -21,6 +21,9 @@ Delays are set in microseconds in the us_delays field of the DELAY_PARAM_S struc
 Demo Applications
 =================
 
+Before running this demo, it is suggested that you familiarise yourself with the 'BiQuad Application', 
+which has a quickstart guide at app_slicekit_biquad/doc_quickstart/quickstart.rst.
+
 Short-Delay Application For SliceKit Board (``app_slicekit_short_delay``)
 ------------------------------------------
 

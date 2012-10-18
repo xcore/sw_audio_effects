@@ -21,6 +21,9 @@ To set the gain value, edit DEF_GAIN in the include file ``module_dsp_loudness/s
 Demo Applications
 =================
 
+Before running this demo, it is suggested that you familiarise yourself with the 'BiQuad Application', 
+which has a quickstart guide at app_slicekit_biquad/doc_quickstart/quickstart.rst.
+
 Loudness Application For SliceKit Board (``app_slicekit_loudness``)
 -------------------------------------------------------------------
 
@@ -82,7 +85,7 @@ high frequencies that manifest themselves as distortion.
 Try Other Audio Applications
 ----------------------------
 
-Some of the other audio applications are ``app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
+Some of the other audio applications are ``loudness loudness app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
 
 * The biquad application uses a configurable BiQuad filter to achieve a number of different filter types,
   including low-pass, high-pass, band-pass, band-stop, and all-pass.
