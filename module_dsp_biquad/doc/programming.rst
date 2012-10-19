@@ -30,7 +30,7 @@ Demo Applications
 BiQuad Application For SliceKit Board (app_slicekit_biquad)
 -----------------------------------------------------------
 
-There is a quickstart guide for this application at app_slicekit_biquad/doc_quickstart/quickstart.rst.
+To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
 
 This application uses module_dsp_biquad to apply a filter to an audio-stream passing through the SliceKit Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:

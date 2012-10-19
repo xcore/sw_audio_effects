@@ -1,3 +1,4 @@
+.. _slicekit_short_reverb_Quickstart:
 
 Short Reverb SliceKit Application
 ---------------------------------
