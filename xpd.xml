@@ -173,9 +173,9 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         <version>1.4.1alpha0</version>
     </dependency>
     <dependency repo = "sc_sdram_burst">
-        <githash>16c7be5f7955ae7be0cc23094179778d3142ba2d</githash>
+        <githash>f0821a9a917a4ea8178714aa9ff384f587dbd5e4</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
-        <version>1.0.0rc0</version>
+        <version>1.0.1rc1</version>
     </dependency>
     <dependency repo = "sc_util">
         <githash>afbba103d8b5ed3378eaa3832b8f694dec2844bc</githash>
@@ -204,7 +204,8 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "ceea38b0665cc030cefe599e07bff5d2095319a4" version = "1.0.1alpha3" githash = "5e52caf11e3b4088d183e4a104a52c54d90b3b6c"></release>
     <release parenthash = "c58f18abe29fd4d9e814bfc3fd490715dffe9bbb" version = "1.0.1alpha4" githash = "77cb29266eb4cd8090bb3c94ce258caaa48bb2c6"></release>
     <release parenthash = "2efa6e0fdd46b23faa7582d91b92ac67c785ac44" version = "1.0.1alpha5" githash = "a0af06317e4b0d2e6a7d853f503988dad42af7ce"></release>
-    <release parenthash = "a0af06317e4b0d2e6a7d853f503988dad42af7ce" version = "1.0.1alpha6"></release>
+    <release parenthash = "a0af06317e4b0d2e6a7d853f503988dad42af7ce" version = "1.0.1alpha6" githash = "d5c682e05be9b671037137ec643cfac6501c0c47"></release>
+    <release parenthash = "d5c682e05be9b671037137ec643cfac6501c0c47" version = "1.0.1alpha7"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
