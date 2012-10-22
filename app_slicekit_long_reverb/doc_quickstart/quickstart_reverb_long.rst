@@ -14,7 +14,7 @@ Hardware Setup
 Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
-#. Locate the ``'Long-Reverb SliceKit Application'`` item in the xSOFTip pane on the bottom left of the window, 
+#. Locate the ``'Long-Reverb Slicekit Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
 #. Click on the app_slicekit_long_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
 

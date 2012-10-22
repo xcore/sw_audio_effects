@@ -1,5 +1,5 @@
-BiQuad Application For SliceKit Board
-=====================================
+BiQuad Filter SliceKit Audio Demo
+=================================
 
 :scope: Example
 :description: Applies a BiQuad filter to an number of audio channels on the SliceKit board

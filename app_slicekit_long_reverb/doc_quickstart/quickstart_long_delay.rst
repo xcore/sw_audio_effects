@@ -24,7 +24,7 @@ To setup up the system:
 Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
-#. Locate the ``'Long-Delay Slicekit Application'`` item in the xSOFTip pane on the bottom left of the window, 
+#. Locate the ``'Long-Delay Slicekit Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
 #. Click on the app_slicekit_long_delay item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
    Check the console window to verify that the application has built successfully. There will be quite a number of warnings that ``bidirectional buffered port not supported in hardware``. These can be safely ignored for this component.

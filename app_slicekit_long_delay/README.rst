@@ -1,5 +1,5 @@
-Long-Delay Application For SliceKit Board
-=========================================
+Long-Delay Slicekit Audio Demo 
+==============================
 
 :scope: Example
 :description: Delays a No. of audio channels passing through the SliceKit board creating an long echo effect

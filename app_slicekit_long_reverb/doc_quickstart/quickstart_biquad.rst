@@ -45,7 +45,7 @@ Import and Build the Application
 
 1. Open xTIMEcomposer and check that it is operating in online mode. 
    Open the edit perspective (Window->Open Perspective->XMOS Edit).
-#. Locate the ``'BiQuad Filter Slicekit Application'`` item in the xSOFTip pane on the bottom left of the window, 
+#. Locate the ``'BiQuad Filter Slicekit Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
    This will also cause the modules on which this application depends to be imported as well. 
    These modules are: module_dsp_biquad, module_dsp_utils, module_i2s_master and module_i2c_single_port.
