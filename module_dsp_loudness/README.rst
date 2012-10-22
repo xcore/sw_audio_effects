@@ -24,3 +24,8 @@ Currently 5 parabola's are used, as follows:
    * Transition from max. gradient to 'max-gain' section.
    * 'max-gain' section, (Straight line) with minimum gradient (reciprocal of max-gradient)
    * Transition from min. gradient back to 'unity-gain' at maximum signal level.
+
+Evaluation
+----------
+
+Try the "Loudness Slicekit Audio Demo" to get started with this module.

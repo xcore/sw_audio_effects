@@ -16,7 +16,7 @@ Import and Build the Application
 #. Locate the ``'Short-Reverb Slicekit Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
    This will also cause the modules on which this application depends to be imported as well. 
-#. Click on the app_slicekit_short_delay item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer to build it as before. 
+#. Click on the app_slicekit_short_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer to build it as before. 
 
 
 Run the Application

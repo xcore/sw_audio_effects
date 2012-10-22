@@ -12,3 +12,8 @@ Features
    * Offers programmable delay taps
    * Capable of 8 taps for 4 channels at 192 KHz
    * Uses double-buffering to 'hide' latency of reading/writing to SDRAM
+
+Evaluation
+----------
+
+This module can be evaluated using the "Long-Delay Slicekit Audio Demo" and the "Long-Reverb Slicekit Audio Demo".
