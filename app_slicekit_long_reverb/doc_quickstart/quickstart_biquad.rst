@@ -33,7 +33,7 @@ To setup up the system:
 #. Connect D/C barrel jack of XMOS power supply to Slicekit Core board.
 #. Switch on the power supply to the Slicekit Core board.
 
-.. figure:: images/hardware_setup.jpg
+.. figure:: images/hardware_setup_no_sdram.jpg
    :width: 500px
    :align: center
 
