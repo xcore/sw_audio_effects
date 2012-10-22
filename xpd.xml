@@ -94,7 +94,7 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
             <keyword>address</keyword>
             <keyword>wrap</keyword>
         </component>
-        <component description = "Mid-range volume levels are increased without increasing low-level or high-level signals." type = "demoCode" scope = "Example" path = "app_slicekit_loudness" local = "false" id = "app_slicekit_loudness" name = "Loudness Application For SliceKit Board">
+        <component description = "Mid-range volume levels are increased without increasing low-level or high-level signals." type = "demoCode" scope = "Example" path = "app_slicekit_loudness" local = "false" id = "app_slicekit_loudness" name = "Loudness Slicekit Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_utils</componentDependency>
             <componentDependency>module_i2c_single_port</componentDependency>
@@ -106,7 +106,7 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
             <keyword>dsp</keyword>
             <keyword>slicekit</keyword>
         </component>
-        <component name = "Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A short 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping,
+        <component name = "Short-Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A short 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping,
 capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_biquad</componentDependency>
@@ -202,7 +202,8 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "f27bc501f66cc5f26603c85847ac30631269b232" version = "1.0.1alpha1" githash = "37ba826b26b2487ba7f577dd1cfb00fadd3ab332"></release>
     <release parenthash = "afc03c6dee5b219875bc936a92c9c226b918f588" version = "1.0.1alpha2" githash = "6573a221b57e7e986f90e9442accac1a0ea6270c"></release>
     <release parenthash = "ceea38b0665cc030cefe599e07bff5d2095319a4" version = "1.0.1alpha3" githash = "5e52caf11e3b4088d183e4a104a52c54d90b3b6c"></release>
-    <release parenthash = "c58f18abe29fd4d9e814bfc3fd490715dffe9bbb" version = "1.0.1alpha4"></release>
+    <release parenthash = "c58f18abe29fd4d9e814bfc3fd490715dffe9bbb" version = "1.0.1alpha4" githash = "77cb29266eb4cd8090bb3c94ce258caaa48bb2c6"></release>
+    <release parenthash = "2efa6e0fdd46b23faa7582d91b92ac67c785ac44" version = "1.0.1alpha5"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
