@@ -24,7 +24,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <keyword>SDRAM</keyword>
             <keyword>Memory-slice</keyword>
         </component>
-        <component description = "Delays a No. of audio channels passing through the SliceKit board creating an long echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_long_delay" local = "false" id = "app_slicekit_long_delay" name = "Long-Delay Application For SliceKit Board">
+        <component description = "Delays a No. of audio channels passing through the SliceKit board creating an long echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_long_delay" local = "false" id = "app_slicekit_long_delay" name = "Long-Delay Slicekit Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_long_delay</componentDependency>
             <componentDependency>module_sdram_memory_mapper</componentDependency>
@@ -71,7 +71,7 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
             <keyword>gain</keyword>
             <keyword>volume</keyword>
         </component>
-        <component description = "Applies a BiQuad filter to an number of audio channels on the SliceKit board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Application For SliceKit Board">
+        <component description = "Applies a BiQuad filter to an number of audio channels on the SliceKit board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Filter SliceKit Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_biquad</componentDependency>
             <componentDependency>module_dsp_utils</componentDependency>
@@ -116,7 +116,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
         </component>
-        <component description = "A long reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_long_reverb" local = "false" id = "app_slicekit_long_reverb" name = "Long-Reverb Application For SliceKit Board">
+        <component description = "A long reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_long_reverb" local = "false" id = "app_slicekit_long_reverb" name = "Long-Reverb Slicekit Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_biquad</componentDependency>
             <componentDependency>module_i2c_single_port</componentDependency>
@@ -134,7 +134,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <keyword>dsp</keyword>
             <keyword>slicekit</keyword>
         </component>
-        <component description = "Delays an a number of audio channels paasing through the SliceKit board creating an echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_short_delay" local = "false" id = "app_slicekit_short_delay" name = "Short-Delay Application For SliceKit Board">
+        <component description = "Delays an a number of audio channels paasing through the SliceKit board creating an echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_short_delay" local = "false" id = "app_slicekit_short_delay" name = "Short-Delay Slicekit Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_utils</componentDependency>
             <componentDependency>module_i2c_single_port</componentDependency>
@@ -146,7 +146,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <keyword>dsp</keyword>
             <keyword>slicekit</keyword>
         </component>
-        <component description = "A reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_short_reverb" local = "false" id = "app_slicekit_short_reverb" name = "Short-Reverb Application For SliceKit Board">
+        <component description = "A reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_short_reverb" local = "false" id = "app_slicekit_short_reverb" name = "Short-Reverb Slicekit Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_biquad</componentDependency>
             <componentDependency>module_dsp_short_delay</componentDependency>
@@ -201,7 +201,8 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "e762c529d7abda05b1c916d792e0a5db0d28d8d9" version = "1.0.1alpha0" githash = "7931d947a0acd435c883c3dda8dbd72c06921344"></release>
     <release parenthash = "f27bc501f66cc5f26603c85847ac30631269b232" version = "1.0.1alpha1" githash = "37ba826b26b2487ba7f577dd1cfb00fadd3ab332"></release>
     <release parenthash = "afc03c6dee5b219875bc936a92c9c226b918f588" version = "1.0.1alpha2" githash = "6573a221b57e7e986f90e9442accac1a0ea6270c"></release>
-    <release parenthash = "ceea38b0665cc030cefe599e07bff5d2095319a4" version = "1.0.1alpha3"></release>
+    <release parenthash = "ceea38b0665cc030cefe599e07bff5d2095319a4" version = "1.0.1alpha3" githash = "5e52caf11e3b4088d183e4a104a52c54d90b3b6c"></release>
+    <release parenthash = "c58f18abe29fd4d9e814bfc3fd490715dffe9bbb" version = "1.0.1alpha4"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
