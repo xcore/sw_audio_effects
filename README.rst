@@ -1,7 +1,7 @@
 Digital Audio Effects Applications
 ..................................
 
-:Latest release: 1.0.1alpha5
+:Latest release: 1.0.1alpha6
 :Maintainer: beaumontm
 :Description: Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain
 
