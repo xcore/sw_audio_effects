@@ -205,7 +205,8 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "c58f18abe29fd4d9e814bfc3fd490715dffe9bbb" version = "1.0.1alpha4" githash = "77cb29266eb4cd8090bb3c94ce258caaa48bb2c6"></release>
     <release parenthash = "2efa6e0fdd46b23faa7582d91b92ac67c785ac44" version = "1.0.1alpha5" githash = "a0af06317e4b0d2e6a7d853f503988dad42af7ce"></release>
     <release parenthash = "a0af06317e4b0d2e6a7d853f503988dad42af7ce" version = "1.0.1alpha6" githash = "d5c682e05be9b671037137ec643cfac6501c0c47"></release>
-    <release parenthash = "d5c682e05be9b671037137ec643cfac6501c0c47" version = "1.0.1alpha7"></release>
+    <release parenthash = "d5c682e05be9b671037137ec643cfac6501c0c47" version = "1.0.1alpha7" githash = "16e65da171a1910bd8f3478a9a1ac44225fd574f"></release>
+    <release parenthash = "97e7c22f60c2ba042b29010c53fb886db1e5f8cf" version = "1.0.1rc0"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
