@@ -1,5 +1,5 @@
-Long-Reverb Application For SliceKit Board
-==========================================
+Long-Reverb Slicekit Audio Demo
+===============================
 
 :scope: Example
 :description: A long reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain.

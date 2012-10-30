@@ -27,13 +27,12 @@ Note The maximum room-size is limited by the amount of memory used for the delay
 Demo Applications
 =================
 
-Before running this demo, it is suggested that you familiarise yourself with the 'BiQuad Application', 
-which has a quickstart guide at app_slicekit_biquad/doc_quickstart/quickstart.rst.
 
-Short-Reverb Application For SliceKit Board (``app_slicekit_short_reverb``)
+
+Short-Reverb Application For SliceKit Board
 -------------------------------------------
 
-There is a quickstart guide for this application at app_slicekit_short_reverb/doc_quickstart/quickstart.rst.
+To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
 
 This application uses ``module_dsp_short_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the SliceKit Core board.
