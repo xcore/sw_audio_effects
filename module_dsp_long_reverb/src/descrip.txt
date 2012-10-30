@@ -9,3 +9,10 @@ Copied from module_reverb and updated to call SDRAM functions from module_sdram_
 18-OCT-2012
 -----------
 Bug-fix: Copied NUM_REV_TAPS to number of delay taps (in DELAY_PARAM_S)
+
+30-OCT-2012
+-----------
+Upgrade to use 14 delay-taps. This is maximum until improvements to SDRAM tools.
+Changed manner in which feedback is controlled for delay-line.
+Re-tuned reverb parameters for new setup.
+

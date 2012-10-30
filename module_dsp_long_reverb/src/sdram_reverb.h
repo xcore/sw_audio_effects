@@ -63,18 +63,18 @@
 /**  Default Volume Level Of Effect Signal: 192/256 */
 #define DEF_FX_LVL MIX_3DIV4 //
 
-/** Default Attenuation. Note well, Below 1/8 can cause uncontrolled feedback: 32/256 */
-#define DEF_ATTN_MIX MIX_DIV8 // 
+/** Default Feedback level, Above 1 will cause uncontrolled feedback: 256/256 */
+#define DEF_FB_LVL MIX_DIV2 // 
 
-/**  Default CrossTalk Mix: 64/256 */
-#define DEF_CROSS_MIX MIX_DIV4 //
+/**  Default CrossTalk Mix: 128/256 */
+#define DEF_CROSS_MIX MIX_DIV2 //
 
 /** Structure containing Reverb parameters*/
 typedef struct MIX_PARAM_TAG // 
 {
 	S32_T dry_lvl; // 0:Off <--> MAX_MIX:Full
 	S32_T fx_lvl; // 0:Off<--> MAX_MIX:Full
-	S32_T attn_mix; // 0:No Attenuation <--> MAX_MIX:No Feedback
+	S32_T fb_lvl; // 0:No Feedback <--> MAX_MIX:Full Feedback
 	S32_T cross_mix; // 0:No Reverb Crosstalk <--> MAX_MIX:Swap Reverb channels
 } MIX_PARAM_S;
 
@@ -144,16 +144,28 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 #define SOS_BITS 22 // Bit-shift used to scale speed-of-sound
 
 // These filter taps are based on a room 619x1000. i.e. (~GoldenRatio) ...
-#define TAP_BITS 10 // Bit-shift used to scale delay tap values
+#define TAP_BITS 8 // Bit-shift used to scale delay tap values
 #define MAX_TAP (1 << TAP_BITS) // Maximum Tap value
 
 #define SCALE_REV_BITS (SOS_BITS + TAP_BITS) // Total No. of scaling bits
 #define HALF_REV_SCALE ((S64_T)1 << (SCALE_REV_BITS - 1)) // Half scaling factor. Used for rounding
 
-#define TAP_0 263
-#define TAP_1 431
-#define TAP_2 631
-#define TAP_3 MAX_TAP // Note well, Maximum tap value must be 'Power of 2' (see above)
+#define TAP_00 157
+#define TAP_01 257 // NB Approx. MAX_TAP value
+#define TAP_02 317
+#define TAP_03 409
+#define TAP_04 419
+#define TAP_05 479
+#define TAP_06 509
+#define TAP_07 571
+#define TAP_08 631
+#define TAP_09 673
+#define TAP_10 733
+#define TAP_11 769
+#define TAP_12 827
+#define TAP_13 829
+#define TAP_14 929
+#define TAP_15 1021
 
 typedef struct TAP_RATIOS_TAG // Structure containing delay tap ratios
 {

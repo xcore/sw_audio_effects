@@ -145,13 +145,13 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	CHAN_SET_S fade_set_s;	// Structure containing Cross-fade audio sample-set
 
 	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
-	S32_T fx_len = SWAP_NUM; //	(SWAP_NUM << 2); // time spent in effect state (to ~32 secs)
+	S32_T fx_len = (SWAP_NUM << 1); // time spent in effect state (to ~16 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 
 	PROC_STATE_TYP cur_proc_state	= START; // Initialise processing state
 	// Default Reverb parameters
-	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_ATTN_MIX ,DEF_CROSS_MIX } 
+	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
 
 
@@ -169,10 +169,11 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	out_set_s = inp_set_s;
 
 	// Synchronise a reverb configuration (with other coars) using default parameters
-	def_param_s.gain = 8; // Fine-tune Gain
-	def_param_s.room_size = 200; // Fine-tune Room-size
+	def_param_s.gain = 8; // Bring-up gain
+	def_param_s.room_size = 100; // Fine-tune Room-size
 
 	sync_reverb_config( c_dsp_eq ,c_dsp_gain ,def_param_s );
+	printstrln("Effect");
 
 	// Loop forever
 	while(1)
@@ -190,8 +191,8 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to Eq coar  
-			c_dsp_eq :> cntrl_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from Eq coar  
+			c_dsp_eq <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar  
+			c_dsp_eq :> cntrl_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
 		} // for chan_cnt
 
 #pragma loop unroll
@@ -220,6 +221,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = FX2DRY; // Switch to Fade-out Effect
+//					cur_proc_state = EFFECT; // MB~ Dbg
 				} // if (fx_len < samp_cnt)
 			break; // case EFFECT:
 
@@ -230,6 +232,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
+					printstrln("Dry");
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case FX2DRY:
 
@@ -251,6 +254,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = EFFECT; // Switch to Effect Processing
+					printstrln("Effect");
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case DRY2FX:
 
