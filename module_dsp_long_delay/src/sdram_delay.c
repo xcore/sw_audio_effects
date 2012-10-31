@@ -193,7 +193,7 @@ void read_sample_set( // Read sample-set from buffer
 			out_buf_ps->read_active = 1; // Start of delay-line, so switch on reads
 		} // if (out_buf_ps->off >= DELAY_SAMPS)
 
-if (delay_ps->dbg) printf("RB%1d: OF=%5d \n" ,out_buf_ps->id ,out_buf_ps->off ); //MB~
+// if (delay_ps->dbg) printf("RB%1d: OF=%5d \n" ,out_buf_ps->id ,out_buf_ps->off ); //MB~
 
 		// Check if safe to read data
 		if (out_buf_ps->read_active)
@@ -232,6 +232,7 @@ void write_sample_set( // Write sample-set to buffer
 		} // if (inp_buf_ps->off >= DELAY_SAMPS)
 
 // if (delay_ps->dbg) printf("WB%1d: OF=%5d \n" ,inp_buf_ps->id ,inp_buf_ps->off ); //MB~
+
 		// Write buffer to memory. NB Memory offset is 1 buffer later then Write Offset
 		write_buffer( delay_ps ,sdram_write_p ,buf_p ,inp_buf_ps->off );
 

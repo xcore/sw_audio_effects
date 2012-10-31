@@ -24,9 +24,10 @@
 #include "sdram_reverb.h"
 
 // Structure containing all reverb data (NB Make global to avoid using malloc)
-static REVERB_S reverb_gs = { .ratios = {{ TAP_00 ,TAP_01 ,TAP_02 ,TAP_04 ,TAP_05 ,TAP_06 ,TAP_07 
-																					,TAP_08 ,TAP_09 ,TAP_10 ,TAP_11 ,TAP_13 ,TAP_14 ,TAP_15
-																				}}
+static REVERB_S reverb_gs = { .tap_data_s = {	{ TAP_00 ,TAP_01 ,TAP_02 ,TAP_04 ,TAP_05 ,TAP_06 ,TAP_07 
+																							,TAP_08 ,TAP_09 ,TAP_10 ,TAP_11 ,TAP_13 ,TAP_14 ,TAP_15 }
+																						 ,{ WGHT_00 ,WGHT_01 ,WGHT_02 ,WGHT_04 ,WGHT_05 ,WGHT_06 ,WGHT_07 
+																							,WGHT_08 ,WGHT_09 ,WGHT_10 ,WGHT_11 ,WGHT_13 ,WGHT_14 ,WGHT_15} }
                               ,.init_done = 0
 															,.params_set = 0
 														};
@@ -38,6 +39,8 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 )
 {
 	DELAY_PARAM_S delay_param_s =  { .num = NUM_REVERB_TAPS }; // Default Delay-line Configuration
+	TAP_DATA_S * tap_data_ps = &(reverb_ps->tap_data_s); // Local pointer to delay-tap data structure 
+	U32_T * ratios_p = tap_data_ps->ratios; // Local pointer to array of delay-tap ratios
 	U64_T factor; // scaling factor for delay taps
 	S32_T tap_cnt; // delay measured in samples
 
@@ -53,7 +56,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 	{
 		// Calculate delay taps in samples.
 		delay_param_s.us_delays[tap_cnt] 
-			= (S32_T)((factor * (S64_T)reverb_ps->ratios.taps[tap_cnt] + HALF_REV_SCALE ) >> SCALE_REV_BITS);
+			= (S32_T)((factor * (S64_T)ratios_p[tap_cnt] + HALF_REV_SCALE ) >> SCALE_REV_BITS);
 	} // for tap_cnt
 
 	config_sdram_delay( &(delay_param_s) );
@@ -64,8 +67,22 @@ void init_reverb( // Initialise reverb parameters
 	REVERB_S * reverb_ps // Pointer to structure containing reverb data
 )
 {
+	TAP_DATA_S * tap_data_ps = &(reverb_ps->tap_data_s); // Local pointer to delay-tap data structure 
+	U32_T * weights_p = tap_data_ps->weights; // Local pointer to array of delay-tap weights
+	S32_T tap_cnt; // delay measured in samples
+	S32_T weight_sum = 0; // Sum of delay-tap weights
+
+
 	assert(14 == NUM_REVERB_TAPS); // ERROR: Only NUM_REVERB_TAPS=16 supported
-	assert((MAX_TAP + 1) == reverb_ps->ratios.taps[1]); // Calculations depend 2nd tap value of approx MAX_TAP
+	assert((MAX_TAP + 1) == tap_data_ps->ratios[1]); // Calculations depend 2nd tap value of approx MAX_TAP
+
+	// Loop through all delay taps.
+	for (tap_cnt = 0; tap_cnt < NUM_REVERB_TAPS; tap_cnt++)
+	{
+		weight_sum +=	weights_p[tap_cnt];
+	} // for tap_cnt
+
+	assert(MAX_WEIGHT == weight_sum); // ERROR: Weights must sum to MAX_WEIGHT
 } // init_reverb
 /*****************************************************************************/
 void config_sdram_reverb( // Configure reverb parameters
@@ -90,6 +107,7 @@ void config_sdram_reverb( // Configure reverb parameters
 	// Assign requested mix setting ...
 
 	reverb_gs.mix_lvls_ps = &(reverb_param_ps->mix_lvls);
+	reverb_gs.same_mix = MAX_MIX - reverb_param_ps->mix_lvls.cross_mix; // Amount of input going to same output channel (Inverse Cross-mix level)
 
 	reverb_gs.params_set = 1; // Signal Reverb parameters configured
 
@@ -111,7 +129,6 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
   S64_T sum_same; // Sums output delay-taps for same-channel
   S64_T sum_swap; // Sums output delay-taps for swap-channel
 	S64_T samp_sum;	// Intermediate sample sum
-	S64_T samp_diff;	// Intermediate sample difference
 	S32_T chan_cnt; // Channel counter
 	S32_T swap_chan; // Other channel of stereo pair
 
@@ -135,13 +152,13 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		 * Tap_Num:   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
 		 * Out_Chan:  L   L   R   L   L   L   R   R   R   R   L   L   R   R   L   R
 		 *
-		 * NB. Due to lack of Memory bandwidth currnetly only 14 taps are used.
+		 * NB. Due to lack of Memory bandwidth currently only 14 taps are used.
 		 *
 		 * Tap_Num:   0   1   2   .   3   4   5   6   7   8   9  10   .  11  12  13
 		 * Out_Chan:  L   L   R   .   L   L   R   R   R   R   L   L   .   R   L   R
-		 * Weight:   127 125 119  .  113 109 109 101 97  99  89  91   .  81  79  75
+		 * Weight:   92  90  84   .  82  77  78  74  69  70  65  66   .  61  59  57
 		 *
-		 * NB. When changing number of taps in use. All weights below have to be recalculated to ensure sums are normalised correctly.
+		 * NB. When changing number of taps in use. All weights below have to be recalculated to ensure sum is 1024.
 		 */
 
 		// Loop through set of channel samples and process delay taps
@@ -150,38 +167,32 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 			// NB Equalisation coar converts uneq_o_set to cntrl_ps->src_set.samps
 // cntrl_ps->src_set.samps[chan_cnt] = uneq_o_set_ps->samps[chan_cnt]; // MB~ Dbg Switch off Equalisation
 
-			sum_same = 127 * (S64_T)delay_set_ps[0].samps[chan_cnt];
-			sum_same += 125 * (S64_T)delay_set_ps[1].samps[chan_cnt];
-			sum_same += 115 * (S64_T)delay_set_ps[3].samps[chan_cnt];
-			sum_same += 108 * (S64_T)delay_set_ps[4].samps[chan_cnt];
-			sum_same += 89 * (S64_T)delay_set_ps[9].samps[chan_cnt];
-			sum_same += 90 * (S64_T)delay_set_ps[10].samps[chan_cnt];
-			sum_same += 80 * (S64_T)delay_set_ps[12].samps[chan_cnt];
+			// Sum weighted pre-delay taps for use in same output channel.
+			sum_same =  WGHT_00 * (S64_T)delay_set_ps[0].samps[chan_cnt];
+			sum_same += WGHT_01 * (S64_T)delay_set_ps[1].samps[chan_cnt];
+			sum_same += WGHT_03 * (S64_T)delay_set_ps[3].samps[chan_cnt];
+			sum_same += WGHT_04 * (S64_T)delay_set_ps[4].samps[chan_cnt];
+			sum_same += WGHT_09 * (S64_T)delay_set_ps[9].samps[chan_cnt];
+			sum_same += WGHT_10 * (S64_T)delay_set_ps[10].samps[chan_cnt];
+			sum_same += WGHT_12 * (S64_T)delay_set_ps[12].samps[chan_cnt];
 
 			// Sum weighted pre-delay taps for use in swap output channel.
-			sum_swap = 118 * (S64_T)delay_set_ps[2].samps[chan_cnt];
-			sum_swap += 109 * (S64_T)delay_set_ps[5].samps[chan_cnt];
-			sum_swap += 102 * (S64_T)delay_set_ps[6].samps[chan_cnt];
-			sum_swap += 95 * (S64_T)delay_set_ps[7].samps[chan_cnt];
-			sum_swap += 96 * (S64_T)delay_set_ps[8].samps[chan_cnt];
-			sum_swap += 83 * (S64_T)delay_set_ps[11].samps[chan_cnt];
-			sum_swap += 77 * (S64_T)delay_set_ps[13].samps[chan_cnt];
+			sum_swap =  WGHT_02 * (S64_T)delay_set_ps[2].samps[chan_cnt];
+			sum_swap += WGHT_05 * (S64_T)delay_set_ps[5].samps[chan_cnt];
+			sum_swap += WGHT_06 * (S64_T)delay_set_ps[6].samps[chan_cnt];
+			sum_swap += WGHT_07 * (S64_T)delay_set_ps[7].samps[chan_cnt];
+			sum_swap += WGHT_08 * (S64_T)delay_set_ps[8].samps[chan_cnt];
+			sum_swap += WGHT_11 * (S64_T)delay_set_ps[11].samps[chan_cnt];
+			sum_swap += WGHT_13 * (S64_T)delay_set_ps[13].samps[chan_cnt];
 
-			// Attenuate earliest pre-delay to 1/4 volume by dividing by 512 
-			same_samps[chan_cnt] = (sum_same + 256 ) >> 9;
-			swap_samps[chan_cnt] = (sum_swap + 256 ) >> 9;
-// same_samps[chan_cnt] = cntrl_ps->src_set.samps[chan_cnt]; //MB~ Dbg Switch off Pre-Delay
-// swap_samps[chan_cnt] = cntrl_ps->src_set.samps[chan_cnt]; //MB~ Dbg Switch off Pre-Delay
-
-			/* Above weight-sum is currently 14*101 = 1414.
-			 * To remove the requirement for a divide, 1414 is approximated to 2^21 / 1483.
-			 */
-
-			// Sum pre-delays for feeding back into delay-line
-			samp_sum = (S32_T)((1483 * (sum_same + sum_swap) + (2 << 20)) >> 21); // Approximate normalised value
+			same_samps[chan_cnt] = sum_same;
+			swap_samps[chan_cnt] = sum_swap;
+// same_samps[chan_cnt] = (cntrl_ps->src_set.samps[chan_cnt] << ATTN_BITS); //MB~ Dbg Switch off Pre-Delay
+// swap_samps[chan_cnt] = (cntrl_ps->src_set.samps[chan_cnt] << ATTN_BITS); //MB~ Dbg Switch off Pre-Delay
 
 			// Control Reverb Feedback/Attenuation (User Controlable)
-			samp_sum = ((samp_sum * (S64_T)mix_lvls_ps->fb_lvl) + (S64_T)MIX_DIV2) >> MIX_BITS; // Set feedback level
+			samp_sum = sum_same + sum_swap; // Sum pre-delays for feeding back into delay-line
+			samp_sum = ((samp_sum * (S64_T)mix_lvls_ps->fb_lvl) + HALF_FB_SCALE) >> SCALE_FB_BITS; // Set feedback level
 			uneq_o_set_ps->samps[chan_cnt] = (S32_T)(samp_sum + (S64_T)(inp_set_ps->samps[chan_cnt] >> 1)); // Add in half of dry signal
 // uneq_o_set_ps->samps[chan_cnt] = inp_set_ps->samps[chan_cnt]; //MB~ Dbg Switch-off Feedback
 		} // for chan_cnt
@@ -193,9 +204,10 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 			swap_chan = chan_cnt ^ 1; // Get Id for other channel (Assumes 0 <--> 1, 2 <--> 3, etc)
 
 			// Mix Left and Right channels 
-			samp_diff = (S64_T)mix_lvls_ps->cross_mix * (swap_samps[swap_chan] - same_samps[chan_cnt]);
-			rev_o_set_ps->samps[chan_cnt] = (S32_T)(same_samps[chan_cnt] + ((samp_diff + (S64_T)MIX_DIV2) >> MIX_BITS));
-// rev_o_set_ps->samps[chan_cnt] = same_samps[chan_cnt]; //MB~ Dbg Switch to Mono-Channel mix
+			samp_sum = (S64_T)mix_lvls_ps->cross_mix * swap_samps[swap_chan];
+			samp_sum += (S64_T)reverb_gs.same_mix * same_samps[swap_chan];
+			rev_o_set_ps->samps[chan_cnt] = (S32_T)((samp_sum + HALF_XMIX_SCALE) >> SCALE_XMIX_BITS);
+// rev_o_set_ps->samps[chan_cnt] = (S32_T)((same_samps[chan_cnt] + HALF_ATTN) >> ATTN_BITS); //MB~ Dbg Switch to Mono-Channel mix
 
 			// NB Non-linear-gain coar converts rev_o_set_s to ampli_i_set_s
 // ampli_i_set_ps->samps[chan_cnt] = rev_o_set_ps->samps[chan_cnt]; // MB~ Dbg Switch off Gain

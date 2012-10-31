@@ -7,12 +7,12 @@ API
 
 Configuration Defines
 ---------------------
-.. doxygendefine:: NUM_REV_TAPS 
+.. doxygendefine:: NUM_REVERB_TAPS 
 .. doxygendefine:: DEF_ROOM_SIZE 
 .. doxygendefine:: MIX_BITS 
 .. doxygendefine:: DEF_DRY_LVL 
 .. doxygendefine:: DEF_FX_LVL 
-.. doxygendefine:: DEF_ATTN_MIX 
+.. doxygendefine:: DEF_FB_LVL 
 .. doxygendefine:: DEF_CROSS_MIX 
 
 Functions

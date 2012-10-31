@@ -117,16 +117,16 @@ configPoints =
     default = 192
   },
   AttnLevel= {
-    short   = "Attenuation for reverb feedback",
-    help    = "Low values create longer reverb decay. Range of 0..256. 256 causes max. attenuation (No feedback - no reverb tail)",
-    long    = "WARNING: Values below 32 may cause uncontrolled feedback",
+    short   = "Reverb feedback level",
+    help    = "High values create longer reverb decay. Range of 0..256. 0 is no feedback",
+    long    = "WARNING: Values of 256 and above may cause uncontrolled feedback",
     units   = "",
-    define  = "DEF_ATTN_MIX",
+    define  = "DEF_FB_LVL",
     type    = "int",
     min     = 0,
     max     = 256,
     resourceUsageFlags = {"noeffect"},
-    default = 32
+    default = 128
   },
   CrossTalk = {
     short   = "Amount of cross-talk between left-right channels",

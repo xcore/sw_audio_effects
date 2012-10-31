@@ -12,7 +12,7 @@ The following characteristics of the reverb are currently configurable:
 
 The following signal-mix levels are currently configurable:
 
-   * Dry (input) signal
-   * Reverb (pure effect) signal
-   * Reverb attenuation (controls time of reverb decay)
+   * Dry (input) signal level
+   * Reverb (pure effect) signal level
+   * Reverb feedback level (controls time of reverb decay)
    * Cross-channel mix (Controls movement between  Mono-reverb <--> Stereo-reverb <--> Opposite-reverb )

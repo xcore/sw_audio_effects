@@ -14,7 +14,7 @@ Currently this is set at 2 Mega-samples, which is the size for a 8 MByte SDRAM M
 This approximate memory usage for this module is (figures shown in Bytes):
 
 * codememory: 12K
-* datamemory: 10K
+* datamemory:  6K
 
 Computation
 -----------

@@ -39,7 +39,7 @@
 #endif // NUM_REVERB_TAPS
 
 /**  Default room-size for reverb (in meters): 1 */
-#define DEF_ROOM_SIZE 1 //
+#define DEF_ROOM_SIZE 101 //
 
 /** Bit-Shift used in Mixing: 8 */
 #define MIX_BITS 8 //
@@ -147,13 +147,26 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 #define TAP_BITS 8 // Bit-shift used to scale delay tap values
 #define MAX_TAP (1 << TAP_BITS) // Maximum Tap value
 
+#define WEIGHT_BITS 10 // Bit-shift used to scale delay-tap weighting values
+#define MAX_WEIGHT (1 << WEIGHT_BITS) // Maximum WEIGHT value
+
+#define REV_TAP_BITS 4 // This should be approx Log2(NUM_REVERB_TAPS)
+#define ATTN_BITS (WEIGHT_BITS - REV_TAP_BITS + 3) // 9. Bit-shift used to attenuate delay-tap weighting values. Currently set to ~1/8 input volume
+#define HALF_ATTN ((S64_T)1 << (ATTN_BITS - 1)) // Half attenuation value. Used for rounding
+
+#define SCALE_FB_BITS (WEIGHT_BITS + MIX_BITS) // Total No. of feedback scaling bits
+#define HALF_FB_SCALE ((S64_T)1 << (SCALE_FB_BITS - 1)) // Half feedback scaling factor. Used for rounding
+
+#define SCALE_XMIX_BITS (ATTN_BITS + MIX_BITS) // Total No. of cross-mix scaling bits
+#define HALF_XMIX_SCALE ((S64_T)1 << (SCALE_XMIX_BITS - 1)) // Half cross-mix scaling factor. Used for rounding
+
 #define SCALE_REV_BITS (SOS_BITS + TAP_BITS) // Total No. of scaling bits
 #define HALF_REV_SCALE ((S64_T)1 << (SCALE_REV_BITS - 1)) // Half scaling factor. Used for rounding
 
 #define TAP_00 157
 #define TAP_01 257 // NB Approx. MAX_TAP value
 #define TAP_02 317
-#define TAP_03 409
+#define TAP_03 409 // Currently Unused
 #define TAP_04 419
 #define TAP_05 479
 #define TAP_06 509
@@ -162,22 +175,42 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 #define TAP_09 673
 #define TAP_10 733
 #define TAP_11 769
-#define TAP_12 827
+#define TAP_12 827 // Currently Unused
 #define TAP_13 829
 #define TAP_14 929
 #define TAP_15 1021
 
-typedef struct TAP_RATIOS_TAG // Structure containing delay tap ratios
+// WARNING: If more taps are used, weights have to be recalculated. Must sum to MAX_WEIGHT
+#define WGHT_00 92
+#define WGHT_01 90 // NB Approx. MAX_TAP value
+#define WGHT_02 84
+#define WGHT_03 0		// Currently Unused
+#define WGHT_04 82
+#define WGHT_05 77
+#define WGHT_06 78
+#define WGHT_07 74
+#define WGHT_08 69
+#define WGHT_09 70
+#define WGHT_10 65
+#define WGHT_11 66
+#define WGHT_12 0   // Currently Unused
+#define WGHT_13 61
+#define WGHT_14 59
+#define WGHT_15 57
+
+typedef struct TAP_DATA_TAG // Structure containing delay tap ratios
 {
-	U32_T taps[NUM_REVERB_TAPS]; // array of delay tap ratios (NB These values are scaled by room size)
-} TAP_RATIOS_S;
+	U32_T ratios[NUM_REVERB_TAPS]; // array of delay tap ratios (NB These values are scaled by room size)
+	U32_T weights[NUM_REVERB_TAPS]; // array of weights for each delay-tap (must sum to MAX_WEIGHT)
+} TAP_DATA_S;
 
 typedef struct REVERB_TAG // Structure containing all reverb data
 {
-	TAP_RATIOS_S ratios; // Structure containing delay tap ratios (NB These values are scaled by room size)
+	TAP_DATA_S tap_data_s; // Structure containing delay tap data
 	MIX_PARAM_S * mix_lvls_ps; // Pointer to structure containing mix-levels
 	S32_T init_done;	// Flag indicating Reverb is initialised
 	S32_T params_set; // Flag indicating Parameters are set
+	S32_T same_mix; // Inverse cross-mix value (MAX_MIX:No Reverb Crosstalk <--> 0:Swap Reverb channels)
 } REVERB_S;
 
 #endif // else __XC__

@@ -162,11 +162,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${XMOS_DOC_PATH}/../target/include/c++/4.2.1/xcore-xmos-elf&quot;' />
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -218,11 +218,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 <inputType id = "com.xmos.cdt.xc.compiler.input.10889587" name="XC Sources" superClass="com.xmos.cdt.xc.compiler.input" />
                                 <option id = "gnu.c.compiler.option.include.paths.71711583" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -275,11 +275,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.xc.compiler.base.31996981" name="com.xmos.cdt.xc.compiler.base" superClass="com.xmos.cdt.xc.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.20411886" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -330,11 +330,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.45727554" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -387,11 +387,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.c.compiler.base.91491901" name="com.xmos.cdt.c.compiler.base" superClass="com.xmos.cdt.c.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.82852781" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -442,11 +442,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.22872686" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -499,11 +499,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.cpp.compiler.base.57457658" name="com.xmos.cdt.cpp.compiler.base" superClass="com.xmos.cdt.cpp.compiler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.71116603" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -554,11 +554,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.47031581" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -611,11 +611,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                             <tool id = "com.xmos.cdt.core.assembler.base.59987097" name="com.xmos.cdt.core.assembler.base" superClass="com.xmos.cdt.core.assembler.base">
                                 <option id = "gnu.c.compiler.option.include.paths.77145608" valueType="includePath" superClass="gnu.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
@@ -666,11 +666,11 @@ targetID="org.eclipse.cdt.build.MakeTargetBuilder">
                                 </option>
                                 <option id = "com.xmos.c.compiler.option.include.paths.23881053" valueType="includePath" superClass="com.xmos.c.compiler.option.include.paths">
                                     <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/objects/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/text}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/info}&quot;' />
-<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
+<listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_short_delay/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/text/.doctrees}&quot;' />
 <listOptionValue builtIn="false" value='&quot;${workspace_loc:/module_dsp_utils/_build/.support/docs_xref/.git/refs/remotes/origin}&quot;' />
