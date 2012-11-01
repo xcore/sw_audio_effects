@@ -72,6 +72,11 @@ to load the application over JTAG (via the XTAG2 and Xtag Adaptor card) into the
    The effect itself cycles through the following 4 filter types: [ LO_PASS, HI_PASS, BAND_PASS, BAND_STOP ]. The currently 
    active effect is displayed in the debug console window.
 
+   * LO_PASS produces audio with no treble (high frequencies)
+   * HI_PASS produces audio with no bass (low frequencies)
+   * BAND_PASS produces audio with no treble or bass, only some mid-range frequencies
+   * BAND_STOP produces audio with some mid-range frequencies removed.
+
     
 Look at the Code
 ++++++++++++++++
@@ -82,8 +87,13 @@ Note well, some combinations may produce overload (clipping distortion), in whic
 
 #. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_slicekit_biquad 
    and double click on the ``main.xc`` file within it. The file will open in the central editor window.
-#. Find the ``main.xc`` file and note that main() runs 2 cores (processes) in parallel. 
-   These are distributed over the tiles available on the Slicekit Core board.
+#. Find the ``main.xc`` file and note that main() runs 2 cores (processes) in parallel connected by one channel.
+   The processes are distributed over the tiles available on the Slicekit Core board.
+
+   * AUDIO_IO_TILE handles the Analogue-to-Digital and Digital-to-Analogue conversion.
+   * c_aud_dsp is a bi-directional channel transferring 32-bit audio samples.
+   * DSP_TILE handles the Digital Signal Processing required to filter the audio samples.
+   
 #. Find the app_global.h header. At the top are the tile definitions.
    Note that on the Slicekit Core Board there are only 2 physical tiles 0 and 1.
    All cores are placed on the same tile (1).
@@ -92,4 +102,7 @@ Note well, some combinations may produce overload (clipping distortion), in whic
    Data from these channels is buffered, and the buffers are passed to the ``use_biquad_filter()`` function for processing.
    ``use_biquad_filter()`` and ``config_biquad_filter()`` can be found in directory ``module_dsp_biquad\src``. 
    Finally, there is a finite-state-machine which switches the output between the dry and effect signals.
+#. The BiQuad algorithm uses 6 multiples/sample.
+   It is estimated that 24 multiples are possible at a sample rate of 48 kHz.
+   This would allow 4 channels of audio to be processed simultaneously.
 

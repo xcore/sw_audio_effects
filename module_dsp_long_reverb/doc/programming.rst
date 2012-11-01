@@ -19,9 +19,9 @@ Note, after initialisation, ``config_sdram_reverb()`` can be called again as req
 
 The default reverb parameters are set in the dsp_sdram_reverb() function in file dsp_sdram_reverb.xc.
 These can be overwritten before calling config_sdram_reverb.
-Currently the room_size is set to 200 metres (Cathedral) e.g.
+Currently the room_size is set to 100 metres (Cathedral) e.g.
 
-def_param_s.room_size = 200;
+def_param_s.room_size = 100;
 
 Note The maximum room-size is limited by the amount of memory used for the delay-line.
 

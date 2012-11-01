@@ -26,8 +26,9 @@ The Reverb-Control code is timing critical,
 The channel I/O had to be hand-crafted to get the application working on 4 channels.
 The Memory-Slice board has to be on the same Tile that is running dsp_sdram_reverb.xc
 
-The Reverb echos are produced using a 4 tap delay-line.
+The reverb echos are produced using a 14 tap delay-line.
+These are weighted and summed, thats 14 MAC's per sample per channel.
 The reverb has configurable mixing parameters.
 There are currently 4, each one requires a multiply. That is 4 multiples/sample/channel.
 For a 48 kHz sample rate, on a 500 MHz processor, the composite Reverb_control/Delay-line requires
-1250 cycles/sample per channel.
+about 2680 cycles/sample per channel.
