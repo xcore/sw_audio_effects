@@ -114,6 +114,8 @@ void buffer_check( // Check if any buffer I/O required
 		write_buffer_to_sdram( c_dsp_sdram ,cntrl_gs.write.mem_adr ,cntrl_gs.write.buf_adr ,cntrl_gs.write.wrd_siz );
 
 		cntrl_gs.write.do_buf = 0; // Clear write flag
+
+		return; // Not enough time to service more than one buffer transfer/sample
 	} // if (cntrl_gs.do_write)
 
 	// Check if any read-buffers are empty
@@ -124,6 +126,8 @@ void buffer_check( // Check if any buffer I/O required
 			read_buffer_from_sdram( c_dsp_sdram ,cntrl_gs.reads[tap_cnt].mem_adr ,cntrl_gs.reads[tap_cnt].buf_adr ,cntrl_gs.reads[tap_cnt].wrd_siz );
 
 			cntrl_gs.reads[tap_cnt].do_buf = 0; // Clear read flag
+
+			return; // Not enough time to service more than one buffer transfer/sample
 		} // if (cntrl_gs.do_read)
 	} //for tap_cnt
 
@@ -145,7 +149,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	CHAN_SET_S fade_set_s;	// Structure containing Cross-fade audio sample-set
 
 	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
-	S32_T fx_len = SWAP_NUM;//	(SWAP_NUM << 1); // time spent in effect state (to ~16 secs)
+	S32_T fx_len = (SWAP_NUM << 1); // time spent in effect state (to ~16 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 

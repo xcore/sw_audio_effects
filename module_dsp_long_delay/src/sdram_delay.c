@@ -30,12 +30,12 @@ void update_common_delays( // Update delays for each channel
 	DELAY_S * delay_ps, // Pointer to structure containing all delay data
 	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
 )
-/* For a zero-latency Delay-line, if an sample-delay of X samples were required,
- * the memory offest to read the output (delayed) sample would be X taps less
- * than the memory offset required to store int input sample.
+/* For a zero-latency Delay-line, if a sample-delay of X samples were required,
+ * the memory offest to read the output (delayed) sample would be X samples less
+ * than the memory offset required to store the input sample.
  *
- * However, due to double-buffering there is a minimum delay equivalent to reading 2 buffers.
- * Therefore, the output sample must be accessed 2 buffers early. (TWIN_SAMPS samples earlier).
+ * However, due to multiple-buffering there is a fixed delay overhead equivalent to reading 'NUM_BUFS' buffers.
+ * Therefore, the output sample must be accessed 'LOCAL_SAMPS' earlier. (Where LOCAL_SAMPS is No. of samples in local multi-buffer)
  */
 {
 	S32_T num_taps = cur_param_ps->num; // Get Number of taps to calculate 
@@ -56,20 +56,20 @@ void update_common_delays( // Update delays for each channel
 
 		// Do checks
 		assert(DELAY_SAMPS > req_delay); // Check buffer is large enough
-		assert(TWIN_SAMPS <= req_delay); // Check delay is larger than twin-buffer (theoretical minimum delay)
+		assert(LOCAL_SAMPS <= req_delay); // Check delay is larger than multi-buffer (theoretical minimum delay)
 
-		delay_off = req_delay - TWIN_SAMPS; // compute delay offset to guarantee requested delay
+		delay_off = req_delay - LOCAL_SAMPS; // compute delay offset to guarantee requested delay
 
 		// Update output offset. NB Add in extra DELAY_SAMPS to prevent negative offsets.
 		delay_ps->out_bufs[tap_cnt].off = (delay_ps->inp_bufs.off + (DELAY_SAMPS - delay_off)) % DELAY_SAMPS;
 
-// printstr("OF= "); printintln( (int)(delay_ps->out_bufs[tap_cnt].off - TWIN_SAMPS)); // MB~
+// printstr("OF= "); printintln( (int)(delay_ps->out_bufs[tap_cnt].off - LOCAL_SAMPS)); // MB~
 	} // for tap_cnt
 
 } // update_common_delays
 /******************************************************************************/
 void init_buffers( // Initialise sample buffers
-	TWIN_BUF_S * twin_ps // Pointer to twin-buffer structure
+	LOCAL_BUF_S * twin_ps // Pointer to twin-buffer structure
 )
 {
 	memset(&(twin_ps->bufs[0]) ,0 ,sizeof(AUD_BUF_S) ); // Clear 1st buffer of pair
@@ -171,7 +171,7 @@ void write_buffer( // Write buffer to SDRAM
 void read_sample_set( // Read sample-set from buffer
 	DELAY_S * delay_ps, // Pointer to structure containing all delay data
 	CNTRL_BUF_S * sdram_read_p, // Pointer to structure controlling SDRAM read
-	TWIN_BUF_S * out_buf_ps, // Pointer to structure containing output buffer data
+	LOCAL_BUF_S * out_buf_ps, // Pointer to structure containing output buffer data
 	CHAN_SET_S * out_set_p // Pointer to delayed output sample-set
 )
 {
@@ -200,7 +200,7 @@ void read_sample_set( // Read sample-set from buffer
 		{
 			read_buffer( delay_ps ,sdram_read_p ,buf_p ,out_buf_ps->off ); // Read new buffer from memory
 
-			out_buf_ps->id = (1 - out_buf_ps->id); // Toggle twin-buffer id	
+			out_buf_ps->id = increment_circular_offset( (out_buf_ps->id + 1) ,NUM_BUFS );
 		} // if (out_buf_ps->read_active)
 
 	} // if (out_buf_ps->off & BUF_MASK)
@@ -210,7 +210,7 @@ void read_sample_set( // Read sample-set from buffer
 void write_sample_set( // Write sample-set to buffer
 	DELAY_S * delay_ps, // Pointer to structure containing all delay data
 	CNTRL_BUF_S * sdram_write_p, // Pointer to structure controlling SDRAM write
-	TWIN_BUF_S * inp_buf_ps, // Pointer to structure containing input buffer data
+	LOCAL_BUF_S * inp_buf_ps, // Pointer to structure containing input buffer data
 	CHAN_SET_S * inp_set_p // Pointer to input sample-set
 )
 {
@@ -236,7 +236,7 @@ void write_sample_set( // Write sample-set to buffer
 		// Write buffer to memory. NB Memory offset is 1 buffer later then Write Offset
 		write_buffer( delay_ps ,sdram_write_p ,buf_p ,inp_buf_ps->off );
 
-		inp_buf_ps->id = (1 - inp_buf_ps->id); // Toggle twin-buffer id	
+		inp_buf_ps->id = increment_circular_offset( (inp_buf_ps->id + 1) ,NUM_BUFS );
 
 	} // if (inp_buf_ps->off & BUF_MASK)
 } // write_sample_set

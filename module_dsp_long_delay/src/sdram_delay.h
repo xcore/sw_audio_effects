@@ -86,7 +86,7 @@ typedef struct CHAN_SET_TAG // Structure for a set of audio samples (one from ea
 	S32_T samps[NUM_DELAY_CHANS]; // set of audio samples (one from each channel)
 } CHAN_SET_S;
 
-typedef struct CNTRL_BUF_TAG // Structure containing data to control double-buffering
+typedef struct CNTRL_BUF_TAG // Structure containing data to control multi-buffering
 {
 	U32_T buf_adr; // Address of buffer
 	U32_T mem_adr; // Address of SDRAM memory
@@ -141,25 +141,27 @@ void use_sdram_delay( // exercise sdram_delay for one input sample. NB Must have
 
 #define BUF_MASK (AUD_BUF_SAMPS - 1)  // Mask used to extract buffer offset from delay offset
 
-#define TWIN_SAMPS (AUD_BUF_SAMPS << 1) // Size of double-buffer
+#define NUM_BUFS 2 // Number of buffers used for each delay-tap
+#define LOCAL_SAMPS (NUM_BUFS * AUD_BUF_SAMPS) // Number of samples held in local multiple-buffer
+#define TWIN_SAMPS (2 * AUD_BUF_SAMPS) // Twice No. of samples in one audio buffer
 
 typedef struct AUD_BUF_TAG // Structure for audio buffer
 {
 	CHAN_SET_S sets[AUD_BUF_SAMPS]; // Array of set-of-samples
 } AUD_BUF_S;
 
-typedef struct TWIN_BUF_TAG // Structure for double-buffering of audio samples
+typedef struct LOCAL_BUF_TAG // Structure for double-buffering of audio samples
 {
-	AUD_BUF_S bufs[2]; // Array of 2 audio buffers
+	AUD_BUF_S bufs[NUM_BUFS]; // Array of 2 audio buffers
 	SAMP_CHAN_T off; // offset into Delay-line
 	S32_T id;					// Id of currently active buffer
 	S32_T read_active; // read-active flag (NB Unused for writes)
-} TWIN_BUF_S;
+} LOCAL_BUF_S;
 
 typedef struct DELAY_TAG // Structure containing all delay data
 {
-	TWIN_BUF_S out_bufs[NUM_DELAY_TAPS]; // Array of structures containing Output Buffer data
-	TWIN_BUF_S inp_bufs; // Structure containing Input Buffer data
+	LOCAL_BUF_S out_bufs[NUM_DELAY_TAPS]; // Array of structures containing Output Buffer data
+	LOCAL_BUF_S inp_bufs; // Structure containing Input Buffer data
 	CNTRL_SDRAM_S * cntrl_p; // Pointer to structure containing data to control SDRAM buffering
 	S32_T tap_num;		// Number of delay taps in use
 	S32_T init_done;	// Flag indicating Delay is initialised
