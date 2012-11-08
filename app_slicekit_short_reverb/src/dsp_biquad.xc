@@ -81,6 +81,7 @@ void process_biquad_audio( // apply biquad to audio stream
 		equal_samps[chan_cnt] = use_biquad_filter( uneq_samps[chan_cnt] ,chan_cnt );
 //	equal_samps[chan_cnt] = uneq_samps[chan_cnt]; // DBG
 	} // for chan_cnt
+
 } // process_biquad_audio
 /******************************************************************************/
 void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of audio samples

@@ -161,7 +161,7 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 			samp_sum = (S64_T)mix_lvls_ps->dry_lvl * (S64_T)inp_samps[chan_cnt]; // Initialise with Dry signal level
 			samp_sum += (S64_T)mix_lvls_ps->fx_lvl * (S64_T)amp_i_samps[chan_cnt]; // Add-in Effect signal level
 			out_samps[chan_cnt] = (S32_T)((samp_sum + (S64_T)MIX_DIV2) >> MIX_BITS);
-//			out_samps[chan_cnt] = amp_i_samps[chan_cnt]; // MB~ Dbg
+			// out_samps[chan_cnt] = amp_i_samps[chan_cnt]; // MB~ Dbg
 		} // for chan_cnt
 	} // else !(0 == reverb_gs.params_set)
 
