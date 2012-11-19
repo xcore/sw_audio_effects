@@ -60,38 +60,6 @@ configPoints =
      resourceUsageFlags = {"noeffect"},
     default = {}
   },
-  Gain = {
-    short   = "Bring-up gain",
-    help    = "Reverb amplification to recover lost signal levels due to processing. Configured in application, and passed to module_dsp_loudness",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_GAIN",
-    type    = "int",
-    resourceUsageFlags = {"noeffect"},
-    default = {}
-  },
-  NumTaps= {
-    short   = "Delay Taps",
-    help    = "Currently 'hard-wired' to 4 delay-taps. Parameterised for passing to module_dsp_long_delay",
-    long    = "",
-    units   = "",
-    define  = "NUM_REV_TAPS",
-    type    = "int",
-    resourceUsageFlags = {"noeffect"},
-    default = 4
-  },
-  DelayTimes= {
-    short   = "Array of delay times",
-    help    = "The delay-times are specified in micro-seconds, depends on room-size",
-    long    = "",
-    units   = "",
-    define  = "us_delays[MAX_TAPS]",
-    type    = "int",
-    min     = 1,
-    max     = 2^31 - 1,
-    resourceUsageFlags = {"noeffect"},
-    default = {}
-  },
   DryLevel= {
     short   = "Volume level for Dry (input) signal",
     help    = "Range of 0..256, 256 being full input level",
