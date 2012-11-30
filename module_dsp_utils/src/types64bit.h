@@ -12,15 +12,23 @@ Description: Type definitions, to allow interworking between different processor
 #ifdef __XC__
 // XC File
 
+/** 8-bit types */
 typedef signed char S8_T;
-typedef signed short S16_T;
-
-/** Signed 32-bit type */
-typedef signed int S32_T;
-
 typedef unsigned char U8_T;
+
+/** 16-bit types */
+typedef signed short S16_T;
 typedef unsigned short U16_T;
+
+/** 32-bit types */
+typedef signed int S32_T;
 typedef unsigned U32_T;
+
+#if (XCC_VERSION_MAJOR >= 1200)
+/** 64-bit types */
+typedef signed long long S64_T;
+typedef unsigned long long U64_T;
+#endif // (XCC_VERSION_MAJOR >= 1200)
 
 // NB 8-Byte Integer  and  Floating-Point  types NOT supported in pre v12.6.0 of XC compiler
 
