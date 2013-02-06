@@ -182,9 +182,9 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         <uri>https://github.com/xcore/sc_util</uri>
     </dependency>
     <dependency repo = "sc_lcd">
-        <githash>9361b0e07e110a248ee876dd5eaff1aaf8ee9e5d</githash>
+        <githash>274204fb45b414df0d69407e97f661712e3a7760</githash>
         <uri>https://github.com/xcore/sc_lcd</uri>
-        <version>1.0.1rc0</version>
+        <version>1.0.2rc0</version>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <docdir>module_dsp_short_delay/doc</docdir>
@@ -212,7 +212,9 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "a0af06317e4b0d2e6a7d853f503988dad42af7ce" version = "1.0.1alpha6" githash = "d5c682e05be9b671037137ec643cfac6501c0c47"></release>
     <release parenthash = "d5c682e05be9b671037137ec643cfac6501c0c47" version = "1.0.1alpha7" githash = "16e65da171a1910bd8f3478a9a1ac44225fd574f"></release>
     <release parenthash = "97e7c22f60c2ba042b29010c53fb886db1e5f8cf" version = "1.0.1rc0" githash = "0822f2039df06e68a6a4c57b28a9477fd8bb19d2"></release>
-    <release parenthash = "1059d5ba0365933c3eec7d3daea03d14b1756a61" version = "1.0.2alpha0"></release>
+    <release parenthash = "1059d5ba0365933c3eec7d3daea03d14b1756a61" version = "1.0.2alpha0" githash = "ecf3918542fc100f6402102727720e4d66c7f185"></release>
+    <release parenthash = "2808b53ac6b8d85213b766d477bad3ad08f19c69" version = "1.0.2alpha1" githash = "4c23fa4a4f50a4cfca19c8b1b3af12f3a8b62257"></release>
+    <release parenthash = "db0da699a0dfed26dd48f08bf660803c9a8ca825" version = "1.0.2alpha2"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
