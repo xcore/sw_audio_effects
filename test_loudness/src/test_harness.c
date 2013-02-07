@@ -64,7 +64,7 @@ void do_test( // Perform test
 	// Loop through test samples
 	for (samp_cnt = 0; samp_cnt<SAMP_LEN; samp_cnt++)
 	{
-		tst_data_sp->outs[samp_cnt] = use_loudness( tst_data_sp->inps[samp_cnt] ,chan_id );
+		tst_data_sp->outs[samp_cnt] = use_loudness( tst_data_sp->inps[samp_cnt] );
 	} //for samp_cnt
 
 } // do_test

@@ -3,7 +3,7 @@
 # get Operating System
 OS = $(shell uname)
 
-CFLAGS = $(OPT) -DNUM_GAIN_CHANS=2
+CFLAGS = $(OPT)
 
 MAIN =	main
 
@@ -14,10 +14,10 @@ TST_NAMS =	$(MAIN) \
 # Base-names of modules for Application under test
 MOD_NAMS =	non_linear_gain \
 
-ROOT_DIR = ../../export.dir/sw_audio_effects
+ROOT_DIR = ..
 TST_DIR =	src
-MOD_DIR =	$(ROOT_DIR)/module_loudness/src
-INC_DIR = $(TST_DIR) $(MOD_DIR) $(ROOT_DIR)/module_utils/src
+MOD_DIR =	$(ROOT_DIR)/module_dsp_loudness/src
+INC_DIR = $(TST_DIR) $(MOD_DIR) $(ROOT_DIR)/module_dsp_utils/src
 
 CFLAGS += -g -Wall
 CFLAGS += $(INC_DIR:%=-I$(PWD)/%)
