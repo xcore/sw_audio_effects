@@ -1,8 +1,8 @@
 /*****************************************************************************\
- * Header:  dsp_sdram_reverb
- * File:    dsp_sdram_reverb.h
+ * Header:  dsp_effects
+ * File:    dsp_effects.h
  *  
- * Description: Definitions, types, and prototypes for dsp_sdram_reverb.xc
+ * Description: Definitions, types, and prototypes for dsp_effects.xc
  *
  * Version: 0v1
  * Build:
@@ -21,8 +21,8 @@
  *
 \*****************************************************************************/
 
-#ifndef _DSP_SDRAM_CONTROL_H_
-#define _DSP_SDRAM_CONTROL_H_
+#ifndef _DSP_EFFECTS_H_
+#define _DSP_EFFECTS_H_
 
 #include <xs1.h>
 #include <print.h>
@@ -41,8 +41,18 @@ typedef enum EFFECT_TAG //
   NUM_EFFECTS	// Handy Value!-)
 } EFFECT_ENUM;
 
+/** Structure containing BiQuad parameters */
+typedef struct DSP_EFFECT_TAG // 
+{
+	PROC_STATE_ENUM fade_state;	// Initialise cross-fade processing state
+	EFFECT_ENUM cur_effect; // Active DSP effect
+	S32_T fx_len; // time spent in effect state (to ~8 secs)
+	S32_T dry_len; // time spent in dry state (~8 secs)
+	S32_T samp_cnt;// Sample counter
+} DSP_EFFECT_S;
+
 /*****************************************************************************/
-void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
+void dsp_effects( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
 	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
 	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
@@ -51,6 +61,6 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 );
 /*****************************************************************************/
 
-#endif // _DSP_SDRAM_CONTROL_H_
+#endif // _DSP_EFFECTS_H_
 /*****************************************************************************/
-// dsp_sdram_reverb.h
+// dsp_effects.h

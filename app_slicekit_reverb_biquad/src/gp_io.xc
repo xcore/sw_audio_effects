@@ -86,7 +86,7 @@ void gp_io( // GPIO coar
 
 	set_port_drive_low( p4_PORT_BUT_1 ); // Set un-used pins low
 
-	printstrln("GPIO Runnig ...");
+//	printstrln("GPIO Running ...");
 
 	// Loop forever
 	while(1)

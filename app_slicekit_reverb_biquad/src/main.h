@@ -28,7 +28,7 @@
 #include "gp_io.h"
 #include "dsp_loudness.h"
 #include "dsp_biquad.h"
-#include "dsp_sdram_reverb.h"
+#include "dsp_effects.h"
 
 #endif // _MAIN_H_
 /******************************************************************************/

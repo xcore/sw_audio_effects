@@ -1,5 +1,5 @@
 /******************************************************************************\
- * File:	dsp_sdram_reverb.xc
+ * File:	dsp_effects.xc
  *  
  * Description: Control coar for Reverb, also handles delay functionality, 
  *	calls Loudness and Equalisation coars
@@ -21,10 +21,21 @@
  *
 \******************************************************************************/
 
-#include "dsp_sdram_reverb.h"
+#include "dsp_effects.h"
 
 // DSP-control coar.
 
+/******************************************************************************/
+void init_dsp_effects( // Initialisation for DSP effects global data structure
+	DSP_EFFECT_S &dspfx_gs // Reference to structure containing data to control DSP Effects
+)
+{
+	dspfx_gs.fade_state	= START; // Initialise processing state
+	dspfx_gs.cur_effect = REVERB; // Initialise audio effect
+	dspfx_gs.fx_len = SWAP_NUM; // time spent in effect state (to ~8 secs)
+	dspfx_gs.dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
+	dspfx_gs.samp_cnt = 0;	// Sample counter
+} // init_sdram_buffers
 /******************************************************************************/
 void init_sdram_buffers( // Initialisation buffers for SDRAM access
 	CNTRL_SDRAM_S &cntrl_gs // Reference to structure containing data to control SDRAM buffering
@@ -155,9 +166,107 @@ EFFECT_ENUM decode_button_state( // Analyse new button state, and return request
 			assert(0 == 1);
 		break; // default
 	} // switch( button_state )
+
+	return 0; // NB Unreachable, but stops warnings!
 } // decode_button_state
 /*****************************************************************************/
-void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
+void check_for_effect_change( // Monitors GPIO buttons to see if effect change requested
+	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
+	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
+)
+{
+	BUTTON_STATES_ENUM button_state; // button state
+
+
+	// Check for new button state
+	select
+	{
+		case c_dsp_gpio :> button_state :
+			dspfx_gs.cur_effect = decode_button_state( button_state ); // Decode requested effect from button state
+
+			// Reset Cross-fade state
+			dspfx_gs.fade_state = EFFECT;
+			dspfx_gs.samp_cnt = 0;
+		break;
+
+		default:
+			// Nothing to do. NB prevents blocking on above case
+		break;
+	} // select
+
+} // check_for_effect_change
+/*****************************************************************************/
+void control_output_mix( // Controls Effect/Dry dynamic Output Mix
+	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
+	CHAN_SET_S &out_set_s,	// Reference to structure containing output audio sample-set
+	CHAN_SET_S &fade_set_s,	// Reference to structure containing Cross-fade audio sample-set
+	CHAN_SET_S &inp_set_s		// Reference to structure containing Input audio sample-set
+)
+{
+	// Determine which output-mix state we are in, and act accordingly!-)
+	switch(dspfx_gs.fade_state)
+	{
+		case EFFECT: // Full Effect (Send Effect to Output)
+			out_set_s = fade_set_s; // No fade so copy to output
+
+			if (dspfx_gs.fx_len < dspfx_gs.samp_cnt)
+ 			{
+				dspfx_gs.samp_cnt = 0; // Reset sample counter
+				dspfx_gs.fade_state = FX2DRY; // Switch to Fade-out Effect
+			} // if (dspfx_gs.fx_len < dspfx_gs.samp_cnt)
+		break; // case EFFECT:
+
+		case FX2DRY: // Fade-Out Effect (Crossfade Effect to Dry)
+			cross_fade_sample( out_set_s.samps ,fade_set_s.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,dspfx_gs.samp_cnt );
+
+			if (FADE_LEN <= dspfx_gs.samp_cnt)
+ 			{
+				dspfx_gs.samp_cnt = 0; // Reset sample counter
+				dspfx_gs.fade_state = DRY_ONLY; // Switch to Dry-Only Processing
+				printstrln("Dry");
+			} // if (SWAP_NUM < dspfx_gs.samp_cnt)
+		break; // case FX2DRY:
+
+		case DRY_ONLY: // No Effect (Send Input to Output)
+			out_set_s = inp_set_s;
+			
+			if (dspfx_gs.dry_len < dspfx_gs.samp_cnt)
+ 			{
+				dspfx_gs.samp_cnt = 0; // Reset sample counter
+				dspfx_gs.fade_state = DRY2FX; // Switch to Fade-In Effect
+			} // if (dspfx_gs.dry_len < dspfx_gs.samp_cnt)
+		break; // case DRY_ONLY:
+
+		case DRY2FX: // Fade-in Effect (Crossfade Dry to Effect)
+			cross_fade_sample( out_set_s.samps ,inp_set_s.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,dspfx_gs.samp_cnt );
+
+			if (FADE_LEN <= dspfx_gs.samp_cnt)
+ 			{
+				dspfx_gs.samp_cnt = 0; // Reset sample counter
+				dspfx_gs.fade_state = EFFECT; // Switch to Effect Processing
+				printstrln("Effect");
+			} // if (SWAP_NUM < dspfx_gs.samp_cnt)
+		break; // case DRY2FX:
+
+		case START: // Fade-in Effect
+			fade_in_sample( out_set_s.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,dspfx_gs.samp_cnt );
+
+			if (FADE_LEN <= dspfx_gs.samp_cnt)
+ 			{
+				dspfx_gs.samp_cnt = 0; // Reset sample counter
+				dspfx_gs.fade_state = EFFECT; // Switch to Effect Processing
+			} // if (SWAP_NUM < dspfx_gs.samp_cnt)
+		break; // case DRY2FX:
+
+		default:
+			assert(0 == 1); // ERROR: Unsupported state
+		break; // default:
+	} // switch(dspfx_gs.fade_state)
+
+	dspfx_gs.samp_cnt++; // Update sample counter
+} // control_output_mix
+/*****************************************************************************/
+void dsp_effects( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
 	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
 	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
@@ -165,7 +274,8 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
 )
 {
-	CNTRL_SDRAM_S cntrl_gs; // Structure containing data to control SDRAM buffering
+	CNTRL_SDRAM_S sdram_gs; // Structure containing data to control SDRAM buffering
+	DSP_EFFECT_S dspfx_gs;  // Structure containing data to control DSP Effects
 	CHAN_SET_S inp_set_s;	// Structure containing Input audio sample-set
 	CHAN_SET_S uneq_set_s;	// Structure containing Unequalised audio sample-set
 	CHAN_SET_S unamp_set_s;	// Structure containing Unamplified audio sample-set
@@ -173,20 +283,15 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	CHAN_SET_S out_set_s;	// Structure containing output audio sample-set
 	CHAN_SET_S fade_set_s;	// Structure containing Cross-fade audio sample-set
 
-	BUTTON_STATES_ENUM button_state; // current GPIO button state
-	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
-	S32_T fx_len = SWAP_NUM; // time spent in effect state (to ~8 secs)
-	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 
-	PROC_STATE_ENUM cur_proc_state	= START; // Initialise processing state
-	EFFECT_ENUM cur_effect = REVERB; // Initialise audio effect
 	// Default Reverb parameters
 	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
 
 
-	init_sdram_buffers( cntrl_gs ); // Initialise buffers for SDRAM access
+	init_sdram_buffers( sdram_gs ); // Initialise buffers for SDRAM access
+	init_dsp_effects( dspfx_gs ); // Initialise DSP Effects
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
@@ -223,7 +328,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		{
 			// Service channels in chronological order
 			c_dsp_eq <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar  
-			c_dsp_eq :> cntrl_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
+			c_dsp_eq :> sdram_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
 		} // for chan_cnt
 
 #pragma loop unroll
@@ -235,137 +340,28 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 
 		} // for chan_cnt
 
-		samp_cnt++; // Update sample counter
+		check_for_effect_change( dspfx_gs ,c_dsp_gpio ); // Checks if GPIO buttons pressed
 
-		// Check for new button state
-		select
+		// Select DSP Effect Processing ...
+		switch( dspfx_gs.cur_effect)
 		{
-			case c_dsp_gpio :> button_state :
-				cur_effect = decode_button_state( button_state ); // Decode requested effect from button state
+			case REVERB:
+				// Call reverb routines
+				use_sdram_reverb( sdram_gs ,inp_set_s ,uneq_set_s ,unamp_set_s ,fade_set_s ,ampli_set_s );
+				buffer_check( sdram_gs ,c_dsp_sdram ); // Check if any buffer I/O required
+			break; // case REVERB
 
-				// trap undefined effect
-				switch( cur_effect )
-				{
-					case REVERB:
-					break; // case REVERB
+			case BIQUAD:
+				// Connect I/O directly to EQ thread
+				uneq_set_s = inp_set_s;
+				fade_set_s = sdram_gs.src_set;
+			break; // case BIQUAD
+		} // switch( dspfx_gs.cur_effect)
 
-					case BIQUAD:
-					break; // case REVERB
-
-					default:	
-						printstr("ERROR: Found following UN-supported Effect number = ");
-						printintln( cur_effect );
-						assert(0 == 1);
-						break; // default
-				} // switch( cur_effect )
-
-				samp_cnt = 0;
-			break;
-
-			default:
-				// Nothing to do. NB prevents blocking on above case
-			break;
-		} // select
-
-
-		// Do DSP Processing ...
-		use_sdram_reverb( cntrl_gs ,inp_set_s ,uneq_set_s ,unamp_set_s ,fade_set_s ,ampli_set_s );
-
-		buffer_check( cntrl_gs ,c_dsp_sdram ); // Check if any buffer I/O required
-
-		// Check current processing State
-		switch(cur_proc_state)
-		{
-			case EFFECT: // Do Effect processing
-				switch( cur_effect )
-				{
-					case REVERB:
-						out_set_s = fade_set_s; // No fade so copy to output
-					break; // case REVERB
-
-					case BIQUAD:
-						out_set_s = cntrl_gs.src_set; // Copy EQ output directly to Cross-fade input
-						uneq_set_s = inp_set_s; // Copy EQ input directly from audio input
-					break; // case REVERB
-				} // switch( cur_effect )
-
-				if (fx_len < samp_cnt)
-	 			{
-					samp_cnt = 0; // Reset sample counter
-					cur_proc_state = FX2DRY; // Switch to Fade-out Effect
-				} // if (fx_len < samp_cnt)
-			break; // case EFFECT:
-
-			case FX2DRY: // Fade-Out Effect
-				switch( cur_effect )
-				{
-					case REVERB:
-						cross_fade_sample( out_set_s.samps ,fade_set_s.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
-					break; // case REVERB
-
-					case BIQUAD:
-						cross_fade_sample( out_set_s.samps ,cntrl_gs.src_set.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
-
-						uneq_set_s = inp_set_s; // Copy EQ input directly from audio input
-					break; // case REVERB
-				} // switch( cur_effect )
-
-
-
-
-
-
-
-
-
-				if (FADE_LEN <= samp_cnt)
-	 			{
-					samp_cnt = 0; // Reset sample counter
-					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
-					printstrln("Dry");
-				} // if (SWAP_NUM < samp_cnt)
-			break; // case FX2DRY:
-
-			case DRY_ONLY: // No Effect (Dry signal only)
-				out_set_s = inp_set_s;
-				
-
-				if (dry_len < samp_cnt)
-	 			{
-					samp_cnt = 0; // Reset sample counter
-					cur_proc_state = DRY2FX; // Switch to Fade-In Effect
-
-				} // if (dry_len < samp_cnt)
-			break; // case DRY_ONLY:
-
-			case DRY2FX: // Fade-in Effect
-				cross_fade_sample( out_set_s.samps ,inp_set_s.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
-
-				if (FADE_LEN <= samp_cnt)
-	 			{
-					samp_cnt = 0; // Reset sample counter
-					cur_proc_state = EFFECT; // Switch to Effect Processing
-					printstrln("Effect");
-				} // if (SWAP_NUM < samp_cnt)
-			break; // case DRY2FX:
-
-			case START: // Fade-in Effect
-				fade_in_sample( out_set_s.samps ,fade_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
-
-				if (FADE_LEN <= samp_cnt)
-	 			{
-					samp_cnt = 0; // Reset sample counter
-					cur_proc_state = EFFECT; // Switch to Effect Processing
-				} // if (SWAP_NUM < samp_cnt)
-			break; // case DRY2FX:
-
-			default:
-				assert(0 == 1); // ERROR: Unsupported state
-			break; // default:
-		} // switch(cur_proc_state)
+		control_output_mix( dspfx_gs ,out_set_s ,fade_set_s ,inp_set_s ); // Select Effect/Dry Output mix
 
 	} // while(1)
 
-} // dsp_sdram_reverb
+} // dsp_effects
 /*****************************************************************************/
-// dsp_sdram_reverb.xc
+// dsp_effects.xc
