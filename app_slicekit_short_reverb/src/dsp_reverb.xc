@@ -89,7 +89,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 
-	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to REVERB On.
+	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to REVERB On.
 	// Default Reverb parameters
 	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_ATTN_MIX ,DEF_CROSS_MIX } 
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };

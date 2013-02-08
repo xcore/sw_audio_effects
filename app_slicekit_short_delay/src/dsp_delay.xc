@@ -74,7 +74,7 @@ void dsp_delay( // Coar that delays a stream of audio samples
 	S32_T chan_cnt; // Channel counter
 	
 	S32_T delay_us; // Delay in micro-secs
-	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
+	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 	DELAY_PARAM_S delay_param_s; // Default Delay-line Configuration
 
 

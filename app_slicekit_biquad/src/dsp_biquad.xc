@@ -56,7 +56,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 
 	FX_NAMES_S filt_names = { {{"Low_Pass"}, {"High_Pass"}, {"Band_Pass"}, {"Band_Stop"}, {"Custom"}} };
 
-	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
+	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 	BIQUAD_PARAM_S cur_param_s = { LO_PASS ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };	// Default BiQuad parameters
 
 

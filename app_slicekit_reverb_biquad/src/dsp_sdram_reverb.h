@@ -29,8 +29,17 @@
 #include "types64bit.h"
 #include "app_global.h"
 #include "common_utils.h"
+#include "gp_io.h"
 #include "sdram_io.h"
 #include "sdram_reverb.h"
+
+/** Different Processing States */
+typedef enum EFFECT_TAG //
+{
+  REVERB = 0,	// Long-Reverb
+  BIQUAD,			// BiQuad Only
+  NUM_EFFECTS	// Handy Value!-)
+} EFFECT_ENUM;
 
 /*****************************************************************************/
 void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions

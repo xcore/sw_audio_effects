@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	gp_io.xc
- *  
+ *
  * Description: GPIO Coar
  *
  * Version: 0v1
@@ -24,72 +24,105 @@
 
 //::Port configuration
 on stdcore[GPIO_TILE]: out port p_led = XS1_PORT_4A;
-on stdcore[GPIO_TILE]: port p_PORT_BUT_1 = XS1_PORT_4C;
+on stdcore[GPIO_TILE]: port p4_PORT_BUT_1 = XS1_PORT_4C; // 4-bit button port: bit_0 & bit_1 encode button state (See gp_io.h)
 
 /*****************************************************************************/
-void gp_io( // Audio I/O coar
+void process_new_buttons_state( // Analyse new button state, and act accordingly!-)
+	chanend c_gpio, // GPIO end of channel between GPIO and DSP coars
+	BUTTON_STATES_ENUM button_state // current button state
+)
+{
+	static unsigned led_select = 0x5; // Preset LED select to 1st and 3rd LED
+
+
+	switch( button_state )
+	{
+		case ALL_BUTTONS : // port value returned when both buttons are pressed
+			printstrln("Both Buttons Pressed");
+		break; // case ALL_BUTTONS
+	
+		case BUTTON_2 : // port value returned for when just button 2 (SW2) pressed
+//			printstrln("Button 2 Pressed");
+
+			p_led <: ~(led_select & 0xc); // Light either 3rd or 4th LED for BUTTON_2
+			led_select = ~led_select ; // Invert LED select
+
+			c_gpio <: button_state; // Send button state to DSP control thread
+		break; // case BUTTON_2 
+	
+		case BUTTON_1 :	// port value returned for when just button 1 (SW1) pressed
+//			printstrln("Button 1 Pressed");
+
+			p_led <: ~(led_select & 0x3); // Light either 1st and 2nd LED for BUTTON_1
+			led_select = ~led_select ; // Invert LED select
+
+			c_gpio <: button_state; // Send button state to DSP control thread
+		break; // case BUTTON_1 
+	
+		case BUTTONS_OFF : // port value returned for when both buttons are pressed
+//			printstrln("No Buttons Pressed");
+		break; // case BUTTONS_OFF 
+
+		default:	
+			printstr("ERROR: Button state NOT supported :");
+			printintln( button_state );
+			assert(0 == 1);
+		break; // default
+	} // switch( button_state )
+} // process_new_buttons_state
+/*****************************************************************************/
+void gp_io( // GPIO coar
 	chanend c_gpio // GPIO end of channel between GPIO and DSP coars
 )
 {
-	unsigned led_value = 0x0E;
-	unsigned button_press_1;
-	unsigned button_press_2;
-	int button = 1;
+	BUTTON_STATES_ENUM early_buttons = BUTTONS_OFF; // preset early buttons state to 'all buttons off'
+	BUTTON_STATES_ENUM late_buttons; // late buttons state
+	int confirmed = 1; // Preset new button state to 'confirmed'
 	unsigned cur_time;
 	timer clk; // timer
 
 
-	p_PORT_BUT_1:> button_press_1;
+	p4_PORT_BUT_1 :> early_buttons;
 
-
-	set_port_drive_low( p_PORT_BUT_1 );
-
-//::Config
-	clk :> cur_time;
-
+	set_port_drive_low( p4_PORT_BUT_1 ); // Set un-used pins low
 
 	printstrln("GPIO Runnig ...");
 
 	// Loop forever
 	while(1)
-	{
-		select
-		{
-			case button => p_PORT_BUT_1 when pinsneq(button_press_1):> button_press_1: //checks if any button is pressed
-				button=0;
-				clk:>cur_time;
-			break; // case button => p_PORT_BUT_1
+	{	/*	The 'confirmed state' is used to handle 'switch bounce':
+		 *	We requires 2 identical button readings, separated by debounce_time (20ms)
+		 *	to confirm a button selection.
+		 */
 
-			 // Waits for 20ms and checks if the same button is pressed or not
-			case !button => clk when timerafter(cur_time + debounce_time) :> void:
-				p_PORT_BUT_1 :> button_press_2;
+		// Check if in confirmed state
+		if (confirmed)
+		{ // Confirmed state
+			// Wait for button values to change, then load them
+			p4_PORT_BUT_1 when pinsneq(early_buttons) :> early_buttons;
+			clk :> cur_time; // Get time when button values changed
 
-				if(button_press_1 == button_press_2)
-				{
-					if(button_press_1 == BUTTON_PRESS_VALUE) //Button 1 is pressed
-					{
-						printstrln("Button 1 Pressed");
-						p_led <: led_value;
-						led_value = led_value << 1;
-						led_value |= 0x01;
-						led_value = led_value & 0x0F;
+			confirmed = 0; // Switch to UN-confirmed state
+		} // if (confirmed)
+		else
+		{ // UN-confirmed state
+			// Wait for 'debounce_time', then re-load button values
+			clk when timerafter(cur_time + debounce_time) :> void;
+			p4_PORT_BUT_1 :> late_buttons;	// Re-load same values again
+			clk :> cur_time; // Get time when button values reloaded
 
-						if(led_value == 15)
-						{
-							led_value = 0x0E;
-						} // if (led_value == 15)
-					} // if (button_press_1 == BUTTON_PRESS_VALUE) //Button 1 is pressed
-				} // if (button_press_1==button_press_2)
+			// Check if early and late values are identical
+			if(early_buttons == late_buttons)
+			{
+				process_new_buttons_state( c_gpio ,late_buttons );
 
-				if(button_press_1 == BUTTON_PRESS_VALUE-1) //Button 2 is pressed
-				{
-					printstrln("Button 2 Pressed");
-				} // if (button_press_1 == BUTTON_PRESS_VALUE-1) //Button 2 is pressed
-
-				button = 1;
-
-			break; // case !button
-		} // select
+				confirmed = 1; // Switch to confirmed state
+			} // if (early_buttons==late_buttons)
+			else
+			{
+				early_buttons = late_buttons; // Update early value, and try again
+			} // if (early_buttons==late_buttons)
+		} // else !(confirmed)
 	} // while(1)
 
 } // gp_io

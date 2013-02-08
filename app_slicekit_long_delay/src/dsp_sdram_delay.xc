@@ -194,7 +194,7 @@ void dsp_sdram_delay( // Coar that delays a stream of audio samples
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 	
-	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
+	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 
 
 	// initialise_sdram( c_dsp_sdram ); // Initialise Memory-Slice. Used for debug

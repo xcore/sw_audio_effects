@@ -47,7 +47,7 @@ typedef struct FIX_POINT_TAG //
 } FIX_POINT_S;
 
 /** Different Processing States */
-typedef enum PROC_STATE_TAG //
+typedef enum PROC_STATE_ETAG //
 {
   EFFECT = 0,			// DSP Effect On
   FX2DRY,					// Fade Effect to Dry
@@ -55,7 +55,7 @@ typedef enum PROC_STATE_TAG //
   DRY2FX,					// Fade Dry to Effect
   START,					// Start-up mode
   NUM_PROC_STATES	// Handy Value!-)
-} PROC_STATE_TYP;
+} PROC_STATE_ENUM;
 
 /** Control Token Codes */
 typedef enum CNTRL_TOK_TAG //

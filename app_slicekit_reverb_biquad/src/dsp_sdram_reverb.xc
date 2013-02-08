@@ -133,6 +133,30 @@ void buffer_check( // Check if any buffer I/O required
 
 } // buffer_check
 /*****************************************************************************/
+EFFECT_ENUM decode_button_state( // Analyse new button state, and return requested audio effect type
+	BUTTON_STATES_ENUM button_state // current button state
+)
+{
+	switch( button_state )
+	{
+		case BUTTON_1 :	// port value returned for when just button 1 (SW1) pressed
+			printstrln("BiQuad");
+			return BIQUAD;
+		break; // case BUTTON_1 
+	
+		case BUTTON_2 : // port value returned for when just button 2 (SW2) pressed
+			printstrln("Reverb");
+			return REVERB;
+		break; // case BUTTON_2 
+	
+		default:	
+			printstr("ERROR: Found following UN-supported Button-state = ");
+			printintln( button_state );
+			assert(0 == 1);
+		break; // default
+	} // switch( button_state )
+} // decode_button_state
+/*****************************************************************************/
 void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
 	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
@@ -149,12 +173,14 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	CHAN_SET_S out_set_s;	// Structure containing output audio sample-set
 	CHAN_SET_S fade_set_s;	// Structure containing Cross-fade audio sample-set
 
+	BUTTON_STATES_ENUM button_state; // current GPIO button state
 	S32_T dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
 	S32_T fx_len = SWAP_NUM; // time spent in effect state (to ~8 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 
-	PROC_STATE_TYP cur_proc_state	= START; // Initialise processing state
+	PROC_STATE_ENUM cur_proc_state	= START; // Initialise processing state
+	EFFECT_ENUM cur_effect = REVERB; // Initialise audio effect
 	// Default Reverb parameters
 	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
@@ -211,6 +237,37 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 
 		samp_cnt++; // Update sample counter
 
+		// Check for new button state
+		select
+		{
+			case c_dsp_gpio :> button_state :
+				cur_effect = decode_button_state( button_state ); // Decode requested effect from button state
+
+				// trap undefined effect
+				switch( cur_effect )
+				{
+					case REVERB:
+					break; // case REVERB
+
+					case BIQUAD:
+					break; // case REVERB
+
+					default:	
+						printstr("ERROR: Found following UN-supported Effect number = ");
+						printintln( cur_effect );
+						assert(0 == 1);
+						break; // default
+				} // switch( cur_effect )
+
+				samp_cnt = 0;
+			break;
+
+			default:
+				// Nothing to do. NB prevents blocking on above case
+			break;
+		} // select
+
+
 		// Do DSP Processing ...
 		use_sdram_reverb( cntrl_gs ,inp_set_s ,uneq_set_s ,unamp_set_s ,fade_set_s ,ampli_set_s );
 
@@ -220,18 +277,46 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		switch(cur_proc_state)
 		{
 			case EFFECT: // Do Effect processing
-				out_set_s = fade_set_s; // No fade to copy to output
+				switch( cur_effect )
+				{
+					case REVERB:
+						out_set_s = fade_set_s; // No fade so copy to output
+					break; // case REVERB
+
+					case BIQUAD:
+						out_set_s = cntrl_gs.src_set; // Copy EQ output directly to Cross-fade input
+						uneq_set_s = inp_set_s; // Copy EQ input directly from audio input
+					break; // case REVERB
+				} // switch( cur_effect )
 
 				if (fx_len < samp_cnt)
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = FX2DRY; // Switch to Fade-out Effect
-//					cur_proc_state = EFFECT; // MB~ Dbg
 				} // if (fx_len < samp_cnt)
 			break; // case EFFECT:
 
 			case FX2DRY: // Fade-Out Effect
-				cross_fade_sample( out_set_s.samps ,fade_set_s.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
+				switch( cur_effect )
+				{
+					case REVERB:
+						cross_fade_sample( out_set_s.samps ,fade_set_s.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
+					break; // case REVERB
+
+					case BIQUAD:
+						cross_fade_sample( out_set_s.samps ,cntrl_gs.src_set.samps ,inp_set_s.samps ,NUM_REVERB_CHANS ,samp_cnt );
+
+						uneq_set_s = inp_set_s; // Copy EQ input directly from audio input
+					break; // case REVERB
+				} // switch( cur_effect )
+
+
+
+
+
+
+
+
 
 				if (FADE_LEN <= samp_cnt)
 	 			{
@@ -243,6 +328,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 
 			case DRY_ONLY: // No Effect (Dry signal only)
 				out_set_s = inp_set_s;
+				
 
 				if (dry_len < samp_cnt)
 	 			{

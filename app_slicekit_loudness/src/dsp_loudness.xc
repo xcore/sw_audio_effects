@@ -53,7 +53,7 @@ void dsp_loudness( // Coar that applies non-linear gain control to stream of aud
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 	
-	PROC_STATE_TYP cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
+	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 	GAIN_PARAM_S def_param_s = { DEF_GAIN }; // Default gain parameters
 
 

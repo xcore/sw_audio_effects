@@ -24,6 +24,8 @@
 #ifndef _GP_IO_H_
 #define _GP_IO_H_
 
+#include <assert.h>
+
 #include <platform.h>
 #include<xs1.h>
 #include<print.h>
@@ -33,7 +35,26 @@
 
 //MB~ #define I2C_NO_REGISTER_ADDRESS 1
 #define debounce_time XS1_TIMER_HZ/50
-#define BUTTON_PRESS_VALUE 2
+
+/*	Different Button States
+ *	The 'button port' on the GPIO slice returns values depending on which buttons are pressed
+ *	The button states are 'active off' as shown by the port values in the following table
+ *
+ *          | BUTTON_2 (SW1)
+ * BUTTON_1 | --------------
+ *   (SW1)  |   OFF    ON
+ * ---------|   ---    --
+ *   OFF    |    3      1
+ *    ON    |    2      0
+ */
+typedef enum BUTTON_STATES_TAG //
+{
+	ALL_BUTTONS = 0,	// port value returned when both buttons are pressed
+	BUTTON_2,					// port value returned for when just button 2 (SW2) pressed
+	BUTTON_1,					// port value returned for when just button 1 (SW1) pressed
+	BUTTONS_OFF,			// port value returned for when both buttons are pressed
+  NUM_BUTTON_STATES   // Handy Value!-)
+} BUTTON_STATES_ENUM;
 
 /******************************************************************************/
 void gp_io(
