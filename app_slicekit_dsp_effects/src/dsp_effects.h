@@ -24,7 +24,9 @@
 #ifndef _DSP_EFFECTS_H_
 #define _DSP_EFFECTS_H_
 
+
 #include <xs1.h>
+#include <safestring.h>
 #include <print.h>
 #include "types64bit.h"
 #include "app_global.h"
@@ -32,6 +34,8 @@
 #include "gp_io.h"
 #include "sdram_io.h"
 #include "sdram_reverb.h"
+
+#define STR_LEN 128 // String length
 
 /** Different Processing States */
 typedef enum EFFECT_TAG //
@@ -41,9 +45,20 @@ typedef enum EFFECT_TAG //
   NUM_EFFECTS	// Handy Value!-)
 } EFFECT_ENUM;
 
+// String type
+typedef struct STR_TAG // 
+{
+	char str[STR_LEN]; // Array of string characters
+} STR_S;
+
 /** Structure containing BiQuad parameters */
 typedef struct DSP_EFFECT_TAG // 
 {
+	REVERB_PARAM_S reverb_params;	// Reverb Configuration parameters
+	BIQUAD_PARAM_S biquad_params_rvrb;	// BiQuad Configuration parameters when used in reverb
+	BIQUAD_PARAM_S biquad_params_solo;	// BiQuad Configuration parameters when used in isolation
+	GAIN_PARAM_S gain_params;			// Loudness Configuration parameters
+	STR_S fx_names[NUM_EFFECTS]; // Array of effects names
 	PROC_STATE_ENUM fade_state;	// Initialise cross-fade processing state
 	EFFECT_ENUM cur_effect; // Active DSP effect
 	S32_T fx_len; // time spent in effect state (to ~8 secs)

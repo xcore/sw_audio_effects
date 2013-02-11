@@ -30,11 +30,37 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 	DSP_EFFECT_S &dspfx_gs // Reference to structure containing data to control DSP Effects
 )
 {
+	// Default BiQuad Configuration (Reverb)
+	BIQUAD_PARAM_S def_biquad_param_s = { DEF_FILT_MODE ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };
+
+	// Default Reverb Configuration parameters
+	REVERB_PARAM_S def_reverb_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
+																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_REVERB_GAIN };
+
+	// Default Loudness Configuration parameters. NB Currently Unused.
+	GAIN_PARAM_S def_gain_param_s = { DEF_GAIN };
+
+	// Assign default configuration parameters
+	dspfx_gs.gain_params = def_gain_param_s;
+	dspfx_gs.biquad_params_rvrb = def_biquad_param_s;
+	dspfx_gs.biquad_params_solo = def_biquad_param_s; // NB Reverb settings will be edited below
+	dspfx_gs.reverb_params = def_reverb_param_s;
+
+	// Fine-tune bi-quad parameters for use in isolation
+	dspfx_gs.biquad_params_solo.sig_freq = (DEF_SIG_FREQ >> 1); // NB 1000
+	dspfx_gs.biquad_params_solo.qual = (DEF_QUAL_FACT >> 1); // NB 128
+
+	// Assing Effect names
+	safestrcpy( dspfx_gs.fx_names[REVERB].str ,"Reverb" );
+	safestrcpy( dspfx_gs.fx_names[BIQUAD].str ,"BiQuad" );
+
 	dspfx_gs.fade_state	= START; // Initialise processing state
 	dspfx_gs.cur_effect = REVERB; // Initialise audio effect
 	dspfx_gs.fx_len = SWAP_NUM; // time spent in effect state (to ~8 secs)
 	dspfx_gs.dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
 	dspfx_gs.samp_cnt = 0;	// Sample counter
+
+	printstrln( dspfx_gs.fx_names[dspfx_gs.cur_effect].str );
 } // init_sdram_buffers
 /******************************************************************************/
 void init_sdram_buffers( // Initialisation buffers for SDRAM access
@@ -66,48 +92,36 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 } // init_sdram_buffers
 /*****************************************************************************/
 void send_biquad_config( // Send BiQuad filter configuration data
-	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
-	REVERB_PARAM_S &reverb_param_s // Reference to structure containing reverb parameters
+	BIQUAD_PARAM_S &cur_biquad_param_s, // Reference to structure containing biquad parameters
+	streaming chanend c_dsp_eq // Channel connecting to Equalisation coar (bi-directional)
 )
 {
-	// Default BiQuad Configuration
-	BIQUAD_PARAM_S biquad_param_s = { DEF_FILT_MODE ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };
-
-
-	biquad_param_s.samp_freq = reverb_param_s.samp_freq; // Assign requested sample frequency
-	biquad_param_s.sig_freq = reverb_param_s.sig_freq; // Assign requested significant (lo-pass) frequency
-
 	soutct( c_dsp_eq ,CFG_BIQUAD ); // Signal BiQuad configuration data transmission
 
-	c_dsp_eq <: biquad_param_s; // Send BiQuad filter configuration data
+	c_dsp_eq <: cur_biquad_param_s; // Send BiQuad filter configuration data
 } // send_biquad_config
 /*****************************************************************************/
 void send_loudness_config( // Send Loudness configuration data
-	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
-	REVERB_PARAM_S &reverb_param_s // Reference to structure containing reverb parameters
+	GAIN_PARAM_S &cur_gain_param_s, // Reference to current gain configuration parameters
+	streaming chanend c_dsp_gain // Channel connecting to Loudness coar (bi-directional)
 )
 {
-	GAIN_PARAM_S gain_param_s = { DEF_GAIN }; // Default Loudness Configuration
-
-
-	gain_param_s.gain = reverb_param_s.gain; // Assign requested maximum gain
-
 	soutct( c_dsp_gain ,CFG_GAIN ); // Signal Gain configuration data transmission
 
-	c_dsp_gain <: gain_param_s; // Send Loudness configuration data
+	c_dsp_gain <: cur_gain_param_s; // Send Loudness configuration data
 } // send_loudness_config
 /*****************************************************************************/
 void sync_reverb_config( // Synchronise a reverb configuration (with other coars)
+	DSP_EFFECT_S &dspfx_gs, // Reference to structure containing data to control DSP Effects
 	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
-	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
-	REVERB_PARAM_S &reverb_param_s // Structure containing Reverb configuration parameters
+	streaming chanend c_dsp_gain // Channel connecting to Loudness coar (bi-directional)
 )
 {
 	// Send data to other coars ...
-	send_biquad_config( c_dsp_eq ,reverb_param_s );		// Send BiQuad filter configuration data
-	send_loudness_config( c_dsp_gain ,reverb_param_s );	// Send Gain-shaping configuration data
+	send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq );		// Send BiQuad filter configuration data
+	send_loudness_config( dspfx_gs.gain_params ,c_dsp_gain );	// Send Gain-shaping configuration data
 
-	config_sdram_reverb( reverb_param_s ); // Configure remaining reverb parameters in this coar (Delay-line)
+	config_sdram_reverb( dspfx_gs.reverb_params ); // Configure remaining reverb parameters in this coar (Delay-line)
 
 } // sync_reverb_config
 /******************************************************************************/
@@ -151,12 +165,10 @@ EFFECT_ENUM decode_button_state( // Analyse new button state, and return request
 	switch( button_state )
 	{
 		case BUTTON_1 :	// port value returned for when just button 1 (SW1) pressed
-			printstrln("BiQuad");
 			return BIQUAD;
 		break; // case BUTTON_1 
 	
 		case BUTTON_2 : // port value returned for when just button 2 (SW2) pressed
-			printstrln("Reverb");
 			return REVERB;
 		break; // case BUTTON_2 
 	
@@ -172,6 +184,7 @@ EFFECT_ENUM decode_button_state( // Analyse new button state, and return request
 /*****************************************************************************/
 void check_for_effect_change( // Monitors GPIO buttons to see if effect change requested
 	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
+	streaming chanend c_dsp_eq ,// Channel connecting to Equalisation coar (bi-directional)
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
 )
 {
@@ -187,11 +200,29 @@ void check_for_effect_change( // Monitors GPIO buttons to see if effect change r
 			// Reset Cross-fade state
 			dspfx_gs.fade_state = EFFECT;
 			dspfx_gs.samp_cnt = 0;
-		break;
+
+			printstrln( dspfx_gs.fx_names[dspfx_gs.cur_effect].str );
+
+			// Re-configure for new effect
+			switch( dspfx_gs.cur_effect)
+			{
+				case REVERB:
+					// Configure Reverb parameters. NB Currently only BiQuad needs re-configuring
+
+					send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq ); // Send BiQuad config. data for reverb
+				break; // case REVERB
+	
+				case BIQUAD:
+					// Configure BiQuad parameters. NB Currently only BiQuad needs re-configuring
+
+					send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq ); // Send BiQuad config. data for solo use
+				break; // case BIQUAD
+			} // switch( dspfx_gs.cur_effect)
+		break; // case c_dsp_gpio :> button_state
 
 		default:
 			// Nothing to do. NB prevents blocking on above case
-		break;
+		break; // default
 	} // select
 
 } // check_for_effect_change
@@ -244,7 +275,7 @@ void control_output_mix( // Controls Effect/Dry dynamic Output Mix
  			{
 				dspfx_gs.samp_cnt = 0; // Reset sample counter
 				dspfx_gs.fade_state = EFFECT; // Switch to Effect Processing
-				printstrln("Effect");
+				printstrln( dspfx_gs.fx_names[dspfx_gs.cur_effect].str );
 			} // if (SWAP_NUM < dspfx_gs.samp_cnt)
 		break; // case DRY2FX:
 
@@ -304,12 +335,7 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 	fade_set_s = inp_set_s;
 	out_set_s = inp_set_s;
 
-	// Synchronise a reverb configuration (with other coars) using default parameters
-	def_param_s.gain = 8; // Bring-up gain
-	def_param_s.room_size = 100; // Fine-tune Room-size
-
-	sync_reverb_config( c_dsp_eq ,c_dsp_gain ,def_param_s );
-	printstrln("Effect");
+	sync_reverb_config( dspfx_gs ,c_dsp_eq ,c_dsp_gain );
 
 	// Loop forever
 	while(1)
@@ -340,7 +366,7 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 
 		} // for chan_cnt
 
-		check_for_effect_change( dspfx_gs ,c_dsp_gpio ); // Checks if GPIO buttons pressed
+		check_for_effect_change( dspfx_gs ,c_dsp_eq ,c_dsp_gpio ); // Checks if GPIO buttons pressed
 
 		// Select DSP Effect Processing ...
 		switch( dspfx_gs.cur_effect)

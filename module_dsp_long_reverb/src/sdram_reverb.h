@@ -39,7 +39,10 @@
 #endif // NUM_REVERB_TAPS
 
 /**  Default room-size for reverb (in meters): 1 */
-#define DEF_ROOM_SIZE 101 //
+#define DEF_ROOM_SIZE 100 //
+
+/**  Default bring-up gain for reverb */
+#define DEF_REVERB_GAIN 8 //
 
 /** Bit-Shift used in Mixing: 8 */
 #define MIX_BITS 8 //

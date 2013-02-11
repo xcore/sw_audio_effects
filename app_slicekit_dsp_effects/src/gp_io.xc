@@ -53,7 +53,7 @@ void process_new_buttons_state( // Analyse new button state, and act accordingly
 //			printstrln("Button 2 Pressed");
 
 			p_led <: NO_LEDS; // Switch off all LED's during transition
-			gpio_gs.leds = LED_3; // Light Last LED for BUTTON_2 (when button released)
+			gpio_gs.leds = LED_3; // Store request to 'Light Last LED for BUTTON_2'
 
 			c_gpio <: gpio_gs.buttons; // Send button state to DSP control thread
 		break; // case BUTTON_2 
@@ -62,7 +62,7 @@ void process_new_buttons_state( // Analyse new button state, and act accordingly
 //			printstrln("Button 1 Pressed");
 
 			p_led <: NO_LEDS; // Switch off all LED's during transition
-			gpio_gs.leds = LED_0; // Light 1st LED for BUTTON_1 (when button released)
+			gpio_gs.leds = LED_0; // Store request to 'Light 1st LED for BUTTON_1'
 
 			c_gpio <: gpio_gs.buttons; // Send button state to DSP control thread
 		break; // case BUTTON_1 
