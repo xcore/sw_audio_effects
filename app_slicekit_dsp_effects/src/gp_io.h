@@ -36,6 +36,19 @@
 //MB~ #define I2C_NO_REGISTER_ADDRESS 1
 #define debounce_time XS1_TIMER_HZ/50
 
+
+// Different LED states: NB LED Selects are active low
+typedef enum LED_STATES_TAG //
+{
+	NO_LEDS = 0xF, // All LED's Off
+	LED_0 = 0xE,
+	LED_1 = 0xD,
+	LED_2 = 0xB,
+	LED_3 = 0x7,
+	ALL_LEDS = 0x0,  // All LED's On
+  NUM_LED_STATES   // Handy Value!-)
+} LED_STATES_ENUM;
+
 /*	Different Button States
  *	The 'button port' on the GPIO slice returns values depending on which buttons are pressed
  *	The button states are 'active off' as shown by the port values in the following table
@@ -55,6 +68,14 @@ typedef enum BUTTON_STATES_TAG //
 	BUTTONS_OFF,			// port value returned for when both buttons are pressed
   NUM_BUTTON_STATES   // Handy Value!-)
 } BUTTON_STATES_ENUM;
+
+/** Structure containing GPIO parameters */
+typedef struct GPIO_TAG // 
+{
+	BUTTON_STATES_ENUM buttons; // current state of buttons
+	LED_STATES_ENUM leds; // current state of LED's
+} GPIO_S;
+
 
 /******************************************************************************/
 void gp_io(
