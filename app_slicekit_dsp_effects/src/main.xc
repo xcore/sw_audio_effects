@@ -44,7 +44,6 @@ int main (void)
 	streaming chan c_dsp_gain; // Channel between DSP-control and Loudness coars
   chan c_dsp_sdram; // Channel between DSP coar and SDRAM coar 
   chan c_dsp_gpio; // Channel between DSP coar and GPIO coar
-//	S32_T biquad_cnt; // BiQuada filter instance counter
 
 
 	par
@@ -59,10 +58,14 @@ int main (void)
 
     on tile[GPIO_TILE]: gp_io( c_dsp_gpio ); // GPIO coar
 
+		on tile[BIQUAD0_TILE]: dsp_biquad( c_dsp_eq[0] ); // BiQuad Equalisation coar
+		on tile[BIQUAD1_TILE]: dsp_biquad( c_dsp_eq[1] ); // BiQuad Equalisation coar
+#ifdef MB
 		par (int biquad_cnt=0; biquad_cnt<NUM_BIQUADS; biquad_cnt++)
 		{
 			on tile[BIQUAD_TILE]: dsp_biquad( c_dsp_eq[biquad_cnt] ); // BiQuad Equalisation coar
 		} // par biquad_cnt
+#endif //MB~
 	} // par
 
 	return 0;

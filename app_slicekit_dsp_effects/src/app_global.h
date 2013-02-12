@@ -30,7 +30,8 @@
 // Assign Processing Coars to Tiles
 #define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
 #define	MEM_TILE 1	// Tile connected to Memory Slice board
-#define	BIQUAD_TILE 0	// Tile used by BiQuad filter functions
+#define	BIQUAD0_TILE 0	// Tile used by 1st BiQuad filter functions
+#define	BIQUAD1_TILE 1	// Tile used by 2nd BiQuad filter functions
 #define	GAIN_TILE 0	// Tile used by gain-shaping functions
 #define	GPIO_TILE 0	// Tile used by GPIO functions
 #define	DSP_TILE MEM_TILE	// Tile used by remaining DSP functions

@@ -33,8 +33,8 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 	// Default BiQuad Configuration (Reverb)
 	BIQUAD_PARAM_S def_biquad_param_s = { DEF_FILT_MODE ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };
 	BIQUAD_PARAM_S lo_pass_param_s = { LO_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ >> 1) ,DEF_QUAL_FACT };
-	BIQUAD_PARAM_S hi_pass_param_s = { HI_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ << 1) ,(DEF_QUAL_FACT << 2) };
-	BIQUAD_PARAM_S band_pass_param_s = { BAND_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ >> 3) ,(DEF_QUAL_FACT >> 1) };
+//	BIQUAD_PARAM_S hi_pass_param_s = { HI_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ << 1) ,(DEF_QUAL_FACT << 2) };
+//	BIQUAD_PARAM_S band_pass_param_s = { BAND_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ >> 3) ,(DEF_QUAL_FACT >> 1) }; // MB~Clips
 
 	// Default Reverb Configuration parameters
 	REVERB_PARAM_S def_reverb_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
@@ -44,10 +44,11 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 	GAIN_PARAM_S def_gain_param_s = { DEF_GAIN };
 
 	// Assign default configuration parameters
-	dspfx_gs.gain_params = def_gain_param_s;
-	dspfx_gs.biquad_params_rvrb = def_biquad_param_s;
-	dspfx_gs.biquad_params_solo = band_pass_param_s;
 	dspfx_gs.reverb_params = def_reverb_param_s;
+	dspfx_gs.gain_params = def_gain_param_s;
+
+	dspfx_gs.biquad_params_rvrb = def_biquad_param_s;
+	dspfx_gs.biquad_params_solo = lo_pass_param_s;
 
 	// Assing Effect names
 	safestrcpy( dspfx_gs.fx_names[REVERB].str ,"Reverb" );
@@ -121,8 +122,8 @@ void config_dsp_effects( // Synchronise a reverb configuration (with other coars
 	assert( NUM_BIQUADS > 1 ); // This configuration requires 2 BiQuad threads
 
 	// Send data to other coars ...
-	send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq[0] );		// Send BiQuad filter configuration data
-	send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq[1] );		// Send BiQuad filter configuration data
+	send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq[0] );		// Send BiQuad filter configuration data for solo effect
+	send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq[1] );		// Send BiQuad filter configuration data for reverb effect
 	send_loudness_config( dspfx_gs.gain_params ,c_dsp_gain );	// Send Gain-shaping configuration data
 
 	config_sdram_reverb( dspfx_gs.reverb_params ); // Configure remaining reverb parameters in this coar (Delay-line)
@@ -186,77 +187,8 @@ EFFECT_ENUM decode_button_state( // Analyse new button state, and return request
 	return 0; // NB Unreachable, but stops warnings!
 } // decode_button_state
 /*****************************************************************************/
-void do_different_effect( // Updates states for when different effect requested
-	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
-	streaming chanend c_dsp_eq	// Channel connecting to Equalisation coar (bi-directional)
-)
-{
-	// Re-configure for new effect
-	switch( dspfx_gs.new_effect )
-	{
-		case REVERB:
-			dspfx_gs.fade_state = BQ2REV_F; // Fade from BiQuad to Reverb state
-
-			// Configure Reverb parameters. NB Currently only BiQuad needs re-configuring
-			send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq ); // Send BiQuad config. data for reverb
-		break; // case REVERB
-
-		case BIQUAD:
-			dspfx_gs.fade_state = REV2BQ_F; // Fade from Reverb to BiQuad state
-
-			// Configure BiQuad parameters. NB Currently only BiQuad needs re-configuring
-			send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq ); // Send BiQuad config. data for solo use
-		break; // case BIQUAD
-	} // switch( dspfx_gs.new_effect)
-} // do_different_effect
-/*****************************************************************************/
-void do_same_effect( // Updates states for when same effect requested
-	DSP_EFFECT_S &dspfx_gs  // Reference to structure containing data to control DSP Effects
-)
-{ // Toggle 'Fade-state' of current effect
-	if (EFFECT_F == dspfx_gs.fade_state)
-	{ // Currently in EFFECT_F state
-		dspfx_gs.fade_state = FX2DRY_F;  // Fade-out effect
-	} // if ((EFFECT_F != dspfx_gs.fade_state) && (FX2DRY_F != dspfx_gs.fade_state))
-	else
-	{ // Currently in DRY state
-		dspfx_gs.fade_state = DRY2FX_F; // Fade-In Effect
-	} // else !((EFFECT_F != dspfx_gs.fade_state) && (FX2DRY_F != dspfx_gs.fade_state))
-} // do_same_effect
-/*****************************************************************************/
-void service_effect_change( // Attempts to service new effect request
-	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
-	streaming chanend c_dsp_eq	// Channel connecting to Equalisation coar (bi-directional)
-)
-/*	The new effect request will only be serviced if NOT doing a cross-fade.
- *	This helps reduce the number of states to consider, and reduces clicks when switching between effects.
- *	When switching effects modes a cross-fade is always used to prevent clicks.
- */
-{
-	// Check for cross-fade
-	if (!dspfx_gs.fade_on)
-	{
-		// Check if Different Effect requested
-		if (dspfx_gs.new_effect !=  dspfx_gs.cur_effect)
-		{ 
-			dspfx_gs.cur_effect = dspfx_gs.new_effect; // Update current effect
-	
-			do_different_effect( dspfx_gs ,c_dsp_eq ); 
-		} // if (dspfx_gs.new_effect !=  dspfx_gs.prev_effect)
-		else
-		{
-			do_same_effect( dspfx_gs ); 
-		} // else !(dspfx_gs.new_effect !=  dspfx_gs.prev_effect)
-	
-		dspfx_gs.samp_cnt = 0; // Restart sample count for cross-fade
-		dspfx_gs.fade_on = 1; // Set Cross-fade flag
-		dspfx_gs.new_effect = NO_FX; // Clear new effect request
-	} // if (!dspfx_gs.fade_on)
-} // service_effect_change
-/*****************************************************************************/
 void check_for_effect_change( // Monitors GPIO buttons to see if effect change requested
 	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
-	streaming chanend c_dsp_eq,	// Channel connecting to Equalisation coar (bi-directional)
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
 )
 {
@@ -278,6 +210,77 @@ void check_for_effect_change( // Monitors GPIO buttons to see if effect change r
 
 } // check_for_effect_change
 /*****************************************************************************/
+void do_different_effect( // Updates states for when different effect requested
+	DSP_EFFECT_S &dspfx_gs  // Reference to structure containing data to control DSP Effects
+)
+{
+	// Re-configure for new effect
+	switch( dspfx_gs.new_effect )
+	{
+		case REVERB:
+			dspfx_gs.fade_state = BQ2REV_F; // Fade from BiQuad to Reverb state
+		break; // case REVERB
+
+		case BIQUAD:
+			dspfx_gs.fade_state = REV2BQ_F; // Fade from Reverb to BiQuad state
+		break; // case BIQUAD
+
+		default :
+			assert( 0 == 1); // Unsupported Effect Type
+		break; // default
+	} // switch( dspfx_gs.new_effect)
+} // do_different_effect
+/*****************************************************************************/
+void do_same_effect( // Updates states for when same effect requested
+	DSP_EFFECT_S &dspfx_gs  // Reference to structure containing data to control DSP Effects
+)
+// Toggle 'Fade-state' of current effect
+{
+	switch( dspfx_gs.fade_state)
+	{
+		case EFFECT_F : // Currently in EFFECT_F state
+			dspfx_gs.fade_state = FX2DRY_F;  // Fade-out effect
+		break; // case EFFECT_F
+
+		case DRY_ONLY_F : // Currently in DRY state
+			dspfx_gs.fade_state = DRY2FX_F; // Fade-In Effect
+		break; // case DRY_ONLY_F 
+
+		default :
+			assert( 0 == 1); // Unsupported Effect State
+		break; // default
+	} // switch( dspfx_gs.new_effect)
+} // do_same_effect
+/*****************************************************************************/
+void service_effect_change( // Attempts to service new effect request
+	DSP_EFFECT_S &dspfx_gs  // Reference to structure containing data to control DSP Effects
+)
+/*	The new effect request will only be serviced if NOT doing a cross-fade.
+ *	This helps reduce the number of states to consider, and reduces clicks when switching between effects.
+ *	When switching effects modes a cross-fade is always used to prevent clicks.
+ */
+{
+	// Check for cross-fade
+	if (!dspfx_gs.fade_on)
+	{
+		// Check if Different Effect requested
+		if (dspfx_gs.new_effect !=  dspfx_gs.cur_effect)
+		{ 
+			dspfx_gs.cur_effect = dspfx_gs.new_effect; // Update current effect
+	
+			do_different_effect( dspfx_gs ); 
+		} // if (dspfx_gs.new_effect !=  dspfx_gs.prev_effect)
+		else
+		{
+			do_same_effect( dspfx_gs ); 
+		} // else !(dspfx_gs.new_effect !=  dspfx_gs.prev_effect)
+	
+		dspfx_gs.samp_cnt = 0; // Restart sample count for cross-fade
+		dspfx_gs.fade_on = 1; // Set Cross-fade flag
+		dspfx_gs.new_effect = NO_FX; // Clear new effect request
+	} // if (!dspfx_gs.fade_on)
+} // service_effect_change
+/*****************************************************************************/
 void control_output_mix( // Controls Effect/Dry dynamic Output Mix
 	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
 	CHAN_SET_S &out_set_s,	// Reference to structure containing output audio sample-set
@@ -289,8 +292,17 @@ void control_output_mix( // Controls Effect/Dry dynamic Output Mix
 	// Determine which output-mix state we are in, and act accordingly!-)
 	switch(dspfx_gs.fade_state)
 	{
-		case EFFECT_F: // Full Effect (Send Effect to Output)
-			out_set_s = reverb_set_s; // No fade so copy to output
+		case EFFECT_F: // Full Effect (Send Effect to Output
+			switch( dspfx_gs.cur_effect )
+			{
+				case REVERB:
+					out_set_s = reverb_set_s; // No fade so copy to output
+				break; // case REVERB
+		
+				case BIQUAD:
+					out_set_s = biquad_set_s; // No fade so copy to output
+				break; // case BIQUAD
+			} // switch( dspfx_gs.new_effect)
 
 			if (dspfx_gs.fx_len < dspfx_gs.samp_cnt)
  			{
@@ -411,6 +423,7 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 	unamp_set_s = inp_set_s;
 	ampli_set_s = inp_set_s;
 	reverb_set_s = inp_set_s;
+	biquad_set_s = inp_set_s;
 	out_set_s = inp_set_s;
 
 	config_dsp_effects( dspfx_gs ,c_dsp_eq ,c_dsp_gain );
@@ -436,6 +449,7 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 			c_dsp_eq[0] :> biquad_set_s.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
 		} // for chan_cnt
 
+#pragma loop unroll
 		// 2nd BiQuad channel for Reverb Effect
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
@@ -453,12 +467,12 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 
 		} // for chan_cnt
 
-		check_for_effect_change( dspfx_gs ,c_dsp_eq[1] ,c_dsp_gpio ); // Checks if GPIO buttons pressed
+		check_for_effect_change( dspfx_gs ,c_dsp_gpio ); // Checks if GPIO buttons pressed
 
 		// Check for pending effect request
 		if (NO_FX != dspfx_gs.new_effect)
 		{
-			service_effect_change( dspfx_gs ,c_dsp_eq[1] );
+			service_effect_change( dspfx_gs );
 		} // if (NO_FX != dspfx_gs.new_effect)
 
 		// Call reverb routines. NB Still called even for BiQuad, ready for switch back to Reverb
@@ -468,15 +482,14 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 		// Check for BiQuad EffectSelect DSP Effect Processing ...
 		if (BIQUAD == dspfx_gs.cur_effect)
 		{
-			// Add BiQuad to original
+			// Mix BiQuad with original
 			for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 			{
-				biquad_set_s.samps[chan_cnt] += inp_set_s.samps[chan_cnt];
+				biquad_set_s.samps[chan_cnt] = (biquad_set_s.samps[chan_cnt] + inp_set_s.samps[chan_cnt]) >> 1;
 			}	// for chan_cnt
 		} // if (BIQUAD == dspfx_gs.cur_effect)
 
 		control_output_mix( dspfx_gs ,out_set_s ,biquad_set_s ,reverb_set_s ,inp_set_s ); // Select Effect/Dry Output mix
-
 	} // while(1)
 
 } // dsp_effects
