@@ -60,7 +60,7 @@ typedef struct DSP_EFFECT_TAG //
 	GAIN_PARAM_S gain_params;			// Loudness Configuration parameters
 	STR_S fx_names[NUM_EFFECTS]; // Array of effects names
 	PROC_STATE_ENUM fade_state;	// Initialise cross-fade processing state
-	EFFECT_ENUM cur_effect; // Active DSP effect
+	EFFECT_ENUM dsp_effect; // Active DSP effect
 	S32_T fx_len; // time spent in effect state (to ~8 secs)
 	S32_T dry_len; // time spent in dry state (~8 secs)
 	S32_T samp_cnt;// Sample counter

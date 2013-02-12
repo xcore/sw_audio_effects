@@ -31,18 +31,35 @@ void init_gpio( // Initialise GPIO data structure
 	GPIO_S &gpio_gs // Reference to structure containing GPIO data
 )
 {
-	gpio_gs.buttons = BUTTONS_OFF;
+	gpio_gs.curr_buttons = BUTTONS_OFF;
+	gpio_gs.prev_buttons = BUTTONS_OFF;
 	gpio_gs.leds = NO_LEDS;
 } // init_gpio
 /*****************************************************************************/
-void process_new_buttons_state( // Analyse new button state, and act accordingly!-)
+void one_button_state( // Processing when Just one button pressed
+	GPIO_S &gpio_gs, // Reference to structure containing GPIO data
+	chanend c_gpio, // GPIO end of channel between GPIO and DSP coars
+	LED_STATES_ENUM led_mask // Current LED mask (Active low)
+)
+{
+	// Check for valid transition
+	if (BUTTONS_OFF == gpio_gs.prev_buttons)
+	{
+		gpio_gs.leds |= led_mask; // Clear all other LED's
+		gpio_gs.leds ^= ~led_mask; // Toogle status of Selected LED
+
+		c_gpio <: gpio_gs.curr_buttons; // Send button state to DSP control thread
+	} // if (BUTTONS_OFF == gpio_gs.prev_buttons)
+} // one_button_state
+/*****************************************************************************/
+void process_new_buttons_state( // Do processing for confirmed new button state
 	GPIO_S &gpio_gs, // Reference to structure containing GPIO data
 	chanend c_gpio // GPIO end of channel between GPIO and DSP coars
 )
 // NB LED's are active low. Therefore bit-selects are inverted
 { 
 
-	switch( gpio_gs.buttons )
+	switch( gpio_gs.curr_buttons )
 	{
 		case ALL_BUTTONS : // Both buttons are pressed
 			p_led <: NO_LEDS; // Switch off all LED's
@@ -50,34 +67,25 @@ void process_new_buttons_state( // Analyse new button state, and act accordingly
 		break; // case ALL_BUTTONS
 	
 		case BUTTON_2 : // Just button 2 (SW2) pressed
-//			printstrln("Button 2 Pressed");
-
-			p_led <: NO_LEDS; // Switch off all LED's during transition
-			gpio_gs.leds = LED_3; // Store request to 'Light Last LED for BUTTON_2'
-
-			c_gpio <: gpio_gs.buttons; // Send button state to DSP control thread
+			one_button_state( gpio_gs ,c_gpio ,LED_3 ); 
 		break; // case BUTTON_2 
 	
 		case BUTTON_1 :	// Just button 1 (SW1) pressed
-//			printstrln("Button 1 Pressed");
-
-			p_led <: NO_LEDS; // Switch off all LED's during transition
-			gpio_gs.leds = LED_0; // Store request to 'Light 1st LED for BUTTON_1'
-
-			c_gpio <: gpio_gs.buttons; // Send button state to DSP control thread
+			one_button_state( gpio_gs ,c_gpio ,LED_0 ); 
 		break; // case BUTTON_1 
 	
-		case BUTTONS_OFF : // Neither buttons is pressed
-//			printstrln("No Buttons Pressed");
+		case BUTTONS_OFF : // Both buttons Released
 			p_led <: gpio_gs.leds; // Switch on/off requested LED's
 		break; // case BUTTONS_OFF 
 
 		default:	
 			printstr("ERROR: Button state NOT supported :");
-			printintln( gpio_gs.buttons );
+			printintln( gpio_gs.curr_buttons );
 			assert(0 == 1);
 		break; // default
-	} // switch( gpio_gs.buttons )
+	} // switch( gpio_gs.curr_buttons )
+
+	gpio_gs.prev_buttons = gpio_gs.curr_buttons; // Update previous button value
 } // process_new_buttons_state
 /*****************************************************************************/
 void gp_io( // GPIO coar
@@ -119,20 +127,20 @@ void gp_io( // GPIO coar
 		{ // UN-confirmed state
 			// Wait for 'debounce_time', then re-load button values
 			clk when timerafter(cur_time + debounce_time) :> void;
-			p4_PORT_BUT_1 :> gpio_gs.buttons;	// Re-load same values again
+			p4_PORT_BUT_1 :> gpio_gs.curr_buttons;	// Re-load same values again
 			clk :> cur_time; // Get time when button values reloaded
 
 			// Check if early and late values are identical
-			if(early_buttons == gpio_gs.buttons)
+			if(early_buttons == gpio_gs.curr_buttons)
 			{
 				process_new_buttons_state( gpio_gs ,c_gpio );
 
 				confirmed = 1; // Switch to confirmed state
-			} // if (early_buttons==gpio_gs.buttons)
+			} // if (early_buttons==gpio_gs.curr_buttons)
 			else
 			{
-				early_buttons = gpio_gs.buttons; // Update early value, and try again
-			} // if (early_buttons==gpio_gs.buttons)
+				early_buttons = gpio_gs.curr_buttons; // Update early value, and try again
+			} // if (early_buttons==gpio_gs.curr_buttons)
 		} // else !(confirmed)
 	} // while(1)
 

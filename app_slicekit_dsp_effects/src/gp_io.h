@@ -72,7 +72,8 @@ typedef enum BUTTON_STATES_TAG //
 /** Structure containing GPIO parameters */
 typedef struct GPIO_TAG // 
 {
-	BUTTON_STATES_ENUM buttons; // current state of buttons
+	BUTTON_STATES_ENUM curr_buttons; // current stable button state 
+	BUTTON_STATES_ENUM prev_buttons; // previous stable button state
 	LED_STATES_ENUM leds; // current state of LED's
 } GPIO_S;
 

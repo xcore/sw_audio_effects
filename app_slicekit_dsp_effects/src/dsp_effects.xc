@@ -55,12 +55,12 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 	safestrcpy( dspfx_gs.fx_names[BIQUAD].str ,"BiQuad" );
 
 	dspfx_gs.fade_state	= START; // Initialise processing state
-	dspfx_gs.cur_effect = REVERB; // Initialise audio effect
+	dspfx_gs.dsp_effect = REVERB; // Initialise audio effect
 	dspfx_gs.fx_len = SWAP_NUM; // time spent in effect state (to ~8 secs)
 	dspfx_gs.dry_len = SWAP_NUM;	// time spent in dry state (~8 secs)
 	dspfx_gs.samp_cnt = 0;	// Sample counter
 
-	printstrln( dspfx_gs.fx_names[dspfx_gs.cur_effect].str );
+	printstrln( dspfx_gs.fx_names[dspfx_gs.dsp_effect].str );
 } // init_sdram_buffers
 /******************************************************************************/
 void init_sdram_buffers( // Initialisation buffers for SDRAM access
@@ -182,9 +182,62 @@ EFFECT_ENUM decode_button_state( // Analyse new button state, and return request
 	return 0; // NB Unreachable, but stops warnings!
 } // decode_button_state
 /*****************************************************************************/
+void do_effect_change( // Updates states after effect change detected
+	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
+	streaming chanend c_dsp_eq,	// Channel connecting to Equalisation coar (bi-directional)
+	BUTTON_STATES_ENUM button_state // button state
+)
+{
+	EFFECT_ENUM decoded_effect; // Decoded DSP effect value
+
+
+	decoded_effect = decode_button_state( button_state ); // Decode requested effect from button state
+
+	// Check if Different Effect requested
+	if (decoded_effect !=  dspfx_gs.dsp_effect)
+	{ 
+		dspfx_gs.dsp_effect = decoded_effect; // Store currently requested effect
+
+		dspfx_gs.fade_state = EFFECT; // Reset Cross-fade state
+
+		printstrln( dspfx_gs.fx_names[dspfx_gs.dsp_effect].str );
+	} // if (decoded_effect !=  dspfx_gs.prev_effect)
+	else
+	{ // Toggle 'Fade-state' of current effect
+		if ((EFFECT != dspfx_gs.fade_state) && (FX2DRY != dspfx_gs.fade_state))
+		{ // Currently near DRY state
+			dspfx_gs.fade_state = EFFECT;  // Switch to EFFECT Cross-fade state
+			printstrln( dspfx_gs.fx_names[dspfx_gs.dsp_effect].str );
+		} // if ((EFFECT != dspfx_gs.fade_state) && (FX2DRY != dspfx_gs.fade_state))
+		else
+		{ // Currently near EFFECT state
+			dspfx_gs.fade_state = DRY_ONLY; // Switch to DRY Cross-fade state
+			printstrln( "Dry" );
+		} // else !((EFFECT != dspfx_gs.fade_state) && (FX2DRY != dspfx_gs.fade_state))
+	} // else !(decoded_effect !=  dspfx_gs.prev_effect)
+
+	dspfx_gs.samp_cnt = 0;
+
+	// Re-configure for new effect
+	switch( dspfx_gs.dsp_effect )
+	{
+		case REVERB:
+			// Configure Reverb parameters. NB Currently only BiQuad needs re-configuring
+
+			send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq ); // Send BiQuad config. data for reverb
+		break; // case REVERB
+	
+		case BIQUAD:
+			// Configure BiQuad parameters. NB Currently only BiQuad needs re-configuring
+
+			send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq ); // Send BiQuad config. data for solo use
+		break; // case BIQUAD
+	} // switch( dspfx_gs.dsp_effect)
+} // do_effect_change
+/*****************************************************************************/
 void check_for_effect_change( // Monitors GPIO buttons to see if effect change requested
 	DSP_EFFECT_S &dspfx_gs,  // Reference to structure containing data to control DSP Effects
-	streaming chanend c_dsp_eq ,// Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_eq,	// Channel connecting to Equalisation coar (bi-directional)
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
 )
 {
@@ -195,29 +248,7 @@ void check_for_effect_change( // Monitors GPIO buttons to see if effect change r
 	select
 	{
 		case c_dsp_gpio :> button_state :
-			dspfx_gs.cur_effect = decode_button_state( button_state ); // Decode requested effect from button state
-
-			// Reset Cross-fade state
-			dspfx_gs.fade_state = EFFECT;
-			dspfx_gs.samp_cnt = 0;
-
-			printstrln( dspfx_gs.fx_names[dspfx_gs.cur_effect].str );
-
-			// Re-configure for new effect
-			switch( dspfx_gs.cur_effect)
-			{
-				case REVERB:
-					// Configure Reverb parameters. NB Currently only BiQuad needs re-configuring
-
-					send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq ); // Send BiQuad config. data for reverb
-				break; // case REVERB
-	
-				case BIQUAD:
-					// Configure BiQuad parameters. NB Currently only BiQuad needs re-configuring
-
-					send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq ); // Send BiQuad config. data for solo use
-				break; // case BIQUAD
-			} // switch( dspfx_gs.cur_effect)
+			do_effect_change( dspfx_gs ,c_dsp_eq ,button_state );
 		break; // case c_dsp_gpio :> button_state
 
 		default:
@@ -275,7 +306,7 @@ void control_output_mix( // Controls Effect/Dry dynamic Output Mix
  			{
 				dspfx_gs.samp_cnt = 0; // Reset sample counter
 				dspfx_gs.fade_state = EFFECT; // Switch to Effect Processing
-				printstrln( dspfx_gs.fx_names[dspfx_gs.cur_effect].str );
+				printstrln( dspfx_gs.fx_names[dspfx_gs.dsp_effect].str );
 			} // if (SWAP_NUM < dspfx_gs.samp_cnt)
 		break; // case DRY2FX:
 
@@ -315,10 +346,6 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 	CHAN_SET_S fade_set_s;	// Structure containing Cross-fade audio sample-set
 
 	S32_T chan_cnt; // Channel counter
-
-	// Default Reverb parameters
-	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
-																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
 
 
 	init_sdram_buffers( sdram_gs ); // Initialise buffers for SDRAM access
@@ -369,7 +396,7 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 		check_for_effect_change( dspfx_gs ,c_dsp_eq ,c_dsp_gpio ); // Checks if GPIO buttons pressed
 
 		// Select DSP Effect Processing ...
-		switch( dspfx_gs.cur_effect)
+		switch( dspfx_gs.dsp_effect)
 		{
 			case REVERB:
 				// Call reverb routines
@@ -382,7 +409,7 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 				uneq_set_s = inp_set_s;
 				fade_set_s = sdram_gs.src_set;
 			break; // case BIQUAD
-		} // switch( dspfx_gs.cur_effect)
+		} // switch( dspfx_gs.dsp_effect)
 
 		control_output_mix( dspfx_gs ,out_set_s ,fade_set_s ,inp_set_s ); // Select Effect/Dry Output mix
 
