@@ -41,13 +41,27 @@
 
 #define STR_LEN 128 // String length
 
-/** Different Processing States */
+/** Different Effect */
 typedef enum EFFECT_TAG //
 {
-  REVERB = 0,	// Long-Reverb
+  NO_FX = 0,	// No Effect 
+  REVERB,			// Long-Reverb
   BIQUAD,			// BiQuad Only
   NUM_EFFECTS	// Handy Value!-)
 } EFFECT_ENUM;
+
+/** Different Cross-fade States */
+typedef enum FADE_STATE_ETAG //
+{
+  EFFECT_F = 0,			// DSP Effect On
+  FX2DRY_F,					// Fade Effect to Dry
+  DRY_ONLY_F,				// No Effect
+  DRY2FX_F,					// Fade Dry to Effect
+  START_F,					// Start-up mode
+  BQ2REV_F,					// Fade BiQuad to Reverb
+  REV2BQ_F,					// Fade Reverb to BiQuad 
+  NUM_FADE_STATES	// Handy Value!-)
+} FADE_STATE_ENUM;
 
 // String type
 typedef struct STR_TAG // 
@@ -63,8 +77,10 @@ typedef struct DSP_EFFECT_TAG //
 	BIQUAD_PARAM_S biquad_params_solo;	// BiQuad Configuration parameters when used in isolation
 	GAIN_PARAM_S gain_params;			// Loudness Configuration parameters
 	STR_S fx_names[NUM_EFFECTS]; // Array of effects names
-	PROC_STATE_ENUM fade_state;	// Initialise cross-fade processing state
-	EFFECT_ENUM dsp_effect; // Active DSP effect
+	FADE_STATE_ENUM fade_state;	// Initialise cross-fade processing state
+	S32_T fade_on; // Flag set when doing cross-fade
+	EFFECT_ENUM new_effect; // New DSP effect request
+	EFFECT_ENUM cur_effect; // Currently active DSP effect
 	S32_T fx_len; // time spent in effect state (to ~8 secs)
 	S32_T dry_len; // time spent in dry state (~8 secs)
 	S32_T samp_cnt;// Sample counter
@@ -73,7 +89,7 @@ typedef struct DSP_EFFECT_TAG //
 /*****************************************************************************/
 void dsp_effects( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
-	streaming chanend c_dsp_eq, // Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_eq[NUM_BIQUADS], // Channel connecting to Equalisation coar (bi-directional)
 	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
   chanend c_dsp_sdram, // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars

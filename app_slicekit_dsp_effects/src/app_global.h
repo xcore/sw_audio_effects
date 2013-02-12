@@ -25,7 +25,7 @@
 #define _GLOBAL_H_
 
 // Comment-out if NOT using xscope
-// #define USE_XSCOPE 1
+#define USE_XSCOPE 1
 
 // Assign Processing Coars to Tiles
 #define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
