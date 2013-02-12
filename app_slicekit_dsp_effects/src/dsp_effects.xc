@@ -32,6 +32,9 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 {
 	// Default BiQuad Configuration (Reverb)
 	BIQUAD_PARAM_S def_biquad_param_s = { DEF_FILT_MODE ,DEF_SAMP_FREQ ,DEF_SIG_FREQ ,DEF_QUAL_FACT };
+	BIQUAD_PARAM_S lo_pass_param_s = { LO_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ >> 1) ,DEF_QUAL_FACT };
+	BIQUAD_PARAM_S hi_pass_param_s = { HI_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ << 1) ,(DEF_QUAL_FACT << 2) };
+	BIQUAD_PARAM_S band_pass_param_s = { BAND_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ >> 3) ,(DEF_QUAL_FACT >> 1) };
 
 	// Default Reverb Configuration parameters
 	REVERB_PARAM_S def_reverb_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
@@ -43,12 +46,8 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 	// Assign default configuration parameters
 	dspfx_gs.gain_params = def_gain_param_s;
 	dspfx_gs.biquad_params_rvrb = def_biquad_param_s;
-	dspfx_gs.biquad_params_solo = def_biquad_param_s; // NB Reverb settings will be edited below
+	dspfx_gs.biquad_params_solo = band_pass_param_s;
 	dspfx_gs.reverb_params = def_reverb_param_s;
-
-	// Fine-tune bi-quad parameters for use in isolation
-	dspfx_gs.biquad_params_solo.sig_freq = (DEF_SIG_FREQ >> 1); // NB 1000
-	dspfx_gs.biquad_params_solo.qual = (DEF_QUAL_FACT >> 1); // NB 128
 
 	// Assing Effect names
 	safestrcpy( dspfx_gs.fx_names[REVERB].str ,"Reverb" );
@@ -408,6 +407,10 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 				// Connect I/O directly to EQ thread
 				uneq_set_s = inp_set_s;
 				fade_set_s = sdram_gs.src_set;
+				for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
+				{
+					fade_set_s.samps[chan_cnt] = sdram_gs.src_set.samps[chan_cnt] + inp_set_s.samps[chan_cnt];
+				}	// for chan_cnt
 			break; // case BIQUAD
 		} // switch( dspfx_gs.dsp_effect)
 

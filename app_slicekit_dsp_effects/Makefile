@@ -13,6 +13,7 @@ BUILD_FLAGS = -Wall -O3 -report -g -DSDA_HIGH=2 -DSCL_HIGH=1
 # Modules are expected to be in the directory above the BASE_DIR directory.
 USED_MODULES = module_dsp_long_reverb module_dsp_long_delay module_dsp_loudness module_dsp_biquad module_dsp_utils module_sdram_memory_mapper module_sdram module_i2s_master module_i2c_single_port
 
+# XCC_FLAGS = $(BUILD_FLAGS) -fxscope
 XCC_FLAGS = $(BUILD_FLAGS)
 
 

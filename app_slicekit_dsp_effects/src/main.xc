@@ -24,6 +24,18 @@
 
 #include "main.h"
 
+#ifdef USE_XSCOPE
+/*****************************************************************************/
+void xscope_user_init( void ) // 'C' constructor function (NB called before main)
+{
+	xscope_register( 1
+		,XSCOPE_CONTINUOUS ,"Dummy" ,XSCOPE_INT ,"n"
+	); // xscope_register 
+
+	xscope_config_io( XSCOPE_IO_BASIC ); // Enable XScope printing
+} // xscope_user_init
+#endif // ifdef USE_XSCOPE
+
 /*****************************************************************************/
 int main (void)
 {

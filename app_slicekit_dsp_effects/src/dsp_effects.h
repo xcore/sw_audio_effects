@@ -24,16 +24,20 @@
 #ifndef _DSP_EFFECTS_H_
 #define _DSP_EFFECTS_H_
 
-
 #include <xs1.h>
 #include <safestring.h>
 #include <print.h>
+
 #include "types64bit.h"
 #include "app_global.h"
 #include "common_utils.h"
 #include "gp_io.h"
 #include "sdram_io.h"
 #include "sdram_reverb.h"
+
+#ifdef USE_XSCOPE
+#include <xscope.h>
+#endif // ifdef USE_XSCOPE
 
 #define STR_LEN 128 // String length
 
