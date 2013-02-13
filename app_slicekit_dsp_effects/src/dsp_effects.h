@@ -41,27 +41,22 @@
 
 #define STR_LEN 128 // String length
 
-/** Different Effect */
-typedef enum EFFECT_TAG //
+/** Different Ouput Signal Types */
+typedef enum OUT_SIGNAL_TAG //
 {
-  NO_FX = 0,	// No Effect 
-  REVERB,			// Long-Reverb
-  BIQUAD,			// BiQuad Only
-  NUM_EFFECTS	// Handy Value!-)
-} EFFECT_ENUM;
+  INPUT = 0,	// Input Signal
+  BIQUAD,			// BiQuad filtered Signal
+  REVERB,			// Long-Reverb Signal
+  NUM_OUT_SIGNALS	// Handy Value!-)
+} OUT_SIGNAL_ENUM;
 
-/** Different Cross-fade States */
-typedef enum FADE_STATE_ETAG //
+/** Different Dry/Effect States */
+typedef enum DRY_STATE_ETAG //
 {
-  EFFECT_F = 0,			// DSP Effect On
-  FX2DRY_F,					// Fade Effect to Dry
-  DRY_ONLY_F,				// No Effect
-  DRY2FX_F,					// Fade Dry to Effect
-  START_F,					// Start-up mode
-  BQ2REV_F,					// Fade BiQuad to Reverb
-  REV2BQ_F,					// Fade Reverb to BiQuad 
-  NUM_FADE_STATES	// Handy Value!-)
-} FADE_STATE_ENUM;
+	FX_ON = 0, // Current Effect is Active
+	DRY_ON, // Dry Signal is active
+  NUM_DRY_STATES	// Handy Value!-)
+} DRY_STATE_ENUM;
 
 // String type
 typedef struct STR_TAG // 
@@ -76,13 +71,14 @@ typedef struct DSP_EFFECT_TAG //
 	BIQUAD_PARAM_S biquad_params_rvrb;	// BiQuad Configuration parameters when used in reverb
 	BIQUAD_PARAM_S biquad_params_solo;	// BiQuad Configuration parameters when used in isolation
 	GAIN_PARAM_S gain_params;			// Loudness Configuration parameters
-	STR_S fx_names[NUM_EFFECTS]; // Array of effects names
-	FADE_STATE_ENUM fade_state;	// Initialise cross-fade processing state
+	STR_S fx_names[NUM_OUT_SIGNALS]; // Array of effects names
+	DRY_STATE_ENUM dry_state;	// Dry/Effect processing state
 	S32_T fade_on; // Flag set when doing cross-fade
-	EFFECT_ENUM new_effect; // New DSP effect request
-	EFFECT_ENUM cur_effect; // Currently active DSP effect
+	OUT_SIGNAL_ENUM old_sig; // Old output signal
+	OUT_SIGNAL_ENUM cur_sig; // Currently Active output signal
+	OUT_SIGNAL_ENUM new_effect; // Newly requested DSP effect
+	S32_T pending; // Flag set when New Effect request is pending
 	S32_T fx_len; // time spent in effect state (to ~8 secs)
-	S32_T dry_len; // time spent in dry state (~8 secs)
 	S32_T samp_cnt;// Sample counter
 } DSP_EFFECT_S;
 
