@@ -79,11 +79,13 @@ typedef struct BIQUAD_PARAM_TAG //
 /** Use BiQuad filter on one sample from one channel.
  * Samples are left-aligned signed values.
  * e.g. 24-bit audio will look like 0x12345600 (positive) or 0xFF123400 (negative)
+ * \param biquad_id // Identifies which BiQuad to use
  * \param inp_samp // Unfiltered input sample from channel
  * \param cur_chan // current channel
  * \return The Filtered Output Sample
  */
 S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
+	S32_T biquad_id, // Identifies which BiQuad to use
 	S32_T inp_samp, // Unfiltered input sample from channel
 	S32_T cur_chan  // current channel
 ); // Return filtered Output Sample
@@ -94,9 +96,11 @@ S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
 
 /******************************************************************************/
 /** Configure BiQuad filter.
+ * \param biquad_id // Identifies which BiQuad to use
  * \param cur_param_ps // Reference to structure containing current biquad filter parameters
  */
 void config_biquad_filter( // Configure BiQuad filter 
+	S32_T biquad_id, // Identifies which BiQuad to use
 	BIQUAD_PARAM_S &cur_param_ps // Reference to structure containing current biquad filter parameters
 );
 
@@ -106,6 +110,7 @@ void config_biquad_filter( // Configure BiQuad filter
 
 /******************************************************************************/
 void config_biquad_filter( // Configure BiQuad filter 
+	S32_T biquad_id, // Identifies which BiQuad to use
 	BIQUAD_PARAM_S * cur_param_ps // Pointer to structure containing current biquad filter parameters
 );
 /******************************************************************************/
@@ -157,9 +162,15 @@ typedef struct BIQUAD_TAG // Structure containing all biquad data
 {
 	BIQUAD_CHAN_S bq_chan_s[NUM_BIQUAD_CHANS]; // Array of structure containing intermediate data for each channel, updated every sample
 	BIQUAD_COEF_S common_coefs_s;  // Structure containing BiQuad coefficients
-	S32_T init_done;	// Flag indicating gain-shaping is initialised
-	S32_T params_set; // Flag indicating Parameters are set
+	S32_T init_done;	// Flag indicating structure is initialised
+	S32_T params_set; // Flag indicating Parameters have been set
 } BIQUAD_S;
+
+typedef struct BIQUAD_ALL_TAG // Structure containing all biquad data
+{
+	BIQUAD_S biquad_s[NUM_APP_BIQUADS]; // Array of structures for each BiQuad
+	S32_T first_config; // Flag set until 1st BiQuad configuration complete
+} BIQUAD_ALL_S;
 
 #endif // else __XC__
 

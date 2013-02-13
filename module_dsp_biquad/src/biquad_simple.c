@@ -23,7 +23,8 @@
 #include "biquad_simple.h"
 
 // Structure containing all BiQuad data (NB Made global to avoid using malloc)
-static BIQUAD_S biquad_gs = { .init_done = 0, .params_set = 0 }; // Clear initialisation flags
+// WARNING: This is shared by all coars on one Tile
+static BIQUAD_ALL_S biquad_all_gs = { .first_config = 1 }; // Flag set until 1st BiQuad configuration complete
 
 /******************************************************************************/
 void init_fix_const( // Initialise structure of data for multiply by fixed-point constant
@@ -307,16 +308,25 @@ void init_biquad( // Create structure for all biquad data, and initialise
 
 } // init_biquad
 /******************************************************************************/
-void config_biquad_filter( // Configure BiQuad filter 
+void set_biquad_flags( // Set initialisation control flags for a biquad data structure
+	BIQUAD_S * biquad_ps // Pointer to biquad data structure
+)
+{
+	biquad_ps->params_set = 0; // Clear flag indicating structure is initialised
+	biquad_ps->init_done = 0; // Clear flag indicating parameters have been set
+} // set_biquad_flags 
+/******************************************************************************/
+void config_current_biquad_filter( // Configure current BiQuad filter 
+	BIQUAD_S * biquad_ps, // Pointer to biquad data structure
 	BIQUAD_PARAM_S * cur_param_ps // Pointer to structure containing current biquad filter parameters
 )
 {
 	// Check if BiQuad filter initialised
-	if (0 == biquad_gs.init_done)
+	if (0 == biquad_ps->init_done)
 	{ // Initialse BiQuad filter
-  	init_biquad( &biquad_gs );	// Initialise biquad data structure
+  	init_biquad( biquad_ps );	// Initialise biquad data structure
 
-		biquad_gs.init_done = 1; // Signal Bi-Quad filter initialised
+		biquad_ps->init_done = 1; // Signal Bi-Quad filter initialised
 	} // if (0 == biquad_gs->init_done)
 
 // printstr("FM= "); printintln( (int)cur_param_ps->filt_mode ); // MB~
@@ -327,9 +337,30 @@ void config_biquad_filter( // Configure BiQuad filter
 	 */
 
 	// recalculate filter coefficiants based on new sample frequency
-  init_common_coefs( &(biquad_gs.common_coefs_s) ,cur_param_ps );
+  init_common_coefs( &(biquad_ps->common_coefs_s) ,cur_param_ps );
 
-	biquad_gs.params_set = 1; // Signal BiQuad filter parameters configured
+	biquad_ps->params_set = 1; // Signal BiQuad filter parameters configured
+} // config_current_biquad_filter
+/******************************************************************************/
+void config_biquad_filter( // Configure BiQuad filter 
+	S32_T biquad_id, // Identifies which BiQuad to use
+	BIQUAD_PARAM_S * cur_param_ps // Pointer to structure containing current biquad filter parameters
+)
+{
+	//Check if this is 1st BiQuad to be configured
+	if (biquad_all_gs.first_config)
+	{
+		// Set initialisation control flags for all biquad data structures
+		for (S32_T biquad_cnt=0; biquad_cnt<NUM_APP_BIQUADS; biquad_cnt++)
+		{
+			set_biquad_flags( &(biquad_all_gs.biquad_s[biquad_id]) );
+		} // for biquad_cnt
+
+		biquad_all_gs.first_config = 0; // Clear flag to indicate done 1st config
+	} // if (biquad_all_gs.first_config)
+
+	// Configure identified BiQuad filter
+	config_current_biquad_filter( &(biquad_all_gs.biquad_s[biquad_id]) ,cur_param_ps );
 } // config_biquad_filter
 /******************************************************************************/
 FILT_T fix_point_mult( // Multiply a sample by a fixed point coefficient
@@ -433,7 +464,8 @@ SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 	return (SAMP_CHAN_T)clip_full_samp;
 } // biquad_filter_chan
 /******************************************************************************/
-S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
+S32_T use_current_biquad_filter( // Use current BiQuad filter on one sample from one channel
+	BIQUAD_S * biquad_ps, // Pointer to biquad data structure
 	S32_T inp_samp, // Unfiltered input sample from channel
 	S32_T cur_chan // current channel
 ) // Return filtered Output Sample
@@ -442,16 +474,31 @@ S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
 
 
 	// Check if biquad parameters have been initialised
-	if (0 == biquad_gs.params_set)
+	if (0 == biquad_ps->params_set)
 	{
 		assert(0 == 1); // Please call config_biquad_filter() function before use_biquad_filter() 
-	} // if (0 == biquad_gs.params_set)
+	} // if (0 == biquad_ps->params_set)
 	else
 	{
 		// Call biquad on current sample
-		out_samp = (S32_T)biquad_filter_chan( (SAMP_CHAN_T)inp_samp ,&(biquad_gs.bq_chan_s[cur_chan]) ,&(biquad_gs.common_coefs_s) );
+		out_samp = (S32_T)biquad_filter_chan( (SAMP_CHAN_T)inp_samp ,&(biquad_ps->bq_chan_s[cur_chan]) ,&(biquad_ps->common_coefs_s) );
 //MB~		out_samp = inp_samp; // MB~ Dbg
-	} // else !(0 == biquad_gs.params_set)
+	} // else !(0 == biquad_ps->params_set)
+
+	return out_samp;
+} // use_current_biquad_filter
+/******************************************************************************/
+S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
+	S32_T biquad_id, // Identifies which BiQuad to use
+	S32_T inp_samp, // Unfiltered input sample from channel
+	S32_T cur_chan // current channel
+) // Return filtered Output Sample
+{
+	S32_T out_samp; // Output sample
+
+
+	// Use indentified BiQuad filter on one sample from one channel
+	out_samp = use_current_biquad_filter( &(biquad_all_gs.biquad_s[biquad_id]) ,inp_samp ,cur_chan );
 
 	return out_samp;
 } // use_biquad_filter

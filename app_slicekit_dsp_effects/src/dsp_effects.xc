@@ -115,15 +115,15 @@ void send_loudness_config( // Send Loudness configuration data
 /*****************************************************************************/
 void config_dsp_effects( // Synchronise a reverb configuration (with other coars)
 	DSP_EFFECT_S &dspfx_gs, // Reference to structure containing data to control DSP Effects
-	streaming chanend c_dsp_eq[NUM_BIQUADS], // Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_eq_arr[NUM_APP_BIQUADS], // Array of channels connecting to Equalisation coars (bi-directional)
 	streaming chanend c_dsp_gain // Channel connecting to Loudness coar (bi-directional)
 )
 {
-	assert( NUM_BIQUADS > 1 ); // This configuration requires 2 BiQuad threads
+	assert( NUM_APP_BIQUADS > 1 ); // This configuration requires 2 BiQuad threads
 
 	// Send data to other coars ...
-	send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq[0] );		// Send BiQuad filter configuration data for solo effect
-	send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq[1] );		// Send BiQuad filter configuration data for reverb effect
+	send_biquad_config( dspfx_gs.biquad_params_solo ,c_dsp_eq_arr[0] );		// Send BiQuad filter configuration data for solo effect
+	send_biquad_config( dspfx_gs.biquad_params_rvrb ,c_dsp_eq_arr[1] );		// Send BiQuad filter configuration data for reverb effect
 	send_loudness_config( dspfx_gs.gain_params ,c_dsp_gain );	// Send Gain-shaping configuration data
 
 	config_sdram_reverb( dspfx_gs.reverb_params ); // Configure remaining reverb parameters in this coar (Delay-line)
@@ -390,13 +390,20 @@ void control_output_mix( // Controls Effect/Dry dynamic Output Mix
 	dspfx_gs.samp_cnt++; // Update sample counter
 } // control_output_mix
 /*****************************************************************************/
-void dsp_effects( // Controls audio stream processing for reverb application using dsp functions
+void dsp_effects( // Controls audio stream processing for Reverb & BiQuad dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
-	streaming chanend c_dsp_eq[NUM_BIQUADS], // Arrays of channels connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_eq_arr[NUM_APP_BIQUADS], // Arrays of channels connecting to Equalisation coars (bi-directional)
 	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
   chanend c_dsp_sdram, // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
 )
+/* Both the Reverb and BiQuad effects are constantly being generated.
+ * The Buttons on the GPIO board are used to select which of the Reverb/BiQuad/Dry streams
+ * are sent to the output.
+ * When a switch between states is made, a cross-fade it used to prevent clicks in the audio.
+ * It is NOT possible to switch states again, until the cross-fade is complete.
+ * Again, this is to prevent clicks in the output stream.
+ */
 {
 	CNTRL_SDRAM_S sdram_gs; // Structure containing data to control SDRAM buffering
 	DSP_EFFECT_S dspfx_gs;  // Structure containing data to control DSP Effects
@@ -426,12 +433,13 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 	biquad_set_s = inp_set_s;
 	out_set_s = inp_set_s;
 
-	config_dsp_effects( dspfx_gs ,c_dsp_eq ,c_dsp_gain );
+	config_dsp_effects( dspfx_gs ,c_dsp_eq_arr ,c_dsp_gain );
 
 	// Loop forever
 	while(1)
 	{
-		// Send/Receive audio samples over sample coar channels
+		// Send/Receive audio samples over all channels ...
+
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
@@ -445,8 +453,8 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq[0] <: inp_set_s.samps[chan_cnt]; // Send Input samples to EQ coar  
-			c_dsp_eq[0] :> biquad_set_s.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
+			c_dsp_eq_arr[0] <: inp_set_s.samps[chan_cnt]; // Send Input samples to EQ coar  
+			c_dsp_eq_arr[0] :> biquad_set_s.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
 		} // for chan_cnt
 
 #pragma loop unroll
@@ -454,8 +462,8 @@ void dsp_effects( // Controls audio stream processing for reverb application usi
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq[1] <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar  
-			c_dsp_eq[1] :> sdram_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
+			c_dsp_eq_arr[1] <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar  
+			c_dsp_eq_arr[1] :> sdram_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
 		} // for chan_cnt
 
 #pragma loop unroll

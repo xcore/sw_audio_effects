@@ -40,7 +40,7 @@ void xscope_user_init( void ) // 'C' constructor function (NB called before main
 int main (void)
 {
 	streaming chan c_aud_dsp; // Channel between I/O and Processing coars
-	streaming chan c_dsp_eq[NUM_BIQUADS]; // Array of channel between DSP-control and Equalisation coars
+	streaming chan c_dsp_eq_arr[NUM_APP_BIQUADS]; // Array of channel between DSP-control and Equalisation coars
 	streaming chan c_dsp_gain; // Channel between DSP-control and Loudness coars
   chan c_dsp_sdram; // Channel between DSP coar and SDRAM coar 
   chan c_dsp_gpio; // Channel between DSP coar and GPIO coar
@@ -50,7 +50,7 @@ int main (void)
 	{
 		on tile[AUDIO_IO_TILE]: audio_io( c_aud_dsp ); // Audio I/O coar
 
-		on tile[DSP_TILE]: dsp_effects( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ,c_dsp_sdram ,c_dsp_gpio ); // Control coar for DSP Effects
+		on tile[DSP_TILE]: dsp_effects( c_aud_dsp ,c_dsp_eq_arr ,c_dsp_gain ,c_dsp_sdram ,c_dsp_gpio ); // Control coar for DSP Effects
 
 		on tile[GAIN_TILE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
 
@@ -58,14 +58,10 @@ int main (void)
 
     on tile[GPIO_TILE]: gp_io( c_dsp_gpio ); // GPIO coar
 
-		on tile[BIQUAD0_TILE]: dsp_biquad( c_dsp_eq[0] ); // BiQuad Equalisation coar
-		on tile[BIQUAD1_TILE]: dsp_biquad( c_dsp_eq[1] ); // BiQuad Equalisation coar
-#ifdef MB
-		par (int biquad_cnt=0; biquad_cnt<NUM_BIQUADS; biquad_cnt++)
+		par (int biquad_cnt=0; biquad_cnt<NUM_APP_BIQUADS; biquad_cnt++)
 		{
-			on tile[BIQUAD_TILE]: dsp_biquad( c_dsp_eq[biquad_cnt] ); // BiQuad Equalisation coar
+			on tile[BIQUAD_TILE]: dsp_biquad( c_dsp_eq_arr[biquad_cnt] ,biquad_cnt ); // BiQuad Equalisation coar
 		} // par biquad_cnt
-#endif //MB~
 	} // par
 
 	return 0;

@@ -89,7 +89,7 @@ typedef struct DSP_EFFECT_TAG //
 /*****************************************************************************/
 void dsp_effects( // Controls audio stream processing for reverb application using dsp functions
 	streaming chanend c_aud_dsp, // Channel connecting to Audio I/O coar (bi-directional)
-	streaming chanend c_dsp_eq[NUM_BIQUADS], // Channel connecting to Equalisation coar (bi-directional)
+	streaming chanend c_dsp_eq_arr[NUM_APP_BIQUADS], // Array of channels connecting to Equalisation coars (bi-directional)
 	streaming chanend c_dsp_gain, // Channel connecting to Loudness coar (bi-directional)
   chanend c_dsp_sdram, // DSP end of channel between DSP coar and SDRAM coar (bi-directional)
 	chanend c_dsp_gpio // DSP end of channel between GPIO and DSP coars
