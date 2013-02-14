@@ -89,7 +89,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
 
-	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to REVERB On.
+	PROC_STATE_ENUM cur_proc_state	= DRY2FX; // Initialise processing state to fade-in REVERB.
 	// Default Reverb parameters
 	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_ATTN_MIX ,DEF_CROSS_MIX } 
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
@@ -141,13 +141,19 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 
 		} // for chan_cnt
 
+		// Do Effect processing
+		use_reverb( uneq_samps ,unamp_samps ,fade_samps ,inp_samps ,equal_samps ,ampli_samps );
+
 		samp_cnt++; // Update sample counter
 
 		// Check current processing State
 		switch(cur_proc_state)
 		{
-			case EFFECT: // Do Effect processing
-				use_reverb( uneq_samps ,unamp_samps ,out_samps ,inp_samps ,equal_samps ,ampli_samps );
+			case EFFECT:
+				for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
+				{
+					out_samps[chan_cnt] = fade_samps[chan_cnt];
+				} // for chan_cnt
 
 				if (SWAP_NUM < samp_cnt)
 	 			{
@@ -157,14 +163,13 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 			break; // case EFFECT:
 
 			case FX2DRY: // Fade-Out Effect
-				use_reverb( uneq_samps ,unamp_samps ,fade_samps ,inp_samps ,equal_samps ,ampli_samps );
-
 				cross_fade_sample( out_samps ,fade_samps ,inp_samps ,NUM_REVERB_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
+					printstrln( "Dry" );
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case FX2DRY:
 
@@ -183,14 +188,13 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 			break; // case DRY_ONLY:
 
 			case DRY2FX: // Fade-in Effect
-				use_reverb( uneq_samps ,unamp_samps ,fade_samps ,inp_samps ,equal_samps ,ampli_samps );
-
 				cross_fade_sample( out_samps ,inp_samps ,fade_samps ,NUM_REVERB_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = EFFECT; // Switch to Effect Processing
+					printstrln( "Effect" );
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case DRY2FX:
 

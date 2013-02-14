@@ -26,6 +26,7 @@
 
 /******************************************************************************/
 void receive_biquad_config( // Receives BiQuad filter configuration data
+	S32_T biquad_id, // Identifies which BiQuad to use
 	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
 )
 {
@@ -34,10 +35,11 @@ void receive_biquad_config( // Receives BiQuad filter configuration data
 
 	c_dsp_eq :> biquad_param_s; // Receive BiQuad filter configuration data
 	
-	config_biquad_filter( biquad_param_s ); // Configure BiQuad filter parameters
+	config_biquad_filter( biquad_id ,biquad_param_s ); // Configure BiQuad filter parameters
 } // receive_biquad_config
 /******************************************************************************/
 void process_biquad_token( // Receives Control Token from channel, and acts accordingly
+	S32_T biquad_id, // Identifies which BiQuad to use
 	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
 )
 {
@@ -48,7 +50,7 @@ void process_biquad_token( // Receives Control Token from channel, and acts acco
 	switch( inp_tok )
 	{
 		case CFG_BIQUAD: // Do BiQuad filter configuration
-			receive_biquad_config( c_dsp_eq );
+			receive_biquad_config( biquad_id ,c_dsp_eq );
 		break; // case CFG_BIQUAD:
 
 		default: // ERROR: Unsupported Control Token
@@ -61,7 +63,8 @@ void process_biquad_token( // Receives Control Token from channel, and acts acco
 void process_biquad_audio( // apply biquad to audio stream
 	streaming chanend c_dsp_eq, // Channel connecting to DSP-control coar (bi-directional)
 	S32_T uneq_samps[],	// UnEqualised audio sample buffer
-	S32_T equal_samps[]	// Equalised audio sample buffer
+	S32_T equal_samps[],	// Equalised audio sample buffer
+	S32_T biquad_id // Identifies which BiQuad to use
 )
 {
 	S32_T chan_cnt; // Channel counter
@@ -78,14 +81,14 @@ void process_biquad_audio( // apply biquad to audio stream
 	// Loop through set of channel samples and process audio
 	for(chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 	{ // Apply BiQuad filter
-		equal_samps[chan_cnt] = use_biquad_filter( uneq_samps[chan_cnt] ,chan_cnt );
+		equal_samps[chan_cnt] = use_biquad_filter( biquad_id ,uneq_samps[chan_cnt] ,chan_cnt );
 //	equal_samps[chan_cnt] = uneq_samps[chan_cnt]; // DBG
 	} // for chan_cnt
-
 } // process_biquad_audio
 /******************************************************************************/
 void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of audio samples
-	streaming chanend c_dsp_eq // Channel connecting to DSP-control coar (bi-directional)
+	streaming chanend c_dsp_eq, // Channel connecting to DSP-control coar (bi-directional)
+	S32_T biquad_id // Identifies which BiQuad to use
 )
 {
  // Default biquad filter parameters
@@ -103,9 +106,8 @@ void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of a
 		equal_samps[chan_cnt] = 0;
 	}
 
-	biquad_param_s.sig_freq = 4000; // Fine-tune Filter cut-off
-	biquad_param_s.qual = 1; // Fine-tune Quality factor
-	config_biquad_filter( biquad_param_s ); // Initial configuration with Default BiQuad filter parameters ...
+	// Initialise with default configuration. NB This should be overwritten via control over c_dsp_eq channel
+	config_biquad_filter( biquad_id ,biquad_param_s );
 
 	// Loop forever
 	while(1)
@@ -113,11 +115,11 @@ void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of a
 		// Test input channel for control token
 		if (stestct(c_dsp_eq))
 		{ // Control Token
-			process_biquad_token( c_dsp_eq );
+			process_biquad_token( biquad_id ,c_dsp_eq );
 		} // if (stestct(c_dsp_eq))
 		else
 		{	// Audio Data
-			process_biquad_audio( c_dsp_eq ,uneq_samps ,equal_samps );
+			process_biquad_audio( c_dsp_eq ,uneq_samps ,equal_samps ,biquad_id );
 		} // else !(stestct(c_dsp_eq))
 	} // while (1)
 

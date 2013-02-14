@@ -13,8 +13,7 @@ BUILD_FLAGS = -Wall -O3 -report -g -DSDA_HIGH=2 -DSCL_HIGH=1
 # Modules are expected to be in the directory above the BASE_DIR directory.
 USED_MODULES = module_dsp_short_reverb module_dsp_loudness module_dsp_biquad module_dsp_short_delay module_dsp_utils module_i2s_master module_i2c_single_port
 
-XCC_FLAGS = $(BUILD_FLAGS)
-
+XCC_FLAGS = $(BUILD_FLAGS) -fxscope
 
 #=============================================================================
 # The following part of the Makefile includes the common build infrastructure

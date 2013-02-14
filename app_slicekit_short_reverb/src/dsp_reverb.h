@@ -26,10 +26,15 @@
 
 #include <xs1.h>
 #include <print.h>
+
 #include "types64bit.h"
 #include "app_global.h"
 #include "common_utils.h"
 #include "reverb.h"
+
+#ifdef USE_XSCOPE
+#include <xscope.h>
+#endif // ifdef USE_XSCOPE
 
 /*****************************************************************************/
 void dsp_control( // Controls audio stream processing for reverb application using dsp functions
