@@ -26,11 +26,16 @@
 
 #include <xs1.h>
 #include <print.h>
+
 #include "types64bit.h"
 #include "app_global.h"
 #include "common_utils.h"
 #include "sdram_io.h"
 #include "sdram_reverb.h"
+
+#ifdef USE_XSCOPE
+#include <xscope.h>
+#endif // ifdef USE_XSCOPE
 
 /*****************************************************************************/
 void dsp_sdram_reverb( // Controls audio stream processing for reverb application using dsp functions

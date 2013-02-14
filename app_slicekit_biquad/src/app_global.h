@@ -26,6 +26,9 @@
 #ifndef _APP_GLOBAL_H_
 #define _APP_GLOBAL_H_
 
+// Comment-out if NOT using xscope
+#define USE_XSCOPE 1
+
 // Tile that Audio Slice is connected to 
 #define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
 #define	DSP_TILE 1 // Tile used by DSP functions

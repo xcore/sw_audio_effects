@@ -28,6 +28,9 @@
 /** Number of audio channels used in this application */
 #define NUM_APP_CHANS 2 
 
+/** Number of BiQuad filters used in this application */
+#define NUM_APP_BIQUADS 1
+
 /** Number of delay-taps used in this application */
 #define NUM_APP_TAPS 14
 

@@ -24,6 +24,18 @@
 
 #include "main.h"
 
+#ifdef USE_XSCOPE
+/*****************************************************************************/
+void xscope_user_init( void ) // 'C' constructor function (NB called before main)
+{
+	xscope_register( 1
+		,XSCOPE_CONTINUOUS ,"Dummy" ,XSCOPE_INT ,"n"
+	); // xscope_register 
+
+	xscope_config_io( XSCOPE_IO_BASIC ); // Enable XScope printing
+} // xscope_user_init
+#endif // ifdef USE_XSCOPE
+
 /*****************************************************************************/
 int main (void)
 {
@@ -40,7 +52,7 @@ int main (void)
 
 		on stdcore[DSP_TILE]: dsp_sdram_reverb( c_aud_dsp ,c_dsp_eq ,c_dsp_gain ,c_dsp_sdram ); // DSP control coar for reverb
 
-		on stdcore[BIQUAD_TILE]: dsp_biquad( c_dsp_eq ); // BiQuad Equalisation coar
+		on stdcore[BIQUAD_TILE]: dsp_biquad( c_dsp_eq ,0 ); // BiQuad Equalisation coar
 
 		on stdcore[GAIN_TILE]: dsp_loudness( c_dsp_gain ); // non-linear-gain (Loudness) coar
 
