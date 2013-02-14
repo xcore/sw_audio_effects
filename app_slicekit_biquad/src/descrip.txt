@@ -23,3 +23,7 @@ and to work with Ross Owen's new sc_i2s/sc_i2c modules.
 08-OCT-2012
 -----------
 Rebuilt for xTimeComposer on New SliceKit board (*)
+
+14-FEB-2013
+-----------
+Updated to conform to new Biquad I/F that allows multiple instances
