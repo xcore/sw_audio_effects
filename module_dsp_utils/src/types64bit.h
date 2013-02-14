@@ -23,6 +23,7 @@ typedef unsigned short U16_T;
 /** 32-bit types */
 typedef signed int S32_T;
 typedef unsigned U32_T;
+typedef float R32_T;
 
 #if (XCC_VERSION_MAJOR >= 1200)
 /** 64-bit types */

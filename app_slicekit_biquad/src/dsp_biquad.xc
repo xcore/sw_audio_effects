@@ -28,6 +28,7 @@
 void process_all_chans( // Do DSP effect processing
 	S32_T out_samps[],	// Output Processed audio sample buffer
 	S32_T inp_samps[],	// Input unprocessed audio sample buffer
+	S32_T biquad_id, // Identifies which BiQuad to use
 	S32_T min_chans	// Minimum of input/output channels
 )
 {
@@ -36,14 +37,15 @@ void process_all_chans( // Do DSP effect processing
 
 	for(chan_cnt = 0; chan_cnt < min_chans; chan_cnt++)
 	{ // Apply non-linear gain shaping (Loudness)
-		out_samps[chan_cnt] = use_biquad_filter( inp_samps[chan_cnt] ,chan_cnt );
+		out_samps[chan_cnt] = use_biquad_filter( biquad_id ,inp_samps[chan_cnt] ,chan_cnt );
 //MB~	out_samps[chan_cnt] = inp_samps[chan_cnt]; //MB~ DBG
 	} // for chan_cnt
 
 } // process_all_chans
 /******************************************************************************/
 void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sample streams
-	streaming chanend c_dsp // DSP end of channel connecting to Audio_IO and DSP coars (bi-directional)
+	streaming chanend c_dsp, // DSP end of channel connecting to Audio_IO and DSP coars (bi-directional)
+	S32_T biquad_id // Identifies which BiQuad to use
 )
 {
 	// NB Setup correct number of channels in Makefile
@@ -68,7 +70,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 		out_samps[chan_cnt] = 0;
 	}
 
-	config_biquad_filter( cur_param_s );	// Initial BiQuad Configuration
+	config_biquad_filter( biquad_id ,cur_param_s );	// Initial BiQuad Configuration
 	printstrln( filt_names.names[cur_param_s.filt_mode].nam );
 
 	// Loop forever
@@ -85,7 +87,7 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 		samp_cnt++; // Update sample counter
 
 		// Do DSP Processing ...
-		process_all_chans( equal_samps ,inp_samps ,NUM_BIQUAD_CHANS );
+		process_all_chans( equal_samps ,inp_samps ,biquad_id ,NUM_BIQUAD_CHANS );
 
 		// Check current processing State
 		switch(cur_proc_state)
@@ -111,6 +113,11 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
 					printstrln("Dry");
+
+					// Change filter mode (While quiet) ready for fade-in
+					cur_param_s.filt_mode = increment_circular_offset( (cur_param_s.filt_mode + 1) ,ALL_PASS );
+
+					config_biquad_filter( biquad_id ,cur_param_s );	// Update BiQuad Configuration
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case FX2DRY:
 
@@ -124,11 +131,6 @@ void dsp_biquad( // Coar that applies a BiQuad filter to a set of of audio sampl
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY2FX; // Switch to Fade-In Effect
-
-					// Change filter mode ready for fade-in
-					cur_param_s.filt_mode = increment_circular_offset( (cur_param_s.filt_mode + 1) ,ALL_PASS );
-
-					config_biquad_filter( cur_param_s );	// Update BiQuad Configuration
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case DRY_ONLY:
 

@@ -26,10 +26,15 @@
 
 #include <xs1.h>
 #include <print.h>
+
 #include "types64bit.h"
 #include "app_global.h"
 #include "common_utils.h"
 #include "biquad_simple.h"
+
+#ifdef USE_XSCOPE
+#include <xscope.h>
+#endif // ifdef USE_XSCOPE
 
 #define FX_STR_LEN 10 // Holds Filter names
 
@@ -46,7 +51,8 @@ typedef struct FX_NAMES_TAG // Structure to hold all filter names
 
 /******************************************************************************/
 void dsp_biquad( // Coar that applies BiQuad filter to stream of audio samples
-	streaming chanend c_dsp_gain // Channel connecting to DSP-control coar (bi-directional)
+	streaming chanend c_dsp_eq, // Channel connecting to DSP-control coar (bi-directional)
+	S32_T biquad_id // Identifies which BiQuad to use
 );
 /******************************************************************************/
 
