@@ -162,6 +162,24 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <keyword>dsp</keyword>
             <keyword>slicekit</keyword>
         </component>
+        <component description = "The Long-Reverb or BiQuad effects are selected using the buttons on the General Purpose I/O (GPIO) slice" type = "demoCode" scope = "Example" path = "app_slicekit_dsp_effects" local = "false" id = "app_slicekit_dsp_effects" name = "Reverb/BiQuad Slicekit Audio Demo">
+            <board>XA-SK-AUDIO</board>
+            <componentDependency>module_dsp_biquad</componentDependency>
+            <componentDependency>module_i2c_single_port</componentDependency>
+            <componentDependency>module_sdram_memory_mapper</componentDependency>
+            <componentDependency>module_dsp_long_delay</componentDependency>
+            <componentDependency>module_sdram</componentDependency>
+            <componentDependency>module_dsp_utils</componentDependency>
+            <componentDependency>module_i2s_master</componentDependency>
+            <componentDependency>module_dsp_loudness</componentDependency>
+            <componentDependency>module_dsp_long_reverb</componentDependency>
+            <keyword>reverb</keyword>
+            <keyword>delay</keyword>
+            <keyword>echo</keyword>
+            <keyword>audio</keyword>
+            <keyword>dsp</keyword>
+            <keyword>slicekit</keyword>
+        </component>
     </components>
     <dependency repo = "sc_i2c">
         <githash>dedfa4dee858af88769705fbae8929c458d7c20b</githash>
