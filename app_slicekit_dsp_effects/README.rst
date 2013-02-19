@@ -1,7 +1,7 @@
 Reverb/BiQuad Slicekit Audio Demo
 =================================
 
-:scope: Work In Progress
+:scope: Example
 :description: The Long-Reverb or BiQuad effects are selected using the buttons on the General Purpose I/O (GPIO) slice
 :keywords: reverb, delay, echo, audio, dsp, slicekit
 :boards: XA-SK-AUDIO
