@@ -7,7 +7,7 @@ Reverb/BiQuad Slicekit Audio Demo
 :boards: XA-SK-AUDIO
 
 Applies reverb to audio stream.
-The Audio_IO uses 1 logical core (aka thread).
+The Audio_IO uses 1 logical core.
 The SDRAM_IO uses 1 logical core.
 The GP_IO uses 1 logical core.
 This DSP function uses 3 logical cores,
