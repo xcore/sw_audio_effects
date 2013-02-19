@@ -216,6 +216,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <exclude_dir>test_loudness</exclude_dir>
     <exclude_dir>test_reverb</exclude_dir>
     <exclude_dir>test_sdram_delay</exclude_dir>
+    <exclude_dir>app_slicekit_template</exclude_dir>
     <location>git@github.com:xcore/sw_audio_effects.git</location>
     <name>sw_audio_effects</name>
     <maintainer>beaumontm</maintainer>
