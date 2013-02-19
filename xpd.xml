@@ -164,7 +164,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         </component>
     </components>
     <dependency repo = "sc_i2c">
-        <githash>69055c9531de5f88b170d997db32f0b9f9663d5a</githash>
+        <githash>dedfa4dee858af88769705fbae8929c458d7c20b</githash>
         <uri>git@github.com:xcore/sc_i2c.git</uri>
     </dependency>
     <dependency repo = "sc_i2s">
@@ -173,18 +173,17 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         <version>1.4.1alpha0</version>
     </dependency>
     <dependency repo = "sc_sdram_burst">
-        <githash>f0821a9a917a4ea8178714aa9ff384f587dbd5e4</githash>
+        <githash>1d11e2ccfb37955d882619a4c8fefcab77c1af8b</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
-        <version>1.0.1rc1</version>
     </dependency>
     <dependency repo = "sc_util">
-        <githash>3f82b846395c07e8dd32ad9951afc209b6ed7efc</githash>
+        <githash>84c4a06e1d75e12fc0e607a4d60b434e69ed1a71</githash>
         <uri>https://github.com/xcore/sc_util</uri>
     </dependency>
     <dependency repo = "sc_lcd">
-        <githash>274204fb45b414df0d69407e97f661712e3a7760</githash>
+        <githash>5db094b21dc868589d4f0ff37711d2df30a642e9</githash>
         <uri>https://github.com/xcore/sc_lcd</uri>
-        <version>1.0.2rc0</version>
+        <version>1.1.0rc0</version>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <docdir>module_dsp_short_delay/doc</docdir>
@@ -194,6 +193,11 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <docdir>module_dsp_loudness/doc</docdir>
     <docdir>module_dsp_short_reverb/doc</docdir>
     <docdir>doc_quickstart</docdir>
+    <exclude_dir>test_biquad</exclude_dir>
+    <exclude_dir>test_delay</exclude_dir>
+    <exclude_dir>test_loudness</exclude_dir>
+    <exclude_dir>test_reverb</exclude_dir>
+    <exclude_dir>test_sdram_delay</exclude_dir>
     <location>git@github.com:xcore/sw_audio_effects.git</location>
     <name>sw_audio_effects</name>
     <maintainer>beaumontm</maintainer>
@@ -214,7 +218,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "97e7c22f60c2ba042b29010c53fb886db1e5f8cf" version = "1.0.1rc0" githash = "0822f2039df06e68a6a4c57b28a9477fd8bb19d2"></release>
     <release parenthash = "1059d5ba0365933c3eec7d3daea03d14b1756a61" version = "1.0.2alpha0" githash = "ecf3918542fc100f6402102727720e4d66c7f185"></release>
     <release parenthash = "2808b53ac6b8d85213b766d477bad3ad08f19c69" version = "1.0.2alpha1" githash = "4c23fa4a4f50a4cfca19c8b1b3af12f3a8b62257"></release>
-    <release parenthash = "db0da699a0dfed26dd48f08bf660803c9a8ca825" version = "1.0.2alpha2"></release>
+    <release parenthash = "db0da699a0dfed26dd48f08bf660803c9a8ca825" version = "1.0.2alpha2" githash = "5ec15f06e4253cd52dd08627846f46a5556d60a5"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
