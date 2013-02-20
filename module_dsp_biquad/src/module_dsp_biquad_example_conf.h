@@ -27,6 +27,7 @@
 
 /** Default value */
 #define NUM_BIQUAD_CHANS 2
+#define NUM_APP_BIQUADS 2
 
 #endif // _MODULE_DSP_BIQUAD_EXAMPLE_CONF_H_
 /******************************************************************************/
