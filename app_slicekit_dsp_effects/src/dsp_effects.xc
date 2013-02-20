@@ -389,6 +389,13 @@ void dsp_effects( // Controls audio stream processing for Reverb & BiQuad dsp fu
 			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
 		} // for chan_cnt
 
+		// Copy output channels 1/2 to 3/4
+#pragma loop unroll
+		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
+		{
+			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
+		} // for chan_cnt
+
 #pragma loop unroll
 		// 1st BiQuad channel for Solo Filter Effect
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)

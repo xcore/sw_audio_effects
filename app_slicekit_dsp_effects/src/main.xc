@@ -40,7 +40,7 @@ void xscope_user_init( void ) // 'C' constructor function (NB called before main
 int main (void)
 {
 	streaming chan c_aud_dsp; // Channel between I/O and Processing coars
-	streaming chan c_dsp_eq_arr[NUM_APP_BIQUADS]; // Array of channel between DSP-control and Equalisation coars
+	streaming chan c_dsp_eq_arr[NUM_APP_BIQUADS]; // Array of channels between DSP-control and Equalisation coars
 	streaming chan c_dsp_gain; // Channel between DSP-control and Loudness coars
   chan c_dsp_sdram; // Channel between DSP coar and SDRAM coar 
   chan c_dsp_gpio; // Channel between DSP coar and GPIO coar

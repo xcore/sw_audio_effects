@@ -28,7 +28,7 @@
 #include "app_conf.h"
 
 #define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS
-#define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS
+#define I2S_MASTER_NUM_CHANS_DAC (NUM_APP_CHANS << 1) // NB Stereo output copied from channels 1/2 to 3/4
 
 #endif // _I2S_MASTER_CONF_H_
 /******************************************************************************/
