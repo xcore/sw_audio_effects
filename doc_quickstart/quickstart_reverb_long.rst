@@ -1,6 +1,6 @@
-.. _slicekit_long_reverb_Quickstart:
+.. _sliceKIT_long_reverb_Quickstart:
 
-Long-Reverb SliceKit Application 
+Long-Reverb sliceKIT Application 
 --------------------------------
 
 This application introduces additional processing over and above the simple SDRAM based delay demo, using the BiQuad filter, long delay and Non-linear gain modules to create a proper reverberation effect.
@@ -14,9 +14,9 @@ Hardware Setup
 Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
-#. Locate the ``'Long-Reverb Slicekit Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
+#. Locate the ``'Long-Reverb sliceKIT Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
-#. Click on the app_slicekit_long_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
+#. Click on the app_sliceKIT_long_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
 
 Run the Application
 +++++++++++++++++++
@@ -28,12 +28,12 @@ Run the Application
 Look at the Code
 ++++++++++++++++
 
-#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_slicekit_long_reverb 
+#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_sliceKIT_long_reverb 
    and double click on the ``main.xc`` file within it. The file will open in the central editor window.
 #. Find the ``main.xc`` file and note that main() runs 5 cores (processes) in parallel. 
-   These are distributed over the tiles available on the SliceKit Core board.
+   These are distributed over the tiles available on the sliceKIT Core board.
 #. Find the app_global.h header. At the top are the tile definitions.
-   Note that on the SliceKit Core Board there are only 2 physical tiles 0 and 1.
+   Note that on the sliceKIT Core Board there are only 2 physical tiles 0 and 1.
    Long-reverb is a time critical application. It is important that the SDRAM (Memory-slice) 
    is connected to the same tile as the one running the delay functions (dsp_sdram_reverb).
 #. Find the dsp_sdram_reverb.xc file. The function ``dsp_sdram_reverb()`` controls the DSP processing for the reverb.

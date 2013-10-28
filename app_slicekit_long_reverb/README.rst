@@ -1,9 +1,9 @@
-Long-Reverb Slicekit Audio Demo
+Long-Reverb sliceKIT Audio Demo
 ===============================
 
 :scope: Example
 :description: A long reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain.
-:keywords: reverb, delay, echo, audio, dsp, slicekit
+:keywords: reverb, delay, echo, audio, dsp, sliceKIT
 :boards: XA-SK-AUDIO
 
 Toggles between Dry and Effect signals. 

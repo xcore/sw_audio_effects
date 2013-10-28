@@ -18,6 +18,6 @@ Evaluation
 
 This module can be evaluated using the following demo applications:
 
-   * BiQuad Filter Slicekit Demo
-   * Short-Reverb Slicekit Audio Demo
-   * Long-Reverb Slicekit Audio Demo
+   * BiQuad Filter sliceKIT Demo
+   * Short-Reverb sliceKIT Audio Demo
+   * Long-Reverb sliceKIT Audio Demo

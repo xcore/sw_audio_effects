@@ -18,4 +18,4 @@ Features
 Evaluation
 ----------
 
-Try the "Long-Reverb Slicekit Audio Demo" to get started with this module.
+Try the "Long-Reverb sliceKIT Audio Demo" to get started with this module.

@@ -17,4 +17,4 @@ Features
 Evaluation
 ----------
 
-Try the "Short-Reverb Slicekit Audio Demo" to get started with this module.
+Try the "Short-Reverb sliceKIT Audio Demo" to get started with this module.

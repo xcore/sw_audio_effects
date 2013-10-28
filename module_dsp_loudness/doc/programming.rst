@@ -8,9 +8,9 @@ Key Files
 
 Usage
 -----
-There are 2 functions in the 'C' library, designed to be called from an XC file.
+There are 2 functions in the 'C' library, designed to be called from an xC file.
    * ``config_loudness()`` Called to do initial configuration of loudness parameters (e.g. max gain). WARNING: This must be called before ...
-   * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an XC file.
+   * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an xC file.
 
 Note well, after initialisation, ``config_loudness()`` can be called again as required to re-configure the gain.
 
@@ -22,13 +22,13 @@ Demo Applications
 =================
 
 Before running this demo, it is suggested that you familiarise yourself with the 'BiQuad Application', 
-which has a quickstart guide at app_slicekit_biquad/doc_quickstart/quickstart.rst.
+which has a quickstart guide at app_sliceKIT_biquad/doc_quickstart/quickstart.rst.
 
-Loudness Application For SliceKit Board (``app_slicekit_loudness``)
+Loudness Application For sliceKIT Board (``app_sliceKIT_loudness``)
 -------------------------------------------------------------------
 
 This application uses module_dsp_loudness to apply non-linear gain to an audio-stream, 
-passing through the SliceKit Core board.
+passing through the sliceKIT Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
@@ -36,9 +36,9 @@ The audio is connected to the Audio Slice board using the following Analogue por
 Makefile
 ........
 
-The Makefile is found in the top level directory of the application (e.g. ``app_slicekit_loudness``)
+The Makefile is found in the top level directory of the application (e.g. ``app_sliceKIT_loudness``)
 
-The application is for the Slicekit Core Board so the TARGET variable needs to be set in the Makefile: e.g.
+The application is for the sliceKIT Core Board so the TARGET variable needs to be set in the Makefile: e.g.
 
 TARGET = SLICEKIT-L2.xn
 
@@ -49,14 +49,14 @@ NUM_GAIN_CHANS = 2
 Running the application with the Command Line Tools
 ...................................................
 
-In the top level directory of the application (e.g. ``app_slicekit_loudness``)  type
+In the top level directory of the application (e.g. ``app_sliceKIT_loudness``)  type
    * xmake clean
    * xmake all
 
-Connect the board to your PC using an XTAG-2
+Connect the board to your PC using an xTAG-2
 
 To start the demo type
-   * xrun --io bin/app_slicekit_loudness.xe
+   * xrun --io bin/app_sliceKIT_loudness.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
    * About 8 seconds of the effect (i.e. louder audio), followed by
@@ -85,14 +85,14 @@ high frequencies that manifest themselves as distortion.
 Try Other Audio Applications
 ----------------------------
 
-Some of the other audio applications are ``loudness loudness app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
+Some of the other audio applications are ``loudness loudness app_sliceKIT_biquad``, ``app_sliceKIT_short_delay``, ``app_sliceKIT_short_reverb``.
 
 * The biquad application uses a configurable BiQuad filter to achieve a number of different filter types,
   including low-pass, high-pass, band-pass, band-stop, and all-pass.
-	See app_slicekit_biquad/doc_quickstart/quickstart.rst.
+	See app_sliceKIT_biquad/doc_quickstart/quickstart.rst.
 * The short delay application creates multiple delays up to 125 milli-seconds (for a stereo channel at 48kHz).
 	See module_dsp_short_delay/doc/programming.rst
 * The short reverb application is an example of a more complex application running 4 cores, 
   and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).
-	See app_slicekit_short_reverb/doc_quickstart/quickstart.rst
+	See app_sliceKIT_short_reverb/doc_quickstart/quickstart.rst
 

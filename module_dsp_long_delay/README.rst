@@ -16,4 +16,4 @@ Features
 Evaluation
 ----------
 
-This module can be evaluated using the "Long-Delay Slicekit Audio Demo" and the "Long-Reverb Slicekit Audio Demo".
+This module can be evaluated using the "Long-Delay sliceKIT Audio Demo" and the "Long-Reverb sliceKIT Audio Demo".

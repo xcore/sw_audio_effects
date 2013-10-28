@@ -7,13 +7,13 @@ Evaluation Platforms
 Recommended Hardware
 --------------------
 
-Slicekit
+sliceKIT
 ++++++++
 
-This module may be evaluated using the Slicekit Modular Development Platform, available from digikey. 
+This module may be evaluated using the sliceKIT Modular Development Platform, available from digikey. 
 Minimum Required board SKUs are:
 
-   * XP-SKC-L2 (Slicekit L2 Core Board) plus XA-SK-AUDIO plus XA-SK-XTAG2 (Slicekit XTAG adaptor) 
+   * XP-SKC-L2 (sliceKIT L2 Core Board) plus XA-SK-AUDIO plus XA-SK-xTAG2 (sliceKIT xTAG adaptor) 
 
 Demonstration Applications
 --------------------------
@@ -21,7 +21,7 @@ Demonstration Applications
 Reverb Demo
 +++++++++++
 
-This module is used in the app_slicekit_short_reverb example application which shows how the module is deployed within the context of a more complex audio processing application. Note that in addition to the recommended hardware above, the XA-SK-SDRAM Slice Card will also be required, since this application buffers more audio samples than can be accomodated in the free internal SRAM of the xCore Tile.
+This module is used in the app_sliceKIT_short_reverb example application which shows how the module is deployed within the context of a more complex audio processing application. Note that in addition to the recommended hardware above, the XA-SK-SDRAM Slice Card will also be required, since this application buffers more audio samples than can be accomodated in the free internal SRAM of the xCORE Tile.
 
    * Package: sw_audio_effects
-   * Application: app_slicekit_short_reverb
+   * Application: app_sliceKIT_short_reverb

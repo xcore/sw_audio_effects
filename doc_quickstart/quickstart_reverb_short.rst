@@ -1,6 +1,6 @@
-.. _slicekit_short_reverb_Quickstart:
+.. _sliceKIT_short_reverb_Quickstart:
 
-Short Reverb SliceKit Application
+Short Reverb sliceKIT Application
 ---------------------------------
 
 This is a demonstration of a complex audio application that uses a number of software modules to produce a short 'reverb-like' effect on an audio stream.
@@ -13,10 +13,10 @@ Leave the setup is unchanged from the Biquad application demo.
 Import and Build the Application
 ++++++++++++++++++++++++++++++++
 
-#. Locate the ``'Short-Reverb Slicekit Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
+#. Locate the ``'Short-Reverb sliceKIT Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
    This will also cause the modules on which this application depends to be imported as well. 
-#. Click on the app_slicekit_short_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer to build it as before. 
+#. Click on the app_sliceKIT_short_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer to build it as before. 
 
 
 Run the Application
@@ -30,7 +30,7 @@ Look at the Code
 
 
 #. Find the app_global.h header. At the top are the tile definitions.
-   Note that on the SliceKit Core Board there are only 2 physical tiles 0 and 1.
+   Note that on the sliceKIT Core Board there are only 2 physical tiles 0 and 1.
    To maximise the amount of memory available for the process (core) controlling the delay (`dsp_control()``),
    it is given it's own tile. All other cores are placed on the other tile.
 #. Find the dsp_reverb.xc file. The function ``dsp_control()`` handles the DSP processing for the reverb.

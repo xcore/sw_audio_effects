@@ -1,4 +1,4 @@
-Template Slicekit Audio Demo
+Template sliceKIT Audio Demo
 ============================
 
 :scope: Template

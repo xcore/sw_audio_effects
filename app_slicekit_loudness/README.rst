@@ -1,9 +1,9 @@
-Loudness Slicekit Audio Demo
+Loudness sliceKIT Audio Demo
 ============================
 
 :scope: Example
 :description: Mid-range volume levels are increased without increasing low-level or high-level signals.
-:keywords: gain, loudness, audio, dsp, slicekit
+:keywords: gain, loudness, audio, dsp, sliceKIT
 :boards: XA-SK-AUDIO
 
 Toggles between Dry and Effect signals. 

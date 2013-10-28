@@ -28,4 +28,4 @@ Currently 5 parabola's are used, as follows:
 Evaluation
 ----------
 
-Try the "Loudness Slicekit Audio Demo" to get started with this module.
+Try the "Loudness sliceKIT Audio Demo" to get started with this module.
