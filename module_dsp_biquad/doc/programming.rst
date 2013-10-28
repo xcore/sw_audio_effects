@@ -15,7 +15,7 @@ There are 2 functions in the 'C' library, designed to be called from an xC file.
    * ``config_biquad_filter()`` Called to do initial configuration of biquad parameters (e.g. Low-pass). WARNING: This must be called before ...
    * ``use_biquad_filter()``, which is called to apply the filter to one audio-sample, designed to be called from an xC file.
 
-Note well: After initialisation, ``config_biquad_filter()`` can be called again as required to re-configure the filter.
+Note well: After initialization, ``config_biquad_filter()`` can be called again as required to re-configure the filter.
 
 To set the filter parameters, edit the following defines in the include file module_dsp_biquad/src/biquad_simple.h
 
@@ -27,10 +27,10 @@ To set the filter parameters, edit the following defines in the include file mod
 Demo Applications
 =================
 
-BiQuad Application For sliceKIT Board (app_sliceKIT_biquad)
+BiQuad Application For sliceKIT Board (app_slicekit_biquad)
 -----------------------------------------------------------
 
-To get started with this application, run through the instructions in the sliceKIT_biquad_filter_Quickstart_ quickstart guide.
+To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
 
 This application uses module_dsp_biquad to apply a filter to an audio-stream passing through the sliceKIT Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:
@@ -41,7 +41,7 @@ The audio is connected to the Audio Slice board using the following Analogue por
 Makefile
 ........
 
-The Makefile is found in the top level directory of the application (e.g. app_sliceKIT_biquad)
+The Makefile is found in the top-level directory of the application (e.g. app_slicekit_biquad)
 
 The application is for the sliceKIT Core Board so the TARGET variable needs to be set in the Makefile: e.g
 TARGET = SLICEKIT-L2.xn
@@ -52,7 +52,7 @@ NUM_BIQUAD_CHANS = 2
 Running the application with the Command Line Tools
 ...................................................
 
-In the top level directory of the application (e.g. app_sliceKIT_biquad) type
+In the top-level directory of the application (e.g. app_slicekit_biquad) type
 
    * xmake clean
    * xmake all
@@ -61,7 +61,7 @@ Connect the board to your PC using an xTAG-2
 
 To start the demo type
 
-   * xrun --io bin/app_sliceKIT_biquad.xe
+   * xrun --io bin/app_slicekit_biquad.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
 
@@ -83,7 +83,7 @@ This cycle will repeat indefinitely.
 Trouble-shooting
 ................
 
-During initialisation, and when the system is reconfigured, 
+During initialization, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
 The filter may produce output audio that is louder than the input,

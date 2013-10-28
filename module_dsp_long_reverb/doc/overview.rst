@@ -1,8 +1,8 @@
 Overview
 ========
 
-This is a function library for creating a long reverb-like effect. The input audio stream is fed into a complex DSP function that uses multiple echos, 
-equalisation and gain-shaping, to create an example reverberation effect.
+This is a function library for creating a long reverb-like effect. The input audio stream is fed into a complex DSP function that uses multiple echoes, 
+equalization and gain-shaping, to create an example reverberation effect.
 The dsp_function returns an output stream that is a mix of the input and effect signal.
 The following characteristics of the reverb are currently configurable:
 

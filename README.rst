@@ -9,7 +9,7 @@ Digital Audio Effects Applications
 Key Features
 ============
 
- * A number of simple audio effect modules, e.g. equalisation, delay, gain-control
+ * A number of simple audio effect modules, e.g. equalization, delay, gain-control
  * A number of complex audio effect applications which combine modules (e.g. reverb)
 
 Documentation

@@ -2,7 +2,7 @@ Short-Reverb sliceKIT Audio Demo
 ================================
 
 :scope: Example
-:description: A reverb-like effect is created by using the building blocks of delay, equalisation and 'bring-up' gain.
+:description: A reverb-like effect is created by using the building blocks of delay, equalization and 'bring-up' gain.
 :keywords: reverb, delay, echo, audio, dsp, sliceKIT
 :boards: XA-SK-AUDIO
 
@@ -17,6 +17,6 @@ Features
 DSP Logical Core Usage
 ----------------------
 
-   * one for Equalisation
+   * one for Equalization
    * one for Gain-control (Loudness)
    * one for control and delay functions

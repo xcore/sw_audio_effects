@@ -6,7 +6,7 @@ This ensures maximum allowed signal level is not exceeded, and the low-level noi
 
 This algorithm uses a piece-wise parabolic curve, to limit the number of multiplies required per sample.
 
-Currently 5 parabola's are used, as follows:-
+Currently 5 parabolas are used, as follows:-
 
    * Unity-gain section (Straight line) for low-level signals (e.g. noise)
    * Transition to maximum gradient (user-configurable). 

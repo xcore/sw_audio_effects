@@ -3,7 +3,7 @@ BiQuad Filter sliceKIT Audio Demo
 
 :scope: Example
 :description: Applies a BiQuad filter to an number of audio channels on the sliceKIT board
-:keywords: biquad, filter, equalisation, audio, dsp, sliceKIT
+:keywords: biquad, filter, equalization, audio, dsp, sliceKIT
 :boards: XA-SK-AUDIO
 
 Toggles between Dry and Effect signals, each time the Effect is called a different filter is used.

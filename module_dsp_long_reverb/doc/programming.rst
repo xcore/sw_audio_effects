@@ -15,7 +15,7 @@ There are 2 functions in the 'C' library, designed to be called from an xC file.
    * ``config_sdram_reverb()`` Called to do initial configuration of reverb parameters (e.g. room size). WARNING: This must be called before ...
    * ``use_sdram_reverb()`` Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an xC file.
 
-Note, after initialisation, ``config_sdram_reverb()`` can be called again as required to re-configure the reverb parameters.
+Note, after initialization, ``config_sdram_reverb()`` can be called again as required to re-configure the reverb parameters.
 
 The default reverb parameters are set in the dsp_sdram_reverb() function in file dsp_sdram_reverb.xc.
 These can be overwritten before calling config_sdram_reverb.
@@ -23,15 +23,15 @@ Currently the room_size is set to 100 metres (Cathedral) e.g.
 
 def_param_s.room_size = 100;
 
-Note The maximum room-size is limited by the amount of memory used for the delay-line.
+Note Well: The maximum room-size is limited by the amount of memory used for the delay-line.
 
 Demo Applications
 =================
 
-Long-Reverb Application For sliceKIT Board (``app_sliceKIT_long_reverb``)
+Long-Reverb Application For sliceKIT Board (``app_slicekit_long_reverb``)
 ------------------------------------------
 
-To get started with this application, run through the instructions in the sliceKIT_biquad_filter_Quickstart_ quickstart guide.
+To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
 
 This application uses ``module_dsp_long_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the sliceKIT Core board.
@@ -43,7 +43,7 @@ The following parameters are configurable:
 
    * sample frequency
    * room size (in metres)
-   * Frequancy absorption (low-pass frequency cut-off)
+   * Frequency absorption (low-pass frequency cut-off)
    * Volume absorption ('bring-up' gain)
 
    * Level of Dry (Input)
@@ -55,7 +55,7 @@ The following parameters are configurable:
 Makefile
 ........
 
-The Makefile is found in the top level directory of the application (e.g. ``app_sliceKIT_long_reverb``)
+The Makefile is found in the top-level directory of the application (e.g. ``app_slicekit_long_reverb``)
 
 The application is for the sliceKIT Core Board so the TARGET variable needs to be set in the Makefile: e.g.
 
@@ -68,7 +68,7 @@ NUM_REVERB_CHANS = 2
 Running the application with the Command Line Tools
 ...................................................
 
-In the top level directory of the application (e.g. ``app_sliceKIT_long_reverb``) type
+In the top-level directory of the application (e.g. ``app_slicekit_long_reverb``) type
 
    * xmake clean
    * xmake all
@@ -77,7 +77,7 @@ Connect the board to your PC using an xTAG-2
 
 To start the demo type
 
-   * xrun --io bin/app_sliceKIT_long_reverb.xe
+   * xrun --io bin/app_slicekit_long_reverb.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
 
@@ -89,7 +89,7 @@ This cycle will repeat indefinitely.
 Trouble-shooting
 ................
 
-During initialisation, and when the system is reconfigured, 
+During initialization, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
 Most recorded music already has reverb added. 

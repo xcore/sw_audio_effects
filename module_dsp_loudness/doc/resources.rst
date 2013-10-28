@@ -11,5 +11,5 @@ This approximate memory usage for this module is (figures shown in Bytes):
 
 Computation
 -----------
-The gain-shaping algorithm uses 2 multiples/sample/channel. It is estimated that 24 multiples are possible at 48kHz sample rate which means that it is possible to process 12 channels simultaneously at 48 kHz.
+The gain-shaping algorithm uses 2 multiplies/sample/channel. It is estimated that 24 multiplies are possible at 48kHz sample rate which means that it is possible to process 12 channels simultaneously at 48 kHz.
 

@@ -7,7 +7,6 @@ API
 
 Configuration Defines
 ---------------------
-.. doxygendefine:: NUM_REV_TAPS 
 .. doxygendefine:: DEF_ROOM_SIZE 
 .. doxygendefine:: MIX_BITS 
 .. doxygendefine:: DEF_DRY_LVL 

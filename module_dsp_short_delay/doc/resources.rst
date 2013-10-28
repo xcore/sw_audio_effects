@@ -17,7 +17,7 @@ This approximate memory usage for this module is (figures shown in Bytes):
 Computation
 -----------
 
-The Delay-line uses no multiples.  So far a maximum of 4 delay taps have been used successfully, each on 4 channels.
+The Delay-line uses no multiplies.  So far a maximum of 4 delay taps have been used successfully, each on 4 channels.
 By inspecting timings the processing time for one tap is about 80 cycles.
 For a 48 kHz sample rate and 500 MHz processor, this would allow about 100 taps/sample/channel.
 

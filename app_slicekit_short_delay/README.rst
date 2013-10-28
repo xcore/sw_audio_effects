@@ -7,7 +7,7 @@ Short-Delay sliceKIT Audio Demo
 :boards: XA-SK-AUDIO
 
 Toggles between Dry and Effect signals. 
-A 4-tap delay-line is used to create 4 echos which are mixed with the original signal.
+A 4-tap delay-line is used to create 4 echoes which are mixed with the original signal.
 
 The Audio_IO uses 1 logical core (aka thread).
 The DSP Delay-line function uses 1 logical core.

@@ -1,12 +1,12 @@
-.. _sliceKIT_biquad_filter_Quickstart:
+.. _slicekit_biquad_filter_Quickstart:
 
-This document covers the setup and execution of various demonstrations of real time audio processing. They all require the XA-SK-AUDIO Slice Card, and the last two also need the XA-SK-SDRAM external memory Slice Card.
+This document covers the setup and execution of various demonstrations of real time audio processing. They all require the XA-SK-AUDIO sliceCARD, and the last two also need the XA-SK-SDRAM external memory sliceCARD.
 
 BiQuad Filter sliceKIT Application
 ----------------------------------
 
 This is a demonstration of a simple audio application that uses a small number of software modules and slice cards, 
-to produce an audio equalisation effect.
+to produce an audio equalization effect.
 
 Hardware Setup
 ++++++++++++++
@@ -18,7 +18,7 @@ The following hardware components are required:
 * XA-SK-xTAG2 (sliceKIT xTAG adaptor)
 * xTAG-2 (xTAG Connector board)
 
-XP-SKC-L2 sliceKIT Core board has four slots with edge conectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``, 
+XP-SKC-L2 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``, 
 and one chain connector marked with a ``CROSS``.
 
 To setup up the system:
@@ -49,7 +49,7 @@ Import and Build the Application
    and drag it into the Project Explorer window in the xTIMEcomposer. 
    This will also cause the modules on which this application depends to be imported as well. 
    These modules are: module_dsp_biquad, module_dsp_utils, module_i2s_master and module_i2c_single_port.
-#. Click on the app_sliceKIT_biquad item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
+#. Click on the app_slicekit_biquad item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
    Check the console window to verify that the application has built successfully. 
 
 For help in using xTIMEcomposer, try the xTIMEcomposer tutorial, that can be found by selecting Help->Tutorials from the xTIMEcomposer menu.
@@ -85,7 +85,7 @@ Now that the application has been run with the default settings, you could try a
 Such as the 'significant frequency' (e.g. cut-off frequency) and 'quality factor' (e.g. resonance).
 Note well, some combinations may produce overload (clipping distortion), in which case turn down the input volume.
 
-#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_sliceKIT_biquad 
+#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_slicekit_biquad 
    and double click on the ``main.xc`` file within it. The file will open in the central editor window.
 #. Find the ``main.xc`` file and note that main() runs 2 cores (processes) in parallel connected by one channel.
    The processes are distributed over the tiles available on the sliceKIT Core board.
@@ -102,7 +102,7 @@ Note well, some combinations may produce overload (clipping distortion), in whic
    Data from these channels is buffered, and the buffers are passed to the ``use_biquad_filter()`` function for processing.
    ``use_biquad_filter()`` and ``config_biquad_filter()`` can be found in directory ``module_dsp_biquad\src``. 
    Finally, there is a finite-state-machine which switches the output between the dry and effect signals.
-#. The BiQuad algorithm uses 6 multiples/sample.
-   It is estimated that 24 multiples are possible at a sample rate of 48 kHz.
+#. The BiQuad algorithm uses 6 multiplies/sample.
+   It is estimated that 24 multiplies are possible at a sample rate of 48 kHz.
    This would allow 4 channels of audio to be processed simultaneously.
 

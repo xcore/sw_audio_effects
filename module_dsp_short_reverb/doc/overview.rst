@@ -2,7 +2,7 @@ Overview
 ========
 
 This application creates a short 'reverb-like' effect.
-The input audio stream is fed into a complex DSP function that uses multiple delays, equalisation, gain-shaping and feedback.
+The input audio stream is fed into a complex DSP function that uses multiple delays, equalization, gain-shaping and feedback.
 The dsp_function returns an output stream that is a mix of the input and effect signal.
 The following characteristics of the reverb are currently configurable:
 

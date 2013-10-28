@@ -4,7 +4,7 @@ sw_audio_effects Change Log
 1.0.3
 -----
 
-  * app_sliceKIT_dsp_effects demo updated to Output on both stereo pairs (Input only on channels 1/2)
+  * app_slicekit_dsp_effects demo updated to Output on both stereo pairs (Input only on channels 1/2)
 
 1.0.2
 -----

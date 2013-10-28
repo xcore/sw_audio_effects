@@ -1,4 +1,4 @@
-.. _sliceKIT_long_reverb_Quickstart:
+.. _slicekit_long_reverb_Quickstart:
 
 Long-Reverb sliceKIT Application 
 --------------------------------
@@ -16,7 +16,7 @@ Import and Build the Application
 
 #. Locate the ``'Long-Reverb sliceKIT Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
-#. Click on the app_sliceKIT_long_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
+#. Click on the app_slicekit_long_reverb item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
 
 Run the Application
 +++++++++++++++++++
@@ -28,7 +28,7 @@ Run the Application
 Look at the Code
 ++++++++++++++++
 
-#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_sliceKIT_long_reverb 
+#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_slicekit_long_reverb 
    and double click on the ``main.xc`` file within it. The file will open in the central editor window.
 #. Find the ``main.xc`` file and note that main() runs 5 cores (processes) in parallel. 
    These are distributed over the tiles available on the sliceKIT Core board.

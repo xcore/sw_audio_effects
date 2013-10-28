@@ -1,9 +1,9 @@
-.. _sliceKIT_long_delay_Quickstart:
+.. _slicekit_long_delay_Quickstart:
 
 Long-Delay sliceKIT Application 
 --------------------------------
 
-This is a demonstration of an simple audio application that adds the XA-SK-SDRAM Slice Card to the existing setup using the XA-SK-AUDIO Slice Card, enabling larger amounts of audio buffering and hence more long lived and easily audible audio effects.
+This is a demonstration of a simple audio application that adds the XA-SK-SDRAM sliceCARD to the existing setup using the XA-SK-AUDIO sliceCARD, enabling larger amounts of audio buffering and hence more long lived and easily audible audio effects.
 
 Hardware Setup
 ++++++++++++++
@@ -26,7 +26,7 @@ Import and Build the Application
 
 #. Locate the ``'Long-Delay sliceKIT Audio Demo'`` item in the xSOFTip pane on the bottom left of the window, 
    and drag it into the Project Explorer window in the xTIMEcomposer. 
-#. Click on the app_sliceKIT_long_delay item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
+#. Click on the app_slicekit_long_delay item in the Explorer pane then click on the build icon (hammer) in xTIMEcomposer. 
    Check the console window to verify that the application has built successfully. There will be quite a number of warnings that ``bidirectional buffered port not supported in hardware``. These can be safely ignored for this component.
 
 Run the Application
@@ -40,7 +40,7 @@ Run the Application
 Look at the Code
 ++++++++++++++++
 
-#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_sliceKIT_long_delay 
+#. Examine the application code. In xTIMEcomposer, navigate to the ``src`` directory under app_slicekit_long_delay 
    and double click on the ``main.xc`` file within it. The file will open in the central editor window.
 #. Find the ``main.xc`` file and note that main() runs 3 cores (processes) in parallel. 
    These are distributed over the tiles available on the sliceKIT Core board.
