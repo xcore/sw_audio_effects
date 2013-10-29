@@ -11,6 +11,7 @@ Usage
 -----
 
 There are 2 functions in the 'C' library, designed to be called from an xC file.
+
    * ``config_reverb()`` Called to do initial configuration of reverb parameters (e.g. room size). WARNING: This must be called before ...
    * ``use_reverb()`` Called to apply reverb to a a set of audio-sample stereo pairs, designed to be called from an xC file.
 
@@ -37,6 +38,7 @@ To get started with this application, run through the instructions in the slicek
 This application uses ``module_dsp_short_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the sliceKIT Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:
+
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 
@@ -77,9 +79,11 @@ In the top-level directory of the application (e.g. ``app_slicekit_short_reverb`
 Connect the board to your PC using an xTAG-2
 
 To start the demo type
+
    * xrun --io bin/app_slicekit_short_reverb.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
+
    * About 8 seconds of the reverb effect, followed by
    * About 8 seconds of the dry (un-effected) signal.
 

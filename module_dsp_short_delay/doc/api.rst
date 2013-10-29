@@ -9,8 +9,6 @@ Configuration Defines
 ---------------------
 .. doxygendefine:: DEF_SAMP_FREQ 
 .. doxygendefine:: MEM_SAMPS 
-.. doxygendefine:: MAX_TAPS 
-.. doxygendefine:: DEF_TAPS 
 
 Functions
 ---------

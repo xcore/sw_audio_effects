@@ -36,6 +36,7 @@ To get started with this application, run through the instructions in the slicek
 This application uses ``module_dsp_long_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the sliceKIT Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:
+
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 

@@ -11,6 +11,7 @@ Usage
 -----
 
 There are 2 functions in the 'C' library, designed to be called from an xC file.
+
    * ``config_loudness()`` Called to do initial configuration of loudness parameters (e.g. max gain). WARNING: This must be called before ...
    * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an xC file.
 
@@ -32,6 +33,7 @@ Loudness Application For sliceKIT Board (``app_slicekit_loudness``)
 This application uses module_dsp_loudness to apply non-linear gain to an audio-stream, 
 passing through the sliceKIT Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:
+
    * Input 0/1 (Microphone mini-jack)
    * Output 0/1 (Headphone mini-jack)
 
@@ -52,15 +54,18 @@ Running the application with the Command Line Tools
 ...................................................
 
 In the top-level directory of the application (e.g. ``app_slicekit_loudness``)  type
+
    * xmake clean
    * xmake all
 
 Connect the board to your PC using an xTAG-2
 
 To start the demo type
+
    * xrun --io bin/app_slicekit_loudness.xe
 
 When listening to the output audio at 48kHz sample rate, you should hear the following ...
+
    * About 8 seconds of the effect (i.e. louder audio), followed by
    * About 8 seconds of the dry (un-effected) signal (i.e. quieter audio)
 
