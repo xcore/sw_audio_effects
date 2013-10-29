@@ -21,16 +21,16 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
         </component>
         <component description = "Delays a No. of audio channels passing through the sliceKIT board creating an long echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_long_delay" local = "false" id = "app_slicekit_long_delay" name = "Long-Delay sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
-            <componentDependency version = "1.0.1">module_sdram</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency version = "1.0.1">module_sdram</componentDependency>
             <keyword>delay</keyword>
             <keyword>echo</keyword>
             <keyword>audio</keyword>
@@ -41,24 +41,24 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
         </component>
         <component description = "A long reverb-like effect is created by using the building blocks of delay, equalization and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_long_reverb" local = "false" id = "app_slicekit_long_reverb" name = "Long-Reverb sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
-            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_long_reverb</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency version = "1.0.1">module_sdram</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_long_reverb</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
             <keyword>reverb</keyword>
             <keyword>delay</keyword>
@@ -75,10 +75,10 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
         </component>
         <component description = "Applies a BiQuad filter to an number of audio channels on the sliceKIT board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Filter sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <keyword>biquad</keyword>
             <keyword>filter</keyword>
@@ -91,21 +91,21 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
 capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
         </component>
         <component description = "Delays an a number of audio channels paasing through the sliceKIT board creating an echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_short_delay" local = "false" id = "app_slicekit_short_delay" name = "Short-Delay sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
+            <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <keyword>delay</keyword>
             <keyword>echo</keyword>
@@ -115,20 +115,20 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         </component>
         <component description = "A reverb-like effect is created by using the building blocks of delay, equalization and 'bring-up' gain." type = "demoCode" scope = "Example" path = "app_slicekit_short_reverb" local = "false" id = "app_slicekit_short_reverb" name = "Short-Reverb sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
+            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_short_reverb</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_short_delay</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
             <keyword>reverb</keyword>
             <keyword>delay</keyword>
             <keyword>echo</keyword>
@@ -140,8 +140,8 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <board>XA-SK-SDRAM</board>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
             <componentDependency version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
@@ -155,15 +155,15 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <board>XA-SK-SDRAM</board>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency version = "1.0.1">module_sdram</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.0.1">module_sdram_memory_mapper</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_biquad</componentDependency>
             <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_long_delay</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
             <keyword>reverb</keyword>
@@ -184,9 +184,9 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         <component description = "Mid-range volume levels are increased without increasing low-level or high-level signals." type = "demoCode" scope = "Example" path = "app_slicekit_loudness" local = "false" id = "app_slicekit_loudness" name = "Loudness sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency version = "1.0.3">module_dsp_loudness</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
+            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.0">module_i2c_single_port</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
-            <componentDependency version = "1.0.3">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.1">module_i2s_master</componentDependency>
             <keyword>gain</keyword>
             <keyword>loudness</keyword>
