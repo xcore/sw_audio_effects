@@ -7,8 +7,7 @@
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
         </component>
-        <component name = "Long-Reverb Function Library" type = "component" buildresults_path = "module_dsp_long_reverb/.module_dsp_long_reverb.buildinfo" scope = "Early Development" path = "module_dsp_long_reverb" metainfo_path = "module_dsp_long_reverb/module_dsp_long_reverb.metainfo" local = "false" id = "module_dsp_long_reverb" description = "A long 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping,
-capable of processing up to 4 channels of 48 KHz audio in parallel.">
+        <component name = "Long-Reverb Function Library" type = "component" buildresults_path = "module_dsp_long_reverb/.module_dsp_long_reverb.buildinfo" scope = "Early Development" path = "module_dsp_long_reverb" metainfo_path = "module_dsp_long_reverb/module_dsp_long_reverb.metainfo" local = "false" id = "module_dsp_long_reverb" description = "A long 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping, capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <board>XA-SK-SDRAM</board>
             <componentDependency>module_dsp_biquad</componentDependency>
@@ -61,8 +60,7 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <keyword>SDRAM</keyword>
             <keyword>Memory-slice</keyword>
         </component>
-        <component name = "Non-linear-gain Function Library" type = "component" buildresults_path = "module_dsp_loudness/.module_dsp_loudness.buildinfo" scope = "Early Development" path = "module_dsp_loudness" metainfo_path = "module_dsp_loudness/module_dsp_loudness.metainfo" local = "false" id = "module_dsp_loudness" description = "The non-linear-gain function increases perceived loudness, without increasing the maximum volume.
-It uses 2 multplies/sample/channel, and is capable of processing around 12 channels of 48 KHz audio in parallel.">
+        <component name = "Non-linear-gain Function Library" type = "component" buildresults_path = "module_dsp_loudness/.module_dsp_loudness.buildinfo" scope = "Early Development" path = "module_dsp_loudness" metainfo_path = "module_dsp_loudness/module_dsp_loudness.metainfo" local = "false" id = "module_dsp_loudness" description = "The non-linear-gain function increases perceived loudness, without increasing the maximum volume. It uses 2 multplies/sample/channel, and is capable of processing around 12 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
@@ -106,8 +104,7 @@ It uses 2 multplies/sample/channel, and is capable of processing around 12 chann
             <keyword>dsp</keyword>
             <keyword>slicekit</keyword>
         </component>
-        <component name = "Short-Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A short 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping,
-capable of processing up to 4 channels of 48 KHz audio in parallel.">
+        <component name = "Short-Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A short 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping, capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <componentDependency>module_dsp_biquad</componentDependency>
             <componentDependency>module_dsp_utils</componentDependency>
@@ -182,26 +179,19 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
         </component>
     </components>
     <dependency repo = "sc_i2c">
-        <githash>dedfa4dee858af88769705fbae8929c458d7c20b</githash>
+        <githash>53349e8bd6493701b1ec462187b14c9e74bdc6bd</githash>
         <uri>git@github.com:xcore/sc_i2c.git</uri>
+        <version>2.2.0rc0</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>e8f03de2c99c9b8ca787be7c3bc68432725621e3</githash>
+        <githash>58c4623e50f03572e0e9ea435cd5c6a8ac01d3cf</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
-        <version>1.4.1alpha0</version>
+        <version>1.4.0rc1</version>
     </dependency>
     <dependency repo = "sc_sdram_burst">
-        <githash>1d11e2ccfb37955d882619a4c8fefcab77c1af8b</githash>
+        <githash>f0821a9a917a4ea8178714aa9ff384f587dbd5e4</githash>
         <uri>https://github.com/xcore/sc_sdram_burst</uri>
-    </dependency>
-    <dependency repo = "sc_util">
-        <githash>84c4a06e1d75e12fc0e607a4d60b434e69ed1a71</githash>
-        <uri>https://github.com/xcore/sc_util</uri>
-    </dependency>
-    <dependency repo = "sc_lcd">
-        <githash>5db094b21dc868589d4f0ff37711d2df30a642e9</githash>
-        <uri>https://github.com/xcore/sc_lcd</uri>
-        <version>1.1.0rc0</version>
+        <version>1.0.1rc1</version>
     </dependency>
     <description>Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain</description>
     <docdir>module_dsp_short_delay/doc</docdir>
@@ -238,9 +228,10 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <release parenthash = "1059d5ba0365933c3eec7d3daea03d14b1756a61" version = "1.0.2alpha0" githash = "ecf3918542fc100f6402102727720e4d66c7f185"></release>
     <release parenthash = "2808b53ac6b8d85213b766d477bad3ad08f19c69" version = "1.0.2alpha1" githash = "4c23fa4a4f50a4cfca19c8b1b3af12f3a8b62257"></release>
     <release parenthash = "db0da699a0dfed26dd48f08bf660803c9a8ca825" version = "1.0.2alpha2" githash = "5ec15f06e4253cd52dd08627846f46a5556d60a5"></release>
-    <release parenthash = "d6655a435a93e4af64d1490b96a140ef06e106c0" version = "1.0.3beta0"></release>
+    <release parenthash = "d6655a435a93e4af64d1490b96a140ef06e106c0" version = "1.0.3beta0" githash = "2bd3226e1be5a4b13a73853f86d40a8b9f20fb50"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
+    <version_defines></version_defines>
     <xcore_repo>sw_audio_effects.git</xcore_repo>
     <xpd_version>1.0</xpd_version>
 </xpd>
