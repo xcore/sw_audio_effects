@@ -29,9 +29,9 @@ Demo Applications
 =================
 
 Long-Reverb Application For sliceKIT Board (``app_slicekit_long_reverb``)
-------------------------------------------
+-------------------------------------------------------------------------
 
-To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
+To get started with this application, run through the instructions in the BiQuad Filter quickstart guide.
 
 This application uses ``module_dsp_long_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the sliceKIT Core board.

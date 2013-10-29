@@ -30,7 +30,7 @@ Demo Applications
 BiQuad Application For sliceKIT Board (app_slicekit_biquad)
 -----------------------------------------------------------
 
-To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
+To get started with this application, run through the instructions in the BiQuad Filter quickstart guide.
 
 This application uses module_dsp_biquad to apply a filter to an audio-stream passing through the sliceKIT Core board.
 The audio is connected to the Audio Slice board using the following Analogue ports:
@@ -99,10 +99,6 @@ Try Other Audio Applications
 
 Some of the other audio applications are ``app_slicekit_loudness``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
 
-* The loudness application increases the perceived loudness, without increasing the maximum volume.
-	See doc_quickstart/quickstart_loudness.rst
-* The short delay application creates a multiple echo effect, by storing audio in local memory.
-	See doc_quickstart/quickstart_short_delay.rst
-* The short reverb application is an example of a more complex application running 4 cores, 
-  and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).
-	See doc_quickstart/quickstart_reverb_short.rst
+   * The loudness application increases the perceived loudness, without increasing the maximum volume. See doc_quickstart/quickstart_loudness.rst
+   * The short delay application creates a multiple echo effect, by storing audio in local memory. See doc_quickstart/quickstart_short_delay.rst
+   * The short reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz). See doc_quickstart/quickstart_reverb_short.rst

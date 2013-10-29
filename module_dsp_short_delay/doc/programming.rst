@@ -82,8 +82,5 @@ Try Other Audio Applications
 
 Some of the other audio applications are ``app_slicekit_short_reverb`` and ``app_slicekit_long_delay``.
 
-* The short reverb application is an example of a more complex application running 4 cores, 
-  and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).
-	See doc_quickstart/quickstart_reverb_short.rst
-* The long delay application creates a set of long delays upto 24 seconds, by storing audio in the SDRAM Memory-Slice.
-	See doc_quickstart/quickstart_long_delay.rst
+   * The short reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz). See doc_quickstart/quickstart_reverb_short.rst
+   * The long delay application creates a set of long delays upto 24 seconds, by storing audio in the SDRAM Memory-Slice. See doc_quickstart/quickstart_long_delay.rst

@@ -246,6 +246,8 @@ capable of processing up to 4 channels of 48 KHz audio in parallel.">
     <docdir>module_dsp_loudness/doc</docdir>
     <docdir>module_dsp_short_reverb/doc</docdir>
     <docdir>doc_quickstart</docdir>
+    <exclude_dir>app_slicekit_dsp_effects</exclude_dir>
+    <exclude_dir>app_slicekit_template</exclude_dir>
     <exclude_dir>test_biquad</exclude_dir>
     <exclude_dir>test_delay</exclude_dir>
     <exclude_dir>test_loudness</exclude_dir>

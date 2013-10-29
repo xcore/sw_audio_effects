@@ -28,12 +28,10 @@ Note Well: The maximum room-size is limited by the amount of memory used for the
 Demo Applications
 =================
 
-
-
 Short-Reverb Application For sliceKIT Board
 -------------------------------------------
 
-To get started with this application, run through the instructions in the slicekit_biquad_filter_Quickstart_ quickstart guide.
+To get started with this application, run through the instructions in the BiQuad Filter quickstart guide.
 
 This application uses ``module_dsp_short_reverb`` to create a reverb-like effect on an audio-stream, 
 passing through the sliceKIT Core board.
@@ -53,7 +51,6 @@ The following parameters are configurable:
    * Level of Reverb (Effect)
    * Amount of attenuation/decay of reverb tail
    * Amount of Cross-talk (mixing between left/right channels)
-
 
 Makefile
 ........
@@ -104,6 +101,4 @@ Try Other Audio Applications
 
 Another audio application is ``app_slicekit_long_reverb``.
 
-* The long reverb application is an example of a more complex application running 4 cores, 
-  and combining the biquad, loudness and long-delay modules to create large room-sizes, e.g. 200 meters (for a stereo channel at 48 kHz).
-	See doc_quickstart/quickstart_reverb_long.rst
+   * The long reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and long-delay modules to create large room-sizes, e.g. 200 meters (for a stereo channel at 48 kHz). See doc_quickstart/quickstart_reverb_long.rst
