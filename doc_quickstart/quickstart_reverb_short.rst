@@ -8,7 +8,7 @@ This is a demonstration of a complex audio application that uses a number of sof
 Hardware Setup
 ++++++++++++++
 
-Leave the setup is unchanged from the Biquad application demo.
+Leave the setup unchanged from the Biquad application demo.
 	
 Import and Build the Application
 ++++++++++++++++++++++++++++++++
