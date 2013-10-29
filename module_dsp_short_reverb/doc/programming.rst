@@ -95,8 +95,11 @@ Most recorded music already has reverb added.
 So the effects of the reverb application may not always be apparent.
 Best to choose some dialogue or sparse percussive sound.
 
+Try Other Audio Applications
+----------------------------
 
-Long-Reverb Application For sliceKIT Board (``app_slicekit_long_reverb``)
-------------------------------------------
+Another audio application is ``app_slicekit_long_reverb``.
 
-See module_dsp_long_reverb/doc/programming.rst
+* The long reverb application is an example of a more complex application running 4 cores, 
+  and combining the biquad, loudness and long-delay modules to create large room-sizes, e.g. 200 meters (for a stereo channel at 48 kHz).
+	See doc_quickstart/quickstart_reverb_long.rst

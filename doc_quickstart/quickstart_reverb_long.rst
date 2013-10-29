@@ -22,7 +22,7 @@ Run the Application
 +++++++++++++++++++
 
 #. Restart the audio source.
-#. Click on the ``Run`` icon (the white arrow in the green circle). After a 1 or 2 seconds the reverb effect should be heard.
+#. Click on the ``Run`` icon (the white arrow in the green circle). After 1 or 2 seconds the reverb effect should be heard.
    The output switches between effect and dry signals about every 8 seconds, so the listener can compare the 2 modes.
     
 Look at the Code

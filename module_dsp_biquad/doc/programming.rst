@@ -93,3 +93,16 @@ If this occurs, try one of the following:
 
    * Turning down the volume of the audio source (i.e. the volume level input to the application), 
    * Reduce the value of DEF_QUAL_FACT
+
+Try Other Audio Applications
+----------------------------
+
+Some of the other audio applications are ``app_slicekit_loudness``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
+
+* The loudness application increases the perceived loudness, without increasing the maximum volume.
+	See doc_quickstart/quickstart_loudness.rst
+* The short delay application creates a multiple echo effect, by storing audio in local memory.
+	See doc_quickstart/quickstart_short_delay.rst
+* The short reverb application is an example of a more complex application running 4 cores, 
+  and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).
+	See doc_quickstart/quickstart_reverb_short.rst

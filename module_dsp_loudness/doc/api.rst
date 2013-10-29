@@ -1,9 +1,9 @@
-.. _sec_api:
+.. _sec_audio_loudness_api:
 
 API
 ===
 
-.. _sec_conf_defines:
+.. _sec_audio_loudness_conf_defines:
 
 Configuration Defines
 ---------------------
@@ -23,12 +23,6 @@ Data Structures
 Configuration Functions
 +++++++++++++++++++++++
 .. doxygenfunction:: config_loudness
-
-Receive Functions
-+++++++++++++++++
-
-Transmit Functions
-++++++++++++++++++
 
 DSP Processing Functions
 ++++++++++++++++++++++++

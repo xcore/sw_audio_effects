@@ -1,15 +1,14 @@
-.. _sec_api:
+.. _sec_audio_short_delay_api:
 
 API
 ===
 
-.. _sec_conf_defines:
+.. _sec_audio_short_delay_conf_defines:
 
 Configuration Defines
 ---------------------
 .. doxygendefine:: DEF_SAMP_FREQ 
 .. doxygendefine:: MEM_SAMPS 
-.. doxygendefine:: DELAY_SIZE 
 .. doxygendefine:: MAX_TAPS 
 .. doxygendefine:: DEF_TAPS 
 

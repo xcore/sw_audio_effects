@@ -56,7 +56,6 @@ void process_all_chans( // Do DSP effect processing
 			out_samps[chan_cnt] += delay_samps[tap_cnt]; // Update output sample
 		} // for tap_cnt
 
-//	out_samps[chan_cnt] = inp_samps[chan_cnt]; // DBG
 	} // for chan_cnt
 	
 } // process_all_chans
@@ -96,7 +95,7 @@ void dsp_delay( // Coar that delays a stream of audio samples
 	for (tap_cnt = (NUM_DELAY_TAPS - 1); tap_cnt>=0; tap_cnt--)
 	{
 		delay_param_s.us_delays[tap_cnt] = delay_us;
-		delay_us >>= 1; // Double delay
+		delay_us >>= 1; // Halve delay
 	} //for tap_cnt
 
 	config_delay_line( delay_param_s );

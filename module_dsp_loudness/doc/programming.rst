@@ -3,11 +3,13 @@ Programming Guide
 
 Key Files
 ---------
+
    * ``non_linear_gain.c``: Contains 'C' function library
    * ``non_linear_gain.h``: Header file for 'C' function library
 
 Usage
 -----
+
 There are 2 functions in the 'C' library, designed to be called from an xC file.
    * ``config_loudness()`` Called to do initial configuration of loudness parameters (e.g. max gain). WARNING: This must be called before ...
    * ``use_loudness()`` Called to apply gain to one audio-sample, designed to be called from an xC file.
@@ -85,14 +87,13 @@ high frequencies that manifest themselves as distortion.
 Try Other Audio Applications
 ----------------------------
 
-Some of the other audio applications are ``loudness loudness app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
+Some of the other audio applications are ``app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
 
 * The biquad application uses a configurable BiQuad filter to achieve a number of different filter types,
   including low-pass, high-pass, band-pass, band-stop, and all-pass.
-	See app_slicekit_biquad/doc_quickstart/quickstart.rst.
-* The short delay application creates multiple delays up to 125 milli-seconds (for a stereo channel at 48kHz).
-	See module_dsp_short_delay/doc/programming.rst
+	See doc_quickstart/quickstart_biquad.rst
+* The short delay application creates a multiple echo effect, by storing audio in local memory.
+	See doc_quickstart/quickstart_short_delay.rst
 * The short reverb application is an example of a more complex application running 4 cores, 
   and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz).
-	See app_slicekit_short_reverb/doc_quickstart/quickstart.rst
-
+	See doc_quickstart/quickstart_reverb_short.rst

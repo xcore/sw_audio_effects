@@ -75,7 +75,11 @@ Trouble-shooting
 During initialization, and when the system is reconfigured, 
 there may be audible clicks in the audio. This is expected.
 
+Try Other Audio Applications
+----------------------------
 
+Another audio application is ``app_slicekit_long_reverb``.
 
-
-
+* The long reverb application is an example of a more complex application running 4 cores, 
+  and combining the biquad, loudness and long-delay modules to create large room-sizes, e.g. 200 meters (for a stereo channel at 48 kHz).
+	See doc_quickstart/quickstart_reverb_long.rst

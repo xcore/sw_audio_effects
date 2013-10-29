@@ -12,7 +12,7 @@ sliceKIT
 
 This module may be evaluated using the sliceKIT Modular Development Platform, available from digikey. Minimum Required board SKUs are:
 
-   * XP-SKC-L2 (sliceKIT L2 Core Board) plus XA-SK-AUDIO plus XA-SK-xTAG2 (sliceKIT xTAG adaptor) 
+   * XP-SKC-L2 (sliceKIT L2 Core Board) plus XA-SK-AUDIO plus XA-SK-XTAG2 (sliceKIT xTAG adaptor) 
 
 Demonstration Applications
 --------------------------

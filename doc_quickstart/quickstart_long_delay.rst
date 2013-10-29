@@ -33,7 +33,7 @@ Run the Application
 +++++++++++++++++++
 
 #. Restart the audio source.
-#. Click on the ``Run`` icon (the white arrow in the green circle). After a 1 or 2 seconds the delay effect should be heard.
+#. Click on the ``Run`` icon (the white arrow in the green circle). After 1 or 2 seconds the delay effect should be heard.
    The output switches between effect and dry signals, so the listener can compare the 2 modes: 
    16 seconds of the effect, followed by 8 seconds of the dry signal.
     

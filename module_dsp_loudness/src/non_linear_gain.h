@@ -108,7 +108,7 @@ void config_loudness( // Configure gain parameters. NB Must be called before use
  * 	Boundary_4 always has Gradient of Boundary_3
  * 	Boundary_5 is always at (MAX_SAMP ,MAX_SAMP) and of Gradient 1
  *
- * That 10 constraints. The remaining 5 can be configured in the tables below
+ * That is 10 constraints. The remaining 5 can be configured in the tables below
  */
 
 // table of unity-gain boundary points (NB  X=Y )
