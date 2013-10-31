@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  global
  * File:    global.h
- *  
+ *
  * Description: Global Definitions, types, and prototypes for reverb app
  *
  * Version: 0v1
@@ -31,13 +31,13 @@
 #define	AUDIO_IO_TYPE 1	// Port-Type connected to Audio Slice board
 #define	MEM_TYPE 0	// Port-Type connected to Memory Slice board
 
-// Audio sample frequency (Hz) 
+// Audio sample frequency (Hz)
 #define SAMP_FREQ			48000
 
-// Audio clocking defines  
-// Master clock defines (Hz) 
-#define MCLK_FREQ_441       (512*44100)   // 44.1, 88.2 etc 
-#define MCLK_FREQ_48        (512*48000)   // 48, 96 etc 
+// Audio clocking defines
+// Master clock defines (Hz)
+#define MCLK_FREQ_441       (512*44100)   // 44.1, 88.2 etc
+#define MCLK_FREQ_48        (512*48000)   // 48, 96 etc
 
 #if (SAMP_FREQ%22050==0)
 #define MCLK_FREQ           MCLK_FREQ_441
@@ -47,10 +47,10 @@
 #error Unsupported sample frequency
 #endif
 
-// Bit clock divide 
+// Bit clock divide
 #define BCLK_DIV        (MCLK_FREQ / (SAMP_FREQ * 64))
 
-// Ports 
+// Ports
 #if (AUDIO_IO_TYPE == 1)
 #define PORT_I2S_DAC0		XS1_PORT_1D
 #define PORT_I2S_DAC1  		XS1_PORT_1H
@@ -86,6 +86,6 @@
 #error Currently un-supported Memory Slice H/W Type
 #endif
 
-#endif // ifndef _GLOBAL_H_ 
+#endif // ifndef _GLOBAL_H_
 /*****************************************************************************/
 // global.h

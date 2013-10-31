@@ -4,8 +4,8 @@
  * Build:   ed2cf91acfbcbcef1c9cd0b1c00279470177667d
  * File:    customdefines.h
  *
- * The copyrights, all other intellectual and industrial 
- * property rights are retained by XMOS and/or its licensors. 
+ * The copyrights, all other intellectual and industrial
+ * property rights are retained by XMOS and/or its licensors.
  * Terms and conditions covering the use of this code can
  * be found in the Xmos End User License Agreement.
  *
@@ -13,11 +13,11 @@
  *
  * In the case where this code is a modification of existing code
  * under a separate license, the separate license terms are shown
- * below. The modifications to the code are still covered by the 
+ * below. The modifications to the code are still covered by the
  * copyright notice above.
  *
- **/                                   
-/** 
+ **/
+/**
  * @file       customdefines.h
  * @brief      Defines relating to device configuration and customisation.
  *             For L1 USB Audio Reference Design
@@ -37,7 +37,7 @@
 #define AUDIO_CLASS_FALLBACK 0
 //:
 
-/* Defines relating to channel count and channel arrangement (Set to 0 for disable) */ 
+/* Defines relating to channel count and channel arrangement (Set to 0 for disable) */
 //:audio_defs
 /* Number of USB streaming channels */
 #define NUM_USB_CHAN_IN   (2)         /* Device to Host */
@@ -66,14 +66,14 @@
 #define MCLK_48           (512*48000)   /* 48, 96 etc */
 
 /* Maximum frequency device runs at */
-#define MAX_FREQ                    (192000)       
+#define MAX_FREQ                    (192000)
 
 /* Index of SPDIF TX channel (duplicated DAC channels 1/2) */
 #define SPDIF_TX_INDEX              (0)
 
 /* Default frequency device reports as running at */
-/* Audio Class 1.0 friendly freq */       
-#define DEFAULT_FREQ                (48000)            
+/* Audio Class 1.0 friendly freq */
+#define DEFAULT_FREQ                (48000)
 //:
 /***** Defines relating to USB descriptors etc *****/
 //:usb_defs

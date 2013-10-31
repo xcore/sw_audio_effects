@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  gp_io
  * File:    gp_io.h
- *  
+ *
  * Description: Definitions, types, and prototypes for gp_io.xc
  *
  * Version: 0v1
@@ -70,9 +70,9 @@ typedef enum BUTTON_STATES_TAG //
 } BUTTON_STATES_ENUM;
 
 /** Structure containing GPIO parameters */
-typedef struct GPIO_TAG // 
+typedef struct GPIO_TAG //
 {
-	BUTTON_STATES_ENUM curr_buttons; // current stable button state 
+	BUTTON_STATES_ENUM curr_buttons; // current stable button state
 	BUTTON_STATES_ENUM prev_buttons; // previous stable button state
 	LED_STATES_ENUM leds; // current state of LED's
 } GPIO_S;

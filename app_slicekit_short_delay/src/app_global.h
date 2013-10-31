@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  app_global
  * File:    app_global.h
- *  
+ *
  * Description: Global Definitions, types, and prototypes for application
  *
  * Version: 0v1
@@ -29,16 +29,16 @@
 #define	AUDIO_IO_TILE 1	// Tile connected to Audio Slice board
 #define	DSP_TILE 0 // Tile used by DSP functions
 
-// Audio sample frequency (Hz) 
+// Audio sample frequency (Hz)
 #define SAMP_FREQ			48000
 
-// Audio Slice hardware version 
+// Audio Slice hardware version
 #define AUDIO_SLICE_HW		1
 
-// Audio clocking defines  
-// Master clock defines (Hz) 
-#define MCLK_FREQ_441       (512*44100)   // 44.1, 88.2 etc 
-#define MCLK_FREQ_48        (512*48000)   // 48, 96 etc 
+// Audio clocking defines
+// Master clock defines (Hz)
+#define MCLK_FREQ_441       (512*44100)   // 44.1, 88.2 etc
+#define MCLK_FREQ_48        (512*48000)   // 48, 96 etc
 
 #if (SAMP_FREQ%22050==0)
 #define MCLK_FREQ           MCLK_FREQ_441
@@ -48,10 +48,10 @@
 #error Unsupported sample frequency
 #endif
 
-// Bit clock divide 
+// Bit clock divide
 #define BCLK_DIV        (MCLK_FREQ / (SAMP_FREQ * 64))
 
-// Ports 
+// Ports
 #if (AUDIO_SLICE_HW == 1)
 #define PORT_I2S_DAC0		XS1_PORT_1D
 #define PORT_I2S_DAC1  		XS1_PORT_1H
@@ -68,6 +68,6 @@
 #error currently not un-supported slice hw version
 #endif
 
-#endif // ifndef _APP_GLOBAL_H_ 
+#endif // ifndef _APP_GLOBAL_H_
 /*****************************************************************************/
 // app_global.h

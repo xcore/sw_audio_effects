@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	common_utils.c
- *  
+ *
  * Description: Contains common routines used by DSP audio effects
  *
  * Version: 0v1
@@ -24,7 +24,7 @@
 
 /******************************************************************************/
 U32_T get_word_address( // Converts word reference to address
-	S32_T inp_arr[] // input array 
+	S32_T inp_arr[] // input array
 ) // Return wrapped offset
 {
 	return (U32_T)&(inp_arr[0]); // Return Address

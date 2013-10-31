@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  common_audio
  * File:    common_audio.h
- *  
+ *
  * Description: Common sefinitions, types, and prototypes for audio applications
  *
  * Version: 0v1

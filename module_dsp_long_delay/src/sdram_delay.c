@@ -1,9 +1,9 @@
 /******************************************************************************\
  * File:	sdram_delay.c
- *  
+ *
  * Description: Functions for Delay-Line(echo)
  *
- * Version: 
+ * Version:
  * Build:
  *
  * The copyrights, all other intellectual and industrial
@@ -38,7 +38,7 @@ void update_common_delays( // Update delays for each channel
  * Therefore, the output sample must be accessed 'LOCAL_SAMPS' earlier. (Where LOCAL_SAMPS is No. of samples in local multi-buffer)
  */
 {
-	S32_T num_taps = cur_param_ps->num; // Get Number of taps to calculate 
+	S32_T num_taps = cur_param_ps->num; // Get Number of taps to calculate
 	S32_T tap_cnt; // delay measured in samples
 	U32_T req_delay; // current requested delay measured in samples
 	U32_T delay_off; // delay offet between input and output samples to achieve the requested_delay
@@ -85,7 +85,7 @@ void init_buffers( // Initialise sample buffers
 
 	twin_ps->off = MAX_DELAY; // Set write offset to largest used delay-slot. (NB Overwritten for reads in update_common_delays)
 	twin_ps->read_active = 0; // Clear read-active flag. NB Un-used for writes
-	twin_ps->id = 0; // Start by filling 1st buffer 
+	twin_ps->id = 0; // Start by filling 1st buffer
 } // init_buffers
 /******************************************************************************/
 void init_sdram_delay( // Initialise delay data
@@ -178,9 +178,9 @@ void read_sample_set( // Read sample-set from buffer
 	AUD_BUF_S * buf_p = &(out_buf_ps->bufs[out_buf_ps->id]); // Pointer to active buffer
 	S32_T buf_off = (out_buf_ps->off & BUF_MASK); // Mask out buffer offset
 
- 
-	// Read delayed output sample-set from buffer 
-	*out_set_p = buf_p->sets[buf_off]; // Read delayed output sample-set from buffer 
+
+	// Read delayed output sample-set from buffer
+	*out_set_p = buf_p->sets[buf_off]; // Read delayed output sample-set from buffer
 	out_buf_ps->off++; // Increment Delay-line offset
 
 	// Check for end-of-buffer
@@ -217,9 +217,9 @@ void write_sample_set( // Write sample-set to buffer
 	AUD_BUF_S * buf_p = &(inp_buf_ps->bufs[inp_buf_ps->id]); // Pointer to active buffer
 	S32_T buf_off = (inp_buf_ps->off & BUF_MASK); // Mask out buffer offset
 
- 
+
 	// Store input sample-set in buffer
-	buf_p->sets[buf_off] = *inp_set_p; // Store input sample-set in buffer 
+	buf_p->sets[buf_off] = *inp_set_p; // Store input sample-set in buffer
 	inp_buf_ps->off++; // Increment Delay-line offset
 
 	// Check for end-of-buffer
@@ -265,7 +265,7 @@ void use_sdram_delay( // exercise sdram_delay for one input sample. NB Must have
 	// Check if delay-line parameters have been initialised
 	if (0 == delay_gs.params_set)
 	{
-		assert(0 == 1); // Please call config_sdram_delay() function before use_sdram_delay() 
+		assert(0 == 1); // Please call config_sdram_delay() function before use_sdram_delay()
 	} // if (0 == init_flag)
 	else
 	{

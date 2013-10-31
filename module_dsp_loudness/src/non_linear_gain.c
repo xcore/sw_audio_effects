@@ -1,9 +1,9 @@
 /******************************************************************************\
  * File:	non_linear_gain.c
- *  
+ *
  * Description: Functions for Bi-Quad filter
  *
- * Version: 
+ * Version:
  * Build:
  *
  * The copyrights, all other intellectual and industrial
@@ -17,18 +17,18 @@
  * under a separate license, the separate license terms are shown
  * below. The modifications to the code are still covered by the
  * copyright notice above.
- * 
+ *
  * DESCRIPTION
  * -----------
  * This algorithm uses a piece-wise parabolic curve, to limit the number of multiplies required per sample.
  * Currently 5 parabola's are used, as follows:-
  * 1) Unity-gain section (Straight line) for low-level signals (e.g. noise)
- * 2) Transition to maximum gradient (user-configurable). 
+ * 2) Transition to maximum gradient (user-configurable).
  * 3) Transition from max. gradient to 'max-gain' section.
  * 4) 'max-gain' section, (Straight line) with minimum gradient (reciprocal of max-gradient)
  * 5) Transition from min. gradient back to 'unity-gain' to finish.
  *
- * These 5 sections are shown below in the rough schematic (as asterisks). 
+ * These 5 sections are shown below in the rough schematic (as asterisks).
  * For reference: the Unity-gain (Output = Input) line is also shown (as dots)
  * 'M' represents the maximum +ve sample value.
  * NB There is an equivalent curve for -ve sample values.
@@ -108,7 +108,7 @@ void gen_parabola_side_info( // generate side information to allow fast compute 
 	} // if (0 < exp_diff)
 	else
 	{ // Coef_B is largest
-		parab_ps->big_a = 0; 
+		parab_ps->big_a = 0;
 		parab_ps->diff_e = -exp_diff; // NB Store positive difference
 		parab_ps->scale_e = parab_ps->fix_b.exp; // Scale by smallest exponent
 	} // else !(0 < exp_diff)
@@ -236,7 +236,7 @@ void config_loudness( // Configure loudness parameters
 
 	gain_gs.params_set = 1; // Signal Gain-shaping parameters configured
 
-} // config_loudness 
+} // config_loudness
 /******************************************************************************/
 S64_T draw_parabola( // Computes Y co-ord for current parabola, given X co-ord
 	GAIN_S * gain_ps, // Pointer to structure containing gain data
@@ -273,7 +273,7 @@ S64_T draw_parabola( // Computes Y co-ord for current parabola, given X co-ord
 	tmp_val = (tmp_val * inp_x) + parab_ps->err; // value before down-scaling, add in previous diffusion error
 	out_y = (tmp_val + (S64_T)parab_ps->scale_h ) >> parab_ps->scale_e; // Output (down-scaled) Y co-ord
 	parab_ps->err = tmp_val - (out_y << parab_ps->scale_e); // compute new diffusion error
-	
+
 	return out_y;
 } // draw_parabola
 /******************************************************************************/
@@ -294,7 +294,7 @@ SAMP_CHAN_T boost_gain( // Applies non-linear gain to input sample to generate o
 	if (0 > inp_samp)
 	{
 		inp_samp = -inp_samp; // absolute value
-		sgn_samp = -1; // store negative polarity 
+		sgn_samp = -1; // store negative polarity
 	} // if (0 > inp_samp)
 
 	/* Find correct parabolic section for input sample ...
@@ -306,7 +306,7 @@ SAMP_CHAN_T boost_gain( // Applies non-linear gain to input sample to generate o
 	{
 		parab_ps = &(gain_ps->parabs[sect_cnt]); // Point to data for current parabolic section
 
-		// Skip if input-sample is greater than max allowed value for current parabola 
+		// Skip if input-sample is greater than max allowed value for current parabola
 		if (inp_samp <= parab_ps->max_x)
 		{
 			x_coord = (S64_T)inp_samp - (S64_T)parab_ps->x_off;
@@ -331,7 +331,7 @@ S32_T use_loudness( // Wrapper for non_linear_gain_wrapper
 	// Check if loudness parameters have been initialised
 	if (0 == gain_gs.params_set)
 	{
-		assert(0 == 1); // Please call config_loudness() function before use_loudness() 
+		assert(0 == 1); // Please call config_loudness() function before use_loudness()
 
 		return out_samp;
 	} // if (0 == init_flag)
@@ -342,6 +342,6 @@ S32_T use_loudness( // Wrapper for non_linear_gain_wrapper
 	} // else !(0 == init_flag)
 
 	return out_samp;
-} // use_loudness 
+} // use_loudness
 /******************************************************************************/
 // non_linear_gain.xc

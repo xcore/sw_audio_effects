@@ -1,8 +1,8 @@
 /******************************************************************************\
  * File:	sdram_io.xc
- *  
+ *
  * Description: SDRAM I/O Coar
- * for L2 Slice Kit Tile Board with Audio Slice 1v0 
+ * for L2 Slice Kit Tile Board with Audio Slice 1v0
  * Note: This application expects a memory Slice (1v0) to be connected to a Socket on core MEM_TILE
  *
  * Version: 0v1
@@ -25,13 +25,13 @@
 #include "sdram_io.h"
 
 // Global data structure for sdram memory manager (sc_sdram_burst/module_sdram_memory_manager)
-on stdcore[MEM_TILE]: sdram_ports cur_ports = 
-{ 
-	PORT_SEL, 
-	PORT_CAS, 
-	PORT_RAS, 
-	PORT_WE, 
-	PORT_CLK, 
+on stdcore[MEM_TILE]: sdram_ports cur_ports =
+{
+	PORT_SEL,
+	PORT_CAS,
+	PORT_RAS,
+	PORT_WE,
+	PORT_CLK,
 	XS1_CLKBLK_3
 };
 

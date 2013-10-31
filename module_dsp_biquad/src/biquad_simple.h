@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	biquad_simple.h
- *  
+ *
  * Description: Definitions, types, and prototypes for module biquad_simple
  *
  * Version: 0v1
@@ -34,7 +34,7 @@
 #include "types64bit.h"
 #include "common_utils.h"
 
-#ifndef NUM_BIQUAD_CHANS 
+#ifndef NUM_BIQUAD_CHANS
 	#error Define. NUM_BIQUAD_CHANS in module_dsp_biquad_conf.h
 #endif // NUM_BIQUAD_CHANS
 
@@ -60,13 +60,13 @@ typedef enum FILT_MODE_TAG
 #define DEF_SIG_FREQ 1000 // Default Significant Filter Frequency (In Hz)
 
 /** Number of bits used to scale Quality-factor 8 */
-#define QUAL_BITS 8 // 
+#define QUAL_BITS 8 //
 
 /** Default Quality-factor of 1, scaled by (1 < QUAL_BITS) */
-#define DEF_QUAL_FACT (1 << QUAL_BITS) // 
+#define DEF_QUAL_FACT (1 << QUAL_BITS) //
 
 /** Structure containing BiQuad parameters */
-typedef struct BIQUAD_PARAM_TAG // 
+typedef struct BIQUAD_PARAM_TAG //
 {
 	FILT_MODE_TYP filt_mode; // BiQuad filter type (e.g. Low-pass)
 	S32_T samp_freq; // Sample frequency
@@ -99,7 +99,7 @@ S32_T use_biquad_filter( // Use BiQuad filter on one sample from one channel
  * \param biquad_id // Identifies which BiQuad to use
  * \param cur_param_ps // Reference to structure containing current biquad filter parameters
  */
-void config_biquad_filter( // Configure BiQuad filter 
+void config_biquad_filter( // Configure BiQuad filter
 	S32_T biquad_id, // Identifies which BiQuad to use
 	BIQUAD_PARAM_S &cur_param_ps // Reference to structure containing current biquad filter parameters
 );
@@ -109,7 +109,7 @@ void config_biquad_filter( // Configure BiQuad filter
 // 'C' File
 
 /******************************************************************************/
-void config_biquad_filter( // Configure BiQuad filter 
+void config_biquad_filter( // Configure BiQuad filter
 	S32_T biquad_id, // Identifies which BiQuad to use
 	BIQUAD_PARAM_S * cur_param_ps // Pointer to structure containing current biquad filter parameters
 );
@@ -117,7 +117,7 @@ void config_biquad_filter( // Configure BiQuad filter
 
 #define PI 3.14159265
 
-// Filter parameters 
+// Filter parameters
 #define MIN_SAMP_FREQ 20 // Minimum Sample Frequency (In Hz)
 
 typedef R64_T REAL_T; // Real or floating-point type (NB not supported in earlier XC compilers)

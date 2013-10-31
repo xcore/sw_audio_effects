@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	non_linear_gain.h
- *  
+ *
  * Description: Definitions, types, and prototypes for module non_linear_gain
  *
  * Version: 3v3rc1
@@ -32,15 +32,15 @@
 #include "module_dsp_loudness_conf.h"
 #include "common_utils.h"
 
-#ifndef NUM_GAIN_CHANS 
+#ifndef NUM_GAIN_CHANS
 	#error Define. NUM_GAIN_CHANS in module_dsp_loudness_conf.h
 #endif // NUM_GAIN_CHANS
 
 /** Default Gain 4 */
-#define DEF_GAIN 4 // 
+#define DEF_GAIN 4 //
 
 /** Structure containing Gain parameters */
-typedef struct GAIN_PARAM_TAG // 
+typedef struct GAIN_PARAM_TAG //
 {
 	S32_T gain; // Maximum desired gain
 } GAIN_PARAM_S;
@@ -54,7 +54,7 @@ typedef struct GAIN_PARAM_TAG //
  */
 S32_T use_loudness(
 	S32_T inp_samp // Input Sample
-); 
+);
 /******************************************************************************/
 
 #ifdef __XC__
@@ -104,7 +104,7 @@ void config_loudness( // Configure gain parameters. NB Must be called before use
  * constraints.
  * 	Boundary_0 is always at (0 ,0) and of Gradient 1
  * 	Boundary_1 always has Gradient 1
- * 	Boundary_3 always has Inverse of gradient at Boundary_2 
+ * 	Boundary_3 always has Inverse of gradient at Boundary_2
  * 	Boundary_4 always has Gradient of Boundary_3
  * 	Boundary_5 is always at (MAX_SAMP ,MAX_SAMP) and of Gradient 1
  *

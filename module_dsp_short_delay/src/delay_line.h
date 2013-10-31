@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	delay_line.h
- *  
+ *
  * Description: Definitions, types, and prototypes for module delay_line
  *
  * Version: 3v3rc1
@@ -34,11 +34,11 @@
 #include "common_audio.h"
 #include "common_utils.h"
 
-#ifndef NUM_DELAY_CHANS 
+#ifndef NUM_DELAY_CHANS
 #error Please define NUM_DELAY_CHANS in module_dsp_short_delay_conf.h
 #endif // NUM_DELAY_CHANS
 
-#ifndef NUM_DELAY_TAPS 
+#ifndef NUM_DELAY_TAPS
 #error Please define NUM_DELAY_TAPS in module_dsp_short_delay_conf.h
 #endif // NUM_DELAY_TAPS
 
@@ -52,7 +52,7 @@
 #define DEF_SAMP_FREQ 48000
 
 /** Structure containing Delay-line parameters */
-typedef struct DELAY_PARAM_TAG // 
+typedef struct DELAY_PARAM_TAG //
 {
 	S32_T us_delays[NUM_DELAY_TAPS]; // Set of delays in micro-seconds
 	S32_T num; // No. of delay taps in use

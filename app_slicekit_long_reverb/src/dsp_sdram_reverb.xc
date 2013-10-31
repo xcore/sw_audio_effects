@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_sdram_reverb.xc
- *  
- * Description: Control coar for Reverb, also handles delay functionality, 
+ *
+ * Description: Control coar for Reverb, also handles delay functionality,
  *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
@@ -32,7 +32,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 {
 	S32_T tap_cnt; // tap counter
 	S32_T chan_cnt; // Channel counter
-	
+
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
@@ -155,7 +155,7 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 
 	PROC_STATE_ENUM cur_proc_state	= START; // Initialise processing state
 	// Default Reverb parameters
-	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
+	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX }
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
 
 
@@ -187,24 +187,24 @@ void dsp_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_aud_dsp :> inp_set_s.samps[chan_cnt];  // Receive input samples from Audio I/O coar 
-			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
+			c_aud_dsp :> inp_set_s.samps[chan_cnt];  // Receive input samples from Audio I/O coar
+			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar  
-			c_dsp_eq :> cntrl_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
+			c_dsp_eq <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar
+			c_dsp_eq :> cntrl_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_gain <: unamp_set_s.samps[chan_cnt]; // Send Unamplified samples to Loudness coar   
-			c_dsp_gain :> ampli_set_s.samps[chan_cnt]; // Receive Amplified samples back from Loudness coar  
+			c_dsp_gain <: unamp_set_s.samps[chan_cnt]; // Send Unamplified samples to Loudness coar
+			c_dsp_gain :> ampli_set_s.samps[chan_cnt]; // Receive Amplified samples back from Loudness coar
 
 		} // for chan_cnt
 

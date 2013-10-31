@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_control.xc
- *  
- * Description: Control coar for Reverb, also handles delay functionality, 
+ *
+ * Description: Control coar for Reverb, also handles delay functionality,
  *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
@@ -91,7 +91,7 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 
 	PROC_STATE_ENUM cur_proc_state	= DRY2FX; // Initialise processing state to fade-in REVERB.
 	// Default Reverb parameters
-	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_ATTN_MIX ,DEF_CROSS_MIX } 
+	REVERB_PARAM_S def_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_ATTN_MIX ,DEF_CROSS_MIX }
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
 
 
@@ -120,24 +120,24 @@ void dsp_control( // Controls audio stream processing for reverb application usi
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_aud_dsp :> inp_samps[chan_cnt]; // Receive input samples from Audio I/O coar 
-			c_aud_dsp <: out_samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
+			c_aud_dsp :> inp_samps[chan_cnt]; // Receive input samples from Audio I/O coar
+			c_aud_dsp <: out_samps[chan_cnt];  // Send Output samples back to Audio I/O coar
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq <: uneq_samps[chan_cnt]; // Send Unequalised samples to Eq coar  
-			c_dsp_eq :> equal_samps[chan_cnt]; // Receive Equalised samples back from Eq coar  
+			c_dsp_eq <: uneq_samps[chan_cnt]; // Send Unequalised samples to Eq coar
+			c_dsp_eq :> equal_samps[chan_cnt]; // Receive Equalised samples back from Eq coar
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_gain <: unamp_samps[chan_cnt]; // Send Unamplified samples to Loudness coar   
-			c_dsp_gain :> ampli_samps[chan_cnt]; // Receive Amplified samples back from Loudness coar  
+			c_dsp_gain <: unamp_samps[chan_cnt]; // Send Unamplified samples to Loudness coar
+			c_dsp_gain :> ampli_samps[chan_cnt]; // Receive Amplified samples back from Loudness coar
 
 		} // for chan_cnt
 

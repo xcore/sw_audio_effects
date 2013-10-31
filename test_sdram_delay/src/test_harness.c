@@ -18,7 +18,7 @@ void init_dsp( // Initialisation for DSP control of SDRAM-delay
 	S32_T delay_us = (83 * TWIN_SAMPS * 2); // Maximu delay in micro-secs
 	S32_T tap_cnt; // tap counter
 	S32_T chan_cnt; // Channel counter
-	
+
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
@@ -52,10 +52,10 @@ void init_dsp( // Initialisation for DSP control of SDRAM-delay
 	} //for tap_cnt
 } // init_dsp
 /*****************************************************************************/
-void init_samples( // Initialise input data samples 
+void init_samples( // Initialise input data samples
 	TEST_DATA_S * tst_data_ps, // Pointer to Structure containing test data
 	CHAN_SET_S samples[] // Array of input samples
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 	S32_T chan_cnt; // Channel counter
@@ -75,7 +75,7 @@ void init_samples( // Initialise input data samples
 /*****************************************************************************/
 void init_test( // Initialise test data
 	TEST_DATA_S * tst_data_ps // Pointer to Structure containing test data
-) 
+)
 {
 	tst_data_ps->dbg = 0;
 	init_samples( tst_data_ps ,tst_data_ps->inp_set );
@@ -83,8 +83,8 @@ void init_test( // Initialise test data
 /*****************************************************************************/
 void mm_read_words(
 	TEST_DATA_S * tst_data_ps, // Pointer to Structure containing test data
-	unsigned mem_addr, 
-	unsigned words, 
+	unsigned mem_addr,
+	unsigned words,
 	unsigned buf_addr
 )
 {
@@ -93,8 +93,8 @@ void mm_read_words(
 /*****************************************************************************/
 void mm_write_words(
 	TEST_DATA_S * tst_data_ps, // Pointer to Structure containing test data
-	unsigned mem_addr, 
-	unsigned words, 
+	unsigned mem_addr,
+	unsigned words,
 	unsigned buf_addr
 )
 {
@@ -103,7 +103,7 @@ void mm_write_words(
 /*****************************************************************************/
 void do_test( // Perform test
 	TEST_DATA_S * tst_data_ps // Pointer to Structure containing test data
-) 
+)
 {
 	CNTRL_S * cntrl_ps = &(tst_data_ps->cntrl_dsp_s); // Pointer to Structure containing data to control SDRAM buffering
 	DELAY_PARAM_S def_param_s; // Structure containing delay-line parameters
@@ -159,7 +159,7 @@ if (def_param_s.dbg) printf("DT: %12ld\n" ,((CHAN_SET_S *)cntrl_ps->write.buf_ad
 /*****************************************************************************/
 void print_results( // Perform test
 	TEST_DATA_S * tst_data_ps  // Pointer to Structure containing test data
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 	S32_T tap_cnt; // Delay-tap counter

@@ -1,7 +1,7 @@
 /*****************************************************************************\
  * Header:  dsp_effects
  * File:    dsp_effects.h
- *  
+ *
  * Description: Definitions, types, and prototypes for dsp_effects.xc
  *
  * Version: 0v1
@@ -59,13 +59,13 @@ typedef enum DRY_STATE_ETAG //
 } DRY_STATE_ENUM;
 
 // String type
-typedef struct STR_TAG // 
+typedef struct STR_TAG //
 {
 	char str[STR_LEN]; // Array of string characters
 } STR_S;
 
 /** Structure containing BiQuad parameters */
-typedef struct DSP_EFFECT_TAG // 
+typedef struct DSP_EFFECT_TAG //
 {
 	REVERB_PARAM_S reverb_params;	// Reverb Configuration parameters
 	BIQUAD_PARAM_S biquad_params_rvrb;	// BiQuad Configuration parameters when used in reverb

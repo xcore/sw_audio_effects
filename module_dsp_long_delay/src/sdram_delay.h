@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	sdram_delay.h
- *  
+ *
  * Description: Definitions, types, and prototypes for module sdram_delay
  *
  * Version: 3v3rc1
@@ -34,11 +34,11 @@
 #include "common_audio.h"
 #include "common_utils.h"
 
-#ifndef NUM_DELAY_CHANS 
+#ifndef NUM_DELAY_CHANS
 #error Please define NUM_DELAY_CHANS in module_dsp_long_delay_conf.h
 #endif // NUM_DELAY_CHANS
 
-#ifndef NUM_DELAY_TAPS 
+#ifndef NUM_DELAY_TAPS
 #error Please define NUM_DELAY_TAPS in module_dsp_long_delay_conf.h
 #endif // NUM_DELAY_TAPS
 
@@ -46,7 +46,7 @@
 #define MEM_SAMPS (2 << 20) //
 
 /** Size of channel delay buffer (in samples): (MEM_SAMPS / NUM_DELAY_CHANS) */
-#define DELAY_SAMPS (MEM_SAMPS / NUM_DELAY_CHANS)// 
+#define DELAY_SAMPS (MEM_SAMPS / NUM_DELAY_CHANS)//
 
 // SDRAM parameters
 #define SD_CELL_BITS 1 // number of bits used to represent cell-size
@@ -69,11 +69,11 @@
 // Delay-line parameters
 
 /** Default Sample Frequency (In Hz) 48000 */
-#define DEF_SAMP_FREQ 48000 // 
+#define DEF_SAMP_FREQ 48000 //
 
 
 /** Structure containing delay parameters */
-typedef struct DELAY_PARAM_TAG // 
+typedef struct DELAY_PARAM_TAG //
 {
 	S32_T us_delays[NUM_DELAY_TAPS]; // Set of delays in micro-seconds
 	S32_T num; // No. of delay taps in use

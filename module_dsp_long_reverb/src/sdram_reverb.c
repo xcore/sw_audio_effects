@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	sdram_reverb.c
- *  
- * Description: Control coar for Reverb, also handles delay functionality, 
+ *
+ * Description: Control coar for Reverb, also handles delay functionality,
  *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
@@ -24,9 +24,9 @@
 #include "sdram_reverb.h"
 
 // Structure containing all reverb data (NB Make global to avoid using malloc)
-static REVERB_S reverb_gs = { .tap_data_s = {	{ TAP_00 ,TAP_01 ,TAP_02 ,TAP_04 ,TAP_05 ,TAP_06 ,TAP_07 
+static REVERB_S reverb_gs = { .tap_data_s = {	{ TAP_00 ,TAP_01 ,TAP_02 ,TAP_04 ,TAP_05 ,TAP_06 ,TAP_07
 																							,TAP_08 ,TAP_09 ,TAP_10 ,TAP_11 ,TAP_13 ,TAP_14 ,TAP_15 }
-																						 ,{ WGHT_00 ,WGHT_01 ,WGHT_02 ,WGHT_04 ,WGHT_05 ,WGHT_06 ,WGHT_07 
+																						 ,{ WGHT_00 ,WGHT_01 ,WGHT_02 ,WGHT_04 ,WGHT_05 ,WGHT_06 ,WGHT_07
 																							,WGHT_08 ,WGHT_09 ,WGHT_10 ,WGHT_11 ,WGHT_13 ,WGHT_14 ,WGHT_15} }
                               ,.init_done = 0
 															,.params_set = 0
@@ -39,14 +39,14 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 )
 {
 	DELAY_PARAM_S delay_param_s =  { .num = NUM_REVERB_TAPS }; // Default Delay-line Configuration
-	TAP_DATA_S * tap_data_ps = &(reverb_ps->tap_data_s); // Local pointer to delay-tap data structure 
+	TAP_DATA_S * tap_data_ps = &(reverb_ps->tap_data_s); // Local pointer to delay-tap data structure
 	U32_T * ratios_p = tap_data_ps->ratios; // Local pointer to array of delay-tap ratios
 	U64_T factor; // scaling factor for delay taps
 	S32_T tap_cnt; // delay measured in samples
 
 
 	delay_param_s.freq = reverb_param_ps->samp_freq; // Assign requested sample frequency
-	
+
 	// Calculate Delay-line taps (in milli-seconds) for requested room-size ...
 
 	factor = (S64_T)1000000 * (S64_T)INV_SOS * (S64_T)reverb_param_ps->room_size; // common factor to convert delay to milli-seconds
@@ -55,7 +55,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 	for (tap_cnt = 0; tap_cnt < NUM_REVERB_TAPS; tap_cnt++)
 	{
 		// Calculate delay taps in samples.
-		delay_param_s.us_delays[tap_cnt] 
+		delay_param_s.us_delays[tap_cnt]
 			= (S32_T)((factor * (S64_T)ratios_p[tap_cnt] + HALF_REV_SCALE ) >> SCALE_REV_BITS);
 	} // for tap_cnt
 
@@ -67,7 +67,7 @@ void init_reverb( // Initialise reverb parameters
 	REVERB_S * reverb_ps // Pointer to structure containing reverb data
 )
 {
-	TAP_DATA_S * tap_data_ps = &(reverb_ps->tap_data_s); // Local pointer to delay-tap data structure 
+	TAP_DATA_S * tap_data_ps = &(reverb_ps->tap_data_s); // Local pointer to delay-tap data structure
 	U32_T * weights_p = tap_data_ps->weights; // Local pointer to array of delay-tap weights
 	S32_T tap_cnt; // delay measured in samples
 	S32_T weight_sum = 0; // Sum of delay-tap weights
@@ -99,10 +99,10 @@ void config_sdram_reverb( // Configure reverb parameters
 
 	assert(MIN_AUDIO_FREQ <= reverb_param_ps->samp_freq); // Check for sensible frequency
 
-	/* Configure Delay-line which is in this coar. 
+	/* Configure Delay-line which is in this coar.
 		NB BiQuad and Loudness are in different coars and therefore configuration is synchronised via dsp_sdram_reverb.xc */
 
-	config_build_delay( &(reverb_gs) ,reverb_param_ps );  
+	config_build_delay( &(reverb_gs) ,reverb_param_ps );
 
 	// Assign requested mix setting ...
 
@@ -136,17 +136,17 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 	// Check if reverb parameters have been initialised
 	if (0 == reverb_gs.params_set)
 	{
-		assert(0 == 1); // Please call config_reverb() function before use_reverb() 
+		assert(0 == 1); // Please call config_reverb() function before use_reverb()
 	} // if (0 == reverb_gs.params_set)
 	else
 	{
 		use_sdram_delay( cntrl_ps ); // Get Delayed Samples
 
-		/* We have 16 delay-taps that have to be summed into left and right output channels, 
-		 * the shorter delays will be louder than the long delays. 
+		/* We have 16 delay-taps that have to be summed into left and right output channels,
+		 * the shorter delays will be louder than the long delays.
      * Therefore the shorter delays are given a larger weighting than the larger delays.
-     * Some delays are output on the SAME channel that they originated, 
-     * and the others are SWAPed to the other output channel. 
+     * Some delays are output on the SAME channel that they originated,
+     * and the others are SWAPed to the other output channel.
      * The table below shows the channel assignments for each tap.
 		 *
 		 * Tap_Num:   0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
@@ -203,7 +203,7 @@ void use_sdram_reverb( // Controls audio stream processing for reverb applicatio
 		{
 			swap_chan = chan_cnt ^ 1; // Get Id for other channel (Assumes 0 <--> 1, 2 <--> 3, etc)
 
-			// Mix Left and Right channels 
+			// Mix Left and Right channels
 			samp_sum = (S64_T)mix_lvls_ps->cross_mix * swap_samps[swap_chan];
 			samp_sum += (S64_T)reverb_gs.same_mix * same_samps[swap_chan];
 			rev_o_set_ps->samps[chan_cnt] = (S32_T)((samp_sum + HALF_XMIX_SCALE) >> SCALE_XMIX_BITS);

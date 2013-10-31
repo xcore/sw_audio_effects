@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  common_utils
  * File:    common_utils.h
- *  
+ *
  * Description: Definitions, types, and prototypes for common_utils.xc
  *
  * Version: 0v1
@@ -32,15 +32,15 @@
 #define SWAP_NUM (1 << 19)
 
 /** Log2[FADE_LEN] (in Samples): 14 */
-#define FADE_BITS 14 // 
+#define FADE_BITS 14 //
 #define FADE_LEN (1 << FADE_BITS) // Length of cross-fade in samples
 #define HALF_FADE (FADE_LEN >> 1) // Half cross-fade length
 
 /** Coefficients are represented as Fixed-point values. The Mantissa & Exponent are both of type COEF_T */
-typedef S32_T COEF_T; // 
+typedef S32_T COEF_T; //
 
 /** Structure containing coefficients expressed as fixed point */
-typedef struct FIX_POINT_TAG // 
+typedef struct FIX_POINT_TAG //
 {
 	COEF_T mant; // Mantissa
 	COEF_T exp; // Exponent expressed as power of 2 (Log2 of scaling factor)

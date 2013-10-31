@@ -1,8 +1,8 @@
 /******************************************************************************\
  * File:	main.xc
- *  
+ *
  * Description: Top level module for Reverb application, launches all coars
- * for L2 Slice Kit Tile Board with Audio Slice 1v0 
+ * for L2 Slice Kit Tile Board with Audio Slice 1v0
  * Note: This application expects a Audio Slice (1v0) to be connected to a Type 1 Socket on core AUDIO_IO_TILE
  *
  * Version: 0v1
@@ -30,7 +30,7 @@ void xscope_user_init( void ) // 'C' constructor function (NB called before main
 {
 	xscope_register( 1
 		,XSCOPE_CONTINUOUS ,"Dummy" ,XSCOPE_INT ,"n"
-	); // xscope_register 
+	); // xscope_register
 
 	xscope_config_io( XSCOPE_IO_BASIC ); // Enable XScope printing
 } // xscope_user_init
@@ -42,7 +42,7 @@ int main (void)
 	streaming chan c_aud_dsp; // Channel between I/O and Processing coars
 	streaming chan c_dsp_eq; // Channel between DSP-control and Equalisation coars
 	streaming chan c_dsp_gain; // Channel between DSP-control and Loudness coars
-  chan c_dsp_sdram; // Channel between DSP coar and SDRAM coar 
+  chan c_dsp_sdram; // Channel between DSP coar and SDRAM coar
 
 
 

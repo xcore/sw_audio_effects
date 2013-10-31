@@ -9,10 +9,10 @@ Description: Test Harness for BiQuad
 #include "test_harness.h"
 
 /*****************************************************************************/
-void init_samples( // Initialise input data samples 
+void init_samples( // Initialise input data samples
 	TEST_DATA_S * tst_data_sp, // Pointer to Structure containing test data
 	SAMP_CHAN_T samples[] // Array of input samples
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 
@@ -26,14 +26,14 @@ void init_samples( // Initialise input data samples
 /*****************************************************************************/
 void init_test( // Initialise test data
 	TEST_DATA_S * tst_data_sp // Pointer to Structure containing test data
-) 
+)
 {
 	init_samples( tst_data_sp ,tst_data_sp->inps );
 } // init_test
 /*****************************************************************************/
 void do_test( // Perform test
 	TEST_DATA_S * tst_data_sp // Pointer to Structure containing test data
-) 
+)
 {
 	DELAY_PARAM_S def_param_s; // Structure containing delay-line parameters
 	S32_T delay_us = 4000; // Smallest delay in micro-secs
@@ -65,7 +65,7 @@ void do_test( // Perform test
 /*****************************************************************************/
 void print_results( // Perform test
 	TEST_DATA_S * tst_data_sp  // Pointer to Structure containing test data
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 	S32_T tap_cnt; // Sample counter

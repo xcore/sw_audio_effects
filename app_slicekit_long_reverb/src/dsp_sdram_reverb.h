@@ -1,7 +1,7 @@
 /*****************************************************************************\
  * Header:  dsp_sdram_reverb
  * File:    dsp_sdram_reverb.h
- *  
+ *
  * Description: Definitions, types, and prototypes for dsp_sdram_reverb.xc
  *
  * Version: 0v1

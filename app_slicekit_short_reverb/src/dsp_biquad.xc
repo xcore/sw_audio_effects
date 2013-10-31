@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	dsp_biquad.xc
- *  
+ *
  * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
@@ -34,7 +34,7 @@ void receive_biquad_config( // Receives BiQuad filter configuration data
 
 
 	c_dsp_eq :> biquad_param_s; // Receive BiQuad filter configuration data
-	
+
 	config_biquad_filter( biquad_id ,biquad_param_s ); // Configure BiQuad filter parameters
 } // receive_biquad_config
 /******************************************************************************/
@@ -97,7 +97,7 @@ void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of a
 	S32_T uneq_samps[NUM_REVERB_CHANS];	// UnEqualised audio sample buffer
 	S32_T equal_samps[NUM_REVERB_CHANS];	// Equalised audio sample buffer
 	S32_T chan_cnt; // Channel counter
-	
+
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
@@ -111,7 +111,7 @@ void dsp_biquad( // Coar that applies Equalisation (Tone control) to stream of a
 
 	// Loop forever
 	while(1)
-	{ 
+	{
 		// Test input channel for control token
 		if (stestct(c_dsp_eq))
 		{ // Control Token

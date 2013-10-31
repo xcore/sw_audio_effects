@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  app_conf
  * File:    app_conf.h
- *  
+ *
  * Description: Definitions for configuration of application.
  *							NB These definitions will be passed to all modules used in application
  *
@@ -26,7 +26,7 @@
 #define _APP_CONF_H_
 
 /** Number of audio channels used in this application */
-#define NUM_APP_CHANS 4 
+#define NUM_APP_CHANS 4
 
 #endif // _APP_CONF_H_
 /******************************************************************************/

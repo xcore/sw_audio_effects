@@ -13,14 +13,14 @@ void print_X64( // Print 64-bit value as hex code
 	S64_T inp_val // 64-bit input data
 )
 {
-	printf("0x%08x" ,(S32_T)(inp_val >> 32) ); 
-	printf("%08x \n" ,(S32_T)(inp_val & 0xffffffff) ); 
-} // print_X64 
+	printf("0x%08x" ,(S32_T)(inp_val >> 32) );
+	printf("%08x \n" ,(S32_T)(inp_val & 0xffffffff) );
+} // print_X64
 /*****************************************************************************/
-void init_samples( // Initialise input data samples 
+void init_samples( // Initialise input data samples
 	TEST_DATA_S * tst_data_sp, // Pointer to Structure containing test data
 	SAMP_CHAN_T samples[] // Array of input samples
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 	S32_T half_len = (SAMP_LEN >> 1); // Half Sample length
@@ -40,14 +40,14 @@ void init_samples( // Initialise input data samples
 /*****************************************************************************/
 void init_test( // Initialise test data
 	TEST_DATA_S * tst_data_sp // Pointer to Structure containing test data
-) 
+)
 {
 	init_samples( tst_data_sp ,tst_data_sp->inps );
 } // init_test
 /*****************************************************************************/
 void do_test( // Perform test
 	TEST_DATA_S * tst_data_sp // Pointer to Structure containing test data
-) 
+)
 {
 	GAIN_PARAM_S def_param_s; // Structure containing default gain parameters
 	S32_T samp_cnt; // Sample counter
@@ -71,7 +71,7 @@ void do_test( // Perform test
 /*****************************************************************************/
 void print_results( // Perform test
 	TEST_DATA_S * tst_data_sp  // Pointer to Structure containing test data
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 

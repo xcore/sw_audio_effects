@@ -9,7 +9,7 @@ Description: Test Harness for BiQuad
 #include "test_harness.h"
 
 /*****************************************************************************/
-void init_samples( // Initialise input data samples 
+void init_samples( // Initialise input data samples
 	TEST_DATA_S * tst_data_sp, // Pointer to Structure containing test data
 	CHAN_SET_A all_samps[] // Array of structures containing all Input samples
  // Array of input samples
@@ -34,14 +34,14 @@ void init_samples( // Initialise input data samples
 /*****************************************************************************/
 void init_test( // Initialise test data
 	TEST_DATA_S * tst_data_sp // Pointer to Structure containing test data
-) 
+)
 {
 	init_samples( tst_data_sp ,tst_data_sp->inps );
 } // init_test
 /*****************************************************************************/
 void do_test( // Perform test
 	TEST_DATA_S * tst_data_sp // Pointer to Structure containing test data
-) 
+)
 {
  // Default Reverb parameters
 	REVERB_PARAM_S def_param_s = { DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_GAIN };
@@ -81,7 +81,7 @@ void do_test( // Perform test
 /*****************************************************************************/
 void print_results( // Perform test
 	TEST_DATA_S * tst_data_sp  // Pointer to Structure containing test data
-) 
+)
 {
 	S32_T samp_cnt; // Sample counter
 

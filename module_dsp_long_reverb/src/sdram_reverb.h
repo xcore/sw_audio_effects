@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  sdram_reverb
  * File:    sdram_reverb.h
- *  
+ *
  * Description: Definitions, types, and prototypes for sdram_reverb.xc
  *
  * Version: 0v1
@@ -30,11 +30,11 @@
 #include "sdram_delay.h"
 #include "non_linear_gain.h"
 
-#ifndef NUM_REVERB_CHANS 
+#ifndef NUM_REVERB_CHANS
 #error Please define NUM_REVERB_CHANS in module_dsp_long_reverb_conf.h
 #endif // NUM_REVERB_CHANS
 
-#ifndef NUM_REVERB_TAPS 
+#ifndef NUM_REVERB_TAPS
 #error Please define NUM_REVERB_TAPS in module_dsp_long_reverb_conf.h
 #endif // NUM_REVERB_TAPS
 
@@ -61,19 +61,19 @@
 #define MIX_3DIV4 (MIX_DIV2 + MIX_DIV4) // 3/4 Maximum Mix Value
 
 /** Default Volume Level Of Dry Signal: 192/256 */
-#define DEF_DRY_LVL MIX_3DIV4 // 
+#define DEF_DRY_LVL MIX_3DIV4 //
 
 /**  Default Volume Level Of Effect Signal: 192/256 */
 #define DEF_FX_LVL MIX_3DIV4 //
 
 /** Default Feedback level, Above 1 will cause uncontrolled feedback: 256/256 */
-#define DEF_FB_LVL MIX_DIV2 // 
+#define DEF_FB_LVL MIX_DIV2 //
 
 /**  Default CrossTalk Mix: 128/256 */
 #define DEF_CROSS_MIX MIX_DIV2 //
 
 /** Structure containing Reverb parameters*/
-typedef struct MIX_PARAM_TAG // 
+typedef struct MIX_PARAM_TAG //
 {
 	S32_T dry_lvl; // 0:Off <--> MAX_MIX:Full
 	S32_T fx_lvl; // 0:Off<--> MAX_MIX:Full
@@ -82,7 +82,7 @@ typedef struct MIX_PARAM_TAG //
 } MIX_PARAM_S;
 
 /** Structure containing BiQuad parameters */
-typedef struct REVERB_PARAM_TAG // 
+typedef struct REVERB_PARAM_TAG //
 {
 	MIX_PARAM_S mix_lvls; // Structure containing mix-levels
 	S32_T room_size; // Room-size (in metres)
@@ -108,7 +108,7 @@ void config_sdram_reverb( // Configure reverb parameters. Note well, Must be cal
  * \param &cntrl_gs // Reference to structure containing data to control SDRAM buffering
  * \param uneq_o_set_s // Buffer for Unequalised output samples
  * \param rev_o_set_s	// Buffer for output samples with Reverb added
- * \param out_set_s	// Buffer for final Output samples 
+ * \param out_set_s	// Buffer for final Output samples
  * \param equal_i_set_s // Buffer containing Equalised input samples
  * \param ampli_i_set_s	// Buffer containing Amplified input samples
  */

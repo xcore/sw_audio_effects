@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	dsp_delay.xc
- *  
+ *
  * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
@@ -57,7 +57,7 @@ void process_all_chans( // Do DSP effect processing
 		} // for tap_cnt
 
 	} // for chan_cnt
-	
+
 } // process_all_chans
 /******************************************************************************/
 void dsp_delay( // Coar that delays a stream of audio samples
@@ -71,7 +71,7 @@ void dsp_delay( // Coar that delays a stream of audio samples
 	S32_T tap_cnt; // tap counter
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
-	
+
 	S32_T delay_us; // Delay in micro-secs
 	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 	DELAY_PARAM_S delay_param_s; // Default Delay-line Configuration
@@ -102,13 +102,13 @@ void dsp_delay( // Coar that delays a stream of audio samples
 
 	// Loop forever
 	while(1)
-	{ 
+	{
 		// Send/Receive samples over Audio coar channel
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 		{
-			c_dsp_gain :> inp_samps[chan_cnt]; 
-			c_dsp_gain <: out_samps[chan_cnt]; 
+			c_dsp_gain :> inp_samps[chan_cnt];
+			c_dsp_gain <: out_samps[chan_cnt];
 		}
 
 		samp_cnt++; // Update sample counter

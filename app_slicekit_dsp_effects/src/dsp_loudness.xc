@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	dsp_loudness.xc
- *  
+ *
  * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
@@ -33,7 +33,7 @@ void receive_loudness_config( // Receives Loudness configuration data
 
 
 	c_dsp_gain :> gain_param_s; // Receive Loudness configuration data
-	
+
 	config_loudness( gain_param_s ); // Configure gain-shaping parameters
 } // receive_loudness_config
 /******************************************************************************/
@@ -94,7 +94,7 @@ void dsp_loudness( // Coar that applies non-linear gain control to stream of aud
 	S32_T ampli_samps[NUM_REVERB_CHANS];	// Amplified audio sample buffer
 
 	S32_T chan_cnt; // Channel counter
-	
+
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
@@ -107,7 +107,7 @@ void dsp_loudness( // Coar that applies non-linear gain control to stream of aud
 
 	// Loop forever
 	while(1)
-	{ 
+	{
 		// Test input channel for control token
 		if (stestct(c_dsp_gain))
 		{ // Control Token

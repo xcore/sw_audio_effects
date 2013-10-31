@@ -1,9 +1,9 @@
 /******************************************************************************\
  * File:	biquad_simple.c
- *  
+ *
  * Description: Functions for Bi-Quad filter
  *
- * Version: 
+ * Version:
  * Build:
  *
  * The copyrights, all other intellectual and industrial
@@ -52,7 +52,7 @@ void init_fix_const( // Initialise structure of data for multiply by fixed-point
 			fix_const_ps->half = (1 <<  (fix_coef_ps->exp - 1)); // Half scaling factor
 		} // if (0 < fix_coef_ps->exp)
 	} // else !(0 == un_coef )
-  
+
 } // init_fix_const
 /******************************************************************************/
 void init_lopass_coefs( // Initialise set of BiQuad coeffs for Low-Pass Filter
@@ -61,7 +61,7 @@ void init_lopass_coefs( // Initialise set of BiQuad coeffs for Low-Pass Filter
 	REAL_T un_a[] // Array of un-normalised IIR filter coefficients
 )
 {
-	// NB Example values given for cur_param_ps->sig_freq = 1KHz, cur_param_ps->samp_freq = 48KHz 
+	// NB Example values given for cur_param_ps->sig_freq = 1KHz, cur_param_ps->samp_freq = 48KHz
 	REAL_T ang_w0 = 2 * PI * cur_param_ps->sig_freq / cur_param_ps->samp_freq; // Angular position 0.1309
 	REAL_T sin_w0 = sin( ang_w0 ); // 0.1305
 	REAL_T cos_w0 = cos( ang_w0 ); // 0.9914
@@ -87,7 +87,7 @@ void init_hipass_coefs( // Initialise set of BiQuad coeffs for Hi-Pass Filter
 	REAL_T un_a[] // Array of un-normalised IIR filter coefficients
 )
 {
-	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz 
+	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz
 	REAL_T ang_w0 = 2 * PI * cur_param_ps->sig_freq / cur_param_ps->samp_freq; // Angular position 0.1309
 	REAL_T sin_w0 = sin( ang_w0 ); // 0.1305
 	REAL_T cos_w0 = cos( ang_w0 ); // 0.9914
@@ -113,7 +113,7 @@ void init_bandpass_coefs( // Initialise set of BiQuad coeffs for Band-Pass Filte
 	REAL_T un_a[] // Array of un-normalised IIR filter coefficients
 )
 {
-	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz 
+	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz
 	REAL_T ang_w0 = 2 * PI * cur_param_ps->sig_freq / cur_param_ps->samp_freq; // Angular position 0.1309
 	REAL_T sin_w0 = sin( ang_w0 ); // 0.1305
 	REAL_T cos_w0 = cos( ang_w0 ); // 0.9914
@@ -125,7 +125,7 @@ void init_bandpass_coefs( // Initialise set of BiQuad coeffs for Band-Pass Filte
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = alpha;	// 0.06526
 	un_b[1] = 0;			// 0
-	un_b[2] = -alpha; // -0.06526 
+	un_b[2] = -alpha; // -0.06526
 
 	un_a[0] = (1 + alpha); // 1.065
 	un_a[1] = (-2 * cos_w0); // -1.983
@@ -139,7 +139,7 @@ void init_notch_coefs( // Initialise set of BiQuad coeffs for Notch Filter
 	REAL_T un_a[] // Array of un-normalised IIR filter coefficients
 )
 {
-	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz 
+	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz
 	REAL_T ang_w0 = 2 * PI * cur_param_ps->sig_freq / cur_param_ps->samp_freq; // Angular position 0.1309
 	REAL_T sin_w0 = sin( ang_w0 ); // 0.1305
 	REAL_T cos_w0 = cos( ang_w0 ); // 0.9914
@@ -150,7 +150,7 @@ void init_notch_coefs( // Initialise set of BiQuad coeffs for Notch Filter
 
 	// Assign Non-zero Unnormalised Coefs
 	un_b[0] = 1;							// 1.0
-	un_b[1] = (-2 * cos_w0);	// -1.983 
+	un_b[1] = (-2 * cos_w0);	// -1.983
 	un_b[2] = 1;							// 1.0
 
 	un_a[0] = (1 + alpha); // 1.065
@@ -165,7 +165,7 @@ void init_allpass_coefs( // Initialise set of BiQuad coeffs for All-Pass Filter 
 	REAL_T un_a[] // Array of un-normalised IIR filter coefficients
 )
 {
-	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz 
+	// NB Example values given for cur_param_ps->sig_freq= 1KHz, cur_param_ps->samp_freq = 48KHz
 	REAL_T ang_w0 = 2 * PI * cur_param_ps->sig_freq / cur_param_ps->samp_freq; // Angular position 0.1309
 	REAL_T sin_w0 = sin( ang_w0 ); // 0.1305
 	REAL_T cos_w0 = cos( ang_w0 ); // 0.9914
@@ -314,9 +314,9 @@ void set_biquad_flags( // Set initialisation control flags for a biquad data str
 {
 	biquad_ps->params_set = 0; // Clear flag indicating structure is initialised
 	biquad_ps->init_done = 0; // Clear flag indicating parameters have been set
-} // set_biquad_flags 
+} // set_biquad_flags
 /******************************************************************************/
-void config_current_biquad_filter( // Configure current BiQuad filter 
+void config_current_biquad_filter( // Configure current BiQuad filter
 	BIQUAD_S * biquad_ps, // Pointer to biquad data structure
 	BIQUAD_PARAM_S * cur_param_ps // Pointer to structure containing current biquad filter parameters
 )
@@ -342,7 +342,7 @@ void config_current_biquad_filter( // Configure current BiQuad filter
 	biquad_ps->params_set = 1; // Signal BiQuad filter parameters configured
 } // config_current_biquad_filter
 /******************************************************************************/
-void config_biquad_filter( // Configure BiQuad filter 
+void config_biquad_filter( // Configure BiQuad filter
 	S32_T biquad_id, // Identifies which BiQuad to use
 	BIQUAD_PARAM_S * cur_param_ps // Pointer to structure containing current biquad filter parameters
 )
@@ -394,7 +394,7 @@ FILT_T clip_sample( // Clip full precision sample into channel range
 
 	if (inp_full_samp > (FILT_T)MAX_SAMP)
 	{ // +ve Clipping
-		out_full_samp = (FILT_T)MAX_SAMP; // Clip value to maximum 
+		out_full_samp = (FILT_T)MAX_SAMP; // Clip value to maximum
 
 		pos_clip++;
 		if (pos_clip > MAX_CLIP) assert( 0 == 1 );
@@ -415,7 +415,7 @@ FILT_T clip_sample( // Clip full precision sample into channel range
 	} // else !(inp_full_samp > (FILT_T)MAX_SAMP)
 
 	return out_full_samp; // Return clipped value
-} // clip_sample 
+} // clip_sample
 /******************************************************************************/
 SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 	SAMP_CHAN_T inp_chan_samp, // Unfiltered input sample at channel precision
@@ -453,8 +453,8 @@ SAMP_CHAN_T biquad_filter_chan( // Create filtered output sample for one channel
 	// Update previous stored results
 	for (tap_cnt=(NUM_FILT_TAPS - 1); tap_cnt>0; tap_cnt--)
 	{
-		bq_chan_ps->iir[tap_cnt] =	bq_chan_ps->iir[tap_cnt-1]; 
-		bq_chan_ps->filt[tap_cnt] =	bq_chan_ps->filt[tap_cnt-1]; 
+		bq_chan_ps->iir[tap_cnt] =	bq_chan_ps->iir[tap_cnt-1];
+		bq_chan_ps->filt[tap_cnt] =	bq_chan_ps->filt[tap_cnt-1];
 	} // for tap_cnt
 
 	out_full_samp = (bq_chan_ps->filt[0] << HEAD_BITS); // Compute full precision filtered output sample
@@ -476,7 +476,7 @@ S32_T use_current_biquad_filter( // Use current BiQuad filter on one sample from
 	// Check if biquad parameters have been initialised
 	if (0 == biquad_ps->params_set)
 	{
-		assert(0 == 1); // Please call config_biquad_filter() function before use_biquad_filter() 
+		assert(0 == 1); // Please call config_biquad_filter() function before use_biquad_filter()
 	} // if (0 == biquad_ps->params_set)
 	else
 	{

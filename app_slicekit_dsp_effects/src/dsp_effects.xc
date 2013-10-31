@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	dsp_effects.xc
- *  
- * Description: Control coar for Reverb, also handles delay functionality, 
+ *
+ * Description: Control coar for Reverb, also handles delay functionality,
  *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
@@ -37,7 +37,7 @@ void init_dsp_effects( // Initialisation for DSP effects global data structure
 //	BIQUAD_PARAM_S band_pass_param_s = { BAND_PASS ,DEF_SAMP_FREQ ,(DEF_SIG_FREQ >> 3) ,(DEF_QUAL_FACT >> 1) }; // MB~Clips
 
 	// Default Reverb Configuration parameters
-	REVERB_PARAM_S def_reverb_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX } 
+	REVERB_PARAM_S def_reverb_param_s = {{ DEF_DRY_LVL ,DEF_FX_LVL ,DEF_FB_LVL ,DEF_CROSS_MIX }
 																,DEF_ROOM_SIZE ,DEF_SIG_FREQ ,DEF_SAMP_FREQ ,DEF_REVERB_GAIN };
 
 	// Default Loudness Configuration parameters. NB Currently Unused.
@@ -83,7 +83,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 {
 	S32_T tap_cnt; // tap counter
 	S32_T chan_cnt; // Channel counter
-	
+
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
@@ -183,13 +183,13 @@ OUT_SIGNAL_ENUM decode_button_state( // Analyse new button state, and return req
 	{
 		case BUTTON_1 :	// port value returned for when just button 1 (SW1) pressed
 			return BIQUAD;
-		break; // case BUTTON_1 
-	
+		break; // case BUTTON_1
+
 		case BUTTON_2 : // port value returned for when just button 2 (SW2) pressed
 			return REVERB;
-		break; // case BUTTON_2 
-	
-		default:	
+		break; // case BUTTON_2
+
+		default:
 			printstr("ERROR: Found following UN-supported Button-state = ");
 			printintln( button_state );
 			assert(0 == 1);
@@ -385,15 +385,15 @@ void dsp_effects( // Controls audio stream processing for Reverb & BiQuad dsp fu
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_aud_dsp :> fx_sets[INPUT].samps[chan_cnt];  // Receive input samples from Audio I/O coar 
-			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
+			c_aud_dsp :> fx_sets[INPUT].samps[chan_cnt];  // Receive input samples from Audio I/O coar
+			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar
 		} // for chan_cnt
 
 		// Copy output channels 1/2 to 3/4
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
-			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar 
+			c_aud_dsp <: out_set_s.samps[chan_cnt];  // Send Output samples back to Audio I/O coar
 		} // for chan_cnt
 
 #pragma loop unroll
@@ -401,8 +401,8 @@ void dsp_effects( // Controls audio stream processing for Reverb & BiQuad dsp fu
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq_arr[0] <: fx_sets[INPUT].samps[chan_cnt]; // Send Input samples to EQ coar  
-			c_dsp_eq_arr[0] :> fx_sets[BIQUAD].samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
+			c_dsp_eq_arr[0] <: fx_sets[INPUT].samps[chan_cnt]; // Send Input samples to EQ coar
+			c_dsp_eq_arr[0] :> fx_sets[BIQUAD].samps[chan_cnt]; // Receive Equalised samples back from EQ coar
 		} // for chan_cnt
 
 #pragma loop unroll
@@ -410,16 +410,16 @@ void dsp_effects( // Controls audio stream processing for Reverb & BiQuad dsp fu
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_eq_arr[1] <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar  
-			c_dsp_eq_arr[1] :> sdram_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar  
+			c_dsp_eq_arr[1] <: uneq_set_s.samps[chan_cnt]; // Send Unequalised samples to EQ coar
+			c_dsp_eq_arr[1] :> sdram_gs.src_set.samps[chan_cnt]; // Receive Equalised samples back from EQ coar
 		} // for chan_cnt
 
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_REVERB_CHANS; chan_cnt++)
 		{
 			// Service channels in chronological order
-			c_dsp_gain <: unamp_set_s.samps[chan_cnt]; // Send Unamplified samples to Loudness coar   
-			c_dsp_gain :> ampli_set_s.samps[chan_cnt]; // Receive Amplified samples back from Loudness coar  
+			c_dsp_gain <: unamp_set_s.samps[chan_cnt]; // Send Unamplified samples to Loudness coar
+			c_dsp_gain :> ampli_set_s.samps[chan_cnt]; // Receive Amplified samples back from Loudness coar
 		} // for chan_cnt
 
 		// Check if GPIO buttons have been pressed
@@ -441,7 +441,7 @@ void dsp_effects( // Controls audio stream processing for Reverb & BiQuad dsp fu
 			} // if (dspfx_gs.fx_len < dspfx_gs.samp_cnt)
 		} // if (!dspfx_gs.fade_on)
 
-		/* Call reverb routines. 
+		/* Call reverb routines.
 		 * As reverb is a delay based effect, it is still called even when NOT selected, ready for the switch back to Reverb
 		 */
 		use_sdram_reverb( sdram_gs ,fx_sets[INPUT] ,uneq_set_s ,unamp_set_s ,fx_sets[REVERB] ,ampli_set_s );

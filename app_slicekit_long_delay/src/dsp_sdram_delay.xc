@@ -1,6 +1,6 @@
 /******************************************************************************\
  * File:	dsp_sdram_delay.xc
- *  
+ *
  * Description: Coar that applies non-linear gain to stream of audio samples
  *
  * Version: 0v1
@@ -61,7 +61,7 @@ void init_sdram_buffers( // Initialisation buffers for SDRAM access
 {
 	S32_T tap_cnt; // tap counter
 	S32_T chan_cnt; // Channel counter
-	
+
 
 	// initialise samples buffers
 	for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
@@ -89,7 +89,7 @@ void init_parameters( // Initialise delay parameters
 {
 	S32_T delay_us; // Delay in micro-secs
 	S32_T tap_cnt; // tap counter
-	
+
 
 	// Initialsie Delay-line configuration parameters ...
 
@@ -193,7 +193,7 @@ void dsp_sdram_delay( // Coar that delays a stream of audio samples
 	S32_T fx_len = (SWAP_NUM << 1);	// time spent in effect state (to ~16 secs)
 	S32_T samp_cnt = 0;	// Sample counter
 	S32_T chan_cnt; // Channel counter
-	
+
 	PROC_STATE_ENUM cur_proc_state	= EFFECT; // Initialise processing state to EFFECT On.
 
 
@@ -210,18 +210,18 @@ void dsp_sdram_delay( // Coar that delays a stream of audio samples
 	}
 
 	// Configure Delay-line parameters ...
-	
+
 	config_sdram_delay( delay_param_s );
 
 	// Loop forever
 	while(1)
-	{ 
+	{
 		// Send/Receive samples over Audio coar channel
 #pragma loop unroll
 		for (chan_cnt = 0; chan_cnt < NUM_DELAY_CHANS; chan_cnt++)
 		{
-			c_dsp_aud :> cntrl_gs.src_set.samps[chan_cnt]; 
-			c_dsp_aud <: out_set_s.samps[chan_cnt]; 
+			c_dsp_aud :> cntrl_gs.src_set.samps[chan_cnt];
+			c_dsp_aud <: out_set_s.samps[chan_cnt];
 		}
 
 		samp_cnt++; // Update sample counter
@@ -246,7 +246,7 @@ void dsp_sdram_delay( // Coar that delays a stream of audio samples
 			break; // case EFFECT:
 
 			case FX2DRY: // Fade-Out Effect
-				// Create output sample-set by cross-fadeing from delayed sample-set to input sample-set 
+				// Create output sample-set by cross-fadeing from delayed sample-set to input sample-set
 				cross_fade_sample( out_set_s.samps ,mix_set_s.samps ,cntrl_gs.src_set.samps ,NUM_DELAY_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)
@@ -268,7 +268,7 @@ void dsp_sdram_delay( // Coar that delays a stream of audio samples
 			break; // case DRY_ONLY:
 
 			case DRY2FX: // Fade-in Effect
-				// Create output sample-set by cross-fadeing from input sample-set to delayed sample-set 
+				// Create output sample-set by cross-fadeing from input sample-set to delayed sample-set
 				cross_fade_sample( out_set_s.samps ,cntrl_gs.src_set.samps ,mix_set_s.samps ,NUM_DELAY_CHANS ,samp_cnt );
 
 				if (FADE_LEN <= samp_cnt)

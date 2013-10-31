@@ -57,7 +57,7 @@ void process_new_buttons_state( // Do processing for confirmed new button state
 	chanend c_gpio // GPIO end of channel between GPIO and DSP coars
 )
 // NB LED's are active low. Therefore bit-selects are inverted
-{ 
+{
 
 	switch( gpio_gs.curr_buttons )
 	{
@@ -65,20 +65,20 @@ void process_new_buttons_state( // Do processing for confirmed new button state
 			p_led <: NO_LEDS; // Switch off all LED's
 			printstrln("Both Buttons Pressed");
 		break; // case ALL_BUTTONS
-	
+
 		case BUTTON_2 : // Just button 2 (SW2) pressed
-			one_button_state( gpio_gs ,c_gpio ,LED_3 ); 
-		break; // case BUTTON_2 
-	
+			one_button_state( gpio_gs ,c_gpio ,LED_3 );
+		break; // case BUTTON_2
+
 		case BUTTON_1 :	// Just button 1 (SW1) pressed
-			one_button_state( gpio_gs ,c_gpio ,LED_0 ); 
-		break; // case BUTTON_1 
-	
+			one_button_state( gpio_gs ,c_gpio ,LED_0 );
+		break; // case BUTTON_1
+
 		case BUTTONS_OFF : // Both buttons Released
 			p_led <: gpio_gs.leds; // Switch on/off requested LED's
-		break; // case BUTTONS_OFF 
+		break; // case BUTTONS_OFF
 
-		default:	
+		default:
 			printstr("ERROR: Button state NOT supported :");
 			printintln( gpio_gs.curr_buttons );
 			assert(0 == 1);

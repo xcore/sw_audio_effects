@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  reverb
  * File:    reverb.h
- *  
+ *
  * Description: Definitions, types, and prototypes for reverb.xc
  *
  * Version: 0v1
@@ -30,11 +30,11 @@
 #include "delay_line.h"
 #include "non_linear_gain.h"
 
-#ifndef NUM_REVERB_CHANS 
+#ifndef NUM_REVERB_CHANS
 #error Please define NUM_REVERB_CHANS in module_dsp_short_reverb_conf.h
 #endif // NUM_REVERB_CHANS
 
-#ifndef NUM_REVERB_TAPS 
+#ifndef NUM_REVERB_TAPS
 #error Please define NUM_REVERB_TAPS in module_dsp_short_reverb_conf.h
 #endif // NUM_REVERB_TAPS
 
@@ -58,19 +58,19 @@
 #define MIX_3DIV4 (MIX_DIV2 + MIX_DIV4) // 3/4 Maximum Mix Value
 
 /** Default Volume Level Of Dry Signal: 192/256 */
-#define DEF_DRY_LVL MIX_3DIV4 // 
+#define DEF_DRY_LVL MIX_3DIV4 //
 
 /**  Default Volume Level Of Effect Signal: 192/256 */
 #define DEF_FX_LVL MIX_3DIV4 //
 
 /** Default Attenuation. NB Below 1/8 can cause uncontrolled feedback: 32/256 */
-#define DEF_ATTN_MIX MIX_DIV8 // 
+#define DEF_ATTN_MIX MIX_DIV8 //
 
 /**  Default CrossTalk Mix: 64/256 */
 #define DEF_CROSS_MIX MIX_DIV4 //
 
 /** Structure containing Reverb parameters*/
-typedef struct MIX_PARAM_TAG // 
+typedef struct MIX_PARAM_TAG //
 {
 	S32_T dry_lvl; // 0:Off <--> MAX_MIX:Full
 	S32_T fx_lvl; // 0:Off<--> MAX_MIX:Full
@@ -79,7 +79,7 @@ typedef struct MIX_PARAM_TAG //
 } MIX_PARAM_S;
 
 /** Structure containing BiQuad parameters */
-typedef struct REVERB_PARAM_TAG // 
+typedef struct REVERB_PARAM_TAG //
 {
 	MIX_PARAM_S mix_lvls; // Structure containing mix-levels
 	S32_T room_size; // Room-size (in metres)
@@ -92,7 +92,7 @@ typedef struct REVERB_PARAM_TAG //
 /** Performs reverb processing.
  * \param uneq_o_samps[] // Buffer for Unequalised output samples
  * \param rev_o_samps[]	// Buffer for output samples with Reverb added
- * \param out_samps[]	// Buffer for final Output samples 
+ * \param out_samps[]	// Buffer for final Output samples
  * \param inp_samps[]	// Buffer containing Dry input samples
  * \param equal_i_samps[] // Buffer containing Equalised input samples
  * \param amp_i_samps[]	// Buffer containing Amplified input samples
@@ -100,7 +100,7 @@ typedef struct REVERB_PARAM_TAG //
 void use_reverb( // Performs reverb processing
 	S32_T uneq_o_samps[],	// Buffer for Unequalised output samples
 	S32_T rev_o_samps[],	// Buffer for output samples with Reverb added
-	S32_T out_samps[],	// Buffer for final Output samples 
+	S32_T out_samps[],	// Buffer for final Output samples
 	S32_T inp_samps[],	// Buffer containing Dry input samples
 	S32_T equal_i_samps[],	// Buffer containing Equalised input samples
 	S32_T amp_i_samps[]	// Buffer containing Amplified input samples

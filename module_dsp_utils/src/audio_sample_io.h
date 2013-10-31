@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  audio_sample_io
  * File:    audio_sample_io.h
- *  
+ *
  * Description: Definitions, types, and prototypes for audio_sample_io.xc
  *
  * Version: 0v1
@@ -28,13 +28,13 @@
 
 /******************************************************************************/
 void get_samples_from_input( // Get samples from Input channel
-	chanend c_inp, // audio-in channel 
+	chanend c_inp, // audio-in channel
 	int samples[], // Array or Output samples
 	int num_chans // Number of channels
 );
 /******************************************************************************/
 void give_samples_to_output( // Give samples to Output channel
-	chanend c_out, // audio-out channel 
+	chanend c_out, // audio-out channel
 	const int samples[],  // Array or Input samples
 	int num_chans // Number of channels
 );

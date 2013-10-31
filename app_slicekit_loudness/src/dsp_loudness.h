@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  dsp_loudness
  * File:    dsp_loudness.h
- *  
+ *
  * Description: Definitions, types, and prototypes for dsp_loudness.xc
  *
  * Version: 0v1

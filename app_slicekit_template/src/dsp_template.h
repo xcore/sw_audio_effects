@@ -1,7 +1,7 @@
 /******************************************************************************\
  * Header:  dsp_template
  * File:    dsp_template.h
- *  
+ *
  * Description: Definitions, types, and prototypes for dsp_template.xc
  *
  * Version: 0v1

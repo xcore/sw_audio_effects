@@ -1,7 +1,7 @@
 /******************************************************************************\
  * File:	reverb.c
- *  
- * Description: Control coar for Reverb, also handles delay functionality, 
+ *
+ * Description: Control coar for Reverb, also handles delay functionality,
  *	calls Loudness and Equalisation coars
  *
  * Version: 0v1
@@ -38,7 +38,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 
 
 	delay_param_s.freq = reverb_param_ps->samp_freq; // Assign requested sample frequency
-	
+
 	// Calculate Delay-line taps (in milli-seconds) for requested room-size ...
 
 	factor = (S64_T)1000000 * (S64_T)INV_SOS * (S64_T)reverb_param_ps->room_size; // common factor to convert delay to milli-seconds
@@ -47,7 +47,7 @@ void config_build_delay( // Calculate delay parameters and call delay configurat
 	for (tap_cnt = 0; tap_cnt < NUM_REVERB_TAPS; tap_cnt++)
 	{
 		// Calculate delay taps in samples.
-		delay_param_s.us_delays[tap_cnt] 
+		delay_param_s.us_delays[tap_cnt]
 			= (S32_T)((factor * (S64_T)reverb_ps->ratios.taps[tap_cnt] + HALF_REV_SCALE ) >> SCALE_REV_BITS);
 	} // for tap_cnt
 
@@ -78,10 +78,10 @@ void config_reverb( // Configure reverb parameters
 
 	assert(MIN_AUDIO_FREQ <= reverb_param_ps->samp_freq); // Check for sensible frequency
 
-	/* Configure Delay-line which is in this coar. 
+	/* Configure Delay-line which is in this coar.
 		NB BiQuad and Loudness are in different coars and therefore configuration is synchronised via dsp_control.xc */
 
-	config_build_delay( &(reverb_gs) ,reverb_param_ps );  
+	config_build_delay( &(reverb_gs) ,reverb_param_ps );
 
 	// Assign requested mix setting ...
 
@@ -94,7 +94,7 @@ void config_reverb( // Configure reverb parameters
 void use_reverb( // Controls audio stream processing for reverb application using dsp functions
 	SAMP_CHAN_T uneq_o_samps[],	// Buffer for Unequalised output samples
 	SAMP_CHAN_T rev_o_samps[],	// Buffer for output samples with Reverb added
-	SAMP_CHAN_T out_samps[],	// Buffer for final Output samples 
+	SAMP_CHAN_T out_samps[],	// Buffer for final Output samples
 	SAMP_CHAN_T inp_samps[],	// Buffer containing Dry input samples
 	SAMP_CHAN_T equal_i_samps[],	// Buffer containing Equalised input samples
 	SAMP_CHAN_T amp_i_samps[]	// Buffer containing Amplified input samples
@@ -108,12 +108,12 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 	S64_T samp_diff;	// Intermediate sample difference
 	S32_T chan_cnt; // Channel counter
 	S32_T other_chan; // Other channel of stereo pair
-	
+
 
 	// Check if reverb parameters have been initialised
 	if (0 == reverb_gs.params_set)
 	{
-		assert(0 == 1); // Please call config_reverb() function before use_reverb() 
+		assert(0 == 1); // Please call config_reverb() function before use_reverb()
 	} // if (0 == reverb_gs.params_set)
 	else
 	{
@@ -127,7 +127,7 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 			use_delay_line( delay_samps ,equal_i_samps[chan_cnt] ,chan_cnt );
 
 			// Sum 'Early Reflections' for left and right channels
-			same_samps[chan_cnt] = (S64_T)delay_samps[0] + (S64_T)delay_samps[1];		// A + B 
+			same_samps[chan_cnt] = (S64_T)delay_samps[0] + (S64_T)delay_samps[1];		// A + B
 			swap_samps[chan_cnt] = (S64_T)delay_samps[2] + (S64_T)delay_samps[3];		// C + D
 
 			// Sum 4 weighted delay taps as follows: (19A + 17B + 15C + 13D)/64
@@ -149,7 +149,7 @@ void use_reverb( // Controls audio stream processing for reverb application usin
 		{
 			other_chan = chan_cnt ^ 1; // Get Id for other channel (Assumes 0 <--> 1, 2 <--> 3, etc)
 
-			// Mix Left and Right channels 
+			// Mix Left and Right channels
 			samp_diff = (S64_T)mix_lvls_ps->cross_mix * (swap_samps[other_chan] - same_samps[chan_cnt]);
 			rev_o_samps[chan_cnt] = (S32_T)(same_samps[chan_cnt] + ((samp_diff + (S64_T)MIX_DIV2) >> MIX_BITS));
 // rev_o_samps[chan_cnt] = equal_i_samps[other_chan]; //MB~ Dbg

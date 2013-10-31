@@ -1,6 +1,6 @@
 /*****************************************************************************\
 Include File: types64bit.h
-      
+
 
 Description: Type definitions, to allow interworking between different processors (E.G. gcc running on DELL Optiplex 780)
 
@@ -69,6 +69,6 @@ typedef long double R128_T;
 	printf("R32_T=%d \n" ,sizeof( R32_T ) );
 	printf("R64_T=%d \n" ,sizeof( R64_T ) );
 	printf("R128_T=%d \n" ,sizeof( R128_T ) );
-#endif //MB 
+#endif //MB
 /*****************************************************************************/
 // types64bit.h

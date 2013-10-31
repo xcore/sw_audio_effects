@@ -1,9 +1,9 @@
 /******************************************************************************\
  * File:	delay_line.c
- *  
+ *
  * Description: Functions for Delay-Line(echo)
  *
- * Version: 
+ * Version:
  * Build:
  *
  * The copyrights, all other intellectual and industrial
@@ -31,7 +31,7 @@ void get_sample_delays( // Calculate delay taps in samples
 	DELAY_PARAM_S * cur_param_ps // Pointer to structure containing delay-line parameters
 ) // Return delay in samples
 {
-	S32_T num_taps = cur_param_ps->num; // Get Number of taps to calculate 
+	S32_T num_taps = cur_param_ps->num; // Get Number of taps to calculate
 	S32_T tap_cnt; // delay measured in samples
 	U32_T chk_delay; // current delay measured in samples
 
@@ -147,13 +147,13 @@ void delay_line_chan( // Retrieve output sample from buffer, and store input sam
 	S32_T tap_cnt; // delay measured in samples
 
 
-	chan_ps->buf[ chan_ps->inp ] = inp_samp ; // Store input sample in buffer 
+	chan_ps->buf[ chan_ps->inp ] = inp_samp ; // Store input sample in buffer
 	chan_ps->inp = increment_circular_offset( (chan_ps->inp + 1) ,DELAY_SIZE ); // increment input offset and wrap
 
 	// Loop through all delay taps.
 	for (tap_cnt = 0; tap_cnt < chan_ps->tap_num; tap_cnt++)
 	{
-		out_samps[tap_cnt] = chan_ps->buf[ chan_ps->outs[tap_cnt] ]; // Retrieve output sample from buffer 
+		out_samps[tap_cnt] = chan_ps->buf[ chan_ps->outs[tap_cnt] ]; // Retrieve output sample from buffer
 		chan_ps->outs[tap_cnt] = increment_circular_offset( (chan_ps->outs[tap_cnt] + 1) ,DELAY_SIZE ); // increment output offset and wrap
 	} // for tap_cnt
 
@@ -168,7 +168,7 @@ void use_delay_line( // exercise delay_line for one input sample. NB Must have p
 	// Check if delay-line parameters have been initialised
 	if (0 == delay_gs.params_set)
 	{
-		assert(0 == 1); // Please call config_delay_line() function before use_delay_line() 
+		assert(0 == 1); // Please call config_delay_line() function before use_delay_line()
 	} // if (0 == init_flag)
 	else
 	{

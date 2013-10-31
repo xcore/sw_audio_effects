@@ -10,9 +10,9 @@ Description: General messing around test program
 
 /*****************************************************************************/
 int mod(
-	int inp, 
+	int inp,
 	int out
-) 
+)
 {
 	static int flag = 0;
 

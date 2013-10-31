@@ -9,7 +9,7 @@ Description: Calls test_harness for BiQuad module
 #include "main.h"
 
 /*****************************************************************************/
-int main() 
+int main()
 {
 	printf("Program main starts\n");
 
