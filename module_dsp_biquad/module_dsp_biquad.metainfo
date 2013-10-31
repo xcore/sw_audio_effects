@@ -19,17 +19,6 @@ ALL_PASS=4
 
 configPoints =
 {
-  SampleFreq = {
-    short   = "Sample Frequency",
-    help    = "",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SAMP_FREQ",
-    type    = "int",
-    options = {32000,44100,48000,88200,96000,176400,192000},
-    resourceUsageFlags = {"linear"},
-    default = 48000
-  },
   NumChannels = {
     short   = "BiQuad Channels",
     help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
@@ -40,42 +29,6 @@ configPoints =
     options = {1,2,4},
     resourceUsageFlags = {"linear"},
     default = 4 
-  },
-  FilterType =
-  {
-    short   = "Filter Type",
-    help    = "Custom filters can be defined. To get started with custom definition, select the type closest to your requirements. NB ALL_PASS changes phase",
-    long    = "",
-    units   = "",
-    define  = "DEF_FILT_MODE",
-    type    = "int",
-    options = {LO_PASS,HI_PASS,BAND_PASS,BAND_STOP,ALL_PASS}, 
-    resourceUsageFlags = {"noeffect"},
-    default = LO_PASS
-  },
-  SignificantFreq = {
-    short   = "Significant Frequency",
-    help    = "The significant frequency for the filter type. E.g Cut-off Freq. for Low-Pass. Note that this is specified in Hz, not KHz",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SIG_FREQ",
-    type    = "int",
-     min     = 20,
-    max     = 20000,
-    resourceUsageFlags = {"noeffect"},
-    default = 1000
-  },
-  QualityFactor = {
-    short   = "Quality Factor",
-    help    = "Filter resonance, Small Nos: Low resonance(wide peak), Large Nos: High resonance(narrow peak)",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_QUAL_FACT",
-    type    = "int",
-    min     = 2^(-8),
-    max     = 2^23,
-    resourceUsageFlags = {"noeffect"},
-    default = 1
   },
 }
 

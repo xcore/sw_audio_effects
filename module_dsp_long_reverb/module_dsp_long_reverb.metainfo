@@ -14,19 +14,6 @@ componentVersion = "1v0"
 
 configPoints =
 {
-  SampleFreq = {
-    short   = "Sample Frequency",
-    help    = "Configured in application",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SAMP_FREQ",
-    type    = "int",
-    min     = 32000,
-    max     = 192000,
-    options = {32000,44100,48000,88200,96000,176400,192000},
-    resourceUsageFlags = {"linear"},
-    default = {}
-  },
   NumChannels = {
     short   = "Reverb Channels",
     help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
@@ -39,74 +26,6 @@ configPoints =
     options = {2,4},
     resourceUsageFlags = {"linear"},
     default = 2
-  },
-  RoomSize = {
-    short   = "Approx. Room Size in Metres",
-    help    = "Average of Width and Length. This is configured in the application",
-    long    = "",
-    units   = "",
-    define  = "DEF_ROOM_SIZE",
-    type    = "int",
-    resourceUsageFlags = {"noeffect"},
-    default = 1
-  },
-  SignificantFreq = {
-    short   = "Significant Frequency",
-    help    = "Currently Low-pass cut-off Frequency. Configured in application, and passed to module_dsp_biquad",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SIG_FREQ",
-    type    = "int",
-     resourceUsageFlags = {"noeffect"},
-    default = {}
-  },
-  DryLevel= {
-    short   = "Volume level for Dry (input) signal",
-    help    = "Range of 0..256, 256 being full input level",
-    long    = "",
-    units   = "",
-    define  = "DEF_DRY_LVL",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 192
-  },
-  EffectLevel= {
-    short   = "Volume level for pure reverb effect signal",
-    help    = "Range of 0..256, 256 being full level",
-    long    = "",
-    units   = "",
-    define  = "DEF_FX_LVL",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 192
-  },
-  AttnLevel= {
-    short   = "Reverb feedback level",
-    help    = "High values create longer reverb decay. Range of 0..256. 0 is no feedback",
-    long    = "WARNING: Values of 256 and above may cause uncontrolled feedback",
-    units   = "",
-    define  = "DEF_FB_LVL",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 128
-  },
-  CrossTalk = {
-    short   = "Amount of cross-talk between left-right channels",
-    help    = "Allows smooth change from mono-reverb -> stereo-reverb -> swap_reverb. Range of 0..256,  0: Mono-reverb",
-    long    = "In a stereo-reverb, signals originating on one side of input stereo mix, can appear on the other side in the output reverb mix",
-    units   = "",
-    define  = "DEF_CROSS_MIX",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 64
   },
 }
 

@@ -14,19 +14,6 @@ componentVersion = "1v0"
 
 configPoints =
 {
-  SampleFreq = {
-    short   = "Sample Frequency",
-    help    = "Configured in application",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SAMP_FREQ",
-    type    = "int",
-    min     = 32000,
-    max     = 192000,
-    options = {32000,44100,48000,88200,96000,176400,192000},
-    resourceUsageFlags = {"linear"},
-    default = {}
-  },
   NumChannels = {
     short   = "Reverb Channels",
     help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
@@ -39,106 +26,6 @@ configPoints =
     options = {2,4},
     resourceUsageFlags = {"linear"},
     default = 2
-  },
-  RoomSize = {
-    short   = "Approx. Room Size in Metres",
-    help    = "Average of Width and Length. This is configured in the application",
-    long    = "",
-    units   = "",
-    define  = "DEF_ROOM_SIZE",
-    type    = "int",
-    resourceUsageFlags = {"noeffect"},
-    default = 1
-  },
-  SignificantFreq = {
-    short   = "Significant Frequency",
-    help    = "Currently Low-pass cut-off Frequency. Configured in application, and passed to module_dsp_biquad",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SIG_FREQ",
-    type    = "int",
-     resourceUsageFlags = {"noeffect"},
-    default = {}
-  },
-  Gain = {
-    short   = "Bring-up gain",
-    help    = "Reverb amplification to recover lost signal levels due to processing. Configured in application, and passed to module_dsp_loudness",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_GAIN",
-    type    = "int",
-    resourceUsageFlags = {"noeffect"},
-    default = {}
-  },
-  NumTaps= {
-    short   = "Delay Taps",
-    help    = "Currently 'hard-wired' to 4 delay-taps. Parameterised for passing to module_dsp_short_delay",
-    long    = "",
-    units   = "",
-    define  = "NUM_REV_TAPS",
-    type    = "int",
-    resourceUsageFlags = {"noeffect"},
-    default = 4
-  },
-  DelayTimes= {
-    short   = "Array of delay times",
-    help    = "The delay-times are specified in micro-seconds, depends on room-size",
-    long    = "",
-    units   = "",
-    define  = "us_delays[MAX_TAPS]",
-    type    = "int",
-    min     = 1,
-    max     = 2^31 - 1,
-    resourceUsageFlags = {"noeffect"},
-    default = {}
-  },
-  DryLevel= {
-    short   = "Volume level for Dry (input) signal",
-    help    = "Range of 0..256, 256 being full input level",
-    long    = "",
-    units   = "",
-    define  = "DEF_DRY_LVL",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 192
-  },
-  EffectLevel= {
-    short   = "Volume level for pure reverb effect signal",
-    help    = "Range of 0..256, 256 being full level",
-    long    = "",
-    units   = "",
-    define  = "DEF_FX_LVL",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 192
-  },
-  AttnLevel= {
-    short   = "Attenuation for reverb feedback",
-    help    = "Low values creates longer reverb decay. Range of 0..256. 256 cuases max. attenuation (No feedback - no reverb tail)",
-    long    = "WARNING: Values below 32 may cause uncontrolled feedback",
-    units   = "",
-    define  = "DEF_ATTN_MIX",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 32
-  },
-  CrossTalk = {
-    short   = "Amount of cross-talk between left-right channels",
-    help    = "Allows smooth change from mono-reverb -> stereo-reverb -> swap_reverb. Range of 0..256,  0: Mono-reverb",
-    long    = "In a stereo-reverb, signals originating on one side of input stereo mix, can appear on the other side in the output reverb mix",
-    units   = "",
-    define  = "DEF_CROSS_MIX",
-    type    = "int",
-    min     = 0,
-    max     = 256,
-    resourceUsageFlags = {"noeffect"},
-    default = 64
   },
 }
 

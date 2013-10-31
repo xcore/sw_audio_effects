@@ -25,18 +25,6 @@ configPoints =
     resourceUsageFlags = {"linear"},
     default = 4 
   },
-  Gain = {
-    short   = "Gain",
-    help    = "Mid-volume signals are amplified, low and high signal levels are unaffected",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_GAIN",
-    type    = "int",
-    min     = 1,
-    max     = 2^31 - 1,
-    resourceUsageFlags = {"noeffect"},
-    default = 4
-  },
 }
 
 derivedValues = {}

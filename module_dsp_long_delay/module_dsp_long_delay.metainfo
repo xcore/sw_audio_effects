@@ -14,17 +14,6 @@ componentVersion = "1v0"
 
 configPoints =
 {
-  SampleFreq = {
-    short   = "Sample Frequency",
-    help    = "",
-    long    = "",
-    units   = "Hz",
-    define  = "DEF_SAMP_FREQ",
-    type    = "int",
-    options = {32000,44100,48000,88200,96000,176400,192000},
-    resourceUsageFlags = {"linear"},
-    default = 48000
-  },
   NumChannels = {
     short   = "Delay Channels",
     help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
@@ -35,30 +24,6 @@ configPoints =
     options = {1,2,4},
     resourceUsageFlags = {"linear"},
     default = 4 
-  },
-  NumTaps = {
-    short   = "Delay Taps",
-    help    = "Number of delay-taps for delay-line. By default each delay is double the previous one",
-    long    = "",
-    units   = "",
-    define  = "DEF_TAPS",
-    type    = "int",
-    min     = 1,
-    max     = (2^31 - 1),
-    resourceUsageFlags = {"linear"},
-    default = 4
-  },
-  DelayTimes= {
-    short   = "Array of delay times",
-    help    = "The delay-times are specified in micro-seconds, in the calling application",
-    long    = "",
-    units   = "",
-    define  = "us_delays[MAX_TAPS]",
-    type    = "int",
-    min     = 1,
-    max     = 2^31 - 1,
-    resourceUsageFlags = {"noeffect"},
-    default = {}
   },
 }
 
