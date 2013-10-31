@@ -67,7 +67,6 @@ void dsp_loudness( // Coar that applies non-linear gain control to stream of aud
 	}
 
 	config_loudness( def_param_s );	// Initial Gain-shaping configuration
-	printstrln("Effect");
 
 	// Loop forever
 	while(1)
@@ -106,7 +105,6 @@ void dsp_loudness( // Coar that applies non-linear gain control to stream of aud
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = DRY_ONLY; // Switch to Dry-Only Processing
-					printstrln("Dry");
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case FX2DRY:
 
@@ -132,7 +130,6 @@ void dsp_loudness( // Coar that applies non-linear gain control to stream of aud
 	 			{
 					samp_cnt = 0; // Reset sample counter
 					cur_proc_state = EFFECT; // Switch to Effect-Only Processing
-					printstrln("Effect");
 				} // if (SWAP_NUM < samp_cnt)
 			break; // case DRY2FX:
 
