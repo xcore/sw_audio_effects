@@ -11,7 +11,7 @@ Hardware Setup
 To setup up the system:
 
 #. Turn off the power to the sliceKIT Core Board.
-#. Connect XA-SK-SDRAM Memory-Slice to the XP-SKC-L2 sliceKIT Core board using the connector marked with the ``SQUARE``.
+#. Connect XA-SK-SDRAM Memory-Slice to the XP-SKC-L16 sliceKIT Core board using the connector marked with the ``SQUARE``.
 #. Leave the rest of the setup unchanged from before.
 
 .. figure:: images/hardware_setup.jpg

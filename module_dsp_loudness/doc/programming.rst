@@ -44,7 +44,7 @@ The Makefile is found in the top-level directory of the application (e.g. ``app_
 
 The application is for the sliceKIT Core Board so the TARGET variable needs to be set in the Makefile: e.g.
 
-TARGET = SLICEKIT-L2.xn
+TARGET = SLICEKIT-L16.xn
 
 The number of channels supported in currently 2 or 4, this is set in auto_conf.h: e.g.
 

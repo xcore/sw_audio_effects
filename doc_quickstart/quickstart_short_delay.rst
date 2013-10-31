@@ -12,12 +12,12 @@ Hardware Setup
 
 The following hardware components are required:
 
-* XP-SKC-L2 (sliceKIT L2 Core Board)
+* XP-SKC-L16 (sliceKIT L16 Core Board)
 * XA-SK-AUDIO (Audio board)
 * XA-SK-XTAG2 (sliceKIT xTAG adaptor)
 * xTAG-2 (xTAG Connector board)
 
-XP-SKC-L2 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``, 
+XP-SKC-L16 sliceKIT Core board has four slots with edge connectors: ``SQUARE``, ``CIRCLE``, ``TRIANGLE`` and ``STAR``, 
 and one chain connector marked with a ``CROSS``.
 
 To setup up the system:
