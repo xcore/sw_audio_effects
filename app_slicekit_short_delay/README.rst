@@ -2,7 +2,7 @@ Short-Delay sliceKIT Audio Demo
 ===============================
 
 :scope: Example
-:description: Delays an a number of audio channels paasing through the sliceKIT board creating an echo effect
+:description: Delays the audio on a number of channels paasing through the sliceKIT board creating an echo effect
 :keywords: delay, echo, audio, dsp, sliceKIT
 :boards: XA-SK-AUDIO
 

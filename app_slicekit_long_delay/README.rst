@@ -2,7 +2,7 @@ Long-Delay sliceKIT Audio Demo
 ==============================
 
 :scope: Example
-:description: Delays a No. of audio channels passing through the sliceKIT board creating an long echo effect
+:description: Delays audio on a number of channels passing through the sliceKIT board, creating an long echo effect
 :keywords: delay, echo, audio, dsp, sliceKIT, memory-slice, sdram
 :boards: XA-SK-AUDIO
 

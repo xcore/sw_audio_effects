@@ -99,6 +99,6 @@ Try Other Audio Applications
 
 Some of the other audio applications are ``app_slicekit_loudness``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
 
-   * The loudness application increases the perceived loudness, without increasing the maximum volume. See doc_quickstart/quickstart_loudness.rst
-   * The short delay application creates a multiple echo effect, by storing audio in local memory. See doc_quickstart/quickstart_short_delay.rst
-   * The short reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz). See doc_quickstart/quickstart_reverb_short.rst
+   * The loudness application increases the perceived loudness, without increasing the maximum volume. Loudness sliceKIT Audio Demo
+   * The short delay application creates a multiple echo effect, by storing audio in local memory. Short-Delay sliceKIT Audio Demo
+   * The short reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz). Short-Reverb sliceKIT Audio Demo

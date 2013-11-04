@@ -7,6 +7,6 @@ Loudness sliceKIT Audio Demo
 :boards: XA-SK-AUDIO
 
 Toggles between Dry and Effect signals. 
-A non-linear gain-shaping curve is used to change create an increased output signal level, based on the level of the input signal.
+A non-linear gain-shaping curve is used to create an increased output signal level, based on the level of the input signal.
 
 The Audio_IO uses 1 logical core. and the DSP Loudness function uses a further logical core.

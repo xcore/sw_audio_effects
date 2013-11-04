@@ -24,8 +24,7 @@ To set the gain value, edit DEF_GAIN in the include file ``module_dsp_loudness/s
 Demo Applications
 =================
 
-Before running this demo, it is suggested that you familiarise yourself with the 'BiQuad Application', 
-which has a quickstart guide at app_slicekit_biquad/doc_quickstart/quickstart.rst.
+Before running this demo, it is suggested that you familiarise yourself with the "BiQuad Filter sliceKIT Audio Demo".
 
 Loudness Application For sliceKIT Board (``app_slicekit_loudness``)
 -------------------------------------------------------------------
@@ -94,6 +93,6 @@ Try Other Audio Applications
 
 Some of the other audio applications are ``app_slicekit_biquad``, ``app_slicekit_short_delay``, ``app_slicekit_short_reverb``.
 
-   * The biquad application uses a configurable BiQuad filter to achieve a number of different filter types, including low-pass, high-pass, band-pass, band-stop, and all-pass. See doc_quickstart/quickstart_biquad.rst
-   * The short delay application creates a multiple echo effect, by storing audio in local memory. See doc_quickstart/quickstart_short_delay.rst
-   * The short reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz). See doc_quickstart/quickstart_reverb_short.rst
+   * The biquad application uses a configurable BiQuad filter to achieve a number of different filter types, including low-pass, high-pass, band-pass, band-stop, and all-pass. BiQuad Filter sliceKIT Audio Demo
+   * The short delay application creates a multiple echo effect, by storing audio in local memory. Short-Delay sliceKIT Audio Demo
+   * The short reverb application is an example of a more complex application running 4 cores, and combining the biquad, loudness and short-delay modules to create room-sizes up to about 36 meters (for a stereo channel at 48 kHz). Short-Reverb sliceKIT Audio Demo

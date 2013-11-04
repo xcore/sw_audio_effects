@@ -2,8 +2,7 @@ Long-Reverb Function Library
 ============================
 
 :scope: Early Development
-:description: A long 'reverb-like' effect is created using a combination of delays, filtering and gain-shaping, 
- capable of processing up to 4 channels of 48 KHz audio in parallel.
+:description: A 'reverb-like' effect with a long decay time is created using a combination of delays, filtering and gain-shaping, capable of processing up to 4 channels of 48 KHz audio in parallel.
 :keywords: audio, dsp, reverb, echo, SDRAM, Memory-slice
 :boards: XA-SK-AUDIO, XA-SK-SDRAM
 
