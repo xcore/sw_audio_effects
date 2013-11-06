@@ -26,9 +26,6 @@ sw_audio_effects Change Log
 
       + Update dependencies.
 
-    - sc_i2c: 2.2.0rc0 -> 2.2.1rc0 
-    - sc_i2s: 1.4.2rc0 -> 1.4.2rc1
-
 1.0.2
 -----
 
