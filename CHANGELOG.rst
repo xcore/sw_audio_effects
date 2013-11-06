@@ -22,9 +22,12 @@ sw_audio_effects Change Log
       + Added cc_tops and bottoms to all the assembly for elimination if unused
       + Added sdram_col_write() for writing to a single column quickly
 
-    - sc_i2s: 1.4.1alpha0 -> 1.4.2rc0
+    - sc_i2s: 1.4.1alpha0 -> 1.4.2rc1
 
       + Update dependencies.
+
+    - sc_i2c: 2.2.0rc0 -> 2.2.1rc0 
+    - sc_i2s: 1.4.2rc0 -> 1.4.2rc1
 
 1.0.2
 -----
