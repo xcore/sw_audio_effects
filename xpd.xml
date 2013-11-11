@@ -198,9 +198,9 @@
         <version>2.2.1rc0</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <githash>3cbb42ab78f8e3e33056eb7fc5f43902f3cbfe3e</githash>
+        <githash>d0a4ea6f92341ae24684dd79d8c381e8e0d03bba</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
-        <version>1.4.2rc1</version>
+        <version>1.4.2rc4</version>
     </dependency>
     <dependency repo = "sc_sdram_burst">
         <githash>b8b1ed0df922799f4540e890dcfc083d6a5c416e</githash>
@@ -249,7 +249,7 @@
     <release parenthash = "a88e662b0c91290860a8149beb3a89f0588513a8" version = "1.0.3beta2" githash = "08054718e273b90a4e39137b72e883c286efeeb7"></release>
     <release parenthash = "08054718e273b90a4e39137b72e883c286efeeb7" version = "1.0.3beta3" githash = "09cf50007d5d4c9b3ec6eab4f78c5bb45ffc378a"></release>
     <release parenthash = "94d18f52c0d30e5cb40ceadafdc5afdc5da80587" version = "1.0.3beta4" githash = "a5c4b5b06cd7faac7814fba7d4a8e03ce6c6403a"></release>
-    <release parenthash = "fb93137d8f2c92a6d5ff4b8fc3e10edc2b429e72" version = "1.0.3rc0"></release>
+    <release parenthash = "fb93137d8f2c92a6d5ff4b8fc3e10edc2b429e72" version = "1.0.3rc0" githash = "9ee07badc3619e62e949c3ad35fd6d605fc1c18d"></release>
     <subpartnumber>XM-001969-SM</subpartnumber>
     <vendor>XMOS</vendor>
     <version_defines></version_defines>
