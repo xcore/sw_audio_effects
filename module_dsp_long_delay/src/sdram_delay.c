@@ -52,7 +52,7 @@ void update_common_delays( // Update delays for each channel
 	for (tap_cnt = 0; tap_cnt < num_taps; tap_cnt++)
 	{
 		// Calculate current requested delay in samples
-		req_delay = ((S64_T)cur_param_ps->freq * (S64_T)cur_param_ps->us_delays[tap_cnt] + (S64_T)500000) / (S64_T)1000000;
+		req_delay = (U32_T)(((S64_T)cur_param_ps->freq * (S64_T)cur_param_ps->us_delays[tap_cnt] + (S64_T)500000) / (S64_T)1000000);
 
 		// Do checks
 		assert(DELAY_SAMPS > req_delay); // Check buffer is large enough
@@ -62,8 +62,6 @@ void update_common_delays( // Update delays for each channel
 
 		// Update output offset. NB Add in extra DELAY_SAMPS to prevent negative offsets.
 		delay_ps->out_bufs[tap_cnt].off = (delay_ps->inp_bufs.off + (DELAY_SAMPS - delay_off)) % DELAY_SAMPS;
-
-// printstr("OF= "); printintln( (int)(delay_ps->out_bufs[tap_cnt].off - LOCAL_SAMPS)); // MB~
 	} // for tap_cnt
 
 } // update_common_delays
@@ -97,7 +95,7 @@ void init_sdram_delay( // Initialise delay data
 
 	init_buffers( &(delay_ps->inp_bufs) ); // Clear input buffers
 
-	// Loop thorugh output buffers
+	// Loop through output buffers
 	for (tap_cnt=0; tap_cnt<NUM_DELAY_TAPS; tap_cnt++)
 	{
 		init_buffers( &(delay_ps->out_bufs[tap_cnt]) ); // Clear current Output buffer
@@ -193,8 +191,6 @@ void read_sample_set( // Read sample-set from buffer
 			out_buf_ps->read_active = 1; // Start of delay-line, so switch on reads
 		} // if (out_buf_ps->off >= DELAY_SAMPS)
 
-// if (delay_ps->dbg) printf("RB%1d: OF=%5d \n" ,out_buf_ps->id ,out_buf_ps->off ); //MB~
-
 		// Check if safe to read data
 		if (out_buf_ps->read_active)
 		{
@@ -230,8 +226,6 @@ void write_sample_set( // Write sample-set to buffer
 		{
 			inp_buf_ps->off = 0;
 		} // if (inp_buf_ps->off >= DELAY_SAMPS)
-
-// if (delay_ps->dbg) printf("WB%1d: OF=%5d \n" ,inp_buf_ps->id ,inp_buf_ps->off ); //MB~
 
 		// Write buffer to memory. NB Memory offset is 1 buffer later then Write Offset
 		write_buffer( delay_ps ,sdram_write_p ,buf_p ,inp_buf_ps->off );
