@@ -63,16 +63,6 @@ void codec_config( // Configure Codec
     /* Set power down bit in the CODEC over I2C */
     IIC_REGWRITE(CODEC_DEV_ID_ADDR, 0x01);
 
-    /* Read CODEC device ID to make sure everything is OK */
-    IIC_REGREAD(CODEC_DEV_ID_ADDR, data);
-
-    codec_dev_id = data[0];
-    if (((codec_dev_id & 0xF0) >> 4) != 0xC)
-    {
-        printstr("Unexpected CODEC Device ID, expected 0xC, got ");
-        printhex(codec_dev_id);
-    }
-
     /* Now set all registers as we want them :
     Mode Control Reg:
     Set FM[1:0] as 11. This sets Slave mode.
