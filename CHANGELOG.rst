@@ -1,6 +1,14 @@
 sw_audio_effects Change Log
 ===========================
 
+1.0.4
+-----
+  * Changes to dependencies:
+
+    - sc_i2s: 1.4.2rc4 -> 1.4.3rc0
+
+      + update dependencies
+
 1.0.3
 -----
 

@@ -66,8 +66,7 @@ Now that the application has been compiled, the next step is to run it on the sl
 #. Monitor the analogue audio from the audio board (via mini jack Out_1/2) by connecting some headphones, or sending the audio to an active speaker.
 #. Click on the ``Run`` icon (the white arrow in the green circle). After 1 or 2 seconds filtered audio should be heard.
    The output switches between effect and dry signals about every 8 seconds, so the listener can compare the 2 modes.
-   The effect itself cycles through the following 4 filter types: [ LO_PASS, HI_PASS, BAND_PASS, BAND_STOP ]. The currently 
-   active effect is displayed in the debug console window.
+   The effect itself cycles through the following 4 filter types: [ LO_PASS, HI_PASS, BAND_PASS, BAND_STOP ]. 
 
    * LO_PASS produces audio with no treble (high frequencies)
    * HI_PASS produces audio with no bass (low frequencies)
