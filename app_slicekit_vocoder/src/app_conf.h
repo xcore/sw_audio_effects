@@ -25,7 +25,7 @@
 #ifndef _APP_CONF_H_
 #define _APP_CONF_H_
 
-/** No. of audio channels used in this application. 
+/** No. of audio channels used in this application.
     Carrier & Modulator Stereo input channels, One Stereo output channels */
 #define NUM_APP_CHANS 4
 

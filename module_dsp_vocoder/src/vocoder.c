@@ -69,7 +69,7 @@ void use_vocoder( // Controls audio stream processing for vocoder application us
 		// Loop through set of channel samples and process delay taps
 		for(chan_cnt = 0; chan_cnt < NUM_VOCODER_OUT_CHANS; chan_cnt++)
 		{
-			out_samps[chan_cnt] = inp_samps[0]; // Copy Mono signal to both stereo channels 
+			out_samps[chan_cnt] = inp_samps[0]; // Copy Mono signal to both stereo channels
 		} // for chan_cnt
 	} // else !(0 == vocoder_gs.params_set)
 } // use_vocoder

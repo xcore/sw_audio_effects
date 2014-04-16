@@ -59,7 +59,7 @@ int main (void)
 				{
 					dsp_channel_vocoder( c_dsp_slaves[slave_cnt] ,slave_cnt ); // DSP-control core
 				} // par slave_cnt
-	
+
 			} // par
 
 		  free_locks(); // Free Mutex for display

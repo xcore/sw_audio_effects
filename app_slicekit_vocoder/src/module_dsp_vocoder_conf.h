@@ -31,7 +31,7 @@
 #define NUM_VOCODER_INP_CHANS NUM_APP_CHANS
 
 /** No. of output audio channels, Mixed down onto Stereo output channels */
-#define NUM_VOCODER_OUT_CHANS 2 
+#define NUM_VOCODER_OUT_CHANS 2
 
 /** Number of Slave cores used in this application */
 #define NUM_VOCODER_SLAVES NUM_APP_SLAVES

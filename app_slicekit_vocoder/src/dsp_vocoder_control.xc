@@ -79,7 +79,7 @@ void dsp_vocoder_control( // Controls audio stream processing for reverb applica
 	PROC_STATE_ENUM cur_proc_state	= DRY2FX; // Initialise processing state to Fade-in EFFECT.
 
 
-	acquire_lock(); 
+	acquire_lock();
 	printstrln("Vocoder Starts...");
 	release_lock();
 
@@ -95,7 +95,7 @@ void dsp_vocoder_control( // Controls audio stream processing for reverb applica
 	{
 		for (slave_cnt = 0; slave_cnt < NUM_VOCODER_SLAVES; slave_cnt++)
 		{
-			vocoder_out_samps[slave_cnt][chan_cnt] = 0;	
+			vocoder_out_samps[slave_cnt][chan_cnt] = 0;
 		} // for slave_cnt
 
 		zero_samps[chan_cnt] = 0;
@@ -124,7 +124,7 @@ void dsp_vocoder_control( // Controls audio stream processing for reverb applica
 		for (pair_cnt = 0; pair_cnt < NUM_VOCODER_OUT_CHANS; pair_cnt++)
 		{
 			chan_cnt = 2 * pair_cnt;
-			vocoder_cm_samps[pair_cnt] = (inp_samps[chan_cnt] + inp_samps[chan_cnt+1]) >> 1; 
+			vocoder_cm_samps[pair_cnt] = (inp_samps[chan_cnt] + inp_samps[chan_cnt+1]) >> 1;
 		} // for pair_cnt
 
 		// Create output sample-set by cross-fading from zero-valued sample-set to input sample-set
@@ -164,7 +164,7 @@ void dsp_vocoder_control( // Controls audio stream processing for reverb applica
 		for (pair_cnt = 0; pair_cnt < NUM_VOCODER_OUT_CHANS; pair_cnt++)
 		{
 			chan_cnt = 2 * pair_cnt;
-			vocoder_cm_samps[pair_cnt] = (inp_samps[chan_cnt] + inp_samps[chan_cnt+1]) >> 1; 
+			vocoder_cm_samps[pair_cnt] = (inp_samps[chan_cnt] + inp_samps[chan_cnt+1]) >> 1;
 		} // for pair_cnt
 
 		// Overwrite right-channel Carrier with left-channel Modulator
