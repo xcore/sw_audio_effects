@@ -1,7 +1,7 @@
 Digital Audio Effects Applications
 ..................................
 
-:Latest release: 1.0.4rc0
+:Latest release: 1.0.4rc1
 :Maintainer: beaumontm
 :Description: Modules and applications for various audio processing effects and DSP including biquads, delay, reverb and non linear gain
 
@@ -26,6 +26,7 @@ Required software (dependencies)
 ================================
 
   * sc_i2c (git@github.com:xcore/sc_i2c.git)
+  * sc_util (git://github.com/xcore/sc_util)
   * sc_sdram_burst (https://github.com/xcore/sc_sdram_burst)
   * sc_slicekit_support (https://github.com/xcore/sc_slicekit_support.git)
   * sc_i2s (git://github.com/xcore/sc_i2s.git)
