@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  common_audio
- * File:    common_audio.h
+ * Header:  app_conf
+ * File:    app_conf.h
  *
- * Description: Common sefinitions, types, and prototypes for audio applications
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,13 +22,19 @@
  *
 \******************************************************************************/
 
-#ifndef _COMMON_AUDIO_H_
-#define _COMMON_AUDIO_H_
+#ifndef _APP_CONF_H_
+#define _APP_CONF_H_
 
-#include "types64bit.h"
-#include "use_locks.h"
+/** No. of audio channels used in this application. 
+    Carrier & Modulator Stereo input channels, One Stereo output channels */
+#define NUM_APP_CHANS 4
 
-typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
+/** Number of Slave cores used in this application */
+#define NUM_APP_SLAVES 5 // 5
 
-#endif // _COMMON_AUDIO_H_
-// common_audio.h
+/** Number of Vocoder bands processed on each slave core */
+#define NUM_APP_SLAVE_BANDS 2
+
+#endif // _APP_CONF_H_
+/******************************************************************************/
+// app_conf.h

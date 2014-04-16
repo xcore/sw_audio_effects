@@ -25,7 +25,6 @@
 #define _COMMON_UTILS_H_
 
 #include <math.h>
-#include "types64bit.h"
 #include "common_audio.h"
 
 /** Swap effect after this many samples: (1 << 19) */
@@ -62,6 +61,7 @@ typedef enum CNTRL_TOK_TAG //
 {
   CFG_BIQUAD = 10,	// Configure BiQuad Filter
   CFG_GAIN,			// Configure Gain-shaping
+  CFG_VOCODER,			// Configure Vocoder
   NUM_CNTRL_TOKS	// Handy Value!-)
 } CNTRL_TOK_TYP;
 

@@ -21,14 +21,14 @@
         <component description = "Delays audio on a number of channels passing through the sliceKIT board, creating an long echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_long_delay" local = "false" id = "app_slicekit_long_delay" name = "Long-Delay sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
             <keyword>delay</keyword>
             <keyword>echo</keyword>
@@ -40,24 +40,24 @@
         </component>
         <component description = "A 'reverb-like' effect with a long decay time is created by using the building blocks of delay, equalization and non-linear gain." type = "demoCode" scope = "Example" path = "app_slicekit_long_reverb" local = "false" id = "app_slicekit_long_reverb" name = "Long-Reverb sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_reverb</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <keyword>reverb</keyword>
             <keyword>delay</keyword>
@@ -74,11 +74,11 @@
         </component>
         <component description = "Applies a BiQuad filter to an number of audio channels on the sliceKIT board" type = "demoCode" scope = "Example" path = "app_slicekit_biquad" local = "false" id = "app_slicekit_biquad" name = "BiQuad Filter sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <keyword>biquad</keyword>
             <keyword>filter</keyword>
             <keyword>equalization</keyword>
@@ -88,10 +88,10 @@
         </component>
         <component name = "Short-Reverb Function Library" type = "component" buildresults_path = "module_dsp_short_reverb/.module_dsp_short_reverb.buildinfo" scope = "Early Development" path = "module_dsp_short_reverb" metainfo_path = "module_dsp_short_reverb/module_dsp_short_reverb.metainfo" local = "false" id = "module_dsp_short_reverb" description = "A 'reverb-like' effect with a short decay time is created using a combination of delays, filtering and non-linear gain. This module is capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_short_delay</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
@@ -100,11 +100,11 @@
         </component>
         <component description = "Delays the audio on a number of channels paasing through the sliceKIT board creating an echo effect" type = "demoCode" scope = "Example" path = "app_slicekit_short_delay" local = "false" id = "app_slicekit_short_delay" name = "Short-Delay sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_short_delay</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
             <keyword>delay</keyword>
             <keyword>echo</keyword>
             <keyword>audio</keyword>
@@ -113,20 +113,20 @@
         </component>
         <component description = "A 'reverb-like' effect with a short decay time is created by using the building blocks of delay, equalization and non-linear gain." type = "demoCode" scope = "Example" path = "app_slicekit_short_reverb" local = "false" id = "app_slicekit_short_reverb" name = "Short-Reverb sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_short_delay</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_short_reverb</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_short_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_short_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <keyword>reverb</keyword>
             <keyword>delay</keyword>
             <keyword>echo</keyword>
@@ -151,16 +151,16 @@
         <component name = "Long-Reverb Function Library" type = "component" buildresults_path = "module_dsp_long_reverb/.module_dsp_long_reverb.buildinfo" scope = "Early Development" path = "module_dsp_long_reverb" metainfo_path = "module_dsp_long_reverb/module_dsp_long_reverb.metainfo" local = "false" id = "module_dsp_long_reverb" description = "A 'reverb-like' effect with a long decay time is created using a combination of delays, filtering and gain-shaping, capable of processing up to 4 channels of 48 KHz audio in parallel.">
             <board>XA-SK-AUDIO</board>
             <board>XA-SK-SDRAM</board>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram_memory_mapper</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_biquad</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_long_delay</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sc_sdram_burst.git" version = "1.1.0">module_sdram</componentDependency>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <keyword>audio</keyword>
             <keyword>dsp</keyword>
             <keyword>reverb</keyword>
@@ -180,11 +180,11 @@
         </component>
         <component description = "Mid-range volume levels are increased without increasing low-level or high-level signals." type = "demoCode" scope = "Example" path = "app_slicekit_loudness" local = "false" id = "app_slicekit_loudness" name = "Loudness sliceKIT Audio Demo">
             <board>XA-SK-AUDIO</board>
+            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2c" version = "2.2.1">module_i2c_single_port</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_loudness</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <componentDependency repo = "git://github.com/xcore/sc_i2s" version = "1.4.2">module_i2s_master</componentDependency>
-            <componentDependency repo = "git://github.com/xcore/sw_audio_effects.git" version = "1.0.4">module_dsp_utils</componentDependency>
             <keyword>gain</keyword>
             <keyword>loudness</keyword>
             <keyword>audio</keyword>
@@ -193,14 +193,13 @@
         </component>
     </components>
     <dependency repo = "sc_i2c">
-        <gitbranch>(no branch)</gitbranch>
-        <githash>d8e7a39aa0671340d33cf7b40610e15b9bc7a8f0</githash>
+        <gitbranch>master</gitbranch>
+        <githash>cd93d484a83ae90089ff097bdc5c6e3bc4d82689</githash>
         <uri>git@github.com:xcore/sc_i2c.git</uri>
-        <version>2.2.1rc0</version>
     </dependency>
     <dependency repo = "sc_i2s">
-        <gitbranch>(no branch)</gitbranch>
-        <githash>3cbb42ab78f8e3e33056eb7fc5f43902f3cbfe3e</githash>
+        <gitbranch>master</gitbranch>
+        <githash>22504b8fdb8bf6c7447f4094c8c2bb199355b7d8</githash>
         <uri>git://github.com/xcore/sc_i2s.git</uri>
     </dependency>
     <dependency repo = "sc_sdram_burst">
@@ -217,6 +216,9 @@
     <docdir>module_dsp_loudness/doc</docdir>
     <docdir>module_dsp_short_reverb/doc</docdir>
     <docdir>doc_quickstart</docdir>
+    <exclude_dir>module_use_locks</exclude_dir>
+    <exclude_dir>module_dsp_vocoder</exclude_dir>
+    <exclude_dir>app_slicekit_vocoder</exclude_dir>
     <exclude_dir>app_slicekit_dsp_effects</exclude_dir>
     <exclude_dir>app_slicekit_template</exclude_dir>
     <exclude_dir>test_biquad</exclude_dir>

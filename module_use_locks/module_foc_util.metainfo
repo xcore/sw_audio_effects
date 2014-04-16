@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata
+-------------------------------------------------------------------------------
+
+componentName = "FOC Motor Control Utilities"
+componentFullName = "Field Oriented Motor Control Utilities"
+alternativeNames = { }
+componentDescription = ""
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints ={}
+
+derivedValues = {}
+
+ports = {}
+
+channels = {}
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+
+  -- Everything *should* be valid...
+
+  return status, issues
+end
+
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+	includes = 
+	{ 
+		"module_foc_util_example_conf.h"
+	},
+  globals = "",
+  body = ""
+}
+
+api = {'init_locks','free_locks','acquire_lock','release_lock'}

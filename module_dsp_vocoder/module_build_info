@@ -1,0 +1,4 @@
+# The files in this module need to be built at -O3 to 
+# function correctly
+MODULE_XCC_FLAGS = $(XCC_FLAGS) -O3
+DEPENDENT_MODULES = module_dsp_utils

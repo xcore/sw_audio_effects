@@ -1,8 +1,8 @@
 /******************************************************************************\
- * Header:  common_audio
- * File:    common_audio.h
+ * Header:  audio_io
+ * File:    audio_io.h
  *
- * Description: Common sefinitions, types, and prototypes for audio applications
+ * Description: Definitions, types, and prototypes for audio_io.xc
  *
  * Version: 0v1
  * Build:
@@ -21,13 +21,21 @@
  *
 \******************************************************************************/
 
-#ifndef _COMMON_AUDIO_H_
-#define _COMMON_AUDIO_H_
+#ifndef _AUDIO_IO_H_
+#define _AUDIO_IO_H_
 
-#include "types64bit.h"
-#include "use_locks.h"
+#include <platform.h>
+#include "i2c.h"
+#include "codec.h"
+#include "i2s_master.h"
+#include "app_global.h"
 
-typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
+/******************************************************************************/
+void audio_io(
+	streaming chanend c_aud // Audio end of channel between I/O and DSP coar
+);
+/******************************************************************************/
 
-#endif // _COMMON_AUDIO_H_
-// common_audio.h
+#endif // _AUDIO_IO_H_
+/******************************************************************************/
+// audio_io.h

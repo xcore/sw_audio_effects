@@ -1,8 +1,8 @@
 /******************************************************************************\
- * Header:  common_audio
- * File:    common_audio.h
+ * Header:  main
+ * File:    main.h
  *
- * Description: Common sefinitions, types, and prototypes for audio applications
+ * Description: Definitions, types, and prototypes for main.xc
  *
  * Version: 0v1
  * Build:
@@ -21,13 +21,13 @@
  *
 \******************************************************************************/
 
-#ifndef _COMMON_AUDIO_H_
-#define _COMMON_AUDIO_H_
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
-#include "types64bit.h"
-#include "use_locks.h"
+#include "audio_io.h"
+#include "dsp_vocoder_control.h"
+#include "dsp_channel_vocoder.h"
 
-typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
-
-#endif // _COMMON_AUDIO_H_
-// common_audio.h
+#endif // _MAIN_H_
+/******************************************************************************/
+// main.h

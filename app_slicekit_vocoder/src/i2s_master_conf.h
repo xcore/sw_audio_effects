@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  common_audio
- * File:    common_audio.h
+ * Header:  i2s_master_conf
+ * File:    i2s_master_conf.h
  *
- * Description: Common sefinitions, types, and prototypes for audio applications
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,13 +22,14 @@
  *
 \******************************************************************************/
 
-#ifndef _COMMON_AUDIO_H_
-#define _COMMON_AUDIO_H_
+#ifndef _I2S_MASTER_CONF_H_
+#define _I2S_MASTER_CONF_H_
 
-#include "types64bit.h"
-#include "use_locks.h"
+#include "app_conf.h"
 
-typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
+#define I2S_MASTER_NUM_CHANS_ADC NUM_APP_CHANS
+#define I2S_MASTER_NUM_CHANS_DAC NUM_APP_CHANS
 
-#endif // _COMMON_AUDIO_H_
-// common_audio.h
+#endif // _I2S_MASTER_CONF_H_
+/******************************************************************************/
+// i2s_master_conf.h

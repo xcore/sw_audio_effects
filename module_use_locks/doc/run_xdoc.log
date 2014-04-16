@@ -1,0 +1,47 @@
+Building documentation target 'xdehtml' in doc
+    Run 'git stash'
+         No local changes to save
+    Run 'git pull'
+         Already up-to-date.
+    Run 'git config --get remote.origin.url'
+         https://github.com/xcore/sw_foc_motor_control
+    Run 'git rev-parse --show-prefix'
+         module_foc_util/doc/
+    Run 'git pull'
+         Already up-to-date.
+    Found document info for '.. _sec_api:'
+    Run 'git pull'
+         Already up-to-date.
+    Run 'git add *.xml'
+    Run 'git update-index -q --refresh'
+    Run 'git diff-index --name-only HEAD --'
+    Processing document structure for xref database
+    Processing TOC for XMOS xref database
+    Run 'git stash'
+         No local changes to save
+    Run 'git pull'
+         Already up-to-date.
+    Run 'git config --get remote.origin.url'
+         https://github.com/xcore/sw_foc_motor_control
+    Run 'git rev-parse --show-prefix'
+         module_foc_util/doc/
+    Run 'git pull'
+         Already up-to-date.
+    Run 'git add *.xml'
+    Run 'git update-index -q --refresh'
+    Run 'git diff-index --name-only HEAD --'
+    Running Sphinx
+    Run 'git rev-parse --show-toplevel'
+         /home/markb/git.dir/sw_foc_motor_control
+    Run 'git rev-parse --show-prefix'
+         module_foc_util/doc/
+    Run 'git stash'
+         No local changes to save
+    Run 'git pull'
+         Already up-to-date.
+    Run 'git config --get remote.origin.url'
+         https://github.com/xcore/sw_foc_motor_control
+    Run 'git rev-parse --show-prefix'
+         module_foc_util/doc/
+    Removing excess files
+    Build Complete

@@ -1,0 +1,671 @@
+Run 'git rev-parse --show-cdup'
+     ../
+Run 'git rev-parse --show-cdup'
+     
+Run 'git rev-parse --show-cdup'
+     
+Run 'git rev-list --parents --all'
+     d0531d7c68ab67334582c324828e36d617baf8b3 ee51b815f3579f613914f5b7a12f4e05374da057
+     ee51b815f3579f613914f5b7a12f4e05374da057 be522658816edac98e719ef42189e205f65e7a57
+     be522658816edac98e719ef42189e205f65e7a57 6d6b92f618f55d5378e56831b5930bf384c88a01
+     6d6b92f618f55d5378e56831b5930bf384c88a01 d39a12b0ff7981f59858b9080c6e2c5e801ddf77 6d82bc6d1bb6fc07f11433a95e98806aa6c0b637
+     6d82bc6d1bb6fc07f11433a95e98806aa6c0b637 d39a12b0ff7981f59858b9080c6e2c5e801ddf77
+     d39a12b0ff7981f59858b9080c6e2c5e801ddf77 79cf858a8111eea981181a8afe99c5c665bf1d9d 251184dfd03c7670a041e1ac9dce192069e1d9c1
+     251184dfd03c7670a041e1ac9dce192069e1d9c1 ab359827250a0977a19a65174296b529cdfb79e7
+     79cf858a8111eea981181a8afe99c5c665bf1d9d c86abe3668ca7ec0444854a2be0c2aa94fed4d85 ab359827250a0977a19a65174296b529cdfb79e7
+     c86abe3668ca7ec0444854a2be0c2aa94fed4d85 10e22d0443ab07537b8886e1c5ad13aa27bd2d57
+     10e22d0443ab07537b8886e1c5ad13aa27bd2d57 c4c4bdec3bb64baba639914fc9fac31e78f75830
+     c4c4bdec3bb64baba639914fc9fac31e78f75830 146b626a78685c9cc99b0a45c4d34620087f1c76
+     146b626a78685c9cc99b0a45c4d34620087f1c76 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     ab359827250a0977a19a65174296b529cdfb79e7 e2729303d6d13f1a0e6b32757cc1404bc1ff1a69
+     e2729303d6d13f1a0e6b32757cc1404bc1ff1a69 a8f4a7f37c126a35ef3fc2be2689a748f2cce924
+     a8f4a7f37c126a35ef3fc2be2689a748f2cce924 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70 39358a309a70c196ae2614a37bc4270530e14d16
+     39358a309a70c196ae2614a37bc4270530e14d16 8e190c8e9c3aac98196e3b9322f694857019327c
+     8e190c8e9c3aac98196e3b9322f694857019327c 1f06ec94115bac24ee1a78cd3a1de9d97f840dde
+     1f06ec94115bac24ee1a78cd3a1de9d97f840dde 2e01d7324df84ad199833e012b5942e43fb0ccbb
+     2e01d7324df84ad199833e012b5942e43fb0ccbb c69824f8be25d5b91d03b677d44f5e809a76a20a 1591822827b29c9aa2117f9b4a71f33d00eba415
+     c69824f8be25d5b91d03b677d44f5e809a76a20a 0afc3fb0d57bf800402aecdbf8154d4e06ec8434 fed859664670a0b48ed42623b5f5dc10b4f939a3
+     fed859664670a0b48ed42623b5f5dc10b4f939a3 ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a
+     ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a f54b728f49504afffaca05976189f86b43da05a4
+     f54b728f49504afffaca05976189f86b43da05a4 6109b6a189fa2e87c5972b71ed572bd85a7f7892
+     6109b6a189fa2e87c5972b71ed572bd85a7f7892 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     1591822827b29c9aa2117f9b4a71f33d00eba415 1421c8c2cbde5fa4b433c8268d1520493476fb2d
+     1421c8c2cbde5fa4b433c8268d1520493476fb2d 182ede56dbdea9f7b17f60fc5df2b9a233ffd47f
+     182ede56dbdea9f7b17f60fc5df2b9a233ffd47f 75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f
+     75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f 07623e60e025036f0d1bc8cf5f3de6af562ae041
+     07623e60e025036f0d1bc8cf5f3de6af562ae041 92816848586ef36c9dfdf20da32a0f4694233ea4
+     92816848586ef36c9dfdf20da32a0f4694233ea4 9a635b004f8aed0631be1293e8259657fe707513
+     9a635b004f8aed0631be1293e8259657fe707513 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     0afc3fb0d57bf800402aecdbf8154d4e06ec8434 ad4658a416efc89da12e0327aec872ea0325085e
+     ad4658a416efc89da12e0327aec872ea0325085e 8b380809c5776f5e7d5c6b93ef372423f3658beb
+     8b380809c5776f5e7d5c6b93ef372423f3658beb 073a5c322a51797705ac7d02b182af18813bcbc5
+     073a5c322a51797705ac7d02b182af18813bcbc5 d649b8b42db62518db5f6e0c25a4e0b82b972a7f
+     d649b8b42db62518db5f6e0c25a4e0b82b972a7f b9d21d7952ce345b0cadeae50636e05af148427c
+     b9d21d7952ce345b0cadeae50636e05af148427c 536d2fa8d5a8bce5e9d82017b274f297b12c1b8a
+     536d2fa8d5a8bce5e9d82017b274f297b12c1b8a 9d5cfb4da13d25d25a5381ea752ee17d97820be7
+     9d5cfb4da13d25d25a5381ea752ee17d97820be7 747d4d379cd5889a6d5cb2eea1fb58864df04d63
+     747d4d379cd5889a6d5cb2eea1fb58864df04d63 768ca06ed7226e232fc7cb56fc6f1fccf7056d75
+     768ca06ed7226e232fc7cb56fc6f1fccf7056d75 ae57066b05443fa3c3f70d684fa1111399e039c4
+     ae57066b05443fa3c3f70d684fa1111399e039c4 be4f8d36e14a978888d807207b216905ed1e9a2d
+     be4f8d36e14a978888d807207b216905ed1e9a2d 755f6ba4a6b445f58174fb65280a249849e556dc
+     755f6ba4a6b445f58174fb65280a249849e556dc d60efc25fb5fe6f7b0c4a41c335497202da95bb2
+     d60efc25fb5fe6f7b0c4a41c335497202da95bb2 4601117160d44d3906f9e05eb24d32d40e96ac77
+     4601117160d44d3906f9e05eb24d32d40e96ac77 1381ec98dedbc1ea772b000887e7b96677034873
+     1381ec98dedbc1ea772b000887e7b96677034873 63f259116a02b3a789dc673c4ba9c7e5a72136dc
+     63f259116a02b3a789dc673c4ba9c7e5a72136dc c39085e32082981e02041aaea173412405767542
+     c39085e32082981e02041aaea173412405767542 67c61a23e55220c27b2ccef1a1f02fb618e80e0f
+     b384c3bc513301384fccd834884e9f5c3ed0fa86 255169facb039e8be2a543065e62b3672436b6c7
+     67c61a23e55220c27b2ccef1a1f02fb618e80e0f ab522b04408791e098acea9d93b2ac1b959d76cb
+     ab522b04408791e098acea9d93b2ac1b959d76cb b7404174e68e164020cd869eb8ef9fc5aa2bbe9c
+     b7404174e68e164020cd869eb8ef9fc5aa2bbe9c 73def68e681bd78d43ded497ce4bea906d3d08f8
+     73def68e681bd78d43ded497ce4bea906d3d08f8 a80483ec476b8bf3afb5d065847cec58da6edfee
+     a80483ec476b8bf3afb5d065847cec58da6edfee 84c4a06e1d75e12fc0e607a4d60b434e69ed1a71
+     84c4a06e1d75e12fc0e607a4d60b434e69ed1a71 b594b3f17f4dfb701da9c88872e896c45efaaef2
+     b594b3f17f4dfb701da9c88872e896c45efaaef2 d3db2b59d911241e21c6faf07ec887b5a8793835 be23d74c64ddcd8bfd21285b5918090dbd5046ce
+     d3db2b59d911241e21c6faf07ec887b5a8793835 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     be23d74c64ddcd8bfd21285b5918090dbd5046ce 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     3f82b846395c07e8dd32ad9951afc209b6ed7efc cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89
+     cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89 55cf3bde5e62f00f697a84a08f3dbc96c7d2c908
+     55cf3bde5e62f00f697a84a08f3dbc96c7d2c908 93ed89ed255e7d1c480ec212e4a004dfd7c7467a
+     93ed89ed255e7d1c480ec212e4a004dfd7c7467a 1b85edd15cb351f5b112aefc5cea6ac71f9b8086
+     1b85edd15cb351f5b112aefc5cea6ac71f9b8086 5fef62cc3cfb7f956250de2ad6fc073581c78157 22a729b724fcea97ac3ef58a51f109b8c14befc0
+     5fef62cc3cfb7f956250de2ad6fc073581c78157 e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a
+     22a729b724fcea97ac3ef58a51f109b8c14befc0 afbba103d8b5ed3378eaa3832b8f694dec2844bc
+     afbba103d8b5ed3378eaa3832b8f694dec2844bc 935d6d71c987ade68bc66b76a96d59133767c696
+     935d6d71c987ade68bc66b76a96d59133767c696 0f573d6aebdbea08d2bedda1674b9e5f2add19ae
+     0f573d6aebdbea08d2bedda1674b9e5f2add19ae fe94650cab5bcf96fa0fdeab4cb7568daad2e110
+     fe94650cab5bcf96fa0fdeab4cb7568daad2e110 39ba042d29a7e9490496c872e26bd2d34df09458
+     39ba042d29a7e9490496c872e26bd2d34df09458 56136bb672a200a36133694f11cf0a88d6b7b0f7 3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac
+     3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac 56136bb672a200a36133694f11cf0a88d6b7b0f7
+     255169facb039e8be2a543065e62b3672436b6c7 7b60e9c3532356fa4b29525c3d7aea60407ae75e
+     56136bb672a200a36133694f11cf0a88d6b7b0f7 8146d2c03f96265005724954b481f8038389c634 2a94e43bca34e70946b2d2c7220a7fe11f87a583
+     2a94e43bca34e70946b2d2c7220a7fe11f87a583 f82331b1bafa727d4280ff9d845f5329366f332b
+     7b60e9c3532356fa4b29525c3d7aea60407ae75e 8ec9d14de51c49c4cb06e7a70e60ba2814a6b272
+     8146d2c03f96265005724954b481f8038389c634 1a56a319fa999e070b766675817a2ec2f50d88fd f82331b1bafa727d4280ff9d845f5329366f332b
+     f82331b1bafa727d4280ff9d845f5329366f332b f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7
+     f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7 c1a6c966a4d685de831ae9140079307d025b7cbd
+     c1a6c966a4d685de831ae9140079307d025b7cbd c9e5808694f9358b56a2c1bf589d0529618c471c
+     e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a c98e6c773e9228a61b898871744836caefefd175
+     c98e6c773e9228a61b898871744836caefefd175 1a56a319fa999e070b766675817a2ec2f50d88fd
+     c9e5808694f9358b56a2c1bf589d0529618c471c 1a56a319fa999e070b766675817a2ec2f50d88fd
+     1a56a319fa999e070b766675817a2ec2f50d88fd f3a046814db8b7c0212f4ecf7ac872c940ce1d1e
+     f3a046814db8b7c0212f4ecf7ac872c940ce1d1e d6d86b1120e6e6e9a427b730277583ebe8ce20f7
+     d6d86b1120e6e6e9a427b730277583ebe8ce20f7 24758233af7569af4108b886d3fc3d9c56624df3
+     24758233af7569af4108b886d3fc3d9c56624df3 bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab
+     8ec9d14de51c49c4cb06e7a70e60ba2814a6b272 59ae7c094472f1c703966823ac1300dead646a4c
+     bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab dbfe633198c1ed711c16efa93b365ee7ea18d059
+     dbfe633198c1ed711c16efa93b365ee7ea18d059 9626b495df8a948d17fd048be019e4e70ed41b85
+     59ae7c094472f1c703966823ac1300dead646a4c e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd
+     9626b495df8a948d17fd048be019e4e70ed41b85 945a9e07cde90ac91e7f7a67c706bdb1d0edf786
+     945a9e07cde90ac91e7f7a67c706bdb1d0edf786 62e34889a80618e92007c4d67a91538717637168
+     62e34889a80618e92007c4d67a91538717637168 22232546cd9866c85acdd6b0e0e5889ab3503f4d
+     e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd 5a9d608f0e67e33f900813d519c85dd289bf5864
+     5a9d608f0e67e33f900813d519c85dd289bf5864
+     22232546cd9866c85acdd6b0e0e5889ab3503f4d 5a6c97659837de810413e1c90ab6514a2bd8208c
+     5a6c97659837de810413e1c90ab6514a2bd8208c 86eda968fcc77e799670c761588fbd8dbfa0197d
+     86eda968fcc77e799670c761588fbd8dbfa0197d 941485c2d602066e4fff3a627d1d53134d254b55
+     941485c2d602066e4fff3a627d1d53134d254b55
+Run 'git rev-parse --show-cdup'
+     
+Run 'git show master:xpd.xml'
+     <?xml version="1.0" ?>
+     <xpd>
+         <components>
+             <component name = "Random number generation module" type = "component" buildresults_path = "module_random/.module_random.buildinfo" scope = "General Use" path = "module_random" metainfo_path = "module_random/module_random.metainfo" local = "false" id = "module_random" description = "Random number generation module"></component>
+             <component name = "Lightweight and flexible assertion module" type = "component" buildresults_path = "module_xassert/.module_xassert.buildinfo" scope = "General Use" path = "module_xassert" metainfo_path = "module_xassert/module_xassert.metainfo" local = "false" id = "module_xassert" description = "Lightweight and flexible assertion module">
+                 <keyword>debug</keyword>
+                 <keyword>assertion</keyword>
+                 <keyword>assert</keyword>
+             </component>
+             <component name = "Lock Handling Library" type = "component" buildresults_path = "module_locks/.module_locks.buildinfo" scope = "General Use" path = "module_locks" metainfo_path = "module_locks/module_locks.metainfo" local = "false" id = "module_locks" description = "A library for handling hardware and software locks between tasks.">
+                 <keyword>locks</keyword>
+                 <keyword>concurrency</keyword>
+                 <keyword>synchronization</keyword>
+             </component>
+             <component description = "Random number generation example" type = "demoCode" scope = "Example" path = "app_random_example" local = "false" id = "app_random_example" name = "Random number generation example">
+                 <componentDependency>module_random</componentDependency>
+             </component>
+             <component description = "Example that shows the use of the locks module" type = "demoCode" scope = "Example" path = "app_locks_example" local = "false" id = "app_locks_example" name = "Locks module example">
+                 <componentDependency>module_locks</componentDependency>
+             </component>
+             <component name = "Debug Printing Module" type = "component" buildresults_path = "module_logging/.module_logging.buildinfo" scope = "General Use" path = "module_logging" metainfo_path = "module_logging/module_logging.metainfo" local = "false" id = "module_logging" description = "A library for debug printing to the console">
+                 <keyword>printing</keyword>
+                 <keyword>debug</keyword>
+                 <keyword>logging</keyword>
+                 <keyword>tracing</keyword>
+             </component>
+         </components>
+         <description>General Utilities Repository</description>
+         <docdir>module_random/doc</docdir>
+         <docdir>module_xassert/doc</docdir>
+         <docdir>module_logging/doc</docdir>
+         <docdir>module_locks/doc</docdir>
+         <exclude_dir>tests</exclude_dir>
+         <location>git@github.com:xcore/sc_util</location>
+         <name>sc_util</name>
+         <maintainer>davelxmos</maintainer>
+         <partnumber>XM-002736-DH</partnumber>
+         <release parenthash = "768ca06ed7226e232fc7cb56fc6f1fccf7056d75" version = "1.0.0beta0" githash = "747d4d379cd5889a6d5cb2eea1fb58864df04d63"></release>
+         <release parenthash = "9d5cfb4da13d25d25a5381ea752ee17d97820be7" version = "1.0.0beta1" githash = "536d2fa8d5a8bce5e9d82017b274f297b12c1b8a"></release>
+         <release parenthash = "d649b8b42db62518db5f6e0c25a4e0b82b972a7f" version = "1.0.0beta2" githash = "073a5c322a51797705ac7d02b182af18813bcbc5"></release>
+         <release parenthash = "8b380809c5776f5e7d5c6b93ef372423f3658beb" version = "1.0.0rc0" githash = "ad4658a416efc89da12e0327aec872ea0325085e"></release>
+         <release parenthash = "39358a309a70c196ae2614a37bc4270530e14d16" version = "1.0.1rc0" githash = "1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70"></release>
+         <release parenthash = "10e22d0443ab07537b8886e1c5ad13aa27bd2d57" version = "1.0.2rc0" githash = "c86abe3668ca7ec0444854a2be0c2aa94fed4d85"></release>
+         <release parenthash = "ee51b815f3579f613914f5b7a12f4e05374da057" version = "1.0.3rc0"></release>
+         <subpartnumber>XM-002737-SM</subpartnumber>
+         <vendor>XMOS</vendor>
+         <xcore_repo>sc_util</xcore_repo>
+         <xpd_version>1.0</xpd_version>
+         <xsoftip_exclude>module_xfifo</xsoftip_exclude>
+         <xsoftip_exclude>module_xc_ptr</xsoftip_exclude>
+         <xsoftip_exclude>module_mutual_thread_comm</xsoftip_exclude>
+         <xsoftip_exclude>module_trycatch</xsoftip_exclude>
+         <xsoftip_exclude>app_client_server_example</xsoftip_exclude>
+         <xsoftip_exclude>app_xfifo_example</xsoftip_exclude>
+         <xsoftip_exclude>app_mutual_comm_example</xsoftip_exclude>
+         <xsoftip_exclude>app_trycatch_example</xsoftip_exclude>
+     </xpd>
+Run 'git rev-list --parents --all'
+     d0531d7c68ab67334582c324828e36d617baf8b3 ee51b815f3579f613914f5b7a12f4e05374da057
+     ee51b815f3579f613914f5b7a12f4e05374da057 be522658816edac98e719ef42189e205f65e7a57
+     be522658816edac98e719ef42189e205f65e7a57 6d6b92f618f55d5378e56831b5930bf384c88a01
+     6d6b92f618f55d5378e56831b5930bf384c88a01 d39a12b0ff7981f59858b9080c6e2c5e801ddf77 6d82bc6d1bb6fc07f11433a95e98806aa6c0b637
+     6d82bc6d1bb6fc07f11433a95e98806aa6c0b637 d39a12b0ff7981f59858b9080c6e2c5e801ddf77
+     d39a12b0ff7981f59858b9080c6e2c5e801ddf77 79cf858a8111eea981181a8afe99c5c665bf1d9d 251184dfd03c7670a041e1ac9dce192069e1d9c1
+     251184dfd03c7670a041e1ac9dce192069e1d9c1 ab359827250a0977a19a65174296b529cdfb79e7
+     79cf858a8111eea981181a8afe99c5c665bf1d9d c86abe3668ca7ec0444854a2be0c2aa94fed4d85 ab359827250a0977a19a65174296b529cdfb79e7
+     c86abe3668ca7ec0444854a2be0c2aa94fed4d85 10e22d0443ab07537b8886e1c5ad13aa27bd2d57
+     10e22d0443ab07537b8886e1c5ad13aa27bd2d57 c4c4bdec3bb64baba639914fc9fac31e78f75830
+     c4c4bdec3bb64baba639914fc9fac31e78f75830 146b626a78685c9cc99b0a45c4d34620087f1c76
+     146b626a78685c9cc99b0a45c4d34620087f1c76 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     ab359827250a0977a19a65174296b529cdfb79e7 e2729303d6d13f1a0e6b32757cc1404bc1ff1a69
+     e2729303d6d13f1a0e6b32757cc1404bc1ff1a69 a8f4a7f37c126a35ef3fc2be2689a748f2cce924
+     a8f4a7f37c126a35ef3fc2be2689a748f2cce924 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70 39358a309a70c196ae2614a37bc4270530e14d16
+     39358a309a70c196ae2614a37bc4270530e14d16 8e190c8e9c3aac98196e3b9322f694857019327c
+     8e190c8e9c3aac98196e3b9322f694857019327c 1f06ec94115bac24ee1a78cd3a1de9d97f840dde
+     1f06ec94115bac24ee1a78cd3a1de9d97f840dde 2e01d7324df84ad199833e012b5942e43fb0ccbb
+     2e01d7324df84ad199833e012b5942e43fb0ccbb c69824f8be25d5b91d03b677d44f5e809a76a20a 1591822827b29c9aa2117f9b4a71f33d00eba415
+     c69824f8be25d5b91d03b677d44f5e809a76a20a 0afc3fb0d57bf800402aecdbf8154d4e06ec8434 fed859664670a0b48ed42623b5f5dc10b4f939a3
+     fed859664670a0b48ed42623b5f5dc10b4f939a3 ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a
+     ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a f54b728f49504afffaca05976189f86b43da05a4
+     f54b728f49504afffaca05976189f86b43da05a4 6109b6a189fa2e87c5972b71ed572bd85a7f7892
+     6109b6a189fa2e87c5972b71ed572bd85a7f7892 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     1591822827b29c9aa2117f9b4a71f33d00eba415 1421c8c2cbde5fa4b433c8268d1520493476fb2d
+     1421c8c2cbde5fa4b433c8268d1520493476fb2d 182ede56dbdea9f7b17f60fc5df2b9a233ffd47f
+     182ede56dbdea9f7b17f60fc5df2b9a233ffd47f 75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f
+     75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f 07623e60e025036f0d1bc8cf5f3de6af562ae041
+     07623e60e025036f0d1bc8cf5f3de6af562ae041 92816848586ef36c9dfdf20da32a0f4694233ea4
+     92816848586ef36c9dfdf20da32a0f4694233ea4 9a635b004f8aed0631be1293e8259657fe707513
+     9a635b004f8aed0631be1293e8259657fe707513 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     0afc3fb0d57bf800402aecdbf8154d4e06ec8434 ad4658a416efc89da12e0327aec872ea0325085e
+     ad4658a416efc89da12e0327aec872ea0325085e 8b380809c5776f5e7d5c6b93ef372423f3658beb
+     8b380809c5776f5e7d5c6b93ef372423f3658beb 073a5c322a51797705ac7d02b182af18813bcbc5
+     073a5c322a51797705ac7d02b182af18813bcbc5 d649b8b42db62518db5f6e0c25a4e0b82b972a7f
+     d649b8b42db62518db5f6e0c25a4e0b82b972a7f b9d21d7952ce345b0cadeae50636e05af148427c
+     b9d21d7952ce345b0cadeae50636e05af148427c 536d2fa8d5a8bce5e9d82017b274f297b12c1b8a
+     536d2fa8d5a8bce5e9d82017b274f297b12c1b8a 9d5cfb4da13d25d25a5381ea752ee17d97820be7
+     9d5cfb4da13d25d25a5381ea752ee17d97820be7 747d4d379cd5889a6d5cb2eea1fb58864df04d63
+     747d4d379cd5889a6d5cb2eea1fb58864df04d63 768ca06ed7226e232fc7cb56fc6f1fccf7056d75
+     768ca06ed7226e232fc7cb56fc6f1fccf7056d75 ae57066b05443fa3c3f70d684fa1111399e039c4
+     ae57066b05443fa3c3f70d684fa1111399e039c4 be4f8d36e14a978888d807207b216905ed1e9a2d
+     be4f8d36e14a978888d807207b216905ed1e9a2d 755f6ba4a6b445f58174fb65280a249849e556dc
+     755f6ba4a6b445f58174fb65280a249849e556dc d60efc25fb5fe6f7b0c4a41c335497202da95bb2
+     d60efc25fb5fe6f7b0c4a41c335497202da95bb2 4601117160d44d3906f9e05eb24d32d40e96ac77
+     4601117160d44d3906f9e05eb24d32d40e96ac77 1381ec98dedbc1ea772b000887e7b96677034873
+     1381ec98dedbc1ea772b000887e7b96677034873 63f259116a02b3a789dc673c4ba9c7e5a72136dc
+     63f259116a02b3a789dc673c4ba9c7e5a72136dc c39085e32082981e02041aaea173412405767542
+     c39085e32082981e02041aaea173412405767542 67c61a23e55220c27b2ccef1a1f02fb618e80e0f
+     b384c3bc513301384fccd834884e9f5c3ed0fa86 255169facb039e8be2a543065e62b3672436b6c7
+     67c61a23e55220c27b2ccef1a1f02fb618e80e0f ab522b04408791e098acea9d93b2ac1b959d76cb
+     ab522b04408791e098acea9d93b2ac1b959d76cb b7404174e68e164020cd869eb8ef9fc5aa2bbe9c
+     b7404174e68e164020cd869eb8ef9fc5aa2bbe9c 73def68e681bd78d43ded497ce4bea906d3d08f8
+     73def68e681bd78d43ded497ce4bea906d3d08f8 a80483ec476b8bf3afb5d065847cec58da6edfee
+     a80483ec476b8bf3afb5d065847cec58da6edfee 84c4a06e1d75e12fc0e607a4d60b434e69ed1a71
+     84c4a06e1d75e12fc0e607a4d60b434e69ed1a71 b594b3f17f4dfb701da9c88872e896c45efaaef2
+     b594b3f17f4dfb701da9c88872e896c45efaaef2 d3db2b59d911241e21c6faf07ec887b5a8793835 be23d74c64ddcd8bfd21285b5918090dbd5046ce
+     d3db2b59d911241e21c6faf07ec887b5a8793835 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     be23d74c64ddcd8bfd21285b5918090dbd5046ce 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     3f82b846395c07e8dd32ad9951afc209b6ed7efc cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89
+     cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89 55cf3bde5e62f00f697a84a08f3dbc96c7d2c908
+     55cf3bde5e62f00f697a84a08f3dbc96c7d2c908 93ed89ed255e7d1c480ec212e4a004dfd7c7467a
+     93ed89ed255e7d1c480ec212e4a004dfd7c7467a 1b85edd15cb351f5b112aefc5cea6ac71f9b8086
+     1b85edd15cb351f5b112aefc5cea6ac71f9b8086 5fef62cc3cfb7f956250de2ad6fc073581c78157 22a729b724fcea97ac3ef58a51f109b8c14befc0
+     5fef62cc3cfb7f956250de2ad6fc073581c78157 e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a
+     22a729b724fcea97ac3ef58a51f109b8c14befc0 afbba103d8b5ed3378eaa3832b8f694dec2844bc
+     afbba103d8b5ed3378eaa3832b8f694dec2844bc 935d6d71c987ade68bc66b76a96d59133767c696
+     935d6d71c987ade68bc66b76a96d59133767c696 0f573d6aebdbea08d2bedda1674b9e5f2add19ae
+     0f573d6aebdbea08d2bedda1674b9e5f2add19ae fe94650cab5bcf96fa0fdeab4cb7568daad2e110
+     fe94650cab5bcf96fa0fdeab4cb7568daad2e110 39ba042d29a7e9490496c872e26bd2d34df09458
+     39ba042d29a7e9490496c872e26bd2d34df09458 56136bb672a200a36133694f11cf0a88d6b7b0f7 3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac
+     3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac 56136bb672a200a36133694f11cf0a88d6b7b0f7
+     255169facb039e8be2a543065e62b3672436b6c7 7b60e9c3532356fa4b29525c3d7aea60407ae75e
+     56136bb672a200a36133694f11cf0a88d6b7b0f7 8146d2c03f96265005724954b481f8038389c634 2a94e43bca34e70946b2d2c7220a7fe11f87a583
+     2a94e43bca34e70946b2d2c7220a7fe11f87a583 f82331b1bafa727d4280ff9d845f5329366f332b
+     7b60e9c3532356fa4b29525c3d7aea60407ae75e 8ec9d14de51c49c4cb06e7a70e60ba2814a6b272
+     8146d2c03f96265005724954b481f8038389c634 1a56a319fa999e070b766675817a2ec2f50d88fd f82331b1bafa727d4280ff9d845f5329366f332b
+     f82331b1bafa727d4280ff9d845f5329366f332b f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7
+     f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7 c1a6c966a4d685de831ae9140079307d025b7cbd
+     c1a6c966a4d685de831ae9140079307d025b7cbd c9e5808694f9358b56a2c1bf589d0529618c471c
+     e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a c98e6c773e9228a61b898871744836caefefd175
+     c98e6c773e9228a61b898871744836caefefd175 1a56a319fa999e070b766675817a2ec2f50d88fd
+     c9e5808694f9358b56a2c1bf589d0529618c471c 1a56a319fa999e070b766675817a2ec2f50d88fd
+     1a56a319fa999e070b766675817a2ec2f50d88fd f3a046814db8b7c0212f4ecf7ac872c940ce1d1e
+     f3a046814db8b7c0212f4ecf7ac872c940ce1d1e d6d86b1120e6e6e9a427b730277583ebe8ce20f7
+     d6d86b1120e6e6e9a427b730277583ebe8ce20f7 24758233af7569af4108b886d3fc3d9c56624df3
+     24758233af7569af4108b886d3fc3d9c56624df3 bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab
+     8ec9d14de51c49c4cb06e7a70e60ba2814a6b272 59ae7c094472f1c703966823ac1300dead646a4c
+     bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab dbfe633198c1ed711c16efa93b365ee7ea18d059
+     dbfe633198c1ed711c16efa93b365ee7ea18d059 9626b495df8a948d17fd048be019e4e70ed41b85
+     59ae7c094472f1c703966823ac1300dead646a4c e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd
+     9626b495df8a948d17fd048be019e4e70ed41b85 945a9e07cde90ac91e7f7a67c706bdb1d0edf786
+     945a9e07cde90ac91e7f7a67c706bdb1d0edf786 62e34889a80618e92007c4d67a91538717637168
+     62e34889a80618e92007c4d67a91538717637168 22232546cd9866c85acdd6b0e0e5889ab3503f4d
+     e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd 5a9d608f0e67e33f900813d519c85dd289bf5864
+     5a9d608f0e67e33f900813d519c85dd289bf5864
+     22232546cd9866c85acdd6b0e0e5889ab3503f4d 5a6c97659837de810413e1c90ab6514a2bd8208c
+     5a6c97659837de810413e1c90ab6514a2bd8208c 86eda968fcc77e799670c761588fbd8dbfa0197d
+     86eda968fcc77e799670c761588fbd8dbfa0197d 941485c2d602066e4fff3a627d1d53134d254b55
+     941485c2d602066e4fff3a627d1d53134d254b55
+Run 'git rev-parse --show-cdup'
+     
+Run 'git show master:xpd.xml'
+     <?xml version="1.0" ?>
+     <xpd>
+         <components>
+             <component description = "xSIM testbench for QEI component" type = "demoCode" scope = "Example" path = "app_test_qei" local = "false" id = "app_test_qei" name = "Quadrature Encoder Interface (QEI) Test Harness">
+                 <board>None (works on simulator)</board>
+                 <componentDependency>module_foc_qei</componentDependency>
+                 <componentDependency>module_locks</componentDependency>
+                 <keyword>Quadrature-Encoder-Interface QEI Field-Oriented-Control FOC Motor-Control</keyword>
+             </component>
+             <component name = "Quadrature Encoder Interface (QEI) Component" type = "component" buildresults_path = "module_foc_qei/.module_foc_qei.buildinfo" scope = "Early Development" path = "module_foc_qei" metainfo_path = "module_foc_qei/module_foc_qei.metainfo" local = "false" id = "module_foc_qei" description = "A component for interfacing to quadrature encoders with A, B and Index outputs, and optionally an error output">
+                 <board>XP-MC-CTRL-L2</board>
+                 <board>XA-MC-PWR-DLV</board>
+                 <componentDependency>module_locks</componentDependency>
+                 <keyword>position encoder</keyword>
+                 <keyword>FOC</keyword>
+                 <keyword>Motor Control</keyword>
+             </component>
+             <component name = "Hall Sensor Interface Component" type = "component" buildresults_path = "module_foc_hall/.module_foc_hall.buildinfo" scope = "Early Development" path = "module_foc_hall" metainfo_path = "module_foc_hall/module_foc_hall.metainfo" local = "false" id = "module_foc_hall" description = "The Hall module is a xSoftIP component of the FOC Motor control suite for processing raw Hall-sensor data supplied by the motor">
+                 <board>XP-MC-CTRL-L2</board>
+                 <board>XA-MC-PWR-DLV</board>
+                 <componentDependency>module_locks</componentDependency>
+                 <keyword>Hall</keyword>
+                 <keyword>"Hall Sensor"</keyword>
+                 <keyword>FOC</keyword>
+                 <keyword>Motor Control</keyword>
+             </component>
+             <component description = "xSIM testbench for Hall component" type = "demoCode" scope = "Example" path = "app_test_hall" local = "false" id = "app_test_hall" name = "Hall Sensor Interface Test Harness">
+                 <board>None (works on simulator)</board>
+                 <componentDependency>module_foc_hall</componentDependency>
+                 <componentDependency>module_locks</componentDependency>
+                 <keyword>Hall</keyword>
+                 <keyword>"Hall Sensor"</keyword>
+                 <keyword>FOC</keyword>
+                 <keyword>Motor Control</keyword>
+             </component>
+             <component description = "xSIM testbench for ADC component" type = "demoCode" scope = "Example" path = "app_test_adc" local = "false" id = "app_test_adc" name = "Analogue to Digital Conversion (ADC) Test Harness">
+                 <board>None (works on simulator)</board>
+                 <componentDependency>module_foc_adc</componentDependency>
+                 <componentDependency>module_locks</componentDependency>
+                 <keyword>Field-Oriented-Control FOC Analogue-To-Digital ADC Motor-Control</keyword>
+             </component>
+             <component name = "Analogue-to-Digital Conversion (ADC) Component" type = "component" buildresults_path = "module_foc_adc/.module_foc_adc.buildinfo" scope = "Early Development" path = "module_foc_adc" metainfo_path = "module_foc_adc/module_foc_adc.metainfo" local = "false" id = "module_foc_adc" description = "A component for interfacing to an ADC_7265 chip">
+                 <board>XP-MC-CTRL-L2</board>
+                 <board>XA-MC-PWR-DLV</board>
+                 <componentDependency>module_locks</componentDependency>
+                 <keyword>Analogue</keyword>
+                 <keyword>Digital</keyword>
+                 <keyword>Conversion</keyword>
+                 <keyword>Sampling</keyword>
+                 <keyword>FOC</keyword>
+                 <keyword>Motor Control</keyword>
+             </component>
+         </components>
+         <dependency repo = "sc_util">
+             <githash>d0531d7c68ab67334582c324828e36d617baf8b3</githash>
+             <uri>https://github.com/xcore/sc_util</uri>
+             <version>1.0.3rc0</version>
+         </dependency>
+         <description>This repository contains S/W to support Field-Oriented Control (FOC) of motors.</description>
+         <docdir>module_foc_adc/doc</docdir>
+         <docdir>module_foc_hall/doc</docdir>
+         <docdir>module_foc_pwm/doc</docdir>
+         <docdir>module_foc_qei/doc</docdir>
+         <docdir>doc_quickstart/adc</docdir>
+         <docdir>doc_quickstart/hall</docdir>
+         <docdir>doc_quickstart/pwm</docdir>
+         <docdir>doc_quickstart/qei</docdir>
+         <exclude_dir>app_foc_demo</exclude_dir>
+         <exclude_dir>module_foc_comms</exclude_dir>
+         <exclude_dir>module_foc_display</exclude_dir>
+         <exclude_dir>module_foc_loop</exclude_dir>
+         <location>https://github.com/xcore/sw_foc_motor_control</location>
+         <name>sw_foc_motor_control</name>
+         <maintainer>markb</maintainer>
+         <partnumber>XM-002999-DH</partnumber>
+         <release parenthash = "cd6d1cc0aa5caf773dfe466c5ce81d2efb7f78bd" version = "0.0.1beta0" githash = "7cddb8cddaadfa77173536bba73cdb1ee0b18ec2"></release>
+         <release parenthash = "496f41a5e457a8356870f4277e63e18d7c7a40da" version = "0.0.1beta1" githash = "4d840a9f866c7ec6dd4d0632d792792daf224ede"></release>
+         <release parenthash = "d1174184af1fc0330913c7bbe5623d06218e5aee" version = "0.0.1beta2" githash = "f0887e19d521afab253fb7cd2140c8a67d04e1d8"></release>
+         <release parenthash = "426f7d9f6e2fec30253751aec5e8b9888c6ac229" version = "1.0.0beta0" githash = "d6e551a02a18df5809c34e101cc5b2bd5e0de465"></release>
+         <release parenthash = "4c5035e4846544fde062243be4ae729beb7756ed" version = "1.0.0beta1" githash = "ad29916f6094f670d8c31baf3f082f42a3bde4f6"></release>
+         <release parenthash = "ad29916f6094f670d8c31baf3f082f42a3bde4f6" version = "1.0.0beta2" githash = "ebebb3e372aed41477f979209f38c8576c579498"></release>
+         <release parenthash = "4ebbc95f14b1fb1b010684b73232c0ee4b52b1b9" version = "1.0.0beta3" githash = "feae75a245e4499bce67d54e666ca6875654b598"></release>
+         <release parenthash = "d9119e4e9318fe8302d09ed719962a3baa4aa496" version = "1.0.0beta4" githash = "9cbf6c46516180a4c96d64c05eaedc0a3ac61dd3"></release>
+         <subpartnumber>XM-003000-SM</subpartnumber>
+         <vendor>XMOS Ltd.</vendor>
+         <version_defines></version_defines>
+         <xcore_repo>sw_foc_motor_control</xcore_repo>
+         <xpd_version>1.0</xpd_version>
+     </xpd>
+Run 'git rev-parse --show-cdup'
+     
+Run 'git rev-list --parents --all'
+     d0531d7c68ab67334582c324828e36d617baf8b3 ee51b815f3579f613914f5b7a12f4e05374da057
+     ee51b815f3579f613914f5b7a12f4e05374da057 be522658816edac98e719ef42189e205f65e7a57
+     be522658816edac98e719ef42189e205f65e7a57 6d6b92f618f55d5378e56831b5930bf384c88a01
+     6d6b92f618f55d5378e56831b5930bf384c88a01 d39a12b0ff7981f59858b9080c6e2c5e801ddf77 6d82bc6d1bb6fc07f11433a95e98806aa6c0b637
+     6d82bc6d1bb6fc07f11433a95e98806aa6c0b637 d39a12b0ff7981f59858b9080c6e2c5e801ddf77
+     d39a12b0ff7981f59858b9080c6e2c5e801ddf77 79cf858a8111eea981181a8afe99c5c665bf1d9d 251184dfd03c7670a041e1ac9dce192069e1d9c1
+     251184dfd03c7670a041e1ac9dce192069e1d9c1 ab359827250a0977a19a65174296b529cdfb79e7
+     79cf858a8111eea981181a8afe99c5c665bf1d9d c86abe3668ca7ec0444854a2be0c2aa94fed4d85 ab359827250a0977a19a65174296b529cdfb79e7
+     c86abe3668ca7ec0444854a2be0c2aa94fed4d85 10e22d0443ab07537b8886e1c5ad13aa27bd2d57
+     10e22d0443ab07537b8886e1c5ad13aa27bd2d57 c4c4bdec3bb64baba639914fc9fac31e78f75830
+     c4c4bdec3bb64baba639914fc9fac31e78f75830 146b626a78685c9cc99b0a45c4d34620087f1c76
+     146b626a78685c9cc99b0a45c4d34620087f1c76 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     ab359827250a0977a19a65174296b529cdfb79e7 e2729303d6d13f1a0e6b32757cc1404bc1ff1a69
+     e2729303d6d13f1a0e6b32757cc1404bc1ff1a69 a8f4a7f37c126a35ef3fc2be2689a748f2cce924
+     a8f4a7f37c126a35ef3fc2be2689a748f2cce924 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70 39358a309a70c196ae2614a37bc4270530e14d16
+     39358a309a70c196ae2614a37bc4270530e14d16 8e190c8e9c3aac98196e3b9322f694857019327c
+     8e190c8e9c3aac98196e3b9322f694857019327c 1f06ec94115bac24ee1a78cd3a1de9d97f840dde
+     1f06ec94115bac24ee1a78cd3a1de9d97f840dde 2e01d7324df84ad199833e012b5942e43fb0ccbb
+     2e01d7324df84ad199833e012b5942e43fb0ccbb c69824f8be25d5b91d03b677d44f5e809a76a20a 1591822827b29c9aa2117f9b4a71f33d00eba415
+     c69824f8be25d5b91d03b677d44f5e809a76a20a 0afc3fb0d57bf800402aecdbf8154d4e06ec8434 fed859664670a0b48ed42623b5f5dc10b4f939a3
+     fed859664670a0b48ed42623b5f5dc10b4f939a3 ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a
+     ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a f54b728f49504afffaca05976189f86b43da05a4
+     f54b728f49504afffaca05976189f86b43da05a4 6109b6a189fa2e87c5972b71ed572bd85a7f7892
+     6109b6a189fa2e87c5972b71ed572bd85a7f7892 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     1591822827b29c9aa2117f9b4a71f33d00eba415 1421c8c2cbde5fa4b433c8268d1520493476fb2d
+     1421c8c2cbde5fa4b433c8268d1520493476fb2d 182ede56dbdea9f7b17f60fc5df2b9a233ffd47f
+     182ede56dbdea9f7b17f60fc5df2b9a233ffd47f 75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f
+     75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f 07623e60e025036f0d1bc8cf5f3de6af562ae041
+     07623e60e025036f0d1bc8cf5f3de6af562ae041 92816848586ef36c9dfdf20da32a0f4694233ea4
+     92816848586ef36c9dfdf20da32a0f4694233ea4 9a635b004f8aed0631be1293e8259657fe707513
+     9a635b004f8aed0631be1293e8259657fe707513 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     0afc3fb0d57bf800402aecdbf8154d4e06ec8434 ad4658a416efc89da12e0327aec872ea0325085e
+     ad4658a416efc89da12e0327aec872ea0325085e 8b380809c5776f5e7d5c6b93ef372423f3658beb
+     8b380809c5776f5e7d5c6b93ef372423f3658beb 073a5c322a51797705ac7d02b182af18813bcbc5
+     073a5c322a51797705ac7d02b182af18813bcbc5 d649b8b42db62518db5f6e0c25a4e0b82b972a7f
+     d649b8b42db62518db5f6e0c25a4e0b82b972a7f b9d21d7952ce345b0cadeae50636e05af148427c
+     b9d21d7952ce345b0cadeae50636e05af148427c 536d2fa8d5a8bce5e9d82017b274f297b12c1b8a
+     536d2fa8d5a8bce5e9d82017b274f297b12c1b8a 9d5cfb4da13d25d25a5381ea752ee17d97820be7
+     9d5cfb4da13d25d25a5381ea752ee17d97820be7 747d4d379cd5889a6d5cb2eea1fb58864df04d63
+     747d4d379cd5889a6d5cb2eea1fb58864df04d63 768ca06ed7226e232fc7cb56fc6f1fccf7056d75
+     768ca06ed7226e232fc7cb56fc6f1fccf7056d75 ae57066b05443fa3c3f70d684fa1111399e039c4
+     ae57066b05443fa3c3f70d684fa1111399e039c4 be4f8d36e14a978888d807207b216905ed1e9a2d
+     be4f8d36e14a978888d807207b216905ed1e9a2d 755f6ba4a6b445f58174fb65280a249849e556dc
+     755f6ba4a6b445f58174fb65280a249849e556dc d60efc25fb5fe6f7b0c4a41c335497202da95bb2
+     d60efc25fb5fe6f7b0c4a41c335497202da95bb2 4601117160d44d3906f9e05eb24d32d40e96ac77
+     4601117160d44d3906f9e05eb24d32d40e96ac77 1381ec98dedbc1ea772b000887e7b96677034873
+     1381ec98dedbc1ea772b000887e7b96677034873 63f259116a02b3a789dc673c4ba9c7e5a72136dc
+     63f259116a02b3a789dc673c4ba9c7e5a72136dc c39085e32082981e02041aaea173412405767542
+     c39085e32082981e02041aaea173412405767542 67c61a23e55220c27b2ccef1a1f02fb618e80e0f
+     b384c3bc513301384fccd834884e9f5c3ed0fa86 255169facb039e8be2a543065e62b3672436b6c7
+     67c61a23e55220c27b2ccef1a1f02fb618e80e0f ab522b04408791e098acea9d93b2ac1b959d76cb
+     ab522b04408791e098acea9d93b2ac1b959d76cb b7404174e68e164020cd869eb8ef9fc5aa2bbe9c
+     b7404174e68e164020cd869eb8ef9fc5aa2bbe9c 73def68e681bd78d43ded497ce4bea906d3d08f8
+     73def68e681bd78d43ded497ce4bea906d3d08f8 a80483ec476b8bf3afb5d065847cec58da6edfee
+     a80483ec476b8bf3afb5d065847cec58da6edfee 84c4a06e1d75e12fc0e607a4d60b434e69ed1a71
+     84c4a06e1d75e12fc0e607a4d60b434e69ed1a71 b594b3f17f4dfb701da9c88872e896c45efaaef2
+     b594b3f17f4dfb701da9c88872e896c45efaaef2 d3db2b59d911241e21c6faf07ec887b5a8793835 be23d74c64ddcd8bfd21285b5918090dbd5046ce
+     d3db2b59d911241e21c6faf07ec887b5a8793835 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     be23d74c64ddcd8bfd21285b5918090dbd5046ce 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     3f82b846395c07e8dd32ad9951afc209b6ed7efc cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89
+     cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89 55cf3bde5e62f00f697a84a08f3dbc96c7d2c908
+     55cf3bde5e62f00f697a84a08f3dbc96c7d2c908 93ed89ed255e7d1c480ec212e4a004dfd7c7467a
+     93ed89ed255e7d1c480ec212e4a004dfd7c7467a 1b85edd15cb351f5b112aefc5cea6ac71f9b8086
+     1b85edd15cb351f5b112aefc5cea6ac71f9b8086 5fef62cc3cfb7f956250de2ad6fc073581c78157 22a729b724fcea97ac3ef58a51f109b8c14befc0
+     5fef62cc3cfb7f956250de2ad6fc073581c78157 e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a
+     22a729b724fcea97ac3ef58a51f109b8c14befc0 afbba103d8b5ed3378eaa3832b8f694dec2844bc
+     afbba103d8b5ed3378eaa3832b8f694dec2844bc 935d6d71c987ade68bc66b76a96d59133767c696
+     935d6d71c987ade68bc66b76a96d59133767c696 0f573d6aebdbea08d2bedda1674b9e5f2add19ae
+     0f573d6aebdbea08d2bedda1674b9e5f2add19ae fe94650cab5bcf96fa0fdeab4cb7568daad2e110
+     fe94650cab5bcf96fa0fdeab4cb7568daad2e110 39ba042d29a7e9490496c872e26bd2d34df09458
+     39ba042d29a7e9490496c872e26bd2d34df09458 56136bb672a200a36133694f11cf0a88d6b7b0f7 3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac
+     3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac 56136bb672a200a36133694f11cf0a88d6b7b0f7
+     255169facb039e8be2a543065e62b3672436b6c7 7b60e9c3532356fa4b29525c3d7aea60407ae75e
+     56136bb672a200a36133694f11cf0a88d6b7b0f7 8146d2c03f96265005724954b481f8038389c634 2a94e43bca34e70946b2d2c7220a7fe11f87a583
+     2a94e43bca34e70946b2d2c7220a7fe11f87a583 f82331b1bafa727d4280ff9d845f5329366f332b
+     7b60e9c3532356fa4b29525c3d7aea60407ae75e 8ec9d14de51c49c4cb06e7a70e60ba2814a6b272
+     8146d2c03f96265005724954b481f8038389c634 1a56a319fa999e070b766675817a2ec2f50d88fd f82331b1bafa727d4280ff9d845f5329366f332b
+     f82331b1bafa727d4280ff9d845f5329366f332b f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7
+     f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7 c1a6c966a4d685de831ae9140079307d025b7cbd
+     c1a6c966a4d685de831ae9140079307d025b7cbd c9e5808694f9358b56a2c1bf589d0529618c471c
+     e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a c98e6c773e9228a61b898871744836caefefd175
+     c98e6c773e9228a61b898871744836caefefd175 1a56a319fa999e070b766675817a2ec2f50d88fd
+     c9e5808694f9358b56a2c1bf589d0529618c471c 1a56a319fa999e070b766675817a2ec2f50d88fd
+     1a56a319fa999e070b766675817a2ec2f50d88fd f3a046814db8b7c0212f4ecf7ac872c940ce1d1e
+     f3a046814db8b7c0212f4ecf7ac872c940ce1d1e d6d86b1120e6e6e9a427b730277583ebe8ce20f7
+     d6d86b1120e6e6e9a427b730277583ebe8ce20f7 24758233af7569af4108b886d3fc3d9c56624df3
+     24758233af7569af4108b886d3fc3d9c56624df3 bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab
+     8ec9d14de51c49c4cb06e7a70e60ba2814a6b272 59ae7c094472f1c703966823ac1300dead646a4c
+     bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab dbfe633198c1ed711c16efa93b365ee7ea18d059
+     dbfe633198c1ed711c16efa93b365ee7ea18d059 9626b495df8a948d17fd048be019e4e70ed41b85
+     59ae7c094472f1c703966823ac1300dead646a4c e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd
+     9626b495df8a948d17fd048be019e4e70ed41b85 945a9e07cde90ac91e7f7a67c706bdb1d0edf786
+     945a9e07cde90ac91e7f7a67c706bdb1d0edf786 62e34889a80618e92007c4d67a91538717637168
+     62e34889a80618e92007c4d67a91538717637168 22232546cd9866c85acdd6b0e0e5889ab3503f4d
+     e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd 5a9d608f0e67e33f900813d519c85dd289bf5864
+     5a9d608f0e67e33f900813d519c85dd289bf5864
+     22232546cd9866c85acdd6b0e0e5889ab3503f4d 5a6c97659837de810413e1c90ab6514a2bd8208c
+     5a6c97659837de810413e1c90ab6514a2bd8208c 86eda968fcc77e799670c761588fbd8dbfa0197d
+     86eda968fcc77e799670c761588fbd8dbfa0197d 941485c2d602066e4fff3a627d1d53134d254b55
+     941485c2d602066e4fff3a627d1d53134d254b55
+Run 'git rev-parse --show-cdup'
+     
+Run 'git show master:xpd.xml'
+     <?xml version="1.0" ?>
+     <xpd>
+         <components>
+             <component name = "Random number generation module" type = "component" buildresults_path = "module_random/.module_random.buildinfo" scope = "General Use" path = "module_random" metainfo_path = "module_random/module_random.metainfo" local = "false" id = "module_random" description = "Random number generation module"></component>
+             <component name = "Lightweight and flexible assertion module" type = "component" buildresults_path = "module_xassert/.module_xassert.buildinfo" scope = "General Use" path = "module_xassert" metainfo_path = "module_xassert/module_xassert.metainfo" local = "false" id = "module_xassert" description = "Lightweight and flexible assertion module">
+                 <keyword>debug</keyword>
+                 <keyword>assertion</keyword>
+                 <keyword>assert</keyword>
+             </component>
+             <component name = "Lock Handling Library" type = "component" buildresults_path = "module_locks/.module_locks.buildinfo" scope = "General Use" path = "module_locks" metainfo_path = "module_locks/module_locks.metainfo" local = "false" id = "module_locks" description = "A library for handling hardware and software locks between tasks.">
+                 <keyword>locks</keyword>
+                 <keyword>concurrency</keyword>
+                 <keyword>synchronization</keyword>
+             </component>
+             <component description = "Random number generation example" type = "demoCode" scope = "Example" path = "app_random_example" local = "false" id = "app_random_example" name = "Random number generation example">
+                 <componentDependency>module_random</componentDependency>
+             </component>
+             <component description = "Example that shows the use of the locks module" type = "demoCode" scope = "Example" path = "app_locks_example" local = "false" id = "app_locks_example" name = "Locks module example">
+                 <componentDependency>module_locks</componentDependency>
+             </component>
+             <component name = "Debug Printing Module" type = "component" buildresults_path = "module_logging/.module_logging.buildinfo" scope = "General Use" path = "module_logging" metainfo_path = "module_logging/module_logging.metainfo" local = "false" id = "module_logging" description = "A library for debug printing to the console">
+                 <keyword>printing</keyword>
+                 <keyword>debug</keyword>
+                 <keyword>logging</keyword>
+                 <keyword>tracing</keyword>
+             </component>
+         </components>
+         <description>General Utilities Repository</description>
+         <docdir>module_random/doc</docdir>
+         <docdir>module_xassert/doc</docdir>
+         <docdir>module_logging/doc</docdir>
+         <docdir>module_locks/doc</docdir>
+         <exclude_dir>tests</exclude_dir>
+         <location>git@github.com:xcore/sc_util</location>
+         <name>sc_util</name>
+         <maintainer>davelxmos</maintainer>
+         <partnumber>XM-002736-DH</partnumber>
+         <release parenthash = "768ca06ed7226e232fc7cb56fc6f1fccf7056d75" version = "1.0.0beta0" githash = "747d4d379cd5889a6d5cb2eea1fb58864df04d63"></release>
+         <release parenthash = "9d5cfb4da13d25d25a5381ea752ee17d97820be7" version = "1.0.0beta1" githash = "536d2fa8d5a8bce5e9d82017b274f297b12c1b8a"></release>
+         <release parenthash = "d649b8b42db62518db5f6e0c25a4e0b82b972a7f" version = "1.0.0beta2" githash = "073a5c322a51797705ac7d02b182af18813bcbc5"></release>
+         <release parenthash = "8b380809c5776f5e7d5c6b93ef372423f3658beb" version = "1.0.0rc0" githash = "ad4658a416efc89da12e0327aec872ea0325085e"></release>
+         <release parenthash = "39358a309a70c196ae2614a37bc4270530e14d16" version = "1.0.1rc0" githash = "1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70"></release>
+         <release parenthash = "10e22d0443ab07537b8886e1c5ad13aa27bd2d57" version = "1.0.2rc0" githash = "c86abe3668ca7ec0444854a2be0c2aa94fed4d85"></release>
+         <release parenthash = "ee51b815f3579f613914f5b7a12f4e05374da057" version = "1.0.3rc0"></release>
+         <subpartnumber>XM-002737-SM</subpartnumber>
+         <vendor>XMOS</vendor>
+         <xcore_repo>sc_util</xcore_repo>
+         <xpd_version>1.0</xpd_version>
+         <xsoftip_exclude>module_xfifo</xsoftip_exclude>
+         <xsoftip_exclude>module_xc_ptr</xsoftip_exclude>
+         <xsoftip_exclude>module_mutual_thread_comm</xsoftip_exclude>
+         <xsoftip_exclude>module_trycatch</xsoftip_exclude>
+         <xsoftip_exclude>app_client_server_example</xsoftip_exclude>
+         <xsoftip_exclude>app_xfifo_example</xsoftip_exclude>
+         <xsoftip_exclude>app_mutual_comm_example</xsoftip_exclude>
+         <xsoftip_exclude>app_trycatch_example</xsoftip_exclude>
+     </xpd>
+Run 'git rev-list --parents --all'
+     d0531d7c68ab67334582c324828e36d617baf8b3 ee51b815f3579f613914f5b7a12f4e05374da057
+     ee51b815f3579f613914f5b7a12f4e05374da057 be522658816edac98e719ef42189e205f65e7a57
+     be522658816edac98e719ef42189e205f65e7a57 6d6b92f618f55d5378e56831b5930bf384c88a01
+     6d6b92f618f55d5378e56831b5930bf384c88a01 d39a12b0ff7981f59858b9080c6e2c5e801ddf77 6d82bc6d1bb6fc07f11433a95e98806aa6c0b637
+     6d82bc6d1bb6fc07f11433a95e98806aa6c0b637 d39a12b0ff7981f59858b9080c6e2c5e801ddf77
+     d39a12b0ff7981f59858b9080c6e2c5e801ddf77 79cf858a8111eea981181a8afe99c5c665bf1d9d 251184dfd03c7670a041e1ac9dce192069e1d9c1
+     251184dfd03c7670a041e1ac9dce192069e1d9c1 ab359827250a0977a19a65174296b529cdfb79e7
+     79cf858a8111eea981181a8afe99c5c665bf1d9d c86abe3668ca7ec0444854a2be0c2aa94fed4d85 ab359827250a0977a19a65174296b529cdfb79e7
+     c86abe3668ca7ec0444854a2be0c2aa94fed4d85 10e22d0443ab07537b8886e1c5ad13aa27bd2d57
+     10e22d0443ab07537b8886e1c5ad13aa27bd2d57 c4c4bdec3bb64baba639914fc9fac31e78f75830
+     c4c4bdec3bb64baba639914fc9fac31e78f75830 146b626a78685c9cc99b0a45c4d34620087f1c76
+     146b626a78685c9cc99b0a45c4d34620087f1c76 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     ab359827250a0977a19a65174296b529cdfb79e7 e2729303d6d13f1a0e6b32757cc1404bc1ff1a69
+     e2729303d6d13f1a0e6b32757cc1404bc1ff1a69 a8f4a7f37c126a35ef3fc2be2689a748f2cce924
+     a8f4a7f37c126a35ef3fc2be2689a748f2cce924 1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70
+     1ed35a50e2d9cc98fcff4c7cc3fb399385ec5d70 39358a309a70c196ae2614a37bc4270530e14d16
+     39358a309a70c196ae2614a37bc4270530e14d16 8e190c8e9c3aac98196e3b9322f694857019327c
+     8e190c8e9c3aac98196e3b9322f694857019327c 1f06ec94115bac24ee1a78cd3a1de9d97f840dde
+     1f06ec94115bac24ee1a78cd3a1de9d97f840dde 2e01d7324df84ad199833e012b5942e43fb0ccbb
+     2e01d7324df84ad199833e012b5942e43fb0ccbb c69824f8be25d5b91d03b677d44f5e809a76a20a 1591822827b29c9aa2117f9b4a71f33d00eba415
+     c69824f8be25d5b91d03b677d44f5e809a76a20a 0afc3fb0d57bf800402aecdbf8154d4e06ec8434 fed859664670a0b48ed42623b5f5dc10b4f939a3
+     fed859664670a0b48ed42623b5f5dc10b4f939a3 ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a
+     ab9f3cc7dea1dbfbc561814341d8f9d4dfefef9a f54b728f49504afffaca05976189f86b43da05a4
+     f54b728f49504afffaca05976189f86b43da05a4 6109b6a189fa2e87c5972b71ed572bd85a7f7892
+     6109b6a189fa2e87c5972b71ed572bd85a7f7892 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     1591822827b29c9aa2117f9b4a71f33d00eba415 1421c8c2cbde5fa4b433c8268d1520493476fb2d
+     1421c8c2cbde5fa4b433c8268d1520493476fb2d 182ede56dbdea9f7b17f60fc5df2b9a233ffd47f
+     182ede56dbdea9f7b17f60fc5df2b9a233ffd47f 75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f
+     75f87b168a4f4e7aa515ff22a57c3c6b5fb9b29f 07623e60e025036f0d1bc8cf5f3de6af562ae041
+     07623e60e025036f0d1bc8cf5f3de6af562ae041 92816848586ef36c9dfdf20da32a0f4694233ea4
+     92816848586ef36c9dfdf20da32a0f4694233ea4 9a635b004f8aed0631be1293e8259657fe707513
+     9a635b004f8aed0631be1293e8259657fe707513 0afc3fb0d57bf800402aecdbf8154d4e06ec8434
+     0afc3fb0d57bf800402aecdbf8154d4e06ec8434 ad4658a416efc89da12e0327aec872ea0325085e
+     ad4658a416efc89da12e0327aec872ea0325085e 8b380809c5776f5e7d5c6b93ef372423f3658beb
+     8b380809c5776f5e7d5c6b93ef372423f3658beb 073a5c322a51797705ac7d02b182af18813bcbc5
+     073a5c322a51797705ac7d02b182af18813bcbc5 d649b8b42db62518db5f6e0c25a4e0b82b972a7f
+     d649b8b42db62518db5f6e0c25a4e0b82b972a7f b9d21d7952ce345b0cadeae50636e05af148427c
+     b9d21d7952ce345b0cadeae50636e05af148427c 536d2fa8d5a8bce5e9d82017b274f297b12c1b8a
+     536d2fa8d5a8bce5e9d82017b274f297b12c1b8a 9d5cfb4da13d25d25a5381ea752ee17d97820be7
+     9d5cfb4da13d25d25a5381ea752ee17d97820be7 747d4d379cd5889a6d5cb2eea1fb58864df04d63
+     747d4d379cd5889a6d5cb2eea1fb58864df04d63 768ca06ed7226e232fc7cb56fc6f1fccf7056d75
+     768ca06ed7226e232fc7cb56fc6f1fccf7056d75 ae57066b05443fa3c3f70d684fa1111399e039c4
+     ae57066b05443fa3c3f70d684fa1111399e039c4 be4f8d36e14a978888d807207b216905ed1e9a2d
+     be4f8d36e14a978888d807207b216905ed1e9a2d 755f6ba4a6b445f58174fb65280a249849e556dc
+     755f6ba4a6b445f58174fb65280a249849e556dc d60efc25fb5fe6f7b0c4a41c335497202da95bb2
+     d60efc25fb5fe6f7b0c4a41c335497202da95bb2 4601117160d44d3906f9e05eb24d32d40e96ac77
+     4601117160d44d3906f9e05eb24d32d40e96ac77 1381ec98dedbc1ea772b000887e7b96677034873
+     1381ec98dedbc1ea772b000887e7b96677034873 63f259116a02b3a789dc673c4ba9c7e5a72136dc
+     63f259116a02b3a789dc673c4ba9c7e5a72136dc c39085e32082981e02041aaea173412405767542
+     c39085e32082981e02041aaea173412405767542 67c61a23e55220c27b2ccef1a1f02fb618e80e0f
+     b384c3bc513301384fccd834884e9f5c3ed0fa86 255169facb039e8be2a543065e62b3672436b6c7
+     67c61a23e55220c27b2ccef1a1f02fb618e80e0f ab522b04408791e098acea9d93b2ac1b959d76cb
+     ab522b04408791e098acea9d93b2ac1b959d76cb b7404174e68e164020cd869eb8ef9fc5aa2bbe9c
+     b7404174e68e164020cd869eb8ef9fc5aa2bbe9c 73def68e681bd78d43ded497ce4bea906d3d08f8
+     73def68e681bd78d43ded497ce4bea906d3d08f8 a80483ec476b8bf3afb5d065847cec58da6edfee
+     a80483ec476b8bf3afb5d065847cec58da6edfee 84c4a06e1d75e12fc0e607a4d60b434e69ed1a71
+     84c4a06e1d75e12fc0e607a4d60b434e69ed1a71 b594b3f17f4dfb701da9c88872e896c45efaaef2
+     b594b3f17f4dfb701da9c88872e896c45efaaef2 d3db2b59d911241e21c6faf07ec887b5a8793835 be23d74c64ddcd8bfd21285b5918090dbd5046ce
+     d3db2b59d911241e21c6faf07ec887b5a8793835 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     be23d74c64ddcd8bfd21285b5918090dbd5046ce 3f82b846395c07e8dd32ad9951afc209b6ed7efc
+     3f82b846395c07e8dd32ad9951afc209b6ed7efc cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89
+     cfa698ae6a95520e1b1cb7f8d6a0fe06cf015a89 55cf3bde5e62f00f697a84a08f3dbc96c7d2c908
+     55cf3bde5e62f00f697a84a08f3dbc96c7d2c908 93ed89ed255e7d1c480ec212e4a004dfd7c7467a
+     93ed89ed255e7d1c480ec212e4a004dfd7c7467a 1b85edd15cb351f5b112aefc5cea6ac71f9b8086
+     1b85edd15cb351f5b112aefc5cea6ac71f9b8086 5fef62cc3cfb7f956250de2ad6fc073581c78157 22a729b724fcea97ac3ef58a51f109b8c14befc0
+     5fef62cc3cfb7f956250de2ad6fc073581c78157 e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a
+     22a729b724fcea97ac3ef58a51f109b8c14befc0 afbba103d8b5ed3378eaa3832b8f694dec2844bc
+     afbba103d8b5ed3378eaa3832b8f694dec2844bc 935d6d71c987ade68bc66b76a96d59133767c696
+     935d6d71c987ade68bc66b76a96d59133767c696 0f573d6aebdbea08d2bedda1674b9e5f2add19ae
+     0f573d6aebdbea08d2bedda1674b9e5f2add19ae fe94650cab5bcf96fa0fdeab4cb7568daad2e110
+     fe94650cab5bcf96fa0fdeab4cb7568daad2e110 39ba042d29a7e9490496c872e26bd2d34df09458
+     39ba042d29a7e9490496c872e26bd2d34df09458 56136bb672a200a36133694f11cf0a88d6b7b0f7 3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac
+     3b9c6adbfb92b8537ed8b9af9af82b77cc41d8ac 56136bb672a200a36133694f11cf0a88d6b7b0f7
+     255169facb039e8be2a543065e62b3672436b6c7 7b60e9c3532356fa4b29525c3d7aea60407ae75e
+     56136bb672a200a36133694f11cf0a88d6b7b0f7 8146d2c03f96265005724954b481f8038389c634 2a94e43bca34e70946b2d2c7220a7fe11f87a583
+     2a94e43bca34e70946b2d2c7220a7fe11f87a583 f82331b1bafa727d4280ff9d845f5329366f332b
+     7b60e9c3532356fa4b29525c3d7aea60407ae75e 8ec9d14de51c49c4cb06e7a70e60ba2814a6b272
+     8146d2c03f96265005724954b481f8038389c634 1a56a319fa999e070b766675817a2ec2f50d88fd f82331b1bafa727d4280ff9d845f5329366f332b
+     f82331b1bafa727d4280ff9d845f5329366f332b f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7
+     f842e53876ba7fcb2d50173b7dbd6c4fa2ccf4e7 c1a6c966a4d685de831ae9140079307d025b7cbd
+     c1a6c966a4d685de831ae9140079307d025b7cbd c9e5808694f9358b56a2c1bf589d0529618c471c
+     e84f45d3cb8ccf5a7c59ccc2f1245c1449bc793a c98e6c773e9228a61b898871744836caefefd175
+     c98e6c773e9228a61b898871744836caefefd175 1a56a319fa999e070b766675817a2ec2f50d88fd
+     c9e5808694f9358b56a2c1bf589d0529618c471c 1a56a319fa999e070b766675817a2ec2f50d88fd
+     1a56a319fa999e070b766675817a2ec2f50d88fd f3a046814db8b7c0212f4ecf7ac872c940ce1d1e
+     f3a046814db8b7c0212f4ecf7ac872c940ce1d1e d6d86b1120e6e6e9a427b730277583ebe8ce20f7
+     d6d86b1120e6e6e9a427b730277583ebe8ce20f7 24758233af7569af4108b886d3fc3d9c56624df3
+     24758233af7569af4108b886d3fc3d9c56624df3 bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab
+     8ec9d14de51c49c4cb06e7a70e60ba2814a6b272 59ae7c094472f1c703966823ac1300dead646a4c
+     bb45314bf6d2bf0b0708f76d3ddf9a80c43d1fab dbfe633198c1ed711c16efa93b365ee7ea18d059
+     dbfe633198c1ed711c16efa93b365ee7ea18d059 9626b495df8a948d17fd048be019e4e70ed41b85
+     59ae7c094472f1c703966823ac1300dead646a4c e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd
+     9626b495df8a948d17fd048be019e4e70ed41b85 945a9e07cde90ac91e7f7a67c706bdb1d0edf786
+     945a9e07cde90ac91e7f7a67c706bdb1d0edf786 62e34889a80618e92007c4d67a91538717637168
+     62e34889a80618e92007c4d67a91538717637168 22232546cd9866c85acdd6b0e0e5889ab3503f4d
+     e800ac4c04a9c488c7eca9a8febdb5ed6a8d5cbd 5a9d608f0e67e33f900813d519c85dd289bf5864
+     5a9d608f0e67e33f900813d519c85dd289bf5864
+     22232546cd9866c85acdd6b0e0e5889ab3503f4d 5a6c97659837de810413e1c90ab6514a2bd8208c
+     5a6c97659837de810413e1c90ab6514a2bd8208c 86eda968fcc77e799670c761588fbd8dbfa0197d
+     86eda968fcc77e799670c761588fbd8dbfa0197d 941485c2d602066e4fff3a627d1d53134d254b55
+     941485c2d602066e4fff3a627d1d53134d254b55
+module_foc_util
+   Name: FOC Motor Control Utilities
+   Type: component
+   Dependencies:
+      module_locks
+
+Generating buildresults for module_foc_util
+Run 'git rev-parse HEAD~1'
+     fab117bf52ca41a794977b7ac144b66430ae59fc
+Run 'git rev-parse HEAD'
+     2cc61a7389be70eade19c89db12d3629ac6450e4
+WARNING: module_foc_util has no buildresults!
+Run 'xcc --version'
+     13.0.0beta1 (build 8151)
+     Copyright (C) XMOS Limited 2008-2012. All Rights Reserved.
+     
+Using tools verion:13.0.0
+Run 'xsoftip buildresults module_foc_util /home/markb/git.dir/sw_foc_motor_control/module_foc_util/module_foc_util.metainfo /tmp/tmpm_gOkL/xm-local-sw_foc_motor_control.xml /home/markb/git.dir/sw_foc_motor_control'
+    Building empty app
+    Building...
+    Base Usage Resource Usage:
+    Resource Usage:
+      cores:0
+      memory:0
+      codememory:572
+      datamemory:304
+      ports1bit:0
+      ports4bit:0
+      ports8bit:0
+      ports16bit:0
+      ports32bit:0
+      clocks:0
+      chanends:0
+      timers:1
+    
+    Building 1 configs
+    =======================
+    Configuration 1/1
+    Configuration:
+    
+    Application generated in /home/markb/git.dir/sw_foc_motor_control/__generated_module_foc_util_app
+    Building...
+ERROR:     ERROR: xsoftip: Build failed

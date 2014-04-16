@@ -1,0 +1,73 @@
+-------------------------------------------------------------------------------
+-- Descriptive metadata  TODO
+-------------------------------------------------------------------------------
+
+componentName = "Vocoder"
+componentFullName = "Configurable VocoderFunction Library"
+alternativeNames = { }
+componentDescription = ""
+componentVersion = "1v0"
+
+-------------------------------------------------------------------------------
+-- Parameter descriptions.
+-------------------------------------------------------------------------------
+
+configPoints =
+{
+  NumChannels = {
+    short   = "Reverb Channels",
+    help    = "Number of audio channels processed in parallel, Currently set in app_conf.h",
+    long    = "192kHz CAN ONLY ACCOMODATE ONE CHANNEL, 44 OR 48kHz COULD ACCOMODATE 4",
+    units   = "",
+    define  = "NUM_REVERB_CHANS",
+    type    = "int",
+    min     = 2,
+    max     = 4,
+    options = {2,4},
+    resourceUsageFlags = {"linear"},
+    default = 2
+  },
+}
+
+derivedValues = {}
+
+ports = {
+}
+
+channels = {
+}        
+
+function getConfigStatus()
+  local status = "Valid Configuration"
+  local issues = {}
+  if swblock.params.SampleFreq > 96000 and swblock.params.NumChans > 1 then
+    status = "Invalid Configuration" 
+    table.insert(issues, { issues = "176400 or 192000 kHz can only support one channel", suggestion = "Reduce Sample Rate"}) 
+  elseif swblock.params.SampleFreq > 48000 and swblock.params.NumChans > 2 then
+    status = "Invalid Configuration" 
+    table.insert(issues, { issues = "88200 or 96000 kHz can only support one or two channels", suggestion = "Reduce Sample Rate"}) 
+  end
+  return status, issues
+end
+            
+-------------------------------------------------------------------------------
+-- Source generation functions
+-------------------------------------------------------------------------------
+
+generatedCode = {
+	includes = 
+	{ 
+		"module_dsp_short_reverb_example_conf.h"
+	},
+  globals = "",
+  body = ""
+}
+
+api = {'use_reverb','config_reverb'}
+
+files = {
+  ["module_dsp_short_reverb/src/module_dsp_short_reverb_example_conf.h"] = "src/module_dsp_short_reverb_conf.h",
+  ["module_dsp_short_delay/src/module_dsp_short_delay_example_conf.h"] = "src/module_dsp_short_delay_conf.h",
+  ["module_dsp_biquad/src/module_dsp_biquad_example_conf.h"] = "src/module_dsp_biquad_conf.h",
+  ["module_dsp_loudness/src/module_dsp_loudness_example_conf.h"] = "src/module_dsp_loudness_conf.h"
+}

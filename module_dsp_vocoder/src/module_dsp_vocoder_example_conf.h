@@ -1,8 +1,9 @@
 /******************************************************************************\
- * Header:  common_audio
- * File:    common_audio.h
+ * Header:  module_dsp_short_reverb_example_conf
+ * File:    module_dsp_short_reverb_example_conf.h
  *
- * Description: Common sefinitions, types, and prototypes for audio applications
+ * Description: Definitions for configuration of application.
+ *							NB These definitions will be passed to all modules used in application
  *
  * Version: 0v1
  * Build:
@@ -21,13 +22,15 @@
  *
 \******************************************************************************/
 
-#ifndef _COMMON_AUDIO_H_
-#define _COMMON_AUDIO_H_
+#ifndef _MODULE_DSP_SHORT_REVERB_EXAMPLE_CONF_H_
+#define _MODULE_DSP_SHORT_REVERB_EXAMPLE_CONF_H_
 
-#include "types64bit.h"
-#include "use_locks.h"
+/** Default value */
+#define NUM_REVERB_CHANS 2
 
-typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
+/** Default value */
+#define NUM_REVERB_TAPS 4
 
-#endif // _COMMON_AUDIO_H_
-// common_audio.h
+#endif // _MODULE_DSP_SHORT_REVERB_EXAMPLE_CONF_H_
+/******************************************************************************/
+// module_dsp_short_reverb_example_conf.h
