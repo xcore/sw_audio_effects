@@ -18,7 +18,7 @@ sw_audio_effects Change Log
 
 1.0.3
 -----
-                  syncs with the channel I/O.
+                  syncs with the channel I/O.                  syncs with the channel I/O.
   * app_slicekit_dsp_effects demo updated to Output on both stereo pairs (Input only on channels 1/2)
 
   * Changes to dependencies:
@@ -43,16 +43,16 @@ sw_audio_effects Change Log
 
 1.0.2
 -----
-                  syncs with the channel I/O.
+                  syncs with the channel I/O.                  syncs with the channel I/O.
   * Tuning for reverb. Now uses 14 taps.
   * Added dsp_effects demo which combines various effects in one demo using the GPIO slice buttons.
 
 1.0.1
 -----
-                  syncs with the channel I/O.
+                  syncs with the channel I/O.                  syncs with the channel I/O.
   * General code tidying and documentation udpates
 
 1.0.0
 -----
-                  syncs with the channel I/O.
+                  syncs with the channel I/O.                  syncs with the channel I/O.
   * Initial Version
