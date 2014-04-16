@@ -25,7 +25,6 @@
 #define _COMMON_AUDIO_H_
 
 #include "types64bit.h"
-#include "use_locks.h"
 
 typedef S32_T SAMP_CHAN_T; // Full precision sample type on channel (e.g. 32-bit)
 
