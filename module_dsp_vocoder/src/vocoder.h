@@ -25,6 +25,7 @@
 #include <assert.h>
 
 #include "common_audio.h"
+#include "use_locks.h"
 #include "module_dsp_vocoder_conf.h"
 
 #ifndef NUM_VOCODER_OUT_CHANS

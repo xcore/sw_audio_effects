@@ -26,12 +26,15 @@
 #ifndef _APP_GLOBAL_H_
 #define _APP_GLOBAL_H_
 
+
 // Comment-out if NOT using xscope
 #define USE_XSCOPE 1
 
 #if (USE_XSCOPE)
 #include <xscope.h>
 #endif // (USE_XSCOPE)
+
+#include "use_locks.h"
 
 // Assign Processing Coars to Tiles
 #define	TILE_ID 1	// All processed run on one tile
