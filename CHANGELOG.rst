@@ -1,6 +1,10 @@
 sw_audio_effects Change Log
 ===========================
 
+1.0.5
+-----
+                  Re-released to pick-up bug-fix in sc_i2s and sc_sdram_burst. (See below)
+
 1.0.4
 -----
                   syncs with the channel I/O.  * Changes to dependencies:
